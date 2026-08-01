@@ -907,9 +907,15 @@
   
   .drawer-hero {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
     margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .drawer-hero {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   
   .hero-item {
@@ -1248,6 +1254,8 @@
               <th data-sort="rank" style="width:42px;">排名</th>
               <th data-sort="name" style="text-align:left;width:130px;">板块名称</th>
               <th data-sort="change">涨跌幅</th>
+              <th data-sort="flowIn">流入(亿)</th>
+              <th data-sort="flowOut">流出(亿)</th>
               <th data-sort="inflow">净流入(亿)</th>
               <th data-sort="continuousDays">连续流入</th>
               <th data-sort="riseCount">涨跌家数</th>
@@ -1731,10 +1739,14 @@ function renderTable() {
     const rank = FUND_DATA.sectorsByDate[state.currentDate].findIndex(x => x.name === s.name) + 1;
     const changeClass = s.change >= 0 ? 'rise' : 'fall';
     const inflowClass = s.inflow >= 0 ? 'rise' : 'fall';
+    const flowInClass = (s.flowIn || 0) >= 0 ? 'rise' : 'fall';
+    const flowOutClass = (s.flowOut || 0) >= 0 ? 'rise' : 'fall';
     const leaderClass = (s.leaderChange || 0) >= 0 ? 'rise' : 'fall';
     const cd = s.continuousDays || 0;
     const cdDisplay = cd > 0 ? `<span class="rise">${cd}天</span>` : '<span class="text-tertiary">-</span>';
     const inflowDisplay = s.inflow !== undefined && s.inflow !== null ? `${s.inflow > 0 ? '+' : ''}${s.inflow.toFixed(1)}` : '-';
+    const flowInDisplay = s.flowIn !== undefined && s.flowIn !== null ? s.flowIn.toFixed(1) : '-';
+    const flowOutDisplay = s.flowOut !== undefined && s.flowOut !== null ? s.flowOut.toFixed(1) : '-';
     
     return `
       <tr onclick="openDrawer('${s.name.replace(/'/g, "\\'")}')">
@@ -1744,6 +1756,8 @@ function renderTable() {
           ${(s.tagInfo && s.tagInfo.tag) ? `<span style="font-size:13px;margin-left:4px;vertical-align:middle;" title="${s.tagInfo.label || ''}">${s.tagInfo.tag}</span><span class="tag-badge" style="font-size:10px;padding:1px 5px;margin-left:4px;">${s.tagInfo.label || ''}</span>` : ''}
         </td>
         <td class="num ${changeClass}">${s.change > 0 ? '+' : ''}${s.change.toFixed(2)}%</td>
+        <td class="num">${flowInDisplay}</td>
+        <td class="num">${flowOutDisplay}</td>
         <td class="num ${inflowClass}">${inflowDisplay}</td>
         <td class="num">${cdDisplay}</td>
         <td class="num"><span class="rise">${s.riseCount}</span>/<span class="fall">${s.fallCount}</span></td>
@@ -1818,6 +1832,14 @@ function openDrawer(sectorName) {
           <div class="label">涨跌幅</div>
         </div>
         <div class="hero-item">
+          <div class="value" style="color:var(--rise);">${(s.flowIn || 0).toFixed(1)}亿</div>
+          <div class="label">流入</div>
+        </div>
+        <div class="hero-item">
+          <div class="value" style="color:var(--fall);">${(s.flowOut || 0).toFixed(1)}亿</div>
+          <div class="label">流出</div>
+        </div>
+        <div class="hero-item">
           <div class="value ${inflowClass}">${s.inflow > 0 ? '+' : ''}${s.inflow.toFixed(1)}亿</div>
           <div class="label">净流入</div>
         </div>
@@ -1827,6 +1849,41 @@ function openDrawer(sectorName) {
         </div>
       </div>
     </div>
+    
+    <!-- 近期资金流向 -->
+    ${(() => {
+      const hist = s.history || [];
+      if (hist.length === 0) return '';
+      return `
+      <div class="drawer-section">
+        <h4>📅 近期资金流向</h4>
+        <table style="width:100%;font-size:12px;border-collapse:collapse;">
+          <thead>
+            <tr style="color:var(--text-tertiary);border-bottom:1px solid var(--border);">
+              <th style="text-align:left;padding:6px 4px;font-weight:500;">日期</th>
+              <th style="text-align:right;padding:6px 4px;font-weight:500;">流入</th>
+              <th style="text-align:right;padding:6px 4px;font-weight:500;">流出</th>
+              <th style="text-align:right;padding:6px 4px;font-weight:500;">净额</th>
+              <th style="text-align:right;padding:6px 4px;font-weight:500;">涨跌</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${hist.map(h => {
+              const nc = h.inflow >= 0 ? 'rise' : 'fall';
+              const cc = h.change >= 0 ? 'rise' : 'fall';
+              return '<tr style="border-bottom:1px solid var(--border-light, #f0f0f0);">' +
+                '<td style="padding:5px 4px;font-family:monospace;font-size:11px;">' + h.date.slice(5) + '</td>' +
+                '<td style="padding:5px 4px;text-align:right;color:var(--rise);">' + h.flowIn.toFixed(1) + '</td>' +
+                '<td style="padding:5px 4px;text-align:right;color:var(--fall);">' + h.flowOut.toFixed(1) + '</td>' +
+                '<td style="padding:5px 4px;text-align:right;" class="' + nc + '">' + (h.inflow > 0 ? '+' : '') + h.inflow.toFixed(1) + '</td>' +
+                '<td style="padding:5px 4px;text-align:right;" class="' + cc + '">' + (h.change > 0 ? '+' : '') + h.change.toFixed(2) + '%</td>' +
+              '</tr>';
+            }).join('')}
+          </tbody>
+        </table>
+      </div>
+      `;
+    })()}
     
     <!-- 多周期资金流向 -->
     <div class="drawer-section">
