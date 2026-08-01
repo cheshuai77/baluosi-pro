@@ -1739,6 +1739,7 @@ function renderTable() {
         <td class="rank-cell">${rank}</td>
         <td style="text-align:left;font-family:inherit;">
           <span class="sector-name">${s.name}</span>
+          ${(s.tagInfo && s.tagInfo.tag) ? `<span style="font-size:13px;margin-left:4px;vertical-align:middle;" title="${s.tagInfo.label || ''}">${s.tagInfo.tag}</span><span class="tag-badge" style="font-size:10px;padding:1px 5px;margin-left:4px;">${s.tagInfo.label || ''}</span>` : ''}
         </td>
         <td class="num ${changeClass}">${s.change > 0 ? '+' : ''}${s.change.toFixed(2)}%</td>
         <td class="num ${inflowClass}">${inflowDisplay}</td>
