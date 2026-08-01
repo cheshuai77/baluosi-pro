@@ -1797,16 +1797,13 @@ function openDrawer(sectorName) {
   
   const body = drawer.querySelector('.drawer-body');
   body.innerHTML = `
-    <!-- 头部：名称+标签+ID -->
-    <div class="drawer-section" style="padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:12px;">
-      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-        <span style="font-size:18px;font-weight:700;">${s.name}</span>
-        ${ti.tag ? `<span style="font-size:20px;" title="${ti.label}">${ti.tag}</span>` : ''}
+    <!-- 摘要信息（不再重复名称，header已有） -->
+    <div class="drawer-section" style="padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:12px;">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
         ${ti.label ? `<span class="tag-badge">${ti.label}</span>` : ''}
-        <span style="color:var(--text-tertiary);font-size:11px;font-family:monospace;">${s.code || '-'}</span>
+        <span style="color:var(--text-tertiary);font-size:11px;font-family:monospace;">${s.code || '-'} · ${s.stockCount}只成分股 · 指数 ${(s.indexPrice || 0).toFixed(0)}</span>
       </div>
-      <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">${summary}</div>
-      <div style="font-size:11px;color:var(--text-tertiary);margin-top:2px;">${state.currentDate} · ${s.stockCount}只成分股 · 指数 ${(s.indexPrice || 0).toFixed(0)}</div>
+      <div style="font-size:13px;color:var(--text-secondary);line-height:1.5;">${summary}</div>
     </div>
     
     <!-- 今日概览 -->
