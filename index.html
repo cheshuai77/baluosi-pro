@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>资金轮动看板 · Demo</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --bg-primary: #f6f8fa;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f3f4f6;
+    --border: #e5e7eb;
+    --text-primary: #1f2328;
+    --text-secondary: #656d76;
+    --text-tertiary: #8c959f;
+    --rise: #cf222e;
+    --fall: #1a7f37;
+    --accent: #0969da;
+    --warning: #d4a72c;
+    --card-radius: 8px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  
+  /* 日期导航 */
+  .date-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 20px;
+  }
+  .date-btn {
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .date-btn:hover {
+    background: var(--bg-tertiary);
+  }
+  .date-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    min-width: 90px;
+    text-align: center;
+  }
+  
+  /* 板块tooltip */
+  .sector-tip {
+    font-size: 11px;
+    margin-left: 3px;
+    opacity: 0.5;
+  }
+  .sector-tip:hover {
+    opacity: 1;
+  }
+  
+  /* 信号区空状态 */
+  .signal-empty {
+    color: var(--text-tertiary);
+    font-size: 12px;
+    text-align: center;
+    padding: 8px 0;
+  }
+  
+  /* 抽屉内样式补充 */
+  .drawer-section {
+    margin-bottom: 20px;
+  }
+  .drawer-section h4 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+  }
+  .drawer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .drawer-stat {
+    background: var(--bg-tertiary);
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+  .stat-value {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .leader-big {
+    background: var(--bg-tertiary);
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .leader-name {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  /* 表头可排序提示 */
+  thead th {
+    user-select: none;
+    transition: background 0.15s;
+  }
+  thead th:hover {
+    background: var(--bg-tertiary);
+  }
+  
+  /* 累计列切换按钮 */
+  .collapsed-toggle {
+    cursor: pointer;
+    color: var(--accent);
+    font-size: 12px;
+  }
+  .collapsed-toggle:hover {
+    text-decoration: underline;
+  }
+
+  /* 顶部导航 */
+  .navbar {
+    height: 48px;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  
+  .logo-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--rise);
+    border-radius: 50%;
+    margin-right: 6px;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .date-picker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+  }
+  
+  .date-btn {
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    user-select: none;
+  }
+  
+  .date-btn:hover {
+    background: var(--border);
+    color: var(--text-primary);
+  }
+  
+  .date-text {
+    font-weight: 500;
+    min-width: 100px;
+    text-align: center;
+  }
+  
+  .theme-toggle {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .theme-toggle:hover {
+    background: var(--bg-tertiary);
+  }
+  
+  .update-time {
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+  
+  /* 主容器 */
+  .container {
+    padding: 16px 20px;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  
+  /* 市场总览卡片 */
+  .market-overview {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .stat-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    padding: 12px 16px;
+    box-shadow: var(--shadow);
+  }
+  
+  .stat-card:hover {
+    border-color: var(--accent);
+    transition: border-color 0.2s;
+    box-shadow: 0 2px 6px rgba(9,105,218,0.1);
+  }
+  
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+  
+  .stat-value {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .stat-change {
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 8px;
+  }
+  
+  .rise { color: var(--rise); }
+  .fall { color: var(--fall); }
+  
+  .stat-sub {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-top: 2px;
+  }
+  
+  /* 主体布局 */
+  .main-layout { display: block; }
+  
+  /* 信号关注区：横排4列 */
+  .signal-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .signal-strip .signal-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    padding: 12px;
+  }
+  
+  /* 左侧信号区（旧版兼容） */
+  .signal-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+  }
+  
+  .signal-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    padding: 12px;
+  }
+  
+  .signal-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .signal-title .icon {
+    font-size: 14px;
+  }
+  
+  /* Tooltip 提示 */
+  .tooltip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--border);
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 500;
+    cursor: help;
+    margin-left: 2px;
+  }
+  
+  .tooltip:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+  
+  .tooltip::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-primary);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s, visibility 0.15s;
+    z-index: 10;
+    pointer-events: none;
+    line-height: 1.4;
+    white-space: normal;
+    width: max-content;
+    max-width: 200px;
+    text-align: left;
+  }
+  
+  .tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .signal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .signal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 8px;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  
+  .signal-item:hover {
+    background: var(--border);
+  }
+  
+  .signal-rank {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  
+  .rank-1 { background: #da3633; color: #fff; }
+  .rank-2 { background: #f0883e; color: #fff; }
+  .rank-3 { background: #d29922; color: #fff; }
+  .rank-n { background: var(--border); color: var(--text-secondary); }
+  
+  .signal-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .signal-value {
+    font-weight: 600;
+    font-family: 'SF Mono', Consolas, monospace;
+  }
+  
+  .signal-meta {
+    font-size: 10px;
+    color: var(--text-tertiary);
+    margin-top: 2px;
+    margin-left: 26px;
+  }
+  
+  .stars {
+    color: var(--warning);
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  
+  /* 右侧表格区 */
+  .table-panel {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    display: flex;
+    flex-direction: column;
+    height: 820px;
+  }
+  
+  .table-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .table-title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .table-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .search-box {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 10px;
+    color: var(--text-primary);
+    font-size: 12px;
+    width: 140px;
+    outline: none;
+  }
+  
+  .search-box:focus {
+    border-color: var(--accent);
+  }
+  
+  .filter-btn {
+    padding: 4px 10px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--text-primary);
+  }
+  
+  .table-scroll {
+    overflow: auto;
+    flex: 1;
+    min-height: 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  
+  th {
+    position: sticky;
+    top: 0;
+    background: var(--bg-tertiary);
+    padding: 8px 12px;
+    text-align: right;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+  }
+  
+  th:first-child { text-align: center; }
+  th:nth-child(2) { text-align: left; }
+  th:nth-child(8) { text-align: left; }
+  th:last-child { text-align: center; }
+  
+  th:hover {
+    color: var(--text-primary);
+    background: var(--border);
+  }
+  
+  td {
+    padding: 7px 12px;
+    text-align: right;
+    border-bottom: 1px solid var(--bg-tertiary);
+    font-family: 'SF Mono', Consolas, monospace;
+    white-space: nowrap;
+  }
+  
+  td:first-child { text-align: center; color: var(--text-tertiary); }
+  td:nth-child(2) { text-align: left; font-family: inherit; font-weight: 500; }
+  
+  tr:hover {
+    background: var(--bg-tertiary);
+    cursor: pointer;
+  }
+  
+  .rank-change {
+    display: inline-block;
+    font-size: 10px;
+    margin-left: 4px;
+  }
+  
+  .rank-up { color: var(--fall); }
+  .rank-down { color: var(--rise); }
+  .rank-flat { color: var(--text-tertiary); }
+  
+  .sector-name {
+    color: var(--text-primary);
+  }
+  
+  /* 板块标签 */
+  .sector-tag {
+    display: inline-block;
+    font-size: 13px;
+    margin-right: 5px;
+    vertical-align: middle;
+    cursor: help;
+    line-height: 1;
+  }
+  
+  /* 详情按钮 */
+  .detail-btn {
+    font-size: 11px;
+    padding: 2px 8px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: inherit;
+  }
+  .detail-btn:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+  
+  .text-tertiary { color: var(--text-tertiary); }
+  .rank-cell { color: var(--text-tertiary); }
+  
+  /* 标签徽章 */
+  .tag-badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 10px;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    font-weight: 500;
+  }
+  
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+  
+  .collapsed-toggle {
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 11px;
+    text-decoration: underline;
+  }
+  
+  /* 底部Tab区 */
+  .bottom-panel {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+  }
+  
+  .tab-bar {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    padding: 0 12px;
+  }
+  
+  .tab-item {
+    padding: 10px 18px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 13px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  
+  .tab-item.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    font-weight: 500;
+  }
+  
+  .tab-item:hover {
+    color: var(--text-primary);
+  }
+  
+  .tab-content {
+    padding: 16px;
+    display: none;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  .dragon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  .dragon-section h4 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+  }
+  
+  .dragon-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .dragon-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .dragon-item.clickable {
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  
+  .dragon-item.clickable:hover {
+    background: var(--border);
+  }
+  
+  .dragon-name {
+    font-weight: 500;
+  }
+  
+  .dragon-amount {
+    font-family: 'SF Mono', Consolas, monospace;
+    font-weight: 600;
+  }
+  
+  .limitup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .limitup-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .limit-stat {
+    text-align: center;
+    padding: 10px;
+    background: var(--bg-tertiary);
+    border-radius: 6px;
+  }
+  
+  .limit-stat .num {
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+  }
+  
+  .limit-stat .label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+  
+  .ladder-tree {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .ladder-level {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .ladder-count {
+    width: 40px;
+    text-align: right;
+    font-weight: 600;
+    color: var(--rise);
+    font-size: 14px;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+  
+  .ladder-stocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    flex: 1;
+  }
+  
+  .ladder-stock {
+    padding: 3px 8px;
+    background: rgba(248, 81, 73, 0.15);
+    border: 1px solid rgba(248, 81, 73, 0.3);
+    border-radius: 3px;
+    font-size: 11px;
+    color: var(--rise);
+  }
+  
+  /* 右侧详情抽屉 */
+  .drawer {
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 500px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--border);
+    z-index: 200;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+  }
+  
+  .drawer.open {
+    right: 0;
+  }
+  
+  .drawer-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .drawer-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .drawer-close {
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-secondary);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+  
+  .drawer-close:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+  }
+  
+  .drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 20px;
+  }
+  
+  .drawer-section {
+    margin-bottom: 20px;
+  }
+  
+  .drawer-section h4 {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .drawer-hero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  
+  .hero-item {
+    text-align: center;
+    padding: 12px 8px;
+    background: var(--bg-tertiary);
+    border-radius: 6px;
+  }
+  
+  .hero-item .value {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'SF Mono', Consolas, monospace;
+  }
+  
+  .hero-item .label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  
+  .chart-placeholder {
+    height: 160px;
+    background: var(--bg-tertiary);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-tertiary);
+    font-size: 12px;
+    border: 1px dashed var(--border);
+  }
+  
+  .stock-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  
+  .stock-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 8px;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    font-size: 11px;
+  }
+  
+  /* 遮罩 */
+  .mask {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 150;
+    display: none;
+  }
+  
+  .mask.show {
+    display: block;
+  }
+  
+  /* 滚动条样式 */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: var(--bg-primary); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-tertiary); }
+
+  /* ========== 移动端适配 ========== */
+  @media (max-width: 768px) {
+    body { font-size: 12px; }
+    
+    .navbar {
+      height: 44px;
+      padding: 0 12px;
+    }
+    
+    .logo { font-size: 14px; }
+    
+    .update-time { display: none; }
+    
+    .date-text {
+      min-width: 80px;
+      font-size: 12px;
+    }
+    
+    .container {
+      padding: 10px 12px;
+    }
+    
+    /* 大盘卡片：2行x3列 */
+    .market-overview {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    
+    .stat-card { padding: 8px 10px; }
+    .stat-value { font-size: 15px; }
+    .stat-change { font-size: 11px; margin-left: 4px; }
+    .stat-sub { display: none; }
+    
+    /* 信号关注区：移动端2列 */
+    .signal-strip {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    
+    .signal-strip .signal-card { padding: 10px; }
+    
+    .signal-title { font-size: 12px; margin-bottom: 8px; }
+    
+    /* 表格区 */
+    .table-header {
+      padding: 10px 12px;
+    }
+    
+    .table-title { font-size: 13px; }
+    
+    .search-box {
+      width: 100px;
+      font-size: 11px;
+    }
+    
+    .table-scroll {
+      max-height: 400px;
+    }
+    
+    th, td {
+      padding: 6px 10px;
+      font-size: 11px;
+    }
+    
+    /* 底部Tab */
+    .dragon-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    
+    .limitup-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    
+    .limitup-stats {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+    
+    .limit-stat { padding: 8px 4px; }
+    .limit-stat .num { font-size: 16px; }
+    .limit-stat .label { font-size: 10px; }
+    
+    .tab-item {
+      padding: 8px 14px;
+      font-size: 12px;
+    }
+    
+    .tab-content { padding: 12px; }
+    
+    /* 抽屉：全屏 */
+    .drawer {
+      width: 100%;
+      right: -100%;
+    }
+    
+    .drawer-hero {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    
+    .hero-item { padding: 10px 4px; }
+    .hero-item .value { font-size: 15px; }
+    
+    .stock-list {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .market-overview {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stat-card:nth-child(5),
+    .stat-card:nth-child(6) {
+      display: none;
+    }
+    
+    .signal-card {
+      flex: 0 0 180px;
+    }
+    
+    .ladder-count {
+      width: 30px;
+      font-size: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<div class="navbar">
+  <div class="navbar-left">
+    <div class="logo"><span class="logo-dot"></span>申万90大板块资金看板</div>
+  </div>
+  <div class="navbar-right">
+    <div class="date-picker">
+      <span class="date-btn" id="prevDate" onclick="changeDate(-1)">◀</span>
+      <span class="date-text" id="dateLabel">2026-07-31 周五</span>
+      <span class="date-btn" id="nextDate" onclick="changeDate(1)">▶</span>
+    </div>
+    <span class="update-time" id="updateTime">数据截至 15:00</span>
+    <span class="theme-toggle">🌙</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 市场总览 -->
+  <div class="market-overview">
+    <div class="stat-card">
+      <div class="stat-label">上证指数</div>
+      <div>
+        <span class="stat-value">3,832.26</span>
+        <span class="stat-change rise">+0.72%</span>
+      </div>
+      <div class="stat-sub">成交额 11,877亿</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">深证成指</div>
+      <div>
+        <span class="stat-value">13,578.93</span>
+        <span class="stat-change rise">+2.21%</span>
+      </div>
+      <div class="stat-sub">成交额 13,543亿</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">创业板指</div>
+      <div>
+        <span class="stat-value">3,343.96</span>
+        <span class="stat-change rise">+3.06%</span>
+      </div>
+      <div class="stat-sub">成交额 6,712亿</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">两市成交</div>
+      <div>
+        <span class="stat-value">25,598亿</span>
+        <span class="stat-change rise">+8.4%</span>
+      </div>
+      <div class="stat-sub">较昨日放量2,014亿</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">涨跌比</div>
+      <div>
+        <span class="stat-value rise">4,690</span>
+        <span style="color:var(--text-tertiary)"> / </span>
+        <span class="stat-value fall">728</span>
+      </div>
+      <div class="stat-sub">上涨86.6% / 下跌13.4%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">北向资金</div>
+      <div>
+        <span class="stat-value rise">+93.0亿</span>
+      </div>
+      <div class="stat-sub">净买入93亿</div>
+    </div>
+  </div>
+
+  <!-- 信号关注区 -->
+  <div class="signal-strip">
+    <div class="signal-card">
+      <div class="signal-title"><span class="icon">🔥</span> 主线确认</div><div style="font-size:11px;color:var(--text-tertiary);margin:-4px 0 6px 0;">涨幅+资金双验证：涨得好且钱真在进，不是虚拉。当前市场公认的进攻方向。</div>
+      <div class="signal-list" id="signalMain">
+        <div class="signal-item"><span><span class="signal-rank rank-1">1</span><span class="signal-name">IT服务</span></span><span class="signal-value rise">+6.90%</span></div>
+        <div class="signal-meta">+46.5亿 · 上涨占比100% <span class="stars">★★★★★</span></div>
+        <div class="signal-item"><span><span class="signal-rank rank-2">2</span><span class="signal-name">软件开发</span></span><span class="signal-value rise">+6.87%</span></div>
+        <div class="signal-meta">+80.3亿 · 上涨占比100% <span class="stars">★★★★☆</span></div>
+        <div class="signal-item"><span><span class="signal-rank rank-3">3</span><span class="signal-name">电子化学品</span></span><span class="signal-value rise">+6.64%</span></div>
+        <div class="signal-meta">+3.0亿 · 上涨占比100% <span class="stars">★★★☆☆</span></div>
+      </div>
+    </div>
+    <div class="signal-card">
+      <div class="signal-title"><span class="icon">⭐</span> 潜伏机会</div><div style="font-size:11px;color:var(--text-tertiary);margin:-4px 0 6px 0;">资金在流入但价格没涨甚至在跌，可能是主力压盘吸筹。后续有补涨潜力，适合盯着等启动信号。</div>
+      <div class="signal-list" id="signalLatent">
+        <div class="signal-item"><span><span class="signal-rank rank-n">1</span><span class="signal-name">汽车整车</span></span><span class="signal-value fall">-0.29%</span></div>
+        <div class="signal-meta">流入+5.0亿 · 上涨占比39% · 压盘吸筹</div>
+        <div class="signal-item"><span><span class="signal-rank rank-n">2</span><span class="signal-name">煤炭开采</span></span><span class="signal-value rise">+0.16%</span></div>
+        <div class="signal-meta">流入+1.9亿 · 微涨蓄力</div>
+        <div class="signal-item"><span><span class="signal-rank rank-n">3</span><span class="signal-name">港口航运</span></span><span class="signal-value fall">-0.30%</span></div>
+        <div class="signal-meta">流入+1.7亿 · 上涨占比81%</div>
+      </div>
+    </div>
+    <div class="signal-card">
+      <div class="signal-title"><span class="icon">💀</span> 砸盘重灾区</div><div style="font-size:11px;color:var(--text-tertiary);margin:-4px 0 6px 0;">资金大幅流出且跌幅靠前，板块趋势走坏。回避为主，手上有仓位考虑减仓。</div>
+      <div class="signal-list" id="signalDisaster">
+        <div class="signal-item"><span><span class="signal-rank rank-1">1</span><span class="signal-name">银行</span></span><span class="signal-value fall">-2.05%</span></div>
+        <div class="signal-meta">-26.7亿流出 · 下跌占比100%</div>
+        <div class="signal-item"><span><span class="signal-rank rank-2">2</span><span class="signal-name">保险</span></span><span class="signal-value fall">-1.23%</span></div>
+        <div class="signal-meta">-4.5亿流出 · 下跌占比80%</div>
+        <div class="signal-item"><span><span class="signal-rank rank-3">3</span><span class="signal-name">农化制品</span></span><span class="signal-value fall">-0.40%</span></div>
+        <div class="signal-meta">-4.2亿流出 · 下跌占比61%</div>
+      </div>
+    </div>
+    <div class="signal-card">
+      <div class="signal-title"><span class="icon">⚠️</span> 风险预警</div><div style="font-size:11px;color:var(--text-tertiary);margin:-4px 0 6px 0;">价格在涨但资金在跑，典型拉高出货。手上有就准备走，没买的别追。</div>
+      <div class="signal-list" id="signalRisk">
+        <div class="signal-item"><span class="signal-name">🔴 半导体</span><span class="signal-value rise">+7.03%</span></div>
+        <div class="signal-meta">涨7%但资金-109.3亿 · 拉高出货</div>
+        <div class="signal-item"><span class="signal-name">🟡 元件</span><span class="signal-value rise">+6.23%</span></div>
+        <div class="signal-meta">涨6.2%但资金-32.9亿 · 背离</div>
+        <div class="signal-item"><span class="signal-name">🔴 环保设备</span><span class="signal-value rise">+4.38%</span></div>
+        <div class="signal-meta">涨4.4%但资金-1.2亿 · 虚拉</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主体：表格 -->
+  <div class="table-panel">
+      <div class="table-header">
+        <div class="table-title">90行业资金排行</div>
+        <div class="table-tools">
+          <input type="text" class="search-box" id="searchBox" placeholder="搜索板块...">
+          <button class="filter-btn">筛选 ▾</button>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th data-sort="rank" style="width:42px;">排名</th>
+              <th data-sort="name" style="text-align:left;width:130px;">板块名称</th>
+              <th data-sort="change">涨跌幅</th>
+              <th data-sort="inflow">净流入(亿)</th>
+              <th data-sort="continuousDays">连续流入</th>
+              <th data-sort="riseCount">涨跌家数</th>
+              <th data-sort="risePct">涨跌比</th>
+              <th data-sort="leader">领涨股</th>
+              <th style="width:72px;">查看详情</th>
+            </tr>
+          </thead>
+          <tbody id="sectorTable">
+            <!-- JS填充 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部Tab区 -->
+  <div class="bottom-panel">
+    <div class="tab-bar">
+      <div class="tab-item active" data-tab="dragon">龙虎榜</div>
+      <div class="tab-item" data-tab="limitup">涨停板</div>
+      <div class="tab-item" data-tab="hotmoney">游资动向</div>
+    </div>
+    
+    <div class="tab-content active" id="tab-dragon">
+      <div class="dragon-grid">
+        <div class="dragon-section">
+          <h4>🔥 上榜最热板块</h4>
+          <div style="font-size:11px;color:var(--text-tertiary);margin-bottom:8px;">今日龙虎榜上榜个股数量最多的板块，点击看具体个股。</div>
+          <div class="dragon-list">
+            <div class="dragon-item clickable" onclick="openDragonDetail('半导体')">
+              <span class="dragon-name">半导体</span><span>3只 →</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openDragonDetail('光学光电子')">
+              <span class="dragon-name">光学光电子</span><span>2只 →</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openDragonDetail('汽车零部件')">
+              <span class="dragon-name">汽车零部件</span><span>2只 →</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openDragonDetail('消费电子')">
+              <span class="dragon-name">消费电子</span><span>2只 →</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openDragonDetail('机器人')">
+              <span class="dragon-name">机器人</span><span>1只 →</span>
+            </div>
+          </div>
+        </div>
+        <div class="dragon-section">
+          <h4>💰 净买入 TOP5</h4>
+          <div class="dragon-list">
+            <div class="dragon-item"><span class="dragon-name">紫光股份</span><span class="dragon-amount rise">+5.48亿</span></div>
+            <div class="dragon-item"><span class="dragon-name">长电科技</span><span class="dragon-amount rise">+3.17亿</span></div>
+            <div class="dragon-item"><span class="dragon-name">万通发展</span><span class="dragon-amount rise">+3.06亿</span></div>
+            <div class="dragon-item"><span class="dragon-name">星宸科技</span><span class="dragon-amount rise">+2.82亿</span></div>
+            <div class="dragon-item"><span class="dragon-name">有研硅</span><span class="dragon-amount rise">+1.32亿</span></div>
+          </div>
+        </div>
+        <div class="dragon-section">
+          <h4>💀 净卖出 TOP5</h4>
+          <div class="dragon-list">
+            <div class="dragon-item"><span class="dragon-name">通富微电</span><span class="dragon-amount fall">-32.0亿</span></div>
+            <div class="dragon-item"><span class="dragon-name">德明利</span><span class="dragon-amount fall">-7.06亿</span></div>
+            <div class="dragon-item"><span class="dragon-name">利通电子</span><span class="dragon-amount fall">-5.31亿</span></div>
+            <div class="dragon-item"><span class="dragon-name">宏和科技</span><span class="dragon-amount fall">-5.05亿</span></div>
+            <div class="dragon-item"><span class="dragon-name">江淮汽车</span><span class="dragon-amount fall">-3.93亿</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-limitup">
+      <div class="limitup-stats">
+        <div class="limit-stat"><span class="num rise">56</span><span class="label">涨停</span></div>
+        <div class="limit-stat"><span class="num fall">76</span><span class="label">跌停</span></div>
+        <div class="limit-stat"><span class="num">19</span><span class="label">炸板</span></div>
+        <div class="limit-stat"><span class="num">8板</span><span class="label">最高连板</span></div>
+      </div>
+      <div class="limitup-grid">
+        <div>
+          <h4 style="font-size:13px;margin-bottom:10px;">🏆 涨停板块排行</h4>
+          <div style="font-size:11px;color:var(--text-tertiary);margin:-6px 0 10px 0;">今日涨停股数量最多的板块，点击看具体涨停个股。</div>
+          <div class="dragon-list">
+            <div class="dragon-item clickable" onclick="openLimitupDetail('半导体')">
+              <span class="dragon-name">半导体</span><span>2只 →</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openLimitupDetail('电力设备')">
+              <span class="dragon-name">电力设备</span><span>2只 →</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openLimitupDetail('计算机')">
+              <span class="dragon-name">计算机</span><span>2只 →</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openLimitupDetail('游戏')">
+              <span class="dragon-name">游戏</span><span>2只 →</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openLimitupDetail('汽车零部件')">
+              <span class="dragon-name">汽车零部件</span><span>1只 →</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size:13px;margin-bottom:10px;">🌲 连板梯队</h4>
+          <div style="font-size:11px;color:var(--text-tertiary);margin:-6px 0 10px 0;">连续涨停的个股梯队，反映市场情绪高度。</div>
+          <div class="ladder-tree">
+            <div class="ladder-level">
+              <div class="ladder-count">8板</div>
+              <div class="ladder-stocks">
+                <span class="ladder-stock">爱丽家居</span>
+              </div>
+            </div>
+            <div class="ladder-level">
+              <div class="ladder-count">4板</div>
+              <div class="ladder-stocks">
+                <span class="ladder-stock">明新旭腾</span>
+                <span class="ladder-stock">传智教育</span>
+              </div>
+            </div>
+            <div class="ladder-level">
+              <div class="ladder-count">3板</div>
+              <div class="ladder-stocks">
+                <span class="ladder-stock">一鸣食品</span>
+              </div>
+            </div>
+            <div class="ladder-level">
+              <div class="ladder-count">2板</div>
+              <div class="ladder-stocks">
+                <span class="ladder-stock">新经典</span>
+                <span class="ladder-stock">龙头股份</span>
+                <span class="ladder-stock">雅运股份</span>
+                <span class="ladder-stock">海南海药</span>
+                <span class="ladder-stock">高争民爆</span>
+                <span class="ladder-stock">中农联合</span>
+                <span class="ladder-stock">利尔化学</span>
+                <span class="ladder-stock">艾艾精工</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-hotmoney">
+      <div class="dragon-section">
+        <h4 style="font-size:13px;margin-bottom:10px;">🎯 游资今日动向</h4>
+        <div style="font-size:11px;color:var(--text-tertiary);margin:-6px 0 10px 0;">知名游资席位今日买卖汇总，点击游资名称看详细操作标的。按净买卖额排序。</div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+          <div class="dragon-list">
+            <div class="dragon-item clickable" onclick="openHotmoneyDetail('葛卫东')">
+              <span class="dragon-name">葛卫东</span>
+              <span class="dragon-amount fall">-9.3亿</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openHotmoneyDetail('章盟主')">
+              <span class="dragon-name">章盟主</span>
+              <span class="dragon-amount fall">-0.96亿</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openHotmoneyDetail('温州帮')">
+              <span class="dragon-name">温州帮</span>
+              <span class="dragon-amount fall">-2.18亿</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openHotmoneyDetail('佛山系')">
+              <span class="dragon-name">佛山系</span>
+              <span class="dragon-amount fall">-1.4亿</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openHotmoneyDetail('消闲派')">
+              <span class="dragon-name">消闲派</span>
+              <span class="dragon-amount fall">-0.39亿</span>
+            </div>
+          </div>
+          <div class="dragon-list">
+            <div class="dragon-item clickable" onclick="openHotmoneyDetail('玉兰路')">
+              <span class="dragon-name">玉兰路</span>
+              <span class="dragon-amount rise">+0.22亿</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openHotmoneyDetail('广东帮')">
+              <span class="dragon-name">广东帮</span>
+              <span class="dragon-amount rise">+0.15亿</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openHotmoneyDetail('宁波桑田路')">
+              <span class="dragon-name">宁波桑田路</span>
+              <span class="dragon-amount rise">+0.08亿</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openHotmoneyDetail('炒股养家')">
+              <span class="dragon-name">炒股养家</span>
+              <span class="dragon-amount fall">-0.21亿</span>
+            </div>
+            <div class="dragon-item clickable" onclick="openHotmoneyDetail('作手新一')">
+              <span class="dragon-name">作手新一</span>
+              <span class="dragon-amount rise">+0.05亿</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:16px;padding:12px 16px;background:var(--bg-tertiary);border-radius:6px;font-size:12px;color:var(--text-secondary);line-height:1.8;">
+        <strong>📊 整体判断：</strong>游资整体偏空，卖方力量远大于买方（差12倍）。
+        章盟主从单打独斗转向合力分散布局。科技赛道集体减仓，转向低位消费/医药/化工。
+        <strong style="color:var(--warning)">风险偏好下降信号明确</strong>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 遮罩 -->
+<div class="mask" id="mask"></div>
+
+<!-- 详情抽屉 -->
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div>
+      <div class="drawer-title">银行</div>
+      <div style="font-size:12px;color:var(--text-secondary);margin-top:2px;">881155 · 42只成分股</div>
+    </div>
+    <div class="drawer-close" id="drawerClose">×</div>
+  </div>
+  <div class="drawer-body">
+    
+    <div class="drawer-hero">
+      <div class="hero-item">
+        <div class="value rise">+2.45%</div>
+        <div class="label">今日涨幅</div>
+      </div>
+      <div class="hero-item">
+        <div class="value rise">+108.5亿</div>
+        <div class="label">主力净流入</div>
+      </div>
+      <div class="hero-item">
+        <div class="value">90.5%</div>
+        <div class="label">上涨占比</div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h4>📊 多周期资金流</h4>
+      <div class="chart-placeholder">[ 多周期资金柱状图 - 1日/3日/5日/10日/20日 ]</div>
+    </div>
+
+    <div class="drawer-section">
+      <h4>📈 价格走势 + 资金流叠加</h4>
+      <div class="chart-placeholder">[ 近20日K线 + 资金流叠加折线图 ]</div>
+    </div>
+
+    <div class="drawer-section">
+      <h4>🥧 涨跌家数分布</h4>
+      <div style="display:flex;gap:20px;align-items:center;">
+        <div class="chart-placeholder" style="flex:1;height:120px;">[ 饼图 ]</div>
+        <div style="font-size:12px;color:var(--text-secondary);line-height:2;">
+          <div>涨停：2只（4.8%）</div>
+          <div class="rise">上涨：36只（85.7%）</div>
+          <div>平盘：2只（4.8%）</div>
+          <div class="fall">下跌：4只（9.5%）</div>
+          <div>跌停：0只</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h4>⭐ 含金量评分</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;">
+        <div style="padding:8px;background:var(--bg-tertiary);border-radius:4px;display:flex;justify-content:space-between;">
+          <span>领涨股比值</span><span class="stars">★★★★★</span>
+        </div>
+        <div style="padding:8px;background:var(--bg-tertiary);border-radius:4px;display:flex;justify-content:space-between;">
+          <span>涨停浓度</span><span class="stars">★★☆☆☆</span>
+        </div>
+        <div style="padding:8px;background:var(--bg-tertiary);border-radius:4px;display:flex;justify-content:space-between;">
+          <span>涨跌家数比</span><span class="stars">★★★★★</span>
+        </div>
+        <div style="padding:8px;background:var(--bg-tertiary);border-radius:4px;display:flex;justify-content:space-between;">
+          <span>综合星级</span><span class="stars">★★★★☆</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h4>🚀 涨幅前10</h4>
+      <div class="stock-list">
+        <div class="stock-item"><span>平安银行</span><span class="rise">+5.23%</span></div>
+        <div class="stock-item"><span>招商银行</span><span class="rise">+4.15%</span></div>
+        <div class="stock-item"><span>宁波银行</span><span class="rise">+3.87%</span></div>
+        <div class="stock-item"><span>兴业银行</span><span class="rise">+3.42%</span></div>
+        <div class="stock-item"><span>工商银行</span><span class="rise">+2.98%</span></div>
+        <div class="stock-item"><span>建设银行</span><span class="rise">+2.65%</span></div>
+        <div class="stock-item"><span>农业银行</span><span class="rise">+2.34%</span></div>
+        <div class="stock-item"><span>中国银行</span><span class="rise">+2.11%</span></div>
+        <div class="stock-item"><span>交通银行</span><span class="rise">+1.98%</span></div>
+        <div class="stock-item"><span>浦发银行</span><span class="rise">+1.76%</span></div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h4>📉 跌幅前5</h4>
+      <div class="stock-list">
+        <div class="stock-item"><span>XX银行</span><span class="fall">-1.23%</span></div>
+        <div class="stock-item"><span>XX银行</span><span class="fall">-0.87%</span></div>
+        <div class="stock-item"><span>XX银行</span><span class="fall">-0.56%</span></div>
+        <div class="stock-item"><span>XX银行</span><span class="fall">-0.34%</span></div>
+        <div class="stock-item"><span>XX银行</span><span class="fall">-0.12%</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ========== 真实数据 ==========
+const FUND_DATA = {"dates": ["2026-07-30", "2026-07-31"], "sectorsByDate": {"2026-07-30": [{"name": "银行", "change": 2.43, "inflow": 108.52, "riseCount": 42, "fallCount": 42, "risePct": 50.0, "leader": "浦发银行", "leaderChange": 4.63, "stockCount": 84, "code": "881155", "accum3d": 6.7, "accum5d": 9.27, "accum10d": -15.66, "accum20d": 5.64, "indexPrice": 1380.84, "continuousDays": 1, "tagInfo": {"tag": "⚡", "label": "异动流入", "reason": "单日净流入108.5亿，超2σ(43亿)"}}, {"name": "白酒", "change": 4.48, "inflow": 25.57, "riseCount": 19, "fallCount": 0, "risePct": 100.0, "leader": "金徽酒", "leaderChange": 10.03, "stockCount": 19, "code": "881273", "accum3d": 0.53, "accum5d": 3.03, "accum10d": 6.66, "accum20d": -9.49, "indexPrice": 2093.75, "continuousDays": 1, "tagInfo": {"tag": "🔥", "label": "主线", "reason": "净流入25.6亿 · 5日累计+3.0亿"}}, {"name": "电池", "change": -1.96, "inflow": 17.44, "riseCount": 29, "fallCount": 75, "risePct": 27.4, "leader": "中国宝安", "leaderChange": 10.0, "stockCount": 106, "code": "881281", "accum3d": 37.73, "accum5d": 68.14, "accum10d": -16.82, "accum20d": -6.84, "indexPrice": 16756.1, "continuousDays": 1, "tagInfo": {"tag": "🔥", "label": "主线", "reason": "净流入17.4亿 · 5日累计+68.1亿"}}, {"name": "保险", "change": 1.57, "inflow": 17.12, "riseCount": 4, "fallCount": 1, "risePct": 80.0, "leader": "中国平安", "leaderChange": 2.76, "stockCount": 5, "code": "881156", "accum3d": -6.07, "accum5d": 5.94, "accum10d": -9.89, "accum20d": -8.24, "indexPrice": 2085.66, "continuousDays": 1, "tagInfo": {"tag": "🔥", "label": "主线", "reason": "净流入17.1亿 · 5日累计+5.9亿"}}, {"name": "白色家电", "change": -1.79, "inflow": 11.55, "riseCount": 13, "fallCount": 30, "risePct": 29.5, "leader": "海立股份", "leaderChange": 6.11, "stockCount": 44, "code": "881131", "accum3d": 5.43, "accum5d": -3.73, "accum10d": 5.05, "accum20d": 1.33, "indexPrice": 7292.33, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "汽车整车", "change": 2.85, "inflow": 11.34, "riseCount": 21, "fallCount": 1, "risePct": 91.3, "leader": "江淮汽车", "leaderChange": 10.01, "stockCount": 23, "code": "881125", "accum3d": 4.42, "accum5d": 8.7, "accum10d": 6.45, "accum20d": -1.3, "indexPrice": 2673.2, "continuousDays": 1, "tagInfo": {"tag": "🔥", "label": "主线", "reason": "净流入11.3亿 · 5日累计+8.7亿"}}, {"name": "石油加工贸易", "change": -0.62, "inflow": 9.32, "riseCount": 11, "fallCount": 16, "risePct": 40.7, "leader": "中国石油", "leaderChange": 3.49, "stockCount": 27, "code": "881180", "accum3d": 3.68, "accum5d": 0.3, "accum10d": -3.91, "accum20d": 1.59, "indexPrice": 3254.14, "continuousDays": 1, "tagInfo": {"tag": "🔥", "label": "主线", "reason": "净流入9.3亿 · 5日累计+0.3亿"}}, {"name": "港口航运", "change": 0.84, "inflow": 7.04, "riseCount": 29, "fallCount": 5, "risePct": 80.6, "leader": "中远海能", "leaderChange": 4.53, "stockCount": 36, "code": "881148", "accum3d": 1.42, "accum5d": 3.21, "accum10d": -8.81, "accum20d": -1.18, "indexPrice": 1204.39, "continuousDays": 1, "tagInfo": {"tag": "🔥", "label": "主线", "reason": "净流入7.0亿 · 5日累计+3.2亿"}}, {"name": "公路铁路运输", "change": 0.5, "inflow": 4.82, "riseCount": 24, "fallCount": 7, "risePct": 75.0, "leader": "四川成渝", "leaderChange": 4.7, "stockCount": 32, "code": "881149", "accum3d": 0.83, "accum5d": 1.91, "accum10d": -2.47, "accum20d": 0.82, "indexPrice": 1294.6, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "养殖业", "change": 0.1, "inflow": 4.39, "riseCount": 19, "fallCount": 13, "risePct": 52.8, "leader": "瑞普生物", "leaderChange": 4.69, "stockCount": 36, "code": "881102", "accum3d": 4.12, "accum5d": 3.49, "accum10d": 3.63, "accum20d": -3.3, "indexPrice": 2634.92, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "轨交设备", "change": -0.93, "inflow": 3.82, "riseCount": 10, "fallCount": 19, "risePct": 33.3, "leader": "中国中车", "leaderChange": 2.59, "stockCount": 30, "code": "881269", "accum3d": 0.48, "accum5d": 1.7, "accum10d": -0.81, "accum20d": -1.05, "indexPrice": 921.932, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "饮料制造", "change": -0.23, "inflow": 3.52, "riseCount": 24, "fallCount": 21, "risePct": 51.1, "leader": "均瑶健康", "leaderChange": 10.07, "stockCount": 47, "code": "881133", "accum3d": -0.38, "accum5d": -0.27, "accum10d": 2.12, "accum20d": -2.32, "indexPrice": 4645.48, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "工程机械", "change": -0.66, "inflow": 2.84, "riseCount": 21, "fallCount": 15, "risePct": 58.3, "leader": "恒立钻具", "leaderChange": 3.73, "stockCount": 36, "code": "881268", "accum3d": -0.87, "accum5d": 10.38, "accum10d": -1.86, "accum20d": 4.73, "indexPrice": 2933.51, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "贵金属", "change": -0.56, "inflow": 2.22, "riseCount": 6, "fallCount": 8, "risePct": 42.9, "leader": "招金黄金", "leaderChange": 3.85, "stockCount": 14, "code": "881169", "accum3d": 5.46, "accum5d": 20.25, "accum10d": 5.86, "accum20d": 21.43, "indexPrice": 4736.23, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "美容护理", "change": -0.09, "inflow": 2.08, "riseCount": 18, "fallCount": 14, "risePct": 54.5, "leader": "朗姿股份", "leaderChange": 9.71, "stockCount": 33, "code": "881182", "accum3d": 3.2, "accum5d": -0.92, "accum10d": 0.54, "accum20d": 0.03, "indexPrice": 4716.35, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "油气开采及服务", "change": 2.6, "inflow": 1.59, "riseCount": 15, "fallCount": 3, "risePct": 78.9, "leader": "科力股份", "leaderChange": 11.13, "stockCount": 19, "code": "881107", "accum3d": 0.27, "accum5d": 2.9, "accum10d": -9.15, "accum20d": -2.32, "indexPrice": 1697.13, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "小家电", "change": -0.16, "inflow": 1.48, "riseCount": 12, "fallCount": 14, "risePct": 46.2, "leader": "苏泊尔", "leaderChange": 5.15, "stockCount": 26, "code": "881173", "accum3d": 1.63, "accum5d": 0.26, "accum10d": 0.93, "accum20d": 0.97, "indexPrice": 3818.35, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "机场航运", "change": 1.02, "inflow": 1.26, "riseCount": 10, "fallCount": 1, "risePct": 76.9, "leader": "春秋航空", "leaderChange": 2.62, "stockCount": 13, "code": "881151", "accum3d": 3.04, "accum5d": 4.69, "accum10d": -2.07, "accum20d": -4.19, "indexPrice": 1826.65, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "农产品加工", "change": 0.21, "inflow": 1.18, "riseCount": 25, "fallCount": 15, "risePct": 58.1, "leader": "乖宝宠物", "leaderChange": 6.19, "stockCount": 43, "code": "881103", "accum3d": 1.38, "accum5d": -0.15, "accum10d": 1.79, "accum20d": -2.27, "indexPrice": 3384.56, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "汽车服务及其他", "change": -0.4, "inflow": 1.02, "riseCount": 14, "fallCount": 11, "risePct": 56.0, "leader": "钱江摩托", "leaderChange": 7.04, "stockCount": 25, "code": "881128", "accum3d": 1.16, "accum5d": 0.85, "accum10d": 1.27, "accum20d": -0.3, "indexPrice": 1042.67, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "物流", "change": -0.16, "inflow": 0.58, "riseCount": 26, "fallCount": 21, "risePct": 52.0, "leader": "原尚股份", "leaderChange": 9.99, "stockCount": 50, "code": "881152", "accum3d": 3.38, "accum5d": 0.15, "accum10d": -1.41, "accum20d": 0.97, "indexPrice": 4884.5, "continuousDays": 1, "tagInfo": {"tag": "💤", "label": "休眠", "reason": "低波动，资金平淡"}}, {"name": "厨卫电器", "change": 3.92, "inflow": 0.55, "riseCount": 7, "fallCount": 2, "risePct": 77.8, "leader": "火星人", "leaderChange": 20.04, "stockCount": 9, "code": "881174", "accum3d": 0.52, "accum5d": 0.36, "accum10d": 0.24, "accum20d": -0.93, "indexPrice": 5557.13, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "医疗器械", "change": -1.08, "inflow": 0.17, "riseCount": 54, "fallCount": 80, "risePct": 38.6, "leader": "中红医疗", "leaderChange": 10.35, "stockCount": 140, "code": "881144", "accum3d": 6.4, "accum5d": -4.19, "accum10d": 0.57, "accum20d": -5.88, "indexPrice": 10133.2, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "食品加工制造", "change": 0.45, "inflow": 0.05, "riseCount": 42, "fallCount": 22, "risePct": 63.6, "leader": "海欣食品", "leaderChange": 10.02, "stockCount": 66, "code": "881134", "accum3d": 3.54, "accum5d": -1.06, "accum10d": -1.45, "accum20d": -2.25, "indexPrice": 4509.95, "continuousDays": 1, "tagInfo": {"tag": "💤", "label": "休眠", "reason": "低波动，资金平淡"}}, {"name": "文化传媒", "change": -0.09, "inflow": -0.14, "riseCount": 38, "fallCount": 42, "risePct": 45.2, "leader": "返利科技", "leaderChange": 10.06, "stockCount": 84, "code": "881164", "accum3d": 17.13, "accum5d": -1.69, "accum10d": 13.35, "accum20d": -5.71, "indexPrice": 2428.0, "continuousDays": 0, "tagInfo": {"tag": "💤", "label": "休眠", "reason": "低波动，资金平淡"}}, {"name": "多元金融", "change": 0.51, "inflow": -0.28, "riseCount": 18, "fallCount": 7, "risePct": 69.2, "leader": "鲁信创投", "leaderChange": 2.98, "stockCount": 26, "code": "881283", "accum3d": 2.48, "accum5d": 1.79, "accum10d": -3.3, "accum20d": -4.83, "indexPrice": 1057.21, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "教育", "change": 2.78, "inflow": -0.44, "riseCount": 10, "fallCount": 5, "risePct": 66.7, "leader": "创业黑马", "leaderChange": 11.42, "stockCount": 15, "code": "881178", "accum3d": 2.09, "accum5d": 1.15, "accum10d": -0.3, "accum20d": -1.31, "indexPrice": 3798.17, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "化学纤维", "change": -0.71, "inflow": -0.46, "riseCount": 8, "fallCount": 18, "risePct": 27.6, "leader": "海阳科技", "leaderChange": 9.99, "stockCount": 29, "code": "881264", "accum3d": 2.22, "accum5d": 4.09, "accum10d": -1.22, "accum20d": -1.76, "indexPrice": 3480.29, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "医药商业", "change": -0.28, "inflow": -0.52, "riseCount": 16, "fallCount": 15, "risePct": 50.0, "leader": "人民同泰", "leaderChange": 2.87, "stockCount": 32, "code": "881143", "accum3d": 2.01, "accum5d": -1.11, "accum10d": 3.19, "accum20d": -0.4, "indexPrice": 4361.07, "continuousDays": 0, "tagInfo": {"tag": "💤", "label": "休眠", "reason": "低波动，资金平淡"}}, {"name": "煤炭开采加工", "change": -0.51, "inflow": -0.62, "riseCount": 17, "fallCount": 16, "risePct": 50.0, "leader": "大有能源", "leaderChange": 1.95, "stockCount": 34, "code": "881105", "accum3d": 1.87, "accum5d": 4.97, "accum10d": -7.87, "accum20d": 4.64, "indexPrice": 2767.63, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "钢铁", "change": 0.85, "inflow": -0.74, "riseCount": 33, "fallCount": 10, "risePct": 75.0, "leader": "柳钢股份", "leaderChange": 9.97, "stockCount": 44, "code": "881112", "accum3d": 4.04, "accum5d": 11.18, "accum10d": -7.1, "accum20d": -1.98, "indexPrice": 1513.61, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "贸易", "change": -0.54, "inflow": -0.82, "riseCount": 5, "fallCount": 8, "risePct": 35.7, "leader": "江苏国泰", "leaderChange": 2.71, "stockCount": 14, "code": "881159", "accum3d": 0.82, "accum5d": 1.15, "accum10d": -0.6, "accum20d": -1.72, "indexPrice": 2407.47, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "农化制品", "change": 1.26, "inflow": -0.86, "riseCount": 43, "fallCount": 17, "risePct": 70.5, "leader": "美邦股份", "leaderChange": 10.0, "stockCount": 61, "code": "881263", "accum3d": -0.94, "accum5d": 14.97, "accum10d": -11.17, "accum20d": -5.24, "indexPrice": 4685.77, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "家居用品", "change": -1.29, "inflow": -0.88, "riseCount": 32, "fallCount": 66, "risePct": 32.3, "leader": "爱丽家居", "leaderChange": 9.98, "stockCount": 99, "code": "881139", "accum3d": 2.21, "accum5d": 0.77, "accum10d": -1.36, "accum20d": -0.95, "indexPrice": 3545.09, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "种植业与林业", "change": 0.17, "inflow": -0.96, "riseCount": 14, "fallCount": 16, "risePct": 46.7, "leader": "宏辉果蔬", "leaderChange": 8.43, "stockCount": 30, "code": "881101", "accum3d": 2.35, "accum5d": 4.08, "accum10d": -1.6, "accum20d": -1.11, "indexPrice": 3749.86, "continuousDays": 0, "tagInfo": {"tag": "💤", "label": "休眠", "reason": "低波动，资金平淡"}}, {"name": "零售", "change": 0.16, "inflow": -1.04, "riseCount": 37, "fallCount": 29, "risePct": 52.1, "leader": "南宁百货", "leaderChange": 10.06, "stockCount": 71, "code": "881158", "accum3d": 10.35, "accum5d": -1.16, "accum10d": 0.53, "accum20d": -8.52, "indexPrice": 1751.12, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "造纸", "change": -0.97, "inflow": -1.4, "riseCount": 7, "fallCount": 16, "risePct": 29.2, "leader": "恒丰纸业", "leaderChange": 4.18, "stockCount": 24, "code": "881137", "accum3d": 1.69, "accum5d": 1.56, "accum10d": -0.78, "accum20d": 1.27, "indexPrice": 1933.4, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "中药", "change": -0.93, "inflow": -1.5, "riseCount": 25, "fallCount": 41, "risePct": 36.8, "leader": "东阿阿胶", "leaderChange": 2.68, "stockCount": 68, "code": "881141", "accum3d": 7.51, "accum5d": -4.39, "accum10d": 4.25, "accum20d": 0.24, "indexPrice": 3035.91, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "橡胶制品", "change": -1.58, "inflow": -1.52, "riseCount": 6, "fallCount": 14, "risePct": 27.3, "leader": "中裕科技", "leaderChange": 2.87, "stockCount": 22, "code": "881266", "accum3d": 0.62, "accum5d": 0.3, "accum10d": -0.28, "accum20d": 7.28, "indexPrice": 11912.5, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "风电设备", "change": -1.46, "inflow": -1.69, "riseCount": 11, "fallCount": 20, "risePct": 35.5, "leader": "电气风电", "leaderChange": 5.17, "stockCount": 31, "code": "881280", "accum3d": 4.97, "accum5d": 7.82, "accum10d": -1.33, "accum20d": -17.72, "indexPrice": 4046.71, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "黑色家电", "change": -1.17, "inflow": -1.78, "riseCount": 3, "fallCount": 6, "risePct": 33.3, "leader": "极米科技", "leaderChange": 2.09, "stockCount": 9, "code": "881132", "accum3d": 1.54, "accum5d": -0.63, "accum10d": -2.26, "accum20d": 0.62, "indexPrice": 3799.11, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "纺织制造", "change": -0.62, "inflow": -1.91, "riseCount": 15, "fallCount": 18, "risePct": 45.5, "leader": "富春染织", "leaderChange": 6.54, "stockCount": 33, "code": "881135", "accum3d": -0.58, "accum5d": 1.3, "accum10d": 1.0, "accum20d": -0.87, "indexPrice": 2132.19, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "旅游及酒店", "change": 0.52, "inflow": -2.0, "riseCount": 25, "fallCount": 8, "risePct": 71.4, "leader": "西安饮食", "leaderChange": 10.02, "stockCount": 35, "code": "881160", "accum3d": 4.44, "accum5d": 0.93, "accum10d": 1.08, "accum20d": -0.99, "indexPrice": 2647.03, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "服装家纺", "change": -0.5, "inflow": -2.18, "riseCount": 32, "fallCount": 37, "risePct": 42.7, "leader": "*ST萃华", "leaderChange": 10.16, "stockCount": 75, "code": "881136", "accum3d": 4.44, "accum5d": 0.79, "accum10d": 1.16, "accum20d": 0.88, "indexPrice": 2656.79, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "其他社会服务", "change": -1.01, "inflow": -2.35, "riseCount": 15, "fallCount": 26, "risePct": 17.9, "leader": "天溯计量", "leaderChange": 19.99, "stockCount": 84, "code": "881179", "accum3d": 2.91, "accum5d": 1.61, "accum10d": -0.1, "accum20d": 0.09, "indexPrice": 17673.1, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "环保设备", "change": -2.82, "inflow": -2.42, "riseCount": 8, "fallCount": 21, "risePct": 26.7, "leader": "神雾节能", "leaderChange": 9.97, "stockCount": 30, "code": "881284", "accum3d": 1.89, "accum5d": 0.46, "accum10d": -0.02, "accum20d": -1.98, "indexPrice": 1199.57, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "电机", "change": -2.17, "inflow": -2.67, "riseCount": 7, "fallCount": 19, "risePct": 26.9, "leader": "中电电机", "leaderChange": 6.93, "stockCount": 26, "code": "881277", "accum3d": 3.93, "accum5d": 2.16, "accum10d": -0.66, "accum20d": 0.94, "indexPrice": 3022.2, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "燃气", "change": -1.3, "inflow": -2.69, "riseCount": 8, "fallCount": 17, "risePct": 29.6, "leader": "佛燃能源", "leaderChange": 2.28, "stockCount": 27, "code": "881146", "accum3d": -1.03, "accum5d": 0.36, "accum10d": -0.57, "accum20d": -2.33, "indexPrice": 1718.28, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "非金属材料", "change": -4.66, "inflow": -3.25, "riseCount": 4, "fallCount": 12, "risePct": 25.0, "leader": "宁新新材", "leaderChange": 0.66, "stockCount": 16, "code": "881167", "accum3d": 1.34, "accum5d": 1.54, "accum10d": -0.16, "accum20d": -4.19, "indexPrice": 25870.1, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "通信服务", "change": -3.48, "inflow": -3.84, "riseCount": 6, "fallCount": 38, "risePct": 13.6, "leader": "中国电信", "leaderChange": 4.01, "stockCount": 44, "code": "881162", "accum3d": 2.5, "accum5d": -6.84, "accum10d": 3.23, "accum20d": -5.4, "indexPrice": 2399.12, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "自动化设备", "change": -4.62, "inflow": -4.07, "riseCount": 14, "fallCount": 82, "risePct": 14.6, "leader": "光韵达", "leaderChange": 4.62, "stockCount": 96, "code": "881171", "accum3d": 10.94, "accum5d": -10.19, "accum10d": -11.53, "accum20d": -28.87, "indexPrice": 24314.2, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "建筑材料", "change": -1.33, "inflow": -4.67, "riseCount": 19, "fallCount": 52, "risePct": 26.0, "leader": "国际复材", "leaderChange": 9.04, "stockCount": 73, "code": "881115", "accum3d": 24.79, "accum5d": -1.05, "accum10d": -13.03, "accum20d": -16.26, "indexPrice": 5119.84, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "化学原料", "change": -0.86, "inflow": -4.78, "riseCount": 25, "fallCount": 31, "risePct": 42.4, "leader": "金牛化工", "leaderChange": 6.77, "stockCount": 59, "code": "881108", "accum3d": 2.88, "accum5d": 9.34, "accum10d": -6.76, "accum20d": 1.18, "indexPrice": 3006.33, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "影视院线", "change": -1.82, "inflow": -4.81, "riseCount": 3, "fallCount": 16, "risePct": 15.0, "leader": "文投控股", "leaderChange": 1.94, "stockCount": 20, "code": "881274", "accum3d": 3.69, "accum5d": 1.41, "accum10d": 5.84, "accum20d": -0.94, "indexPrice": 1185.95, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "光伏设备", "change": -0.95, "inflow": -4.87, "riseCount": 29, "fallCount": 39, "risePct": 40.3, "leader": "弘元绿能", "leaderChange": 10.02, "stockCount": 72, "code": "881279", "accum3d": 8.71, "accum5d": 19.51, "accum10d": -13.78, "accum20d": -50.06, "indexPrice": 6757.07, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "综合", "change": -0.42, "inflow": -4.96, "riseCount": 6, "fallCount": 12, "risePct": 33.3, "leader": "特力A", "leaderChange": 9.99, "stockCount": 18, "code": "881165", "accum3d": 3.15, "accum5d": 11.61, "accum10d": -3.86, "accum20d": -3.15, "indexPrice": 2082.03, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "金属新材料", "change": -3.2, "inflow": -5.09, "riseCount": 7, "fallCount": 27, "risePct": 20.6, "leader": "惠同新材", "leaderChange": 3.39, "stockCount": 34, "code": "881114", "accum3d": 3.8, "accum5d": 2.03, "accum10d": -3.79, "accum20d": 6.3, "indexPrice": 12281.7, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "软件开发", "change": -0.35, "inflow": -5.16, "riseCount": 61, "fallCount": 76, "risePct": 44.2, "leader": "普联软件", "leaderChange": 20.03, "stockCount": 138, "code": "881272", "accum3d": 20.51, "accum5d": -18.87, "accum10d": 3.12, "accum20d": -37.76, "indexPrice": 1724.29, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "包装印刷", "change": -1.68, "inflow": -5.44, "riseCount": 15, "fallCount": 29, "risePct": 32.6, "leader": "英联股份", "leaderChange": 10.04, "stockCount": 46, "code": "881138", "accum3d": 2.64, "accum5d": 1.54, "accum10d": -0.34, "accum20d": -5.67, "indexPrice": 3961.15, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "证券", "change": 0.36, "inflow": -5.6, "riseCount": 35, "fallCount": 13, "risePct": 70.0, "leader": "华林证券", "leaderChange": 2.3, "stockCount": 50, "code": "881157", "accum3d": 1.01, "accum5d": 27.19, "accum10d": -35.41, "accum20d": -70.73, "indexPrice": 1467.02, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "其他电子", "change": -4.67, "inflow": -5.66, "riseCount": 4, "fallCount": 30, "risePct": 11.8, "leader": "盈方微", "leaderChange": 4.32, "stockCount": 34, "code": "881123", "accum3d": 4.89, "accum5d": -2.99, "accum10d": -3.87, "accum20d": -10.24, "indexPrice": 17352.6, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "房地产", "change": -0.73, "inflow": -5.95, "riseCount": 26, "fallCount": 53, "risePct": 29.5, "leader": "陆家嘴", "leaderChange": 9.96, "stockCount": 88, "code": "881153", "accum3d": 3.45, "accum5d": -2.77, "accum10d": -8.78, "accum20d": -14.51, "indexPrice": 1568.19, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "生物制品", "change": -2.19, "inflow": -6.26, "riseCount": 16, "fallCount": 39, "risePct": 29.1, "leader": "天坛生物", "leaderChange": 2.15, "stockCount": 55, "code": "881142", "accum3d": 5.5, "accum5d": -2.5, "accum10d": 1.38, "accum20d": -7.3, "indexPrice": 5460.77, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "能源金属", "change": -0.52, "inflow": -6.45, "riseCount": 4, "fallCount": 8, "risePct": 33.3, "leader": "*ST威领", "leaderChange": 10.05, "stockCount": 12, "code": "881267", "accum3d": 3.1, "accum5d": 12.41, "accum10d": -3.54, "accum20d": -11.5, "indexPrice": 29508.4, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "互联网电商", "change": -3.51, "inflow": -7.17, "riseCount": 4, "fallCount": 14, "risePct": 20.0, "leader": "若羽臣", "leaderChange": 3.37, "stockCount": 20, "code": "881177", "accum3d": 3.93, "accum5d": 1.62, "accum10d": 0.42, "accum20d": -2.84, "indexPrice": 8043.04, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "环境治理", "change": -1.59, "inflow": -8.43, "riseCount": 30, "fallCount": 77, "risePct": 27.0, "leader": "中科环保", "leaderChange": 4.36, "stockCount": 111, "code": "881181", "accum3d": 6.4, "accum5d": 9.85, "accum10d": -5.86, "accum20d": -2.91, "indexPrice": 3699.13, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "游戏", "change": -0.85, "inflow": -9.27, "riseCount": 8, "fallCount": 16, "risePct": 33.3, "leader": "凯撒文化", "leaderChange": 4.85, "stockCount": 24, "code": "881275", "accum3d": 7.61, "accum5d": -11.03, "accum10d": 2.85, "accum20d": 12.88, "indexPrice": 8568.89, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "其他电源设备", "change": -3.81, "inflow": -10.72, "riseCount": 3, "fallCount": 31, "risePct": 8.6, "leader": "西子洁能", "leaderChange": 10.04, "stockCount": 35, "code": "881282", "accum3d": 6.09, "accum5d": 4.75, "accum10d": 1.83, "accum20d": -16.44, "indexPrice": 5367.49, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "医疗服务", "change": -3.4, "inflow": -11.44, "riseCount": 7, "fallCount": 49, "risePct": 12.5, "leader": "华厦眼科", "leaderChange": 2.66, "stockCount": 56, "code": "881175", "accum3d": 2.2, "accum5d": -0.93, "accum10d": -17.51, "accum20d": -12.91, "indexPrice": 16621.8, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "塑料制品", "change": -2.89, "inflow": -11.93, "riseCount": 10, "fallCount": 65, "risePct": 13.0, "leader": "双星新材", "leaderChange": 10.04, "stockCount": 77, "code": "881265", "accum3d": 9.63, "accum5d": 2.55, "accum10d": -8.49, "accum20d": -7.97, "indexPrice": 9101.41, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "建筑装饰", "change": -1.54, "inflow": -13.53, "riseCount": 46, "fallCount": 92, "risePct": 32.2, "leader": "蕾奥规划", "leaderChange": 11.92, "stockCount": 143, "code": "881116", "accum3d": 1.57, "accum5d": 9.17, "accum10d": -9.64, "accum20d": -17.68, "indexPrice": 3708.52, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "电子化学品", "change": -7.35, "inflow": -14.75, "riseCount": 1, "fallCount": 42, "risePct": 2.3, "leader": "国瓷材料", "leaderChange": 3.65, "stockCount": 43, "code": "881172", "accum3d": 15.64, "accum5d": -11.42, "accum10d": -11.05, "accum20d": -8.66, "indexPrice": 72692.1, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "专用设备", "change": -2.31, "inflow": -15.2, "riseCount": 44, "fallCount": 152, "risePct": 22.0, "leader": "春光智能", "leaderChange": 11.12, "stockCount": 200, "code": "881118", "accum3d": 21.22, "accum5d": 1.5, "accum10d": -5.96, "accum20d": -14.04, "indexPrice": 6573.34, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "化学制品", "change": -1.95, "inflow": -15.25, "riseCount": 47, "fallCount": 129, "risePct": 26.4, "leader": "高争民爆", "leaderChange": 10.0, "stockCount": 178, "code": "881109", "accum3d": 16.5, "accum5d": 7.94, "accum10d": -16.2, "accum20d": -4.53, "indexPrice": 6481.53, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "军工装备", "change": -1.5, "inflow": -16.03, "riseCount": 27, "fallCount": 55, "risePct": 32.9, "leader": "长城军工", "leaderChange": 6.96, "stockCount": 82, "code": "881166", "accum3d": 10.48, "accum5d": 20.66, "accum10d": -22.1, "accum20d": -29.95, "indexPrice": 1970.38, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "军工电子", "change": -2.81, "inflow": -16.25, "riseCount": 6, "fallCount": 54, "risePct": 9.7, "leader": "鸿远电子", "leaderChange": 6.68, "stockCount": 62, "code": "881276", "accum3d": 4.83, "accum5d": -6.28, "accum10d": -4.89, "accum20d": -3.22, "indexPrice": 10582.6, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "汽车零部件", "change": -1.33, "inflow": -16.65, "riseCount": 91, "fallCount": 172, "risePct": 33.6, "leader": "纳百川", "leaderChange": 20.0, "stockCount": 271, "code": "881126", "accum3d": 15.23, "accum5d": 7.25, "accum10d": -1.96, "accum20d": 8.0, "indexPrice": 5305.77, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "元件", "change": -6.58, "inflow": -17.83, "riseCount": 4, "fallCount": 58, "risePct": 6.5, "leader": "东晶电子", "leaderChange": 6.35, "stockCount": 62, "code": "881270", "accum3d": 49.78, "accum5d": -51.89, "accum10d": -37.3, "accum20d": -68.6, "indexPrice": 18688.4, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "化学制药", "change": -1.97, "inflow": -19.27, "riseCount": 35, "fallCount": 122, "risePct": 22.2, "leader": "海南海药", "leaderChange": 9.98, "stockCount": 158, "code": "881140", "accum3d": 17.65, "accum5d": -7.44, "accum10d": -12.06, "accum20d": -14.47, "indexPrice": 5777.06, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "工业金属", "change": -1.13, "inflow": -22.53, "riseCount": 19, "fallCount": 36, "risePct": 34.5, "leader": "华峰铝业", "leaderChange": 4.25, "stockCount": 55, "code": "881168", "accum3d": 2.45, "accum5d": 49.96, "accum10d": -12.97, "accum20d": -7.83, "indexPrice": 3983.06, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "IT服务", "change": -1.69, "inflow": -22.86, "riseCount": 33, "fallCount": 96, "risePct": 25.6, "leader": "税友股份", "leaderChange": 10.0, "stockCount": 129, "code": "881271", "accum3d": 8.42, "accum5d": -29.57, "accum10d": 0.07, "accum20d": -23.77, "indexPrice": 10803.8, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "通信设备", "change": -5.33, "inflow": -23.5, "riseCount": 8, "fallCount": 81, "risePct": 8.8, "leader": "*ST春兴", "leaderChange": 9.96, "stockCount": 91, "code": "881129", "accum3d": 23.43, "accum5d": -70.59, "accum10d": -67.53, "accum20d": -88.54, "indexPrice": 7510.01, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "通用设备", "change": -3.4, "inflow": -26.21, "riseCount": 35, "fallCount": 214, "risePct": 13.9, "leader": "欣兴工具", "leaderChange": 145.38, "stockCount": 252, "code": "881117", "accum3d": 31.77, "accum5d": -0.38, "accum10d": -1.92, "accum20d": 7.46, "indexPrice": 7860.09, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "小金属", "change": -2.98, "inflow": -26.27, "riseCount": 3, "fallCount": 26, "risePct": 10.3, "leader": "宜安科技", "leaderChange": 1.38, "stockCount": 29, "code": "881170", "accum3d": 13.11, "accum5d": 3.03, "accum10d": -16.51, "accum20d": 5.38, "indexPrice": 7740.06, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "电网设备", "change": -2.46, "inflow": -26.64, "riseCount": 27, "fallCount": 113, "risePct": 19.3, "leader": "昊创瑞通", "leaderChange": 20.0, "stockCount": 140, "code": "881278", "accum3d": 14.2, "accum5d": 39.05, "accum10d": -9.24, "accum20d": -21.58, "indexPrice": 5963.0, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "计算机设备", "change": -2.38, "inflow": -27.04, "riseCount": 17, "fallCount": 64, "risePct": 20.5, "leader": "ST达华", "leaderChange": 10.15, "stockCount": 83, "code": "881130", "accum3d": 7.37, "accum5d": -19.18, "accum10d": 7.43, "accum20d": -33.31, "indexPrice": 3553.18, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "电力", "change": -1.44, "inflow": -44.05, "riseCount": 34, "fallCount": 76, "risePct": 30.9, "leader": "华光环能", "leaderChange": 9.98, "stockCount": 110, "code": "881145", "accum3d": 10.11, "accum5d": -0.73, "accum10d": -30.29, "accum20d": 0.98, "indexPrice": 1901.54, "continuousDays": 0, "tagInfo": {"tag": "⚡", "label": "异动流出", "reason": "单日净流出44.0亿，超2σ(43亿)"}}, {"name": "半导体", "change": -7.08, "inflow": -44.45, "riseCount": 7, "fallCount": 176, "risePct": 3.8, "leader": "德明利", "leaderChange": 10.0, "stockCount": 183, "code": "881121", "accum3d": 489.69, "accum5d": -193.2, "accum10d": -14.49, "accum20d": -44.21, "indexPrice": 13932.1, "continuousDays": 0, "tagInfo": {"tag": "⚡", "label": "异动流出", "reason": "单日净流出44.5亿，超2σ(43亿)"}}, {"name": "消费电子", "change": -4.25, "inflow": -54.7, "riseCount": 13, "fallCount": 83, "risePct": 13.5, "leader": "昀冢科技", "leaderChange": 16.16, "stockCount": 96, "code": "881124", "accum3d": 11.25, "accum5d": 5.68, "accum10d": 8.38, "accum20d": -62.98, "indexPrice": 10536.3, "continuousDays": 0, "tagInfo": {"tag": "⚡", "label": "异动流出", "reason": "单日净流出54.7亿，超2σ(43亿)"}}, {"name": "光学光电子", "change": -4.44, "inflow": -68.7, "riseCount": 7, "fallCount": 99, "risePct": 6.5, "leader": "恒太照明", "leaderChange": 3.03, "stockCount": 107, "code": "881122", "accum3d": 28.0, "accum5d": -17.72, "accum10d": -39.69, "accum20d": 25.55, "indexPrice": 4573.49, "continuousDays": 0, "tagInfo": {"tag": "⚡", "label": "异动流出", "reason": "单日净流出68.7亿，超2σ(43亿)"}}], "2026-07-31": [{"name": "软件开发", "change": 6.87, "inflow": 80.34, "riseCount": 138, "fallCount": 0, "risePct": 100.0, "leader": "福昕软件", "leaderChange": 20.0, "stockCount": 138, "code": "881272", "accum3d": 0.66, "accum5d": -45.79, "accum10d": -24.65, "accum20d": -16.77, "indexPrice": 1842.71, "continuousDays": 1, "tagInfo": {"tag": "⚡", "label": "异动流入", "reason": "单日净流入80.3亿，超2σ(43亿)"}}, {"name": "文化传媒", "change": 5.68, "inflow": 58.13, "riseCount": 78, "fallCount": 6, "risePct": 92.9, "leader": "中文在线", "leaderChange": 20.01, "stockCount": 84, "code": "881164", "accum3d": 5.64, "accum5d": -18.27, "accum10d": -24.43, "accum20d": -28.03, "indexPrice": 2565.94, "continuousDays": 1, "tagInfo": {"tag": "⚡", "label": "异动流入", "reason": "单日净流入58.1亿，超2σ(43亿)"}}, {"name": "IT服务", "change": 6.9, "inflow": 46.46, "riseCount": 126, "fallCount": 3, "risePct": 0.0, "leader": "立方控股", "leaderChange": 29.98, "stockCount": 129, "code": "881271", "accum3d": -9.03, "accum5d": -28.66, "accum10d": -37.47, "accum20d": -3.98, "indexPrice": 11549.3, "continuousDays": 1, "tagInfo": {"tag": "⚡", "label": "异动流入", "reason": "单日净流入46.5亿，超2σ(43亿)"}}, {"name": "通信设备", "change": 5.64, "inflow": 33.77, "riseCount": 83, "fallCount": 7, "risePct": 0.0, "leader": "长芯博创", "leaderChange": 14.49, "stockCount": 91, "code": "881129", "accum3d": -126.54, "accum5d": -30.41, "accum10d": -25.64, "accum20d": 41.23, "indexPrice": 7933.25, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "通用设备", "change": 4.36, "inflow": 32.26, "riseCount": 238, "fallCount": 13, "risePct": 0.0, "leader": "长鹰硬科", "leaderChange": 20.11, "stockCount": 252, "code": "881117", "accum3d": -38.7, "accum5d": -12.06, "accum10d": -23.71, "accum20d": 21.67, "indexPrice": 8203.0, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "游戏", "change": 5.2, "inflow": 25.24, "riseCount": 24, "fallCount": 0, "risePct": 100.0, "leader": "昆仑万维", "leaderChange": 19.92, "stockCount": 24, "code": "881275", "accum3d": -2.99, "accum5d": -12.52, "accum10d": -25.09, "accum20d": -15.44, "indexPrice": 9014.43, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "汽车零部件", "change": 2.73, "inflow": 20.63, "riseCount": 245, "fallCount": 24, "risePct": 87.1, "leader": "斯菱智驱", "leaderChange": 12.47, "stockCount": 271, "code": "881126", "accum3d": -14.49, "accum5d": -21.53, "accum10d": -24.3, "accum20d": 65.64, "indexPrice": 5450.42, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "光学光电子", "change": 4.67, "inflow": 18.83, "riseCount": 104, "fallCount": 3, "risePct": 94.4, "leader": "奥比中光", "leaderChange": 18.41, "stockCount": 107, "code": "881122", "accum3d": -70.13, "accum5d": -25.54, "accum10d": -15.86, "accum20d": -103.6, "indexPrice": 4787.0, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "计算机设备", "change": 4.97, "inflow": 18.5, "riseCount": 82, "fallCount": 0, "risePct": 95.2, "leader": "视声智能", "leaderChange": 25.97, "stockCount": 83, "code": "881130", "accum3d": -31.25, "accum5d": -9.52, "accum10d": -31.21, "accum20d": 6.44, "indexPrice": 3729.95, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "通信服务", "change": 5.34, "inflow": 18.12, "riseCount": 39, "fallCount": 5, "risePct": 88.6, "leader": "首都在线", "leaderChange": 12.33, "stockCount": 44, "code": "881162", "accum3d": 4.77, "accum5d": -10.6, "accum10d": -1.57, "accum20d": -11.64, "indexPrice": 2527.21, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "工业金属", "change": 1.86, "inflow": 18.08, "riseCount": 50, "fallCount": 5, "risePct": 90.9, "leader": "永茂泰", "leaderChange": 7.45, "stockCount": 55, "code": "881168", "accum3d": -15.26, "accum5d": -46.7, "accum10d": -38.58, "accum20d": 1.0, "indexPrice": 4057.09, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "自动化设备", "change": 6.0, "inflow": 16.51, "riseCount": 94, "fallCount": 2, "risePct": 0.0, "leader": "中控技术", "leaderChange": 17.95, "stockCount": 96, "code": "881171", "accum3d": -25.43, "accum5d": -7.37, "accum10d": -0.22, "accum20d": 33.05, "indexPrice": 25773.0, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "贵金属", "change": 3.71, "inflow": 16.06, "riseCount": 14, "fallCount": 0, "risePct": 100.0, "leader": "招金黄金", "leaderChange": 10.0, "stockCount": 14, "code": "881169", "accum3d": -4.8, "accum5d": -20.17, "accum10d": -17.09, "accum20d": 10.79, "indexPrice": 4911.74, "continuousDays": 2, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "医疗服务", "change": 3.33, "inflow": 13.08, "riseCount": 51, "fallCount": 5, "risePct": 91.1, "leader": "迪安诊断", "leaderChange": 13.74, "stockCount": 56, "code": "881175", "accum3d": -16.16, "accum5d": -7.44, "accum10d": -22.76, "accum20d": 4.24, "indexPrice": 17175.3, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "影视院线", "change": 5.3, "inflow": 10.31, "riseCount": 20, "fallCount": 0, "risePct": 0.0, "leader": "捷成股份", "leaderChange": 11.28, "stockCount": 20, "code": "881274", "accum3d": -4.65, "accum5d": -6.95, "accum10d": -8.9, "accum20d": -3.91, "indexPrice": 1248.82, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "白色家电", "change": 2.5, "inflow": 9.56, "riseCount": 37, "fallCount": 7, "risePct": 0.0, "leader": "宏昌科技", "leaderChange": 8.04, "stockCount": 44, "code": "881131", "accum3d": 6.07, "accum5d": -5.78, "accum10d": -4.22, "accum20d": 25.42, "indexPrice": 7474.66, "continuousDays": 2, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "军工电子", "change": 3.66, "inflow": 8.78, "riseCount": 59, "fallCount": 3, "risePct": 95.2, "leader": "华丰科技", "leaderChange": 14.16, "stockCount": 62, "code": "881276", "accum3d": -20.86, "accum5d": -2.59, "accum10d": -13.57, "accum20d": 5.27, "indexPrice": 10969.9, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "电机", "change": 3.99, "inflow": 8.16, "riseCount": 25, "fallCount": 1, "risePct": 96.2, "leader": "卧龙电驱", "leaderChange": 9.89, "stockCount": 26, "code": "881277", "accum3d": -2.62, "accum5d": -3.57, "accum10d": -4.79, "accum20d": 9.21, "indexPrice": 3142.7, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "建筑材料", "change": 1.95, "inflow": 7.61, "riseCount": 56, "fallCount": 14, "risePct": 76.7, "leader": "志特新材", "leaderChange": 15.65, "stockCount": 73, "code": "881115", "accum3d": -21.73, "accum5d": -6.86, "accum10d": -2.16, "accum20d": 14.98, "indexPrice": 5219.53, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "专用设备", "change": 3.09, "inflow": 7.3, "riseCount": 181, "fallCount": 19, "risePct": 0.0, "leader": "利和兴", "leaderChange": 16.08, "stockCount": 200, "code": "881118", "accum3d": -26.04, "accum5d": -10.03, "accum10d": -21.43, "accum20d": 6.02, "indexPrice": 6776.46, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "其他电子", "change": 5.25, "inflow": 7.05, "riseCount": 33, "fallCount": 1, "risePct": 97.1, "leader": "英唐智控", "leaderChange": 9.91, "stockCount": 34, "code": "881123", "accum3d": -13.06, "accum5d": -1.99, "accum10d": -6.84, "accum20d": -2.16, "indexPrice": 18264.3, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "塑料制品", "change": 4.07, "inflow": 5.86, "riseCount": 73, "fallCount": 4, "risePct": 96.1, "leader": "上纬新材", "leaderChange": 12.67, "stockCount": 77, "code": "881265", "accum3d": -11.29, "accum5d": -6.82, "accum10d": -10.62, "accum20d": -1.01, "indexPrice": 9471.92, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "化学制药", "change": 1.59, "inflow": 5.71, "riseCount": 138, "fallCount": 18, "risePct": 82.3, "leader": "多瑞医药", "leaderChange": 16.29, "stockCount": 158, "code": "881140", "accum3d": -25.92, "accum5d": -40.77, "accum10d": -61.54, "accum20d": 12.13, "indexPrice": 5869.06, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "消费电子", "change": 4.77, "inflow": 5.57, "riseCount": 88, "fallCount": 6, "risePct": 0.0, "leader": "博硕科技", "leaderChange": 11.87, "stockCount": 96, "code": "881124", "accum3d": -66.52, "accum5d": -5.11, "accum10d": -32.25, "accum20d": 57.0, "indexPrice": 11038.8, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "小金属", "change": 3.2, "inflow": 5.15, "riseCount": 28, "fallCount": 1, "risePct": 96.6, "leader": "云南锗业", "leaderChange": 10.0, "stockCount": 29, "code": "881170", "accum3d": -35.01, "accum5d": -24.31, "accum10d": -9.34, "accum20d": -12.69, "indexPrice": 7987.57, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "汽车整车", "change": -0.29, "inflow": 4.95, "riseCount": 9, "fallCount": 13, "risePct": 39.1, "leader": "江淮汽车", "leaderChange": 5.25, "stockCount": 23, "code": "881125", "accum3d": 7.27, "accum5d": -7.71, "accum10d": -12.99, "accum20d": 13.46, "indexPrice": 2665.55, "continuousDays": 2, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "医疗器械", "change": 2.39, "inflow": 4.69, "riseCount": 124, "fallCount": 15, "risePct": 0.0, "leader": "康众医疗", "leaderChange": 20.0, "stockCount": 140, "code": "881144", "accum3d": -1.95, "accum5d": -9.9, "accum10d": -27.16, "accum20d": 1.48, "indexPrice": 10375.6, "continuousDays": 2, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "互联网电商", "change": 4.01, "inflow": 4.2, "riseCount": 20, "fallCount": 0, "risePct": 100.0, "leader": "壹网壹创", "leaderChange": 10.07, "stockCount": 20, "code": "881177", "accum3d": -5.06, "accum5d": -7.01, "accum10d": -4.74, "accum20d": 0.42, "indexPrice": 8365.39, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "环境治理", "change": 2.24, "inflow": 3.8, "riseCount": 89, "fallCount": 19, "risePct": 80.2, "leader": "冠中生态", "leaderChange": 14.55, "stockCount": 111, "code": "881181", "accum3d": -7.09, "accum5d": -6.44, "accum10d": -11.02, "accum20d": 2.55, "indexPrice": 3782.1, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "电子化学品", "change": 6.64, "inflow": 2.98, "riseCount": 40, "fallCount": 3, "risePct": 100.0, "leader": "方邦股份", "leaderChange": 15.81, "stockCount": 43, "code": "881172", "accum3d": -23.25, "accum5d": 10.56, "accum10d": -7.99, "accum20d": -38.6, "indexPrice": 77521.4, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "零售", "change": 1.34, "inflow": 2.96, "riseCount": 62, "fallCount": 8, "risePct": 78.9, "leader": "锦和商管", "leaderChange": 9.97, "stockCount": 71, "code": "881158", "accum3d": 5.22, "accum5d": -13.47, "accum10d": -13.64, "accum20d": -3.46, "indexPrice": 1774.6, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "光伏设备", "change": 2.48, "inflow": 2.85, "riseCount": 60, "fallCount": 9, "risePct": 91.7, "leader": "金刚光伏", "leaderChange": 15.19, "stockCount": 72, "code": "881279", "accum3d": -14.14, "accum5d": -15.36, "accum10d": -8.53, "accum20d": -37.56, "indexPrice": 6924.82, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "黑色家电", "change": 2.52, "inflow": 2.82, "riseCount": 7, "fallCount": 2, "risePct": 77.8, "leader": "九联科技", "leaderChange": 7.39, "stockCount": 9, "code": "881132", "accum3d": -1.56, "accum5d": -3.72, "accum10d": -4.63, "accum20d": -2.16, "indexPrice": 3894.8, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "包装印刷", "change": 2.42, "inflow": 2.7, "riseCount": 38, "fallCount": 8, "risePct": 78.3, "leader": "金富科技", "leaderChange": 10.02, "stockCount": 46, "code": "881138", "accum3d": -3.08, "accum5d": -2.23, "accum10d": -1.45, "accum20d": -2.61, "indexPrice": 4056.88, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "生物制品", "change": 2.23, "inflow": 2.61, "riseCount": 50, "fallCount": 5, "risePct": 90.9, "leader": "赛伦生物", "leaderChange": 11.21, "stockCount": 55, "code": "881142", "accum3d": -5.91, "accum5d": -12.06, "accum10d": -15.37, "accum20d": 5.03, "indexPrice": 5582.31, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "服装家纺", "change": 1.69, "inflow": 2.53, "riseCount": 61, "fallCount": 13, "risePct": 73.3, "leader": "酷特智能", "leaderChange": 14.01, "stockCount": 75, "code": "881136", "accum3d": -0.75, "accum5d": -3.27, "accum10d": -6.53, "accum20d": 2.12, "indexPrice": 2701.58, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "其他社会服务", "change": 3.25, "inflow": 2.47, "riseCount": 37, "fallCount": 5, "risePct": 44.0, "leader": "杰恩股份", "leaderChange": 17.4, "stockCount": 84, "code": "881179", "accum3d": -0.21, "accum5d": -2.0, "accum10d": -4.45, "accum20d": -1.83, "indexPrice": 18247.4, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "军工装备", "change": 2.0, "inflow": 2.05, "riseCount": 65, "fallCount": 16, "risePct": 73.2, "leader": "迈信林", "leaderChange": 11.52, "stockCount": 82, "code": "881166", "accum3d": -27.85, "accum5d": -19.58, "accum10d": -24.36, "accum20d": 51.2, "indexPrice": 2009.83, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "种植业与林业", "change": 1.31, "inflow": 1.86, "riseCount": 27, "fallCount": 3, "risePct": 0.0, "leader": "宏辉果蔬", "leaderChange": 10.02, "stockCount": 30, "code": "881101", "accum3d": -2.04, "accum5d": -3.47, "accum10d": -5.36, "accum20d": -1.28, "indexPrice": 3799.04, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "煤炭开采加工", "change": 0.16, "inflow": 1.85, "riseCount": 18, "fallCount": 13, "risePct": 0.0, "leader": "华电能源", "leaderChange": 5.02, "stockCount": 34, "code": "881105", "accum3d": -4.76, "accum5d": -15.28, "accum10d": -3.32, "accum20d": -0.51, "indexPrice": 2772.11, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "港口航运", "change": -0.3, "inflow": 1.67, "riseCount": 24, "fallCount": 7, "risePct": 0.0, "leader": "中远海特", "leaderChange": 3.01, "stockCount": 36, "code": "881148", "accum3d": 0.45, "accum5d": -5.26, "accum10d": -3.15, "accum20d": 2.55, "indexPrice": 1200.81, "continuousDays": 2, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "美容护理", "change": 1.06, "inflow": 1.64, "riseCount": 21, "fallCount": 12, "risePct": 63.6, "leader": "水羊股份", "leaderChange": 7.03, "stockCount": 33, "code": "881182", "accum3d": 0.2, "accum5d": -3.11, "accum10d": -4.1, "accum20d": 0.75, "indexPrice": 4766.18, "continuousDays": 2, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "金属新材料", "change": 3.56, "inflow": 1.64, "riseCount": 31, "fallCount": 3, "risePct": 100.0, "leader": "江南新材", "leaderChange": 10.0, "stockCount": 34, "code": "881114", "accum3d": -6.49, "accum5d": -5.0, "accum10d": -3.66, "accum20d": -0.36, "indexPrice": 12719.3, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "其他电源设备", "change": 4.25, "inflow": 1.63, "riseCount": 34, "fallCount": 1, "risePct": 97.1, "leader": "爱科赛博", "leaderChange": 11.17, "stockCount": 35, "code": "881282", "accum3d": -15.15, "accum5d": -8.82, "accum10d": 4.2, "accum20d": 10.31, "indexPrice": 5595.81, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "造纸", "change": 1.62, "inflow": 1.44, "riseCount": 21, "fallCount": 3, "risePct": 75.0, "leader": "安妮股份", "leaderChange": 9.59, "stockCount": 24, "code": "881137", "accum3d": -0.67, "accum5d": -2.58, "accum10d": -1.63, "accum20d": 1.17, "indexPrice": 1964.66, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "中药", "change": 1.23, "inflow": 1.23, "riseCount": 56, "fallCount": 10, "risePct": 67.6, "leader": "维康药业", "leaderChange": 12.66, "stockCount": 68, "code": "881141", "accum3d": -5.15, "accum5d": -14.05, "accum10d": -17.63, "accum20d": 1.8, "indexPrice": 3073.11, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "食品加工制造", "change": 0.94, "inflow": 1.11, "riseCount": 45, "fallCount": 17, "risePct": 68.2, "leader": "莲花控股", "leaderChange": 7.46, "stockCount": 66, "code": "881134", "accum3d": 2.14, "accum5d": -5.16, "accum10d": -5.27, "accum20d": -2.47, "indexPrice": 4552.42, "continuousDays": 2, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "白酒", "change": -0.02, "inflow": 1.09, "riseCount": 11, "fallCount": 8, "risePct": 57.9, "leader": "舍得酒业", "leaderChange": 2.83, "stockCount": 19, "code": "881273", "accum3d": 19.78, "accum5d": -9.86, "accum10d": 1.83, "accum20d": -8.95, "indexPrice": 2093.29, "continuousDays": 2, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "综合", "change": 1.92, "inflow": 0.9, "riseCount": 16, "fallCount": 2, "risePct": 0.0, "leader": "东阳光", "leaderChange": 10.01, "stockCount": 18, "code": "881165", "accum3d": -7.66, "accum5d": -10.39, "accum10d": -4.35, "accum20d": -2.96, "indexPrice": 2121.96, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "化学纤维", "change": 0.84, "inflow": 0.89, "riseCount": 19, "fallCount": 7, "risePct": 65.5, "leader": "宝丽迪", "leaderChange": 4.31, "stockCount": 29, "code": "881264", "accum3d": -0.57, "accum5d": -5.82, "accum10d": -0.77, "accum20d": -6.19, "indexPrice": 3509.49, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "多元金融", "change": 0.96, "inflow": 0.87, "riseCount": 19, "fallCount": 7, "risePct": 0.0, "leader": "仁东控股", "leaderChange": 4.98, "stockCount": 26, "code": "881283", "accum3d": -0.65, "accum5d": -9.25, "accum10d": -3.68, "accum20d": -0.59, "indexPrice": 1067.32, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "机场航运", "change": -0.14, "inflow": 0.86, "riseCount": 5, "fallCount": 6, "risePct": 38.5, "leader": "华夏航空", "leaderChange": 1.55, "stockCount": 13, "code": "881151", "accum3d": 1.23, "accum5d": -6.56, "accum10d": -4.09, "accum20d": -5.32, "indexPrice": 1824.19, "continuousDays": 2, "tagInfo": {"tag": "💤", "label": "休眠", "reason": "低波动，资金平淡"}}, {"name": "医药商业", "change": 1.18, "inflow": 0.84, "riseCount": 23, "fallCount": 9, "risePct": 71.9, "leader": "漱玉平民", "leaderChange": 7.8, "stockCount": 32, "code": "881143", "accum3d": -0.82, "accum5d": -4.21, "accum10d": -4.79, "accum20d": 0.11, "indexPrice": 4412.63, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "钢铁", "change": 0.01, "inflow": 0.57, "riseCount": 19, "fallCount": 20, "risePct": 43.2, "leader": "杭钢股份", "leaderChange": 6.51, "stockCount": 44, "code": "881112", "accum3d": -2.63, "accum5d": -13.88, "accum10d": -5.48, "accum20d": -6.77, "indexPrice": 1513.73, "continuousDays": 1, "tagInfo": {"tag": "💤", "label": "休眠", "reason": "低波动，资金平淡"}}, {"name": "旅游及酒店", "change": 1.22, "inflow": 0.55, "riseCount": 29, "fallCount": 5, "risePct": 82.9, "leader": "华天酒店", "leaderChange": 9.92, "stockCount": 35, "code": "881160", "accum3d": 0.79, "accum5d": -5.29, "accum10d": -4.73, "accum20d": -0.43, "indexPrice": 2679.33, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "教育", "change": 4.4, "inflow": 0.52, "riseCount": 13, "fallCount": 2, "risePct": 86.7, "leader": "科德教育", "leaderChange": 12.68, "stockCount": 15, "code": "881178", "accum3d": 1.04, "accum5d": -1.71, "accum10d": -1.63, "accum20d": -0.21, "indexPrice": 3965.41, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "汽车服务及其他", "change": 1.15, "inflow": 0.47, "riseCount": 17, "fallCount": 8, "risePct": 68.0, "leader": "涛涛车业", "leaderChange": 9.46, "stockCount": 25, "code": "881128", "accum3d": 0.32, "accum5d": 0.07, "accum10d": -0.82, "accum20d": -0.65, "indexPrice": 1054.7, "continuousDays": 2, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "燃气", "change": 1.36, "inflow": 0.47, "riseCount": 22, "fallCount": 3, "risePct": 0.0, "leader": "德龙汇能", "leaderChange": 10.01, "stockCount": 27, "code": "881146", "accum3d": -2.98, "accum5d": -3.24, "accum10d": -0.58, "accum20d": -0.47, "indexPrice": 1741.71, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "化学制品", "change": 1.88, "inflow": 0.27, "riseCount": 148, "fallCount": 25, "risePct": 0.0, "leader": "高争民爆", "leaderChange": 10.02, "stockCount": 179, "code": "881109", "accum3d": -17.34, "accum5d": -23.99, "accum10d": -16.52, "accum20d": -35.89, "indexPrice": 6603.55, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "风电设备", "change": 1.73, "inflow": 0.26, "riseCount": 23, "fallCount": 7, "risePct": 67.7, "leader": "飞沃科技", "leaderChange": 7.39, "stockCount": 31, "code": "881280", "accum3d": -3.52, "accum5d": -7.72, "accum10d": -4.89, "accum20d": 14.14, "indexPrice": 4116.89, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "橡胶制品", "change": 2.36, "inflow": 0.24, "riseCount": 20, "fallCount": 2, "risePct": 90.9, "leader": "科创新源", "leaderChange": 13.08, "stockCount": 22, "code": "881266", "accum3d": -0.49, "accum5d": -0.43, "accum10d": -1.84, "accum20d": -3.33, "indexPrice": 12193.2, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "电网设备", "change": 2.14, "inflow": 0.22, "riseCount": 122, "fallCount": 15, "risePct": 84.3, "leader": "光格科技", "leaderChange": 10.62, "stockCount": 140, "code": "881278", "accum3d": -32.7, "accum5d": -29.15, "accum10d": -6.99, "accum20d": 1.34, "indexPrice": 6090.53, "continuousDays": 1, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "农产品加工", "change": 0.75, "inflow": 0.2, "riseCount": 28, "fallCount": 11, "risePct": 65.1, "leader": "路德科技", "leaderChange": 4.87, "stockCount": 43, "code": "881103", "accum3d": 0.42, "accum5d": -4.66, "accum10d": -4.0, "accum20d": -2.13, "indexPrice": 3410.0, "continuousDays": 2, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "小家电", "change": 1.57, "inflow": 0.07, "riseCount": 19, "fallCount": 7, "risePct": 69.2, "leader": "利仁科技", "leaderChange": 7.65, "stockCount": 26, "code": "881173", "accum3d": 2.26, "accum5d": -0.69, "accum10d": -1.44, "accum20d": 1.54, "indexPrice": 3878.34, "continuousDays": 2, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "证券", "change": 0.24, "inflow": 0.03, "riseCount": 27, "fallCount": 20, "risePct": 54.0, "leader": "锦龙股份", "leaderChange": 4.77, "stockCount": 50, "code": "881157", "accum3d": -40.56, "accum5d": -66.04, "accum10d": -15.88, "accum20d": -6.07, "indexPrice": 1470.56, "continuousDays": 1, "tagInfo": {"tag": "💤", "label": "休眠", "reason": "低波动，资金平淡"}}, {"name": "物流", "change": 0.62, "inflow": -0.06, "riseCount": 34, "fallCount": 15, "risePct": 60.0, "leader": "海晨股份", "leaderChange": 7.14, "stockCount": 50, "code": "881152", "accum3d": 2.13, "accum5d": -4.44, "accum10d": -4.14, "accum20d": -3.32, "indexPrice": 4914.8, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "贸易", "change": 0.82, "inflow": -0.09, "riseCount": 8, "fallCount": 5, "risePct": 57.1, "leader": "凯瑞德", "leaderChange": 3.15, "stockCount": 14, "code": "881159", "accum3d": 0.65, "accum5d": -1.51, "accum10d": -1.29, "accum20d": -1.55, "indexPrice": 2427.11, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "饮料制造", "change": 1.49, "inflow": -0.16, "riseCount": 37, "fallCount": 7, "risePct": 0.0, "leader": "安德利", "leaderChange": 10.0, "stockCount": 47, "code": "881133", "accum3d": 3.5, "accum5d": -4.17, "accum10d": -3.26, "accum20d": -0.9, "indexPrice": 4714.57, "continuousDays": 0, "tagInfo": {"tag": "👀", "label": "候选", "reason": "3日累计转正"}}, {"name": "轨交设备", "change": 1.53, "inflow": -0.37, "riseCount": 25, "fallCount": 4, "risePct": 83.3, "leader": "工大高科", "leaderChange": 6.5, "stockCount": 30, "code": "881269", "accum3d": 1.32, "accum5d": -2.06, "accum10d": -0.79, "accum20d": -1.59, "indexPrice": 936.068, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "家居用品", "change": 1.96, "inflow": -0.37, "riseCount": 77, "fallCount": 22, "risePct": 77.8, "leader": "爱丽家居", "leaderChange": 10.01, "stockCount": 99, "code": "881139", "accum3d": -0.91, "accum5d": -4.39, "accum10d": -1.61, "accum20d": -1.14, "indexPrice": 3614.72, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "厨卫电器", "change": -0.65, "inflow": -0.54, "riseCount": 3, "fallCount": 6, "risePct": 0.0, "leader": "亿田智能", "leaderChange": 3.75, "stockCount": 9, "code": "881174", "accum3d": 0.24, "accum5d": -0.56, "accum10d": -0.79, "accum20d": -0.13, "indexPrice": 5520.9, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "石油加工贸易", "change": 1.14, "inflow": -0.66, "riseCount": 17, "fallCount": 10, "risePct": 63.0, "leader": "恒通股份", "leaderChange": 6.26, "stockCount": 27, "code": "881180", "accum3d": 1.61, "accum5d": -2.83, "accum10d": 5.1, "accum20d": 3.69, "indexPrice": 3291.16, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "工程机械", "change": 1.42, "inflow": -0.76, "riseCount": 22, "fallCount": 14, "risePct": 61.1, "leader": "万达轴承", "leaderChange": 7.86, "stockCount": 36, "code": "881268", "accum3d": 3.67, "accum5d": -2.2, "accum10d": -2.51, "accum20d": 7.47, "indexPrice": 2975.04, "continuousDays": 0, "tagInfo": {"tag": "👀", "label": "候选", "reason": "3日累计转正"}}, {"name": "房地产", "change": 1.65, "inflow": -1.04, "riseCount": 73, "fallCount": 13, "risePct": 0.0, "leader": "ST海泰", "leaderChange": 10.04, "stockCount": 88, "code": "881153", "accum3d": -6.85, "accum5d": -12.34, "accum10d": -11.71, "accum20d": -11.16, "indexPrice": 1594.0, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "化学原料", "change": 0.72, "inflow": -1.07, "riseCount": 34, "fallCount": 23, "risePct": 57.6, "leader": "振华股份", "leaderChange": 10.0, "stockCount": 59, "code": "881108", "accum3d": -6.85, "accum5d": -21.48, "accum10d": -5.66, "accum20d": -10.93, "indexPrice": 3028.0, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "环保设备", "change": 4.38, "inflow": -1.21, "riseCount": 28, "fallCount": 1, "risePct": 0.0, "leader": "先河环保", "leaderChange": 14.65, "stockCount": 30, "code": "881284", "accum3d": -1.09, "accum5d": -1.4, "accum10d": -1.32, "accum20d": -2.33, "indexPrice": 1252.07, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "非金属材料", "change": 4.21, "inflow": -1.48, "riseCount": 16, "fallCount": 0, "risePct": 0.0, "leader": "平安电工", "leaderChange": 10.0, "stockCount": 16, "code": "881167", "accum3d": -3.26, "accum5d": -1.68, "accum10d": -1.46, "accum20d": -2.33, "indexPrice": 26958.0, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "电力", "change": 0.93, "inflow": -1.68, "riseCount": 78, "fallCount": 19, "risePct": 0.0, "leader": "新能股份", "leaderChange": 9.94, "stockCount": 110, "code": "881145", "accum3d": -22.44, "accum5d": -109.07, "accum10d": 24.36, "accum20d": -18.19, "indexPrice": 1919.18, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "油气开采及服务", "change": -0.74, "inflow": -1.73, "riseCount": 9, "fallCount": 9, "risePct": 31.6, "leader": "*ST准油", "leaderChange": 5.91, "stockCount": 19, "code": "881107", "accum3d": -2.1, "accum5d": -9.64, "accum10d": -4.36, "accum20d": 1.52, "indexPrice": 1684.61, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "纺织制造", "change": 1.56, "inflow": -1.86, "riseCount": 25, "fallCount": 7, "risePct": 75.8, "leader": "聚杰微纤", "leaderChange": 8.6, "stockCount": 33, "code": "881135", "accum3d": -2.98, "accum5d": -4.89, "accum10d": -0.97, "accum20d": -0.5, "indexPrice": 2165.36, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "能源金属", "change": 0.89, "inflow": -2.21, "riseCount": 6, "fallCount": 6, "risePct": 50.0, "leader": "*ST威领", "leaderChange": 9.98, "stockCount": 12, "code": "881267", "accum3d": -9.08, "accum5d": -13.52, "accum10d": -7.18, "accum20d": -14.2, "indexPrice": 29771.5, "continuousDays": 0, "tagInfo": {"tag": "🌊", "label": "退潮", "reason": "3日-9.1亿 · 5日-13.5亿，持续流出"}}, {"name": "公路铁路运输", "change": -0.44, "inflow": -2.66, "riseCount": 19, "fallCount": 9, "risePct": 0.0, "leader": "山东高速", "leaderChange": 2.2, "stockCount": 32, "code": "881149", "accum3d": 3.85, "accum5d": -3.2, "accum10d": 3.23, "accum20d": 1.85, "indexPrice": 1288.95, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "农化制品", "change": -0.4, "inflow": -4.16, "riseCount": 24, "fallCount": 34, "risePct": 39.3, "leader": "百傲化学", "leaderChange": 6.01, "stockCount": 61, "code": "881263", "accum3d": -0.11, "accum5d": -17.54, "accum10d": -7.02, "accum20d": -14.39, "indexPrice": 4667.16, "continuousDays": 0, "tagInfo": {"tag": "🌊", "label": "退潮", "reason": "3日-0.1亿 · 5日-17.5亿，持续流出"}}, {"name": "养殖业", "change": 1.1, "inflow": -4.17, "riseCount": 32, "fallCount": 4, "risePct": 72.2, "leader": "京基智农", "leaderChange": 10.0, "stockCount": 36, "code": "881102", "accum3d": -0.11, "accum5d": -10.3, "accum10d": -6.41, "accum20d": -3.45, "indexPrice": 2663.8, "continuousDays": 0, "tagInfo": {"tag": "🌊", "label": "退潮", "reason": "3日-0.1亿 · 5日-10.3亿，持续流出"}}, {"name": "电池", "change": 2.06, "inflow": -4.17, "riseCount": 78, "fallCount": 27, "risePct": 76.4, "leader": "中国宝安", "leaderChange": 10.07, "stockCount": 106, "code": "881281", "accum3d": -33.98, "accum5d": -23.27, "accum10d": -0.27, "accum20d": -18.29, "indexPrice": 17100.5, "continuousDays": 0, "tagInfo": {"tag": "🌊", "label": "退潮", "reason": "3日-34.0亿 · 5日-23.3亿，持续流出"}}, {"name": "保险", "change": -1.23, "inflow": -4.47, "riseCount": 1, "fallCount": 4, "risePct": 20.0, "leader": "新华保险", "leaderChange": 0.57, "stockCount": 5, "code": "881156", "accum3d": 2.42, "accum5d": -16.55, "accum10d": -1.09, "accum20d": -10.67, "indexPrice": 2060.03, "continuousDays": 0, "tagInfo": {"tag": "👀", "label": "候选", "reason": "3日累计转正"}}, {"name": "建筑装饰", "change": 2.63, "inflow": -20.68, "riseCount": 128, "fallCount": 13, "risePct": 81.8, "leader": "矩阵股份", "leaderChange": 12.46, "stockCount": 143, "code": "881116", "accum3d": -16.34, "accum5d": -23.09, "accum10d": -8.37, "accum20d": 6.9, "indexPrice": 3806.2, "continuousDays": 0, "tagInfo": {"tag": "⚠️", "label": "背离", "reason": "涨2.6%但资金流出20.7亿"}}, {"name": "银行", "change": -2.05, "inflow": -26.66, "riseCount": 0, "fallCount": 42, "risePct": 0.0, "leader": "江阴银行", "leaderChange": -0.48, "stockCount": 84, "code": "881155", "accum3d": 55.96, "accum5d": -3.45, "accum10d": 43.92, "accum20d": -15.86, "indexPrice": 1352.49, "continuousDays": 0, "tagInfo": {"tag": "", "label": "", "reason": ""}}, {"name": "元件", "change": 6.23, "inflow": -32.87, "riseCount": 61, "fallCount": 1, "risePct": 98.4, "leader": "生益电子", "leaderChange": 17.11, "stockCount": 62, "code": "881270", "accum3d": -117.61, "accum5d": -9.17, "accum10d": 32.28, "accum20d": 55.11, "indexPrice": 19851.9, "continuousDays": 0, "tagInfo": {"tag": "⚠️", "label": "背离", "reason": "涨6.2%但资金流出32.9亿"}}, {"name": "半导体", "change": 7.03, "inflow": -109.35, "riseCount": 183, "fallCount": 0, "risePct": 100.0, "leader": "和林微纳", "leaderChange": 20.0, "stockCount": 183, "code": "881121", "accum3d": -249.76, "accum5d": 102.29, "accum10d": -94.45, "accum20d": -15.37, "indexPrice": 14911.7, "continuousDays": 0, "tagInfo": {"tag": "⚡", "label": "异动流出", "reason": "单日净流出109.3亿，超2σ(43亿)"}}]}, "metaByDate": {"2026-07-30": {"collectTime": "17:34", "type": "收盘"}, "2026-07-31": {"collectTime": "15:00", "type": "收盘"}}};
+
+// ========== 状态管理 ==========
+const state = {
+  currentDate: FUND_DATA.dates[FUND_DATA.dates.length - 1],
+  searchKeyword: '',
+  sortField: 'rank',
+  sortOrder: 'asc'
+};
+
+// 计算昨日排名（用于变动列）
+function getPrevRank(sectorName, date) {
+  const dateIdx = FUND_DATA.dates.indexOf(date);
+  if (dateIdx <= 0) return null;
+  const prevDate = FUND_DATA.dates[dateIdx - 1];
+  const prevList = FUND_DATA.sectorsByDate[prevDate];
+  const idx = prevList.findIndex(s => s.name === sectorName);
+  return idx >= 0 ? idx + 1 : null;
+}
+
+// ========== 日期切换 ==========
+function updateDateNav() {
+  const idx = FUND_DATA.dates.indexOf(state.currentDate);
+  const prevBtn = document.getElementById('prevDate');
+  const nextBtn = document.getElementById('nextDate');
+  const dateLabel = document.getElementById('dateLabel');
+  const timeLabel = document.getElementById('updateTime');
+  
+  const weekdays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+  const d = new Date(state.currentDate);
+  const weekDay = weekdays[d.getDay()];
+  if (dateLabel) dateLabel.textContent = state.currentDate + ' ' + weekDay;
+  if (prevBtn) prevBtn.style.opacity = idx > 0 ? '1' : '0.3';
+  if (nextBtn) nextBtn.style.opacity = idx < FUND_DATA.dates.length - 1 ? '1' : '0.3';
+  
+  // 更新采集时间
+  const meta = FUND_DATA.metaByDate ? FUND_DATA.metaByDate[state.currentDate] : null;
+  if (timeLabel && meta) {
+    const typeText = meta.type === '收盘' ? '收盘' : (meta.type === '盘中' ? '盘中' : '');
+    timeLabel.textContent = '数据截至 ' + meta.collectTime + (typeText ? ' · ' + typeText : '');
+  }
+}
+
+function changeDate(delta) {
+  const idx = FUND_DATA.dates.indexOf(state.currentDate);
+  const newIdx = idx + delta;
+  if (newIdx < 0 || newIdx >= FUND_DATA.dates.length) return;
+  state.currentDate = FUND_DATA.dates[newIdx];
+  updateDateNav();
+  renderTable();
+  updateSignals();
+}
+
+// ========== 信号区更新 ==========
+function updateSignals() {
+  const sectors = getFilteredSortedSectors();
+  
+  // 主线确认：涨幅前3且流入正
+  const mainLine = sectors.filter(s => s.change > 0 && s.inflow > 0).slice(0, 3);
+  // 潜伏机会：流入正但涨幅小或跌
+  const latent = sectors.filter(s => s.inflow > 0 && s.change < 1).sort((a, b) => b.inflow - a.inflow).slice(0, 3);
+  // 砸盘重灾区：流出前3且跌幅大
+  const disaster = sectors.filter(s => s.inflow < 0 && s.change < 0).sort((a, b) => a.inflow - b.inflow).slice(0, 3);
+  // 风险预警：涨但资金流出
+  const risk = sectors.filter(s => s.change > 0 && s.inflow < 0).sort((a, b) => b.change - a.change).slice(0, 3);
+  
+  renderSignalList('signalMain', mainLine, 'change');
+  renderSignalList('signalLatent', latent, 'inflow');
+  renderSignalList('signalDisaster', disaster, 'inflow', true);
+  renderSignalList('signalRisk', risk, 'change');
+}
+
+function renderSignalList(containerId, list, sortField, reverse = false) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  if (list.length === 0) {
+    container.innerHTML = '<div class="signal-empty">暂无符合条件的板块</div>';
+    return;
+  }
+  const rankClass = ['rank-1', 'rank-2', 'rank-3'];
+  container.innerHTML = list.map((s, i) => {
+    const changeClass = s.change >= 0 ? 'rise' : 'fall';
+    const inflowClass = s.inflow >= 0 ? 'rise' : 'fall';
+    const rc = rankClass[i] || 'rank-n';
+    const starCount = Math.max(1, Math.min(5, Math.round(Math.abs(s.inflow) / 20 + 2)));
+    const stars = '★'.repeat(starCount) + '☆'.repeat(5 - starCount);
+    return `
+      <div class="signal-item clickable" onclick="openDrawer('${s.name}')">
+        <span><span class="signal-rank ${rc}">${i + 1}</span><span class="signal-name">${s.name}</span></span>
+        <span class="signal-value ${changeClass}">${s.change > 0 ? '+' : ''}${s.change.toFixed(2)}%</span>
+      </div>
+      <div class="signal-meta">${s.inflow > 0 ? '+' : ''}${s.inflow.toFixed(1)}亿 · 上涨占比${s.risePct.toFixed(0)}% <span class="stars">${stars}</span></div>
+    `;
+  }).join('');
+}
+
+// ========== 表格渲染 ==========
+function getFilteredSortedSectors() {
+  let sectors = [...FUND_DATA.sectorsByDate[state.currentDate]];
+  
+  // 搜索过滤
+  if (state.searchKeyword) {
+    const kw = state.searchKeyword.toLowerCase();
+    sectors = sectors.filter(s => 
+      s.name.toLowerCase().includes(kw) || 
+      s.leader.toLowerCase().includes(kw)
+    );
+  }
+  
+  // 排序
+  const field = state.sortField;
+  const order = state.sortOrder === 'asc' ? 1 : -1;
+  
+  sectors.sort((a, b) => {
+    let va, vb;
+    switch (field) {
+      case 'rank':
+        va = FUND_DATA.sectorsByDate[state.currentDate].indexOf(a) + 1;
+        vb = FUND_DATA.sectorsByDate[state.currentDate].indexOf(b) + 1;
+        break;
+      case 'rankChange':
+        va = getRankChange(a);
+        vb = getRankChange(b);
+        if (va === null) va = 0;
+        if (vb === null) vb = 0;
+        break;
+      case 'name':
+        return order * a.name.localeCompare(b.name, 'zh');
+      case 'change':
+      case 'inflow':
+      case 'risePct':
+      case 'riseCount':
+      case 'continuousDays':
+        va = a[field] || 0;
+        vb = b[field] || 0;
+        break;
+      case 'leader':
+        return order * a.leader.localeCompare(b.leader, 'zh');
+      default:
+        va = a[field] || 0;
+        vb = b[field] || 0;
+    }
+    return order * (va - vb);
+  });
+  
+  return sectors;
+}
+
+function getRankChange(sector) {
+  const currentRank = FUND_DATA.sectorsByDate[state.currentDate].findIndex(s => s.name === sector.name) + 1;
+  const prevRank = getPrevRank(sector.name, state.currentDate);
+  if (prevRank === null) return 0;
+  return prevRank - currentRank; // 排名上升=正数
+}
+
+function renderTable() {
+  const tbody = document.getElementById('sectorTable');
+  const sectors = getFilteredSortedSectors();
+  
+  tbody.innerHTML = sectors.map((s, i) => {
+    const rank = FUND_DATA.sectorsByDate[state.currentDate].findIndex(x => x.name === s.name) + 1;
+    const changeClass = s.change >= 0 ? 'rise' : 'fall';
+    const inflowClass = s.inflow >= 0 ? 'rise' : 'fall';
+    const ti = s.tagInfo || {};
+    const tagHtml = ti.tag ? `<span class="sector-tag" title="${ti.reason}">${ti.tag}</span>` : '';
+    const leaderClass = (s.leaderChange || 0) >= 0 ? 'rise' : 'fall';
+    const cd = s.continuousDays || 0;
+    const cdDisplay = cd > 0 ? `<span class="rise">${cd}天</span>` : '<span class="text-tertiary">-</span>';
+    
+    return `
+      <tr onclick="openDrawer('${s.name.replace(/'/g, "\\'")}')">
+        <td class="rank-cell">${rank}</td>
+        <td style="text-align:left;font-family:inherit;">
+          ${tagHtml}<span class="sector-name">${s.name}</span>
+        </td>
+        <td class="num ${changeClass}">${s.change > 0 ? '+' : ''}${s.change.toFixed(2)}%</td>
+        <td class="num ${inflowClass}">${s.inflow > 0 ? '+' : ''}${s.inflow.toFixed(1)}</td>
+        <td class="num">${cdDisplay}</td>
+        <td class="num"><span class="rise">${s.riseCount}</span>/<span class="fall">${s.fallCount}</span></td>
+        <td class="num">${(s.risePct || 0).toFixed(0)}%</td>
+        <td style="text-align:left;font-family:inherit;font-size:11px;">${s.leader} <span class="${leaderClass}" style="font-family:'SF Mono',Consolas,monospace;">${(s.leaderChange || 0) > 0 ? '+' : ''}${(s.leaderChange || 0).toFixed(1)}%</span></td>
+        <td><button class="detail-btn" onclick="event.stopPropagation();openDrawer('${s.name.replace(/'/g, "\\'")}')">详情 →</button></td>
+      </tr>
+    `;
+  }).join('');
+}
+
+// ========== 搜索 ==========
+function handleSearch(e) {
+  state.searchKeyword = e.target.value;
+  renderTable();
+}
+
+// ========== 排序 ==========
+function handleSort(field) {
+  if (state.sortField === field) {
+    state.sortOrder = state.sortOrder === 'asc' ? 'desc' : 'asc';
+  } else {
+    state.sortField = field;
+    state.sortOrder = 'desc';
+  }
+  renderTable();
+}
+
+// ========== 抽屉（板块详情） ==========
+function openDrawer(sectorName) {
+  const drawer = document.getElementById('drawer');
+  const mask = document.getElementById('mask');
+  const s = FUND_DATA.sectorsByDate[state.currentDate].find(x => x.name === sectorName);
+  if (!s) return;
+  
+  const ti = s.tagInfo || {};
+  const changeClass = s.change >= 0 ? 'rise' : 'fall';
+  const inflowClass = s.inflow >= 0 ? 'rise' : 'fall';
+  const cd = s.continuousDays || 0;
+  
+  // 一句话总结
+  let summary = '';
+  if (ti.label) {
+    summary = ti.reason;
+  } else {
+    summary = `${cd > 0 ? `连续${cd}天净流入，` : ''}今日${s.inflow > 0 ? '净流入' : '净流出'}${Math.abs(s.inflow).toFixed(1)}亿，${s.riseCount}涨${s.fallCount}跌`;
+  }
+  
+  // 更新抽屉头部
+  const titleEl = drawer.querySelector('.drawer-title');
+  if (titleEl) titleEl.innerHTML = `${ti.tag || ''} ${s.name}`;
+  const subEl = drawer.querySelector('.drawer-header div div:last-child');
+  if (subEl) subEl.textContent = `${s.code || '-'} · ${s.stockCount}只成分股`;
+  
+  const body = drawer.querySelector('.drawer-body');
+  body.innerHTML = `
+    <!-- 头部：名称+标签+ID -->
+    <div class="drawer-section" style="padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:12px;">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        <span style="font-size:18px;font-weight:700;">${s.name}</span>
+        ${ti.tag ? `<span style="font-size:20px;" title="${ti.label}">${ti.tag}</span>` : ''}
+        ${ti.label ? `<span class="tag-badge">${ti.label}</span>` : ''}
+        <span style="color:var(--text-tertiary);font-size:11px;font-family:monospace;">${s.code || '-'}</span>
+      </div>
+      <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">${summary}</div>
+      <div style="font-size:11px;color:var(--text-tertiary);margin-top:2px;">${state.currentDate} · ${s.stockCount}只成分股 · 指数 ${(s.indexPrice || 0).toFixed(0)}</div>
+    </div>
+    
+    <!-- 今日概览 -->
+    <div class="drawer-section">
+      <h4>📊 今日概览</h4>
+      <div class="drawer-hero">
+        <div class="hero-item">
+          <div class="value ${changeClass}">${s.change > 0 ? '+' : ''}${s.change.toFixed(2)}%</div>
+          <div class="label">涨跌幅</div>
+        </div>
+        <div class="hero-item">
+          <div class="value ${inflowClass}">${s.inflow > 0 ? '+' : ''}${s.inflow.toFixed(1)}亿</div>
+          <div class="label">净流入</div>
+        </div>
+        <div class="hero-item">
+          <div class="value"><span class="rise">${s.riseCount}</span>/<span class="fall">${s.fallCount}</span></div>
+          <div class="label">涨/跌家数</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 多周期资金流向 -->
+    <div class="drawer-section">
+      <h4>📈 多周期资金流向</h4>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px;">
+        <div style="background:var(--bg-tertiary);border-radius:6px;padding:8px 6px;text-align:center;">
+          <div style="font-size:10px;color:var(--text-secondary);">3日累计</div>
+          <div style="font-size:14px;font-weight:700;color:${s.accum3d >= 0 ? 'var(--rise)' : 'var(--fall)'};">${s.accum3d > 0 ? '+' : ''}${(s.accum3d || 0).toFixed(1)}亿</div>
+        </div>
+        <div style="background:var(--bg-tertiary);border-radius:6px;padding:8px 6px;text-align:center;">
+          <div style="font-size:10px;color:var(--text-secondary);">5日累计</div>
+          <div style="font-size:14px;font-weight:700;color:${s.accum5d >= 0 ? 'var(--rise)' : 'var(--fall)'};">${s.accum5d > 0 ? '+' : ''}${(s.accum5d || 0).toFixed(1)}亿</div>
+        </div>
+        <div style="background:var(--bg-tertiary);border-radius:6px;padding:8px 6px;text-align:center;">
+          <div style="font-size:10px;color:var(--text-secondary);">10日累计</div>
+          <div style="font-size:14px;font-weight:700;color:${s.accum10d >= 0 ? 'var(--rise)' : 'var(--fall)'};">${s.accum10d > 0 ? '+' : ''}${(s.accum10d || 0).toFixed(1)}亿</div>
+        </div>
+        <div style="background:var(--bg-tertiary);border-radius:6px;padding:8px 6px;text-align:center;">
+          <div style="font-size:10px;color:var(--text-secondary);">20日累计</div>
+          <div style="font-size:14px;font-weight:700;color:${s.accum20d >= 0 ? 'var(--rise)' : 'var(--fall)'};">${s.accum20d > 0 ? '+' : ''}${(s.accum20d || 0).toFixed(1)}亿</div>
+        </div>
+      </div>
+      <div class="chart-placeholder" style="margin-top:8px;">
+        📊 3/5/10/20日资金流折线+柱状图（数据源扩展后接入 ECharts）
+      </div>
+    </div>
+    
+    <!-- 领涨股 -->
+    <div class="drawer-section">
+      <h4>🏆 领涨股</h4>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg-tertiary);border-radius:6px;">
+        <span style="font-weight:600;">${s.leader}</span>
+        <span class="${(s.leaderChange || 0) >= 0 ? 'rise' : 'fall'}" style="font-weight:700;">${(s.leaderChange || 0) > 0 ? '+' : ''}${(s.leaderChange || 0).toFixed(1)}%</span>
+        <span style="color:var(--text-tertiary);font-size:11px;margin-left:auto;">TOP1 龙头</span>
+      </div>
+      <div style="margin-top:6px;font-size:11px;color:var(--text-tertiary);">TOP5龙头需扩展采集脚本后接入</div>
+    </div>
+    
+    <!-- 龙虎榜占位 -->
+    <div class="drawer-section">
+      <h4>🐉 龙虎榜 & 涨跌停</h4>
+      <div style="font-size:12px;color:var(--text-tertiary);padding:8px;background:var(--bg-tertiary);border-radius:4px;">
+        板块维度的龙虎榜/涨跌停归因需要额外开发。当前可参考底部「龙虎榜」Tab的全市场数据。
+      </div>
+    </div>
+  `;
+  
+  drawer.classList.add('open');
+  mask.classList.add('show');
+}
+
+// ========== 龙虎榜/涨停板/游资详情 ==========
+const MOCK_DRAGON = {
+  'AI应用': [
+    {name: '昆仑万维', code: '300418', change: '+20.0%', buy: '9.4亿', sell: '—', net: '+9.4亿', seats: ['机构专用', '深股通专用', '章盟主(江苏路)']},
+    {name: '蓝色光标', code: '300058', change: '+20.0%', buy: '8.0亿', sell: '—', net: '+8.0亿', seats: ['机构专用', '深股通专用', '紫阳东路']},
+    {name: '中文在线', code: '300364', change: '+20.0%', buy: '2.9亿', sell: '—', net: '+2.9亿', seats: ['机构专用', '深股通专用', '拉萨天团(卖)']},
+  ],
+  '工业自动化': [
+    {name: '麦格米特', code: '002851', change: '+10.0%', buy: '3.6亿', sell: '—', net: '+3.6亿', seats: ['中山东路', '机构专用', '深股通专用']},
+  ],
+  '文化传媒': [
+    {name: '易点天下', code: '301171', change: '+20.0%', buy: '2.7亿', sell: '—', net: '+2.7亿', seats: ['机构专用', '深股通专用', '拉萨天团(卖)']},
+    {name: '利欧股份', code: '002131', change: '+9.9%', buy: '1.2亿', sell: '—', net: '+1.2亿', seats: ['作手新一', '深股通专用']},
+  ],
+  '电力': [
+    {name: '协鑫能科', code: '002015', change: '+10.0%', buy: '1.8亿', sell: '—', net: '+1.8亿', seats: ['机构专用', '深股通专用']},
+  ],
+  '黄金': [
+    {name: '招金黄金', code: '000506', change: '+10.0%', buy: '1.5亿', sell: '—', net: '+1.5亿', seats: ['机构专用', '深股通专用']},
+  ],
+};
+
+const MOCK_LIMITUP = {
+  'AI应用': [
+    {name: '昆仑万维', reason: 'AI应用+游戏出海', limitDays: '首板', change: '+20.0%'},
+    {name: '蓝色光标', reason: 'AI营销+数字人', limitDays: '首板', change: '+20.0%'},
+    {name: '中文在线', reason: 'AI内容+AIGC', limitDays: '首板', change: '+20.0%'},
+  ],
+  '文化传媒': [
+    {name: '易点天下', reason: 'AI营销出海', limitDays: '首板', change: '+20.0%'},
+    {name: '利欧股份', reason: '数字营销', limitDays: '首板', change: '+10.0%'},
+  ],
+  '工业自动化': [
+    {name: '麦格米特', reason: '工业自动化+充电桩', limitDays: '首板', change: '+10.0%'},
+  ],
+  '电力': [
+    {name: '协鑫能科', reason: '清洁能源+碳中和', limitDays: '首板', change: '+10.0%'},
+  ],
+  '黄金': [
+    {name: '招金黄金', reason: '避险+金价新高', limitDays: '首板', change: '+10.0%'},
+  ],
+  '连板高标': [
+    {name: '爱丽家居', reason: '9连板高标', limitDays: '9连板', change: '+10.0%'},
+    {name: '传智教育', reason: '教育+AI', limitDays: '5连板', change: '+10.0%'},
+    {name: '一鸣食品', reason: '食品消费', limitDays: '4连板', change: '+10.0%'},
+  ],
+};
+
+const MOCK_HOTMONEY = {
+  '呼家楼': [
+    {name: '德明利', action: '净买入', amount: '4.68亿', change: '-1.1%'},
+  ],
+  '章盟主': [
+    {name: '蓝色光标', action: '净买入', amount: '1.31亿', change: '+20.0%'},
+    {name: '恒尚节能', action: '净买入', amount: '2537万', change: '—'},
+    {name: '普联软件', action: '净买入', amount: '1909万', change: '—'},
+  ],
+  '作手新一': [
+    {name: '利欧股份', action: '净买入', amount: '8478万', change: '+9.9%'},
+    {name: '泛微网络', action: '净买入', amount: '6754万', change: '—'},
+    {name: '致远互联', action: '净买入', amount: '6011万', change: '—'},
+  ],
+  '中山东路': [
+    {name: '麦格米特', action: '净买入', amount: '1.04亿', change: '+10.0%'},
+  ],
+  '葛卫东': [
+    {name: '普联软件', action: '净买入', amount: '2755万', change: '—'},
+  ],
+  '玉兰路': [
+    {name: '普联软件', action: '净买入', amount: '3534万', change: '—'},
+  ],
+  '佛山系': [
+    {name: '香江控股', action: '净买入', amount: '1973万', change: '+10.0%'},
+  ],
+  '孙哥': [
+    {name: '托伦斯', action: '净卖出', amount: '9719万', change: '-5.4%'},
+  ],
+  '宁波桑田路': [
+    {name: '恒尚节能', action: '净卖出', amount: '2986万', change: '—'},
+  ],
+  '紫阳东路': [
+    {name: '蓝色光标', action: '净买入', amount: '1.88亿', change: '+20.0%'},
+    {name: '海南海药', action: '净卖出', amount: '1.43亿', change: '-1.5%'},
+  ],
+};
+
+function openDragonDetail(sectorName) {
+  const drawer = document.getElementById('drawer');
+  const mask = document.getElementById('mask');
+  const data = MOCK_DRAGON[sectorName] || [];
+  
+  const titleEl = drawer.querySelector('.drawer-title');
+  const subtitleEl = drawer.querySelector('.drawer-header div div:last-child');
+  if (titleEl) titleEl.textContent = sectorName + ' · 龙虎榜';
+  if (subtitleEl) subtitleEl.textContent = state.currentDate + ' · ' + data.length + '只上榜';
+  
+  const body = drawer.querySelector('.drawer-body');
+  let html = '<div class="drawer-section"><h4>上榜个股明细</h4>';
+  data.forEach(stock => {
+    html += `
+      <div style="background:var(--bg-tertiary);border-radius:6px;padding:12px;margin-bottom:10px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span style="font-weight:600;font-size:14px;">${stock.name} <span style="color:var(--text-tertiary);font-size:11px;font-weight:400;">${stock.code}</span></span>
+          <span class="rise" style="font-weight:600;">${stock.change}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:12px;margin-bottom:8px;">
+          <div><span style="color:var(--text-secondary);">买入</span> <span class="rise">${stock.buy}</span></div>
+          <div><span style="color:var(--text-secondary);">卖出</span> <span class="fall">${stock.sell}</span></div>
+          <div><span style="color:var(--text-secondary);">净额</span> <span style="font-weight:600;${parseFloat(stock.net)>=0?'color:var(--rise);':'color:var(--fall);'}">${stock.net}</span></div>
+        </div>
+        <div style="font-size:11px;color:var(--text-secondary);line-height:1.6;">
+          席位：${stock.seats.join(' · ')}
+        </div>
+      </div>
+    `;
+  });
+  if (!data.length) html += '<div style="color:var(--text-tertiary);text-align:center;padding:20px;">暂无数据</div>';
+  html += '</div>';
+  
+  body.innerHTML = html;
+  drawer.classList.add('open');
+  mask.classList.add('show');
+}
+
+function openLimitupDetail(sectorName) {
+  const drawer = document.getElementById('drawer');
+  const mask = document.getElementById('mask');
+  const data = MOCK_LIMITUP[sectorName] || [];
+  
+  const titleEl = drawer.querySelector('.drawer-title');
+  const subtitleEl = drawer.querySelector('.drawer-header div div:last-child');
+  if (titleEl) titleEl.textContent = sectorName + ' · 涨停板';
+  if (subtitleEl) subtitleEl.textContent = state.currentDate + ' · ' + data.length + '只涨停';
+  
+  const body = drawer.querySelector('.drawer-body');
+  let html = '<div class="drawer-section"><h4>涨停个股</h4>';
+  data.forEach(stock => {
+    html += `
+      <div style="background:var(--bg-tertiary);border-radius:6px;padding:12px;margin-bottom:10px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-weight:600;font-size:14px;">${stock.name}</span>
+          <span class="rise" style="font-weight:600;">${stock.change}</span>
+        </div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:6px;display:flex;justify-content:space-between;">
+          <span>${stock.reason}</span>
+          <span style="color:var(--rise);font-weight:500;">${stock.limitDays}</span>
+        </div>
+      </div>
+    `;
+  });
+  if (!data.length) html += '<div style="color:var(--text-tertiary);text-align:center;padding:20px;">暂无数据</div>';
+  html += '</div>';
+  
+  body.innerHTML = html;
+  drawer.classList.add('open');
+  mask.classList.add('show');
+}
+
+function openHotmoneyDetail(name) {
+  const drawer = document.getElementById('drawer');
+  const mask = document.getElementById('mask');
+  const data = MOCK_HOTMONEY[name] || [];
+  
+  const titleEl = drawer.querySelector('.drawer-title');
+  const subtitleEl = drawer.querySelector('.drawer-header div div:last-child');
+  if (titleEl) titleEl.textContent = name + ' · 操作明细';
+  if (subtitleEl) subtitleEl.textContent = state.currentDate + ' · ' + data.length + '笔操作';
+  
+  const body = drawer.querySelector('.drawer-body');
+  let html = '<div class="drawer-section"><h4>当日操作</h4>';
+  data.forEach(stock => {
+    const isBuy = stock.action.includes('买');
+    html += `
+      <div style="background:var(--bg-tertiary);border-radius:6px;padding:12px;margin-bottom:10px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-weight:600;font-size:14px;">${stock.name}</span>
+          <span style="font-size:13px;font-weight:600;${isBuy?'color:var(--rise);':'color:var(--fall);'}">${stock.action} ${stock.amount}</span>
+        </div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">
+          当日涨跌幅：<span class="${stock.change.startsWith('+')?'rise':'fall'}">${stock.change}</span>
+        </div>
+      </div>
+    `;
+  });
+  if (!data.length) html += '<div style="color:var(--text-tertiary);text-align:center;padding:20px;">暂无数据</div>';
+  html += '</div>';
+  
+  body.innerHTML = html;
+  drawer.classList.add('open');
+  mask.classList.add('show');
+}
+
+function closeDrawer() {
+  const drawer = document.getElementById('drawer');
+  const mask = document.getElementById('mask');
+  drawer.classList.remove('open');
+  mask.classList.remove('show');
+}
+
+// ========== Tab切换 ==========
+document.querySelectorAll('.tab-item').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// ========== 初始化 ==========
+function init() {
+  updateDateNav();
+  renderTable();
+  updateSignals();
+  
+  // 搜索框
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox) searchBox.addEventListener('input', handleSearch);
+  
+  // 表头排序
+  document.querySelectorAll('thead th[data-sort]').forEach(th => {
+    th.style.cursor = 'pointer';
+    th.addEventListener('click', () => handleSort(th.dataset.sort));
+  });
+  
+  // 日期切换按钮
+  const prevBtn = document.getElementById('prevDate');
+  const nextBtn = document.getElementById('nextDate');
+  if (prevBtn) prevBtn.addEventListener('click', () => changeDate(-1));
+  if (nextBtn) nextBtn.addEventListener('click', () => changeDate(1));
+  
+  // 关闭抽屉
+  const mask = document.getElementById('mask');
+  const drawerClose = document.getElementById('drawerClose');
+  if (mask) mask.addEventListener('click', closeDrawer);
+  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+}
+
+init();
+</script>
+
+</body>
+</html>
