@@ -955,30 +955,21 @@ function renderLadderChart(ladderStr) {
   const parts = ladderStr.split('→');
   let html = '<div style="margin-bottom:10px;padding:10px 12px;background:var(--bg-tertiary);border-radius:8px;">';
   html += '<div style="font-size:12px;color:var(--text-secondary);margin-bottom:8px;">🏔️ 连板梯队</div>';
-  html += '<div class="ladder-chart">';
-  const maxH = 140;
-  const maxBoard = parts.length > 0 ? (parseInt(parts[0]) || 9) : 9;
-  parts.forEach((part, i) => {
+  let items = [];
+  parts.forEach((part) => {
     let boards, count;
     const match = part.match(/(\d+)板×(\d+)/);
     if (match) { boards = parseInt(match[1]); count = parseInt(match[2]); }
     else { boards = parseInt(part); count = 1; }
     if (isNaN(boards)) return;
-    const width = Math.max(50, (boards / maxBoard) * maxH);
-    let color;
-    if (boards >= 5) color = '#FF6B6B';
-    else if (boards >= 3) color = '#FFA94D';
-    else color = '#FFD43B';
-    let namesHtml = '';
+    let names = '';
     if (ladderDetail && ladderDetail[String(boards)]) {
-      namesHtml = ' <span style="color:var(--text-secondary);font-size:10px;margin-left:4px;">' + ladderDetail[String(boards)].join('、') + '</span>';
+      names = ' · ' + ladderDetail[String(boards)].join('、');
     }
-    html += '<div class="ladder-step">' +
-      '<div class="ladder-bar" style="width:' + width + 'px;background:' + color + ';">' + boards + '板</div>' +
-      '<div class="ladder-label">×' + count + '只' + namesHtml + '</div>' +
-      '</div>';
+    items.push('<span style="font-size:12px;">' + boards + '板×' + count + '只' + names + '</span>');
   });
-  html += '</div></div>';
+  html += '<div style="display:flex;flex-direction:column;gap:4px;">' + items.join('') + '</div>';
+  html += '</div>';
   return html;
 }
 
