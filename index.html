@@ -1243,7 +1243,7 @@ function renderDrawerChart(sector) {
     },
     legend: { data: ['净流入', '涨跌幅'], bottom: 2, textStyle: { fontSize: 11, color: '#636366' } },
     grid: { top: 8, right: 55, bottom: 45, left: 55 },
-    xAxis: { type: 'category', data: dates, axisLabel: { fontSize: 10, color: '#636366', interval: 0, formatter: function(v) { return v || ''; } }, axisLine: { lineStyle: { color: '#E5E5EA' } }, axisTick: { show: false } },
+    xAxis: { type: 'category', data: dates, axisLabel: { show: false }, axisLine: { lineStyle: { color: '#E5E5EA' } }, axisTick: { show: false } },
     yAxis: [
       { type: 'value', name: '', axisLabel: { fontSize: 10, color: '#636366', formatter: function(v) { return v.toFixed(0); } }, splitLine: { lineStyle: { color: '#F5F5F7' } }, nameGap: 5 },
       { type: 'value', name: '%', nameLocation: 'end', nameTextStyle: { fontSize: 11, color: '#636366', padding: [0, 0, 0, 30] }, axisLabel: { fontSize: 10, color: '#636366', formatter: function(v) { return v.toFixed(1); } }, splitLine: { show: false } }
