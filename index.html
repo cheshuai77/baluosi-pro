@@ -987,76 +987,90 @@ function renderYZ() {
     el.innerHTML = '<div style="color:var(--text-tertiary);font-size:12px;padding:12px 0;">数据待更新</div>';
     return;
   }
-  
-  // Parse summary text into structured cards
-  const lines = data.summary.split('\n').filter(l => l.trim());
-  let html = '';
-  let currentYz = null;
-  let currentActions = [];
-  
-  function flushCard() {
-    if (!currentYz) return;
-    // Determine attitude
-    const attitude = detectAttitude(currentActions.join(' '));
-    const badgeClass = attitude === 'positive' ? 'positive' : attitude === 'negative' ? 'negative' : 'neutral';
-    const badgeText = attitude === 'positive' ? '🟢做多' : attitude === 'negative' ? '🔴做空' : '⚪中性';
-    
-    html += '<div class="yz-card">';
-    html += '<div class="yz-card-header"><span class="yz-name">' + currentYz + '</span>';
-    html += '<span class="yz-badge ' + badgeClass + '">' + badgeText + '</span></div>';
-    if (currentActions.length > 0) {
-      html += '<div class="yz-action">';
-      currentActions.forEach((action, i) => {
-        html += '<div style="margin-bottom:4px;">' + (i+1) + '. ' + formatYZAction(action) + '</div>';
-      });
-      html += '</div>';
-    }
-    html += '</div>';
-  }
-  
+
+  const summary = data.summary.trim();
+  const lines = summary.split('\n').map(l => l.trim()).filter(Boolean);
+
+  // 解析实际格式：
+  // - 当日游资总态度：xxx
+  // - 核心动向：
+  //   1. xxx
+  //   2. xxx
+  // - 与主线联动：xxx
+  let attitude = '', coreItems = [], linkage = '';
+  let inCore = false;
+
   lines.forEach(line => {
-    line = line.replace(/^[-•]\s*/, '').trim();
+    line = line.replace(/^[-•·]\s*/, '').trim();
     if (!line) return;
-    
-    // Check if this line starts a new youzi name
-    const yzMatch = line.match(/^([\u4e00-\u9fa5]{2,4})(?:游资|席位)?[：:·]/);
-    if (yzMatch && !line.match(/买入|卖出|净买|净卖|加仓|减仓/)) {
-      flushCard();
-      currentYz = yzMatch[1];
-      currentActions = [];
-      const rest = line.slice(yzMatch[0].length).trim();
-      if (rest) currentActions.push(rest);
-    } else if (currentYz) {
-      currentActions.push(line);
-    } else {
-      // No current youzi, try to detect from line
-      const nameMatch = line.match(/([\u4e00-\u9fa5]{2,4})(?:游资|席位)/);
-      if (nameMatch) {
-        flushCard();
-        currentYz = nameMatch[1];
-        currentActions = [line];
-      }
+
+    // 总态度行
+    const attMatch = line.match(/当日游资总态度[：:]\s*(.+)/);
+    if (attMatch) { attitude = attMatch[1].trim(); return; }
+
+    // 核心动向标题
+    if (line.match(/核心动向[：:]/)) { inCore = true; return; }
+
+    // 主线联动
+    const linkMatch = line.match(/与主线联动[：:]\s*(.+)/);
+    if (linkMatch) { linkage = linkMatch[1].trim(); inCore = false; return; }
+
+    // 核心动向编号项
+    if (inCore) {
+      const numMatch = line.match(/^\d+[\.\、]\s*(.+)/);
+      if (numMatch) { coreItems.push(numMatch[1].trim()); return; }
+      // 无编号但仍在核心区域内
+      if (coreItems.length > 0) { coreItems[coreItems.length - 1] += ' ' + line; return; }
     }
   });
-  flushCard();
-  
-  if (!html) {
-    // Fallback: show raw text
-    html = '<div style="font-size:12px;color:var(--text-secondary);line-height:1.7;white-space:pre-line;">' + formatSummary(data.summary) + '</div>';
+
+  // 判断整体态度色
+  let attitudeBadge = '⚪中性', attitudeClass = 'neutral';
+  if (attitude.includes('偏多') || attitude.includes('看多') || attitude.includes('积极')) {
+    attitudeBadge = '偏多'; attitudeClass = 'positive';
+  } else if (attitude.includes('偏空') || attitude.includes('看空') || attitude.includes('分歧')) {
+    attitudeBadge = '🔴分歧'; attitudeClass = 'negative';
   }
-  
+
+  let html = '';
+
+  // 总态度
+  if (attitude) {
+    html += '<div class="yz-card"><div class="yz-card-header">' +
+      '<span class="yz-name">当日总态度</span>' +
+      '<span class="yz-badge ' + attitudeClass + '">' + attitudeBadge + '</span>' +
+      '</div><div class="yz-action">' + attitude + '</div></div>';
+  }
+
+  // 核心动向
+  if (coreItems.length > 0) {
+    html += '<div class="yz-card"><div class="yz-card-header"><span class="yz-name">🎯 核心动向</span></div>';
+    html += '<div class="yz-action">';
+    coreItems.forEach(function(item, i) {
+      html += '<div style="margin-bottom:6px;line-height:1.7;">' +
+        '<span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:4px;font-size:11px;font-weight:600;color:#fff;background:var(--accent);margin-right:6px;flex-shrink:0;">' + (i+1) + '</span>' +
+        highlightAmounts(item) + '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // 主线联动
+  if (linkage) {
+    html += '<div class="yz-card"><div class="yz-card-header"><span class="yz-name">🔗 主线联动</span></div>' +
+      '<div class="yz-action">' + linkage + '</div></div>';
+  }
+
+  // 全都不匹配时的兜底
+  if (!html) {
+    html = '<div style="font-size:12px;color:var(--text-secondary);line-height:1.7;white-space:pre-line;">' + formatSummary(summary) + '</div>';
+  }
+
   el.innerHTML = html;
 }
 
-function detectAttitude(text) {
-  const posWords = ['买入', '净买入', '加仓', '抢筹', '大举买入', '扫货'];
-  const negWords = ['卖出', '净卖出', '减仓', '砸盘', '出逃', '大举卖出'];
-  let pos = 0, neg = 0;
-  posWords.forEach(w => { if (text.includes(w)) pos++; });
-  negWords.forEach(w => { if (text.includes(w)) neg++; });
-  if (pos > neg) return 'positive';
-  if (neg > pos) return 'negative';
-  return 'neutral';
+// 高亮文本中的金额数字
+function highlightAmounts(text) {
+  return text.replace(/([+\-]?\d+\.?\d*亿)/g, '<span style="color:var(--text-primary);font-weight:600;font-family:\'SF Mono\',Consolas,monospace;">$1</span>');
 }
 
 function formatYZAction(text) {
