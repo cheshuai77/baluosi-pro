@@ -1000,27 +1000,29 @@ function renderYZ() {
       '</div><div class="yz-action">' + data.attitude + '</div></div>';
   }
 
-  // 游资"谁干了什么"卡片
+  // 游资"谁干了什么"网格卡片
   if (data.traders && data.traders.length > 0) {
     html += '<div style="font-size:12px;color:var(--text-secondary);margin:12px 0 8px;font-weight:600;">👤 谁干了什么</div>';
+    html += '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">';
     data.traders.forEach(function(t) {
-      // 方向颜色
       let dirColor = 'var(--text-secondary)';
       let dirIcon = '➖';
       let dirLabel = '';
-      if (t.direction === 'buy') { dirColor = 'var(--rise)'; dirIcon = '🟢'; dirLabel = '买入'; }
-      else if (t.direction === 'sell') { dirColor = 'var(--fall)'; dirIcon = '🔴'; dirLabel = '卖出'; }
-      else if (t.direction === 'mixed') { dirColor = '#FFA94D'; dirIcon = '🟡'; dirLabel = '分歧'; }
+      let dirBg = 'rgba(160,160,160,0.1)';
+      if (t.direction === 'buy') { dirColor = 'var(--rise)'; dirIcon = '🟢'; dirLabel = '买入'; dirBg = 'rgba(34,197,94,0.08)'; }
+      else if (t.direction === 'sell') { dirColor = 'var(--fall)'; dirIcon = '🔴'; dirLabel = '卖出'; dirBg = 'rgba(239,68,68,0.08)'; }
+      else if (t.direction === 'mixed') { dirColor = '#FFA94D'; dirIcon = '🟡'; dirLabel = '分歧'; dirBg = 'rgba(255,169,77,0.08)'; }
 
-      html += '<div class="yz-card" style="margin-bottom:8px;">' +
-        '<div class="yz-card-header" style="padding-bottom:6px;">' +
-        '<span class="yz-name" style="font-size:13px;font-weight:700;color:' + dirColor + ';">' + dirIcon + ' ' + t.name + '</span>' +
-        '<span style="font-size:10px;padding:2px 6px;border-radius:4px;background:' + (t.direction === 'buy' ? 'rgba(34,197,94,0.12)' : t.direction === 'sell' ? 'rgba(239,68,68,0.12)' : 'rgba(255,169,77,0.12)') + ';color:' + dirColor + ';">' + dirLabel + '</span>' +
+      html += '<div style="background:var(--bg-tertiary);border-radius:8px;padding:8px 10px;border-left:3px solid ' + dirColor + ';">' +
+        '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">' +
+        '<span style="font-size:12px;font-weight:700;color:' + dirColor + ';">' + dirIcon + ' ' + t.name + '</span>' +
+        '<span style="font-size:9px;padding:1px 5px;border-radius:3px;background:' + dirBg + ';color:' + dirColor + ';font-weight:600;">' + dirLabel + '</span>' +
         '</div>' +
-        '<div style="font-size:12px;color:var(--text-primary);line-height:1.6;padding:0 2px;">' + highlightAmounts(t.action) + '</div>' +
-        (t.note ? '<div style="font-size:11px;color:var(--text-tertiary);margin-top:4px;padding:0 2px;">💡 ' + t.note + '</div>' : '') +
+        '<div style="font-size:11px;color:var(--text-secondary);line-height:1.5;">' + highlightAmounts(t.action) + '</div>' +
+        (t.note ? '<div style="font-size:10px;color:var(--text-tertiary);margin-top:3px;">💡 ' + t.note + '</div>' : '') +
         '</div>';
     });
+    html += '</div>';
   }
 
   // 主线联动
