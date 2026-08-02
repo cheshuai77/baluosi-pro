@@ -1141,16 +1141,25 @@ function openDrawer(sectorName) {
       '</div>' +
     '</div>' +
 
-    // 北向资金（市场级）
+    // 第三行：北向资金 + 领涨股
     (function() {
       const mo = (FUND_DATA.market && FUND_DATA.market[state.currentDate]) || {};
-      if (mo.northFlow == null) return '';
       const nfClass = (mo.northFlow || 0) >= 0 ? 'rise' : 'fall';
       const nfSign = (mo.northFlow || 0) > 0 ? '+' : '';
-      return '<div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg-tertiary);border-radius:8px;margin-bottom:16px;">' +
-        '<span style="font-size:18px;">💹</span>' +
-        '<div><div style="font-size:10px;color:var(--text-secondary);">北向资金（市场）</div>' +
-        '<div style="font-size:15px;font-weight:700;" class="' + nfClass + '">' + nfSign + (mo.northFlow || 0).toFixed(1) + '亿 <span style="font-size:11px;font-weight:400;color:var(--text-tertiary);">' + ((mo.northFlow||0) > 0 ? '净买入' : '净流出') + '</span></div></div></div>';
+      const northHtml = '<div class="grid-item">' +
+        '<div class="gi-icon">💹</div>' +
+        '<div class="gi-value ' + nfClass + '">' + nfSign + (mo.northFlow || 0).toFixed(1) + '亿</div>' +
+        '<div class="gi-label">北向资金</div>' +
+      '</div>';
+      const leaderHtml = '<div class="grid-item">' +
+        '<div class="gi-icon">🏆</div>' +
+        '<div class="gi-value ' + ((s.leaderChange||0) >= 0 ? 'rise' : 'fall') + '">' + (s.leader || '-') + '</div>' +
+        '<div class="gi-label">' + ((s.leaderChange||0) > 0 ? '+' : '') + (s.leaderChange||0).toFixed(1) + '%</div>' +
+      '</div>';
+      const northNote = '<div class="grid-item" style="font-size:11px;color:var(--text-tertiary);display:flex;align-items:center;justify-content:center;text-align:center;">' +
+        ((mo.northFlow||0) > 0 ? '🔴 净买入' : (mo.northFlow||0) < 0 ? '🟢 净流出' : '— 持平') +
+      '</div>';
+      return '<div class="drawer-grid" style="margin-bottom:24px;">' + northHtml + leaderHtml + northNote + '</div>';
     })() +
 
     // 多周期累计
@@ -1177,15 +1186,7 @@ function openDrawer(sectorName) {
       '<div class="echart-box" id="drawerFlowChart"></div>' +
     '</div>' +
 
-    // 领涨股
-    '<div class="drawer-section">' +
-      '<h4>🏆 领涨股</h4>' +
-      '<div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg-tertiary);border-radius:6px;">' +
-        '<span style="font-weight:600;">' + (s.leader || '-') + '</span>' +
-        '<span class="' + ((s.leaderChange||0) >= 0 ? 'rise' : 'fall') + '" style="font-weight:700;">' + ((s.leaderChange||0) > 0 ? '+' : '') + (s.leaderChange||0).toFixed(1) + '%</span>' +
-        '<span style="color:var(--text-tertiary);font-size:11px;margin-left:auto;">TOP1 龙头</span>' +
-      '</div>' +
-    '</div>' +
+
 
     histHtml;
 
