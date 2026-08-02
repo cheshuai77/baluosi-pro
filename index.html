@@ -1368,7 +1368,7 @@ function renderCompareChart() {
       name: s.name + '(日)',
       type: 'bar',
       data: barData,
-      itemStyle: { color: colors[i % colors.length], borderRadius: [4,4,0,0] },
+      itemStyle: { color: function(params) { return params.value >= 0 ? '#FF6B6B' : (params.value !== null ? '#51CF66' : 'transparent'); }, borderRadius: [4,4,0,0] },
       barMaxWidth: 16,
       barGap: '20%',
       yAxisIndex: 0
