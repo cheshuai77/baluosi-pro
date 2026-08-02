@@ -345,7 +345,7 @@
   .top-tab-content.active { display: block; }
 
   /* 5 indicators row */
-  .market-indicators-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 18px; }
+  .market-indicators-5 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-bottom: 18px; }
 
   /* 龙虎榜新布局 */
   .lhb-panel { background: var(--bg-secondary); border-radius: var(--card-radius); box-shadow: var(--shadow); padding: 20px; margin-top: 18px; }
@@ -648,6 +648,11 @@ function renderMarketOverview() {
       '<div class="stat-sub">流入' + (mo.totalFlowIn || 0).toFixed(0) + '亿 · 流出' + (mo.totalFlowOut || 0).toFixed(0) + '亿</div>' +
     '</div>' +
     '<div class="stat-card">' +
+      '<div class="stat-header"><span class="stat-icon">' + ((mo.northFlow || 0) >= 0 ? '💹' : '💹') + '</span><span class="stat-label">北向资金</span></div>' +
+      '<div><span class="stat-value ' + ((mo.northFlow || 0) >= 0 ? 'rise' : 'fall') + '">' + ((mo.northFlow || 0) > 0 ? '+' : '') + (mo.northFlow || 0).toFixed(1) + '亿</span></div>' +
+      '<div class="stat-sub">' + ((mo.northFlow || 0) > 0 ? '净买入' : '净流出') + '</div>' +
+    '</div>' +
+    '<div class="stat-card">' +
       '<div class="stat-header"><span class="stat-icon">' + (riseRatio >= 50 ? '🔴' : '🟢') + '</span><span class="stat-label">涨跌比</span></div>' +
       '<div><span class="stat-value ' + riseC + '">' + riseRatio + '%</span></div>' +
       '<div class="stat-sub">' + (mo.totalRise||0) + '涨 / ' + (mo.totalFall||0) + '跌</div>' +
@@ -726,7 +731,7 @@ function renderSignalItems(containerId, items, type) {
 
   let html = showItems.map((s, i) => buildItem(s, i)).join('');
   if (hasMore) {
-    html += '<div class="signal-more-btn" onclick="showSignalModal(\'' + type + '\')">查看更多 +' + (items.length - MAX_SHOW) + '</div>';
+    html += '<div class="signal-more-btn" onclick="showSignalModal(\'' + type + '\')">查看更多</div>';
   }
   container.innerHTML = html;
 }
@@ -942,39 +947,34 @@ function renderZT() {
 }
 
 function renderLadderChart(ladderStr) {
-  // Parse "9→5→4→3→2板×6" format
+  const mo = (FUND_DATA.market && FUND_DATA.market[state.currentDate]) || {};
+  const ladderDetail = mo.ladderDetail || null;
   const parts = ladderStr.split('→');
   let html = '<div style="margin-bottom:10px;padding:10px 12px;background:var(--bg-tertiary);border-radius:8px;">';
-  html += '<div style="font-size:12px;color:var(--text-secondary);margin-bottom:8px;">连板梯队</div>';
+  html += '<div style="font-size:12px;color:var(--text-secondary);margin-bottom:8px;">🏔️ 连板梯队</div>';
   html += '<div class="ladder-chart">';
-  
-  const maxH = 120; // max bar width
-  
+  const maxH = 140;
+  const maxBoard = parts.length > 0 ? (parseInt(parts[0]) || 9) : 9;
   parts.forEach((part, i) => {
-    // Parse "2板×6" or "9" format
     let boards, count;
     const match = part.match(/(\d+)板×(\d+)/);
-    if (match) {
-      boards = parseInt(match[1]);
-      count = parseInt(match[2]);
-    } else {
-      boards = parseInt(part);
-      count = 1;
-    }
+    if (match) { boards = parseInt(match[1]); count = parseInt(match[2]); }
+    else { boards = parseInt(part); count = 1; }
     if (isNaN(boards)) return;
-    
-    const width = Math.max(50, (boards / (parts.length > 0 ? parseInt(parts[0]) || 1 : 1)) * maxH);
+    const width = Math.max(50, (boards / maxBoard) * maxH);
     let color;
     if (boards >= 5) color = '#FF6B6B';
     else if (boards >= 3) color = '#FFA94D';
     else color = '#FFD43B';
-    
+    let namesHtml = '';
+    if (ladderDetail && ladderDetail[String(boards)]) {
+      namesHtml = ' <span style="color:var(--text-secondary);font-size:10px;margin-left:4px;">' + ladderDetail[String(boards)].join('、') + '</span>';
+    }
     html += '<div class="ladder-step">' +
       '<div class="ladder-bar" style="width:' + width + 'px;background:' + color + ';">' + boards + '板</div>' +
-      '<div class="ladder-label">×' + count + '只</div>' +
+      '<div class="ladder-label">×' + count + '只' + namesHtml + '</div>' +
       '</div>';
   });
-  
   html += '</div></div>';
   return html;
 }
@@ -983,86 +983,61 @@ function renderYZ() {
   const el = document.getElementById('yzContent');
   const lhb = FUND_DATA.lhb || {};
   const data = lhb[state.currentDate];
-  if (!data || !data.summary) {
+  if (!data || (!data.traders && !data.summary)) {
     el.innerHTML = '<div style="color:var(--text-tertiary);font-size:12px;padding:12px 0;">数据待更新</div>';
     return;
   }
 
-  const summary = data.summary.trim();
-  const lines = summary.split('\n').map(l => l.trim()).filter(Boolean);
-
-  // 解析实际格式：
-  // - 当日游资总态度：xxx
-  // - 核心动向：
-  //   1. xxx
-  //   2. xxx
-  // - 与主线联动：xxx
-  let attitude = '', coreItems = [], linkage = '';
-  let inCore = false;
-
-  lines.forEach(line => {
-    line = line.replace(/^[-•·]\s*/, '').trim();
-    if (!line) return;
-
-    // 总态度行
-    const attMatch = line.match(/当日游资总态度[：:]\s*(.+)/);
-    if (attMatch) { attitude = attMatch[1].trim(); return; }
-
-    // 核心动向标题
-    if (line.match(/核心动向[：:]/)) { inCore = true; return; }
-
-    // 主线联动
-    const linkMatch = line.match(/与主线联动[：:]\s*(.+)/);
-    if (linkMatch) { linkage = linkMatch[1].trim(); inCore = false; return; }
-
-    // 核心动向编号项
-    if (inCore) {
-      const numMatch = line.match(/^\d+[\.\、]\s*(.+)/);
-      if (numMatch) { coreItems.push(numMatch[1].trim()); return; }
-      // 无编号但仍在核心区域内
-      if (coreItems.length > 0) { coreItems[coreItems.length - 1] += ' ' + line; return; }
-    }
-  });
-
-  // 判断整体态度色
-  let attitudeBadge = '⚪中性', attitudeClass = 'neutral';
-  if (attitude.includes('偏多') || attitude.includes('看多') || attitude.includes('积极')) {
-    attitudeBadge = '偏多'; attitudeClass = 'positive';
-  } else if (attitude.includes('偏空') || attitude.includes('看空') || attitude.includes('分歧')) {
-    attitudeBadge = '🔴分歧'; attitudeClass = 'negative';
-  }
-
   let html = '';
 
-  // 总态度
-  if (attitude) {
+  // 总态度卡片
+  if (data.attitude) {
+    let attitudeBadge = '⚪中性', attitudeClass = 'neutral';
+    if (data.attitude.includes('偏多') || data.attitude.includes('看多') || data.attitude.includes('积极')) {
+      attitudeBadge = '🟢偏多'; attitudeClass = 'positive';
+    } else if (data.attitude.includes('偏空') || data.attitude.includes('看空')) {
+      attitudeBadge = '🔴偏空'; attitudeClass = 'negative';
+    } else if (data.attitude.includes('分歧')) {
+      attitudeBadge = '🟡分歧'; attitudeClass = 'negative';
+    }
     html += '<div class="yz-card"><div class="yz-card-header">' +
-      '<span class="yz-name">当日总态度</span>' +
+      '<span class="yz-name">📊 当日总态度</span>' +
       '<span class="yz-badge ' + attitudeClass + '">' + attitudeBadge + '</span>' +
-      '</div><div class="yz-action">' + attitude + '</div></div>';
+      '</div><div class="yz-action">' + data.attitude + '</div></div>';
   }
 
-  // 核心动向
-  if (coreItems.length > 0) {
-    html += '<div class="yz-card"><div class="yz-card-header"><span class="yz-name">🎯 核心动向</span></div>';
-    html += '<div class="yz-action">';
-    coreItems.forEach(function(item, i) {
-      html += '<div style="margin-bottom:6px;line-height:1.7;">' +
-        '<span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:4px;font-size:11px;font-weight:600;color:#fff;background:var(--accent);margin-right:6px;flex-shrink:0;">' + (i+1) + '</span>' +
-        highlightAmounts(item) + '</div>';
+  // 游资"谁干了什么"卡片
+  if (data.traders && data.traders.length > 0) {
+    html += '<div style="font-size:12px;color:var(--text-secondary);margin:12px 0 8px;font-weight:600;">👤 谁干了什么</div>';
+    data.traders.forEach(function(t) {
+      // 方向颜色
+      let dirColor = 'var(--text-secondary)';
+      let dirIcon = '➖';
+      let dirLabel = '';
+      if (t.direction === 'buy') { dirColor = 'var(--rise)'; dirIcon = '🟢'; dirLabel = '买入'; }
+      else if (t.direction === 'sell') { dirColor = 'var(--fall)'; dirIcon = '🔴'; dirLabel = '卖出'; }
+      else if (t.direction === 'mixed') { dirColor = '#FFA94D'; dirIcon = '🟡'; dirLabel = '分歧'; }
+
+      html += '<div class="yz-card" style="margin-bottom:8px;">' +
+        '<div class="yz-card-header" style="padding-bottom:6px;">' +
+        '<span class="yz-name" style="font-size:13px;font-weight:700;color:' + dirColor + ';">' + dirIcon + ' ' + t.name + '</span>' +
+        '<span style="font-size:10px;padding:2px 6px;border-radius:4px;background:' + (t.direction === 'buy' ? 'rgba(34,197,94,0.12)' : t.direction === 'sell' ? 'rgba(239,68,68,0.12)' : 'rgba(255,169,77,0.12)') + ';color:' + dirColor + ';">' + dirLabel + '</span>' +
+        '</div>' +
+        '<div style="font-size:12px;color:var(--text-primary);line-height:1.6;padding:0 2px;">' + highlightAmounts(t.action) + '</div>' +
+        (t.note ? '<div style="font-size:11px;color:var(--text-tertiary);margin-top:4px;padding:0 2px;">💡 ' + t.note + '</div>' : '') +
+        '</div>';
     });
-    html += '</div></div>';
   }
 
   // 主线联动
-  if (linkage) {
-    html += '<div class="yz-card"><div class="yz-card-header"><span class="yz-name">🔗 主线联动</span></div>' +
-      '<div class="yz-action">' + linkage + '</div></div>';
+  if (data.linkage) {
+    html += '<div class="yz-card" style="margin-top:10px;"><div class="yz-card-header"><span class="yz-name">🔗 主线联动</span></div>' +
+      '<div class="yz-action">' + data.linkage + '</div></div>';
   }
 
-  // 全都不匹配时的兜底
-  if (!html) {
-    html = '<div style="font-size:12px;color:var(--text-secondary);line-height:1.7;white-space:pre-line;">' + formatSummary(summary) + '</div>';
+  // 兜底：如果没有结构化数据，用旧文本格式
+  if (!html && data.summary) {
+    html = '<div style="font-size:12px;color:var(--text-secondary);line-height:1.7;white-space:pre-line;">' + formatSummary(data.summary.trim()) + '</div>';
   }
 
   el.innerHTML = html;
@@ -1171,6 +1146,18 @@ function openDrawer(sectorName) {
         '<div class="gi-label">净流入</div>' +
       '</div>' +
     '</div>' +
+
+    // 北向资金（市场级）
+    (function() {
+      const mo = (FUND_DATA.market && FUND_DATA.market[state.currentDate]) || {};
+      if (mo.northFlow == null) return '';
+      const nfClass = (mo.northFlow || 0) >= 0 ? 'rise' : 'fall';
+      const nfSign = (mo.northFlow || 0) > 0 ? '+' : '';
+      return '<div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg-tertiary);border-radius:8px;margin-bottom:16px;">' +
+        '<span style="font-size:18px;">💹</span>' +
+        '<div><div style="font-size:10px;color:var(--text-secondary);">北向资金（市场）</div>' +
+        '<div style="font-size:15px;font-weight:700;" class="' + nfClass + '">' + nfSign + (mo.northFlow || 0).toFixed(1) + '亿 <span style="font-size:11px;font-weight:400;color:var(--text-tertiary);">' + ((mo.northFlow||0) > 0 ? '净买入' : '净流出') + '</span></div></div></div>';
+    })() +
 
     // 多周期累计
     '<div class="drawer-section">' +
