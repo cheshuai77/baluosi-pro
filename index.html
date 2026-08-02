@@ -1242,11 +1242,11 @@ function renderDrawerChart(sector) {
       }
     },
     legend: { data: ['净流入', '涨跌幅'], bottom: 2, textStyle: { fontSize: 11, color: '#636366' } },
-    grid: { top: 15, right: 50, bottom: 40, left: 50 },
-    xAxis: { type: 'category', data: dates, axisLabel: { fontSize: 10, color: '#636366' }, axisLine: { lineStyle: { color: '#E5E5EA' } } },
+    grid: { top: 20, right: 55, bottom: 45, left: 60 },
+    xAxis: { type: 'category', data: dates, axisLabel: { fontSize: 10, color: '#636366', interval: 0, formatter: function(v) { return v || ''; } }, axisLine: { lineStyle: { color: '#E5E5EA' } }, axisTick: { show: false } },
     yAxis: [
-      { type: 'value', name: '亿', nameTextStyle: { fontSize: 10, color: '#AEAEB2' }, axisLabel: { fontSize: 10, color: '#636366', formatter: function(v) { return v.toFixed(0); } }, splitLine: { lineStyle: { color: '#F5F5F7' } } },
-      { type: 'value', name: '%', nameTextStyle: { fontSize: 10, color: '#AEAEB2' }, axisLabel: { fontSize: 10, color: '#636366', formatter: function(v) { return v.toFixed(1); } }, splitLine: { show: false } }
+      { type: 'value', name: '亿', nameLocation: 'end', nameTextStyle: { fontSize: 11, color: '#636366', padding: [0, 30, 0, 0] }, axisLabel: { fontSize: 10, color: '#636366', formatter: function(v) { return v.toFixed(0); } }, splitLine: { lineStyle: { color: '#F5F5F7' } } },
+      { type: 'value', name: '%', nameLocation: 'end', nameTextStyle: { fontSize: 11, color: '#636366', padding: [0, 0, 0, 30] }, axisLabel: { fontSize: 10, color: '#636366', formatter: function(v) { return v.toFixed(1); } }, splitLine: { show: false } }
     ],
     series: [
       { name: '净流入', type: 'bar', yAxisIndex: 0, data: barData, itemStyle: { color: function(params) { return params.value >= 0 ? '#FF6B6B' : (params.value !== null ? '#51CF66' : 'transparent'); }, borderRadius: [3,3,0,0] }, barMaxWidth: 20 },
@@ -1409,7 +1409,7 @@ function renderCompareChart() {
     legend: { bottom: 0, textStyle: { fontSize: 10, color: '#636366' }, type: 'scroll', pageTextStyle: { color: '#636366' } },
     grid: { top: 20, right: 20, bottom: 50, left: 60 },
     xAxis: { type: 'category', data: dateLabels, axisLabel: { fontSize: 10, rotate: 45, interval: 0 } },
-    yAxis: { type: 'value', name: '亿', axisLabel: { fontSize: 11 }, splitLine: { lineStyle: { color: '#F5F5F7' } } },
+    yAxis: { type: 'value', name: '亿', nameLocation: 'end', nameTextStyle: { fontSize: 11, color: '#636366', padding: [0, 30, 0, 0] }, axisLabel: { fontSize: 11 }, splitLine: { lineStyle: { color: '#F5F5F7' } } },
     series: series
   }, true);
 }
