@@ -1331,37 +1331,64 @@ function renderCompareChart() {
     return;
   }
   
-  // Get daily inflow data for last 20 trading days from sectorsByDate
+  // Fixed 20-slot x-axis: historical data on left, future slots empty on right
   const allDates = FUND_DATA.dates || [];
-  const recentDates = allDates.slice(-20);
   const sbd = FUND_DATA.sectorsByDate || {};
+  const totalSlots = 20;
+  const hasCount = Math.min(allDates.length, totalSlots);
+  const emptyCount = totalSlots - hasCount;
+  const recentDates = allDates.slice(-hasCount);
+  
+  // Generate x-axis labels: past dates + empty future slots
+  const dateLabels = recentDates.map(d => d.slice(5));
+  for (let i = 0; i < emptyCount; i++) { dateLabels.push(''); }
   
   const colors = ['#FF6B6B','#74C0FC','#FFA94D','#51CF66','#DA77F2','#FFD43B','#74C7EC','#FF8787','#A9E34B','#E599F7'];
-  const series = selectedData.map((s, i) => {
+  const series = [];
+  
+  selectedData.forEach((s, i) => {
+    // Bar: daily net inflow
     const dailyData = recentDates.map(date => {
       const sectors = sbd[date] || [];
       const match = sectors.find(sec => sec.name === s.name);
       return match ? (match.inflow || 0) : 0;
     });
-    return {
-      name: s.name,
+    // Pad with nulls for future slots
+    const barData = dailyData.concat(new Array(emptyCount).fill(null));
+    series.push({
+      name: s.name + '(日)',
       type: 'bar',
-      data: dailyData,
+      data: barData,
       itemStyle: { color: colors[i % colors.length], borderRadius: [4,4,0,0] },
-      barMaxWidth: 20
-    };
+      barMaxWidth: 16,
+      barGap: '20%',
+      yAxisIndex: 0
+    });
+    
+    // Line: cumulative net inflow
+    let cum = 0;
+    const cumData = dailyData.map(v => { cum += v; return cum; });
+    const cumPadded = cumData.concat(new Array(emptyCount).fill(null));
+    series.push({
+      name: s.name + '(累计)',
+      type: 'line',
+      data: cumPadded,
+      itemStyle: { color: colors[i % colors.length] },
+      lineStyle: { width: 2 },
+      symbol: 'circle',
+      symbolSize: 4,
+      connectNulls: false,
+      yAxisIndex: 0
+    });
   });
   
-  const dateLabels = recentDates.map(d => d.slice(5)); // MM-DD format
-  
   compareChartInstance.setOption({
-    tooltip: { trigger: 'axis', formatter: function(params) { let h = params[0].axisValue + '<br/>'; params.forEach(p => { h += p.marker + ' ' + p.seriesName + ': ' + (p.value > 0 ? '+' : '') + p.value.toFixed(1) + '亿<br/>'; }); return h; } },
-    legend: { bottom: 0, textStyle: { fontSize: 11, color: '#636366' } },
-    grid: { top: 20, right: 20, bottom: 40, left: 60 },
-    xAxis: { type: 'category', data: dateLabels, axisLabel: { fontSize: 10, rotate: recentDates.length > 10 ? 45 : 0 } },
+    tooltip: { trigger: 'axis', formatter: function(params) { let h = params[0].axisValue + '<br/>'; params.forEach(p => { if (p.value !== null && p.value !== undefined) { h += p.marker + ' ' + p.seriesName + ': ' + (p.value > 0 ? '+' : '') + p.value.toFixed(1) + '亿<br/>'; } }); return h; } },
+    legend: { bottom: 0, textStyle: { fontSize: 10, color: '#636366' }, type: 'scroll', pageTextStyle: { color: '#636366' } },
+    grid: { top: 20, right: 20, bottom: 50, left: 60 },
+    xAxis: { type: 'category', data: dateLabels, axisLabel: { fontSize: 10, rotate: 45, interval: 0 } },
     yAxis: { type: 'value', name: '亿', axisLabel: { fontSize: 11 }, splitLine: { lineStyle: { color: '#F5F5F7' } } },
-    series: series,
-    dataZoom: recentDates.length > 10 ? [{ type: 'inside', start: 0, end: 100 }] : []
+    series: series
   }, true);
 }
 
