@@ -273,7 +273,7 @@
     background: var(--bg-tertiary); border-radius: 8px; font-size: 12px;
   }
 
-  .echart-box { width: 100%; height: 300px; border-radius: 10px; }
+  .echart-box { width: 100%; height: 260px; border-radius: 10px; overflow: visible; }
 
   /* 遮罩 */
   .mask { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 150; display: none; }
@@ -1239,8 +1239,8 @@ function renderDrawerChart(sector) {
         return html;
       }
     },
-    legend: { data: ['净流入', '涨跌幅'], bottom: 0, textStyle: { fontSize: 11, color: '#636366' } },
-    grid: { top: 20, right: 60, bottom: 36, left: 60 },
+    legend: { data: ['净流入', '涨跌幅'], bottom: 2, textStyle: { fontSize: 11, color: '#636366' } },
+    grid: { top: 15, right: 50, bottom: 40, left: 50 },
     xAxis: { type: 'category', data: dates, axisLabel: { fontSize: 10, color: '#636366' }, axisLine: { lineStyle: { color: '#E5E5EA' } } },
     yAxis: [
       { type: 'value', name: '亿', nameTextStyle: { fontSize: 10, color: '#AEAEB2' }, axisLabel: { fontSize: 10, color: '#636366', formatter: function(v) { return v.toFixed(0); } }, splitLine: { lineStyle: { color: '#F5F5F7' } } },
