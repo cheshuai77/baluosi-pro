@@ -1141,25 +1141,35 @@ function openDrawer(sectorName) {
       '</div>' +
     '</div>' +
 
-    // 第三行：北向资金 + 领涨股
+    // 第三行：北向资金 + 连续净流入天数 + 领涨股
     (function() {
       const mo = (FUND_DATA.market && FUND_DATA.market[state.currentDate]) || {};
       const nfClass = (mo.northFlow || 0) >= 0 ? 'rise' : 'fall';
       const nfSign = (mo.northFlow || 0) > 0 ? '+' : '';
+      // 计算连续净流入天数
+      const hist = s.history || [];
+      let consInflowDays = 0;
+      for (let i = hist.length - 1; i >= 0; i--) {
+        if (hist[i].inflow > 0) consInflowDays++;
+        else break;
+      }
+      const consClass = consInflowDays > 0 ? 'rise' : 'fall';
       const northHtml = '<div class="grid-item">' +
         '<div class="gi-icon">💹</div>' +
         '<div class="gi-value ' + nfClass + '">' + nfSign + (mo.northFlow || 0).toFixed(1) + '亿</div>' +
         '<div class="gi-label">北向资金</div>' +
+      '</div>';
+      const consHtml = '<div class="grid-item">' +
+        '<div class="gi-icon">' + (consInflowDays > 0 ? '🔥' : '💧') + '</div>' +
+        '<div class="gi-value ' + consClass + '">' + consInflowDays + '天</div>' +
+        '<div class="gi-label">连续净流入</div>' +
       '</div>';
       const leaderHtml = '<div class="grid-item">' +
         '<div class="gi-icon">🏆</div>' +
         '<div class="gi-value ' + ((s.leaderChange||0) >= 0 ? 'rise' : 'fall') + '">' + (s.leader || '-') + '</div>' +
         '<div class="gi-label">' + ((s.leaderChange||0) > 0 ? '+' : '') + (s.leaderChange||0).toFixed(1) + '%</div>' +
       '</div>';
-      const northNote = '<div class="grid-item" style="font-size:11px;color:var(--text-tertiary);display:flex;align-items:center;justify-content:center;text-align:center;">' +
-        ((mo.northFlow||0) > 0 ? '🔴 净买入' : (mo.northFlow||0) < 0 ? '🟢 净流出' : '— 持平') +
-      '</div>';
-      return '<div class="drawer-grid" style="margin-bottom:24px;">' + northHtml + leaderHtml + northNote + '</div>';
+      return '<div class="drawer-grid" style="margin-bottom:24px;">' + northHtml + consHtml + leaderHtml + '</div>';
     })() +
 
     // 多周期累计
