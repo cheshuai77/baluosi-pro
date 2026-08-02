@@ -1204,15 +1204,24 @@ function renderDrawerChart(sector) {
     drawerChartInstance.setOption({ title: { text: '暂无历史数据', left: 'center', top: 'center', textStyle: { color: '#AEAEB2', fontSize: 13 } } });
     return;
   }
-  const dates = hist.map(h => h.date.slice(5));
-  const inflows = hist.map(h => h.inflow);
-  const changes = hist.map(h => h.change);
+  const totalSlots = 20;
+  const hasCount = Math.min(hist.length, totalSlots);
+  const emptyCount = totalSlots - hasCount;
+  const recentHist = hist.slice(-hasCount);
+  const dates = recentHist.map(h => h.date.slice(5));
+  for (let i = 0; i < emptyCount; i++) { dates.push(''); }
+  const inflows = recentHist.map(h => h.inflow);
+  const changes = recentHist.map(h => h.change);
+  const barData = inflows.concat(new Array(emptyCount).fill(null));
+  const lineData = changes.concat(new Array(emptyCount).fill(null));
   drawerChartInstance.setOption({
     tooltip: {
       trigger: 'axis', axisPointer: { type: 'cross' },
       formatter: function(params) {
+        if (!params[0].axisValue) return '';
         let html = params[0].axisValueLabel + '<br/>';
         params.forEach(p => {
+          if (p.value === null || p.value === undefined) return;
           if (p.seriesName === '净流入') html += p.marker + ' ' + p.seriesName + ': ' + (p.value > 0 ? '+' : '') + p.value.toFixed(1) + '亿<br/>';
           else html += p.marker + ' ' + p.seriesName + ': ' + (p.value > 0 ? '+' : '') + p.value.toFixed(2) + '%<br/>';
         });
@@ -1227,8 +1236,8 @@ function renderDrawerChart(sector) {
       { type: 'value', name: '%', nameTextStyle: { fontSize: 10, color: '#AEAEB2' }, axisLabel: { fontSize: 10, color: '#636366', formatter: function(v) { return v.toFixed(1); } }, splitLine: { show: false } }
     ],
     series: [
-      { name: '净流入', type: 'bar', yAxisIndex: 0, data: inflows, itemStyle: { color: function(params) { return params.value >= 0 ? '#FF6B6B' : '#51CF66'; }, borderRadius: [3,3,0,0] }, barMaxWidth: 30 },
-      { name: '涨跌幅', type: 'line', yAxisIndex: 1, data: changes, smooth: true, symbol: 'circle', symbolSize: 6, lineStyle: { width: 2, color: '#74C0FC' }, itemStyle: { color: '#74C0FC' } }
+      { name: '净流入', type: 'bar', yAxisIndex: 0, data: barData, itemStyle: { color: function(params) { return params.value >= 0 ? '#FF6B6B' : '#51CF66'; }, borderRadius: [3,3,0,0] }, barMaxWidth: 20 },
+      { name: '涨跌幅', type: 'line', yAxisIndex: 1, data: lineData, smooth: true, symbol: 'circle', symbolSize: 6, lineStyle: { width: 2, color: '#74C0FC' }, itemStyle: { color: '#74C0FC' } }
     ]
   });
 }
