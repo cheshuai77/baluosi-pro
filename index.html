@@ -487,7 +487,7 @@
             <th data-sort="flowIn">流入(亿)</th>
             <th data-sort="flowOut">流出(亿)</th>
             <th data-sort="inflow">净流入(亿)</th>
-            <th data-sort="continuousDays">连入天数</th>
+            <th data-sort="continuousDays">净流天数</th>
             <th data-sort="rankChange">名次变化</th>
             <th data-sort="riseCount">股票涨/跌</th>
             <th data-sort="risePct">比例</th>
@@ -866,8 +866,21 @@ function renderTable() {
     const changeClass = s.change >= 0 ? 'rise' : 'fall';
     const inflowClass = s.inflow >= 0 ? 'rise' : 'fall';
     const leaderClass = (s.leaderChange || 0) >= 0 ? 'rise' : 'fall';
-    const cd = s.continuousDays || 0;
-    const cdDisplay = cd >= 1 ? '<span class="rise">' + cd + '天</span>' : '<span class="text-tertiary">0天</span>';
+    // 净流天数：正=连续净流入天数，负=连续净流出天数
+    const hist = s.history || [];
+    let flowDays = 0;
+    if (hist.length > 0) {
+      const lastInflow = hist[hist.length - 1].inflow;
+      if (lastInflow > 0) {
+        for (let i = hist.length - 1; i >= 0; i--) { if (hist[i].inflow > 0) flowDays++; else break; }
+      } else if (lastInflow < 0) {
+        for (let i = hist.length - 1; i >= 0; i--) { if (hist[i].inflow < 0) flowDays--; else break; }
+      }
+    }
+    let cdDisplay;
+    if (flowDays > 0) cdDisplay = '<span class="rise" style="font-weight:700;">+' + flowDays + '天</span>';
+    else if (flowDays < 0) cdDisplay = '<span class="fall" style="font-weight:700;">' + flowDays + '天</span>';
+    else cdDisplay = '<span class="text-tertiary">0天</span>';
 
     // 名次变化
     let rankChangeHtml = '<span class="rank-change-same">-</span>';
