@@ -1331,26 +1331,37 @@ function renderCompareChart() {
     return;
   }
   
-  // Get all dates for x-axis
-  const dates = FUND_DATA.dates;
+  // Get daily inflow data for last 20 trading days from sectorsByDate
+  const allDates = FUND_DATA.dates || [];
+  const recentDates = allDates.slice(-20);
+  const sbd = FUND_DATA.sectorsByDate || {};
+  
+  const colors = ['#FF6B6B','#74C0FC','#FFA94D','#51CF66','#DA77F2','#FFD43B','#74C7EC','#FF8787','#A9E34B','#E599F7'];
   const series = selectedData.map((s, i) => {
-    const colors = ['#FF6B6B','#74C0FC','#FFA94D','#51CF66','#DA77F2','#FFD43B','#74C7EC','#FF8787','#A9E34B','#E599F7'];
+    const dailyData = recentDates.map(date => {
+      const sectors = sbd[date] || [];
+      const match = sectors.find(sec => sec.name === s.name);
+      return match ? (match.inflow || 0) : 0;
+    });
     return {
       name: s.name,
       type: 'bar',
-      data: [s.accum20d || 0],
+      data: dailyData,
       itemStyle: { color: colors[i % colors.length], borderRadius: [4,4,0,0] },
-      barMaxWidth: 40
+      barMaxWidth: 20
     };
   });
   
+  const dateLabels = recentDates.map(d => d.slice(5)); // MM-DD format
+  
   compareChartInstance.setOption({
-    tooltip: { trigger: 'axis', formatter: function(params) { let h = ''; params.forEach(p => { h += p.marker + ' ' + p.seriesName + ': ' + (p.value > 0 ? '+' : '') + p.value.toFixed(1) + '亿<br/>'; }); return h; } },
+    tooltip: { trigger: 'axis', formatter: function(params) { let h = params[0].axisValue + '<br/>'; params.forEach(p => { h += p.marker + ' ' + p.seriesName + ': ' + (p.value > 0 ? '+' : '') + p.value.toFixed(1) + '亿<br/>'; }); return h; } },
     legend: { bottom: 0, textStyle: { fontSize: 11, color: '#636366' } },
     grid: { top: 20, right: 20, bottom: 40, left: 60 },
-    xAxis: { type: 'category', data: ['20日累计净流入'], axisLabel: { fontSize: 12 } },
+    xAxis: { type: 'category', data: dateLabels, axisLabel: { fontSize: 10, rotate: recentDates.length > 10 ? 45 : 0 } },
     yAxis: { type: 'value', name: '亿', axisLabel: { fontSize: 11 }, splitLine: { lineStyle: { color: '#F5F5F7' } } },
-    series: series
+    series: series,
+    dataZoom: recentDates.length > 10 ? [{ type: 'inside', start: 0, end: 100 }] : []
   }, true);
 }
 
