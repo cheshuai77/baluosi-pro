@@ -1236,7 +1236,7 @@ function renderDrawerChart(sector) {
       { type: 'value', name: '%', nameTextStyle: { fontSize: 10, color: '#AEAEB2' }, axisLabel: { fontSize: 10, color: '#636366', formatter: function(v) { return v.toFixed(1); } }, splitLine: { show: false } }
     ],
     series: [
-      { name: '净流入', type: 'bar', yAxisIndex: 0, data: barData, itemStyle: { color: function(params) { return params.value >= 0 ? '#FF6B6B' : '#51CF66'; }, borderRadius: [3,3,0,0] }, barMaxWidth: 20 },
+      { name: '净流入', type: 'bar', yAxisIndex: 0, data: barData, itemStyle: { color: function(params) { return params.value >= 0 ? '#FF6B6B' : (params.value !== null ? '#51CF66' : 'transparent'); }, borderRadius: [3,3,0,0] }, barMaxWidth: 20 },
       { name: '涨跌幅', type: 'line', yAxisIndex: 1, data: lineData, smooth: true, symbol: 'circle', symbolSize: 6, lineStyle: { width: 2, color: '#74C0FC' }, itemStyle: { color: '#74C0FC' } }
     ]
   });
