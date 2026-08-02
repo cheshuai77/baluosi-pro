@@ -867,7 +867,7 @@ function renderTable() {
     const inflowClass = s.inflow >= 0 ? 'rise' : 'fall';
     const leaderClass = (s.leaderChange || 0) >= 0 ? 'rise' : 'fall';
     const cd = s.continuousDays || 0;
-    const cdDisplay = cd > 1 ? '<span class="rise">' + cd + '天</span>' : '<span class="text-tertiary">-</span>';
+    const cdDisplay = cd >= 1 ? '<span class="rise">' + cd + '天</span>' : '<span class="text-tertiary">0天</span>';
 
     // 名次变化
     let rankChangeHtml = '<span class="rank-change-same">-</span>';
