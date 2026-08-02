@@ -9,19 +9,19 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   
   :root {
-    --bg-primary: #F2F2F7;
+    --bg-primary: #F0F2F5;
     --bg-secondary: #FFFFFF;
-    --bg-tertiary: #F5F5F7;
-    --border: #E5E5EA;
-    --text-primary: #1C1C1E;
-    --text-secondary: #636366;
-    --text-tertiary: #AEAEB2;
-    --rise: #FF6B6B;
-    --fall: #51CF66;
-    --accent: #74C0FC;
-    --warning: #FFD43B;
-    --card-radius: 14px;
-    --shadow: 0 2px 8px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    --bg-tertiary: #F7F8FA;
+    --border: #E8E8ED;
+    --text-primary: #1A1A2E;
+    --text-secondary: #5A5A6E;
+    --text-tertiary: #A0A0B0;
+    --rise: #E74C3C;
+    --fall: #27AE60;
+    --accent: #4A90D9;
+    --warning: #F39C12;
+    --card-radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
   }
   
   body {
@@ -35,15 +35,16 @@
 
   /* 顶部导航 */
   .navbar {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
     color: #fff;
-    padding: 14px 24px;
+    padding: 12px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
   }
   
   .navbar-left { display: flex; align-items: center; gap: 12px; }
@@ -111,23 +112,26 @@
   /* Tab栏 */
   .tab-bar { 
     display: flex; 
-    border-bottom: 2px solid var(--border); 
+    border-bottom: 1px solid var(--border); 
     background: var(--bg-secondary);
-    padding: 0 16px;
+    padding: 0 20px;
     border-radius: var(--card-radius) var(--card-radius) 0 0;
+    gap: 4px;
   }
   
   .tab-item {
-    padding: 14px 20px; 
+    padding: 13px 20px; 
     cursor: pointer; 
     color: var(--text-secondary);
-    font-size: 14px; 
+    font-size: 13px; 
     border-bottom: 2px solid transparent; 
-    margin-bottom: -2px;
+    margin-bottom: -1px;
     font-weight: 500;
+    border-radius: 6px 6px 0 0;
+    transition: all 0.2s ease;
   }
-  .tab-item.active { color: var(--accent); border-bottom-color: var(--accent); }
-  .tab-item:hover { color: var(--text-primary); }
+  .tab-item.active { color: var(--accent); border-bottom-color: var(--accent); background: rgba(74,144,217,0.04); }
+  .tab-item:hover { color: var(--text-primary); background: var(--bg-tertiary); }
   .tab-item.future {
     color: var(--text-tertiary);
     opacity: 0.4;
@@ -184,10 +188,10 @@
     flex-direction: column;
   }
   
-  .signal-zone.main { background: #fff5f5; border-color: #f5c6c6; }
-  .signal-zone.latent { background: #f0f7ff; border-color: #b8d4f0; }
-  .signal-zone.disaster { background: #f5f5f5; border-color: #d0d0d0; }
-  .signal-zone.risk { background: #fff8f0; border-color: #f0d8b0; }
+  .signal-zone.main { background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%); border-color: #f5c6c6; }
+  .signal-zone.latent { background: linear-gradient(135deg, #f0f7ff 0%, #eaf3ff 100%); border-color: #b8d4f0; }
+  .signal-zone.disaster { background: linear-gradient(135deg, #f8f8f8 0%, #f3f3f3 100%); border-color: #d5d5d5; }
+  .signal-zone.risk { background: linear-gradient(135deg, #fff8f0 0%, #fff5e8 100%); border-color: #f0d8b0; }
   
   .sz-title { 
     font-size: 12px; 
@@ -333,7 +337,7 @@
     white-space: nowrap;
     font-family: inherit;
   }
-  .detail-btn:hover { background: #5BA3E6; }
+  .detail-btn:hover { background: #3A7BC8; }
   
   .text-tertiary { color: var(--text-tertiary); }
   .rank-cell { color: var(--text-tertiary); }
@@ -583,6 +587,92 @@
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
   ::-webkit-scrollbar-thumb:hover { background: var(--text-tertiary); }
 
+  /* 信号弹窗 */
+  .signal-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 300;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+  }
+  .signal-modal {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    width: 560px;
+    max-width: 92vw;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    animation: modalIn 0.2s ease;
+  }
+  @keyframes modalIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .signal-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border);
+  }
+  .signal-modal-title { font-size: 15px; font-weight: 700; }
+  .signal-modal-close {
+    width: 30px; height: 30px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-secondary);
+  }
+  .signal-modal-close:hover { background: var(--bg-tertiary); color: var(--text-primary); }
+  .signal-modal-body {
+    padding: 16px 22px;
+    overflow-y: auto;
+    flex: 1;
+  }
+  .signal-modal-body .sz-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--bg-tertiary);
+  }
+  .signal-modal-body .sz-item:last-child { border-bottom: none; }
+
+  /* 表格斑马纹 */
+  #sectorTable tr:nth-child(even) { background: rgba(0,0,0,0.015); }
+  #sectorTable tr:nth-child(even):hover { background: var(--bg-tertiary); }
+
+  /* 排名高亮 */
+  .rank-top3 { 
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 6px;
+    font-size: 11px; font-weight: 700; color: #fff;
+  }
+  .rank-1 { background: linear-gradient(135deg, #FF6B6B, #ee5a24); }
+  .rank-2 { background: linear-gradient(135deg, #FF9F43, #e67e22); }
+  .rank-3 { background: linear-gradient(135deg, #FECA57, #f39c12); }
+
+  /* 指标卡片hover效果 */
+  .metric-card { transition: transform 0.15s ease; }
+  .metric-card:hover { transform: translateY(-2px); }
+  .market-item { transition: transform 0.15s ease; }
+  .market-item:hover { transform: translateY(-1px); }
+
+  /* 信号卡片hover */
+  .signal-zone { transition: box-shadow 0.2s ease; }
+  .signal-zone:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .sz-item { transition: background 0.15s ease; border-radius: 6px; padding: 6px 8px !important; }
+  .sz-item:hover { background: rgba(0,0,0,0.03); }
+
+  /* 详情按钮优化 */
+  .detail-btn { transition: all 0.15s ease; }
+  .detail-btn:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(116,192,252,0.3); }
+
+  /* 表格面板阴影增强 */
+  .table-panel { box-shadow: 0 4px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04); }
+  .signal-section { box-shadow: 0 4px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04); }
+  .lhb-section { box-shadow: 0 4px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04); }
+
   /* 移动端 */
   @media (max-width: 768px) {
     .navbar { padding: 12px 16px; }
@@ -632,13 +722,7 @@
     <div class="signal-section">
       <div class="signal-section-title">📡 核心信息总览</div>
       
-      <div class="signal-criteria">
-        <strong>信号区判定标准（来源：baluosi-pro fund_service_ths.py）：</strong><br>
-        🔥 <strong>主线确认</strong>：流入TOP5 ∩ 涨幅TOP5 取交集 → 资金和涨幅双靠前的板块 = 当日市场主攻方向<br>
-        👀 <strong>潜伏机会</strong>：打分制（≥2分入选）—— 10日累计净流入&gt;0 且 涨幅&lt;5%(+1) + 3日加速流入(+2) + 累计&gt;10亿(+1) + 3日&gt;5亿(+1)<br>
-        💀 <strong>砸盘重灾</strong>：净流出最大TOP3/5 + 涨跌家数验证砸盘真实度（下跌占比≥85%=真崩⭐ / ≥65%=普跌⭐⭐ / 否则=虚跌⭐⭐⭐）<br>
-        ⚠️ <strong>风险预警</strong>：资金-价格背离检测 —— 流入但跌&gt;2%（压盘吸筹嫌疑）/ 流出但涨（诱多嫌疑），阈值±2%
-      </div>
+
       
       <div class="signal-grid" id="signalGrid"></div>
     </div>
@@ -662,6 +746,9 @@
               <th data-sort="flowIn">流入(亿)</th>
               <th data-sort="flowOut">流出(亿)</th>
               <th data-sort="inflow">净流入(亿)</th>
+              <th data-sort="accum3d">3日累计(亿)</th>
+              <th data-sort="accum5d">5日累计(亿)</th>
+              <th data-sort="accum10d">10日累计(亿)</th>
               <th data-sort="continuousDays">连入天数</th>
               <th style="width:72px;">详情</th>
             </tr>
@@ -701,6 +788,17 @@
 <!-- 遮罩 -->
 <div class="mask" id="mask"></div>
 
+<!-- 信号详情弹窗 -->
+<div class="signal-modal-overlay" id="signalModal" onclick="if(event.target===this)closeSignalModal()">
+  <div class="signal-modal">
+    <div class="signal-modal-header">
+      <div class="signal-modal-title" id="signalModalTitle"></div>
+      <div class="signal-modal-close" onclick="closeSignalModal()">✕</div>
+    </div>
+    <div class="signal-modal-body" id="signalModalBody"></div>
+  </div>
+</div>
+
 <!-- 详情抽屉 -->
 <div class="drawer" id="drawer">
   <div class="drawer-header">
@@ -719,7 +817,7 @@ const state = {
   currentDate: '',
   searchKeyword: '',
   sortField: 'rank',
-  sortOrder: 'desc'
+  sortOrder: 'asc'
 };
 
 let FUND_DATA = null;
@@ -814,10 +912,10 @@ function renderSignals() {
   const signals = (FUND_DATA.signals && FUND_DATA.signals[state.currentDate]) || {};
   
   const zones = [
-    { key: 'mainLine', title: '🔥 主线确认区', type: 'main', criteria: '判定：流入TOP5 ∩ 涨幅TOP5 交集' },
-    { key: 'latent', title: '👀 潜伏机会区', type: 'latent', criteria: '判定：打分制≥2分（10日净流入>0 + 加速流入/涨幅小/累计大）' },
-    { key: 'disaster', title: '💀 砸盘重灾区', type: 'disaster', criteria: '判定：净流出TOP3/5 + 涨跌家数验证真实度' },
-    { key: 'risk', title: '⚠️ 风险预警区', type: 'risk', criteria: '判定：资金-价格背离（流入但跌>2% / 流出但涨）' }
+    { key: 'mainLine', title: '🔥 主线确认区', type: 'main' },
+    { key: 'latent', title: '👀 潜伏机会区', type: 'latent' },
+    { key: 'disaster', title: '💀 砸盘重灾区', type: 'disaster' },
+    { key: 'risk', title: '⚠️ 风险预警区', type: 'risk' }
   ];
   
   container.innerHTML = zones.map(zone => {
@@ -828,12 +926,11 @@ function renderSignals() {
     return `
       <div class="signal-zone ${zone.type}">
         <div class="sz-title">${zone.title}</div>
-        <div class="sz-criteria">${zone.criteria}</div>
         <div class="sz-items">
           ${displayItems.map(item => renderSignalItem(item, zone.type)).join('')}
-          ${Array(Math.max(0, 2 - displayItems.length)).fill('<div class="sz-empty">占位</div>').join('')}
+          ${Array(Math.max(0, 2 - displayItems.length)).fill('<div class="sz-empty">-</div>').join('')}
         </div>
-        ${hasMore ? '<div class="sz-more" onclick="showSignalDetail(\'' + zone.key + '\')">查看更多 +</div>' : ''}
+        ${hasMore ? '<div class="sz-more" onclick="showSignalDetail(\'' + zone.key + '\')">展开全部 ' + items.length + ' 个 →</div>' : ''}
       </div>
     `;
   }).join('');
@@ -886,8 +983,25 @@ function renderSignalItem(item, type) {
 }
 
 function showSignalDetail(zoneKey) {
-  // TODO: 弹窗展示全部信号
-  alert('查看 ' + zoneKey + ' 全部信号');
+  const zoneMap = {
+    mainLine: { title: '🔥 主线确认区 · 全部', type: 'main' },
+    latent: { title: '👀 潜伏机会区 · 全部', type: 'latent' },
+    disaster: { title: '💀 砸盘重灾区 · 全部', type: 'disaster' },
+    risk: { title: '⚠️ 风险预警区 · 全部', type: 'risk' }
+  };
+  const zone = zoneMap[zoneKey] || { title: zoneKey, type: 'main' };
+  const items = (FUND_DATA.signals && FUND_DATA.signals[state.currentDate] && FUND_DATA.signals[state.currentDate][zoneKey]) || [];
+  
+  const modal = document.getElementById('signalModal');
+  document.getElementById('signalModalTitle').textContent = zone.title + '（' + items.length + '个）';
+  document.getElementById('signalModalBody').innerHTML = items.map(item => 
+    renderSignalItem(item, zone.type)
+  ).join('');
+  modal.style.display = 'flex';
+}
+
+function closeSignalModal() {
+  document.getElementById('signalModal').style.display = 'none';
 }
 
 // ====== 表格渲染 ======
@@ -940,17 +1054,28 @@ function renderTable() {
     const inflowD = s.inflow !== undefined ? (s.inflow > 0 ? '+' : '') + s.inflow.toFixed(1) : '-';
     const flowInD = s.flowIn !== undefined ? s.flowIn.toFixed(1) : '-';
     const flowOutD = s.flowOut !== undefined ? s.flowOut.toFixed(1) : '-';
+    const accum3dD = s.accum3d !== undefined ? (s.accum3d > 0 ? '+' : '') + s.accum3d.toFixed(1) : '-';
+    const accum3dCls = (s.accum3d || 0) >= 0 ? 'rise' : 'fall';
+    const accum5dD = s.accum5d !== undefined ? (s.accum5d > 0 ? '+' : '') + s.accum5d.toFixed(1) : '-';
+    const accum5dCls = (s.accum5d || 0) >= 0 ? 'rise' : 'fall';
+    const accum10dD = s.accum10d !== undefined ? (s.accum10d > 0 ? '+' : '') + s.accum10d.toFixed(1) : '-';
+    const accum10dCls = (s.accum10d || 0) >= 0 ? 'rise' : 'fall';
     const code = s.code || '-';
     const escName = s.name.replace(/'/g, "\\'");
     
+    const rankBadge = rank <= 3 ? '<span class="rank-top3 rank-' + rank + '">' + rank + '</span>' : rank;
+    
     return '<tr onclick="openDrawer(\'' + escName + '\')">' +
-      '<td class="rank-cell">' + rank + '</td>' +
+      '<td class="rank-cell">' + rankBadge + '</td>' +
       '<td style="text-align:left;font-family:inherit;"><span class="sector-name">' + s.name + '</span></td>' +
       '<td style="text-align:left;">' + code + '</td>' +
       '<td class="num ' + changeClass + '">' + (s.change > 0 ? '+' : '') + s.change.toFixed(2) + '%</td>' +
       '<td class="num rise">' + flowInD + '</td>' +
-      '<td class="num">' + flowOutD + '</td>' +
+      '<td class="num fall">' + flowOutD + '</td>' +
       '<td class="num ' + inflowClass + '">' + inflowD + '</td>' +
+      '<td class="num ' + accum3dCls + '">' + accum3dD + '</td>' +
+      '<td class="num ' + accum5dCls + '">' + accum5dD + '</td>' +
+      '<td class="num ' + accum10dCls + '">' + accum10dD + '</td>' +
       '<td class="num">' + cdDisplay + '</td>' +
       '<td><button class="detail-btn" onclick="event.stopPropagation();openDrawer(\'' + escName + '\')">详情 →</button></td>' +
     '</tr>';
@@ -1197,16 +1322,17 @@ function openDrawer(sectorName) {
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
         <div style="text-align:center;padding:10px;background:var(--bg-tertiary);border-radius:8px;">
-          <div style="font-size:11px;color:var(--text-secondary);">流入</div>
-          <div style="font-size:16px;font-weight:700;color:var(--rise);">${(s.flowIn || 0).toFixed(1)}亿</div>
+          <div style="font-size:11px;color:var(--text-secondary);">连入天数</div>
+          <div style="font-size:16px;font-weight:700;" class="${(s.continuousDays||0) > 0 ? 'rise' : 'text-tertiary'}">${s.continuousDays || 0}天</div>
         </div>
         <div style="text-align:center;padding:10px;background:var(--bg-tertiary);border-radius:8px;">
-          <div style="font-size:11px;color:var(--text-secondary);">流出</div>
-          <div style="font-size:16px;font-weight:700;color:var(--fall);">${(s.flowOut || 0).toFixed(1)}亿</div>
+          <div style="font-size:11px;color:var(--text-secondary);">上涨占比</div>
+          <div style="font-size:16px;font-weight:700;color:var(--rise);">${(s.risePct || 0).toFixed(0)}%</div>
         </div>
         <div style="text-align:center;padding:10px;background:var(--bg-tertiary);border-radius:8px;">
-          <div style="font-size:11px;color:var(--text-secondary);">净流入</div>
-          <div style="font-size:16px;font-weight:700;" class="${inflowClass}">${s.inflow > 0 ? '+' : ''}${s.inflow.toFixed(1)}亿</div>
+          <div style="font-size:11px;color:var(--text-secondary);">领涨股</div>
+          <div style="font-size:14px;font-weight:600;" title="${(s.leader||'')+' '+(s.leaderChange>0?'+':'')+(s.leaderChange||0).toFixed(2)+'%'}">${s.leader || '-'}</div>
+          <div style="font-size:10px;" class="${(s.leaderChange||0) >= 0 ? 'rise' : 'fall'}">${s.leaderChange > 0 ? '+' : ''}${(s.leaderChange||0).toFixed(2)}%</div>
         </div>
       </div>
     </div>
@@ -1331,7 +1457,7 @@ function handleSort(field) {
     state.sortOrder = state.sortOrder === 'asc' ? 'desc' : 'asc';
   } else {
     state.sortField = field;
-    state.sortOrder = 'desc';
+    state.sortOrder = field === 'rank' || field === 'name' || field === 'code' ? 'asc' : 'desc';
   }
   renderTable();
 }
