@@ -1267,6 +1267,36 @@ const leaderHtml = '<div class="grid-item">' +
 
 
 
+    // 候选标的（从关注池匹配到当前板块）
+    (function() {
+      const candidates = s.candidates || [];
+      if (!candidates.length) return '';
+      let html = '<div class="drawer-section"><h4>🎯 候选标的</h4>' +
+        '<table style="width:100%;font-size:12px;border-collapse:collapse;">' +
+        '<thead><tr style="color:var(--text-tertiary);border-bottom:1px solid var(--border);">' +
+        '<th style="text-align:left;padding:6px 4px;font-weight:500;">标的</th>' +
+        '<th style="text-align:right;padding:6px 4px;font-weight:500;">现价</th>' +
+        '<th style="text-align:right;padding:6px 4px;font-weight:500;">止损</th>' +
+        '<th style="text-align:right;padding:6px 4px;font-weight:500;">目标</th>' +
+        '<th style="text-align:left;padding:6px 4px;font-weight:500;">逻辑</th>' +
+        '</tr></thead><tbody>';
+      candidates.forEach(function(c) {
+        const p = c.price || 0;
+        const sl = c.stopLoss || 0;
+        const tp = c.target || 0;
+        html += '<tr style="border-bottom:1px solid #f0f0f0;">' +
+          '<td style="padding:5px 4px;font-weight:600;">' + (c.name || '') +
+            '<span style="font-size:10px;color:var(--text-tertiary);margin-left:4px;">' + (c.code || '') + '</span></td>' +
+          '<td style="padding:5px 4px;text-align:right;">' + (p ? p.toFixed(2) : '-') + '</td>' +
+          '<td style="padding:5px 4px;text-align:right;color:var(--fall);">' + (sl ? sl.toFixed(1) : '-') + '</td>' +
+          '<td style="padding:5px 4px;text-align:right;color:var(--rise);">' + (tp ? tp.toFixed(1) : '-') + '</td>' +
+          '<td style="padding:5px 4px;font-size:11px;color:var(--text-secondary);max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (c.logic || '-') + '</td>' +
+        '</tr>';
+      });
+      html += '</tbody></table></div>';
+      return html;
+    })() +
+
     histHtml;
 
   drawer.classList.add('open');
