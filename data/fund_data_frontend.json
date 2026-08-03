@@ -6791,17 +6791,17 @@
       {
         "name": "通信设备",
         "code": "881129",
-        "change": 1.21,
-        "indexPrice": 7904.12,
+        "change": 1.18,
+        "indexPrice": 7901.53,
         "stockCount": 91,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "欣天科技",
         "leaderChange": 20.02,
         "risePct": 0,
-        "flowIn": 390.79,
-        "flowOut": 359.73,
-        "inflow": 31.06,
+        "flowIn": 400.37,
+        "flowOut": 371.11,
+        "inflow": 29.26,
         "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
@@ -6829,27 +6829,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 390.79,
-            "flowOut": 359.73,
-            "inflow": 31.06,
-            "change": 1.21
+            "flowIn": 400.37,
+            "flowOut": 371.11,
+            "inflow": 29.26,
+            "change": 1.18
           }
         ]
       },
       {
         "name": "电力",
         "code": "881145",
-        "change": 1.68,
-        "indexPrice": 1957.54,
+        "change": 1.79,
+        "indexPrice": 1959.72,
         "stockCount": 110,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "深南电A",
         "leaderChange": 10.04,
         "risePct": 0,
-        "flowIn": 112.38,
-        "flowOut": 96.43,
-        "inflow": 15.96,
+        "flowIn": 114.83,
+        "flowOut": 98.32,
+        "inflow": 16.51,
         "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
@@ -6877,27 +6877,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 112.38,
-            "flowOut": 96.43,
-            "inflow": 15.96,
-            "change": 1.68
+            "flowIn": 114.83,
+            "flowOut": 98.32,
+            "inflow": 16.51,
+            "change": 1.79
           }
         ]
       },
       {
         "name": "电网设备",
         "code": "881278",
-        "change": 2.77,
-        "indexPrice": 6253.84,
+        "change": 2.85,
+        "indexPrice": 6258.9,
         "stockCount": 140,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "久盛电气",
         "leaderChange": 20.0,
         "risePct": 0,
-        "flowIn": 102.61,
-        "flowOut": 90.04,
-        "inflow": 12.57,
+        "flowIn": 104.98,
+        "flowOut": 92.09,
+        "inflow": 12.89,
         "continuousDays": 1,
         "accum3d": 0,
         "accum5d": 0,
@@ -6925,27 +6925,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 102.61,
-            "flowOut": 90.04,
-            "inflow": 12.57,
-            "change": 2.77
+            "flowIn": 104.98,
+            "flowOut": 92.09,
+            "inflow": 12.89,
+            "change": 2.85
           }
         ]
       },
       {
         "name": "银行",
         "code": "881155",
-        "change": 0.42,
-        "indexPrice": 1375.92,
+        "change": 0.5,
+        "indexPrice": 1377.04,
         "stockCount": 84,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "兰州银行",
-        "leaderChange": 2.26,
+        "leaderChange": 2.71,
         "risePct": 0,
-        "flowIn": 105.0,
-        "flowOut": 97.69,
-        "inflow": 7.31,
+        "flowIn": 108.2,
+        "flowOut": 99.55,
+        "inflow": 8.65,
         "continuousDays": 1,
         "accum3d": 0,
         "accum5d": 0,
@@ -6973,75 +6973,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 105.0,
-            "flowOut": 97.69,
-            "inflow": 7.31,
-            "change": 0.42
-          }
-        ]
-      },
-      {
-        "name": "光伏设备",
-        "code": "881279",
-        "change": 1.82,
-        "indexPrice": 7006.39,
-        "stockCount": 72,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "福莱特",
-        "leaderChange": 10.02,
-        "risePct": 0,
-        "flowIn": 60.94,
-        "flowOut": 54.71,
-        "inflow": 6.24,
-        "continuousDays": 1,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 84.86,
-            "flowOut": 89.73,
-            "inflow": -4.87,
-            "change": -0.95
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 78.39,
-            "flowOut": 82.64,
-            "inflow": -4.25,
-            "change": 1.83
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 60.94,
-            "flowOut": 54.71,
-            "inflow": 6.24,
-            "change": 1.82
+            "flowIn": 108.2,
+            "flowOut": 99.55,
+            "inflow": 8.65,
+            "change": 0.5
           }
         ]
       },
       {
         "name": "建筑装饰",
         "code": "881116",
-        "change": 1.34,
-        "indexPrice": 3864.6,
+        "change": 1.43,
+        "indexPrice": 3868.15,
         "stockCount": 143,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "中国核建",
         "leaderChange": 10.05,
         "risePct": 0,
-        "flowIn": 67.86,
-        "flowOut": 61.84,
-        "inflow": 6.02,
+        "flowIn": 69.25,
+        "flowOut": 62.95,
+        "inflow": 6.29,
         "continuousDays": 1,
         "accum3d": 0,
         "accum5d": 0,
@@ -7069,27 +7021,75 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 67.86,
-            "flowOut": 61.84,
-            "inflow": 6.02,
-            "change": 1.34
+            "flowIn": 69.25,
+            "flowOut": 62.95,
+            "inflow": 6.29,
+            "change": 1.43
+          }
+        ]
+      },
+      {
+        "name": "光伏设备",
+        "code": "881279",
+        "change": 2.04,
+        "indexPrice": 7021.54,
+        "stockCount": 72,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "福莱特",
+        "leaderChange": 10.02,
+        "risePct": 0,
+        "flowIn": 62.26,
+        "flowOut": 56.04,
+        "inflow": 6.22,
+        "continuousDays": 1,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 84.86,
+            "flowOut": 89.73,
+            "inflow": -4.87,
+            "change": -0.95
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 78.39,
+            "flowOut": 82.64,
+            "inflow": -4.25,
+            "change": 1.83
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 62.26,
+            "flowOut": 56.04,
+            "inflow": 6.22,
+            "change": 2.04
           }
         ]
       },
       {
         "name": "能源金属",
         "code": "881267",
-        "change": -0.57,
-        "indexPrice": 29140.7,
+        "change": -0.56,
+        "indexPrice": 29143.7,
         "stockCount": 12,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "永兴材料",
-        "leaderChange": 2.62,
+        "leaderChange": 2.75,
         "risePct": 0,
-        "flowIn": 31.63,
-        "flowOut": 26.45,
-        "inflow": 5.18,
+        "flowIn": 32.12,
+        "flowOut": 26.89,
+        "inflow": 5.23,
         "continuousDays": 1,
         "accum3d": 0,
         "accum5d": 0,
@@ -7117,27 +7117,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 31.63,
-            "flowOut": 26.45,
-            "inflow": 5.18,
-            "change": -0.57
+            "flowIn": 32.12,
+            "flowOut": 26.89,
+            "inflow": 5.23,
+            "change": -0.56
           }
         ]
       },
       {
         "name": "风电设备",
         "code": "881280",
-        "change": 2.83,
-        "indexPrice": 4227.49,
+        "change": 2.97,
+        "indexPrice": 4233.3,
         "stockCount": 31,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "中环海陆",
-        "leaderChange": 8.68,
+        "leaderChange": 8.59,
         "risePct": 0,
-        "flowIn": 26.22,
-        "flowOut": 21.14,
-        "inflow": 5.08,
+        "flowIn": 26.67,
+        "flowOut": 21.57,
+        "inflow": 5.1,
         "continuousDays": 1,
         "accum3d": 0,
         "accum5d": 0,
@@ -7165,27 +7165,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 26.22,
-            "flowOut": 21.14,
-            "inflow": 5.08,
-            "change": 2.83
+            "flowIn": 26.67,
+            "flowOut": 21.57,
+            "inflow": 5.1,
+            "change": 2.97
           }
         ]
       },
       {
         "name": "钢铁",
         "code": "881112",
-        "change": 1.21,
-        "indexPrice": 1536.69,
+        "change": 1.25,
+        "indexPrice": 1537.39,
         "stockCount": 44,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "沙钢股份",
         "leaderChange": 9.89,
         "risePct": 0,
-        "flowIn": 23.08,
-        "flowOut": 18.25,
-        "inflow": 4.83,
+        "flowIn": 23.58,
+        "flowOut": 18.79,
+        "inflow": 4.8,
         "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
@@ -7213,27 +7213,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 23.08,
-            "flowOut": 18.25,
-            "inflow": 4.83,
-            "change": 1.21
+            "flowIn": 23.58,
+            "flowOut": 18.79,
+            "inflow": 4.8,
+            "change": 1.25
           }
         ]
       },
       {
         "name": "小金属",
         "code": "881170",
-        "change": 1.17,
-        "indexPrice": 8045.93,
+        "change": 1.23,
+        "indexPrice": 8050.48,
         "stockCount": 29,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "西部材料",
-        "leaderChange": 5.91,
+        "leaderChange": 6.12,
         "risePct": 0,
-        "flowIn": 67.76,
-        "flowOut": 63.31,
-        "inflow": 4.45,
+        "flowIn": 68.68,
+        "flowOut": 64.93,
+        "inflow": 3.76,
         "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
@@ -7261,27 +7261,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 67.76,
-            "flowOut": 63.31,
-            "inflow": 4.45,
-            "change": 1.17
+            "flowIn": 68.68,
+            "flowOut": 64.93,
+            "inflow": 3.76,
+            "change": 1.23
           }
         ]
       },
       {
         "name": "军工电子",
         "code": "881276",
-        "change": 1.25,
-        "indexPrice": 11075.2,
+        "change": 1.42,
+        "indexPrice": 11093.1,
         "stockCount": 62,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "新光光电",
-        "leaderChange": 8.0,
+        "leaderChange": 8.34,
         "risePct": 0,
-        "flowIn": 46.94,
-        "flowOut": 43.58,
-        "inflow": 3.36,
+        "flowIn": 47.98,
+        "flowOut": 44.63,
+        "inflow": 3.35,
         "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
@@ -7309,58 +7309,10 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 46.94,
-            "flowOut": 43.58,
-            "inflow": 3.36,
-            "change": 1.25
-          }
-        ]
-      },
-      {
-        "name": "环境治理",
-        "code": "881181",
-        "change": 1.65,
-        "indexPrice": 3845.57,
-        "stockCount": 111,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "武汉天源",
-        "leaderChange": 11.06,
-        "risePct": 0,
-        "flowIn": 27.74,
-        "flowOut": 24.56,
-        "inflow": 3.18,
-        "continuousDays": 2,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 31.43,
-            "flowOut": 39.85,
-            "inflow": -8.43,
-            "change": -1.59
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 40.82,
-            "flowOut": 36.6,
-            "inflow": 4.22,
-            "change": 2.27
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 27.74,
-            "flowOut": 24.56,
-            "inflow": 3.18,
-            "change": 1.65
+            "flowIn": 47.98,
+            "flowOut": 44.63,
+            "inflow": 3.35,
+            "change": 1.42
           }
         ]
       },
@@ -7368,16 +7320,16 @@
         "name": "公路铁路运输",
         "code": "881149",
         "change": 1.29,
-        "indexPrice": 1316.02,
+        "indexPrice": 1315.96,
         "stockCount": 32,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "重庆路桥",
-        "leaderChange": 5.72,
+        "leaderChange": 5.49,
         "risePct": 0,
-        "flowIn": 10.37,
-        "flowOut": 7.23,
-        "inflow": 3.13,
+        "flowIn": 10.63,
+        "flowOut": 7.51,
+        "inflow": 3.12,
         "continuousDays": 1,
         "accum3d": 0,
         "accum5d": 0,
@@ -7405,26 +7357,74 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 10.37,
-            "flowOut": 7.23,
-            "inflow": 3.13,
+            "flowIn": 10.63,
+            "flowOut": 7.51,
+            "inflow": 3.12,
             "change": 1.29
+          }
+        ]
+      },
+      {
+        "name": "环境治理",
+        "code": "881181",
+        "change": 1.74,
+        "indexPrice": 3848.77,
+        "stockCount": 111,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "武汉天源",
+        "leaderChange": 10.9,
+        "risePct": 0,
+        "flowIn": 28.52,
+        "flowOut": 25.44,
+        "inflow": 3.08,
+        "continuousDays": 2,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 31.43,
+            "flowOut": 39.85,
+            "inflow": -8.43,
+            "change": -1.59
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 40.82,
+            "flowOut": 36.6,
+            "inflow": 4.22,
+            "change": 2.27
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 28.52,
+            "flowOut": 25.44,
+            "inflow": 3.08,
+            "change": 1.74
           }
         ]
       },
       {
         "name": "金属新材料",
         "code": "881114",
-        "change": 1.27,
-        "indexPrice": 12734.7,
+        "change": 1.4,
+        "indexPrice": 12749.9,
         "stockCount": 34,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "天力复合",
-        "leaderChange": 9.44,
+        "leaderChange": 9.22,
         "risePct": 0,
-        "flowIn": 18.97,
-        "flowOut": 16.16,
+        "flowIn": 19.19,
+        "flowOut": 16.39,
         "inflow": 2.81,
         "continuousDays": 1,
         "accum3d": 0,
@@ -7453,28 +7453,28 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 18.97,
-            "flowOut": 16.16,
+            "flowIn": 19.19,
+            "flowOut": 16.39,
             "inflow": 2.81,
-            "change": 1.27
+            "change": 1.4
           }
         ]
       },
       {
-        "name": "化学制品",
-        "code": "881109",
-        "change": 1.28,
-        "indexPrice": 6667.71,
-        "stockCount": 179,
+        "name": "种植业与林业",
+        "code": "881101",
+        "change": 2.34,
+        "indexPrice": 3910.7,
+        "stockCount": 30,
         "riseCount": 0,
         "fallCount": 0,
-        "leader": "聚仁新材",
-        "leaderChange": 272.1,
+        "leader": "新赛股份",
+        "leaderChange": 10.06,
         "risePct": 0,
-        "flowIn": 73.93,
-        "flowOut": 71.44,
-        "inflow": 2.49,
-        "continuousDays": 1,
+        "flowIn": 11.16,
+        "flowOut": 8.75,
+        "inflow": 2.41,
+        "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
         "accum10d": 0,
@@ -7487,41 +7487,41 @@
         "history": [
           {
             "date": "2026-07-30",
-            "flowIn": 104.19,
-            "flowOut": 119.44,
-            "inflow": -15.25,
-            "change": -1.95
+            "flowIn": 10.41,
+            "flowOut": 11.37,
+            "inflow": -0.96,
+            "change": 0.17
           },
           {
             "date": "2026-07-31",
-            "flowIn": 120.79,
-            "flowOut": 127.86,
-            "inflow": -7.07,
-            "change": 1.57
+            "flowIn": 11.75,
+            "flowOut": 9.52,
+            "inflow": 2.23,
+            "change": 1.91
           },
           {
             "date": "2026-08-03",
-            "flowIn": 73.93,
-            "flowOut": 71.44,
-            "inflow": 2.49,
-            "change": 1.28
+            "flowIn": 11.16,
+            "flowOut": 8.75,
+            "inflow": 2.41,
+            "change": 2.34
           }
         ]
       },
       {
         "name": "港口航运",
         "code": "881148",
-        "change": 1.08,
-        "indexPrice": 1222.79,
+        "change": 1.19,
+        "indexPrice": 1224.12,
         "stockCount": 36,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "北部湾港",
-        "leaderChange": 3.38,
+        "leaderChange": 4.11,
         "risePct": 0,
-        "flowIn": 21.11,
-        "flowOut": 18.89,
-        "inflow": 2.22,
+        "flowIn": 21.71,
+        "flowOut": 19.36,
+        "inflow": 2.36,
         "continuousDays": 3,
         "accum3d": 0,
         "accum5d": 0,
@@ -7553,27 +7553,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 21.11,
-            "flowOut": 18.89,
-            "inflow": 2.22,
-            "change": 1.08
+            "flowIn": 21.71,
+            "flowOut": 19.36,
+            "inflow": 2.36,
+            "change": 1.19
           }
         ]
       },
       {
         "name": "物流",
         "code": "881152",
-        "change": 1.03,
-        "indexPrice": 4986.0,
+        "change": 1.19,
+        "indexPrice": 4993.79,
         "stockCount": 50,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "龙洲股份",
-        "leaderChange": 3.58,
+        "leaderChange": 3.82,
         "risePct": 0,
-        "flowIn": 10.67,
-        "flowOut": 8.5,
-        "inflow": 2.16,
+        "flowIn": 11.02,
+        "flowOut": 8.79,
+        "inflow": 2.23,
         "continuousDays": 3,
         "accum3d": 0,
         "accum5d": 0,
@@ -7605,28 +7605,76 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 10.67,
-            "flowOut": 8.5,
-            "inflow": 2.16,
-            "change": 1.03
+            "flowIn": 11.02,
+            "flowOut": 8.79,
+            "inflow": 2.23,
+            "change": 1.19
           }
         ]
       },
       {
-        "name": "种植业与林业",
-        "code": "881101",
-        "change": 2.08,
-        "indexPrice": 3900.79,
-        "stockCount": 30,
+        "name": "汽车零部件",
+        "code": "881126",
+        "change": 0.96,
+        "indexPrice": 5501.48,
+        "stockCount": 271,
         "riseCount": 0,
         "fallCount": 0,
-        "leader": "新赛股份",
-        "leaderChange": 10.06,
+        "leader": "精进电动",
+        "leaderChange": 9.59,
         "risePct": 0,
-        "flowIn": 10.52,
-        "flowOut": 8.41,
-        "inflow": 2.11,
+        "flowIn": 86.71,
+        "flowOut": 84.63,
+        "inflow": 2.07,
         "continuousDays": 2,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": "latent",
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 107.25,
+            "flowOut": 123.9,
+            "inflow": -16.65,
+            "change": -1.33
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 157.49,
+            "flowOut": 133.4,
+            "inflow": 24.09,
+            "change": 2.7
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 86.71,
+            "flowOut": 84.63,
+            "inflow": 2.07,
+            "change": 0.96
+          }
+        ]
+      },
+      {
+        "name": "化学制品",
+        "code": "881109",
+        "change": 1.35,
+        "indexPrice": 6672.43,
+        "stockCount": 179,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "聚仁新材",
+        "leaderChange": 262.05,
+        "risePct": 0,
+        "flowIn": 75.33,
+        "flowOut": 73.4,
+        "inflow": 1.93,
+        "continuousDays": 1,
         "accum3d": 0,
         "accum5d": 0,
         "accum10d": 0,
@@ -7639,41 +7687,41 @@
         "history": [
           {
             "date": "2026-07-30",
-            "flowIn": 10.41,
-            "flowOut": 11.37,
-            "inflow": -0.96,
-            "change": 0.17
+            "flowIn": 104.19,
+            "flowOut": 119.44,
+            "inflow": -15.25,
+            "change": -1.95
           },
           {
             "date": "2026-07-31",
-            "flowIn": 11.75,
-            "flowOut": 9.52,
-            "inflow": 2.23,
-            "change": 1.91
+            "flowIn": 120.79,
+            "flowOut": 127.86,
+            "inflow": -7.07,
+            "change": 1.57
           },
           {
             "date": "2026-08-03",
-            "flowIn": 10.52,
-            "flowOut": 8.41,
-            "inflow": 2.11,
-            "change": 2.08
+            "flowIn": 75.33,
+            "flowOut": 73.4,
+            "inflow": 1.93,
+            "change": 1.35
           }
         ]
       },
       {
         "name": "石油加工贸易",
         "code": "881180",
-        "change": 1.71,
-        "indexPrice": 3347.9,
+        "change": 1.76,
+        "indexPrice": 3349.85,
         "stockCount": 27,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "康普顿",
         "leaderChange": 9.99,
         "risePct": 0,
-        "flowIn": 15.34,
-        "flowOut": 13.49,
-        "inflow": 1.85,
+        "flowIn": 15.56,
+        "flowOut": 14.1,
+        "inflow": 1.46,
         "continuousDays": 3,
         "accum3d": 0,
         "accum5d": 0,
@@ -7705,219 +7753,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 15.34,
-            "flowOut": 13.49,
-            "inflow": 1.85,
-            "change": 1.71
-          }
-        ]
-      },
-      {
-        "name": "汽车零部件",
-        "code": "881126",
-        "change": 0.89,
-        "indexPrice": 5497.55,
-        "stockCount": 271,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "精进电动",
-        "leaderChange": 9.59,
-        "risePct": 0,
-        "flowIn": 83.4,
-        "flowOut": 81.81,
-        "inflow": 1.59,
-        "continuousDays": 2,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": "latent",
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 107.25,
-            "flowOut": 123.9,
-            "inflow": -16.65,
-            "change": -1.33
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 157.49,
-            "flowOut": 133.4,
-            "inflow": 24.09,
-            "change": 2.7
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 83.4,
-            "flowOut": 81.81,
-            "inflow": 1.59,
-            "change": 0.89
-          }
-        ]
-      },
-      {
-        "name": "医药商业",
-        "code": "881143",
-        "change": 1.0,
-        "indexPrice": 4477.42,
-        "stockCount": 32,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "ST海王",
-        "leaderChange": 4.38,
-        "risePct": 0,
-        "flowIn": 6.34,
-        "flowOut": 4.97,
-        "inflow": 1.37,
-        "continuousDays": 2,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 9.7,
-            "flowOut": 10.23,
-            "inflow": -0.52,
-            "change": -0.28
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 11.23,
-            "flowOut": 9.95,
-            "inflow": 1.28,
-            "change": 1.65
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 6.34,
-            "flowOut": 4.97,
-            "inflow": 1.37,
-            "change": 1.0
-          }
-        ]
-      },
-      {
-        "name": "元件",
-        "code": "881270",
-        "change": -1.18,
-        "indexPrice": 19267.2,
-        "stockCount": 63,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "风华高科",
-        "leaderChange": 7.09,
-        "risePct": 0,
-        "flowIn": 227.81,
-        "flowOut": 226.64,
-        "inflow": 1.17,
-        "continuousDays": 1,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 421.0,
-            "flowOut": 438.83,
-            "inflow": -17.83,
-            "change": -6.58
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 454.45,
-            "flowOut": 499.34,
-            "inflow": -44.89,
-            "change": 4.33
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 227.81,
-            "flowOut": 226.64,
-            "inflow": 1.17,
-            "change": -1.18
-          }
-        ]
-      },
-      {
-        "name": "养殖业",
-        "code": "881102",
-        "change": 0.74,
-        "indexPrice": 2698.13,
-        "stockCount": 36,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "国联水产",
-        "leaderChange": 2.57,
-        "risePct": 0,
-        "flowIn": 14.97,
-        "flowOut": 13.87,
-        "inflow": 1.1,
-        "continuousDays": 1,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 25.7,
-            "flowOut": 21.31,
-            "inflow": 4.39,
-            "change": 0.1
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 20.41,
-            "flowOut": 24.16,
-            "inflow": -3.75,
-            "change": 1.65
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 14.97,
-            "flowOut": 13.87,
-            "inflow": 1.1,
-            "change": 0.74
+            "flowIn": 15.56,
+            "flowOut": 14.1,
+            "inflow": 1.46,
+            "change": 1.76
           }
         ]
       },
       {
         "name": "轨交设备",
         "code": "881269",
-        "change": 1.87,
-        "indexPrice": 956.832,
+        "change": 2.04,
+        "indexPrice": 958.423,
         "stockCount": 30,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "ST朗进",
-        "leaderChange": 7.81,
+        "leaderChange": 8.04,
         "risePct": 0,
-        "flowIn": 7.15,
-        "flowOut": 6.05,
-        "inflow": 1.1,
+        "flowIn": 7.62,
+        "flowOut": 6.26,
+        "inflow": 1.37,
         "continuousDays": 3,
         "accum3d": 0,
         "accum5d": 0,
@@ -7949,27 +7805,75 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 7.15,
-            "flowOut": 6.05,
-            "inflow": 1.1,
-            "change": 1.87
+            "flowIn": 7.62,
+            "flowOut": 6.26,
+            "inflow": 1.37,
+            "change": 2.04
           }
         ]
       },
       {
-        "name": "其他电源设备",
-        "code": "881282",
-        "change": 1.01,
-        "indexPrice": 5603.34,
-        "stockCount": 35,
+        "name": "医药商业",
+        "code": "881143",
+        "change": 0.99,
+        "indexPrice": 4476.9,
+        "stockCount": 32,
         "riseCount": 0,
         "fallCount": 0,
-        "leader": "融发核电",
-        "leaderChange": 9.93,
+        "leader": "ST海王",
+        "leaderChange": 4.38,
         "risePct": 0,
-        "flowIn": 36.59,
-        "flowOut": 35.64,
-        "inflow": 0.95,
+        "flowIn": 6.49,
+        "flowOut": 5.14,
+        "inflow": 1.34,
+        "continuousDays": 2,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 9.7,
+            "flowOut": 10.23,
+            "inflow": -0.52,
+            "change": -0.28
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 11.23,
+            "flowOut": 9.95,
+            "inflow": 1.28,
+            "change": 1.65
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 6.49,
+            "flowOut": 5.14,
+            "inflow": 1.34,
+            "change": 0.99
+          }
+        ]
+      },
+      {
+        "name": "元件",
+        "code": "881270",
+        "change": -1.26,
+        "indexPrice": 19251.0,
+        "stockCount": 63,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "风华高科",
+        "leaderChange": 6.95,
+        "risePct": 0,
+        "flowIn": 232.81,
+        "flowOut": 231.53,
+        "inflow": 1.28,
         "continuousDays": 1,
         "accum3d": 0,
         "accum5d": 0,
@@ -7983,41 +7887,89 @@
         "history": [
           {
             "date": "2026-07-30",
-            "flowIn": 39.04,
-            "flowOut": 49.76,
-            "inflow": -10.72,
-            "change": -3.81
+            "flowIn": 421.0,
+            "flowOut": 438.83,
+            "inflow": -17.83,
+            "change": -6.58
           },
           {
             "date": "2026-07-31",
-            "flowIn": 50.88,
-            "flowOut": 51.12,
-            "inflow": -0.24,
-            "change": 3.35
+            "flowIn": 454.45,
+            "flowOut": 499.34,
+            "inflow": -44.89,
+            "change": 4.33
           },
           {
             "date": "2026-08-03",
-            "flowIn": 36.59,
-            "flowOut": 35.64,
-            "inflow": 0.95,
-            "change": 1.01
+            "flowIn": 232.81,
+            "flowOut": 231.53,
+            "inflow": 1.28,
+            "change": -1.26
+          }
+        ]
+      },
+      {
+        "name": "养殖业",
+        "code": "881102",
+        "change": 0.86,
+        "indexPrice": 2701.35,
+        "stockCount": 36,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "国联水产",
+        "leaderChange": 2.94,
+        "risePct": 0,
+        "flowIn": 15.38,
+        "flowOut": 14.29,
+        "inflow": 1.08,
+        "continuousDays": 1,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 25.7,
+            "flowOut": 21.31,
+            "inflow": 4.39,
+            "change": 0.1
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 20.41,
+            "flowOut": 24.16,
+            "inflow": -3.75,
+            "change": 1.65
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 15.38,
+            "flowOut": 14.29,
+            "inflow": 1.08,
+            "change": 0.86
           }
         ]
       },
       {
         "name": "通信服务",
         "code": "881162",
-        "change": 1.98,
-        "indexPrice": 2555.9,
+        "change": 2.07,
+        "indexPrice": 2558.05,
         "stockCount": 44,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "*ST元道",
-        "leaderChange": 15.82,
+        "leaderChange": 16.77,
         "risePct": 0,
-        "flowIn": 47.88,
-        "flowOut": 47.0,
-        "inflow": 0.88,
+        "flowIn": 48.98,
+        "flowOut": 47.98,
+        "inflow": 1.0,
         "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
@@ -8045,27 +7997,75 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 47.88,
-            "flowOut": 47.0,
-            "inflow": 0.88,
-            "change": 1.98
+            "flowIn": 48.98,
+            "flowOut": 47.98,
+            "inflow": 1.0,
+            "change": 2.07
+          }
+        ]
+      },
+      {
+        "name": "其他电源设备",
+        "code": "881282",
+        "change": 1.15,
+        "indexPrice": 5610.96,
+        "stockCount": 35,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "融发核电",
+        "leaderChange": 9.93,
+        "risePct": 0,
+        "flowIn": 37.22,
+        "flowOut": 36.55,
+        "inflow": 0.67,
+        "continuousDays": 1,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 39.04,
+            "flowOut": 49.76,
+            "inflow": -10.72,
+            "change": -3.81
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 50.88,
+            "flowOut": 51.12,
+            "inflow": -0.24,
+            "change": 3.35
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 37.22,
+            "flowOut": 36.55,
+            "inflow": 0.67,
+            "change": 1.15
           }
         ]
       },
       {
         "name": "旅游及酒店",
         "code": "881160",
-        "change": 0.57,
-        "indexPrice": 2707.05,
+        "change": 0.64,
+        "indexPrice": 2709.14,
         "stockCount": 35,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "西域旅游",
-        "leaderChange": 3.78,
+        "leaderChange": 3.9,
         "risePct": 0,
-        "flowIn": 7.31,
-        "flowOut": 6.68,
-        "inflow": 0.63,
+        "flowIn": 7.48,
+        "flowOut": 6.84,
+        "inflow": 0.64,
         "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
@@ -8093,27 +8093,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 7.31,
-            "flowOut": 6.68,
-            "inflow": 0.63,
-            "change": 0.57
+            "flowIn": 7.48,
+            "flowOut": 6.84,
+            "inflow": 0.64,
+            "change": 0.64
           }
         ]
       },
       {
         "name": "服装家纺",
         "code": "881136",
-        "change": 0.81,
-        "indexPrice": 2730.33,
+        "change": 0.82,
+        "indexPrice": 2730.77,
         "stockCount": 75,
         "riseCount": 0,
         "fallCount": 0,
-        "leader": "天创时尚",
-        "leaderChange": 7.31,
+        "leader": "报喜鸟",
+        "leaderChange": 6.63,
         "risePct": 0,
-        "flowIn": 13.67,
-        "flowOut": 13.08,
-        "inflow": 0.59,
+        "flowIn": 14.05,
+        "flowOut": 13.49,
+        "inflow": 0.56,
         "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
@@ -8141,27 +8141,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 13.67,
-            "flowOut": 13.08,
-            "inflow": 0.59,
-            "change": 0.81
+            "flowIn": 14.05,
+            "flowOut": 13.49,
+            "inflow": 0.56,
+            "change": 0.82
           }
         ]
       },
       {
         "name": "家居用品",
         "code": "881139",
-        "change": 1.25,
-        "indexPrice": 3662.21,
+        "change": 1.51,
+        "indexPrice": 3671.64,
         "stockCount": 99,
         "riseCount": 0,
         "fallCount": 0,
-        "leader": "麒盛科技",
-        "leaderChange": 10.02,
+        "leader": "龙竹科技",
+        "leaderChange": 11.33,
         "risePct": 0,
-        "flowIn": 11.31,
-        "flowOut": 10.84,
-        "inflow": 0.46,
+        "flowIn": 11.68,
+        "flowOut": 11.14,
+        "inflow": 0.54,
         "continuousDays": 1,
         "accum3d": 0,
         "accum5d": 0,
@@ -8189,27 +8189,75 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 11.31,
-            "flowOut": 10.84,
+            "flowIn": 11.68,
+            "flowOut": 11.14,
+            "inflow": 0.54,
+            "change": 1.51
+          }
+        ]
+      },
+      {
+        "name": "电机",
+        "code": "881277",
+        "change": 2.01,
+        "indexPrice": 3206.14,
+        "stockCount": 26,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "江特电机",
+        "leaderChange": 9.99,
+        "risePct": 0,
+        "flowIn": 17.57,
+        "flowOut": 17.11,
+        "inflow": 0.46,
+        "continuousDays": 2,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 9.25,
+            "flowOut": 11.92,
+            "inflow": -2.67,
+            "change": -2.17
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 22.63,
+            "flowOut": 14.3,
+            "inflow": 8.33,
+            "change": 4.0
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 17.57,
+            "flowOut": 17.11,
             "inflow": 0.46,
-            "change": 1.25
+            "change": 2.01
           }
         ]
       },
       {
         "name": "化学纤维",
         "code": "881264",
-        "change": 0.81,
-        "indexPrice": 3535.57,
+        "change": 0.94,
+        "indexPrice": 3539.86,
         "stockCount": 29,
         "riseCount": 0,
         "fallCount": 0,
-        "leader": "汇隆新材",
-        "leaderChange": 4.08,
+        "leader": "ST海龙",
+        "leaderChange": 4.22,
         "risePct": 0,
-        "flowIn": 12.41,
-        "flowOut": 11.99,
-        "inflow": 0.42,
+        "flowIn": 12.62,
+        "flowOut": 12.24,
+        "inflow": 0.38,
         "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
@@ -8237,27 +8285,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 12.41,
-            "flowOut": 11.99,
-            "inflow": 0.42,
-            "change": 0.81
+            "flowIn": 12.62,
+            "flowOut": 12.24,
+            "inflow": 0.38,
+            "change": 0.94
           }
         ]
       },
       {
         "name": "小家电",
         "code": "881173",
-        "change": 0.97,
-        "indexPrice": 3927.1,
+        "change": 1.05,
+        "indexPrice": 3930.3,
         "stockCount": 26,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "利仁科技",
-        "leaderChange": 5.78,
+        "leaderChange": 5.32,
         "risePct": 0,
-        "flowIn": 4.4,
-        "flowOut": 4.04,
-        "inflow": 0.36,
+        "flowIn": 4.51,
+        "flowOut": 4.13,
+        "inflow": 0.37,
         "continuousDays": 3,
         "accum3d": 0,
         "accum5d": 0,
@@ -8289,123 +8337,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 4.4,
-            "flowOut": 4.04,
-            "inflow": 0.36,
-            "change": 0.97
-          }
-        ]
-      },
-      {
-        "name": "电机",
-        "code": "881277",
-        "change": 1.83,
-        "indexPrice": 3200.53,
-        "stockCount": 26,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "江特电机",
-        "leaderChange": 9.99,
-        "risePct": 0,
-        "flowIn": 17.24,
-        "flowOut": 16.88,
-        "inflow": 0.36,
-        "continuousDays": 2,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 9.25,
-            "flowOut": 11.92,
-            "inflow": -2.67,
-            "change": -2.17
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 22.63,
-            "flowOut": 14.3,
-            "inflow": 8.33,
-            "change": 4.0
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 17.24,
-            "flowOut": 16.88,
-            "inflow": 0.36,
-            "change": 1.83
-          }
-        ]
-      },
-      {
-        "name": "中药",
-        "code": "881141",
-        "change": 0.61,
-        "indexPrice": 3106.57,
-        "stockCount": 68,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "亚宝药业",
-        "leaderChange": 5.72,
-        "risePct": 0,
-        "flowIn": 21.93,
-        "flowOut": 21.71,
-        "inflow": 0.21,
-        "continuousDays": 2,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 37.7,
-            "flowOut": 39.21,
-            "inflow": -1.5,
-            "change": -0.93
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 38.35,
-            "flowOut": 32.72,
-            "inflow": 5.62,
-            "change": 1.71
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 21.93,
-            "flowOut": 21.71,
-            "inflow": 0.21,
-            "change": 0.61
+            "flowIn": 4.51,
+            "flowOut": 4.13,
+            "inflow": 0.37,
+            "change": 1.05
           }
         ]
       },
       {
         "name": "造纸",
         "code": "881137",
-        "change": 1.56,
-        "indexPrice": 2005.86,
+        "change": 1.79,
+        "indexPrice": 2010.27,
         "stockCount": 24,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "凯恩股份",
-        "leaderChange": 5.26,
+        "leaderChange": 7.26,
         "risePct": 0,
-        "flowIn": 5.54,
-        "flowOut": 5.37,
-        "inflow": 0.17,
+        "flowIn": 5.85,
+        "flowOut": 5.59,
+        "inflow": 0.26,
         "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
@@ -8433,27 +8385,75 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 5.54,
-            "flowOut": 5.37,
-            "inflow": 0.17,
-            "change": 1.56
+            "flowIn": 5.85,
+            "flowOut": 5.59,
+            "inflow": 0.26,
+            "change": 1.79
+          }
+        ]
+      },
+      {
+        "name": "中药",
+        "code": "881141",
+        "change": 0.62,
+        "indexPrice": 3106.96,
+        "stockCount": 68,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "亚宝药业",
+        "leaderChange": 5.87,
+        "risePct": 0,
+        "flowIn": 22.49,
+        "flowOut": 22.24,
+        "inflow": 0.25,
+        "continuousDays": 2,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 37.7,
+            "flowOut": 39.21,
+            "inflow": -1.5,
+            "change": -0.93
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 38.35,
+            "flowOut": 32.72,
+            "inflow": 5.62,
+            "change": 1.71
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 22.49,
+            "flowOut": 22.24,
+            "inflow": 0.25,
+            "change": 0.62
           }
         ]
       },
       {
         "name": "农产品加工",
         "code": "881103",
-        "change": 0.76,
-        "indexPrice": 3452.35,
+        "change": 0.93,
+        "indexPrice": 3458.19,
         "stockCount": 43,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "华资实业",
         "leaderChange": 4.77,
         "risePct": 0,
-        "flowIn": 9.55,
-        "flowOut": 9.43,
-        "inflow": 0.11,
+        "flowIn": 9.8,
+        "flowOut": 9.72,
+        "inflow": 0.08,
         "continuousDays": 3,
         "accum3d": 0,
         "accum5d": 0,
@@ -8485,27 +8485,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 9.55,
-            "flowOut": 9.43,
-            "inflow": 0.11,
-            "change": 0.76
+            "flowIn": 9.8,
+            "flowOut": 9.72,
+            "inflow": 0.08,
+            "change": 0.93
           }
         ]
       },
       {
         "name": "贸易",
         "code": "881159",
-        "change": 1.39,
-        "indexPrice": 2470.96,
+        "change": 1.58,
+        "indexPrice": 2475.58,
         "stockCount": 14,
         "riseCount": 0,
         "fallCount": 0,
-        "leader": "苏豪时尚",
-        "leaderChange": 3.36,
+        "leader": "苏豪弘业",
+        "leaderChange": 3.7,
         "risePct": 0,
-        "flowIn": 2.03,
-        "flowOut": 1.98,
-        "inflow": 0.05,
+        "flowIn": 2.12,
+        "flowOut": 2.05,
+        "inflow": 0.07,
         "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
@@ -8533,28 +8533,28 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 2.03,
-            "flowOut": 1.98,
-            "inflow": 0.05,
-            "change": 1.39
+            "flowIn": 2.12,
+            "flowOut": 2.05,
+            "inflow": 0.07,
+            "change": 1.58
           }
         ]
       },
       {
         "name": "燃气",
         "code": "881146",
-        "change": 1.94,
-        "indexPrice": 1783.6,
+        "change": 2.06,
+        "indexPrice": 1785.78,
         "stockCount": 27,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "胜通能源",
         "leaderChange": 9.99,
         "risePct": 0,
-        "flowIn": 5.47,
-        "flowOut": 5.48,
-        "inflow": -0.0,
-        "continuousDays": 0,
+        "flowIn": 5.61,
+        "flowOut": 5.57,
+        "inflow": 0.04,
+        "continuousDays": 2,
         "accum3d": 0,
         "accum5d": 0,
         "accum10d": 0,
@@ -8581,75 +8581,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 5.47,
-            "flowOut": 5.48,
-            "inflow": -0.0,
-            "change": 1.94
-          }
-        ]
-      },
-      {
-        "name": "纺织制造",
-        "code": "881135",
-        "change": 1.13,
-        "indexPrice": 2183.48,
-        "stockCount": 33,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "云中马",
-        "leaderChange": 9.99,
-        "risePct": 0,
-        "flowIn": 6.91,
-        "flowOut": 7.08,
-        "inflow": -0.17,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 10.38,
-            "flowOut": 12.29,
-            "inflow": -1.91,
-            "change": -0.62
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 10.12,
-            "flowOut": 12.37,
-            "inflow": -2.25,
-            "change": 1.26
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 6.91,
-            "flowOut": 7.08,
-            "inflow": -0.17,
-            "change": 1.13
+            "flowIn": 5.61,
+            "flowOut": 5.57,
+            "inflow": 0.04,
+            "change": 2.06
           }
         ]
       },
       {
         "name": "汽车服务及其他",
         "code": "881128",
-        "change": 1.04,
-        "indexPrice": 1069.41,
+        "change": 1.12,
+        "indexPrice": 1070.24,
         "stockCount": 25,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "ST中路",
         "leaderChange": 9.95,
         "risePct": 0,
-        "flowIn": 5.0,
-        "flowOut": 5.18,
-        "inflow": -0.18,
+        "flowIn": 5.18,
+        "flowOut": 5.39,
+        "inflow": -0.21,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -8677,27 +8629,75 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 5.0,
-            "flowOut": 5.18,
-            "inflow": -0.18,
-            "change": 1.04
+            "flowIn": 5.18,
+            "flowOut": 5.39,
+            "inflow": -0.21,
+            "change": 1.12
+          }
+        ]
+      },
+      {
+        "name": "纺织制造",
+        "code": "881135",
+        "change": 1.18,
+        "indexPrice": 2184.58,
+        "stockCount": 33,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "云中马",
+        "leaderChange": 9.99,
+        "risePct": 0,
+        "flowIn": 7.04,
+        "flowOut": 7.32,
+        "inflow": -0.28,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 10.38,
+            "flowOut": 12.29,
+            "inflow": -1.91,
+            "change": -0.62
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 10.12,
+            "flowOut": 12.37,
+            "inflow": -2.25,
+            "change": 1.26
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 7.04,
+            "flowOut": 7.32,
+            "inflow": -0.28,
+            "change": 1.18
           }
         ]
       },
       {
         "name": "橡胶制品",
         "code": "881266",
-        "change": 0.83,
-        "indexPrice": 12282.3,
+        "change": 0.92,
+        "indexPrice": 12293.2,
         "stockCount": 22,
         "riseCount": 0,
         "fallCount": 0,
-        "leader": "利通科技",
-        "leaderChange": 4.27,
+        "leader": "天铁科技",
+        "leaderChange": 4.2,
         "risePct": 0,
-        "flowIn": 4.42,
-        "flowOut": 4.62,
-        "inflow": -0.2,
+        "flowIn": 4.52,
+        "flowOut": 4.8,
+        "inflow": -0.28,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -8725,27 +8725,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 4.42,
-            "flowOut": 4.62,
-            "inflow": -0.2,
-            "change": 0.83
+            "flowIn": 4.52,
+            "flowOut": 4.8,
+            "inflow": -0.28,
+            "change": 0.92
           }
         ]
       },
       {
         "name": "厨卫电器",
         "code": "881174",
-        "change": -0.3,
-        "indexPrice": 5552.9,
+        "change": -0.38,
+        "indexPrice": 5548.38,
         "stockCount": 9,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "浙江美大",
-        "leaderChange": 2.05,
+        "leaderChange": 1.74,
         "risePct": 0,
-        "flowIn": 1.3,
-        "flowOut": 1.72,
-        "inflow": -0.42,
+        "flowIn": 1.34,
+        "flowOut": 1.76,
+        "inflow": -0.43,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -8773,58 +8773,10 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 1.3,
-            "flowOut": 1.72,
-            "inflow": -0.42,
-            "change": -0.3
-          }
-        ]
-      },
-      {
-        "name": "机场航运",
-        "code": "881151",
-        "change": 0.31,
-        "indexPrice": 1845.27,
-        "stockCount": 13,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "中信海直",
-        "leaderChange": 1.94,
-        "risePct": 0,
-        "flowIn": 7.08,
-        "flowOut": 7.58,
-        "inflow": -0.5,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 13.9,
-            "flowOut": 12.64,
-            "inflow": 1.26,
-            "change": 1.02
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 11.97,
-            "flowOut": 8.99,
-            "inflow": 2.97,
-            "change": 0.7
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 7.08,
-            "flowOut": 7.58,
-            "inflow": -0.5,
-            "change": 0.31
+            "flowIn": 1.34,
+            "flowOut": 1.76,
+            "inflow": -0.43,
+            "change": -0.38
           }
         ]
       },
@@ -8877,19 +8829,67 @@
         ]
       },
       {
+        "name": "机场航运",
+        "code": "881151",
+        "change": 0.34,
+        "indexPrice": 1845.68,
+        "stockCount": 13,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "中信海直",
+        "leaderChange": 2.35,
+        "risePct": 0,
+        "flowIn": 7.26,
+        "flowOut": 7.82,
+        "inflow": -0.56,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 13.9,
+            "flowOut": 12.64,
+            "inflow": 1.26,
+            "change": 1.02
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 11.97,
+            "flowOut": 8.99,
+            "inflow": 2.97,
+            "change": 0.7
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 7.26,
+            "flowOut": 7.82,
+            "inflow": -0.56,
+            "change": 0.34
+          }
+        ]
+      },
+      {
         "name": "综合",
         "code": "881165",
-        "change": 1.77,
-        "indexPrice": 2160.05,
+        "change": 2.02,
+        "indexPrice": 2165.37,
         "stockCount": 18,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "悦达投资",
         "leaderChange": 4.66,
         "risePct": 0,
-        "flowIn": 13.07,
-        "flowOut": 13.81,
-        "inflow": -0.74,
+        "flowIn": 13.44,
+        "flowOut": 14.07,
+        "inflow": -0.63,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -8917,123 +8917,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 13.07,
-            "flowOut": 13.81,
-            "inflow": -0.74,
-            "change": 1.77
-          }
-        ]
-      },
-      {
-        "name": "工程机械",
-        "code": "881268",
-        "change": 0.78,
-        "indexPrice": 2995.61,
-        "stockCount": 36,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "厦工股份",
-        "leaderChange": 9.97,
-        "risePct": 0,
-        "flowIn": 15.44,
-        "flowOut": 16.28,
-        "inflow": -0.84,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 26.0,
-            "flowOut": 23.15,
-            "inflow": 2.84,
-            "change": -0.66
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 25.31,
-            "flowOut": 25.38,
-            "inflow": -0.07,
-            "change": 1.33
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 15.44,
-            "flowOut": 16.28,
-            "inflow": -0.84,
-            "change": 0.78
-          }
-        ]
-      },
-      {
-        "name": "保险",
-        "code": "881156",
-        "change": -0.79,
-        "indexPrice": 2054.74,
-        "stockCount": 5,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "中国太保",
-        "leaderChange": 0.8,
-        "risePct": 0,
-        "flowIn": 22.16,
-        "flowOut": 23.11,
-        "inflow": -0.94,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": "latent",
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 54.1,
-            "flowOut": 36.98,
-            "inflow": 17.12,
-            "change": 1.57
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 40.82,
-            "flowOut": 44.17,
-            "inflow": -3.35,
-            "change": -0.7
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 22.16,
-            "flowOut": 23.11,
-            "inflow": -0.94,
-            "change": -0.79
+            "flowIn": 13.44,
+            "flowOut": 14.07,
+            "inflow": -0.63,
+            "change": 2.02
           }
         ]
       },
       {
         "name": "黑色家电",
         "code": "881132",
-        "change": 0.23,
-        "indexPrice": 3888.64,
+        "change": 0.25,
+        "indexPrice": 3889.22,
         "stockCount": 9,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "海信视像",
-        "leaderChange": 2.1,
+        "leaderChange": 2.02,
         "risePct": 0,
-        "flowIn": 3.34,
-        "flowOut": 4.31,
-        "inflow": -0.96,
+        "flowIn": 3.39,
+        "flowOut": 4.35,
+        "inflow": -0.95,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -9061,26 +8965,122 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 3.34,
-            "flowOut": 4.31,
-            "inflow": -0.96,
-            "change": 0.23
+            "flowIn": 3.39,
+            "flowOut": 4.35,
+            "inflow": -0.95,
+            "change": 0.25
+          }
+        ]
+      },
+      {
+        "name": "工程机械",
+        "code": "881268",
+        "change": 0.88,
+        "indexPrice": 2998.5,
+        "stockCount": 36,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "厦工股份",
+        "leaderChange": 9.97,
+        "risePct": 0,
+        "flowIn": 15.91,
+        "flowOut": 16.97,
+        "inflow": -1.06,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 26.0,
+            "flowOut": 23.15,
+            "inflow": 2.84,
+            "change": -0.66
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 25.31,
+            "flowOut": 25.38,
+            "inflow": -0.07,
+            "change": 1.33
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 15.91,
+            "flowOut": 16.97,
+            "inflow": -1.06,
+            "change": 0.88
+          }
+        ]
+      },
+      {
+        "name": "保险",
+        "code": "881156",
+        "change": -0.84,
+        "indexPrice": 2053.62,
+        "stockCount": 5,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "中国太保",
+        "leaderChange": 0.86,
+        "risePct": 0,
+        "flowIn": 22.92,
+        "flowOut": 24.05,
+        "inflow": -1.13,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": "latent",
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 54.1,
+            "flowOut": 36.98,
+            "inflow": 17.12,
+            "change": 1.57
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 40.82,
+            "flowOut": 44.17,
+            "inflow": -3.35,
+            "change": -0.7
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 22.92,
+            "flowOut": 24.05,
+            "inflow": -1.13,
+            "change": -0.84
           }
         ]
       },
       {
         "name": "饮料制造",
         "code": "881133",
-        "change": 0.45,
-        "indexPrice": 4759.79,
+        "change": 0.48,
+        "indexPrice": 4760.95,
         "stockCount": 47,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "养元饮品",
         "leaderChange": 9.99,
         "risePct": 0,
-        "flowIn": 21.15,
-        "flowOut": 22.3,
+        "flowIn": 21.42,
+        "flowOut": 22.56,
         "inflow": -1.14,
         "continuousDays": 0,
         "accum3d": 0,
@@ -9109,122 +9109,26 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 21.15,
-            "flowOut": 22.3,
+            "flowIn": 21.42,
+            "flowOut": 22.56,
             "inflow": -1.14,
-            "change": 0.45
-          }
-        ]
-      },
-      {
-        "name": "白酒",
-        "code": "881273",
-        "change": -0.95,
-        "indexPrice": 2086.86,
-        "stockCount": 19,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "金种子酒",
-        "leaderChange": 1.02,
-        "risePct": 0,
-        "flowIn": 34.42,
-        "flowOut": 35.58,
-        "inflow": -1.16,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 118.71,
-            "flowOut": 93.14,
-            "inflow": 25.57,
-            "change": 4.48
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 81.08,
-            "flowOut": 78.48,
-            "inflow": 2.6,
-            "change": 0.63
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 34.42,
-            "flowOut": 35.58,
-            "inflow": -1.16,
-            "change": -0.95
-          }
-        ]
-      },
-      {
-        "name": "食品加工制造",
-        "code": "881134",
-        "change": 0.45,
-        "indexPrice": 4598.53,
-        "stockCount": 66,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "煌上煌",
-        "leaderChange": 9.96,
-        "risePct": 0,
-        "flowIn": 20.02,
-        "flowOut": 21.18,
-        "inflow": -1.16,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 37.66,
-            "flowOut": 37.61,
-            "inflow": 0.05,
-            "change": 0.45
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 30.42,
-            "flowOut": 29.73,
-            "inflow": 0.68,
-            "change": 1.51
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 20.02,
-            "flowOut": 21.18,
-            "inflow": -1.16,
-            "change": 0.45
+            "change": 0.48
           }
         ]
       },
       {
         "name": "其他社会服务",
         "code": "881179",
-        "change": -0.33,
-        "indexPrice": 18174.4,
+        "change": -0.27,
+        "indexPrice": 18186.8,
         "stockCount": 84,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "久事动娱",
         "leaderChange": 6.18,
         "risePct": 0,
-        "flowIn": 9.67,
-        "flowOut": 10.85,
+        "flowIn": 9.82,
+        "flowOut": 11.0,
         "inflow": -1.18,
         "continuousDays": 0,
         "accum3d": 0,
@@ -9253,27 +9157,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 9.67,
-            "flowOut": 10.85,
+            "flowIn": 9.82,
+            "flowOut": 11.0,
             "inflow": -1.18,
-            "change": -0.33
+            "change": -0.27
           }
         ]
       },
       {
         "name": "美容护理",
         "code": "881182",
-        "change": 0.12,
-        "indexPrice": 4760.51,
+        "change": 0.2,
+        "indexPrice": 4764.44,
         "stockCount": 33,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "锦盛新材",
-        "leaderChange": 5.7,
+        "leaderChange": 5.65,
         "risePct": 0,
-        "flowIn": 7.57,
-        "flowOut": 8.77,
-        "inflow": -1.2,
+        "flowIn": 7.64,
+        "flowOut": 8.89,
+        "inflow": -1.25,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -9301,27 +9205,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 7.57,
-            "flowOut": 8.77,
-            "inflow": -1.2,
-            "change": 0.12
+            "flowIn": 7.64,
+            "flowOut": 8.89,
+            "inflow": -1.25,
+            "change": 0.2
           }
         ]
       },
       {
-        "name": "房地产",
-        "code": "881153",
-        "change": 1.35,
-        "indexPrice": 1614.77,
-        "stockCount": 88,
+        "name": "食品加工制造",
+        "code": "881134",
+        "change": 0.48,
+        "indexPrice": 4599.75,
+        "stockCount": 66,
         "riseCount": 0,
         "fallCount": 0,
-        "leader": "阳光股份",
-        "leaderChange": 10.0,
+        "leader": "煌上煌",
+        "leaderChange": 9.96,
         "risePct": 0,
-        "flowIn": 28.67,
-        "flowOut": 29.89,
-        "inflow": -1.22,
+        "flowIn": 20.28,
+        "flowOut": 21.58,
+        "inflow": -1.3,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -9335,24 +9239,24 @@
         "history": [
           {
             "date": "2026-07-30",
-            "flowIn": 49.65,
-            "flowOut": 55.61,
-            "inflow": -5.95,
-            "change": -0.73
+            "flowIn": 37.66,
+            "flowOut": 37.61,
+            "inflow": 0.05,
+            "change": 0.45
           },
           {
             "date": "2026-07-31",
-            "flowIn": 48.1,
-            "flowOut": 52.44,
-            "inflow": -4.34,
-            "change": 1.6
+            "flowIn": 30.42,
+            "flowOut": 29.73,
+            "inflow": 0.68,
+            "change": 1.51
           },
           {
             "date": "2026-08-03",
-            "flowIn": 28.67,
-            "flowOut": 29.89,
-            "inflow": -1.22,
-            "change": 1.35
+            "flowIn": 20.28,
+            "flowOut": 21.58,
+            "inflow": -1.3,
+            "change": 0.48
           }
         ]
       },
@@ -9360,16 +9264,16 @@
         "name": "非金属材料",
         "code": "881167",
         "change": -1.32,
-        "indexPrice": 26164.7,
+        "indexPrice": 26165.6,
         "stockCount": 16,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "粤桂股份",
-        "leaderChange": 2.11,
+        "leaderChange": 1.9,
         "risePct": 0,
-        "flowIn": 7.38,
-        "flowOut": 8.65,
-        "inflow": -1.27,
+        "flowIn": 7.47,
+        "flowOut": 8.82,
+        "inflow": -1.35,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -9397,27 +9301,123 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 7.38,
-            "flowOut": 8.65,
-            "inflow": -1.27,
+            "flowIn": 7.47,
+            "flowOut": 8.82,
+            "inflow": -1.35,
             "change": -1.32
+          }
+        ]
+      },
+      {
+        "name": "白酒",
+        "code": "881273",
+        "change": -1.02,
+        "indexPrice": 2085.4,
+        "stockCount": 19,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "金种子酒",
+        "leaderChange": 0.64,
+        "risePct": 0,
+        "flowIn": 35.21,
+        "flowOut": 36.63,
+        "inflow": -1.42,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 118.71,
+            "flowOut": 93.14,
+            "inflow": 25.57,
+            "change": 4.48
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 81.08,
+            "flowOut": 78.48,
+            "inflow": 2.6,
+            "change": 0.63
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 35.21,
+            "flowOut": 36.63,
+            "inflow": -1.42,
+            "change": -1.02
+          }
+        ]
+      },
+      {
+        "name": "房地产",
+        "code": "881153",
+        "change": 1.4,
+        "indexPrice": 1615.53,
+        "stockCount": 88,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "阳光股份",
+        "leaderChange": 10.0,
+        "risePct": 0,
+        "flowIn": 29.22,
+        "flowOut": 30.74,
+        "inflow": -1.52,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 49.65,
+            "flowOut": 55.61,
+            "inflow": -5.95,
+            "change": -0.73
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 48.1,
+            "flowOut": 52.44,
+            "inflow": -4.34,
+            "change": 1.6
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 29.22,
+            "flowOut": 30.74,
+            "inflow": -1.52,
+            "change": 1.4
           }
         ]
       },
       {
         "name": "环保设备",
         "code": "881284",
-        "change": 2.19,
-        "indexPrice": 1272.8,
+        "change": 2.29,
+        "indexPrice": 1273.99,
         "stockCount": 30,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "盈峰环境",
         "leaderChange": 10.06,
         "risePct": 0,
-        "flowIn": 7.29,
-        "flowOut": 8.64,
-        "inflow": -1.35,
+        "flowIn": 7.45,
+        "flowOut": 8.98,
+        "inflow": -1.53,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -9445,27 +9445,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 7.29,
-            "flowOut": 8.64,
-            "inflow": -1.35,
-            "change": 2.19
+            "flowIn": 7.45,
+            "flowOut": 8.98,
+            "inflow": -1.53,
+            "change": 2.29
           }
         ]
       },
       {
         "name": "自动化设备",
         "code": "881171",
-        "change": 0.55,
-        "indexPrice": 25754.3,
+        "change": 0.59,
+        "indexPrice": 25764.4,
         "stockCount": 96,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "常辅股份",
-        "leaderChange": 17.62,
+        "leaderChange": 17.67,
         "risePct": 0,
-        "flowIn": 98.76,
-        "flowOut": 100.31,
-        "inflow": -1.55,
+        "flowIn": 100.42,
+        "flowOut": 101.96,
+        "inflow": -1.54,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -9493,219 +9493,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 98.76,
-            "flowOut": 100.31,
-            "inflow": -1.55,
-            "change": 0.55
-          }
-        ]
-      },
-      {
-        "name": "多元金融",
-        "code": "881283",
-        "change": 0.44,
-        "indexPrice": 1075.34,
-        "stockCount": 26,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "国网英大",
-        "leaderChange": 2.15,
-        "risePct": 0,
-        "flowIn": 8.15,
-        "flowOut": 9.92,
-        "inflow": -1.76,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 17.78,
-            "flowOut": 18.06,
-            "inflow": -0.28,
-            "change": 0.51
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 18.47,
-            "flowOut": 17.41,
-            "inflow": 1.06,
-            "change": 1.27
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 8.15,
-            "flowOut": 9.92,
-            "inflow": -1.76,
-            "change": 0.44
-          }
-        ]
-      },
-      {
-        "name": "教育",
-        "code": "881178",
-        "change": 0.55,
-        "indexPrice": 3967.31,
-        "stockCount": 15,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "传智教育",
-        "leaderChange": 9.99,
-        "risePct": 0,
-        "flowIn": 6.04,
-        "flowOut": 7.95,
-        "inflow": -1.91,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 12.26,
-            "flowOut": 12.7,
-            "inflow": -0.44,
-            "change": 2.78
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 13.64,
-            "flowOut": 13.45,
-            "inflow": 0.18,
-            "change": 3.88
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 6.04,
-            "flowOut": 7.95,
-            "inflow": -1.91,
-            "change": 0.55
-          }
-        ]
-      },
-      {
-        "name": "专用设备",
-        "code": "881118",
-        "change": 0.83,
-        "indexPrice": 6800.82,
-        "stockCount": 200,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "春光智能",
-        "leaderChange": 11.37,
-        "risePct": 0,
-        "flowIn": 83.46,
-        "flowOut": 85.37,
-        "inflow": -1.91,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 112.19,
-            "flowOut": 127.39,
-            "inflow": -15.2,
-            "change": -2.31
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 140.3,
-            "flowOut": 139.0,
-            "inflow": 1.3,
-            "change": 2.61
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 83.46,
-            "flowOut": 85.37,
-            "inflow": -1.91,
-            "change": 0.83
-          }
-        ]
-      },
-      {
-        "name": "包装印刷",
-        "code": "881138",
-        "change": 0.04,
-        "indexPrice": 4058.92,
-        "stockCount": 46,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "王子新材",
-        "leaderChange": 5.07,
-        "risePct": 0,
-        "flowIn": 11.49,
-        "flowOut": 13.46,
-        "inflow": -1.97,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 18.4,
-            "flowOut": 23.84,
-            "inflow": -5.44,
-            "change": -1.68
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 22.37,
-            "flowOut": 21.35,
-            "inflow": 1.02,
-            "change": 2.43
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 11.49,
-            "flowOut": 13.46,
-            "inflow": -1.97,
-            "change": 0.04
+            "flowIn": 100.42,
+            "flowOut": 101.96,
+            "inflow": -1.54,
+            "change": 0.59
           }
         ]
       },
       {
         "name": "通用设备",
         "code": "881117",
-        "change": 0.99,
-        "indexPrice": 8230.48,
+        "change": 1.11,
+        "indexPrice": 8239.86,
         "stockCount": 252,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "瑞迪智驱",
         "leaderChange": 19.99,
         "risePct": 0,
-        "flowIn": 122.66,
-        "flowOut": 124.64,
-        "inflow": -1.98,
+        "flowIn": 125.74,
+        "flowOut": 127.46,
+        "inflow": -1.72,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -9733,27 +9541,219 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 122.66,
-            "flowOut": 124.64,
-            "inflow": -1.98,
-            "change": 0.99
+            "flowIn": 125.74,
+            "flowOut": 127.46,
+            "inflow": -1.72,
+            "change": 1.11
+          }
+        ]
+      },
+      {
+        "name": "多元金融",
+        "code": "881283",
+        "change": 0.4,
+        "indexPrice": 1074.98,
+        "stockCount": 26,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "鲁信创投",
+        "leaderChange": 2.05,
+        "risePct": 0,
+        "flowIn": 8.35,
+        "flowOut": 10.12,
+        "inflow": -1.77,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 17.78,
+            "flowOut": 18.06,
+            "inflow": -0.28,
+            "change": 0.51
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 18.47,
+            "flowOut": 17.41,
+            "inflow": 1.06,
+            "change": 1.27
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 8.35,
+            "flowOut": 10.12,
+            "inflow": -1.77,
+            "change": 0.4
+          }
+        ]
+      },
+      {
+        "name": "专用设备",
+        "code": "881118",
+        "change": 0.92,
+        "indexPrice": 6806.38,
+        "stockCount": 200,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "豪森智能",
+        "leaderChange": 11.96,
+        "risePct": 0,
+        "flowIn": 85.43,
+        "flowOut": 87.36,
+        "inflow": -1.93,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 112.19,
+            "flowOut": 127.39,
+            "inflow": -15.2,
+            "change": -2.31
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 140.3,
+            "flowOut": 139.0,
+            "inflow": 1.3,
+            "change": 2.61
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 85.43,
+            "flowOut": 87.36,
+            "inflow": -1.93,
+            "change": 0.92
+          }
+        ]
+      },
+      {
+        "name": "教育",
+        "code": "881178",
+        "change": 0.5,
+        "indexPrice": 3965.13,
+        "stockCount": 15,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "传智教育",
+        "leaderChange": 9.99,
+        "risePct": 0,
+        "flowIn": 6.12,
+        "flowOut": 8.09,
+        "inflow": -1.97,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 12.26,
+            "flowOut": 12.7,
+            "inflow": -0.44,
+            "change": 2.78
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 13.64,
+            "flowOut": 13.45,
+            "inflow": 0.18,
+            "change": 3.88
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 6.12,
+            "flowOut": 8.09,
+            "inflow": -1.97,
+            "change": 0.5
+          }
+        ]
+      },
+      {
+        "name": "包装印刷",
+        "code": "881138",
+        "change": 0.09,
+        "indexPrice": 4061.03,
+        "stockCount": 46,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "王子新材",
+        "leaderChange": 5.63,
+        "risePct": 0,
+        "flowIn": 11.65,
+        "flowOut": 13.75,
+        "inflow": -2.1,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 18.4,
+            "flowOut": 23.84,
+            "inflow": -5.44,
+            "change": -1.68
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 22.37,
+            "flowOut": 21.35,
+            "inflow": 1.02,
+            "change": 2.43
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 11.65,
+            "flowOut": 13.75,
+            "inflow": -2.1,
+            "change": 0.09
           }
         ]
       },
       {
         "name": "化学原料",
         "code": "881108",
-        "change": 0.77,
-        "indexPrice": 3048.61,
+        "change": 0.84,
+        "indexPrice": 3050.8,
         "stockCount": 59,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "航锦科技",
-        "leaderChange": 6.54,
+        "leaderChange": 7.1,
         "risePct": 0,
-        "flowIn": 24.32,
-        "flowOut": 26.4,
-        "inflow": -2.08,
+        "flowIn": 25.21,
+        "flowOut": 27.42,
+        "inflow": -2.2,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -9781,27 +9781,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 24.32,
-            "flowOut": 26.4,
-            "inflow": -2.08,
-            "change": 0.77
+            "flowIn": 25.21,
+            "flowOut": 27.42,
+            "inflow": -2.2,
+            "change": 0.84
           }
         ]
       },
       {
         "name": "油气开采及服务",
         "code": "881107",
-        "change": -1.41,
-        "indexPrice": 1675.6,
+        "change": -1.46,
+        "indexPrice": 1674.8,
         "stockCount": 19,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "新天然气",
         "leaderChange": 1.43,
         "risePct": 0,
-        "flowIn": 15.16,
-        "flowOut": 17.27,
-        "inflow": -2.11,
+        "flowIn": 15.34,
+        "flowOut": 17.68,
+        "inflow": -2.34,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -9829,171 +9829,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 15.16,
-            "flowOut": 17.27,
-            "inflow": -2.11,
-            "change": -1.41
-          }
-        ]
-      },
-      {
-        "name": "影视院线",
-        "code": "881274",
-        "change": 0.85,
-        "indexPrice": 1255.54,
-        "stockCount": 20,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "北京文化",
-        "leaderChange": 5.67,
-        "risePct": 0,
-        "flowIn": 12.18,
-        "flowOut": 14.74,
-        "inflow": -2.55,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 14.53,
-            "flowOut": 19.35,
-            "inflow": -4.81,
-            "change": -1.82
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 28.78,
-            "flowOut": 19.37,
-            "inflow": 9.41,
-            "change": 4.97
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 12.18,
-            "flowOut": 14.74,
-            "inflow": -2.55,
-            "change": 0.85
-          }
-        ]
-      },
-      {
-        "name": "农化制品",
-        "code": "881263",
-        "change": 0.14,
-        "indexPrice": 4689.11,
-        "stockCount": 61,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "ST司特",
-        "leaderChange": 5.22,
-        "risePct": 0,
-        "flowIn": 27.5,
-        "flowOut": 30.06,
-        "inflow": -2.56,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 51.74,
-            "flowOut": 52.59,
-            "inflow": -0.86,
-            "change": 1.26
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 48.58,
-            "flowOut": 54.83,
-            "inflow": -6.25,
-            "change": -0.07
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 27.5,
-            "flowOut": 30.06,
-            "inflow": -2.56,
-            "change": 0.14
-          }
-        ]
-      },
-      {
-        "name": "互联网电商",
-        "code": "881177",
-        "change": -0.35,
-        "indexPrice": 8237.0,
-        "stockCount": 20,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "吉宏股份",
-        "leaderChange": 10.0,
-        "risePct": 0,
-        "flowIn": 13.98,
-        "flowOut": 16.54,
-        "inflow": -2.56,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 18.62,
-            "flowOut": 25.79,
-            "inflow": -7.17,
-            "change": -3.51
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 29.85,
-            "flowOut": 22.82,
-            "inflow": 7.03,
-            "change": 2.77
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 13.98,
-            "flowOut": 16.54,
-            "inflow": -2.56,
-            "change": -0.35
+            "flowIn": 15.34,
+            "flowOut": 17.68,
+            "inflow": -2.34,
+            "change": -1.46
           }
         ]
       },
       {
         "name": "医疗器械",
         "code": "881144",
-        "change": 0.36,
-        "indexPrice": 10410.5,
+        "change": 0.4,
+        "indexPrice": 10414.2,
         "stockCount": 140,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "济民健康",
         "leaderChange": 10.06,
         "risePct": 0,
-        "flowIn": 32.37,
-        "flowOut": 34.97,
-        "inflow": -2.6,
+        "flowIn": 33.03,
+        "flowOut": 35.6,
+        "inflow": -2.57,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10021,27 +9877,75 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 32.37,
-            "flowOut": 34.97,
-            "inflow": -2.6,
-            "change": 0.36
+            "flowIn": 33.03,
+            "flowOut": 35.6,
+            "inflow": -2.57,
+            "change": 0.4
+          }
+        ]
+      },
+      {
+        "name": "影视院线",
+        "code": "881274",
+        "change": 0.91,
+        "indexPrice": 1256.31,
+        "stockCount": 20,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "北京文化",
+        "leaderChange": 5.41,
+        "risePct": 0,
+        "flowIn": 12.34,
+        "flowOut": 15.14,
+        "inflow": -2.8,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 14.53,
+            "flowOut": 19.35,
+            "inflow": -4.81,
+            "change": -1.82
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 28.78,
+            "flowOut": 19.37,
+            "inflow": 9.41,
+            "change": 4.97
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 12.34,
+            "flowOut": 15.14,
+            "inflow": -2.8,
+            "change": 0.91
           }
         ]
       },
       {
         "name": "军工装备",
         "code": "881166",
-        "change": 1.09,
-        "indexPrice": 2030.79,
+        "change": 1.24,
+        "indexPrice": 2033.97,
         "stockCount": 82,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "*ST航图",
         "leaderChange": 19.95,
         "risePct": 0,
-        "flowIn": 54.86,
-        "flowOut": 58.49,
-        "inflow": -3.63,
+        "flowIn": 56.9,
+        "flowOut": 59.87,
+        "inflow": -2.97,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10069,75 +9973,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 54.86,
-            "flowOut": 58.49,
-            "inflow": -3.63,
-            "change": 1.09
+            "flowIn": 56.9,
+            "flowOut": 59.87,
+            "inflow": -2.97,
+            "change": 1.24
           }
         ]
       },
       {
-        "name": "游戏",
-        "code": "881275",
-        "change": 0.9,
-        "indexPrice": 9035.52,
-        "stockCount": 24,
+        "name": "农化制品",
+        "code": "881263",
+        "change": 0.1,
+        "indexPrice": 4687.27,
+        "stockCount": 61,
         "riseCount": 0,
         "fallCount": 0,
-        "leader": "名臣健康",
-        "leaderChange": 4.41,
+        "leader": "ST司特",
+        "leaderChange": 4.92,
         "risePct": 0,
-        "flowIn": 60.56,
-        "flowOut": 64.2,
-        "inflow": -3.64,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": "latent",
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 62.68,
-            "flowOut": 71.94,
-            "inflow": -9.27,
-            "change": -0.85
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 98.01,
-            "flowOut": 74.55,
-            "inflow": 23.46,
-            "change": 4.5
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 60.56,
-            "flowOut": 64.2,
-            "inflow": -3.64,
-            "change": 0.9
-          }
-        ]
-      },
-      {
-        "name": "生物制品",
-        "code": "881142",
-        "change": -0.18,
-        "indexPrice": 5571.83,
-        "stockCount": 55,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "*ST康乐",
-        "leaderChange": 19.11,
-        "risePct": 0,
-        "flowIn": 13.01,
-        "flowOut": 16.8,
-        "inflow": -3.79,
+        "flowIn": 28.09,
+        "flowOut": 31.13,
+        "inflow": -3.04,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10151,41 +10007,89 @@
         "history": [
           {
             "date": "2026-07-30",
-            "flowIn": 26.08,
-            "flowOut": 32.33,
-            "inflow": -6.26,
-            "change": -2.19
+            "flowIn": 51.74,
+            "flowOut": 52.59,
+            "inflow": -0.86,
+            "change": 1.26
           },
           {
             "date": "2026-07-31",
-            "flowIn": 25.67,
-            "flowOut": 24.14,
-            "inflow": 1.53,
-            "change": 2.21
+            "flowIn": 48.58,
+            "flowOut": 54.83,
+            "inflow": -6.25,
+            "change": -0.07
           },
           {
             "date": "2026-08-03",
-            "flowIn": 13.01,
-            "flowOut": 16.8,
-            "inflow": -3.79,
-            "change": -0.18
+            "flowIn": 28.09,
+            "flowOut": 31.13,
+            "inflow": -3.04,
+            "change": 0.1
+          }
+        ]
+      },
+      {
+        "name": "互联网电商",
+        "code": "881177",
+        "change": -0.33,
+        "indexPrice": 8238.46,
+        "stockCount": 20,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "吉宏股份",
+        "leaderChange": 10.0,
+        "risePct": 0,
+        "flowIn": 14.14,
+        "flowOut": 17.3,
+        "inflow": -3.16,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 18.62,
+            "flowOut": 25.79,
+            "inflow": -7.17,
+            "change": -3.51
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 29.85,
+            "flowOut": 22.82,
+            "inflow": 7.03,
+            "change": 2.77
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 14.14,
+            "flowOut": 17.3,
+            "inflow": -3.16,
+            "change": -0.33
           }
         ]
       },
       {
         "name": "白色家电",
         "code": "881131",
-        "change": 0.3,
-        "indexPrice": 7488.4,
+        "change": 0.23,
+        "indexPrice": 7483.16,
         "stockCount": 44,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "瑞德智能",
         "leaderChange": 7.87,
         "risePct": 0,
-        "flowIn": 33.16,
-        "flowOut": 36.96,
-        "inflow": -3.8,
+        "flowIn": 33.96,
+        "flowOut": 37.7,
+        "inflow": -3.74,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10213,27 +10117,123 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 33.16,
-            "flowOut": 36.96,
-            "inflow": -3.8,
-            "change": 0.3
+            "flowIn": 33.96,
+            "flowOut": 37.7,
+            "inflow": -3.74,
+            "change": 0.23
+          }
+        ]
+      },
+      {
+        "name": "生物制品",
+        "code": "881142",
+        "change": -0.15,
+        "indexPrice": 5573.31,
+        "stockCount": 55,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "*ST康乐",
+        "leaderChange": 19.32,
+        "risePct": 0,
+        "flowIn": 13.34,
+        "flowOut": 17.16,
+        "inflow": -3.82,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 26.08,
+            "flowOut": 32.33,
+            "inflow": -6.26,
+            "change": -2.19
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 25.67,
+            "flowOut": 24.14,
+            "inflow": 1.53,
+            "change": 2.21
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 13.34,
+            "flowOut": 17.16,
+            "inflow": -3.82,
+            "change": -0.15
+          }
+        ]
+      },
+      {
+        "name": "游戏",
+        "code": "881275",
+        "change": 0.95,
+        "indexPrice": 9039.72,
+        "stockCount": 24,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "名臣健康",
+        "leaderChange": 4.41,
+        "risePct": 0,
+        "flowIn": 61.42,
+        "flowOut": 65.51,
+        "inflow": -4.09,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": "latent",
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 62.68,
+            "flowOut": 71.94,
+            "inflow": -9.27,
+            "change": -0.85
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 98.01,
+            "flowOut": 74.55,
+            "inflow": 23.46,
+            "change": 4.5
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 61.42,
+            "flowOut": 65.51,
+            "inflow": -4.09,
+            "change": 0.95
           }
         ]
       },
       {
         "name": "零售",
         "code": "881158",
-        "change": 0.86,
-        "indexPrice": 1793.59,
+        "change": 0.96,
+        "indexPrice": 1795.35,
         "stockCount": 71,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "锦和商管",
         "leaderChange": 10.0,
         "risePct": 0,
-        "flowIn": 24.28,
-        "flowOut": 28.45,
-        "inflow": -4.17,
+        "flowIn": 24.84,
+        "flowOut": 29.01,
+        "inflow": -4.16,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10261,27 +10261,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 24.28,
-            "flowOut": 28.45,
-            "inflow": -4.17,
-            "change": 0.86
+            "flowIn": 24.84,
+            "flowOut": 29.01,
+            "inflow": -4.16,
+            "change": 0.96
           }
         ]
       },
       {
         "name": "塑料制品",
         "code": "881265",
-        "change": 0.91,
-        "indexPrice": 9473.86,
+        "change": 1.06,
+        "indexPrice": 9488.17,
         "stockCount": 77,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "裕兴股份",
         "leaderChange": 20.0,
         "risePct": 0,
-        "flowIn": 33.7,
-        "flowOut": 38.13,
-        "inflow": -4.43,
+        "flowIn": 34.87,
+        "flowOut": 39.15,
+        "inflow": -4.28,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10309,171 +10309,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 33.7,
-            "flowOut": 38.13,
-            "inflow": -4.43,
-            "change": 0.91
-          }
-        ]
-      },
-      {
-        "name": "医疗服务",
-        "code": "881175",
-        "change": -0.21,
-        "indexPrice": 17071.2,
-        "stockCount": 56,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "百奥赛图",
-        "leaderChange": 5.88,
-        "risePct": 0,
-        "flowIn": 49.68,
-        "flowOut": 54.7,
-        "inflow": -5.02,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 82.46,
-            "flowOut": 93.9,
-            "inflow": -11.44,
-            "change": -3.4
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 91.33,
-            "flowOut": 81.6,
-            "inflow": 9.74,
-            "change": 2.92
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 49.68,
-            "flowOut": 54.7,
-            "inflow": -5.02,
-            "change": -0.21
-          }
-        ]
-      },
-      {
-        "name": "其他电子",
-        "code": "881123",
-        "change": -0.69,
-        "indexPrice": 17808.9,
-        "stockCount": 34,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "英唐智控",
-        "leaderChange": 4.1,
-        "risePct": 0,
-        "flowIn": 31.56,
-        "flowOut": 36.62,
-        "inflow": -5.06,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 52.14,
-            "flowOut": 57.79,
-            "inflow": -5.66,
-            "change": -4.67
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 76.47,
-            "flowOut": 72.95,
-            "inflow": 3.53,
-            "change": 3.34
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 31.56,
-            "flowOut": 36.62,
-            "inflow": -5.06,
-            "change": -0.69
-          }
-        ]
-      },
-      {
-        "name": "汽车整车",
-        "code": "881125",
-        "change": -0.16,
-        "indexPrice": 2675.33,
-        "stockCount": 23,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "众泰汽车",
-        "leaderChange": 2.91,
-        "risePct": 0,
-        "flowIn": 32.8,
-        "flowOut": 37.87,
-        "inflow": -5.07,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": "latent",
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 72.82,
-            "flowOut": 61.48,
-            "inflow": 11.34,
-            "change": 2.85
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 72.07,
-            "flowOut": 63.01,
-            "inflow": 9.06,
-            "change": 0.24
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 32.8,
-            "flowOut": 37.87,
-            "inflow": -5.07,
-            "change": -0.16
+            "flowIn": 34.87,
+            "flowOut": 39.15,
+            "inflow": -4.28,
+            "change": 1.06
           }
         ]
       },
       {
         "name": "电池",
         "code": "881281",
-        "change": 0.04,
-        "indexPrice": 17041.3,
+        "change": 0.08,
+        "indexPrice": 17047.8,
         "stockCount": 106,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "威尔泰",
         "leaderChange": 10.0,
         "risePct": 0,
-        "flowIn": 96.93,
-        "flowOut": 102.51,
-        "inflow": -5.58,
+        "flowIn": 98.97,
+        "flowOut": 104.11,
+        "inflow": -5.14,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10501,27 +10357,171 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 96.93,
-            "flowOut": 102.51,
-            "inflow": -5.58,
-            "change": 0.04
+            "flowIn": 98.97,
+            "flowOut": 104.11,
+            "inflow": -5.14,
+            "change": 0.08
+          }
+        ]
+      },
+      {
+        "name": "汽车整车",
+        "code": "881125",
+        "change": -0.16,
+        "indexPrice": 2675.52,
+        "stockCount": 23,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "众泰汽车",
+        "leaderChange": 2.33,
+        "risePct": 0,
+        "flowIn": 33.28,
+        "flowOut": 38.45,
+        "inflow": -5.17,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": "latent",
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 72.82,
+            "flowOut": 61.48,
+            "inflow": 11.34,
+            "change": 2.85
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 72.07,
+            "flowOut": 63.01,
+            "inflow": 9.06,
+            "change": 0.24
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 33.28,
+            "flowOut": 38.45,
+            "inflow": -5.17,
+            "change": -0.16
+          }
+        ]
+      },
+      {
+        "name": "医疗服务",
+        "code": "881175",
+        "change": -0.3,
+        "indexPrice": 17055.0,
+        "stockCount": 56,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "百奥赛图",
+        "leaderChange": 6.32,
+        "risePct": 0,
+        "flowIn": 50.46,
+        "flowOut": 55.8,
+        "inflow": -5.34,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 82.46,
+            "flowOut": 93.9,
+            "inflow": -11.44,
+            "change": -3.4
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 91.33,
+            "flowOut": 81.6,
+            "inflow": 9.74,
+            "change": 2.92
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 50.46,
+            "flowOut": 55.8,
+            "inflow": -5.34,
+            "change": -0.3
+          }
+        ]
+      },
+      {
+        "name": "其他电子",
+        "code": "881123",
+        "change": -0.79,
+        "indexPrice": 17790.9,
+        "stockCount": 34,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "英唐智控",
+        "leaderChange": 3.95,
+        "risePct": 0,
+        "flowIn": 32.1,
+        "flowOut": 37.63,
+        "inflow": -5.52,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 52.14,
+            "flowOut": 57.79,
+            "inflow": -5.66,
+            "change": -4.67
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 76.47,
+            "flowOut": 72.95,
+            "inflow": 3.53,
+            "change": 3.34
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 32.1,
+            "flowOut": 37.63,
+            "inflow": -5.52,
+            "change": -0.79
           }
         ]
       },
       {
         "name": "计算机设备",
         "code": "881130",
-        "change": 0.5,
-        "indexPrice": 3735.37,
+        "change": 0.57,
+        "indexPrice": 3737.84,
         "stockCount": 83,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "恒银科技",
         "leaderChange": 10.04,
         "risePct": 0,
-        "flowIn": 82.7,
-        "flowOut": 88.68,
-        "inflow": -5.98,
+        "flowIn": 84.1,
+        "flowOut": 90.22,
+        "inflow": -6.13,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10549,27 +10549,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 82.7,
-            "flowOut": 88.68,
-            "inflow": -5.98,
-            "change": 0.5
+            "flowIn": 84.1,
+            "flowOut": 90.22,
+            "inflow": -6.13,
+            "change": 0.57
           }
         ]
       },
       {
         "name": "贵金属",
         "code": "881169",
-        "change": -1.46,
-        "indexPrice": 4853.37,
+        "change": -1.55,
+        "indexPrice": 4848.96,
         "stockCount": 14,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "株冶集团",
-        "leaderChange": 0.88,
+        "leaderChange": 0.79,
         "risePct": 0,
-        "flowIn": 50.23,
-        "flowOut": 58.42,
-        "inflow": -8.19,
+        "flowIn": 51.5,
+        "flowOut": 60.46,
+        "inflow": -8.96,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10597,27 +10597,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 50.23,
-            "flowOut": 58.42,
-            "inflow": -8.19,
-            "change": -1.46
+            "flowIn": 51.5,
+            "flowOut": 60.46,
+            "inflow": -8.96,
+            "change": -1.55
           }
         ]
       },
       {
         "name": "文化传媒",
         "code": "881164",
-        "change": 0.56,
-        "indexPrice": 2570.43,
+        "change": 0.49,
+        "indexPrice": 2568.78,
         "stockCount": 84,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "天娱数科",
         "leaderChange": 9.98,
         "risePct": 0,
-        "flowIn": 104.16,
-        "flowOut": 113.67,
-        "inflow": -9.5,
+        "flowIn": 105.24,
+        "flowOut": 115.14,
+        "inflow": -9.91,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10645,27 +10645,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 104.16,
-            "flowOut": 113.67,
-            "inflow": -9.5,
-            "change": 0.56
+            "flowIn": 105.24,
+            "flowOut": 115.14,
+            "inflow": -9.91,
+            "change": 0.49
           }
         ]
       },
       {
         "name": "光学光电子",
         "code": "881122",
-        "change": 0.39,
-        "indexPrice": 4743.86,
+        "change": 0.41,
+        "indexPrice": 4744.81,
         "stockCount": 107,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "秋田微",
-        "leaderChange": 9.89,
+        "leaderChange": 14.29,
         "risePct": 0,
-        "flowIn": 78.57,
-        "flowOut": 91.75,
-        "inflow": -13.18,
+        "flowIn": 79.67,
+        "flowOut": 93.45,
+        "inflow": -13.78,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10693,27 +10693,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 78.57,
-            "flowOut": 91.75,
-            "inflow": -13.18,
-            "change": 0.39
+            "flowIn": 79.67,
+            "flowOut": 93.45,
+            "inflow": -13.78,
+            "change": 0.41
           }
         ]
       },
       {
         "name": "电子化学品",
         "code": "881172",
-        "change": -3.54,
-        "indexPrice": 72513.6,
+        "change": -3.52,
+        "indexPrice": 72521.7,
         "stockCount": 43,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "西陇科学",
-        "leaderChange": 1.52,
+        "leaderChange": 1.39,
         "risePct": 0,
-        "flowIn": 94.72,
-        "flowOut": 109.99,
-        "inflow": -15.28,
+        "flowIn": 96.14,
+        "flowOut": 111.52,
+        "inflow": -15.38,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10741,27 +10741,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 94.72,
-            "flowOut": 109.99,
-            "inflow": -15.28,
-            "change": -3.54
+            "flowIn": 96.14,
+            "flowOut": 111.52,
+            "inflow": -15.38,
+            "change": -3.52
           }
         ]
       },
       {
         "name": "软件开发",
         "code": "881272",
-        "change": 0.17,
-        "indexPrice": 1833.43,
+        "change": 0.18,
+        "indexPrice": 1833.57,
         "stockCount": 138,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "泛微网络",
-        "leaderChange": 7.91,
+        "leaderChange": 7.94,
         "risePct": 0,
-        "flowIn": 152.75,
-        "flowOut": 168.14,
-        "inflow": -15.39,
+        "flowIn": 154.53,
+        "flowOut": 170.34,
+        "inflow": -15.8,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10789,123 +10789,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 152.75,
-            "flowOut": 168.14,
-            "inflow": -15.39,
-            "change": 0.17
-          }
-        ]
-      },
-      {
-        "name": "化学制药",
-        "code": "881140",
-        "change": 0.23,
-        "indexPrice": 5888.68,
-        "stockCount": 158,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "共同药业",
-        "leaderChange": 9.56,
-        "risePct": 0,
-        "flowIn": 63.34,
-        "flowOut": 79.27,
-        "inflow": -15.93,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": "disaster",
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 113.01,
-            "flowOut": 132.29,
-            "inflow": -19.27,
-            "change": -1.97
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 116.46,
-            "flowOut": 116.33,
-            "inflow": 0.13,
-            "change": 1.69
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 63.34,
-            "flowOut": 79.27,
-            "inflow": -15.93,
-            "change": 0.23
-          }
-        ]
-      },
-      {
-        "name": "消费电子",
-        "code": "881124",
-        "change": -0.06,
-        "indexPrice": 10897.4,
-        "stockCount": 96,
-        "riseCount": 0,
-        "fallCount": 0,
-        "leader": "凯旺科技",
-        "leaderChange": 19.99,
-        "risePct": 0,
-        "flowIn": 113.69,
-        "flowOut": 129.81,
-        "inflow": -16.12,
-        "continuousDays": 0,
-        "accum3d": 0,
-        "accum5d": 0,
-        "accum10d": 0,
-        "accum20d": 0,
-        "accum3dIn": 0,
-        "accum3dOut": 0,
-        "accum5dIn": 0,
-        "accum5dOut": 0,
-        "signal": null,
-        "history": [
-          {
-            "date": "2026-07-30",
-            "flowIn": 178.38,
-            "flowOut": 233.08,
-            "inflow": -54.7,
-            "change": -4.25
-          },
-          {
-            "date": "2026-07-31",
-            "flowIn": 211.28,
-            "flowOut": 222.41,
-            "inflow": -11.13,
-            "change": 3.49
-          },
-          {
-            "date": "2026-08-03",
-            "flowIn": 113.69,
-            "flowOut": 129.81,
-            "inflow": -16.12,
-            "change": -0.06
+            "flowIn": 154.53,
+            "flowOut": 170.34,
+            "inflow": -15.8,
+            "change": 0.18
           }
         ]
       },
       {
         "name": "证券",
         "code": "881157",
-        "change": -0.22,
-        "indexPrice": 1467.42,
+        "change": -0.15,
+        "indexPrice": 1468.45,
         "stockCount": 50,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "首创证券",
-        "leaderChange": 1.91,
+        "leaderChange": 2.05,
         "risePct": 0,
-        "flowIn": 53.44,
-        "flowOut": 69.84,
-        "inflow": -16.4,
+        "flowIn": 54.86,
+        "flowOut": 70.84,
+        "inflow": -15.97,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10933,27 +10837,123 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 53.44,
-            "flowOut": 69.84,
-            "inflow": -16.4,
-            "change": -0.22
+            "flowIn": 54.86,
+            "flowOut": 70.84,
+            "inflow": -15.97,
+            "change": -0.15
+          }
+        ]
+      },
+      {
+        "name": "化学制药",
+        "code": "881140",
+        "change": 0.22,
+        "indexPrice": 5887.65,
+        "stockCount": 158,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "共同药业",
+        "leaderChange": 9.34,
+        "risePct": 0,
+        "flowIn": 64.76,
+        "flowOut": 81.13,
+        "inflow": -16.37,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": "disaster",
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 113.01,
+            "flowOut": 132.29,
+            "inflow": -19.27,
+            "change": -1.97
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 116.46,
+            "flowOut": 116.33,
+            "inflow": 0.13,
+            "change": 1.69
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 64.76,
+            "flowOut": 81.13,
+            "inflow": -16.37,
+            "change": 0.22
+          }
+        ]
+      },
+      {
+        "name": "消费电子",
+        "code": "881124",
+        "change": -0.03,
+        "indexPrice": 10900.5,
+        "stockCount": 96,
+        "riseCount": 0,
+        "fallCount": 0,
+        "leader": "凯旺科技",
+        "leaderChange": 19.99,
+        "risePct": 0,
+        "flowIn": 115.42,
+        "flowOut": 131.96,
+        "inflow": -16.55,
+        "continuousDays": 0,
+        "accum3d": 0,
+        "accum5d": 0,
+        "accum10d": 0,
+        "accum20d": 0,
+        "accum3dIn": 0,
+        "accum3dOut": 0,
+        "accum5dIn": 0,
+        "accum5dOut": 0,
+        "signal": null,
+        "history": [
+          {
+            "date": "2026-07-30",
+            "flowIn": 178.38,
+            "flowOut": 233.08,
+            "inflow": -54.7,
+            "change": -4.25
+          },
+          {
+            "date": "2026-07-31",
+            "flowIn": 211.28,
+            "flowOut": 222.41,
+            "inflow": -11.13,
+            "change": 3.49
+          },
+          {
+            "date": "2026-08-03",
+            "flowIn": 115.42,
+            "flowOut": 131.96,
+            "inflow": -16.55,
+            "change": -0.03
           }
         ]
       },
       {
         "name": "建筑材料",
         "code": "881115",
-        "change": 0.78,
-        "indexPrice": 5255.58,
+        "change": 0.84,
+        "indexPrice": 5258.56,
         "stockCount": 73,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "雄塑科技",
-        "leaderChange": 9.82,
+        "leaderChange": 9.93,
         "risePct": 0,
-        "flowIn": 65.65,
-        "flowOut": 83.26,
-        "inflow": -17.6,
+        "flowIn": 66.98,
+        "flowOut": 85.21,
+        "inflow": -18.24,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -10981,27 +10981,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 65.65,
-            "flowOut": 83.26,
-            "inflow": -17.6,
-            "change": 0.78
+            "flowIn": 66.98,
+            "flowOut": 85.21,
+            "inflow": -18.24,
+            "change": 0.84
           }
         ]
       },
       {
         "name": "IT服务",
         "code": "881271",
-        "change": 0.47,
-        "indexPrice": 11536.9,
+        "change": 0.57,
+        "indexPrice": 11548.4,
         "stockCount": 129,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "ST荣科",
-        "leaderChange": 10.87,
+        "leaderChange": 12.62,
         "risePct": 0,
-        "flowIn": 127.49,
-        "flowOut": 146.72,
-        "inflow": -19.23,
+        "flowIn": 129.73,
+        "flowOut": 148.88,
+        "inflow": -19.15,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -11029,27 +11029,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 127.49,
-            "flowOut": 146.72,
-            "inflow": -19.23,
-            "change": 0.47
+            "flowIn": 129.73,
+            "flowOut": 148.88,
+            "inflow": -19.15,
+            "change": 0.57
           }
         ]
       },
       {
         "name": "工业金属",
         "code": "881168",
-        "change": 0.1,
-        "indexPrice": 4066.07,
+        "change": 0.02,
+        "indexPrice": 4062.93,
         "stockCount": 55,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "金徽股份",
         "leaderChange": 5.78,
         "risePct": 0,
-        "flowIn": 66.33,
-        "flowOut": 85.59,
-        "inflow": -19.26,
+        "flowIn": 69.35,
+        "flowOut": 90.41,
+        "inflow": -21.05,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -11077,27 +11077,27 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 66.33,
-            "flowOut": 85.59,
-            "inflow": -19.26,
-            "change": 0.1
+            "flowIn": 69.35,
+            "flowOut": 90.41,
+            "inflow": -21.05,
+            "change": 0.02
           }
         ]
       },
       {
         "name": "半导体",
         "code": "881121",
-        "change": -3.22,
-        "indexPrice": 14054.6,
+        "change": -3.34,
+        "indexPrice": 14036.7,
         "stockCount": 183,
         "riseCount": 0,
         "fallCount": 0,
         "leader": "富瀚微",
         "leaderChange": 20.01,
         "risePct": 0,
-        "flowIn": 899.91,
-        "flowOut": 985.63,
-        "inflow": -85.71,
+        "flowIn": 914.84,
+        "flowOut": 1005.83,
+        "inflow": -90.99,
         "continuousDays": 0,
         "accum3d": 0,
         "accum5d": 0,
@@ -11129,10 +11129,10 @@
           },
           {
             "date": "2026-08-03",
-            "flowIn": 899.91,
-            "flowOut": 985.63,
-            "inflow": -85.71,
-            "change": -3.22
+            "flowIn": 914.84,
+            "flowOut": 1005.83,
+            "inflow": -90.99,
+            "change": -3.34
           }
         ]
       }
@@ -11192,26 +11192,26 @@
       "sectorUp": 72,
       "sectorDown": 18,
       "topSector": "风电设备",
-      "topSectorChange": 2.83,
-      "totalFlowIn": 4834.44,
-      "totalFlowOut": 5043.63,
-      "netFlow": -209.14,
-      "avgChange": 0.6,
+      "topSectorChange": 2.97,
+      "totalFlowIn": 4934.76,
+      "totalFlowOut": 5157.27,
+      "netFlow": -222.49,
+      "avgChange": 0.66,
       "indices": [
         {
           "name": "上证指数",
-          "value": 3804.3411,
-          "change": -0.73
+          "value": 3802.4912,
+          "change": -0.78
         },
         {
           "name": "深证成指",
-          "value": 13487.1,
-          "change": -0.68
+          "value": 13470.07,
+          "change": -0.8
         },
         {
           "name": "创业板指",
-          "value": 3320.16,
-          "change": -0.71
+          "value": 3312.61,
+          "change": -0.94
         }
       ],
       "northFlow": 0.0
