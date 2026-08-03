@@ -12284,16 +12284,6 @@
       "avgChange": 2.2,
       "indices": [
         {
-          "name": "上证指数",
-          "value": 3832.26,
-          "change": 0.72
-        },
-        {
-          "name": "深证成指",
-          "value": 13578.93,
-          "change": 2.21
-        },
-        {
           "name": "创业板指",
           "value": 3343.96,
           "change": 3.06
@@ -12325,6 +12315,16 @@
       "netFlow": -258.11,
       "avgChange": 1.14,
       "indices": [
+        {
+          "name": "上证指数",
+          "value": 3809.66,
+          "change": -0.59
+        },
+        {
+          "name": "深证成指",
+          "value": 13448.29,
+          "change": -0.96
+        },
         {
           "name": "创业板指",
           "value": 3302.55,
