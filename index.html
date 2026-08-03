@@ -65,7 +65,7 @@
   .container { padding: 20px 24px; max-width: 1800px; margin: 0 auto; }
 
   /* ===== 市场总览 - 2行布局 ===== */
-  .market-indices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+  .market-indices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 14px; }
   .market-indicators { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
 
   .stat-card {
@@ -294,7 +294,7 @@
     .date-text { min-width: 80px; font-size: 13px; }
     .container { padding: 12px 10px; }
 
-    .market-indices { grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 8px; }
+    .market-indices { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 8px; }
     .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
     .stat-card { padding: 10px 12px; border-radius: 10px; }
     .stat-value { font-size: 16px; }
@@ -328,7 +328,7 @@
   }
 
   @media (max-width: 480px) {
-    .market-indices { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .market-indices { grid-template-columns: repeat(2, 1fr); gap: 6px; }
     .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 6px; }
     .stat-card { padding: 8px 10px; }
     .stat-value { font-size: 14px; }
@@ -565,16 +565,49 @@ const state = {
   sortOrder: 'asc'
 };
 
-// ========== 数据加载 ==========
+// ========== 数据加载（v5.0: 支持按日拆分存储） ==========
 async function loadData() {
   try {
-    const resp = await fetch('data/fund_data_frontend.json?t=' + Date.now());
-    FUND_DATA = await resp.json();
-    state.currentDate = FUND_DATA.dates[FUND_DATA.dates.length - 1];
-    updateAll();
+    // 优先尝试按日拆分存储（index.json + data/YYYY-MM-DD.json）
+    const idxResp = await fetch('data/index.json?t=' + Date.now());
+    if (idxResp.ok) {
+      const idx = await idxResp.json();
+      const latestDate = idx.latestDate;
+      const dailyResp = await fetch('data/' + latestDate + '.json?t=' + Date.now());
+      if (dailyResp.ok) {
+        const daily = await dailyResp.json();
+        // 将按日数据转换为兼容格式
+        FUND_DATA = {
+          dates: idx.dates.map(function(d) { return d.date; }),
+          sectorsByDate: {},
+          metaByDate: {},
+          market: {},
+          signals: {},
+          lhb: idx.lhb || {},
+          updateTime: idx.updateTime,
+        };
+        // 填充当日数据
+        FUND_DATA.sectorsByDate[latestDate] = daily.sectors || [];
+        FUND_DATA.metaByDate[latestDate] = daily.meta || {};
+        FUND_DATA.market[latestDate] = daily.market || {};
+        FUND_DATA.signals[latestDate] = daily.signals || {};
+        state.currentDate = latestDate;
+        updateAll();
+        return;
+      }
+    }
+    throw new Error('split storage not available');
   } catch(e) {
-    console.error('Failed to load data:', e);
-    document.getElementById('sectorTable').innerHTML = '<tr><td colspan="13" style="text-align:center;padding:40px;color:#999">数据加载失败，请刷新重试</td></tr>';
+    // 降级：使用完整JSON
+    try {
+      const resp = await fetch('data/fund_data_frontend.json?t=' + Date.now());
+      FUND_DATA = await resp.json();
+      state.currentDate = FUND_DATA.dates[FUND_DATA.dates.length - 1];
+      updateAll();
+    } catch(e2) {
+      console.error('Failed to load data:', e2);
+      document.getElementById('sectorTable').innerHTML = '<tr><td colspan="13" style="text-align:center;padding:40px;color:#999">数据加载失败，请刷新重试</td></tr>';
+    }
   }
 }
 
@@ -601,9 +634,9 @@ function renderMarketOverview() {
   const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
   const indices = mo.indices || [];
 
-  // 第一行：三大指数
+  // 第一行：指数行情（动态列数，支持3大指数+科创50）
   const idxContainer = document.getElementById('marketIndices');
-  const idxIcons = ['📊', '📈', '🚀'];
+  const idxIcons = ['📊', '📈', '🚀', '🔬'];
   idxContainer.innerHTML = indices.map((idx, i) => {
     const cls = (idx.change || 0) >= 0 ? 'rise' : 'fall';
     const sign = (idx.change || 0) > 0 ? '+' : '';
@@ -615,8 +648,8 @@ function renderMarketOverview() {
       '</div>';
   }).join('');
   // 如果指数数据缺失，补位
-  while (indices.length < 3) {
-    idxContainer.innerHTML += '<div class="stat-card"><div class="stat-header"><span class="stat-icon">' + idxIcons[indices.length] + '</span><span class="stat-label">--</span></div><div class="stat-value text-tertiary">--</div></div>';
+  while (indices.length < 4) {
+    idxContainer.innerHTML += '<div class="stat-card"><div class="stat-header"><span class="stat-icon">' + (idxIcons[indices.length] || '📊') + '</span><span class="stat-label">--</span></div><div class="stat-value text-tertiary">--</div></div>';
     indices.push({});
   }
 
@@ -650,11 +683,20 @@ function renderMarketOverview() {
       '<div><span class="stat-value ' + netC + '">' + ((mo.netFlow || 0) > 0 ? '+' : '') + (mo.netFlow || 0).toFixed(1) + '亿</span></div>' +
       '<div class="stat-sub">流入' + (mo.totalFlowIn || 0).toFixed(0) + '亿 · 流出' + (mo.totalFlowOut || 0).toFixed(0) + '亿</div>' +
     '</div>' +
-    '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">' + ((mo.northFlow || 0) >= 0 ? '💹' : '💹') + '</span><span class="stat-label">北向资金</span></div>' +
-      '<div><span class="stat-value ' + ((mo.northFlow || 0) >= 0 ? 'rise' : 'fall') + '">' + ((mo.northFlow || 0) > 0 ? '+' : '') + (mo.northFlow || 0).toFixed(1) + '亿</span></div>' +
-      '<div class="stat-sub">' + ((mo.northFlow || 0) > 0 ? '净买入' : '净流出') + '</div>' +
-    '</div>' +
+    (function() {
+      if (mo.northFlowStatus === 'suspended') {
+        return '<div class="stat-card">' +
+          '<div class="stat-header"><span class="stat-icon">💹</span><span class="stat-label">北向资金</span></div>' +
+          '<div><span class="stat-value" style="font-size:14px;font-family:inherit;color:var(--text-tertiary);">已暂停披露</span></div>' +
+          '<div class="stat-sub">2024.8起交易所停止实时披露</div>' +
+        '</div>';
+      }
+      return '<div class="stat-card">' +
+        '<div class="stat-header"><span class="stat-icon">💹</span><span class="stat-label">北向资金</span></div>' +
+        '<div><span class="stat-value ' + ((mo.northFlow || 0) >= 0 ? 'rise' : 'fall') + '">' + ((mo.northFlow || 0) > 0 ? '+' : '') + (mo.northFlow || 0).toFixed(1) + '亿</span></div>' +
+        '<div class="stat-sub">' + ((mo.northFlow || 0) > 0 ? '净买入' : '净流出') + '</div>' +
+      '</div>';
+    })() +
     '<div class="stat-card">' +
       '<div class="stat-header"><span class="stat-icon">' + (riseRatio >= 50 ? '🔴' : '🟢') + '</span><span class="stat-label">涨跌比</span></div>' +
       '<div><span class="stat-value ' + riseC + '">' + riseRatio + '%</span></div>' +
@@ -1175,11 +1217,17 @@ function openDrawer(sectorName) {
       const flowIcon = flowDays > 0 ? '🔥' : (flowDays < 0 ? '❄️' : '💧');
       const flowClass = flowDays > 0 ? 'rise' : (flowDays < 0 ? 'fall' : '');
       const flowLabel = flowDays > 0 ? '+' + flowDays + '天' : (flowDays < 0 ? flowDays + '天' : '0天');
-      const northHtml = '<div class="grid-item">' +
-        '<div class="gi-icon">💹</div>' +
-        '<div class="gi-value ' + nfClass + '">' + nfSign + (mo.northFlow || 0).toFixed(1) + '亿</div>' +
-        '<div class="gi-label">北向资金</div>' +
-      '</div>';
+      const northHtml = (mo.northFlowStatus === 'suspended')
+        ? '<div class="grid-item">' +
+            '<div class="gi-icon">💹</div>' +
+            '<div class="gi-value" style="font-size:12px;font-family:inherit;color:var(--text-tertiary);">已暂停披露</div>' +
+            '<div class="gi-label">北向资金</div>' +
+          '</div>'
+        : '<div class="grid-item">' +
+            '<div class="gi-icon">💹</div>' +
+            '<div class="gi-value ' + nfClass + '">' + nfSign + (mo.northFlow || 0).toFixed(1) + '亿</div>' +
+            '<div class="gi-label">北向资金</div>' +
+          '</div>';
       const consHtml = '<div class="grid-item">' +
         '<div class="gi-icon">' + flowIcon + '</div>' +
         '<div class="gi-value ' + flowClass + '">' + flowLabel + '</div>' +
