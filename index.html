@@ -631,7 +631,7 @@ function updateDateNav() {
 
 // ========== 市场总览 ==========
 function renderMarketOverview() {
-  const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
+  const mo = (FUND_DATA.market && FUND_DATA.market[state.currentDate]) || {};
   const indices = mo.indices || [];
 
   // 第一行：指数行情（动态列数，支持3大指数+科创50）
@@ -968,7 +968,7 @@ function renderLHB() {
 
 function renderZT() {
   const el = document.getElementById('ztContent');
-  const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
+  const mo = (FUND_DATA.market && FUND_DATA.market[state.currentDate]) || {};
   if (!mo.ztCount && !mo.emotionScore) {
     el.innerHTML = '<div style="color:var(--text-tertiary);font-size:12px;padding:12px 0;">数据待更新</div>';
     return;
@@ -1005,7 +1005,7 @@ function renderZT() {
 }
 
 function renderLadderChart(ladderStr) {
-  const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
+  const mo = (FUND_DATA.market && FUND_DATA.market[state.currentDate]) || {};
   const ladderDetail = mo.ladderDetail || null;
   const parts = ladderStr.split('→');
   let html = '<div style="margin-bottom:10px;padding:10px 12px;background:var(--bg-tertiary);border-radius:8px;">';
@@ -1200,7 +1200,7 @@ function openDrawer(sectorName) {
 
     // 第三行：北向资金 + 连续净流入天数 + 领涨股
     (function() {
-      const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
+      const mo = (FUND_DATA.market && FUND_DATA.market[state.currentDate]) || {};
       const nfClass = (mo.northFlow || 0) >= 0 ? 'rise' : 'fall';
       const nfSign = (mo.northFlow || 0) > 0 ? '+' : '';
       // 计算净流天数：正=连续流入，负=连续流出
