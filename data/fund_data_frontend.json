@@ -12267,7 +12267,8 @@
       "zbCount": 19,
       "zbRate": 26.8,
       "maxBoard": 8,
-      "maxBoardName": "爱丽家居"
+      "maxBoardName": "爱丽家居",
+      "emotionScore": 45
     },
     "2026-07-31": {
       "totalStocks": 5619,
@@ -12291,7 +12292,7 @@
       ],
       "volume": 25600,
       "northFlow": 93.47,
-      "ztCount": 101,
+      "ztCount": 99,
       "dtCount": 0,
       "zbCount": 107,
       "zbRate": 51.9,
@@ -12333,9 +12334,12 @@
       ],
       "volume": 20100,
       "ztCount": 83,
+      "dtCount": 9,
+      "zbCount": 16,
       "zbRate": 17.6,
       "maxBoard": 6,
       "maxBoardName": "传智教育",
+      "emotionScore": 72,
       "emotionStage": "🌡️亢奋（72分/100）"
     }
   },
