@@ -16224,7 +16224,10 @@
       "totalFlowIn": 7255.59,
       "totalFlowOut": 6769.41,
       "netFlow": 486.11,
-      "avgChange": 1.18
+      "avgChange": 1.18,
+      "shChangePct": 4.6,
+      "limitUp": 140,
+      "limitDown": 1
     }
   },
   "signals": {
