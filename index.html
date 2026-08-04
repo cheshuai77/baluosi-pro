@@ -638,12 +638,9 @@ function renderMarketOverview() {
 
   // 第二行：五个指标卡
   const indContainer = document.getElementById('marketIndicators');
-  const riseC = (mo.totalRise || 0) >= (mo.totalFall || 0) ? 'rise' : 'fall';
   const sectorUpC = (mo.sectorUp || 0) >= (mo.sectorDown || 0) ? 'rise' : 'fall';
   const netC = (mo.netFlow || 0) >= 0 ? 'rise' : 'fall';
   const topC = (mo.topSectorChange || 0) >= 0 ? 'rise' : 'fall';
-  const totalStocks = (mo.totalRise || 0) + (mo.totalFall || 0);
-  const riseRatio = totalStocks > 0 ? ((mo.totalRise || 0) / totalStocks * 100).toFixed(0) : 0;
 
   indContainer.innerHTML = 
     '<div class="stat-card">' +
@@ -654,24 +651,12 @@ function renderMarketOverview() {
       '<div class="stat-sub">上涨占比 ' + (mo.risePct || 0).toFixed(1) + '%</div>' +
     '</div>' +
     '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">' + (riseRatio >= 50 ? '🔴' : '🟢') + '</span><span class="stat-label">涨/跌比</span></div>' +
-      '<div><span class="stat-value ' + riseC + '">' + riseRatio + '%</span></div>' +
-      '<div class="stat-sub">' + (mo.totalRise||0) + '涨 / ' + (mo.totalFall||0) + '跌</div>' +
-    '</div>' +
-    '<div class="stat-card">' +
       '<div class="stat-header"><span class="stat-icon">🏭</span><span class="stat-label">板块涨/跌</span></div>' +
       '<div><span class="stat-value ' + sectorUpC + '">' + (mo.sectorUp || 0) + '</span>' +
       '<span style="color:var(--text-tertiary);font-size:14px;"> 涨 / </span>' +
       '<span class="stat-value ' + (sectorUpC === 'rise' ? 'fall' : 'rise') + '">' + (mo.sectorDown || 0) + '</span>' +
       '<span style="color:var(--text-tertiary);font-size:14px;"> 跌</span></div>' +
       '<div class="stat-sub">共' + ((mo.sectorUp||0) + (mo.sectorDown||0)) + '个行业板块</div>' +
-    '</div>' +
-    '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">⚖️</span><span class="stat-label">涨跌比</span></div>' +
-      '<div><span class="stat-value ' + sectorUpC + '">' + (mo.sectorUp || 0) + '</span>' +
-      '<span style="color:var(--text-tertiary);font-size:14px;"> : </span>' +
-      '<span class="stat-value ' + (sectorUpC === 'rise' ? 'fall' : 'rise') + '">' + (mo.sectorDown || 0) + '</span></div>' +
-      '<div class="stat-sub">上涨:下跌 = ' + (mo.sectorUp || 0) + ':' + (mo.sectorDown || 0) + '</div>' +
     '</div>' +
     '<div class="stat-card">' +
       '<div class="stat-header"><span class="stat-icon">💰</span><span class="stat-label">净流入</span></div>' +
