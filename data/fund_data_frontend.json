@@ -102,7 +102,7 @@
         "accum3dOut": 212.11,
         "accum5dIn": 262.2,
         "accum5dOut": 194.06,
-        "signal": "latent",
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -136,7 +136,7 @@
         "accum3dOut": 32.19,
         "accum5dIn": 37.57,
         "accum5dOut": 31.62,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -170,7 +170,7 @@
         "accum3dOut": 30.03,
         "accum5dIn": 32.28,
         "accum5dOut": 36.02,
-        "signal": "latent",
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -204,7 +204,7 @@
         "accum3dOut": 23.79,
         "accum5dIn": 34.55,
         "accum5dOut": 25.85,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -238,7 +238,7 @@
         "accum3dOut": 20.14,
         "accum5dIn": 23.14,
         "accum5dOut": 22.84,
-        "signal": "latent",
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -272,7 +272,7 @@
         "accum3dOut": 24.98,
         "accum5dIn": 33.87,
         "accum5dOut": 30.66,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -306,7 +306,7 @@
         "accum3dOut": 7.69,
         "accum5dIn": 10.09,
         "accum5dOut": 8.18,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -544,7 +544,7 @@
         "accum3dOut": 34.62,
         "accum5dIn": 39.92,
         "accum5dOut": 37.03,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -612,7 +612,7 @@
         "accum3dOut": 9.97,
         "accum5dIn": 12.97,
         "accum5dOut": 8.28,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -748,7 +748,7 @@
         "accum3dOut": 1.42,
         "accum5dIn": 1.75,
         "accum5dOut": 1.39,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -1462,7 +1462,7 @@
         "accum3dOut": 7.94,
         "accum5dIn": 6.69,
         "accum5dOut": 5.76,
-        "signal": null,
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -2040,7 +2040,7 @@
         "accum3dOut": 88.66,
         "accum5dIn": 131.88,
         "accum5dOut": 104.69,
-        "signal": null,
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -2856,7 +2856,7 @@
         "accum3dOut": 68.51,
         "accum5dIn": 106.28,
         "accum5dOut": 103.25,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -2890,7 +2890,7 @@
         "accum3dOut": 121.63,
         "accum5dIn": 167.41,
         "accum5dOut": 128.36,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -2924,7 +2924,7 @@
         "accum3dOut": 137.67,
         "accum5dIn": 155.19,
         "accum5dOut": 174.37,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -2958,7 +2958,7 @@
         "accum3dOut": 151.02,
         "accum5dIn": 237.68,
         "accum5dOut": 238.41,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -3239,7 +3239,7 @@
         "accum3dOut": 131.72,
         "accum5dIn": 104.77,
         "accum5dOut": 114.29,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3403,7 +3403,7 @@
         "accum3dOut": 30.42,
         "accum5dIn": 30.8,
         "accum5dOut": 43.32,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3485,7 +3485,7 @@
         "accum3dOut": 43.43,
         "accum5dIn": 44.01,
         "accum5dOut": 54.6,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3567,7 +3567,7 @@
         "accum3dOut": 124.55,
         "accum5dIn": 89.68,
         "accum5dOut": 97.05,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3690,7 +3690,7 @@
         "accum3dOut": 15.72,
         "accum5dIn": 12.61,
         "accum5dOut": 19.55,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3731,7 +3731,7 @@
         "accum3dOut": 30.91,
         "accum5dIn": 20.79,
         "accum5dOut": 28.5,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3977,7 +3977,7 @@
         "accum3dOut": 25.86,
         "accum5dIn": 25.93,
         "accum5dOut": 31.2,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -4305,7 +4305,7 @@
         "accum3dOut": 10.92,
         "accum5dIn": 6.08,
         "accum5dOut": 12.64,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -4346,7 +4346,7 @@
         "accum3dOut": 53.32,
         "accum5dIn": 38.04,
         "accum5dOut": 47.9,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -4387,7 +4387,7 @@
         "accum3dOut": 35.07,
         "accum5dIn": 33.7,
         "accum5dOut": 48.98,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -5945,7 +5945,7 @@
         "accum3dOut": 9.34,
         "accum5dIn": 8.73,
         "accum5dOut": 10.12,
-        "signal": "risk",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6191,7 +6191,7 @@
         "accum3dOut": 26.4,
         "accum5dIn": 41.47,
         "accum5dOut": 51.11,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6232,7 +6232,7 @@
         "accum3dOut": 27.18,
         "accum5dIn": 33.41,
         "accum5dOut": 49.96,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6396,7 +6396,7 @@
         "accum3dOut": 36.91,
         "accum5dIn": 37.78,
         "accum5dOut": 55.32,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6437,7 +6437,7 @@
         "accum3dOut": 37.24,
         "accum5dIn": 39.42,
         "accum5dOut": 52.94,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6519,7 +6519,7 @@
         "accum3dOut": 189.81,
         "accum5dIn": 140.0,
         "accum5dOut": 129.44,
-        "signal": "risk",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6560,7 +6560,7 @@
         "accum3dOut": 202.33,
         "accum5dIn": 162.43,
         "accum5dOut": 167.53,
-        "signal": "risk",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6642,7 +6642,7 @@
         "accum3dOut": 202.57,
         "accum5dIn": 160.08,
         "accum5dOut": 183.35,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -6683,7 +6683,7 @@
         "accum3dOut": 89.87,
         "accum5dIn": 54.31,
         "accum5dOut": 77.4,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -6724,7 +6724,7 @@
         "accum3dOut": 376.05,
         "accum5dIn": 267.95,
         "accum5dOut": 277.12,
-        "signal": "risk",
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -6769,7 +6769,7 @@
           "tag": "anomaly",
           "label": "异动流出"
         },
-        "signal": "risk",
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -6812,7 +6812,7 @@
         "accum3dOut": 122.98,
         "accum5dIn": 97.51,
         "accum5dOut": 90.8,
-        "signal": "latent",
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -6860,7 +6860,7 @@
         "accum3dOut": 156.49,
         "accum5dIn": 161.13,
         "accum5dOut": 151.02,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -6908,7 +6908,7 @@
         "accum3dOut": 608.0,
         "accum5dIn": 484.65,
         "accum5dOut": 461.22,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -6956,7 +6956,7 @@
         "accum3dOut": 117.02,
         "accum5dIn": 135.83,
         "accum5dOut": 121.63,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7004,7 +7004,7 @@
         "accum3dOut": 96.51,
         "accum5dIn": 68.65,
         "accum5dOut": 59.95,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7052,7 +7052,7 @@
         "accum3dOut": 23.88,
         "accum5dIn": 23.12,
         "accum5dOut": 18.15,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7148,7 +7148,7 @@
         "accum3dOut": 46.72,
         "accum5dIn": 39.92,
         "accum5dOut": 36.82,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7248,7 +7248,7 @@
           "tag": "continuous",
           "label": "连续3日流入"
         },
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -7344,7 +7344,7 @@
         "accum3dOut": 9.66,
         "accum5dIn": 10.95,
         "accum5dOut": 8.61,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7684,7 +7684,7 @@
         "accum3dOut": 51.42,
         "accum5dIn": 42.1,
         "accum5dOut": 39.59,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7880,7 +7880,7 @@
           "tag": "continuous",
           "label": "连续3日流入"
         },
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7976,7 +7976,7 @@
         "accum3dOut": 6.36,
         "accum5dIn": 7.07,
         "accum5dOut": 5.38,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -8024,7 +8024,7 @@
         "accum3dOut": 9.67,
         "accum5dIn": 11.27,
         "accum5dOut": 7.34,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -8168,7 +8168,7 @@
         "accum3dOut": 10.42,
         "accum5dIn": 10.56,
         "accum5dOut": 11.6,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -9904,7 +9904,7 @@
         "accum3dOut": 47.37,
         "accum5dIn": 35.46,
         "accum5dOut": 30.03,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -10480,7 +10480,7 @@
         "accum3dOut": 52.39,
         "accum5dIn": 28.21,
         "accum5dOut": 23.79,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -10528,7 +10528,7 @@
         "accum3dOut": 91.63,
         "accum5dIn": 91.26,
         "accum5dOut": 89.07,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -10672,7 +10672,7 @@
         "accum3dOut": 96.08,
         "accum5dIn": 89.68,
         "accum5dOut": 88.66,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -10960,7 +10960,7 @@
         "accum3dOut": 156.92,
         "accum5dIn": 145.16,
         "accum5dOut": 136.74,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -11008,7 +11008,7 @@
         "accum3dOut": 105.07,
         "accum5dIn": 97.59,
         "accum5dOut": 72.8,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -16227,367 +16227,287 @@
     "2026-07-30": {
       "mainLine": [
         {
-          "name": "白酒",
-          "change": 4.48,
-          "inflow": 25.57,
-          "risePct": 100.0,
-          "stars": 5
-        },
-        {
-          "name": "厨卫电器",
-          "change": 3.92,
-          "inflow": 0.55,
-          "risePct": 77.8,
-          "stars": 3
-        },
-        {
-          "name": "汽车整车",
-          "change": 2.85,
-          "inflow": 11.34,
-          "risePct": 95.5,
-          "stars": 4
-        },
-        {
-          "name": "油气开采及服务",
-          "change": 2.6,
-          "inflow": 1.59,
-          "risePct": 83.3,
-          "stars": 3
-        },
-        {
           "name": "银行",
           "change": 2.43,
           "inflow": 108.52,
           "risePct": 100.0,
-          "stars": 4
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "浦发银行",
+          "leader_change_pct": 4.6
         },
         {
-          "name": "保险",
-          "change": 1.57,
-          "inflow": 17.12,
-          "risePct": 80.0,
-          "stars": 3
-        },
-        {
-          "name": "机场航运",
-          "change": 1.02,
-          "inflow": 1.26,
-          "risePct": 90.9,
-          "stars": 2
+          "name": "白酒",
+          "change": 4.48,
+          "inflow": 25.57,
+          "risePct": 100.0,
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "金徽酒",
+          "leader_change_pct": 10.0
         }
       ],
-      "latent": [
-        {
-          "name": "电池",
-          "change": -1.96,
-          "inflow": 17.44,
-          "tag": "压盘吸筹"
-        },
-        {
-          "name": "白色家电",
-          "change": -1.79,
-          "inflow": 11.55,
-          "tag": "压盘吸筹"
-        },
-        {
-          "name": "石油加工贸易",
-          "change": -0.62,
-          "inflow": 9.32,
-          "tag": "逆势吸筹"
-        },
-        {
-          "name": "港口航运",
-          "change": 0.84,
-          "inflow": 7.04,
-          "tag": "温和蓄力"
-        },
-        {
-          "name": "公路铁路运输",
-          "change": 0.5,
-          "inflow": 4.82,
-          "tag": "温和蓄力"
-        }
-      ],
+      "latent": [],
       "disaster": [
         {
           "name": "光学光电子",
           "change": -4.44,
           "inflow": -68.7,
-          "fallPct": 93.4
+          "fallPct": 93.4,
+          "stars": "⭐",
+          "verdict": "真崩·普跌"
         },
         {
           "name": "消费电子",
           "change": -4.25,
           "inflow": -54.7,
-          "fallPct": 86.5
+          "fallPct": 86.5,
+          "stars": "⭐",
+          "verdict": "真崩·普跌"
         },
         {
           "name": "半导体",
           "change": -7.08,
           "inflow": -44.45,
-          "fallPct": 96.2
+          "fallPct": 96.2,
+          "stars": "⭐",
+          "verdict": "真崩·普跌"
         },
         {
-          "name": "电网设备",
-          "change": -2.46,
-          "inflow": -26.64,
-          "fallPct": 80.7
+          "name": "电力",
+          "change": -1.44,
+          "inflow": -44.05,
+          "fallPct": 69.1,
+          "stars": "⭐⭐",
+          "verdict": "普跌"
         },
         {
-          "name": "小金属",
-          "change": -2.98,
-          "inflow": -26.27,
-          "fallPct": 89.7
+          "name": "计算机设备",
+          "change": -2.38,
+          "inflow": -27.04,
+          "fallPct": 79.0,
+          "stars": "⭐⭐",
+          "verdict": "普跌"
         }
       ],
-      "risk": []
+      "risk": [
+        {
+          "name": "电池",
+          "change": -1.96,
+          "inflow": 17.44,
+          "signal": "压盘吸筹嫌疑"
+        },
+        {
+          "name": "白色家电",
+          "change": -1.79,
+          "inflow": 11.55,
+          "signal": "压盘吸筹嫌疑"
+        },
+        {
+          "name": "石油加工贸易",
+          "change": -0.62,
+          "inflow": 9.32,
+          "signal": "压盘吸筹嫌疑"
+        },
+        {
+          "name": "证券",
+          "change": 0.36,
+          "inflow": -5.6,
+          "signal": "诱多嫌疑"
+        },
+        {
+          "name": "旅游及酒店",
+          "change": 0.52,
+          "inflow": -2.0,
+          "signal": "诱多嫌疑"
+        }
+      ]
     },
     "2026-07-31": {
       "mainLine": [
-        {
-          "name": "IT服务",
-          "change": 6.29,
-          "inflow": 50.86,
-          "risePct": 97.7,
-          "stars": 5
-        },
         {
           "name": "软件开发",
           "change": 6.15,
           "inflow": 82.51,
           "risePct": 100.0,
-          "stars": 5
-        },
-        {
-          "name": "自动化设备",
-          "change": 5.34,
-          "inflow": 12.1,
-          "risePct": 97.9,
-          "stars": 3
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "福昕软件",
+          "leader_change_pct": 20.0
         },
         {
           "name": "文化传媒",
           "change": 5.28,
           "inflow": 51.87,
           "risePct": 94.0,
-          "stars": 4
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "中文在线",
+          "leader_change_pct": 20.0
         },
         {
-          "name": "影视院线",
-          "change": 4.97,
-          "inflow": 9.41,
-          "risePct": 100.0,
-          "stars": 2
-        },
-        {
-          "name": "计算机设备",
-          "change": 4.6,
-          "inflow": 27.81,
-          "risePct": 100.0,
-          "stars": 3
-        },
-        {
-          "name": "游戏",
-          "change": 4.5,
-          "inflow": 23.46,
-          "risePct": 95.8,
-          "stars": 3
-        },
-        {
-          "name": "通信服务",
-          "change": 4.47,
-          "inflow": 16.95,
-          "risePct": 86.4,
-          "stars": 2
+          "name": "IT服务",
+          "change": 6.29,
+          "inflow": 50.86,
+          "risePct": 97.7,
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "立方控股",
+          "leader_change_pct": 30.0
         }
       ],
-      "latent": [
-        {
-          "name": "汽车整车",
-          "change": 0.24,
-          "inflow": 9.06,
-          "tag": "微涨蓄力"
-        },
-        {
-          "name": "港口航运",
-          "change": 0.45,
-          "inflow": 4.3,
-          "tag": "微涨蓄力"
-        },
-        {
-          "name": "机场航运",
-          "change": 0.7,
-          "inflow": 2.97,
-          "tag": "温和蓄力"
-        },
-        {
-          "name": "白酒",
-          "change": 0.63,
-          "inflow": 2.6,
-          "tag": "温和蓄力"
-        },
-        {
-          "name": "煤炭开采加工",
-          "change": 0.82,
-          "inflow": 2.4,
-          "tag": "温和蓄力"
-        }
-      ],
+      "latent": [],
       "disaster": [
-        {
-          "name": "证券",
-          "change": 0.25,
-          "inflow": -14.21,
-          "fallPct": 25.5
-        },
-        {
-          "name": "能源金属",
-          "change": -0.68,
-          "inflow": -6.8,
-          "fallPct": 66.7
-        },
-        {
-          "name": "农化制品",
-          "change": -0.07,
-          "inflow": -6.25,
-          "fallPct": 47.4
-        },
-        {
-          "name": "保险",
-          "change": -0.7,
-          "inflow": -3.35,
-          "fallPct": 80.0
-        },
-        {
-          "name": "油气开采及服务",
-          "change": 0.15,
-          "inflow": -3.0,
-          "fallPct": 50.0
-        }
-      ],
-      "risk": [
-        {
-          "name": "元件",
-          "change": 4.33,
-          "inflow": -44.89,
-          "tag": "拉高出货"
-        },
         {
           "name": "半导体",
           "change": 4.23,
           "inflow": -159.81,
-          "tag": "拉高出货"
+          "fallPct": 4.4,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
-          "name": "环保设备",
-          "change": 3.83,
-          "inflow": -1.94,
-          "tag": "量价背离"
+          "name": "元件",
+          "change": 4.33,
+          "inflow": -44.89,
+          "fallPct": 8.1,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
-          "name": "消费电子",
-          "change": 3.49,
-          "inflow": -11.13,
-          "tag": "量价背离"
+          "name": "建筑装饰",
+          "change": 2.83,
+          "inflow": -22.04,
+          "fallPct": 9.2,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
-          "name": "电子化学品",
-          "change": 3.41,
-          "inflow": -7.1,
-          "tag": "量价背离"
+          "name": "电池",
+          "change": 1.66,
+          "inflow": -16.83,
+          "fallPct": 25.7,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
+        },
+        {
+          "name": "证券",
+          "change": 0.25,
+          "inflow": -14.21,
+          "fallPct": 25.5,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
+        }
+      ],
+      "risk": [
+        {
+          "name": "半导体",
+          "change": 4.23,
+          "inflow": -159.81,
+          "signal": "诱多嫌疑"
+        },
+        {
+          "name": "元件",
+          "change": 4.33,
+          "inflow": -44.89,
+          "signal": "诱多嫌疑"
+        },
+        {
+          "name": "建筑装饰",
+          "change": 2.83,
+          "inflow": -22.04,
+          "signal": "诱多嫌疑"
         }
       ]
     },
     "2026-08-03": {
       "mainLine": [
         {
-          "name": "风电设备",
-          "change": 4.06,
-          "inflow": 7.32,
-          "risePct": 96.8,
-          "stars": 5
+          "name": "银行",
+          "change": 0.79,
+          "inflow": 23.38,
+          "risePct": 73.8,
+          "stars": 3,
+          "verdict": "分化",
+          "leader_stock": "瑞丰银行",
+          "leader_change_pct": 3.2
         },
         {
-          "name": "电网设备",
-          "change": 3.52,
-          "inflow": 16.73,
-          "risePct": 93.5,
-          "stars": 5
-        },
-        {
-          "name": "种植业与林业",
-          "change": 2.92,
-          "inflow": 4.01,
-          "risePct": 96.7,
-          "stars": 4
-        },
-        {
-          "name": "光伏设备",
-          "change": 2.91,
-          "inflow": 8.74,
-          "risePct": 87.3,
-          "stars": 5
-        },
-        {
-          "name": "通信服务",
-          "change": 2.86,
-          "inflow": 2.13,
+          "name": "电力",
+          "change": 2.28,
+          "inflow": 21.61,
           "risePct": 0,
-          "stars": 3
+          "stars": 1,
+          "verdict": "虚火·权重拉的",
+          "leader_stock": "乐山电力",
+          "leader_change_pct": 10.1
         },
         {
-          "name": "造纸",
-          "change": 2.79,
-          "inflow": 0.96,
-          "risePct": 95.5,
-          "stars": 2
-        },
-        {
-          "name": "电机",
-          "change": 2.75,
-          "inflow": 0.95,
-          "risePct": 0,
-          "stars": 2
-        },
-        {
-          "name": "轨交设备",
-          "change": 2.71,
-          "inflow": 1.2,
-          "risePct": 93.3,
-          "stars": 2
-        },
-        {
-          "name": "燃气",
-          "change": 2.63,
-          "inflow": 0.71,
-          "risePct": 96.3,
-          "stars": 1
+          "name": "通信设备",
+          "change": 1.55,
+          "inflow": 20.26,
+          "risePct": 73.3,
+          "stars": 3,
+          "verdict": "分化",
+          "leader_stock": "欣天科技",
+          "leader_change_pct": 20.0
         }
       ],
       "latent": [
         {
-          "name": "银行",
-          "change": 0.79,
-          "inflow": 23.38,
-          "tag": "温和蓄力"
-        },
-        {
-          "name": "能源金属",
-          "change": 0.31,
-          "inflow": 4.72,
-          "tag": "微涨蓄力"
-        },
-        {
           "name": "保险",
-          "change": -0.06,
-          "inflow": 4.47,
-          "tag": "逆势吸筹"
+          "change": 0.81,
+          "inflow": 18.24,
+          "score": 3,
+          "reasons": [
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
+        },
+        {
+          "name": "汽车整车",
+          "change": 3.25,
+          "inflow": 12.28,
+          "score": 3,
+          "reasons": [
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
+        },
+        {
+          "name": "港口航运",
+          "change": 2.73,
+          "inflow": 15.61,
+          "score": 3,
+          "reasons": [
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
         },
         {
           "name": "电池",
-          "change": 0.52,
-          "inflow": 1.35,
-          "tag": "温和蓄力"
+          "change": -1.44,
+          "inflow": 18.79,
+          "score": 3,
+          "reasons": [
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
+        },
+        {
+          "name": "白色家电",
+          "change": 1.24,
+          "inflow": 22.57,
+          "score": 3,
+          "reasons": [
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
         }
       ],
       "disaster": [
@@ -16595,34 +16515,69 @@
           "name": "半导体",
           "change": -3.46,
           "inflow": -110.83,
-          "fallPct": 78.6
+          "fallPct": 78.6,
+          "stars": "⭐⭐",
+          "verdict": "普跌"
         },
         {
           "name": "消费电子",
           "change": 0.37,
           "inflow": -25.69,
-          "fallPct": 38.5
+          "fallPct": 38.5,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
+        },
+        {
+          "name": "建筑材料",
+          "change": 1.3,
+          "inflow": -22.54,
+          "fallPct": 23.6,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
+        },
+        {
+          "name": "IT服务",
+          "change": 0.98,
+          "inflow": -21.02,
+          "fallPct": 30.5,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
           "name": "电子化学品",
           "change": -3.63,
           "inflow": -20.06,
-          "fallPct": 83.7
-        },
-        {
-          "name": "证券",
-          "change": 0.23,
-          "inflow": -10.36,
-          "fallPct": 22.9
-        },
-        {
-          "name": "医疗服务",
-          "change": -0.21,
-          "inflow": -8.63,
-          "fallPct": 50.0
+          "fallPct": 83.7,
+          "stars": "⭐⭐",
+          "verdict": "普跌"
         }
       ],
-      "risk": []
+      "risk": [
+        {
+          "name": "保险",
+          "change": -0.06,
+          "inflow": 4.47,
+          "signal": "压盘吸筹嫌疑"
+        },
+        {
+          "name": "消费电子",
+          "change": 0.37,
+          "inflow": -25.69,
+          "signal": "诱多嫌疑"
+        },
+        {
+          "name": "建筑材料",
+          "change": 1.3,
+          "inflow": -22.54,
+          "signal": "诱多嫌疑"
+        },
+        {
+          "name": "IT服务",
+          "change": 0.98,
+          "inflow": -21.02,
+          "signal": "诱多嫌疑"
+        }
+      ]
     },
     "2026-08-04": {
       "mainLine": [
