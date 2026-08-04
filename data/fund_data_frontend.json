@@ -16383,43 +16383,72 @@
       "indices": [
         {
           "name": "上证指数",
-          "value": 3822.2846,
-          "change": 0.33
+          "value": 3816.3699,
+          "change": 0.18,
+          "change_amount": 6.71,
+          "open": 3822.2846,
+          "high": 3831.94,
+          "low": 3799.5244,
+          "volume": 0.0,
+          "amount": 540324922.0
         },
         {
           "name": "深证成指",
-          "value": 13885.71,
-          "change": 3.25
+          "value": 13572.951,
+          "change": 0.93,
+          "change_amount": 124.66,
+          "open": 13885.711,
+          "high": 13936.518,
+          "low": 13537.764,
+          "volume": 0.0,
+          "amount": 66483657699.0
         },
         {
           "name": "创业板指",
-          "value": 3488.97,
-          "change": 5.64
+          "value": 3353.512,
+          "change": 1.54,
+          "change_amount": 50.96,
+          "open": 3488.966,
+          "high": 3510.512,
+          "low": 3342.406,
+          "volume": 0.0,
+          "amount": 21110662267.0
         },
         {
           "name": "科创50",
-          "value": 1616.3582,
-          "change": 4.09
+          "value": 1569.6234,
+          "change": 1.08,
+          "change_amount": 16.73,
+          "open": 1616.3582,
+          "high": 1631.0116,
+          "low": 1556.1118,
+          "volume": 0.0,
+          "amount": 11344343.0
         },
         {
           "name": "北证50",
           "value": 1083.155,
-          "change": 0.66
+          "change": 0.66,
+          "change_amount": 7.09,
+          "open": 1093.491,
+          "high": 1095.833,
+          "low": 1080.757,
+          "volume": 0.0,
+          "amount": 738256116.0
         }
       ],
       "totalStocks": 5621,
-      "totalRise": 4804,
-      "totalFall": 817,
-      "risePct": 85.5,
+      "totalRise": 3642,
+      "totalFall": 1747,
+      "risePct": 67.6,
       "sectorUp": 70,
       "sectorDown": 20,
       "topSector": "元件",
       "topSectorChange": 7.07,
-      "totalFlowIn": 896.7,
-      "totalFlowOut": 379.2,
-      "netFlow": 517.6,
-      "avgChange": 1.43,
-      "updateTime": "17:36"
+      "totalFlowIn": 7799.25,
+      "totalFlowOut": 7281.65,
+      "netFlow": 517.56,
+      "avgChange": 1.43
     }
   },
   "signals": {
