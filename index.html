@@ -639,6 +639,11 @@ function renderMarketOverview() {
       '<div class="stat-sub">上涨占比 ' + (mo.risePct || 0).toFixed(1) + '%</div>' +
     '</div>' +
     '<div class="stat-card">' +
+      '<div class="stat-header"><span class="stat-icon">' + (riseRatio >= 50 ? '🔴' : '🟢') + '</span><span class="stat-label">涨/跌比</span></div>' +
+      '<div><span class="stat-value ' + riseC + '">' + riseRatio + '%</span></div>' +
+      '<div class="stat-sub">' + (mo.totalRise||0) + '涨 / ' + (mo.totalFall||0) + '跌</div>' +
+    '</div>' +
+    '<div class="stat-card">' +
       '<div class="stat-header"><span class="stat-icon">🏭</span><span class="stat-label">板块涨/跌</span></div>' +
       '<div><span class="stat-value ' + sectorUpC + '">' + (mo.sectorUp || 0) + '</span>' +
       '<span style="color:var(--text-tertiary);font-size:14px;"> 涨 / </span>' +
@@ -647,21 +652,16 @@ function renderMarketOverview() {
       '<div class="stat-sub">共' + ((mo.sectorUp||0) + (mo.sectorDown||0)) + '个行业板块</div>' +
     '</div>' +
     '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">💰</span><span class="stat-label">净流入</span></div>' +
-      '<div><span class="stat-value ' + netC + '">' + ((mo.netFlow || 0) > 0 ? '+' : '') + (mo.netFlow || 0).toFixed(1) + '亿</span></div>' +
-      '<div class="stat-sub">流入' + (mo.totalFlowIn || 0).toFixed(0) + '亿 · 流出' + (mo.totalFlowOut || 0).toFixed(0) + '亿</div>' +
-    '</div>' +
-    '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">⚖️</span><span class="stat-label">板块涨跌比</span></div>' +
+      '<div class="stat-header"><span class="stat-icon">⚖️</span><span class="stat-label">涨跌比</span></div>' +
       '<div><span class="stat-value ' + sectorUpC + '">' + (mo.sectorUp || 0) + '</span>' +
       '<span style="color:var(--text-tertiary);font-size:14px;"> : </span>' +
       '<span class="stat-value ' + (sectorUpC === 'rise' ? 'fall' : 'rise') + '">' + (mo.sectorDown || 0) + '</span></div>' +
       '<div class="stat-sub">' + ((mo.sectorUp||0)+(mo.sectorDown||0) > 0 ? ((mo.sectorUp||0)/((mo.sectorUp||0)+(mo.sectorDown||0))*100).toFixed(0) : 0) + '%板块上涨</div>' +
     '</div>' +
     '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">' + (riseRatio >= 50 ? '🔴' : '🟢') + '</span><span class="stat-label">涨跌比</span></div>' +
-      '<div><span class="stat-value ' + riseC + '">' + riseRatio + '%</span></div>' +
-      '<div class="stat-sub">' + (mo.totalRise||0) + '涨 / ' + (mo.totalFall||0) + '跌</div>' +
+      '<div class="stat-header"><span class="stat-icon">💰</span><span class="stat-label">净流入</span></div>' +
+      '<div><span class="stat-value ' + netC + '">' + ((mo.netFlow || 0) > 0 ? '+' : '') + (mo.netFlow || 0).toFixed(1) + '亿</span></div>' +
+      '<div class="stat-sub">流入' + (mo.totalFlowIn || 0).toFixed(0) + '亿 · 流出' + (mo.totalFlowOut || 0).toFixed(0) + '亿</div>' +
     '</div>' +
     '<div class="stat-card">' +
       '<div class="stat-header"><span class="stat-icon">🏆</span><span class="stat-label">最强板块</span></div>' +
