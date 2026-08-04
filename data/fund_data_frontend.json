@@ -16582,40 +16582,17 @@
     },
     "2026-08-04": {
       "totalStocks": 5621,
-      "totalRise": 4743,
-      "totalFall": 842,
-      "risePct": 84.9,
+      "totalRise": 0,
+      "totalFall": 0,
+      "risePct": 0,
       "sectorUp": 68,
       "sectorDown": 21,
       "topSector": "元件",
       "topSectorChange": 6.75,
-      "totalFlowIn": 833.8,
-      "totalFlowOut": 264.7,
-      "netFlow": 569.1,
-      "avgChange": 1.32,
-      "indices": [
-        {
-          "name": "上证指数",
-          "value": 3823.7426,
-          "change": 0.37
-        },
-        {
-          "name": "深证成指",
-          "value": 13878.95,
-          "change": 3.2
-        },
-        {
-          "name": "创业板指",
-          "value": 3483.12,
-          "change": 5.47
-        },
-        {
-          "name": "科创50",
-          "value": 1623.782,
-          "change": 4.57
-        }
-      ],
-      "updateTime": "13:33"
+      "totalFlowIn": 5799.63,
+      "totalFlowOut": 5230.51,
+      "netFlow": 569.09,
+      "avgChange": 1.32
     }
   },
   "signals": {

@@ -363,8 +363,18 @@
   .top-tab-content { display: none; }
   .top-tab-content.active { display: block; }
 
-  /* 5 indicators row */
-  .market-indicators-5 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-bottom: 18px; }
+  /* 4 indicators row */
+  .market-indicators-5 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
+  .market-indicators-5 .stat-card { position: relative; overflow: hidden; }
+  .market-indicators-5 .stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 3px 3px 0 0; }
+  .market-indicators-5 .stat-card.card-up::before { background: linear-gradient(90deg, #FF6B6B, #FF8787); }
+  .market-indicators-5 .stat-card.card-down::before { background: linear-gradient(90deg, #51CF66, #69DB7C); }
+  .market-indicators-5 .stat-card.card-mixed::before { background: linear-gradient(90deg, #FFD43B, #74C0FC); }
+  .market-indicators-5 .stat-card.card-net::before { background: linear-gradient(90deg, #9775FA, #B197FC); }
+  .market-indicators-5 .stat-value-big { font-size: 24px; font-weight: 800; line-height: 1.1; }
+  .market-indicators-5 .stat-sub-row { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
+  .market-indicators-5 .stat-mini { font-size: 12px; color: var(--text-secondary); }
+  .market-indicators-5 .stat-divider { width: 1px; height: 10px; background: var(--border-color); }
 
   /* 龙虎榜新布局 */
   .lhb-panel { background: var(--bg-secondary); border-radius: var(--card-radius); box-shadow: var(--shadow); padding: 20px; margin-top: 18px; }
@@ -636,37 +646,53 @@ function renderMarketOverview() {
     indices.push({});
   }
 
-  // 第二行：五个指标卡
+  // 第二行：四个指标卡
   const indContainer = document.getElementById('marketIndicators');
   const sectorUpC = (mo.sectorUp || 0) >= (mo.sectorDown || 0) ? 'rise' : 'fall';
   const netC = (mo.netFlow || 0) >= 0 ? 'rise' : 'fall';
   const topC = (mo.topSectorChange || 0) >= 0 ? 'rise' : 'fall';
+  const risePct = mo.risePct || 0;
 
   indContainer.innerHTML = 
-    '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">📊</span><span class="stat-label">股票涨/跌</span></div>' +
-      '<div><span class="stat-value rise">' + (mo.totalRise || 0).toLocaleString() + '</span>' +
-      '<span style="color:var(--text-tertiary);font-size:14px;"> / </span>' +
-      '<span class="stat-value fall">' + (mo.totalFall || 0).toLocaleString() + '</span></div>' +
-      '<div class="stat-sub">上涨占比 ' + (mo.risePct || 0).toFixed(1) + '%</div>' +
+    // 1. 涨跌家数
+    '<div class="stat-card card-mixed">' +
+      '<div class="stat-header"><span class="stat-icon">📊</span><span class="stat-label">涨跌家数</span></div>' +
+      '<div style="display:flex;align-items:baseline;gap:8px;margin-top:4px;">' +
+        '<span class="stat-value-big rise">' + (mo.totalRise || 0).toLocaleString() + '</span>' +
+        '<span style="font-size:15px;color:var(--text-tertiary);">涨</span>' +
+        '<span class="stat-value-big fall">' + (mo.totalFall || 0).toLocaleString() + '</span>' +
+        '<span style="font-size:15px;color:var(--text-tertiary);">跌</span>' +
+      '</div>' +
+      '<div class="stat-sub">上涨占比 <b style="color:' + (risePct >= 50 ? 'var(--rise)' : 'var(--fall)') + '">' + risePct.toFixed(1) + '%</b></div>' +
     '</div>' +
-    '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">🏭</span><span class="stat-label">板块涨/跌</span></div>' +
-      '<div><span class="stat-value ' + sectorUpC + '">' + (mo.sectorUp || 0) + '</span>' +
-      '<span style="color:var(--text-tertiary);font-size:14px;"> 涨 / </span>' +
-      '<span class="stat-value ' + (sectorUpC === 'rise' ? 'fall' : 'rise') + '">' + (mo.sectorDown || 0) + '</span>' +
-      '<span style="color:var(--text-tertiary);font-size:14px;"> 跌</span></div>' +
-      '<div class="stat-sub">共' + ((mo.sectorUp||0) + (mo.sectorDown||0)) + '个行业板块</div>' +
+    // 2. 板块涨跌
+    '<div class="stat-card card-mixed">' +
+      '<div class="stat-header"><span class="stat-icon">🏭</span><span class="stat-label">板块涨跌</span></div>' +
+      '<div style="display:flex;align-items:baseline;gap:8px;margin-top:4px;">' +
+        '<span class="stat-value-big ' + sectorUpC + '">' + (mo.sectorUp || 0) + '</span>' +
+        '<span style="font-size:15px;color:var(--text-tertiary);">涨</span>' +
+        '<span class="stat-value-big ' + (sectorUpC === 'rise' ? 'fall' : 'rise') + '">' + (mo.sectorDown || 0) + '</span>' +
+        '<span style="font-size:15px;color:var(--text-tertiary);">跌</span>' +
+      '</div>' +
+      '<div class="stat-sub">共 ' + ((mo.sectorUp||0) + (mo.sectorDown||0)) + ' 个行业板块</div>' +
     '</div>' +
-    '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">💰</span><span class="stat-label">净流入</span></div>' +
-      '<div><span class="stat-value ' + netC + '">' + ((mo.netFlow || 0) > 0 ? '+' : '') + (mo.netFlow || 0).toFixed(1) + '亿</span></div>' +
-      '<div class="stat-sub">流入' + (mo.totalFlowIn || 0).toFixed(0) + '亿 · 流出' + (mo.totalFlowOut || 0).toFixed(0) + '亿</div>' +
+    // 3. 主力净流入
+    '<div class="stat-card card-net">' +
+      '<div class="stat-header"><span class="stat-icon">💰</span><span class="stat-label">主力净流入</span></div>' +
+      '<div style="margin-top:4px;"><span class="stat-value-big ' + netC + '">' + ((mo.netFlow || 0) > 0 ? '+' : '') + (mo.netFlow || 0).toFixed(1) + '亿</span></div>' +
+      '<div class="stat-sub-row">' +
+        '<span class="stat-mini">流入 ' + (mo.totalFlowIn || 0).toFixed(0) + '亿</span>' +
+        '<span class="stat-divider"></span>' +
+        '<span class="stat-mini">流出 ' + (mo.totalFlowOut || 0).toFixed(0) + '亿</span>' +
+      '</div>' +
     '</div>' +
-    '<div class="stat-card">' +
+    // 4. 最强板块
+    '<div class="stat-card card-up">' +
       '<div class="stat-header"><span class="stat-icon">🏆</span><span class="stat-label">最强板块</span></div>' +
-      '<div><span class="stat-value" style="font-size:15px;font-family:inherit;">' + (mo.topSector || '-') + '</span>' +
-      '<span class="stat-change ' + topC + '">' + ((mo.topSectorChange || 0) > 0 ? '+' : '') + (mo.topSectorChange || 0).toFixed(2) + '%</span></div>' +
+      '<div style="margin-top:4px;">' +
+        '<span class="stat-value-big" style="font-size:18px;font-family:inherit;">' + (mo.topSector || '-') + '</span>' +
+        '<span class="stat-change ' + topC + '" style="font-size:16px;font-weight:700;">' + ((mo.topSectorChange || 0) > 0 ? '+' : '') + (mo.topSectorChange || 0).toFixed(2) + '%</span>' +
+      '</div>' +
       '<div class="stat-sub">当日涨幅最大行业</div>' +
     '</div>';
 }
