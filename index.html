@@ -648,7 +648,7 @@ function renderMarketOverview() {
       '<div class="stat-header"><span class="stat-icon">🏭</span><span class="stat-label">板块涨/跌</span></div>' +
       '<div><span class="stat-value ' + sectorUpC + '">' + (mo.sectorUp || 0) + '</span>' +
       '<span style="color:var(--text-tertiary);font-size:14px;"> 涨 / </span>' +
-      '<span class="stat-value ' + sectorUpC + '">' + (mo.sectorDown || 0) + '</span>' +
+      '<span class="stat-value ' + (sectorUpC === 'rise' ? 'fall' : 'rise') + '">' + (mo.sectorDown || 0) + '</span>' +
       '<span style="color:var(--text-tertiary);font-size:14px;"> 跌</span></div>' +
       '<div class="stat-sub">共' + ((mo.sectorUp||0) + (mo.sectorDown||0)) + '个行业板块</div>' +
     '</div>' +
