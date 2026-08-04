@@ -491,7 +491,6 @@
             <th data-sort="rankChange">名次变化</th>
             <th data-sort="riseCount">股票涨/跌</th>
             <th data-sort="risePct">比例</th>
-            <th data-sort="leader" style="text-align:left;min-width:100px;">头牌+涨幅</th>
             <th style="width:60px;">详情</th>
           </tr>
         </thead>
@@ -655,12 +654,9 @@ function renderMarketOverview() {
 
   // 第二行：五个指标卡
   const indContainer = document.getElementById('marketIndicators');
-  const riseC = (mo.totalRise || 0) >= (mo.totalFall || 0) ? 'rise' : 'fall';
   const sectorUpC = (mo.sectorUp || 0) >= (mo.sectorDown || 0) ? 'rise' : 'fall';
   const netC = (mo.netFlow || 0) >= 0 ? 'rise' : 'fall';
   const topC = (mo.topSectorChange || 0) >= 0 ? 'rise' : 'fall';
-  const totalStocks = (mo.totalRise || 0) + (mo.totalFall || 0);
-  const riseRatio = totalStocks > 0 ? ((mo.totalRise || 0) / totalStocks * 100).toFixed(0) : 0;
 
   indContainer.innerHTML = 
     '<div class="stat-card">' +
@@ -684,11 +680,6 @@ function renderMarketOverview() {
       '<div class="stat-sub">流入' + (mo.totalFlowIn || 0).toFixed(0) + '亿 · 流出' + (mo.totalFlowOut || 0).toFixed(0) + '亿</div>' +
     '</div>' +
 
-    '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">' + (riseRatio >= 50 ? '🔴' : '🟢') + '</span><span class="stat-label">涨跌比</span></div>' +
-      '<div><span class="stat-value ' + riseC + '">' + riseRatio + '%</span></div>' +
-      '<div class="stat-sub">' + (mo.totalRise||0) + '涨 / ' + (mo.totalFall||0) + '跌</div>' +
-    '</div>' +
     '<div class="stat-card">' +
       '<div class="stat-header"><span class="stat-icon">🏆</span><span class="stat-label">最强板块</span></div>' +
       '<div><span class="stat-value" style="font-size:15px;font-family:inherit;">' + (mo.topSector || '-') + '</span>' +
@@ -894,7 +885,6 @@ function renderTable() {
     const rank = allSectors.findIndex(x => x.name === s.name) + 1;
     const changeClass = s.change >= 0 ? 'rise' : 'fall';
     const inflowClass = s.inflow >= 0 ? 'rise' : 'fall';
-    const leaderClass = (s.leaderChange || 0) >= 0 ? 'rise' : 'fall';
     // 净流天数：正=连续净流入天数，负=连续净流出天数
     const hist = s.history || [];
     let flowDays = 0;
@@ -941,7 +931,6 @@ function renderTable() {
       '<td class="num">' + rankChangeHtml + '</td>' +
       '<td class="num"><span class="rise">' + s.riseCount + '</span>/<span class="fall">' + s.fallCount + '</span></td>' +
       '<td class="num">' + (s.risePct || 0).toFixed(0) + '%</td>' +
-      '<td style="text-align:left;font-family:inherit;font-size:11px;">' + (s.leader||'-') + ' <span class="' + leaderClass + '" style="font-family:\'SF Mono\',Consolas,monospace;">' + ((s.leaderChange||0) > 0 ? '+' : '') + (s.leaderChange||0).toFixed(1) + '%</span></td>' +
       '<td><button class="detail-btn" onclick="event.stopPropagation();openDrawer(\'' + escName + '\')">详情</button></td>' +
     '</tr>';
   }).join('');
