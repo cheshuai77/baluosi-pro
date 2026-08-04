@@ -83,6 +83,22 @@
   .rise { color: var(--rise); }
   .fall { color: var(--fall); }
 
+  /* 净流天数 badge */
+  .flow-badge {
+    display: inline-block; padding: 2px 10px; border-radius: 12px;
+    font-size: 12px; font-weight: 600; white-space: nowrap; color: #fff;
+  }
+  .flow-badge.l1 { background: rgba(255,107,107,0.25); }
+  .flow-badge.l2 { background: rgba(255,107,107,0.45); }
+  .flow-badge.l3 { background: rgba(255,107,107,0.65); }
+  .flow-badge.l4 { background: var(--rise); }
+  .flow-badge.l-1 { background: rgba(81,207,102,0.25); }
+  .flow-badge.l-2 { background: rgba(81,207,102,0.45); }
+  .flow-badge.l-3 { background: rgba(81,207,102,0.65); }
+  .flow-badge.l-4 { background: var(--fall); }
+  .flow-badge.zero { background: rgba(174,174,178,0.15); color: var(--text-tertiary); }
+  .flow-badge.turn { background: #FFA94D; }
+
   /* 信号关注区：横排4列，无描述文字 */
   .signal-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
   .signal-strip .signal-card {
@@ -483,12 +499,11 @@
           <tr>
             <th data-sort="rank" style="width:40px;">排名</th>
             <th data-sort="name" style="text-align:left;min-width:100px;">板块名</th>
-            <th data-sort="code" style="text-align:left;width:70px;">板块ID</th>
+            <th data-sort="continuousDays" style="width:72px;">净流天数</th>
             <th data-sort="change">涨跌幅</th>
             <th data-sort="flowIn">流入(亿)</th>
             <th data-sort="flowOut">流出(亿)</th>
             <th data-sort="inflow">净流入(亿)</th>
-            <th data-sort="continuousDays">净流天数</th>
             <th data-sort="rankChange">名次变化</th>
             <th data-sort="riseCount">股票涨/跌</th>
             <th data-sort="risePct">比例</th>
@@ -817,6 +832,18 @@ function getPrevDateSectors() {
   return FUND_DATA.sectorsByDate[FUND_DATA.dates[idx - 1]] || null;
 }
 
+function getPrevDayFlow(sector, allSectors) {
+  // 计算该板块前一日的净流入（用于拐点检测）
+  const prevSectors = getPrevDateSectors();
+  if (!prevSectors) return 0;
+  const prev = prevSectors.find(x => x.name === sector.name);
+  if (!prev) return 0;
+  // 用上一日history的最后一条inflow
+  const ph = prev.history || [];
+  if (ph.length === 0) return prev.inflow || 0;
+  return ph[ph.length - 1].inflow || 0;
+}
+
 function getFilteredSortedSectors() {
   let sectors = [...(FUND_DATA.sectorsByDate[state.currentDate] || [])];
   if (state.searchKeyword) {
@@ -881,10 +908,29 @@ function renderTable() {
         for (let i = hist.length - 1; i >= 0; i--) { if (hist[i].inflow < 0) flowDays--; else break; }
       }
     }
-    let cdDisplay;
-    if (flowDays > 0) cdDisplay = '<span class="rise" style="font-weight:700;">+' + flowDays + '天</span>';
-    else if (flowDays < 0) cdDisplay = '<span class="fall" style="font-weight:700;">' + flowDays + '天</span>';
-    else cdDisplay = '<span class="text-tertiary">0天</span>';
+    // 净流天数分层badge
+    let cdDisplay = '';
+    const absDays = Math.abs(flowDays);
+    if (flowDays > 0) {
+      let level = 'l1';
+      if (absDays >= 5) level = 'l4';
+      else if (absDays >= 3) level = 'l3';
+      else if (absDays >= 2) level = 'l2';
+      // 拐点检测：昨日流出今日转流入
+      const prevDayFlow = getPrevDayFlow(s, allSectors);
+      const turnTag = (prevDayFlow < 0 && absDays === 1) ? ' ⚡' : '';
+      cdDisplay = '<span class="flow-badge ' + level + '">' + flowDays + '天' + turnTag + '</span>';
+    } else if (flowDays < 0) {
+      let level = 'l-1';
+      if (absDays >= 5) level = 'l-4';
+      else if (absDays >= 3) level = 'l-3';
+      else if (absDays >= 2) level = 'l-2';
+      const prevDayFlow = getPrevDayFlow(s, allSectors);
+      const turnTag = (prevDayFlow > 0 && absDays === 1) ? ' ⚡' : '';
+      cdDisplay = '<span class="flow-badge ' + level + '">' + flowDays + '天' + turnTag + '</span>';
+    } else {
+      cdDisplay = '<span class="flow-badge zero">—</span>';
+    }
 
     // 名次变化
     let rankChangeHtml = '<span class="rank-change-same">-</span>';
@@ -907,12 +953,11 @@ function renderTable() {
     return '<tr onclick="openDrawer(\'' + escName + '\')">' +
       '<td class="rank-cell">' + rank + '</td>' +
       '<td style="text-align:left;font-family:inherit;"><span class="sector-name">' + s.name + '</span></td>' +
-      '<td style="text-align:left;font-family:\'SF Mono\',Consolas,monospace;font-size:11px;color:var(--text-tertiary);">' + (s.code || '-') + '</td>' +
+      '<td>' + cdDisplay + '</td>' +
       '<td class="num ' + changeClass + '">' + (s.change > 0 ? '+' : '') + s.change.toFixed(2) + '%</td>' +
-      '<td class="num">' + flowInD + '</td>' +
-      '<td class="num">' + flowOutD + '</td>' +
+      '<td class="num rise">' + flowInD + '</td>' +
+      '<td class="num fall">' + flowOutD + '</td>' +
       '<td class="num ' + inflowClass + '">' + inflowD + '</td>' +
-      '<td class="num">' + cdDisplay + '</td>' +
       '<td class="num">' + rankChangeHtml + '</td>' +
       '<td class="num"><span class="rise">' + s.riseCount + '</span>/<span class="fall">' + s.fallCount + '</span></td>' +
       '<td class="num">' + (s.risePct || 0).toFixed(0) + '%</td>' +
@@ -1189,11 +1234,26 @@ function openDrawer(sectorName) {
         '<div class="gi-value ' + flowClass + '">' + flowLabel + '</div>' +
         '<div class="gi-label">净流天数</div>' +
       '</div>';
-const leaderHtml = '<div class="grid-item">' +
-        '<div class="gi-icon">🏆</div>' +
-        '<div class="gi-value ' + ((s.leaderChange||0) >= 0 ? 'rise' : 'fall') + '">' + (s.leader || '-') + '</div>' +
-        '<div class="gi-label">' + ((s.leaderChange||0) > 0 ? '+' : '') + (s.leaderChange||0).toFixed(1) + '%</div>' +
-      '</div>';
+const leaders = s.leaders || [];
+let leaderHtml;
+if (leaders.length > 0) {
+  const listHtml = leaders.slice(0, 3).map(l => {
+    const cls = (l.change_pct || 0) >= 0 ? 'rise' : 'fall';
+    const sign = (l.change_pct || 0) > 0 ? '+' : '';
+    return '<div style="font-size:11px;line-height:1.6;"><span>' + l.name + '</span> <span class="' + cls + '" style="font-family:\'SF Mono\',Consolas,monospace;">' + sign + (l.change_pct || 0).toFixed(1) + '%</span></div>';
+  }).join('');
+  leaderHtml = '<div class="grid-item">' +
+    '<div class="gi-icon">🏆</div>' +
+    '<div style="padding:4px 0;">' + listHtml + '</div>' +
+    '<div class="gi-label">领涨龙头</div>' +
+  '</div>';
+} else {
+  leaderHtml = '<div class="grid-item">' +
+    '<div class="gi-icon">🏆</div>' +
+    '<div class="gi-value ' + ((s.leaderChange||0) >= 0 ? 'rise' : 'fall') + '">' + (s.leader || '-') + '</div>' +
+    '<div class="gi-label">' + ((s.leaderChange||0) > 0 ? '+' : '') + (s.leaderChange||0).toFixed(1) + '%</div>' +
+  '</div>';
+}
       return '<div class="drawer-grid" style="margin-bottom:24px;">' + northHtml + consHtml + leaderHtml + '</div>';
     })() +
 
