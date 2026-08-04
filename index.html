@@ -64,48 +64,9 @@
   /* 主容器 */
   .container { padding: 20px 24px; max-width: 1800px; margin: 0 auto; }
 
-  /* ===== 大盘数据 - 方案B：上证左大卡 + 右边2×2 ===== */
-  .market-overview { display: grid; grid-template-columns: 1fr 2fr; gap: 14px; margin-bottom: 14px; }
-  
-  /* 上证左大卡 */
-  .sh-card {
-    background: var(--bg-secondary); border-radius: 18px;
-    padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,.06);
-    display: flex; flex-direction: column; justify-content: center;
-    position: relative; overflow: hidden;
-  }
-  .sh-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(90deg, var(--rise), #FF8787);
-    border-radius: 4px 4px 0 0;
-  }
-  .sh-name { font-size: 14px; color: var(--text-secondary); margin-bottom: 6px; }
-  .sh-price { font-size: 38px; font-weight: 800; font-family: 'SF Mono', Consolas, monospace; line-height: 1.1; margin-bottom: 4px; }
-  .sh-change { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
-  .sh-change.rise { color: #FF3B30; }
-  .sh-change.fall { color: #34C759; }
-  .sh-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; font-size: 12px; color: var(--text-secondary); }
-  .sh-detail span { color: var(--text-primary); font-weight: 500; margin-left: 2px; }
-  
-  /* 右边 2×2 */
-  .idx-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; }
-  .idx-card {
-    background: var(--bg-secondary); border-radius: 16px;
-    padding: 18px 20px; box-shadow: var(--shadow);
-    display: flex; flex-direction: column; justify-content: center;
-    position: relative; overflow: hidden;
-  }
-  .idx-card::after {
-    content: ''; position: absolute; bottom: 14px; right: 18px;
-    width: 30px; height: 3px; border-radius: 2px;
-  }
-  .idx-card.up::after { background: linear-gradient(90deg, var(--rise), rgba(255,107,107,.3)); }
-  .idx-card.down::after { background: linear-gradient(90deg, var(--fall), rgba(81,207,102,.3)); }
-  .idx-name { font-size: 13px; color: var(--text-secondary); margin-bottom: 4px; }
-  .idx-price { font-size: 22px; font-weight: 700; font-family: 'SF Mono', Consolas, monospace; }
-  .idx-change { font-size: 14px; font-weight: 600; margin-top: 2px; }
-  .idx-change.rise { color: #FF3B30; }
-  .idx-change.down { color: #34C759; }
+  /* ===== 市场总览 - 2行布局 ===== */
+  .market-indices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 14px; }
+  .market-indicators { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
 
   .stat-card {
     background: var(--bg-secondary); border: none;
@@ -349,16 +310,8 @@
     .date-text { min-width: 80px; font-size: 13px; }
     .container { padding: 12px 10px; }
 
-    .table-panel { height: auto; min-height: 300px; }
-    .table-scroll { max-height: 60vh; flex: none; }
-
-    .market-overview { grid-template-columns: 1fr; gap: 8px; margin-bottom: 8px; }
-    .sh-card { padding: 14px 16px; }
-    .sh-price { font-size: 28px; }
-    .idx-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .idx-card { padding: 10px 12px; }
-    .idx-price { font-size: 16px; }
-    .market-indicators-5 { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
+    .market-indices { grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 8px; }
+    .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
     .stat-card { padding: 10px 12px; border-radius: 10px; }
     .stat-value { font-size: 16px; }
     .stat-change { font-size: 12px; margin-left: 4px; }
@@ -391,12 +344,8 @@
   }
 
   @media (max-width: 480px) {
-    .market-overview { grid-template-columns: 1fr; gap: 6px; }
-    .sh-price { font-size: 24px; }
-    .sh-detail { grid-template-columns: 1fr 1fr; gap: 2px 8px; font-size: 10px; }
-    .idx-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
-    .idx-price { font-size: 14px; }
-    .market-indicators-5 { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .market-indices { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 6px; }
     .stat-card { padding: 8px 10px; }
     .stat-value { font-size: 14px; }
     .stat-label { font-size: 11px; }
@@ -499,10 +448,7 @@
 <!-- 全局市场概览（独立区域，所有Tab共享） -->
 <div class="container" id="marketOverview">
   <h2 style="font-size:18px; font-weight:700; margin-bottom:14px; color:#1a1a1a;">📈 大盘数据</h2>
-  <div class="market-overview" id="marketOverviewGrid">
-    <div class="sh-card" id="shCard"></div>
-    <div class="idx-grid" id="idxGrid"></div>
-  </div>
+  <div class="market-indices" id="marketIndices"></div>
   <div class="market-indicators-5" id="marketIndicators"></div>
 </div>
 
@@ -676,44 +622,28 @@ function updateDateNav() {
   }
 }
 
-// ========== 市场总览（方案B：上证左大卡 + 右边2×2） ==========
+// ========== 市场总览 ==========
 function renderMarketOverview() {
   const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
   const indices = mo.indices || [];
 
-  // 上证左大卡（indices[0]）
-  const shCard = document.getElementById('shCard');
-  const sh = indices[0] || {};
-  const shCls = (sh.change || 0) >= 0 ? 'rise' : 'fall';
-  const shSign = (sh.change || 0) > 0 ? '+' : '';
-  const shArrow = (sh.change || 0) >= 0 ? '▲' : '▼';
-  shCard.innerHTML = 
-    '<div class="sh-name">' + (sh.name || '上证指数') + '</div>' +
-    '<div class="sh-price">' + ((sh.value || 0) > 0 ? (sh.value||0).toFixed(2) : '--') + '</div>' +
-    '<div class="sh-change ' + shCls + '">' + shArrow + ' ' + shSign + (sh.change || 0).toFixed(2) + '%</div>' +
-    '<div class="sh-detail">' +
-      '<div>今开 <span>' + ((sh.open || 0) > 0 ? (sh.open||0).toFixed(2) : '--') + '</span></div>' +
-      '<div>最高 <span>' + ((sh.high || 0) > 0 ? (sh.high||0).toFixed(2) : '--') + '</span></div>' +
-      '<div>昨收 <span>' + ((sh.value||0) - (sh.change_amount||0) > 0 ? ((sh.value||0) - (sh.change_amount||0)).toFixed(2) : '--') + '</span></div>' +
-      '<div>最低 <span>' + ((sh.low || 0) > 0 ? (sh.low||0).toFixed(2) : '--') + '</span></div>' +
-    '</div>';
-
-  // 右边2×2（indices[1-4]）
-  const idxGrid = document.getElementById('idxGrid');
-  const icons = ['📈','🚀','🔬','📱'];
-  idxGrid.innerHTML = indices.slice(1, 5).map((idx, i) => {
-    const cls = (idx.change || 0) >= 0 ? 'up' : 'down';
+  // 第一行：三大指数
+  const idxContainer = document.getElementById('marketIndices');
+  const idxIcons = ['📊', '📈', '🚀', '🔬'];
+  idxContainer.innerHTML = indices.map((idx, i) => {
+    const cls = (idx.change || 0) >= 0 ? 'rise' : 'fall';
     const sign = (idx.change || 0) > 0 ? '+' : '';
     const arrow = (idx.change || 0) >= 0 ? '▲' : '▼';
-    return '<div class="idx-card ' + cls + '">' +
-      '<div class="idx-name">' + icons[i] + ' ' + (idx.name || '--') + '</div>' +
-      '<div class="idx-price">' + ((idx.value || 0) > 0 ? (idx.value||0).toFixed(2) : '--') + '</div>' +
-      '<div class="idx-change ' + (cls === 'up' ? 'rise' : 'down') + '">' + arrow + ' ' + sign + (idx.change || 0).toFixed(2) + '%</div>' +
+    return '<div class="stat-card">' +
+      '<div class="stat-header"><span class="stat-icon">' + idxIcons[i] + '</span><span class="stat-label">' + idx.name + '</span></div>' +
+      '<div><span class="stat-value">' + (idx.value || 0).toFixed(2) + '</span>' +
+      '<span class="stat-change ' + cls + '">' + arrow + ' ' + sign + (idx.change || 0).toFixed(2) + '%</span></div>' +
       '</div>';
   }).join('');
-  // 补位：如果不足4个
-  for (let i = indices.length - 1; i < 4; i++) {
-    idxGrid.innerHTML += '<div class="idx-card"><div class="idx-name">--</div><div class="idx-price">--</div><div class="idx-change">--</div></div>';
+  // 如果指数数据缺失，补位
+  while (indices.length < 4) {
+    idxContainer.innerHTML += '<div class="stat-card"><div class="stat-header"><span class="stat-icon">' + idxIcons[indices.length] + '</span><span class="stat-label">--</span></div><div class="stat-value text-tertiary">--</div></div>';
+    indices.push({});
   }
 
   // 第二行：四个指标卡
