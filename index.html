@@ -83,22 +83,6 @@
   .rise { color: var(--rise); }
   .fall { color: var(--fall); }
 
-  /* 净流天数 badge */
-  .flow-badge {
-    display: inline-block; padding: 2px 10px; border-radius: 12px;
-    font-size: 12px; font-weight: 600; white-space: nowrap; color: #fff;
-  }
-  .flow-badge.l1 { background: rgba(255,107,107,0.25); }
-  .flow-badge.l2 { background: rgba(255,107,107,0.45); }
-  .flow-badge.l3 { background: rgba(255,107,107,0.65); }
-  .flow-badge.l4 { background: var(--rise); }
-  .flow-badge.l-1 { background: rgba(81,207,102,0.25); }
-  .flow-badge.l-2 { background: rgba(81,207,102,0.45); }
-  .flow-badge.l-3 { background: rgba(81,207,102,0.65); }
-  .flow-badge.l-4 { background: var(--fall); }
-  .flow-badge.zero { background: rgba(174,174,178,0.15); color: var(--text-tertiary); }
-  .flow-badge.turn { background: #FFA94D; }
-
   /* 信号关注区：横排4列，无描述文字 */
   .signal-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
   .signal-strip .signal-card {
@@ -310,7 +294,7 @@
     .date-text { min-width: 80px; font-size: 13px; }
     .container { padding: 12px 10px; }
 
-    .market-indices { grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 8px; }
+    .market-indices { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 8px; }
     .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
     .stat-card { padding: 10px 12px; border-radius: 10px; }
     .stat-value { font-size: 16px; }
@@ -437,7 +421,6 @@
 
 <!-- 全局市场概览（独立区域，所有Tab共享） -->
 <div class="container" id="marketOverview">
-  <h2 style="font-size:18px; font-weight:700; margin-bottom:14px; color:#1a1a1a;">📈 大盘数据</h2>
   <div class="market-indices" id="marketIndices"></div>
   <div class="market-indicators-5" id="marketIndicators"></div>
 </div>
@@ -499,11 +482,12 @@
           <tr>
             <th data-sort="rank" style="width:40px;">排名</th>
             <th data-sort="name" style="text-align:left;min-width:100px;">板块名</th>
-            <th data-sort="continuousDays" style="width:72px;">净流天数</th>
+            <th data-sort="code" style="text-align:left;width:70px;">板块ID</th>
             <th data-sort="change">涨跌幅</th>
             <th data-sort="flowIn">流入(亿)</th>
             <th data-sort="flowOut">流出(亿)</th>
             <th data-sort="inflow">净流入(亿)</th>
+            <th data-sort="continuousDays">净流天数</th>
             <th data-sort="rankChange">名次变化</th>
             <th data-sort="riseCount">股票涨/跌</th>
             <th data-sort="risePct">比例</th>
@@ -581,16 +565,49 @@ const state = {
   sortOrder: 'asc'
 };
 
-// ========== 数据加载 ==========
+// ========== 数据加载（v5.0: 支持按日拆分存储） ==========
 async function loadData() {
   try {
-    const resp = await fetch('data/fund_data_frontend.json?t=' + Date.now());
-    FUND_DATA = await resp.json();
-    state.currentDate = FUND_DATA.dates[FUND_DATA.dates.length - 1];
-    updateAll();
+    // 优先尝试按日拆分存储（index.json + data/YYYY-MM-DD.json）
+    const idxResp = await fetch('data/index.json?t=' + Date.now());
+    if (idxResp.ok) {
+      const idx = await idxResp.json();
+      const latestDate = idx.latestDate;
+      const dailyResp = await fetch('data/' + latestDate + '.json?t=' + Date.now());
+      if (dailyResp.ok) {
+        const daily = await dailyResp.json();
+        // 将按日数据转换为兼容格式
+        FUND_DATA = {
+          dates: idx.dates.map(function(d) { return d.date; }),
+          sectorsByDate: {},
+          metaByDate: {},
+          market: {},
+          signals: {},
+          lhb: idx.lhb || {},
+          updateTime: idx.updateTime,
+        };
+        // 填充当日数据
+        FUND_DATA.sectorsByDate[latestDate] = daily.sectors || [];
+        FUND_DATA.metaByDate[latestDate] = daily.meta || {};
+        FUND_DATA.market[latestDate] = daily.market || {};
+        FUND_DATA.signals[latestDate] = daily.signals || {};
+        state.currentDate = latestDate;
+        updateAll();
+        return;
+      }
+    }
+    throw new Error('split storage not available');
   } catch(e) {
-    console.error('Failed to load data:', e);
-    document.getElementById('sectorTable').innerHTML = '<tr><td colspan="13" style="text-align:center;padding:40px;color:#999">数据加载失败，请刷新重试</td></tr>';
+    // 降级：使用完整JSON
+    try {
+      const resp = await fetch('data/fund_data_frontend.json?t=' + Date.now());
+      FUND_DATA = await resp.json();
+      state.currentDate = FUND_DATA.dates[FUND_DATA.dates.length - 1];
+      updateAll();
+    } catch(e2) {
+      console.error('Failed to load data:', e2);
+      document.getElementById('sectorTable').innerHTML = '<tr><td colspan="13" style="text-align:center;padding:40px;color:#999">数据加载失败，请刷新重试</td></tr>';
+    }
   }
 }
 
@@ -605,9 +622,8 @@ function updateAll() {
 // ========== 更新时间显示 ==========
 function updateDateNav() {
   const tl = document.getElementById('updateTime');
-  const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
-  if (tl && mo.updateTime) {
-    tl.textContent = '数据更新：' + mo.updateTime;
+  if (tl && FUND_DATA.updateTime) {
+    tl.textContent = '数据更新：' + FUND_DATA.updateTime;
   } else if (tl) {
     tl.textContent = '数据更新：--';
   }
@@ -615,10 +631,10 @@ function updateDateNav() {
 
 // ========== 市场总览 ==========
 function renderMarketOverview() {
-  const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
+  const mo = (FUND_DATA.market && FUND_DATA.market[state.currentDate]) || {};
   const indices = mo.indices || [];
 
-  // 第一行：三大指数
+  // 第一行：指数行情（动态列数，支持3大指数+科创50）
   const idxContainer = document.getElementById('marketIndices');
   const idxIcons = ['📊', '📈', '🚀', '🔬'];
   idxContainer.innerHTML = indices.map((idx, i) => {
@@ -633,7 +649,7 @@ function renderMarketOverview() {
   }).join('');
   // 如果指数数据缺失，补位
   while (indices.length < 4) {
-    idxContainer.innerHTML += '<div class="stat-card"><div class="stat-header"><span class="stat-icon">' + idxIcons[indices.length] + '</span><span class="stat-label">--</span></div><div class="stat-value text-tertiary">--</div></div>';
+    idxContainer.innerHTML += '<div class="stat-card"><div class="stat-header"><span class="stat-icon">' + (idxIcons[indices.length] || '📊') + '</span><span class="stat-label">--</span></div><div class="stat-value text-tertiary">--</div></div>';
     indices.push({});
   }
 
@@ -655,29 +671,23 @@ function renderMarketOverview() {
       '<div class="stat-sub">上涨占比 ' + (mo.risePct || 0).toFixed(1) + '%</div>' +
     '</div>' +
     '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">' + (riseRatio >= 50 ? '🔴' : '🟢') + '</span><span class="stat-label">涨/跌比</span></div>' +
-      '<div><span class="stat-value ' + riseC + '">' + riseRatio + '%</span></div>' +
-      '<div class="stat-sub">' + (mo.totalRise||0) + '涨 / ' + (mo.totalFall||0) + '跌</div>' +
-    '</div>' +
-    '<div class="stat-card">' +
       '<div class="stat-header"><span class="stat-icon">🏭</span><span class="stat-label">板块涨/跌</span></div>' +
-      '<div><span class="stat-value ' + sectorUpC + '">' + (mo.sectorUp || 0) + '</span>' +
+      '<div><span class="stat-value rise">' + (mo.sectorUp || 0) + '</span>' +
       '<span style="color:var(--text-tertiary);font-size:14px;"> 涨 / </span>' +
-      '<span class="stat-value ' + (sectorUpC === 'rise' ? 'fall' : 'rise') + '">' + (mo.sectorDown || 0) + '</span>' +
+      '<span class="stat-value fall">' + (mo.sectorDown || 0) + '</span>' +
       '<span style="color:var(--text-tertiary);font-size:14px;"> 跌</span></div>' +
       '<div class="stat-sub">共' + ((mo.sectorUp||0) + (mo.sectorDown||0)) + '个行业板块</div>' +
-    '</div>' +
-    '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">⚖️</span><span class="stat-label">涨跌比</span></div>' +
-      '<div><span class="stat-value ' + sectorUpC + '">' + (mo.sectorUp || 0) + '</span>' +
-      '<span style="color:var(--text-tertiary);font-size:14px;"> : </span>' +
-      '<span class="stat-value ' + (sectorUpC === 'rise' ? 'fall' : 'rise') + '">' + (mo.sectorDown || 0) + '</span></div>' +
-      '<div class="stat-sub">' + ((mo.sectorUp||0)+(mo.sectorDown||0) > 0 ? ((mo.sectorUp||0)/((mo.sectorUp||0)+(mo.sectorDown||0))*100).toFixed(0) : 0) + '%板块上涨</div>' +
     '</div>' +
     '<div class="stat-card">' +
       '<div class="stat-header"><span class="stat-icon">💰</span><span class="stat-label">净流入</span></div>' +
       '<div><span class="stat-value ' + netC + '">' + ((mo.netFlow || 0) > 0 ? '+' : '') + (mo.netFlow || 0).toFixed(1) + '亿</span></div>' +
       '<div class="stat-sub">流入' + (mo.totalFlowIn || 0).toFixed(0) + '亿 · 流出' + (mo.totalFlowOut || 0).toFixed(0) + '亿</div>' +
+    '</div>' +
+
+    '<div class="stat-card">' +
+      '<div class="stat-header"><span class="stat-icon">' + (riseRatio >= 50 ? '🔴' : '🟢') + '</span><span class="stat-label">涨跌比</span></div>' +
+      '<div><span class="stat-value ' + riseC + '">' + riseRatio + '%</span></div>' +
+      '<div class="stat-sub">' + (mo.totalRise||0) + '涨 / ' + (mo.totalFall||0) + '跌</div>' +
     '</div>' +
     '<div class="stat-card">' +
       '<div class="stat-header"><span class="stat-icon">🏆</span><span class="stat-label">最强板块</span></div>' +
@@ -832,18 +842,6 @@ function getPrevDateSectors() {
   return FUND_DATA.sectorsByDate[FUND_DATA.dates[idx - 1]] || null;
 }
 
-function getPrevDayFlow(sector, allSectors) {
-  // 计算该板块前一日的净流入（用于拐点检测）
-  const prevSectors = getPrevDateSectors();
-  if (!prevSectors) return 0;
-  const prev = prevSectors.find(x => x.name === sector.name);
-  if (!prev) return 0;
-  // 用上一日history的最后一条inflow
-  const ph = prev.history || [];
-  if (ph.length === 0) return prev.inflow || 0;
-  return ph[ph.length - 1].inflow || 0;
-}
-
 function getFilteredSortedSectors() {
   let sectors = [...(FUND_DATA.sectorsByDate[state.currentDate] || [])];
   if (state.searchKeyword) {
@@ -908,29 +906,10 @@ function renderTable() {
         for (let i = hist.length - 1; i >= 0; i--) { if (hist[i].inflow < 0) flowDays--; else break; }
       }
     }
-    // 净流天数分层badge
-    let cdDisplay = '';
-    const absDays = Math.abs(flowDays);
-    if (flowDays > 0) {
-      let level = 'l1';
-      if (absDays >= 5) level = 'l4';
-      else if (absDays >= 3) level = 'l3';
-      else if (absDays >= 2) level = 'l2';
-      // 拐点检测：昨日流出今日转流入
-      const prevDayFlow = getPrevDayFlow(s, allSectors);
-      const turnTag = (prevDayFlow < 0 && absDays === 1) ? ' ⚡' : '';
-      cdDisplay = '<span class="flow-badge ' + level + '">' + flowDays + '天' + turnTag + '</span>';
-    } else if (flowDays < 0) {
-      let level = 'l-1';
-      if (absDays >= 5) level = 'l-4';
-      else if (absDays >= 3) level = 'l-3';
-      else if (absDays >= 2) level = 'l-2';
-      const prevDayFlow = getPrevDayFlow(s, allSectors);
-      const turnTag = (prevDayFlow > 0 && absDays === 1) ? ' ⚡' : '';
-      cdDisplay = '<span class="flow-badge ' + level + '">' + flowDays + '天' + turnTag + '</span>';
-    } else {
-      cdDisplay = '<span class="flow-badge zero">—</span>';
-    }
+    let cdDisplay;
+    if (flowDays > 0) cdDisplay = '<span class="rise" style="font-weight:700;">+' + flowDays + '天</span>';
+    else if (flowDays < 0) cdDisplay = '<span class="fall" style="font-weight:700;">' + flowDays + '天</span>';
+    else cdDisplay = '<span class="text-tertiary">0天</span>';
 
     // 名次变化
     let rankChangeHtml = '<span class="rank-change-same">-</span>';
@@ -953,11 +932,12 @@ function renderTable() {
     return '<tr onclick="openDrawer(\'' + escName + '\')">' +
       '<td class="rank-cell">' + rank + '</td>' +
       '<td style="text-align:left;font-family:inherit;"><span class="sector-name">' + s.name + '</span></td>' +
-      '<td>' + cdDisplay + '</td>' +
+      '<td style="text-align:left;font-family:\'SF Mono\',Consolas,monospace;font-size:11px;color:var(--text-tertiary);">' + (s.code || '-') + '</td>' +
       '<td class="num ' + changeClass + '">' + (s.change > 0 ? '+' : '') + s.change.toFixed(2) + '%</td>' +
-      '<td class="num rise">' + flowInD + '</td>' +
-      '<td class="num fall">' + flowOutD + '</td>' +
+      '<td class="num">' + flowInD + '</td>' +
+      '<td class="num">' + flowOutD + '</td>' +
       '<td class="num ' + inflowClass + '">' + inflowD + '</td>' +
+      '<td class="num">' + cdDisplay + '</td>' +
       '<td class="num">' + rankChangeHtml + '</td>' +
       '<td class="num"><span class="rise">' + s.riseCount + '</span>/<span class="fall">' + s.fallCount + '</span></td>' +
       '<td class="num">' + (s.risePct || 0).toFixed(0) + '%</td>' +
@@ -975,7 +955,7 @@ function renderLHB() {
 
 function renderZT() {
   const el = document.getElementById('ztContent');
-  const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
+  const mo = (FUND_DATA.market && FUND_DATA.market[state.currentDate]) || {};
   if (!mo.ztCount && !mo.emotionScore) {
     el.innerHTML = '<div style="color:var(--text-tertiary);font-size:12px;padding:12px 0;">数据待更新</div>';
     return;
@@ -1012,7 +992,7 @@ function renderZT() {
 }
 
 function renderLadderChart(ladderStr) {
-  const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
+  const mo = (FUND_DATA.market && FUND_DATA.market[state.currentDate]) || {};
   const ladderDetail = mo.ladderDetail || null;
   const parts = ladderStr.split('→');
   let html = '<div style="margin-bottom:10px;padding:10px 12px;background:var(--bg-tertiary);border-radius:8px;">';
@@ -1205,11 +1185,8 @@ function openDrawer(sectorName) {
       '</div>' +
     '</div>' +
 
-    // 第三行：北向资金 + 连续净流入天数 + 领涨股
+    // 第三行：连续净流入天数 + 领涨股
     (function() {
-      const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
-      const nfClass = (mo.northFlow || 0) >= 0 ? 'rise' : 'fall';
-      const nfSign = (mo.northFlow || 0) > 0 ? '+' : '';
       // 计算净流天数：正=连续流入，负=连续流出
       let flowDays = 0;
       const hist = s.history || [];
@@ -1224,37 +1201,17 @@ function openDrawer(sectorName) {
       const flowIcon = flowDays > 0 ? '🔥' : (flowDays < 0 ? '❄️' : '💧');
       const flowClass = flowDays > 0 ? 'rise' : (flowDays < 0 ? 'fall' : '');
       const flowLabel = flowDays > 0 ? '+' + flowDays + '天' : (flowDays < 0 ? flowDays + '天' : '0天');
-      const northHtml = '<div class="grid-item">' +
-        '<div class="gi-icon">💹</div>' +
-        '<div class="gi-value ' + nfClass + '">' + nfSign + (mo.northFlow || 0).toFixed(1) + '亿</div>' +
-        '<div class="gi-label">北向资金</div>' +
-      '</div>';
       const consHtml = '<div class="grid-item">' +
         '<div class="gi-icon">' + flowIcon + '</div>' +
         '<div class="gi-value ' + flowClass + '">' + flowLabel + '</div>' +
         '<div class="gi-label">净流天数</div>' +
       '</div>';
-const leaders = s.leaders || [];
-let leaderHtml;
-if (leaders.length > 0) {
-  const listHtml = leaders.slice(0, 3).map(l => {
-    const cls = (l.change_pct || 0) >= 0 ? 'rise' : 'fall';
-    const sign = (l.change_pct || 0) > 0 ? '+' : '';
-    return '<div style="font-size:11px;line-height:1.6;"><span>' + l.name + '</span> <span class="' + cls + '" style="font-family:\'SF Mono\',Consolas,monospace;">' + sign + (l.change_pct || 0).toFixed(1) + '%</span></div>';
-  }).join('');
-  leaderHtml = '<div class="grid-item">' +
-    '<div class="gi-icon">🏆</div>' +
-    '<div style="padding:4px 0;">' + listHtml + '</div>' +
-    '<div class="gi-label">领涨龙头</div>' +
-  '</div>';
-} else {
-  leaderHtml = '<div class="grid-item">' +
-    '<div class="gi-icon">🏆</div>' +
-    '<div class="gi-value ' + ((s.leaderChange||0) >= 0 ? 'rise' : 'fall') + '">' + (s.leader || '-') + '</div>' +
-    '<div class="gi-label">' + ((s.leaderChange||0) > 0 ? '+' : '') + (s.leaderChange||0).toFixed(1) + '%</div>' +
-  '</div>';
-}
-      return '<div class="drawer-grid" style="margin-bottom:24px;">' + northHtml + consHtml + leaderHtml + '</div>';
+const leaderHtml = '<div class="grid-item">' +
+        '<div class="gi-icon">🏆</div>' +
+        '<div class="gi-value ' + ((s.leaderChange||0) >= 0 ? 'rise' : 'fall') + '">' + (s.leader || '-') + '</div>' +
+        '<div class="gi-label">' + ((s.leaderChange||0) > 0 ? '+' : '') + (s.leaderChange||0).toFixed(1) + '%</div>' +
+      '</div>';
+      return '<div class="drawer-grid" style="margin-bottom:24px;">' + consHtml + leaderHtml + '</div>';
     })() +
 
     // 多周期累计
@@ -1282,6 +1239,36 @@ if (leaders.length > 0) {
     '</div>' +
 
 
+
+    // 候选标的（从关注池匹配到当前板块）
+    (function() {
+      const candidates = s.candidates || [];
+      if (!candidates.length) return '';
+      let html = '<div class="drawer-section"><h4>🎯 候选标的</h4>' +
+        '<table style="width:100%;font-size:12px;border-collapse:collapse;">' +
+        '<thead><tr style="color:var(--text-tertiary);border-bottom:1px solid var(--border);">' +
+        '<th style="text-align:left;padding:6px 4px;font-weight:500;">标的</th>' +
+        '<th style="text-align:right;padding:6px 4px;font-weight:500;">现价</th>' +
+        '<th style="text-align:right;padding:6px 4px;font-weight:500;">止损</th>' +
+        '<th style="text-align:right;padding:6px 4px;font-weight:500;">目标</th>' +
+        '<th style="text-align:left;padding:6px 4px;font-weight:500;">逻辑</th>' +
+        '</tr></thead><tbody>';
+      candidates.forEach(function(c) {
+        const p = c.price || 0;
+        const sl = c.stopLoss || 0;
+        const tp = c.target || 0;
+        html += '<tr style="border-bottom:1px solid #f0f0f0;">' +
+          '<td style="padding:5px 4px;font-weight:600;">' + (c.name || '') +
+            '<span style="font-size:10px;color:var(--text-tertiary);margin-left:4px;">' + (c.code || '') + '</span></td>' +
+          '<td style="padding:5px 4px;text-align:right;">' + (p ? p.toFixed(2) : '-') + '</td>' +
+          '<td style="padding:5px 4px;text-align:right;color:var(--fall);">' + (sl ? sl.toFixed(1) : '-') + '</td>' +
+          '<td style="padding:5px 4px;text-align:right;color:var(--rise);">' + (tp ? tp.toFixed(1) : '-') + '</td>' +
+          '<td style="padding:5px 4px;font-size:11px;color:var(--text-secondary);max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (c.logic || '-') + '</td>' +
+        '</tr>';
+      });
+      html += '</tbody></table></div>';
+      return html;
+    })() +
 
     histHtml;
 
