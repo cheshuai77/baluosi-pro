@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>数据诊断</title>
+<style>body{font-family:monospace;padding:20px;background:#1a1a2e;color:#eee}
+.pass{color:#4caf50}.fail{color:#f44336}</style></head><body>
+<h2>数据完整性诊断</h2>
+<div id="results">加载中...</div>
+<script>
+(async function(){
+  let html='';
+  function c(l,ok){html+=`<div class="${ok?'pass':'fail'}">${ok?'✅':'❌'} ${l}</div>`;}
+  try{
+    const r=await fetch('data/fund_data_frontend.json?t='+Date.now());
+    const D=await r.json();
+    c('JSON加载成功 ('+JSON.stringify(D).length+' bytes)', true);
+    c('dates: '+D.dates.length+'个 ['+D.dates.join(',')+']', D.dates.length>=3);
+    let latest=D.dates[D.dates.length-1];
+    let mo=D.marketOverview[latest];
+    c('marketOverview['+latest+']', !!mo);
+    let idx=mo&&mo.indices||[];
+    c('indices: '+idx.length+'个', idx.length>=4);
+    if(idx[0]) c('上证: '+idx[0].value.toFixed(2)+' ('+(idx[0].change>0?'+':'')+idx[0].change.toFixed(2)+'%)', true);
+    c('龙虎榜: ztCount='+mo.ztCount+' emotion='+mo.emotionScore, mo.ztCount>0);
+    let sec=D.sectorsByDate[latest]||[];
+    let acc_nonzero=sec.filter(s=>s.accum3d!==0).length;
+    c('板块: '+sec.length+'个 accum非零:'+acc_nonzero, acc_nonzero>50);
+    c('signals: '+(D.signals[latest]?Object.keys(D.signals[latest]).join(','):'❌'), !!D.signals[latest]);
+    c('lhb: '+(D.lhb[latest]?D.lhb[latest].attitude:'❌'), !!D.lhb[latest]);
+  }catch(e){
+    c('加载失败: '+e.message, false);
+  }
+  document.getElementById('results').innerHTML=html;
+})();
+</script></body></html>
