@@ -102,7 +102,7 @@
         "accum3dOut": 212.11,
         "accum5dIn": 262.2,
         "accum5dOut": 194.06,
-        "signal": "risk",
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -136,7 +136,7 @@
         "accum3dOut": 32.19,
         "accum5dIn": 37.57,
         "accum5dOut": 31.62,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -170,7 +170,7 @@
         "accum3dOut": 30.03,
         "accum5dIn": 32.28,
         "accum5dOut": 36.02,
-        "signal": "risk",
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -204,7 +204,7 @@
         "accum3dOut": 23.79,
         "accum5dIn": 34.55,
         "accum5dOut": 25.85,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -238,7 +238,7 @@
         "accum3dOut": 20.14,
         "accum5dIn": 23.14,
         "accum5dOut": 22.84,
-        "signal": "risk",
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -272,7 +272,7 @@
         "accum3dOut": 24.98,
         "accum5dIn": 33.87,
         "accum5dOut": 30.66,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -306,7 +306,7 @@
         "accum3dOut": 7.69,
         "accum5dIn": 10.09,
         "accum5dOut": 8.18,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -544,7 +544,7 @@
         "accum3dOut": 34.62,
         "accum5dIn": 39.92,
         "accum5dOut": 37.03,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -612,7 +612,7 @@
         "accum3dOut": 9.97,
         "accum5dIn": 12.97,
         "accum5dOut": 8.28,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -748,7 +748,7 @@
         "accum3dOut": 1.42,
         "accum5dIn": 1.75,
         "accum5dOut": 1.39,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -1462,7 +1462,7 @@
         "accum3dOut": 7.94,
         "accum5dIn": 6.69,
         "accum5dOut": 5.76,
-        "signal": "risk",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -2040,7 +2040,7 @@
         "accum3dOut": 88.66,
         "accum5dIn": 131.88,
         "accum5dOut": 104.69,
-        "signal": "risk",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -2856,7 +2856,7 @@
         "accum3dOut": 68.51,
         "accum5dIn": 106.28,
         "accum5dOut": 103.25,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -2890,7 +2890,7 @@
         "accum3dOut": 121.63,
         "accum5dIn": 167.41,
         "accum5dOut": 128.36,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -2924,7 +2924,7 @@
         "accum3dOut": 137.67,
         "accum5dIn": 155.19,
         "accum5dOut": 174.37,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -2958,7 +2958,7 @@
         "accum3dOut": 151.02,
         "accum5dIn": 237.68,
         "accum5dOut": 238.41,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3239,7 +3239,7 @@
         "accum3dOut": 131.72,
         "accum5dIn": 104.77,
         "accum5dOut": 114.29,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -3403,7 +3403,7 @@
         "accum3dOut": 30.42,
         "accum5dIn": 30.8,
         "accum5dOut": 43.32,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -3485,7 +3485,7 @@
         "accum3dOut": 43.43,
         "accum5dIn": 44.01,
         "accum5dOut": 54.6,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -3567,7 +3567,7 @@
         "accum3dOut": 124.55,
         "accum5dIn": 89.68,
         "accum5dOut": 97.05,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -3690,7 +3690,7 @@
         "accum3dOut": 15.72,
         "accum5dIn": 12.61,
         "accum5dOut": 19.55,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -3731,7 +3731,7 @@
         "accum3dOut": 30.91,
         "accum5dIn": 20.79,
         "accum5dOut": 28.5,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -3977,7 +3977,7 @@
         "accum3dOut": 25.86,
         "accum5dIn": 25.93,
         "accum5dOut": 31.2,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -4305,7 +4305,7 @@
         "accum3dOut": 10.92,
         "accum5dIn": 6.08,
         "accum5dOut": 12.64,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -4346,7 +4346,7 @@
         "accum3dOut": 53.32,
         "accum5dIn": 38.04,
         "accum5dOut": 47.9,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -4387,7 +4387,7 @@
         "accum3dOut": 35.07,
         "accum5dIn": 33.7,
         "accum5dOut": 48.98,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -5945,7 +5945,7 @@
         "accum3dOut": 9.34,
         "accum5dIn": 8.73,
         "accum5dOut": 10.12,
-        "signal": null,
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -6191,7 +6191,7 @@
         "accum3dOut": 26.4,
         "accum5dIn": 41.47,
         "accum5dOut": 51.11,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -6232,7 +6232,7 @@
         "accum3dOut": 27.18,
         "accum5dIn": 33.41,
         "accum5dOut": 49.96,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -6396,7 +6396,7 @@
         "accum3dOut": 36.91,
         "accum5dIn": 37.78,
         "accum5dOut": 55.32,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -6437,7 +6437,7 @@
         "accum3dOut": 37.24,
         "accum5dIn": 39.42,
         "accum5dOut": 52.94,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -6519,7 +6519,7 @@
         "accum3dOut": 189.81,
         "accum5dIn": 140.0,
         "accum5dOut": 129.44,
-        "signal": null,
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -6560,7 +6560,7 @@
         "accum3dOut": 202.33,
         "accum5dIn": 162.43,
         "accum5dOut": 167.53,
-        "signal": null,
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -6642,7 +6642,7 @@
         "accum3dOut": 202.57,
         "accum5dIn": 160.08,
         "accum5dOut": 183.35,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6683,7 +6683,7 @@
         "accum3dOut": 89.87,
         "accum5dIn": 54.31,
         "accum5dOut": 77.4,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6724,7 +6724,7 @@
         "accum3dOut": 376.05,
         "accum5dIn": 267.95,
         "accum5dOut": 277.12,
-        "signal": "disaster",
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -6769,7 +6769,7 @@
           "tag": "anomaly",
           "label": "异动流出"
         },
-        "signal": "disaster",
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -6812,7 +6812,7 @@
         "accum3dOut": 122.98,
         "accum5dIn": 97.51,
         "accum5dOut": 90.8,
-        "signal": "main_line",
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -6860,7 +6860,7 @@
         "accum3dOut": 156.49,
         "accum5dIn": 161.13,
         "accum5dOut": 151.02,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6908,7 +6908,7 @@
         "accum3dOut": 608.0,
         "accum5dIn": 484.65,
         "accum5dOut": 461.22,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6956,7 +6956,7 @@
         "accum3dOut": 117.02,
         "accum5dIn": 135.83,
         "accum5dOut": 121.63,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -7004,7 +7004,7 @@
         "accum3dOut": 96.51,
         "accum5dIn": 68.65,
         "accum5dOut": 59.95,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -7052,7 +7052,7 @@
         "accum3dOut": 23.88,
         "accum5dIn": 23.12,
         "accum5dOut": 18.15,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -7148,7 +7148,7 @@
         "accum3dOut": 46.72,
         "accum5dIn": 39.92,
         "accum5dOut": 36.82,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -7248,7 +7248,7 @@
           "tag": "continuous",
           "label": "连续3日流入"
         },
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7344,7 +7344,7 @@
         "accum3dOut": 9.66,
         "accum5dIn": 10.95,
         "accum5dOut": 8.61,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -7684,7 +7684,7 @@
         "accum3dOut": 51.42,
         "accum5dIn": 42.1,
         "accum5dOut": 39.59,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -7880,7 +7880,7 @@
           "tag": "continuous",
           "label": "连续3日流入"
         },
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -7976,7 +7976,7 @@
         "accum3dOut": 6.36,
         "accum5dIn": 7.07,
         "accum5dOut": 5.38,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -8024,7 +8024,7 @@
         "accum3dOut": 9.67,
         "accum5dIn": 11.27,
         "accum5dOut": 7.34,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -8168,7 +8168,7 @@
         "accum3dOut": 10.42,
         "accum5dIn": 10.56,
         "accum5dOut": 11.6,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -9904,7 +9904,7 @@
         "accum3dOut": 47.37,
         "accum5dIn": 35.46,
         "accum5dOut": 30.03,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -10480,7 +10480,7 @@
         "accum3dOut": 52.39,
         "accum5dIn": 28.21,
         "accum5dOut": 23.79,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -10528,7 +10528,7 @@
         "accum3dOut": 91.63,
         "accum5dIn": 91.26,
         "accum5dOut": 89.07,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -10672,7 +10672,7 @@
         "accum3dOut": 96.08,
         "accum5dIn": 89.68,
         "accum5dOut": 88.66,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -10960,7 +10960,7 @@
         "accum3dOut": 156.92,
         "accum5dIn": 145.16,
         "accum5dOut": 136.74,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -11008,7 +11008,7 @@
         "accum3dOut": 105.07,
         "accum5dIn": 97.59,
         "accum5dOut": 72.8,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -11141,11 +11141,11 @@
         "change": 6.01,
         "indexPrice": 14862.4,
         "stockCount": 183,
-        "riseCount": 178,
-        "fallCount": 5,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "和林微纳",
         "leaderChange": 20.0,
-        "risePct": 97.3,
+        "risePct": 0,
         "flowIn": 1437.42,
         "flowOut": 1218.06,
         "inflow": 219.35,
@@ -11200,11 +11200,11 @@
         "change": 5.4,
         "indexPrice": 8358.64,
         "stockCount": 91,
-        "riseCount": 88,
-        "fallCount": 3,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "蘅东光",
         "leaderChange": 20.83,
-        "risePct": 96.7,
+        "risePct": 0,
         "flowIn": 866.28,
         "flowOut": 683.48,
         "inflow": 182.8,
@@ -11259,11 +11259,11 @@
         "change": 7.07,
         "indexPrice": 20639.5,
         "stockCount": 63,
-        "riseCount": 63,
+        "riseCount": 0,
         "fallCount": 0,
         "leader": "嘉立创",
         "leaderChange": 146.28,
-        "risePct": 100.0,
+        "risePct": 0,
         "flowIn": 453.48,
         "flowOut": 371.8,
         "inflow": 81.68,
@@ -11318,11 +11318,11 @@
         "change": 3.55,
         "indexPrice": 11332.7,
         "stockCount": 96,
-        "riseCount": 85,
-        "fallCount": 11,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "胜蓝股份",
         "leaderChange": 17.88,
-        "risePct": 88.5,
+        "risePct": 0,
         "flowIn": 213.64,
         "flowOut": 165.7,
         "inflow": 47.95,
@@ -11373,11 +11373,11 @@
         "change": 3.62,
         "indexPrice": 4950.5,
         "stockCount": 107,
-        "riseCount": 99,
-        "fallCount": 8,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "光智科技",
         "leaderChange": 20.0,
-        "risePct": 92.5,
+        "risePct": 0,
         "flowIn": 171.12,
         "flowOut": 123.54,
         "inflow": 47.58,
@@ -11428,11 +11428,11 @@
         "change": 3.93,
         "indexPrice": 26870.3,
         "stockCount": 96,
-        "riseCount": 88,
-        "fallCount": 7,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "ST逸飞",
         "leaderChange": 13.33,
-        "risePct": 92.6,
+        "risePct": 0,
         "flowIn": 165.89,
         "flowOut": 131.4,
         "inflow": 34.49,
@@ -11483,11 +11483,11 @@
         "change": 2.95,
         "indexPrice": 8536.31,
         "stockCount": 252,
-        "riseCount": 209,
-        "fallCount": 37,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "海川智能",
         "leaderChange": 20.0,
-        "risePct": 85.0,
+        "risePct": 0,
         "flowIn": 212.67,
         "flowOut": 188.15,
         "inflow": 24.52,
@@ -11538,11 +11538,11 @@
         "change": 3.43,
         "indexPrice": 8341.31,
         "stockCount": 29,
-        "riseCount": 27,
-        "fallCount": 2,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "云南锗业",
         "leaderChange": 10.01,
-        "risePct": 93.1,
+        "risePct": 0,
         "flowIn": 108.42,
         "flowOut": 83.98,
         "inflow": 24.45,
@@ -11593,11 +11593,11 @@
         "change": 3.1,
         "indexPrice": 3872.96,
         "stockCount": 83,
-        "riseCount": 74,
-        "fallCount": 7,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "中威电子",
         "leaderChange": 20.0,
-        "risePct": 91.4,
+        "risePct": 0,
         "flowIn": 142.14,
         "flowOut": 119.19,
         "inflow": 22.95,
@@ -11648,11 +11648,11 @@
         "change": 6.57,
         "indexPrice": 77201.1,
         "stockCount": 43,
-        "riseCount": 43,
+        "riseCount": 0,
         "fallCount": 0,
         "leader": "唯特偶",
         "leaderChange": 13.43,
-        "risePct": 100.0,
+        "risePct": 0,
         "flowIn": 160.63,
         "flowOut": 137.92,
         "inflow": 22.71,
@@ -11703,11 +11703,11 @@
         "change": 1.12,
         "indexPrice": 5341.76,
         "stockCount": 73,
-        "riseCount": 41,
-        "fallCount": 26,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "中材科技",
         "leaderChange": 9.99,
-        "risePct": 61.2,
+        "risePct": 0,
         "flowIn": 104.75,
         "flowOut": 87.36,
         "inflow": 17.39,
@@ -11758,11 +11758,11 @@
         "change": 4.55,
         "indexPrice": 18667.7,
         "stockCount": 34,
-        "riseCount": 33,
-        "fallCount": 1,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "英唐智控",
         "leaderChange": 13.05,
-        "risePct": 97.1,
+        "risePct": 0,
         "flowIn": 57.75,
         "flowOut": 43.02,
         "inflow": 14.73,
@@ -11813,11 +11813,11 @@
         "change": 1.75,
         "indexPrice": 17422.3,
         "stockCount": 106,
-        "riseCount": 83,
-        "fallCount": 20,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "铜冠铜箔",
         "leaderChange": 10.95,
-        "risePct": 80.6,
+        "risePct": 0,
         "flowIn": 171.78,
         "flowOut": 157.29,
         "inflow": 14.49,
@@ -11868,11 +11868,11 @@
         "change": 1.96,
         "indexPrice": 6989.8,
         "stockCount": 200,
-        "riseCount": 134,
-        "fallCount": 62,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "深科达",
         "leaderChange": 14.76,
-        "risePct": 68.4,
+        "risePct": 0,
         "flowIn": 124.41,
         "flowOut": 110.42,
         "inflow": 13.99,
@@ -11923,11 +11923,11 @@
         "change": 3.64,
         "indexPrice": 12018.1,
         "stockCount": 129,
-        "riseCount": 115,
-        "fallCount": 14,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "汉鑫科技",
         "leaderChange": 29.99,
-        "risePct": 89.1,
+        "risePct": 0,
         "flowIn": 179.55,
         "flowOut": 166.14,
         "inflow": 13.42,
@@ -11978,11 +11978,11 @@
         "change": 2.61,
         "indexPrice": 2647.42,
         "stockCount": 84,
-        "riseCount": 61,
-        "fallCount": 22,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "易点天下",
         "leaderChange": 16.27,
-        "risePct": 73.5,
+        "risePct": 0,
         "flowIn": 150.33,
         "flowOut": 138.76,
         "inflow": 11.56,
@@ -12033,11 +12033,11 @@
         "change": 2.33,
         "indexPrice": 30083.1,
         "stockCount": 12,
-        "riseCount": 11,
-        "fallCount": 1,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "博迁新材",
         "leaderChange": 9.32,
-        "risePct": 91.7,
+        "risePct": 0,
         "flowIn": 46.42,
         "flowOut": 34.87,
         "inflow": 11.55,
@@ -12088,11 +12088,11 @@
         "change": 1.69,
         "indexPrice": 4161.69,
         "stockCount": 55,
-        "riseCount": 46,
-        "fallCount": 7,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "*ST利源",
         "leaderChange": 10.4,
-        "risePct": 86.8,
+        "risePct": 0,
         "flowIn": 114.73,
         "flowOut": 104.3,
         "inflow": 10.43,
@@ -12143,11 +12143,11 @@
         "change": 3.71,
         "indexPrice": 1310.96,
         "stockCount": 20,
-        "riseCount": 18,
-        "fallCount": 1,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "捷成股份",
         "leaderChange": 11.94,
-        "risePct": 94.7,
+        "risePct": 0,
         "flowIn": 31.61,
         "flowOut": 21.98,
         "inflow": 9.63,
@@ -12198,11 +12198,11 @@
         "change": 4.22,
         "indexPrice": 9453.87,
         "stockCount": 24,
-        "riseCount": 23,
-        "fallCount": 1,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "中青宝",
         "leaderChange": 20.02,
-        "risePct": 95.8,
+        "risePct": 0,
         "flowIn": 76.06,
         "flowOut": 66.72,
         "inflow": 9.33,
@@ -12253,11 +12253,11 @@
         "change": 2.74,
         "indexPrice": 9827.53,
         "stockCount": 77,
-        "riseCount": 65,
-        "fallCount": 12,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "蓝晓科技",
         "leaderChange": 12.35,
-        "risePct": 84.4,
+        "risePct": 0,
         "flowIn": 65.39,
         "flowOut": 56.98,
         "inflow": 8.41,
@@ -12308,11 +12308,11 @@
         "change": 3.99,
         "indexPrice": 2680.73,
         "stockCount": 44,
-        "riseCount": 40,
-        "fallCount": 4,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "蜂助手",
         "leaderChange": 15.49,
-        "risePct": 90.9,
+        "risePct": 0,
         "flowIn": 80.68,
         "flowOut": 72.65,
         "inflow": 8.04,
@@ -12367,11 +12367,11 @@
         "change": 2.93,
         "indexPrice": 1897.98,
         "stockCount": 138,
-        "riseCount": 124,
-        "fallCount": 10,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "汉仪股份",
         "leaderChange": 20.01,
-        "risePct": 92.5,
+        "risePct": 0,
         "flowIn": 191.7,
         "flowOut": 183.97,
         "inflow": 7.73,
@@ -12422,11 +12422,11 @@
         "change": 1.14,
         "indexPrice": 5594.3,
         "stockCount": 271,
-        "riseCount": 163,
-        "fallCount": 100,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "飞龙股份",
         "leaderChange": 10.02,
-        "risePct": 62.0,
+        "risePct": 0,
         "flowIn": 128.49,
         "flowOut": 121.91,
         "inflow": 6.58,
@@ -12481,11 +12481,11 @@
         "change": 2.6,
         "indexPrice": 11434.7,
         "stockCount": 62,
-        "riseCount": 58,
-        "fallCount": 3,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "华丰科技",
         "leaderChange": 9.12,
-        "risePct": 95.1,
+        "risePct": 0,
         "flowIn": 62.52,
         "flowOut": 56.26,
         "inflow": 6.26,
@@ -12540,11 +12540,11 @@
         "change": 2.04,
         "indexPrice": 6030.95,
         "stockCount": 158,
-        "riseCount": 128,
-        "fallCount": 24,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "赛分科技",
         "leaderChange": 14.69,
-        "risePct": 84.2,
+        "risePct": 0,
         "flowIn": 124.76,
         "flowOut": 120.98,
         "inflow": 3.78,
@@ -12595,11 +12595,11 @@
         "change": 3.34,
         "indexPrice": 5838.2,
         "stockCount": 35,
-        "riseCount": 32,
-        "fallCount": 3,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "中恒电气",
         "leaderChange": 10.02,
-        "risePct": 91.4,
+        "risePct": 0,
         "flowIn": 60.11,
         "flowOut": 56.74,
         "inflow": 3.38,
@@ -12650,11 +12650,11 @@
         "change": 3.54,
         "indexPrice": 27216.0,
         "stockCount": 16,
-        "riseCount": 12,
-        "fallCount": 3,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "联瑞新材",
         "leaderChange": 10.96,
-        "risePct": 80.0,
+        "risePct": 0,
         "flowIn": 12.8,
         "flowOut": 10.04,
         "inflow": 2.76,
@@ -12705,11 +12705,11 @@
         "change": 3.03,
         "indexPrice": 13192.5,
         "stockCount": 34,
-        "riseCount": 30,
-        "fallCount": 3,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "铂科新材",
         "leaderChange": 11.2,
-        "risePct": 90.9,
+        "risePct": 0,
         "flowIn": 25.96,
         "flowOut": 23.23,
         "inflow": 2.73,
@@ -12760,11 +12760,11 @@
         "change": 4.23,
         "indexPrice": 8639.59,
         "stockCount": 20,
-        "riseCount": 18,
-        "fallCount": 1,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "行云科技",
         "leaderChange": 20.01,
-        "risePct": 94.7,
+        "risePct": 0,
         "flowIn": 36.38,
         "flowOut": 33.66,
         "inflow": 2.72,
@@ -12815,11 +12815,11 @@
         "change": 1.25,
         "indexPrice": 3269.93,
         "stockCount": 26,
-        "riseCount": 19,
-        "fallCount": 6,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "华瑞股份",
         "leaderChange": 6.27,
-        "risePct": 76.0,
+        "risePct": 0,
         "flowIn": 25.2,
         "flowOut": 22.81,
         "inflow": 2.39,
@@ -12874,11 +12874,11 @@
         "change": 1.93,
         "indexPrice": 4172.72,
         "stockCount": 46,
-        "riseCount": 32,
-        "fallCount": 13,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "美盈森",
         "leaderChange": 10.09,
-        "risePct": 71.1,
+        "risePct": 0,
         "flowIn": 19.44,
         "flowOut": 17.11,
         "inflow": 2.33,
@@ -12929,11 +12929,11 @@
         "change": 2.35,
         "indexPrice": 1312.84,
         "stockCount": 30,
-        "riseCount": 22,
-        "fallCount": 7,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "神雾节能",
         "leaderChange": 10.08,
-        "risePct": 75.9,
+        "risePct": 0,
         "flowIn": 20.39,
         "flowOut": 18.2,
         "inflow": 2.19,
@@ -12984,11 +12984,11 @@
         "change": 3.28,
         "indexPrice": 4133.85,
         "stockCount": 15,
-        "riseCount": 11,
-        "fallCount": 4,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "传智教育",
         "leaderChange": 10.01,
-        "risePct": 73.3,
+        "risePct": 0,
         "flowIn": 12.37,
         "flowOut": 11.13,
         "inflow": 1.24,
@@ -13039,11 +13039,11 @@
         "change": 0.95,
         "indexPrice": 3916.3,
         "stockCount": 111,
-        "riseCount": 62,
-        "fallCount": 45,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "金达莱",
         "leaderChange": 15.25,
-        "risePct": 57.9,
+        "risePct": 0,
         "flowIn": 37.92,
         "flowOut": 37.25,
         "inflow": 0.67,
@@ -13098,11 +13098,11 @@
         "change": 1.7,
         "indexPrice": 3959.72,
         "stockCount": 9,
-        "riseCount": 7,
-        "fallCount": 2,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "九联科技",
         "leaderChange": 5.42,
-        "risePct": 77.8,
+        "risePct": 0,
         "flowIn": 6.09,
         "flowOut": 5.72,
         "inflow": 0.37,
@@ -13153,11 +13153,11 @@
         "change": 0.8,
         "indexPrice": 12457.3,
         "stockCount": 22,
-        "riseCount": 11,
-        "fallCount": 10,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "彤程新材",
         "leaderChange": 5.97,
-        "risePct": 52.4,
+        "risePct": 0,
         "flowIn": 6.01,
         "flowOut": 5.87,
         "inflow": 0.14,
@@ -13208,11 +13208,11 @@
         "change": 0.27,
         "indexPrice": 2035.74,
         "stockCount": 24,
-        "riseCount": 9,
-        "fallCount": 15,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "凯恩股份",
         "leaderChange": 5.61,
-        "risePct": 37.5,
+        "risePct": 0,
         "flowIn": 9.32,
         "flowOut": 9.46,
         "inflow": -0.14,
@@ -13263,11 +13263,11 @@
         "change": 2.9,
         "indexPrice": 5751.87,
         "stockCount": 55,
-        "riseCount": 43,
-        "fallCount": 12,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "义翘神州",
         "leaderChange": 20.0,
-        "risePct": 78.2,
+        "risePct": 0,
         "flowIn": 32.36,
         "flowOut": 32.57,
         "inflow": -0.21,
@@ -13318,11 +13318,11 @@
         "change": 0.91,
         "indexPrice": 5628.23,
         "stockCount": 9,
-        "riseCount": 3,
-        "fallCount": 5,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "亿田智能",
         "leaderChange": 7.8,
-        "risePct": 37.5,
+        "risePct": 0,
         "flowIn": 2.11,
         "flowOut": 2.4,
         "inflow": -0.29,
@@ -13373,11 +13373,11 @@
         "change": 0.78,
         "indexPrice": 2214.02,
         "stockCount": 33,
-        "riseCount": 17,
-        "fallCount": 16,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "兴业科技",
         "leaderChange": 10.02,
-        "risePct": 51.5,
+        "risePct": 0,
         "flowIn": 11.32,
         "flowOut": 11.68,
         "inflow": -0.36,
@@ -13428,11 +13428,11 @@
         "change": 0.52,
         "indexPrice": 3966.71,
         "stockCount": 26,
-        "riseCount": 14,
-        "fallCount": 12,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "富佳股份",
         "leaderChange": 5.72,
-        "risePct": 53.8,
+        "risePct": 0,
         "flowIn": 4.56,
         "flowOut": 5.36,
         "inflow": -0.81,
@@ -13483,11 +13483,11 @@
         "change": -0.16,
         "indexPrice": 2480.95,
         "stockCount": 14,
-        "riseCount": 6,
-        "fallCount": 8,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "凯瑞德",
         "leaderChange": 3.29,
-        "risePct": 42.9,
+        "risePct": 0,
         "flowIn": 2.42,
         "flowOut": 3.27,
         "inflow": -0.85,
@@ -13538,11 +13538,11 @@
         "change": 0.25,
         "indexPrice": 4503.44,
         "stockCount": 32,
-        "riseCount": 15,
-        "fallCount": 15,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "百洋医药",
         "leaderChange": 4.61,
-        "risePct": 50.0,
+        "risePct": 0,
         "flowIn": 9.8,
         "flowOut": 10.96,
         "inflow": -1.16,
@@ -13593,11 +13593,11 @@
         "change": 0.12,
         "indexPrice": 1075.69,
         "stockCount": 25,
-        "riseCount": 8,
-        "fallCount": 16,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "阿尔特",
         "leaderChange": 9.06,
-        "risePct": 33.3,
+        "risePct": 0,
         "flowIn": 7.97,
         "flowOut": 9.27,
         "inflow": -1.3,
@@ -13648,11 +13648,11 @@
         "change": 1.59,
         "indexPrice": 6826.19,
         "stockCount": 180,
-        "riseCount": 130,
-        "fallCount": 44,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "杭华股份",
         "leaderChange": 14.36,
-        "risePct": 74.7,
+        "risePct": 0,
         "flowIn": 109.88,
         "flowOut": 111.24,
         "inflow": -1.36,
@@ -13703,11 +13703,11 @@
         "change": 2.03,
         "indexPrice": 6427.61,
         "stockCount": 140,
-        "riseCount": 109,
-        "fallCount": 27,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "顺钠股份",
         "leaderChange": 10.04,
-        "risePct": 80.1,
+        "risePct": 0,
         "flowIn": 146.36,
         "flowOut": 147.74,
         "inflow": -1.38,
@@ -13758,11 +13758,11 @@
         "change": 0.55,
         "indexPrice": 2189.82,
         "stockCount": 18,
-        "riseCount": 6,
-        "fallCount": 11,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "东阳光",
         "leaderChange": 9.99,
-        "risePct": 35.3,
+        "risePct": 0,
         "flowIn": 19.42,
         "flowOut": 20.84,
         "inflow": -1.42,
@@ -13813,11 +13813,11 @@
         "change": 1.89,
         "indexPrice": 18604.9,
         "stockCount": 84,
-        "riseCount": 27,
-        "fallCount": 14,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "零点有数",
         "leaderChange": 13.99,
-        "risePct": 65.9,
+        "risePct": 0,
         "flowIn": 14.04,
         "flowOut": 15.54,
         "inflow": -1.5,
@@ -13868,11 +13868,11 @@
         "change": 0.69,
         "indexPrice": 4307.47,
         "stockCount": 31,
-        "riseCount": 16,
-        "fallCount": 14,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "飞沃科技",
         "leaderChange": 6.43,
-        "risePct": 53.3,
+        "risePct": 0,
         "flowIn": 26.46,
         "flowOut": 28.45,
         "inflow": -1.99,
@@ -13923,11 +13923,11 @@
         "change": -0.36,
         "indexPrice": 3918.8,
         "stockCount": 30,
-        "riseCount": 10,
-        "fallCount": 20,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "平潭发展",
         "leaderChange": 3.71,
-        "risePct": 33.3,
+        "risePct": 0,
         "flowIn": 11.36,
         "flowOut": 13.41,
         "inflow": -2.05,
@@ -13978,11 +13978,11 @@
         "change": -0.21,
         "indexPrice": 4700.78,
         "stockCount": 61,
-        "riseCount": 24,
-        "fallCount": 34,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "联化科技",
         "leaderChange": 5.77,
-        "risePct": 41.4,
+        "risePct": 0,
         "flowIn": 40.76,
         "flowOut": 42.98,
         "inflow": -2.22,
@@ -14033,11 +14033,11 @@
         "change": 1.42,
         "indexPrice": 3745.81,
         "stockCount": 99,
-        "riseCount": 55,
-        "fallCount": 40,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "森鹰窗业",
         "leaderChange": 20.02,
-        "risePct": 57.9,
+        "risePct": 0,
         "flowIn": 16.74,
         "flowOut": 18.97,
         "inflow": -2.23,
@@ -14088,11 +14088,11 @@
         "change": 0.2,
         "indexPrice": 1686.19,
         "stockCount": 19,
-        "riseCount": 10,
-        "fallCount": 9,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "潜能恒信",
         "leaderChange": 5.55,
-        "risePct": 52.6,
+        "risePct": 0,
         "flowIn": 19.7,
         "flowOut": 22.03,
         "inflow": -2.33,
@@ -14143,11 +14143,11 @@
         "change": 1.33,
         "indexPrice": 10608.5,
         "stockCount": 140,
-        "riseCount": 97,
-        "fallCount": 39,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "济民健康",
         "leaderChange": 10.03,
-        "risePct": 71.3,
+        "risePct": 0,
         "flowIn": 53.76,
         "flowOut": 56.28,
         "inflow": -2.52,
@@ -14198,11 +14198,11 @@
         "change": 5.54,
         "indexPrice": 18015.4,
         "stockCount": 56,
-        "riseCount": 48,
-        "fallCount": 6,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "成都先导",
         "leaderChange": 14.68,
-        "risePct": 88.9,
+        "risePct": 0,
         "flowIn": 123.7,
         "flowOut": 126.22,
         "inflow": -2.52,
@@ -14253,11 +14253,11 @@
         "change": -0.6,
         "indexPrice": 4584.34,
         "stockCount": 66,
-        "riseCount": 20,
-        "fallCount": 46,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "莲花控股",
         "leaderChange": 10.05,
-        "risePct": 30.3,
+        "risePct": 0,
         "flowIn": 26.7,
         "flowOut": 29.31,
         "inflow": -2.6,
@@ -14308,11 +14308,11 @@
         "change": 0.28,
         "indexPrice": 4791.29,
         "stockCount": 33,
-        "riseCount": 18,
-        "fallCount": 13,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "维琪科技",
         "leaderChange": 7.6,
-        "risePct": 58.1,
+        "risePct": 0,
         "flowIn": 10.16,
         "flowOut": 12.78,
         "inflow": -2.62,
@@ -14363,11 +14363,11 @@
         "change": -0.79,
         "indexPrice": 2702.33,
         "stockCount": 35,
-        "riseCount": 9,
-        "fallCount": 25,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "君亭酒店",
         "leaderChange": 1.1,
-        "risePct": 26.5,
+        "risePct": 0,
         "flowIn": 7.37,
         "flowOut": 10.04,
         "inflow": -2.67,
@@ -14418,11 +14418,11 @@
         "change": 0.02,
         "indexPrice": 2782.54,
         "stockCount": 34,
-        "riseCount": 17,
-        "fallCount": 17,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "新大洲A",
         "leaderChange": 3.72,
-        "risePct": 50.0,
+        "risePct": 0,
         "flowIn": 33.8,
         "flowOut": 36.47,
         "inflow": -2.68,
@@ -14473,11 +14473,11 @@
         "change": 0.5,
         "indexPrice": 2756.42,
         "stockCount": 75,
-        "riseCount": 41,
-        "fallCount": 32,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "中胤时尚",
         "leaderChange": 7.89,
-        "risePct": 56.2,
+        "risePct": 0,
         "flowIn": 17.67,
         "flowOut": 20.39,
         "inflow": -2.72,
@@ -14528,11 +14528,11 @@
         "change": 0.6,
         "indexPrice": 3084.63,
         "stockCount": 59,
-        "riseCount": 24,
-        "fallCount": 33,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "三孚股份",
         "leaderChange": 10.0,
-        "risePct": 42.1,
+        "risePct": 0,
         "flowIn": 31.94,
         "flowOut": 34.77,
         "inflow": -2.83,
@@ -14583,11 +14583,11 @@
         "change": 0.64,
         "indexPrice": 1807.21,
         "stockCount": 27,
-        "riseCount": 12,
-        "fallCount": 15,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "胜通能源",
         "leaderChange": 10.0,
-        "risePct": 44.4,
+        "risePct": 0,
         "flowIn": 7.46,
         "flowOut": 10.41,
         "inflow": -2.95,
@@ -14638,11 +14638,11 @@
         "change": 1.08,
         "indexPrice": 7157.63,
         "stockCount": 72,
-        "riseCount": 42,
-        "fallCount": 28,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "帝尔激光",
         "leaderChange": 10.37,
-        "risePct": 60.0,
+        "risePct": 0,
         "flowIn": 78.38,
         "flowOut": 81.45,
         "inflow": -3.08,
@@ -14693,11 +14693,11 @@
         "change": 1.23,
         "indexPrice": 2068.25,
         "stockCount": 82,
-        "riseCount": 53,
-        "fallCount": 28,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "迈信林",
         "leaderChange": 8.13,
-        "risePct": 65.4,
+        "risePct": 0,
         "flowIn": 83.9,
         "flowOut": 87.1,
         "inflow": -3.2,
@@ -14748,11 +14748,11 @@
         "change": -0.41,
         "indexPrice": 5012.22,
         "stockCount": 50,
-        "riseCount": 15,
-        "fallCount": 32,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "原尚股份",
         "leaderChange": 6.18,
-        "risePct": 31.9,
+        "risePct": 0,
         "flowIn": 12.78,
         "flowOut": 16.02,
         "inflow": -3.25,
@@ -14803,11 +14803,11 @@
         "change": -0.46,
         "indexPrice": 1077.46,
         "stockCount": 26,
-        "riseCount": 5,
-        "fallCount": 20,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "四川双马",
         "leaderChange": 4.04,
-        "risePct": 20.0,
+        "risePct": 0,
         "flowIn": 11.89,
         "flowOut": 15.25,
         "inflow": -3.36,
@@ -14858,11 +14858,11 @@
         "change": -0.38,
         "indexPrice": 3459.67,
         "stockCount": 43,
-        "riseCount": 14,
-        "fallCount": 27,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "路德科技",
         "leaderChange": 3.66,
-        "risePct": 34.1,
+        "risePct": 0,
         "flowIn": 10.54,
         "flowOut": 13.92,
         "inflow": -3.38,
@@ -14913,11 +14913,11 @@
         "change": 0.1,
         "indexPrice": 3571.28,
         "stockCount": 29,
-        "riseCount": 11,
-        "fallCount": 17,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "恒申新材",
         "leaderChange": 4.04,
-        "risePct": 39.3,
+        "risePct": 0,
         "flowIn": 12.56,
         "flowOut": 16.67,
         "inflow": -4.11,
@@ -14968,11 +14968,11 @@
         "change": 0.61,
         "indexPrice": 3130.02,
         "stockCount": 68,
-        "riseCount": 32,
-        "fallCount": 33,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "珍宝岛",
         "leaderChange": 10.07,
-        "risePct": 49.2,
+        "risePct": 0,
         "flowIn": 29.51,
         "flowOut": 33.71,
         "inflow": -4.2,
@@ -15023,11 +15023,11 @@
         "change": 0.73,
         "indexPrice": 4916.63,
         "stockCount": 14,
-        "riseCount": 8,
-        "fallCount": 6,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "兴业银锡",
         "leaderChange": 6.29,
-        "risePct": 57.1,
+        "risePct": 0,
         "flowIn": 71.56,
         "flowOut": 75.78,
         "inflow": -4.22,
@@ -15078,11 +15078,11 @@
         "change": 1.95,
         "indexPrice": 7661.02,
         "stockCount": 44,
-        "riseCount": 30,
-        "fallCount": 13,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "禾盛新材",
         "leaderChange": 8.51,
-        "risePct": 69.8,
+        "risePct": 0,
         "flowIn": 46.35,
         "flowOut": 50.78,
         "inflow": -4.44,
@@ -15133,11 +15133,11 @@
         "change": -0.01,
         "indexPrice": 964.641,
         "stockCount": 30,
-        "riseCount": 11,
-        "fallCount": 17,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "工大高科",
         "leaderChange": 4.54,
-        "risePct": 39.3,
+        "risePct": 0,
         "flowIn": 6.78,
         "flowOut": 11.46,
         "inflow": -4.68,
@@ -15192,11 +15192,11 @@
         "change": -1.6,
         "indexPrice": 1299.01,
         "stockCount": 32,
-        "riseCount": 1,
-        "fallCount": 30,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "大众交通",
         "leaderChange": 0.95,
-        "risePct": 3.2,
+        "risePct": 0,
         "flowIn": 9.73,
         "flowOut": 15.66,
         "inflow": -5.93,
@@ -15252,10 +15252,10 @@
         "indexPrice": 1826.25,
         "stockCount": 13,
         "riseCount": 0,
-        "fallCount": 13,
+        "fallCount": 0,
         "leader": "海南机场",
         "leaderChange": -0.67,
-        "risePct": 0.0,
+        "risePct": 0,
         "flowIn": 8.06,
         "flowOut": 15.03,
         "inflow": -6.98,
@@ -15310,11 +15310,11 @@
         "change": -1.19,
         "indexPrice": 1212.62,
         "stockCount": 36,
-        "riseCount": 6,
-        "fallCount": 30,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "海航科技",
         "leaderChange": 2.51,
-        "risePct": 16.7,
+        "risePct": 0,
         "flowIn": 26.44,
         "flowOut": 33.86,
         "inflow": -7.42,
@@ -15365,11 +15365,11 @@
         "change": -1.04,
         "indexPrice": 1526.54,
         "stockCount": 44,
-        "riseCount": 7,
-        "fallCount": 36,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "杭钢股份",
         "leaderChange": 3.09,
-        "risePct": 16.3,
+        "risePct": 0,
         "flowIn": 22.75,
         "flowOut": 30.27,
         "inflow": -7.52,
@@ -15420,11 +15420,11 @@
         "change": 0.09,
         "indexPrice": 2707.79,
         "stockCount": 36,
-        "riseCount": 12,
-        "fallCount": 22,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "京基智农",
         "leaderChange": 9.99,
-        "risePct": 35.3,
+        "risePct": 0,
         "flowIn": 17.01,
         "flowOut": 24.59,
         "inflow": -7.58,
@@ -15475,11 +15475,11 @@
         "change": -0.12,
         "indexPrice": 4775.88,
         "stockCount": 47,
-        "riseCount": 18,
-        "fallCount": 29,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "皇氏集团",
         "leaderChange": 6.43,
-        "risePct": 38.3,
+        "risePct": 0,
         "flowIn": 26.22,
         "flowOut": 33.94,
         "inflow": -7.72,
@@ -15530,11 +15530,11 @@
         "change": 0.32,
         "indexPrice": 3015.51,
         "stockCount": 36,
-        "riseCount": 18,
-        "fallCount": 18,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "厦工股份",
         "leaderChange": 9.06,
-        "risePct": 50.0,
+        "risePct": 0,
         "flowIn": 23.48,
         "flowOut": 31.59,
         "inflow": -8.11,
@@ -15585,11 +15585,11 @@
         "change": 0.19,
         "indexPrice": 3372.27,
         "stockCount": 27,
-        "riseCount": 10,
-        "fallCount": 16,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "康普顿",
         "leaderChange": 6.35,
-        "risePct": 38.5,
+        "risePct": 0,
         "flowIn": 15.41,
         "flowOut": 24.1,
         "inflow": -8.7,
@@ -15640,11 +15640,11 @@
         "change": -0.01,
         "indexPrice": 1801.82,
         "stockCount": 71,
-        "riseCount": 30,
-        "fallCount": 37,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "南宁百货",
         "leaderChange": 9.96,
-        "risePct": 44.8,
+        "risePct": 0,
         "flowIn": 32.83,
         "flowOut": 42.8,
         "inflow": -9.97,
@@ -15695,11 +15695,11 @@
         "change": -0.03,
         "indexPrice": 1623.48,
         "stockCount": 88,
-        "riseCount": 28,
-        "fallCount": 46,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "*ST中迪",
         "leaderChange": 10.04,
-        "risePct": 37.8,
+        "risePct": 0,
         "flowIn": 38.61,
         "flowOut": 49.86,
         "inflow": -11.26,
@@ -15750,11 +15750,11 @@
         "change": 1.3,
         "indexPrice": 3941.53,
         "stockCount": 143,
-        "riseCount": 81,
-        "fallCount": 55,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "蕾奥规划",
         "leaderChange": 18.85,
-        "risePct": 59.6,
+        "risePct": 0,
         "flowIn": 80.59,
         "flowOut": 96.66,
         "inflow": -16.07,
@@ -15805,11 +15805,11 @@
         "change": -1.34,
         "indexPrice": 2062.02,
         "stockCount": 19,
-        "riseCount": 1,
-        "fallCount": 18,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "皇台酒业",
         "leaderChange": 0.57,
-        "risePct": 5.3,
+        "risePct": 0,
         "flowIn": 41.94,
         "flowOut": 60.94,
         "inflow": -19.0,
@@ -15860,11 +15860,11 @@
         "change": 0.04,
         "indexPrice": 1474.64,
         "stockCount": 50,
-        "riseCount": 21,
-        "fallCount": 27,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "湘财股份",
         "leaderChange": 2.84,
-        "risePct": 43.8,
+        "risePct": 0,
         "flowIn": 81.47,
         "flowOut": 103.57,
         "inflow": -22.09,
@@ -15916,10 +15916,10 @@
         "indexPrice": 2019.07,
         "stockCount": 5,
         "riseCount": 0,
-        "fallCount": 5,
+        "fallCount": 0,
         "leader": "新华保险",
         "leaderChange": -0.92,
-        "risePct": 0.0,
+        "risePct": 0,
         "flowIn": 26.65,
         "flowOut": 53.13,
         "inflow": -26.48,
@@ -15974,11 +15974,11 @@
         "change": -1.69,
         "indexPrice": 2638.83,
         "stockCount": 23,
-        "riseCount": 4,
-        "fallCount": 19,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "千里科技",
         "leaderChange": 1.28,
-        "risePct": 17.4,
+        "risePct": 0,
         "flowIn": 45.97,
         "flowOut": 73.77,
         "inflow": -27.8,
@@ -16033,11 +16033,11 @@
         "change": 0.2,
         "indexPrice": 1973.08,
         "stockCount": 110,
-        "riseCount": 43,
-        "fallCount": 60,
+        "riseCount": 0,
+        "fallCount": 0,
         "leader": "新能股份",
         "leaderChange": 10.07,
-        "risePct": 41.7,
+        "risePct": 0,
         "flowIn": 131.62,
         "flowOut": 164.39,
         "inflow": -32.77,
@@ -16089,10 +16089,10 @@
         "indexPrice": 1343.85,
         "stockCount": 84,
         "riseCount": 0,
-        "fallCount": 42,
+        "fallCount": 0,
         "leader": "平安银行",
         "leaderChange": -1.55,
-        "risePct": 0.0,
+        "risePct": 0,
         "flowIn": 103.79,
         "flowOut": 173.92,
         "inflow": -70.13,
@@ -16178,7 +16178,54 @@
       "totalFlowIn": 7721.83,
       "totalFlowOut": 8185.74,
       "netFlow": -463.93,
-      "avgChange": -1.23
+      "avgChange": -1.23,
+      "indices": [
+        {
+          "name": "上证指数",
+          "value": 3804.69,
+          "change": -0.62,
+          "change_amount": -23.78,
+          "open": 3812.11,
+          "high": 3839.34,
+          "low": 3767.5
+        },
+        {
+          "name": "深证成指",
+          "value": 13285.8,
+          "change": -2.73,
+          "change_amount": -372.64,
+          "open": 13531.07,
+          "high": 13619.03,
+          "low": 13068.56
+        },
+        {
+          "name": "创业板指",
+          "value": 3244.62,
+          "change": -3.97,
+          "change_amount": -134.08,
+          "open": 3331.32,
+          "high": 3353.81,
+          "low": 3158.14
+        },
+        {
+          "name": "科创50",
+          "value": 1588.41,
+          "change": -5.38,
+          "change_amount": -90.32,
+          "open": 1653.47,
+          "high": 1671.51,
+          "low": 1562.0
+        },
+        {
+          "name": "北证50",
+          "value": 1049.07,
+          "change": -1.43,
+          "change_amount": -15.22,
+          "open": 1059.75,
+          "high": 1076.02,
+          "low": 1047.76
+        }
+      ]
     },
     "2026-07-31": {
       "totalStocks": 5619,
@@ -16192,7 +16239,54 @@
       "totalFlowIn": 8855.6,
       "totalFlowOut": 8682.02,
       "netFlow": 173.49,
-      "avgChange": 2.2
+      "avgChange": 2.2,
+      "indices": [
+        {
+          "name": "上证指数",
+          "value": 3832.26,
+          "change": 0.72,
+          "change_amount": 27.57,
+          "open": 3833.54,
+          "high": 3847.09,
+          "low": 3822.37
+        },
+        {
+          "name": "深证成指",
+          "value": 13578.93,
+          "change": 2.21,
+          "change_amount": 293.13,
+          "open": 13690.0,
+          "high": 13841.96,
+          "low": 13578.93
+        },
+        {
+          "name": "创业板指",
+          "value": 3343.96,
+          "change": 3.06,
+          "change_amount": 99.35,
+          "open": 3411.61,
+          "high": 3464.9,
+          "low": 3343.96
+        },
+        {
+          "name": "科创50",
+          "value": 1635.96,
+          "change": 2.99,
+          "change_amount": 47.55,
+          "open": 1721.36,
+          "high": 1731.21,
+          "low": 1635.68
+        },
+        {
+          "name": "北证50",
+          "value": 1083.27,
+          "change": 3.26,
+          "change_amount": 34.2,
+          "open": 1078.51,
+          "high": 1092.99,
+          "low": 1073.72
+        }
+      ]
     },
     "2026-08-03": {
       "totalStocks": 5620,
@@ -16206,308 +16300,519 @@
       "totalFlowIn": 6442.95,
       "totalFlowOut": 6701.11,
       "netFlow": -258.11,
-      "avgChange": 1.14
+      "avgChange": 1.14,
+      "indices": [
+        {
+          "name": "上证指数",
+          "value": 3809.66,
+          "change": -0.59,
+          "change_amount": -22.6,
+          "open": 3812.61,
+          "high": 3827.64,
+          "low": 3797.64
+        },
+        {
+          "name": "深证成指",
+          "value": 13448.29,
+          "change": -0.96,
+          "change_amount": -130.64,
+          "open": 13497.1,
+          "high": 13570.51,
+          "low": 13407.99
+        },
+        {
+          "name": "创业板指",
+          "value": 3302.55,
+          "change": -1.24,
+          "change_amount": -41.41,
+          "open": 3320.09,
+          "high": 3342.17,
+          "low": 3280.84
+        },
+        {
+          "name": "科创50",
+          "value": 1552.89,
+          "change": -5.08,
+          "change_amount": -83.07,
+          "open": 1619.29,
+          "high": 1621.99,
+          "low": 1549.74
+        },
+        {
+          "name": "北证50",
+          "value": 1076.07,
+          "change": -0.66,
+          "change_amount": -7.2,
+          "open": 1073.33,
+          "high": 1087.68,
+          "low": 1072.02
+        }
+      ]
     },
     "2026-08-04": {
       "totalStocks": 5621,
-      "totalRise": 3642,
-      "totalFall": 1747,
-      "risePct": 67.6,
+      "totalRise": 4804,
+      "totalFall": 817,
+      "risePct": 85.5,
       "sectorUp": 70,
       "sectorDown": 20,
       "topSector": "元件",
       "topSectorChange": 7.07,
-      "totalFlowIn": 7799.25,
-      "totalFlowOut": 7281.65,
-      "netFlow": 517.56,
-      "avgChange": 1.43
+      "totalFlowIn": 896.7,
+      "totalFlowOut": 379.2,
+      "netFlow": 517.6,
+      "avgChange": 1.43,
+      "indices": [
+        {
+          "name": "上证指数",
+          "value": 3822.28,
+          "change": 0.33,
+          "change_amount": 12.62,
+          "open": 3816.37,
+          "high": 3831.94,
+          "low": 3799.52
+        },
+        {
+          "name": "深证成指",
+          "value": 13885.71,
+          "change": 3.25,
+          "change_amount": 437.42,
+          "open": 13572.95,
+          "high": 13936.52,
+          "low": 13537.76
+        },
+        {
+          "name": "创业板指",
+          "value": 3488.97,
+          "change": 5.64,
+          "change_amount": 186.41,
+          "open": 3353.51,
+          "high": 3510.51,
+          "low": 3342.41
+        },
+        {
+          "name": "科创50",
+          "value": 1616.36,
+          "change": 4.09,
+          "change_amount": 63.47,
+          "open": 1569.62,
+          "high": 1631.01,
+          "low": 1556.11
+        },
+        {
+          "name": "北证50",
+          "value": 1093.49,
+          "change": 1.62,
+          "change_amount": 17.42,
+          "open": 1083.15,
+          "high": 1095.83,
+          "low": 1080.76
+        }
+      ],
+      "updateTime": "21:29",
+      "ztCount": 138,
+      "dtCount": 0,
+      "zbCount": 15,
+      "zbRate": 9.8,
+      "emotionScore": 92,
+      "emotionStage": "🔥",
+      "maxBoard": 7,
+      "maxBoardName": "传智教育",
+      "ladder": "7板×1→4板×1→3板×6→2板×11",
+      "ladderDetail": {
+        "7": [
+          "传智教育"
+        ],
+        "4": [
+          "神雾节能"
+        ],
+        "3": [
+          "德龙汇能",
+          "恒银科技",
+          "新能股份",
+          "美利云",
+          "豪尔赛",
+          "天娱数科"
+        ],
+        "2": [
+          "欣天科技",
+          "利柏特",
+          "济民健康",
+          "风范股份",
+          "通宇通讯",
+          "胜通能源",
+          "达实智能",
+          "中国科传",
+          "顺钠股份"
+        ]
+      }
     }
   },
   "signals": {
     "2026-07-30": {
       "mainLine": [
         {
-          "name": "银行",
-          "change": 2.43,
-          "inflow": 108.52,
-          "risePct": 100.0,
-          "stars": 5,
-          "verdict": "真热·普涨",
-          "leader_stock": "浦发银行",
-          "leader_change_pct": 4.6
-        },
-        {
           "name": "白酒",
           "change": 4.48,
           "inflow": 25.57,
           "risePct": 100.0,
-          "stars": 5,
-          "verdict": "真热·普涨",
-          "leader_stock": "金徽酒",
-          "leader_change_pct": 10.0
+          "stars": 5
+        },
+        {
+          "name": "厨卫电器",
+          "change": 3.92,
+          "inflow": 0.55,
+          "risePct": 77.8,
+          "stars": 3
+        },
+        {
+          "name": "汽车整车",
+          "change": 2.85,
+          "inflow": 11.34,
+          "risePct": 95.5,
+          "stars": 4
+        },
+        {
+          "name": "油气开采及服务",
+          "change": 2.6,
+          "inflow": 1.59,
+          "risePct": 83.3,
+          "stars": 3
+        },
+        {
+          "name": "银行",
+          "change": 2.43,
+          "inflow": 108.52,
+          "risePct": 100.0,
+          "stars": 4
+        },
+        {
+          "name": "保险",
+          "change": 1.57,
+          "inflow": 17.12,
+          "risePct": 80.0,
+          "stars": 3
+        },
+        {
+          "name": "机场航运",
+          "change": 1.02,
+          "inflow": 1.26,
+          "risePct": 90.9,
+          "stars": 2
         }
       ],
-      "latent": [],
-      "disaster": [
-        {
-          "name": "光学光电子",
-          "change": -4.44,
-          "inflow": -68.7,
-          "fallPct": 93.4,
-          "stars": "⭐",
-          "verdict": "真崩·普跌"
-        },
-        {
-          "name": "消费电子",
-          "change": -4.25,
-          "inflow": -54.7,
-          "fallPct": 86.5,
-          "stars": "⭐",
-          "verdict": "真崩·普跌"
-        },
-        {
-          "name": "半导体",
-          "change": -7.08,
-          "inflow": -44.45,
-          "fallPct": 96.2,
-          "stars": "⭐",
-          "verdict": "真崩·普跌"
-        },
-        {
-          "name": "电力",
-          "change": -1.44,
-          "inflow": -44.05,
-          "fallPct": 69.1,
-          "stars": "⭐⭐",
-          "verdict": "普跌"
-        },
-        {
-          "name": "计算机设备",
-          "change": -2.38,
-          "inflow": -27.04,
-          "fallPct": 79.0,
-          "stars": "⭐⭐",
-          "verdict": "普跌"
-        }
-      ],
-      "risk": [
+      "latent": [
         {
           "name": "电池",
           "change": -1.96,
           "inflow": 17.44,
-          "signal": "压盘吸筹嫌疑"
+          "tag": "压盘吸筹"
         },
         {
           "name": "白色家电",
           "change": -1.79,
           "inflow": 11.55,
-          "signal": "压盘吸筹嫌疑"
+          "tag": "压盘吸筹"
         },
         {
           "name": "石油加工贸易",
           "change": -0.62,
           "inflow": 9.32,
-          "signal": "压盘吸筹嫌疑"
+          "tag": "逆势吸筹"
         },
         {
-          "name": "证券",
-          "change": 0.36,
-          "inflow": -5.6,
-          "signal": "诱多嫌疑"
+          "name": "港口航运",
+          "change": 0.84,
+          "inflow": 7.04,
+          "tag": "温和蓄力"
         },
         {
-          "name": "旅游及酒店",
-          "change": 0.52,
-          "inflow": -2.0,
-          "signal": "诱多嫌疑"
+          "name": "公路铁路运输",
+          "change": 0.5,
+          "inflow": 4.82,
+          "tag": "温和蓄力"
         }
-      ]
+      ],
+      "disaster": [
+        {
+          "name": "光学光电子",
+          "change": -4.44,
+          "inflow": -68.7,
+          "fallPct": 93.4
+        },
+        {
+          "name": "消费电子",
+          "change": -4.25,
+          "inflow": -54.7,
+          "fallPct": 86.5
+        },
+        {
+          "name": "半导体",
+          "change": -7.08,
+          "inflow": -44.45,
+          "fallPct": 96.2
+        },
+        {
+          "name": "电网设备",
+          "change": -2.46,
+          "inflow": -26.64,
+          "fallPct": 80.7
+        },
+        {
+          "name": "小金属",
+          "change": -2.98,
+          "inflow": -26.27,
+          "fallPct": 89.7
+        }
+      ],
+      "risk": []
     },
     "2026-07-31": {
       "mainLine": [
+        {
+          "name": "IT服务",
+          "change": 6.29,
+          "inflow": 50.86,
+          "risePct": 97.7,
+          "stars": 5
+        },
         {
           "name": "软件开发",
           "change": 6.15,
           "inflow": 82.51,
           "risePct": 100.0,
-          "stars": 5,
-          "verdict": "真热·普涨",
-          "leader_stock": "福昕软件",
-          "leader_change_pct": 20.0
+          "stars": 5
+        },
+        {
+          "name": "自动化设备",
+          "change": 5.34,
+          "inflow": 12.1,
+          "risePct": 97.9,
+          "stars": 3
         },
         {
           "name": "文化传媒",
           "change": 5.28,
           "inflow": 51.87,
           "risePct": 94.0,
-          "stars": 5,
-          "verdict": "真热·普涨",
-          "leader_stock": "中文在线",
-          "leader_change_pct": 20.0
+          "stars": 4
         },
         {
-          "name": "IT服务",
-          "change": 6.29,
-          "inflow": 50.86,
-          "risePct": 97.7,
-          "stars": 5,
-          "verdict": "真热·普涨",
-          "leader_stock": "立方控股",
-          "leader_change_pct": 30.0
+          "name": "影视院线",
+          "change": 4.97,
+          "inflow": 9.41,
+          "risePct": 100.0,
+          "stars": 2
+        },
+        {
+          "name": "计算机设备",
+          "change": 4.6,
+          "inflow": 27.81,
+          "risePct": 100.0,
+          "stars": 3
+        },
+        {
+          "name": "游戏",
+          "change": 4.5,
+          "inflow": 23.46,
+          "risePct": 95.8,
+          "stars": 3
+        },
+        {
+          "name": "通信服务",
+          "change": 4.47,
+          "inflow": 16.95,
+          "risePct": 86.4,
+          "stars": 2
         }
       ],
-      "latent": [],
+      "latent": [
+        {
+          "name": "汽车整车",
+          "change": 0.24,
+          "inflow": 9.06,
+          "tag": "微涨蓄力"
+        },
+        {
+          "name": "港口航运",
+          "change": 0.45,
+          "inflow": 4.3,
+          "tag": "微涨蓄力"
+        },
+        {
+          "name": "机场航运",
+          "change": 0.7,
+          "inflow": 2.97,
+          "tag": "温和蓄力"
+        },
+        {
+          "name": "白酒",
+          "change": 0.63,
+          "inflow": 2.6,
+          "tag": "温和蓄力"
+        },
+        {
+          "name": "煤炭开采加工",
+          "change": 0.82,
+          "inflow": 2.4,
+          "tag": "温和蓄力"
+        }
+      ],
       "disaster": [
-        {
-          "name": "半导体",
-          "change": 4.23,
-          "inflow": -159.81,
-          "fallPct": 4.4,
-          "stars": "⭐⭐⭐",
-          "verdict": "虚跌·少数权重砸盘"
-        },
-        {
-          "name": "元件",
-          "change": 4.33,
-          "inflow": -44.89,
-          "fallPct": 8.1,
-          "stars": "⭐⭐⭐",
-          "verdict": "虚跌·少数权重砸盘"
-        },
-        {
-          "name": "建筑装饰",
-          "change": 2.83,
-          "inflow": -22.04,
-          "fallPct": 9.2,
-          "stars": "⭐⭐⭐",
-          "verdict": "虚跌·少数权重砸盘"
-        },
-        {
-          "name": "电池",
-          "change": 1.66,
-          "inflow": -16.83,
-          "fallPct": 25.7,
-          "stars": "⭐⭐⭐",
-          "verdict": "虚跌·少数权重砸盘"
-        },
         {
           "name": "证券",
           "change": 0.25,
           "inflow": -14.21,
-          "fallPct": 25.5,
-          "stars": "⭐⭐⭐",
-          "verdict": "虚跌·少数权重砸盘"
+          "fallPct": 25.5
+        },
+        {
+          "name": "能源金属",
+          "change": -0.68,
+          "inflow": -6.8,
+          "fallPct": 66.7
+        },
+        {
+          "name": "农化制品",
+          "change": -0.07,
+          "inflow": -6.25,
+          "fallPct": 47.4
+        },
+        {
+          "name": "保险",
+          "change": -0.7,
+          "inflow": -3.35,
+          "fallPct": 80.0
+        },
+        {
+          "name": "油气开采及服务",
+          "change": 0.15,
+          "inflow": -3.0,
+          "fallPct": 50.0
         }
       ],
       "risk": [
         {
-          "name": "半导体",
-          "change": 4.23,
-          "inflow": -159.81,
-          "signal": "诱多嫌疑"
-        },
-        {
           "name": "元件",
           "change": 4.33,
           "inflow": -44.89,
-          "signal": "诱多嫌疑"
+          "tag": "拉高出货"
         },
         {
-          "name": "建筑装饰",
-          "change": 2.83,
-          "inflow": -22.04,
-          "signal": "诱多嫌疑"
+          "name": "半导体",
+          "change": 4.23,
+          "inflow": -159.81,
+          "tag": "拉高出货"
+        },
+        {
+          "name": "环保设备",
+          "change": 3.83,
+          "inflow": -1.94,
+          "tag": "量价背离"
+        },
+        {
+          "name": "消费电子",
+          "change": 3.49,
+          "inflow": -11.13,
+          "tag": "量价背离"
+        },
+        {
+          "name": "电子化学品",
+          "change": 3.41,
+          "inflow": -7.1,
+          "tag": "量价背离"
         }
       ]
     },
     "2026-08-03": {
       "mainLine": [
         {
-          "name": "银行",
-          "change": 0.79,
-          "inflow": 23.38,
-          "risePct": 73.8,
-          "stars": 3,
-          "verdict": "分化",
-          "leader_stock": "瑞丰银行",
-          "leader_change_pct": 3.2
+          "name": "风电设备",
+          "change": 4.06,
+          "inflow": 7.32,
+          "risePct": 96.8,
+          "stars": 5
         },
         {
-          "name": "电力",
-          "change": 2.28,
-          "inflow": 21.61,
+          "name": "电网设备",
+          "change": 3.52,
+          "inflow": 16.73,
+          "risePct": 93.5,
+          "stars": 5
+        },
+        {
+          "name": "种植业与林业",
+          "change": 2.92,
+          "inflow": 4.01,
+          "risePct": 96.7,
+          "stars": 4
+        },
+        {
+          "name": "光伏设备",
+          "change": 2.91,
+          "inflow": 8.74,
+          "risePct": 87.3,
+          "stars": 5
+        },
+        {
+          "name": "通信服务",
+          "change": 2.86,
+          "inflow": 2.13,
           "risePct": 0,
-          "stars": 1,
-          "verdict": "虚火·权重拉的",
-          "leader_stock": "乐山电力",
-          "leader_change_pct": 10.1
+          "stars": 3
         },
         {
-          "name": "通信设备",
-          "change": 1.55,
-          "inflow": 20.26,
-          "risePct": 73.3,
-          "stars": 3,
-          "verdict": "分化",
-          "leader_stock": "欣天科技",
-          "leader_change_pct": 20.0
+          "name": "造纸",
+          "change": 2.79,
+          "inflow": 0.96,
+          "risePct": 95.5,
+          "stars": 2
+        },
+        {
+          "name": "电机",
+          "change": 2.75,
+          "inflow": 0.95,
+          "risePct": 0,
+          "stars": 2
+        },
+        {
+          "name": "轨交设备",
+          "change": 2.71,
+          "inflow": 1.2,
+          "risePct": 93.3,
+          "stars": 2
+        },
+        {
+          "name": "燃气",
+          "change": 2.63,
+          "inflow": 0.71,
+          "risePct": 96.3,
+          "stars": 1
         }
       ],
       "latent": [
         {
+          "name": "银行",
+          "change": 0.79,
+          "inflow": 23.38,
+          "tag": "温和蓄力"
+        },
+        {
+          "name": "能源金属",
+          "change": 0.31,
+          "inflow": 4.72,
+          "tag": "微涨蓄力"
+        },
+        {
           "name": "保险",
-          "change": 0.81,
-          "inflow": 18.24,
-          "score": 3,
-          "reasons": [
-            "涨幅不大",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
-        },
-        {
-          "name": "汽车整车",
-          "change": 3.25,
-          "inflow": 12.28,
-          "score": 3,
-          "reasons": [
-            "涨幅不大",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
-        },
-        {
-          "name": "港口航运",
-          "change": 2.73,
-          "inflow": 15.61,
-          "score": 3,
-          "reasons": [
-            "涨幅不大",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
+          "change": -0.06,
+          "inflow": 4.47,
+          "tag": "逆势吸筹"
         },
         {
           "name": "电池",
-          "change": -1.44,
-          "inflow": 18.79,
-          "score": 3,
-          "reasons": [
-            "涨幅不大",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
-        },
-        {
-          "name": "白色家电",
-          "change": 1.24,
-          "inflow": 22.57,
-          "score": 3,
-          "reasons": [
-            "涨幅不大",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
+          "change": 0.52,
+          "inflow": 1.35,
+          "tag": "温和蓄力"
         }
       ],
       "disaster": [
@@ -16515,69 +16820,34 @@
           "name": "半导体",
           "change": -3.46,
           "inflow": -110.83,
-          "fallPct": 78.6,
-          "stars": "⭐⭐",
-          "verdict": "普跌"
+          "fallPct": 78.6
         },
         {
           "name": "消费电子",
           "change": 0.37,
           "inflow": -25.69,
-          "fallPct": 38.5,
-          "stars": "⭐⭐⭐",
-          "verdict": "虚跌·少数权重砸盘"
-        },
-        {
-          "name": "建筑材料",
-          "change": 1.3,
-          "inflow": -22.54,
-          "fallPct": 23.6,
-          "stars": "⭐⭐⭐",
-          "verdict": "虚跌·少数权重砸盘"
-        },
-        {
-          "name": "IT服务",
-          "change": 0.98,
-          "inflow": -21.02,
-          "fallPct": 30.5,
-          "stars": "⭐⭐⭐",
-          "verdict": "虚跌·少数权重砸盘"
+          "fallPct": 38.5
         },
         {
           "name": "电子化学品",
           "change": -3.63,
           "inflow": -20.06,
-          "fallPct": 83.7,
-          "stars": "⭐⭐",
-          "verdict": "普跌"
+          "fallPct": 83.7
+        },
+        {
+          "name": "证券",
+          "change": 0.23,
+          "inflow": -10.36,
+          "fallPct": 22.9
+        },
+        {
+          "name": "医疗服务",
+          "change": -0.21,
+          "inflow": -8.63,
+          "fallPct": 50.0
         }
       ],
-      "risk": [
-        {
-          "name": "保险",
-          "change": -0.06,
-          "inflow": 4.47,
-          "signal": "压盘吸筹嫌疑"
-        },
-        {
-          "name": "消费电子",
-          "change": 0.37,
-          "inflow": -25.69,
-          "signal": "诱多嫌疑"
-        },
-        {
-          "name": "建筑材料",
-          "change": 1.3,
-          "inflow": -22.54,
-          "signal": "诱多嫌疑"
-        },
-        {
-          "name": "IT服务",
-          "change": 0.98,
-          "inflow": -21.02,
-          "signal": "诱多嫌疑"
-        }
-      ]
+      "risk": []
     },
     "2026-08-04": {
       "mainLine": [
@@ -16585,132 +16855,79 @@
           "name": "半导体",
           "change": 6.01,
           "inflow": 219.35,
-          "risePct": 97.3,
           "stars": 5,
-          "verdict": "真热·普涨",
-          "leader_stock": "和林微纳",
-          "leader_change_pct": 20.0
+          "leader": "和林微纳",
+          "leaderChange": 20.0
         },
         {
           "name": "通信设备",
           "change": 5.4,
           "inflow": 182.8,
-          "risePct": 96.7,
           "stars": 5,
-          "verdict": "真热·普涨",
-          "leader_stock": "蘅东光",
-          "leader_change_pct": 20.8
+          "leader": "蘅东光",
+          "leaderChange": 20.83
         },
         {
           "name": "元件",
           "change": 7.07,
           "inflow": 81.68,
-          "risePct": 100.0,
           "stars": 5,
-          "verdict": "真热·普涨",
-          "leader_stock": "嘉立创",
-          "leader_change_pct": 146.3
+          "leader": "嘉立创",
+          "leaderChange": 146.28
+        },
+        {
+          "name": "消费电子",
+          "change": 3.55,
+          "inflow": 47.95,
+          "stars": 5,
+          "leader": "胜蓝股份",
+          "leaderChange": 17.88
+        },
+        {
+          "name": "光学光电子",
+          "change": 3.62,
+          "inflow": 47.58,
+          "stars": 5,
+          "leader": "光智科技",
+          "leaderChange": 20.0
         }
       ],
-      "latent": [
-        {
-          "name": "汽车零部件",
-          "change": 4.02,
-          "inflow": 14.87,
-          "score": 5,
-          "reasons": [
-            "资金加速流入",
-            "涨幅不大",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
-        },
-        {
-          "name": "通用设备",
-          "change": 4.98,
-          "inflow": 20.48,
-          "score": 5,
-          "reasons": [
-            "资金加速流入",
-            "涨幅不大",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
-        },
-        {
-          "name": "IT服务",
-          "change": 128.93,
-          "inflow": 95.54,
-          "score": 4,
-          "reasons": [
-            "资金加速流入",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
-        },
-        {
-          "name": "元件",
-          "change": 56.36,
-          "inflow": 115.76,
-          "score": 4,
-          "reasons": [
-            "资金加速流入",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
-        },
-        {
-          "name": "其他电子",
-          "change": 2.79,
-          "inflow": 5.24,
-          "score": 4,
-          "reasons": [
-            "资金加速流入",
-            "涨幅不大",
-            "3日累计流入>5亿"
-          ]
-        }
-      ],
+      "latent": [],
       "disaster": [
         {
           "name": "银行",
           "change": -2.69,
           "inflow": -70.13,
-          "fallPct": 100.0,
-          "stars": "⭐",
-          "verdict": "真崩·普跌"
+          "leader": "平安银行",
+          "leaderChange": -1.55
         },
         {
           "name": "电力",
           "change": 0.2,
           "inflow": -32.77,
-          "fallPct": 58.3,
-          "stars": "⭐⭐⭐",
-          "verdict": "虚跌·少数权重砸盘"
+          "leader": "新能股份",
+          "leaderChange": 10.07
         },
         {
           "name": "汽车整车",
           "change": -1.69,
           "inflow": -27.8,
-          "fallPct": 82.6,
-          "stars": "⭐⭐",
-          "verdict": "普跌"
+          "leader": "千里科技",
+          "leaderChange": 1.28
         },
         {
           "name": "保险",
           "change": -2.46,
           "inflow": -26.48,
-          "fallPct": 100.0,
-          "stars": "⭐",
-          "verdict": "真崩·普跌"
+          "leader": "新华保险",
+          "leaderChange": -0.92
         },
         {
           "name": "证券",
           "change": 0.04,
           "inflow": -22.09,
-          "fallPct": 56.2,
-          "stars": "⭐⭐⭐",
-          "verdict": "虚跌·少数权重砸盘"
+          "leader": "湘财股份",
+          "leaderChange": 2.84
         }
       ],
       "risk": [
@@ -16718,21 +16935,94 @@
           "name": "电力",
           "change": 0.2,
           "inflow": -32.77,
-          "signal": "诱多嫌疑"
+          "leader": "新能股份",
+          "leaderChange": 10.07
         },
         {
           "name": "证券",
           "change": 0.04,
           "inflow": -22.09,
-          "signal": "诱多嫌疑"
+          "leader": "湘财股份",
+          "leaderChange": 2.84
         },
         {
           "name": "建筑装饰",
           "change": 1.3,
           "inflow": -16.07,
-          "signal": "诱多嫌疑"
+          "leader": "蕾奥规划",
+          "leaderChange": 18.85
+        },
+        {
+          "name": "石油加工贸易",
+          "change": 0.19,
+          "inflow": -8.7,
+          "leader": "康普顿",
+          "leaderChange": 6.35
+        },
+        {
+          "name": "工程机械",
+          "change": 0.32,
+          "inflow": -8.11,
+          "leader": "厦工股份",
+          "leaderChange": 9.06
         }
       ]
+    }
+  },
+  "lhb": {
+    "2026-08-04": {
+      "attitude": "🔥 高潮期",
+      "traders": [
+        {
+          "name": "京东方A",
+          "direction": "buy",
+          "action": "机构净买**14.58亿**，涨幅+3.76%",
+          "note": "4机构席位，深股通净买4.97亿，成交493亿"
+        },
+        {
+          "name": "仕佳光子",
+          "direction": "buy",
+          "action": "机构净买**6.40亿**，涨幅+17.50%",
+          "note": "机构席位主导"
+        },
+        {
+          "name": "卧龙电驱",
+          "direction": "buy",
+          "action": "机构净买**6.32亿**，涨幅+3.36%",
+          "note": "北向资金净买"
+        },
+        {
+          "name": "光迅科技",
+          "direction": "buy",
+          "action": "机构净买**4.25亿**，涨幅涨停",
+          "note": "深股通2.54亿+机构0.42亿，主力净流入13.75亿"
+        },
+        {
+          "name": "联讯仪器",
+          "direction": "buy",
+          "action": "机构净买**3.61亿**，涨幅涨停",
+          "note": "机构席位净买"
+        },
+        {
+          "name": "东山精密",
+          "direction": "buy",
+          "action": "机构净买**3.22亿**，涨幅涨停",
+          "note": "北向资金净买"
+        },
+        {
+          "name": "东阳光",
+          "direction": "buy",
+          "action": "机构净买**3.04亿**，涨幅涨停",
+          "note": "北向资金净买"
+        },
+        {
+          "name": "国晟科技",
+          "direction": "buy",
+          "action": "机构净买**2.02亿**，涨幅+4.43%",
+          "note": "北向资金净买"
+        }
+      ],
+      "summary": "龙虎榜日报 2026-08-04\n\n 市场情绪\n- 情绪周期：**🔥 高潮期**（92/100分）\n- 涨停：138家 | 跌停：暂无数据 | 炸板率：9.8%\n- 最高连板：传智教育 7板\n\n 机构大额净买入 TOP8\n\n| 排名 | 个股 | 涨跌 | 机构净买(亿) | 备注 |\n|------|------|------|-------------|------|\n| 1 | 京东方A | +3.76% | 14.58 | 4机构席位，深股通净买4.97亿，成交493亿 |\n| 2 | 仕佳光子 | +17.50% | 6.40 | 机构席位主导 |\n| 3 | 卧龙电驱 | +3.36% | 6.32 | 北向资金净买 |\n| 4 | 光迅科技 | 涨停 | 4.25 | 深股通2.54亿+机构0.42亿，主力净流入13.75亿 |\n| 5 | 联讯仪器 | 涨停 | 3.61 | 机构席位净买 |\n| 6 | 东山精密 | 涨停 | 3.22 | 北向资金净买 |\n| 7 | 东阳光 | 涨停 | 3.04 | 北向资金净买 |\n| 8 | 国晟科技 | +4."
     }
   }
 }
