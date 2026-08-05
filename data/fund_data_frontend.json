@@ -21870,367 +21870,287 @@
     "2026-07-30": {
       "mainLine": [
         {
-          "name": "白酒",
-          "change": 4.48,
-          "inflow": 25.57,
-          "risePct": 100.0,
-          "stars": 5
-        },
-        {
-          "name": "厨卫电器",
-          "change": 3.92,
-          "inflow": 0.55,
-          "risePct": 77.8,
-          "stars": 3
-        },
-        {
-          "name": "汽车整车",
-          "change": 2.85,
-          "inflow": 11.34,
-          "risePct": 95.5,
-          "stars": 4
-        },
-        {
-          "name": "油气开采及服务",
-          "change": 2.6,
-          "inflow": 1.59,
-          "risePct": 83.3,
-          "stars": 3
-        },
-        {
           "name": "银行",
           "change": 2.43,
           "inflow": 108.52,
           "risePct": 100.0,
-          "stars": 4
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "浦发银行",
+          "leader_change_pct": 4.6
         },
         {
-          "name": "保险",
-          "change": 1.57,
-          "inflow": 17.12,
-          "risePct": 80.0,
-          "stars": 3
-        },
-        {
-          "name": "机场航运",
-          "change": 1.02,
-          "inflow": 1.26,
-          "risePct": 90.9,
-          "stars": 2
+          "name": "白酒",
+          "change": 4.48,
+          "inflow": 25.57,
+          "risePct": 100.0,
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "金徽酒",
+          "leader_change_pct": 10.0
         }
       ],
-      "latent": [
-        {
-          "name": "电池",
-          "change": -1.96,
-          "inflow": 17.44,
-          "tag": "压盘吸筹"
-        },
-        {
-          "name": "白色家电",
-          "change": -1.79,
-          "inflow": 11.55,
-          "tag": "压盘吸筹"
-        },
-        {
-          "name": "石油加工贸易",
-          "change": -0.62,
-          "inflow": 9.32,
-          "tag": "逆势吸筹"
-        },
-        {
-          "name": "港口航运",
-          "change": 0.84,
-          "inflow": 7.04,
-          "tag": "温和蓄力"
-        },
-        {
-          "name": "公路铁路运输",
-          "change": 0.5,
-          "inflow": 4.82,
-          "tag": "温和蓄力"
-        }
-      ],
+      "latent": [],
       "disaster": [
         {
           "name": "光学光电子",
           "change": -4.44,
           "inflow": -68.7,
-          "fallPct": 93.4
+          "fallPct": 93.4,
+          "stars": "⭐",
+          "verdict": "真崩·普跌"
         },
         {
           "name": "消费电子",
           "change": -4.25,
           "inflow": -54.7,
-          "fallPct": 86.5
+          "fallPct": 86.5,
+          "stars": "⭐",
+          "verdict": "真崩·普跌"
         },
         {
           "name": "半导体",
           "change": -7.08,
           "inflow": -44.45,
-          "fallPct": 96.2
+          "fallPct": 96.2,
+          "stars": "⭐",
+          "verdict": "真崩·普跌"
         },
         {
-          "name": "电网设备",
-          "change": -2.46,
-          "inflow": -26.64,
-          "fallPct": 80.7
+          "name": "电力",
+          "change": -1.44,
+          "inflow": -44.05,
+          "fallPct": 69.1,
+          "stars": "⭐⭐",
+          "verdict": "普跌"
         },
         {
-          "name": "小金属",
-          "change": -2.98,
-          "inflow": -26.27,
-          "fallPct": 89.7
+          "name": "计算机设备",
+          "change": -2.38,
+          "inflow": -27.04,
+          "fallPct": 79.0,
+          "stars": "⭐⭐",
+          "verdict": "普跌"
         }
       ],
-      "risk": []
+      "risk": [
+        {
+          "name": "电池",
+          "change": -1.96,
+          "inflow": 17.44,
+          "tag": "压盘吸筹嫌疑"
+        },
+        {
+          "name": "白色家电",
+          "change": -1.79,
+          "inflow": 11.55,
+          "tag": "压盘吸筹嫌疑"
+        },
+        {
+          "name": "石油加工贸易",
+          "change": -0.62,
+          "inflow": 9.32,
+          "tag": "压盘吸筹嫌疑"
+        },
+        {
+          "name": "证券",
+          "change": 0.36,
+          "inflow": -5.6,
+          "tag": "诱多嫌疑"
+        },
+        {
+          "name": "旅游及酒店",
+          "change": 0.52,
+          "inflow": -2.0,
+          "tag": "诱多嫌疑"
+        }
+      ]
     },
     "2026-07-31": {
       "mainLine": [
-        {
-          "name": "IT服务",
-          "change": 6.29,
-          "inflow": 50.86,
-          "risePct": 97.7,
-          "stars": 5
-        },
         {
           "name": "软件开发",
           "change": 6.15,
           "inflow": 82.51,
           "risePct": 100.0,
-          "stars": 5
-        },
-        {
-          "name": "自动化设备",
-          "change": 5.34,
-          "inflow": 12.1,
-          "risePct": 97.9,
-          "stars": 3
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "福昕软件",
+          "leader_change_pct": 20.0
         },
         {
           "name": "文化传媒",
           "change": 5.28,
           "inflow": 51.87,
           "risePct": 94.0,
-          "stars": 4
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "中文在线",
+          "leader_change_pct": 20.0
         },
         {
-          "name": "影视院线",
-          "change": 4.97,
-          "inflow": 9.41,
-          "risePct": 100.0,
-          "stars": 2
-        },
-        {
-          "name": "计算机设备",
-          "change": 4.6,
-          "inflow": 27.81,
-          "risePct": 100.0,
-          "stars": 3
-        },
-        {
-          "name": "游戏",
-          "change": 4.5,
-          "inflow": 23.46,
-          "risePct": 95.8,
-          "stars": 3
-        },
-        {
-          "name": "通信服务",
-          "change": 4.47,
-          "inflow": 16.95,
-          "risePct": 86.4,
-          "stars": 2
+          "name": "IT服务",
+          "change": 6.29,
+          "inflow": 50.86,
+          "risePct": 97.7,
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "立方控股",
+          "leader_change_pct": 30.0
         }
       ],
-      "latent": [
-        {
-          "name": "汽车整车",
-          "change": 0.24,
-          "inflow": 9.06,
-          "tag": "微涨蓄力"
-        },
-        {
-          "name": "港口航运",
-          "change": 0.45,
-          "inflow": 4.3,
-          "tag": "微涨蓄力"
-        },
-        {
-          "name": "机场航运",
-          "change": 0.7,
-          "inflow": 2.97,
-          "tag": "温和蓄力"
-        },
-        {
-          "name": "白酒",
-          "change": 0.63,
-          "inflow": 2.6,
-          "tag": "温和蓄力"
-        },
-        {
-          "name": "煤炭开采加工",
-          "change": 0.82,
-          "inflow": 2.4,
-          "tag": "温和蓄力"
-        }
-      ],
+      "latent": [],
       "disaster": [
-        {
-          "name": "证券",
-          "change": 0.25,
-          "inflow": -14.21,
-          "fallPct": 25.5
-        },
-        {
-          "name": "能源金属",
-          "change": -0.68,
-          "inflow": -6.8,
-          "fallPct": 66.7
-        },
-        {
-          "name": "农化制品",
-          "change": -0.07,
-          "inflow": -6.25,
-          "fallPct": 47.4
-        },
-        {
-          "name": "保险",
-          "change": -0.7,
-          "inflow": -3.35,
-          "fallPct": 80.0
-        },
-        {
-          "name": "油气开采及服务",
-          "change": 0.15,
-          "inflow": -3.0,
-          "fallPct": 50.0
-        }
-      ],
-      "risk": [
-        {
-          "name": "元件",
-          "change": 4.33,
-          "inflow": -44.89,
-          "tag": "拉高出货"
-        },
         {
           "name": "半导体",
           "change": 4.23,
           "inflow": -159.81,
-          "tag": "拉高出货"
+          "fallPct": 4.4,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
-          "name": "环保设备",
-          "change": 3.83,
-          "inflow": -1.94,
-          "tag": "量价背离"
+          "name": "元件",
+          "change": 4.33,
+          "inflow": -44.89,
+          "fallPct": 8.1,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
-          "name": "消费电子",
-          "change": 3.49,
-          "inflow": -11.13,
-          "tag": "量价背离"
+          "name": "建筑装饰",
+          "change": 2.83,
+          "inflow": -22.04,
+          "fallPct": 9.2,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
-          "name": "电子化学品",
-          "change": 3.41,
-          "inflow": -7.1,
-          "tag": "量价背离"
+          "name": "电池",
+          "change": 1.66,
+          "inflow": -16.83,
+          "fallPct": 25.7,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
+        },
+        {
+          "name": "证券",
+          "change": 0.25,
+          "inflow": -14.21,
+          "fallPct": 25.5,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
+        }
+      ],
+      "risk": [
+        {
+          "name": "半导体",
+          "change": 4.23,
+          "inflow": -159.81,
+          "tag": "诱多嫌疑"
+        },
+        {
+          "name": "元件",
+          "change": 4.33,
+          "inflow": -44.89,
+          "tag": "诱多嫌疑"
+        },
+        {
+          "name": "建筑装饰",
+          "change": 2.83,
+          "inflow": -22.04,
+          "tag": "诱多嫌疑"
         }
       ]
     },
     "2026-08-03": {
       "mainLine": [
         {
-          "name": "风电设备",
-          "change": 4.06,
-          "inflow": 7.32,
-          "risePct": 96.8,
-          "stars": 5
+          "name": "银行",
+          "change": 0.79,
+          "inflow": 23.38,
+          "risePct": 73.8,
+          "stars": 3,
+          "verdict": "分化",
+          "leader_stock": "瑞丰银行",
+          "leader_change_pct": 3.2
         },
         {
-          "name": "电网设备",
-          "change": 3.52,
-          "inflow": 16.73,
-          "risePct": 93.5,
-          "stars": 5
-        },
-        {
-          "name": "种植业与林业",
-          "change": 2.92,
-          "inflow": 4.01,
-          "risePct": 96.7,
-          "stars": 4
-        },
-        {
-          "name": "光伏设备",
-          "change": 2.91,
-          "inflow": 8.74,
-          "risePct": 87.3,
-          "stars": 5
-        },
-        {
-          "name": "通信服务",
-          "change": 2.86,
-          "inflow": 2.13,
+          "name": "电力",
+          "change": 2.28,
+          "inflow": 21.61,
           "risePct": 0,
-          "stars": 3
+          "stars": 1,
+          "verdict": "虚火·权重拉的",
+          "leader_stock": "乐山电力",
+          "leader_change_pct": 10.1
         },
         {
-          "name": "造纸",
-          "change": 2.79,
-          "inflow": 0.96,
-          "risePct": 95.5,
-          "stars": 2
-        },
-        {
-          "name": "电机",
-          "change": 2.75,
-          "inflow": 0.95,
-          "risePct": 0,
-          "stars": 2
-        },
-        {
-          "name": "轨交设备",
-          "change": 2.71,
-          "inflow": 1.2,
-          "risePct": 93.3,
-          "stars": 2
-        },
-        {
-          "name": "燃气",
-          "change": 2.63,
-          "inflow": 0.71,
-          "risePct": 96.3,
-          "stars": 1
+          "name": "通信设备",
+          "change": 1.55,
+          "inflow": 20.26,
+          "risePct": 73.3,
+          "stars": 3,
+          "verdict": "分化",
+          "leader_stock": "欣天科技",
+          "leader_change_pct": 20.0
         }
       ],
       "latent": [
         {
-          "name": "银行",
-          "change": 0.79,
-          "inflow": 23.38,
-          "tag": "温和蓄力"
-        },
-        {
-          "name": "能源金属",
-          "change": 0.31,
-          "inflow": 4.72,
-          "tag": "微涨蓄力"
-        },
-        {
           "name": "保险",
-          "change": -0.06,
-          "inflow": 4.47,
-          "tag": "逆势吸筹"
+          "change": 0.81,
+          "inflow": 18.24,
+          "score": 3,
+          "reasons": [
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
+        },
+        {
+          "name": "汽车整车",
+          "change": 3.25,
+          "inflow": 12.28,
+          "score": 3,
+          "reasons": [
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
+        },
+        {
+          "name": "港口航运",
+          "change": 2.73,
+          "inflow": 15.61,
+          "score": 3,
+          "reasons": [
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
         },
         {
           "name": "电池",
-          "change": 0.52,
-          "inflow": 1.35,
-          "tag": "温和蓄力"
+          "change": -1.44,
+          "inflow": 18.79,
+          "score": 3,
+          "reasons": [
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
+        },
+        {
+          "name": "白色家电",
+          "change": 1.24,
+          "inflow": 22.57,
+          "score": 3,
+          "reasons": [
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
         }
       ],
       "disaster": [
@@ -22238,113 +22158,160 @@
           "name": "半导体",
           "change": -3.46,
           "inflow": -110.83,
-          "fallPct": 78.6
+          "fallPct": 78.6,
+          "stars": "⭐⭐",
+          "verdict": "普跌"
         },
         {
           "name": "消费电子",
           "change": 0.37,
           "inflow": -25.69,
-          "fallPct": 38.5
+          "fallPct": 38.5,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
+        },
+        {
+          "name": "建筑材料",
+          "change": 1.3,
+          "inflow": -22.54,
+          "fallPct": 23.6,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
+        },
+        {
+          "name": "IT服务",
+          "change": 0.98,
+          "inflow": -21.02,
+          "fallPct": 30.5,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
           "name": "电子化学品",
           "change": -3.63,
           "inflow": -20.06,
-          "fallPct": 83.7
-        },
-        {
-          "name": "证券",
-          "change": 0.23,
-          "inflow": -10.36,
-          "fallPct": 22.9
-        },
-        {
-          "name": "医疗服务",
-          "change": -0.21,
-          "inflow": -8.63,
-          "fallPct": 50.0
+          "fallPct": 83.7,
+          "stars": "⭐⭐",
+          "verdict": "普跌"
         }
       ],
-      "risk": []
+      "risk": [
+        {
+          "name": "保险",
+          "change": -0.06,
+          "inflow": 4.47,
+          "tag": "压盘吸筹嫌疑"
+        },
+        {
+          "name": "消费电子",
+          "change": 0.37,
+          "inflow": -25.69,
+          "tag": "诱多嫌疑"
+        },
+        {
+          "name": "建筑材料",
+          "change": 1.3,
+          "inflow": -22.54,
+          "tag": "诱多嫌疑"
+        },
+        {
+          "name": "IT服务",
+          "change": 0.98,
+          "inflow": -21.02,
+          "tag": "诱多嫌疑"
+        }
+      ]
     },
     "2026-08-04": {
       "mainLine": [
         {
-          "name": "元件",
-          "change": 7.07,
-          "inflow": 81.68,
-          "risePct": 0,
-          "stars": 5
-        },
-        {
-          "name": "电子化学品",
-          "change": 6.57,
-          "inflow": 22.71,
-          "risePct": 0,
-          "stars": 4
-        },
-        {
           "name": "半导体",
           "change": 6.01,
           "inflow": 219.35,
-          "risePct": 0,
-          "stars": 5
+          "risePct": 97.3,
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "和林微纳",
+          "leader_change_pct": 20.0
         },
         {
           "name": "通信设备",
           "change": 5.4,
           "inflow": 182.8,
-          "risePct": 0,
-          "stars": 5
+          "risePct": 96.7,
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "蘅东光",
+          "leader_change_pct": 20.8
         },
         {
-          "name": "其他电子",
-          "change": 4.55,
-          "inflow": 14.73,
-          "risePct": 0,
-          "stars": 3
-        },
-        {
-          "name": "互联网电商",
-          "change": 4.23,
-          "inflow": 2.72,
-          "risePct": 0,
-          "stars": 2
-        },
-        {
-          "name": "游戏",
-          "change": 4.22,
-          "inflow": 9.33,
-          "risePct": 0,
-          "stars": 2
-        },
-        {
-          "name": "通信服务",
-          "change": 3.99,
-          "inflow": 8.04,
-          "risePct": 0,
-          "stars": 2
-        },
-        {
-          "name": "自动化设备",
-          "change": 3.93,
-          "inflow": 34.49,
-          "risePct": 0,
-          "stars": 3
+          "name": "元件",
+          "change": 7.07,
+          "inflow": 81.68,
+          "risePct": 100.0,
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "嘉立创",
+          "leader_change_pct": 146.3
         }
       ],
       "latent": [
         {
-          "name": "环境治理",
-          "change": 0.95,
-          "inflow": 0.67,
-          "tag": "温和蓄力"
+          "name": "汽车零部件",
+          "change": 4.02,
+          "inflow": 14.87,
+          "score": 5,
+          "reasons": [
+            "资金加速流入",
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
         },
         {
-          "name": "橡胶制品",
-          "change": 0.8,
-          "inflow": 0.14,
-          "tag": "温和蓄力"
+          "name": "通用设备",
+          "change": 4.98,
+          "inflow": 20.48,
+          "score": 5,
+          "reasons": [
+            "资金加速流入",
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
+        },
+        {
+          "name": "IT服务",
+          "change": 128.93,
+          "inflow": 95.54,
+          "score": 4,
+          "reasons": [
+            "资金加速流入",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
+        },
+        {
+          "name": "元件",
+          "change": 56.36,
+          "inflow": 115.76,
+          "score": 4,
+          "reasons": [
+            "资金加速流入",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
+        },
+        {
+          "name": "其他电子",
+          "change": 2.79,
+          "inflow": 5.24,
+          "score": 4,
+          "reasons": [
+            "资金加速流入",
+            "涨幅不大",
+            "3日累计流入>5亿"
+          ]
         }
       ],
       "disaster": [
@@ -22352,54 +22319,71 @@
           "name": "银行",
           "change": -2.69,
           "inflow": -70.13,
-          "fallPct": 0
+          "fallPct": 100.0,
+          "stars": "⭐",
+          "verdict": "真崩·普跌"
+        },
+        {
+          "name": "电力",
+          "change": 0.2,
+          "inflow": -32.77,
+          "fallPct": 58.3,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
           "name": "汽车整车",
           "change": -1.69,
           "inflow": -27.8,
-          "fallPct": 0
+          "fallPct": 82.6,
+          "stars": "⭐⭐",
+          "verdict": "普跌"
         },
         {
           "name": "保险",
           "change": -2.46,
           "inflow": -26.48,
-          "fallPct": 0
+          "fallPct": 100.0,
+          "stars": "⭐",
+          "verdict": "真崩·普跌"
         },
         {
-          "name": "白酒",
-          "change": -1.34,
-          "inflow": -19.0,
-          "fallPct": 0
-        },
-        {
-          "name": "房地产",
-          "change": -0.03,
-          "inflow": -11.26,
-          "fallPct": 0
+          "name": "证券",
+          "change": 0.04,
+          "inflow": -22.09,
+          "fallPct": 56.2,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         }
       ],
       "risk": [
         {
-          "name": "医疗服务",
-          "change": 5.54,
-          "inflow": -2.52,
-          "tag": "拉高出货"
+          "name": "电力",
+          "change": 0.2,
+          "inflow": -32.77,
+          "tag": "诱多嫌疑"
+        },
+        {
+          "name": "证券",
+          "change": 0.04,
+          "inflow": -22.09,
+          "tag": "诱多嫌疑"
+        },
+        {
+          "name": "建筑装饰",
+          "change": 1.3,
+          "inflow": -16.07,
+          "tag": "诱多嫌疑"
         }
       ]
     },
     "2026-08-05": {
-      "date": "2026-08-05",
-      "collectTime": "00:32",
       "mainLine": [
         {
           "name": "半导体",
-          "code": "881121",
-          "change_pct": 5.63,
-          "main_net_in": 98.81,
-          "rise_count": 178,
-          "fall_count": 5,
-          "rise_pct": 97.3,
+          "change": 5.63,
+          "inflow": 98.81,
+          "risePct": 97.3,
           "stars": 5,
           "verdict": "真热·普涨",
           "leader_stock": "有研硅",
@@ -22407,12 +22391,9 @@
         },
         {
           "name": "贵金属",
-          "code": "881169",
-          "change_pct": 7.72,
-          "main_net_in": 69.88,
-          "rise_count": 14,
-          "fall_count": 0,
-          "rise_pct": 100.0,
+          "change": 7.72,
+          "inflow": 69.88,
+          "risePct": 100.0,
           "stars": 5,
           "verdict": "真热·普涨",
           "leader_stock": "晓程科技",
@@ -22420,12 +22401,9 @@
         },
         {
           "name": "工业金属",
-          "code": "881168",
-          "change_pct": 3.11,
-          "main_net_in": 56.46,
-          "rise_count": 49,
-          "fall_count": 6,
-          "rise_pct": 89.1,
+          "change": 3.11,
+          "inflow": 56.46,
+          "risePct": 89.1,
           "stars": 5,
           "verdict": "真热·普涨",
           "leader_stock": "锌业股份",
@@ -22435,128 +22413,98 @@
       "latent": [
         {
           "name": "工业金属",
+          "change": 4.43,
+          "inflow": 24.74,
           "score": 5,
           "reasons": [
             "资金加速流入",
             "涨幅不大",
             "累计流入>10亿",
             "3日累计流入>5亿"
-          ],
-          "cum_10d": 24.74,
-          "cum_3d": 47.27,
-          "avg_10d": 4.95,
-          "avg_3d": 15.76,
-          "cum_change_10d": 4.43
+          ]
         },
         {
           "name": "建筑材料",
+          "change": 4.4,
+          "inflow": 6.33,
           "score": 4,
           "reasons": [
             "资金加速流入",
             "涨幅不大",
             "3日累计流入>5亿"
-          ],
-          "cum_10d": 6.33,
-          "cum_3d": 9.89,
-          "avg_10d": 1.27,
-          "avg_3d": 3.3,
-          "cum_change_10d": 4.4
+          ]
         },
         {
           "name": "通信设备",
+          "change": 8.66,
+          "inflow": 194.65,
           "score": 4,
           "reasons": [
             "资金加速流入",
             "累计流入>10亿",
             "3日累计流入>5亿"
-          ],
-          "cum_10d": 194.65,
-          "cum_3d": 207.33,
-          "avg_10d": 38.93,
-          "avg_3d": 69.11,
-          "cum_change_10d": 8.66
+          ]
         },
         {
           "name": "通用设备",
+          "change": 7.75,
+          "inflow": 36.86,
           "score": 4,
           "reasons": [
             "资金加速流入",
             "累计流入>10亿",
             "3日累计流入>5亿"
-          ],
-          "cum_10d": 36.86,
-          "cum_3d": 38.3,
-          "avg_10d": 7.37,
-          "avg_3d": 12.77,
-          "cum_change_10d": 7.75
+          ]
         },
         {
           "name": "专用设备",
+          "change": 5.82,
+          "inflow": 0.46,
           "score": 3,
           "reasons": [
             "资金加速流入",
             "3日累计流入>5亿"
-          ],
-          "cum_10d": 0.46,
-          "cum_3d": 14.36,
-          "avg_10d": 0.09,
-          "avg_3d": 4.79,
-          "cum_change_10d": 5.82
+          ]
         }
       ],
       "disaster": [
         {
           "name": "银行",
-          "code": "881155",
-          "change_pct": -1.15,
-          "main_net_in": -33.02,
-          "rise_count": 0,
-          "fall_count": 0,
-          "fall_pct": 0,
+          "change": -1.15,
+          "inflow": -33.02,
+          "fallPct": 0,
           "stars": "⭐⭐⭐",
           "verdict": "虚跌·少数权重砸盘"
         },
         {
           "name": "电网设备",
-          "code": "881278",
-          "change_pct": 1.14,
-          "main_net_in": -23.1,
-          "rise_count": 0,
-          "fall_count": 0,
-          "fall_pct": 0,
+          "change": 1.14,
+          "inflow": -23.1,
+          "fallPct": 0,
           "stars": "⭐⭐⭐",
           "verdict": "虚跌·少数权重砸盘"
         },
         {
           "name": "电力",
-          "code": "881145",
-          "change_pct": 0.12,
-          "main_net_in": -19.66,
-          "rise_count": 0,
-          "fall_count": 0,
-          "fall_pct": 0,
+          "change": 0.12,
+          "inflow": -19.66,
+          "fallPct": 0,
           "stars": "⭐⭐⭐",
           "verdict": "虚跌·少数权重砸盘"
         },
         {
           "name": "白酒",
-          "code": "881273",
-          "change_pct": -0.54,
-          "main_net_in": -16.34,
-          "rise_count": 0,
-          "fall_count": 0,
-          "fall_pct": 0,
+          "change": -0.54,
+          "inflow": -16.34,
+          "fallPct": 0,
           "stars": "⭐⭐⭐",
           "verdict": "虚跌·少数权重砸盘"
         },
         {
           "name": "建筑装饰",
-          "code": "881116",
-          "change_pct": 0.78,
-          "main_net_in": -9.81,
-          "rise_count": 0,
-          "fall_count": 0,
-          "fall_pct": 0,
+          "change": 0.78,
+          "inflow": -9.81,
+          "fallPct": 0,
           "stars": "⭐⭐⭐",
           "verdict": "虚跌·少数权重砸盘"
         }
@@ -22564,35 +22512,27 @@
       "risk": [
         {
           "name": "综合",
-          "code": "881165",
-          "type": "inflow_but_down",
-          "change_pct": -0.11,
-          "main_net_in": 2.09,
-          "signal": "压盘吸筹嫌疑"
+          "change": -0.11,
+          "inflow": 2.09,
+          "tag": "压盘吸筹嫌疑"
         },
         {
           "name": "电网设备",
-          "code": "881278",
-          "type": "outflow_but_up",
-          "change_pct": 1.14,
-          "main_net_in": -23.1,
-          "signal": "诱多嫌疑"
+          "change": 1.14,
+          "inflow": -23.1,
+          "tag": "诱多嫌疑"
         },
         {
           "name": "电力",
-          "code": "881145",
-          "type": "outflow_but_up",
-          "change_pct": 0.12,
-          "main_net_in": -19.66,
-          "signal": "诱多嫌疑"
+          "change": 0.12,
+          "inflow": -19.66,
+          "tag": "诱多嫌疑"
         },
         {
           "name": "建筑装饰",
-          "code": "881116",
-          "type": "outflow_but_up",
-          "change_pct": 0.78,
-          "main_net_in": -9.81,
-          "signal": "诱多嫌疑"
+          "change": 0.78,
+          "inflow": -9.81,
+          "tag": "诱多嫌疑"
         }
       ]
     }
