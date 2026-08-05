@@ -21784,8 +21784,8 @@
       "sectorCount": 90
     },
     "2026-08-05": {
-      "collectTime": "17:30",
-      "type": "收盘",
+      "collectTime": "11:47",
+      "type": "盘中",
       "sectorCount": 90
     }
   },
@@ -21858,7 +21858,9 @@
       "totalFlowIn": 6270.28,
       "totalFlowOut": 5838.02,
       "netFlow": 432.2,
-      "avgChange": 1.56
+      "avgChange": 1.56,
+      "updateTime": "11:47",
+      "updateDate": "2026-08-05"
     }
   },
   "signals": {
