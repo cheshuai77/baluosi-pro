@@ -668,23 +668,23 @@ function renderMarketOverview() {
   const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
   const indices = mo.indices || [];
 
-  // 第一行：三大指数
+  // 第一行：三大指数（无数据时隐藏，避免显示占位符"--"）
   const idxContainer = document.getElementById('marketIndices');
-  const idxIcons = ['📊', '📈', '🚀', '🔬'];
-  idxContainer.innerHTML = indices.map((idx, i) => {
-    const cls = (idx.change || 0) >= 0 ? 'rise' : 'fall';
-    const sign = (idx.change || 0) > 0 ? '+' : '';
-    const arrow = (idx.change || 0) >= 0 ? '▲' : '▼';
-    return '<div class="stat-card">' +
-      '<div class="stat-header"><span class="stat-icon">' + idxIcons[i] + '</span><span class="stat-label">' + idx.name + '</span></div>' +
-      '<div><span class="stat-value">' + (idx.value || 0).toFixed(2) + '</span>' +
-      '<span class="stat-change ' + cls + '">' + arrow + ' ' + sign + (idx.change || 0).toFixed(2) + '%</span></div>' +
-      '</div>';
-  }).join('');
-  // 如果指数数据缺失，补位
-  while (indices.length < 4) {
-    idxContainer.innerHTML += '<div class="stat-card"><div class="stat-header"><span class="stat-icon">' + idxIcons[indices.length] + '</span><span class="stat-label">--</span></div><div class="stat-value text-tertiary">--</div></div>';
-    indices.push({});
+  if (indices.length > 0) {
+    idxContainer.style.display = 'grid';
+    const idxIcons = ['📊', '📈', '🚀', '🔬'];
+    idxContainer.innerHTML = indices.map((idx, i) => {
+      const cls = (idx.change || 0) >= 0 ? 'rise' : 'fall';
+      const sign = (idx.change || 0) > 0 ? '+' : '';
+      const arrow = (idx.change || 0) >= 0 ? '▲' : '▼';
+      return '<div class="stat-card">' +
+        '<div class="stat-header"><span class="stat-icon">' + idxIcons[i] + '</span><span class="stat-label">' + idx.name + '</span></div>' +
+        '<div><span class="stat-value">' + (idx.value || 0).toFixed(2) + '</span>' +
+        '<span class="stat-change ' + cls + '">' + arrow + ' ' + sign + (idx.change || 0).toFixed(2) + '%</span></div>' +
+        '</div>';
+    }).join('');
+  } else {
+    idxContainer.style.display = 'none';
   }
 
   // 第二行：四个指标卡
