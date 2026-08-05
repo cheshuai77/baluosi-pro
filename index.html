@@ -65,7 +65,7 @@
   .container { padding: 20px 24px; max-width: 1800px; margin: 0 auto; }
 
   /* ===== 市场总览 - 2行布局 ===== */
-  .market-indices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 14px; }
+  .market-indices { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 14px; }
   .market-indicators { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
 
   .stat-card {
@@ -310,7 +310,7 @@
     .date-text { min-width: 80px; font-size: 13px; }
     .container { padding: 12px 10px; }
 
-    .market-indices { grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 8px; }
+    .market-indices { grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 8px; }
     .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
     .stat-card { padding: 10px 12px; border-radius: 10px; }
     .stat-value { font-size: 16px; }
@@ -668,11 +668,11 @@ function renderMarketOverview() {
   const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
   const indices = mo.indices || [];
 
-  // 第一行：三大指数（无数据时隐藏，避免显示占位符"--"）
+  // 第一行：五大指数（无数据时隐藏，避免显示占位符"--"）
   const idxContainer = document.getElementById('marketIndices');
   if (indices.length > 0) {
     idxContainer.style.display = 'grid';
-    const idxIcons = ['📊', '📈', '🚀', '🔬'];
+    const idxIcons = ['📊', '📈', '🚀', '🔬', '🏛️'];
     idxContainer.innerHTML = indices.map((idx, i) => {
       const cls = (idx.change || 0) >= 0 ? 'rise' : 'fall';
       const sign = (idx.change || 0) > 0 ? '+' : '';
