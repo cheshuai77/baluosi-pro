@@ -66,6 +66,26 @@
 
   /* ===== 市场总览 - 2行布局 ===== */
   .market-indices { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 14px; }
+  .market-indices .stat-card {
+    position: relative; overflow: hidden;
+    border-left: 3px solid transparent; padding-left: 15px;
+  }
+  /* 五大指数卡片主题色 + 水印图案 */
+  .market-indices .stat-card:nth-child(1) { border-left-color: #e74c3c; } /* 上证-红 */
+  .market-indices .stat-card:nth-child(1)::after { content: "🏙️"; }
+  .market-indices .stat-card:nth-child(2) { border-left-color: #3498db; } /* 深证-蓝 */
+  .market-indices .stat-card:nth-child(2)::after { content: "🌊"; }
+  .market-indices .stat-card:nth-child(3) { border-left-color: #f39c12; } /* 创业板-橙 */
+  .market-indices .stat-card:nth-child(3)::after { content: "🚀"; }
+  .market-indices .stat-card:nth-child(4) { border-left-color: #9b59b6; } /* 科创50-紫 */
+  .market-indices .stat-card:nth-child(4)::after { content: "🔬"; }
+  .market-indices .stat-card:nth-child(5) { border-left-color: #c9986b; } /* 北证50-金 */
+  .market-indices .stat-card:nth-child(5)::after { content: "🏯"; }
+  .market-indices .stat-card::after {
+    position: absolute; right: 10px; bottom: 0px;
+    font-size: 2.6rem; opacity: 0.06;
+    pointer-events: none; line-height: 1;
+  }
   .market-indicators { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
 
   .stat-card {
@@ -672,7 +692,7 @@ function renderMarketOverview() {
   const idxContainer = document.getElementById('marketIndices');
   if (indices.length > 0) {
     idxContainer.style.display = 'grid';
-    const idxIcons = ['📊', '📈', '🚀', '🔬', '🏛️'];
+    const idxIcons = ['🏙️', '🌊', '🚀', '🔬', '🏯'];
     idxContainer.innerHTML = indices.map((idx, i) => {
       const cls = (idx.change || 0) >= 0 ? 'rise' : 'fall';
       const sign = (idx.change || 0) > 0 ? '+' : '';
