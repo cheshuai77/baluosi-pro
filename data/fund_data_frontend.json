@@ -21806,54 +21806,7 @@
       "totalFlowIn": 7721.83,
       "totalFlowOut": 8185.74,
       "netFlow": -463.93,
-      "avgChange": -1.23,
-      "indices": [
-        {
-          "name": "上证指数",
-          "value": 3804.69,
-          "change": -0.62,
-          "change_amount": -23.78,
-          "open": 3812.11,
-          "high": 3839.34,
-          "low": 3767.5
-        },
-        {
-          "name": "深证成指",
-          "value": 13285.8,
-          "change": -2.73,
-          "change_amount": -372.64,
-          "open": 13531.07,
-          "high": 13619.03,
-          "low": 13068.56
-        },
-        {
-          "name": "创业板指",
-          "value": 3244.62,
-          "change": -3.97,
-          "change_amount": -134.08,
-          "open": 3331.32,
-          "high": 3353.81,
-          "low": 3158.14
-        },
-        {
-          "name": "科创50",
-          "value": 1588.41,
-          "change": -5.38,
-          "change_amount": -90.32,
-          "open": 1653.47,
-          "high": 1671.51,
-          "low": 1562.0
-        },
-        {
-          "name": "北证50",
-          "value": 1049.07,
-          "change": -1.43,
-          "change_amount": -15.22,
-          "open": 1059.75,
-          "high": 1076.02,
-          "low": 1047.76
-        }
-      ]
+      "avgChange": -1.23
     },
     "2026-07-31": {
       "totalStocks": 5619,
@@ -21867,54 +21820,7 @@
       "totalFlowIn": 8855.6,
       "totalFlowOut": 8682.02,
       "netFlow": 173.49,
-      "avgChange": 2.2,
-      "indices": [
-        {
-          "name": "上证指数",
-          "value": 3832.26,
-          "change": 0.72,
-          "change_amount": 27.57,
-          "open": 3833.54,
-          "high": 3847.09,
-          "low": 3822.37
-        },
-        {
-          "name": "深证成指",
-          "value": 13578.93,
-          "change": 2.21,
-          "change_amount": 293.13,
-          "open": 13690.0,
-          "high": 13841.96,
-          "low": 13578.93
-        },
-        {
-          "name": "创业板指",
-          "value": 3343.96,
-          "change": 3.06,
-          "change_amount": 99.35,
-          "open": 3411.61,
-          "high": 3464.9,
-          "low": 3343.96
-        },
-        {
-          "name": "科创50",
-          "value": 1635.96,
-          "change": 2.99,
-          "change_amount": 47.55,
-          "open": 1721.36,
-          "high": 1731.21,
-          "low": 1635.68
-        },
-        {
-          "name": "北证50",
-          "value": 1083.27,
-          "change": 3.26,
-          "change_amount": 34.2,
-          "open": 1078.51,
-          "high": 1092.99,
-          "low": 1073.72
-        }
-      ]
+      "avgChange": 2.2
     },
     "2026-08-03": {
       "totalStocks": 5620,
@@ -21928,54 +21834,7 @@
       "totalFlowIn": 6442.95,
       "totalFlowOut": 6701.11,
       "netFlow": -258.11,
-      "avgChange": 1.14,
-      "indices": [
-        {
-          "name": "上证指数",
-          "value": 3809.66,
-          "change": -0.59,
-          "change_amount": -22.6,
-          "open": 3812.61,
-          "high": 3827.64,
-          "low": 3797.64
-        },
-        {
-          "name": "深证成指",
-          "value": 13448.29,
-          "change": -0.96,
-          "change_amount": -130.64,
-          "open": 13497.1,
-          "high": 13570.51,
-          "low": 13407.99
-        },
-        {
-          "name": "创业板指",
-          "value": 3302.55,
-          "change": -1.24,
-          "change_amount": -41.41,
-          "open": 3320.09,
-          "high": 3342.17,
-          "low": 3280.84
-        },
-        {
-          "name": "科创50",
-          "value": 1552.89,
-          "change": -5.08,
-          "change_amount": -83.07,
-          "open": 1619.29,
-          "high": 1621.99,
-          "low": 1549.74
-        },
-        {
-          "name": "北证50",
-          "value": 1076.07,
-          "change": -0.66,
-          "change_amount": -7.2,
-          "open": 1073.33,
-          "high": 1087.68,
-          "low": 1072.02
-        }
-      ]
+      "avgChange": 1.14
     },
     "2026-08-04": {
       "totalStocks": 5621,
@@ -21989,149 +21848,21 @@
       "totalFlowIn": 7799.25,
       "totalFlowOut": 7281.65,
       "netFlow": 517.56,
-      "avgChange": 1.43,
-      "indices": [
-        {
-          "name": "上证指数",
-          "value": 3822.28,
-          "change": 0.33,
-          "change_amount": 12.62,
-          "open": 3816.37,
-          "high": 3831.94,
-          "low": 3799.52
-        },
-        {
-          "name": "深证成指",
-          "value": 13885.71,
-          "change": 3.25,
-          "change_amount": 437.42,
-          "open": 13572.95,
-          "high": 13936.52,
-          "low": 13537.76
-        },
-        {
-          "name": "创业板指",
-          "value": 3488.97,
-          "change": 5.64,
-          "change_amount": 186.41,
-          "open": 3353.51,
-          "high": 3510.51,
-          "low": 3342.41
-        },
-        {
-          "name": "科创50",
-          "value": 1616.36,
-          "change": 4.09,
-          "change_amount": 63.47,
-          "open": 1569.62,
-          "high": 1631.01,
-          "low": 1556.11
-        },
-        {
-          "name": "北证50",
-          "value": 1093.49,
-          "change": 1.62,
-          "change_amount": 17.42,
-          "open": 1083.15,
-          "high": 1095.83,
-          "low": 1080.76
-        }
-      ]
+      "avgChange": 1.43
     },
     "2026-08-05": {
       "totalStocks": 5622,
       "totalRise": 2768,
       "totalFall": 732,
-      "risePct": 94.8,
+      "risePct": 79.1,
       "sectorUp": 82,
       "sectorDown": 8,
       "topSector": "贵金属",
       "topSectorChange": 7.72,
-      "totalFlowIn": 563.7,
-      "totalFlowOut": 188.5,
-      "netFlow": 375.1,
-      "avgChange": 1.58,
-      "indices": [
-        {
-          "name": "上证指数",
-          "value": 3878.43,
-          "change": 1.47,
-          "change_amount": 56.14,
-          "open": 3815.12,
-          "high": 3884.4,
-          "low": 3815.12
-        },
-        {
-          "name": "深证成指",
-          "value": 14144.2,
-          "change": 1.86,
-          "change_amount": 258.49,
-          "open": 13644.83,
-          "high": 14246.38,
-          "low": 13644.83
-        },
-        {
-          "name": "创业板指",
-          "value": 3535.14,
-          "change": 1.32,
-          "change_amount": 46.18,
-          "open": 3372.08,
-          "high": 3584.06,
-          "low": 3372.04
-        },
-        {
-          "name": "科创50",
-          "value": 1693.67,
-          "change": 4.78,
-          "change_amount": 77.31,
-          "open": 1615.26,
-          "high": 1715.28,
-          "low": 1615.26
-        },
-        {
-          "name": "北证50",
-          "value": 1119.46,
-          "change": 2.37,
-          "change_amount": 25.97,
-          "open": 1093.13,
-          "high": 1125.08,
-          "low": 1080.92
-        }
-      ],
-      "updateTime": "17:35",
-      "ztCount": 103,
-      "dtCount": 0,
-      "zbCount": 43,
-      "zbRate": 29.5,
-      "emotionScore": 82,
-      "emotionStage": "🔥",
-      "maxBoard": 8,
-      "maxBoardName": "传智教育",
-      "ladder": "8板×1→4板×2→3板×2→2板×27",
-      "ladderDetail": {
-        "8": [
-          "传智教育"
-        ],
-        "4": [
-          "德龙汇能",
-          "豪尔赛"
-        ],
-        "3": [
-          "欣天科技",
-          "风范股份"
-        ],
-        "2": [
-          "高乐股份",
-          "凯撒文化",
-          "百花医药",
-          "云南锗业",
-          "盛视科技",
-          "大晟文化",
-          "博杰股份",
-          "中京电子",
-          "利通电子"
-        ]
-      }
+      "totalFlowIn": 9530.47,
+      "totalFlowOut": 9155.32,
+      "netFlow": 375.14,
+      "avgChange": 1.58
     }
   },
   "signals": {
@@ -22660,147 +22391,154 @@
       "mainLine": [
         {
           "name": "半导体",
-          "change": 5.63,
-          "inflow": 98.81,
+          "change": 6.01,
+          "inflow": 219.35,
+          "risePct": 97.3,
           "stars": 5,
-          "leader": "有研硅",
-          "leaderChange": 17.62
+          "verdict": "真热·普涨",
+          "leader_stock": "和林微纳",
+          "leader_change_pct": 20.0
         },
         {
-          "name": "贵金属",
-          "change": 7.72,
-          "inflow": 69.88,
+          "name": "通信设备",
+          "change": 5.4,
+          "inflow": 182.8,
+          "risePct": 96.7,
           "stars": 5,
-          "leader": "晓程科技",
-          "leaderChange": 11.89
-        },
-        {
-          "name": "工业金属",
-          "change": 3.11,
-          "inflow": 56.46,
-          "stars": 5,
-          "leader": "锌业股份",
-          "leaderChange": 10.11
+          "verdict": "真热·普涨",
+          "leader_stock": "蘅东光",
+          "leader_change_pct": 20.8
         },
         {
           "name": "元件",
-          "change": 5.12,
-          "inflow": 42.43,
+          "change": 7.07,
+          "inflow": 81.68,
+          "risePct": 100.0,
           "stars": 5,
-          "leader": "胜宏科技",
-          "leaderChange": 17.12
-        },
-        {
-          "name": "电池",
-          "change": 3.04,
-          "inflow": 37.17,
-          "stars": 5,
-          "leader": "龙鑫智能",
-          "leaderChange": 29.97
+          "verdict": "真热·普涨",
+          "leader_stock": "嘉立创",
+          "leader_change_pct": 146.3
         }
       ],
       "latent": [
         {
-          "name": "光学光电子",
-          "change": 3.27,
-          "inflow": 28.86,
-          "leader": "天禄科技",
-          "leaderChange": 20.0
-        },
-        {
-          "name": "软件开发",
-          "change": 2.05,
-          "inflow": 19.95,
-          "leader": "星环科技",
-          "leaderChange": 13.22
+          "name": "汽车零部件",
+          "change": 4.02,
+          "inflow": 14.87,
+          "score": 5,
+          "reasons": [
+            "资金加速流入",
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
         },
         {
           "name": "通用设备",
-          "change": 2.77,
-          "inflow": 16.38,
-          "leader": "皖仪科技",
-          "leaderChange": 19.98
+          "change": 4.98,
+          "inflow": 20.48,
+          "score": 5,
+          "reasons": [
+            "资金加速流入",
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
         },
         {
-          "name": "建筑材料",
-          "change": 1.46,
-          "inflow": 15.04,
-          "leader": "国际复材",
-          "leaderChange": 14.04
+          "name": "IT服务",
+          "change": 128.93,
+          "inflow": 95.54,
+          "score": 4,
+          "reasons": [
+            "资金加速流入",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
         },
         {
-          "name": "自动化设备",
-          "change": 3.48,
-          "inflow": 7.76,
-          "leader": "鸿仕达",
-          "leaderChange": 13.99
+          "name": "元件",
+          "change": 56.36,
+          "inflow": 115.76,
+          "score": 4,
+          "reasons": [
+            "资金加速流入",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ]
+        },
+        {
+          "name": "其他电子",
+          "change": 2.79,
+          "inflow": 5.24,
+          "score": 4,
+          "reasons": [
+            "资金加速流入",
+            "涨幅不大",
+            "3日累计流入>5亿"
+          ]
         }
       ],
       "disaster": [
         {
           "name": "银行",
-          "change": -1.15,
-          "inflow": -33.02,
-          "leader": "江苏银行",
-          "leaderChange": 1.22
-        },
-        {
-          "name": "电网设备",
-          "change": 1.14,
-          "inflow": -23.1,
-          "leader": "柘中股份",
-          "leaderChange": 10.01
+          "change": -2.69,
+          "inflow": -70.13,
+          "fallPct": 100.0,
+          "stars": "⭐",
+          "verdict": "真崩·普跌"
         },
         {
           "name": "电力",
-          "change": 0.12,
-          "inflow": -19.66,
-          "leader": "金房能源",
-          "leaderChange": 10.0
+          "change": 0.2,
+          "inflow": -32.77,
+          "fallPct": 58.3,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
-          "name": "白酒",
-          "change": -0.54,
-          "inflow": -16.34,
-          "leader": "皇台酒业",
-          "leaderChange": 2.64
+          "name": "汽车整车",
+          "change": -1.69,
+          "inflow": -27.8,
+          "fallPct": 82.6,
+          "stars": "⭐⭐",
+          "verdict": "普跌"
+        },
+        {
+          "name": "保险",
+          "change": -2.46,
+          "inflow": -26.48,
+          "fallPct": 100.0,
+          "stars": "⭐",
+          "verdict": "真崩·普跌"
+        },
+        {
+          "name": "证券",
+          "change": 0.04,
+          "inflow": -22.09,
+          "fallPct": 56.2,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         }
       ],
       "risk": [
         {
-          "name": "电网设备",
-          "change": 1.14,
-          "inflow": -23.1,
-          "leader": "柘中股份",
-          "leaderChange": 10.01
+          "name": "电力",
+          "change": 0.2,
+          "inflow": -32.77,
+          "signal": "诱多嫌疑"
         },
         {
-          "name": "电力",
-          "change": 0.12,
-          "inflow": -19.66,
-          "leader": "金房能源",
-          "leaderChange": 10.0
+          "name": "证券",
+          "change": 0.04,
+          "inflow": -22.09,
+          "signal": "诱多嫌疑"
         },
         {
           "name": "建筑装饰",
-          "change": 0.78,
-          "inflow": -9.81,
-          "leader": "华建集团",
-          "leaderChange": 10.04
-        },
-        {
-          "name": "游戏",
-          "change": 1.18,
-          "inflow": -5.77,
-          "leader": "凯撒文化",
-          "leaderChange": 10.16
-        },
-        {
-          "name": "家居用品",
-          "change": 0.85,
-          "inflow": -5.64,
-          "leader": "高乐股份",
-          "leaderChange": 9.98
+          "change": 1.3,
+          "inflow": -16.07,
+          "signal": "诱多嫌疑"
         }
       ]
     }
