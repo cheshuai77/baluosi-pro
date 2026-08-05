@@ -65,12 +65,16 @@
   .container { padding: 20px 24px; max-width: 1800px; margin: 0 auto; }
 
   /* ===== 市场总览 - 2行布局 ===== */
-  .market-indices { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 14px; }
+  .market-indices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 14px; }
   .market-indices .stat-card {
     position: relative; overflow: hidden;
     border-left: 3px solid transparent; padding-left: 15px;
   }
-  /* 五大指数卡片主题色 + 水印图案 */
+  /* 非对称布局：上证大块占半行，深证/创业板左右辅佐；科创50/北证50第二行均分 */
+  .market-indices .stat-card:nth-child(1) { grid-column: span 2; } /* 上证-大块 */
+  .market-indices .stat-card:nth-child(4) { grid-column: span 2; } /* 科创50-半行 */
+  .market-indices .stat-card:nth-child(5) { grid-column: span 2; } /* 北证50-半行 */
+  /* 主题色 + 水印图案 */
   .market-indices .stat-card:nth-child(1) { border-left-color: #e74c3c; } /* 上证-红 */
   .market-indices .stat-card:nth-child(1)::after { content: "🏙️"; }
   .market-indices .stat-card:nth-child(2) { border-left-color: #3498db; } /* 深证-蓝 */
@@ -330,7 +334,7 @@
     .date-text { min-width: 80px; font-size: 13px; }
     .container { padding: 12px 10px; }
 
-    .market-indices { grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 8px; }
+    .market-indices { grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 8px; }
     .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
     .stat-card { padding: 10px 12px; border-radius: 10px; }
     .stat-value { font-size: 16px; }
