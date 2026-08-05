@@ -100,8 +100,8 @@
   .stat-header { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
   .stat-icon { font-size: 16px; }
   .stat-label { font-size: 12px; color: var(--text-secondary); }
-  .stat-value { font-size: 20px; font-weight: 700; font-family: 'SF Mono', Consolas, monospace; }
-  .stat-change { font-size: 13px; font-weight: 500; margin-left: 8px; }
+  .stat-value { font-size: 24px; font-weight: 700; font-family: 'SF Mono', Consolas, monospace; }
+  .stat-change { font-size: 14px; font-weight: 500; margin-left: 8px; }
   .stat-sub { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
   .stat-detail { font-size: 11px; color: var(--text-tertiary); margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
   .stat-detail span { white-space: nowrap; }
@@ -352,13 +352,17 @@
     .date-text { min-width: 80px; font-size: 13px; }
     .container { padding: 12px 10px; }
 
-    .market-indices { grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
-    .market-indices .stat-card:nth-child(1) .stat-detail { gap: 4px 8px; margin-top: 6px; }
-    .market-indices .stat-change { font-size: 13px; }
+    /* 五大指数：上证独占一行，其他四个2×2 */
+    .market-indices { grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+    .market-indices .stat-card:nth-child(1) { grid-column: 1 / -1; grid-row: auto; }
+    .market-indices .stat-card:nth-child(1) .stat-detail { gap: 6px 12px; margin-top: 8px; }
+    .market-indices .stat-change { font-size: 16px; }
+    /* 数值+涨跌幅不换行 */
+    .market-indices .stat-card > div:nth-child(2) { white-space: nowrap; }
+    .stat-value { font-size: 22px; }
+    .stat-change { font-size: 16px; font-weight: 700; margin-left: 8px; }
     .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
     .stat-card { padding: 10px 12px; border-radius: 10px; }
-    .stat-value { font-size: 16px; }
-    .stat-change { font-size: 12px; margin-left: 4px; }
     .stat-sub { font-size: 10px; }
     .stat-icon { font-size: 14px; }
 
