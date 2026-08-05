@@ -16171,7 +16171,7 @@
           "tag": "anomaly",
           "label": "异动流入"
         },
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -16237,7 +16237,7 @@
           "tag": "anomaly",
           "label": "异动流入"
         },
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -16365,7 +16365,7 @@
         "accum3dOut": 499.34,
         "accum5dIn": 427.72,
         "accum5dOut": 440.0,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -16493,7 +16493,7 @@
         "accum3dOut": 222.41,
         "accum5dIn": 202.73,
         "accum5dOut": 182.06,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -16617,7 +16617,7 @@
         "accum3dOut": 210.4,
         "accum5dIn": 187.52,
         "accum5dOut": 175.65,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -16865,7 +16865,7 @@
         "accum3dOut": 133.27,
         "accum5dIn": 142.26,
         "accum5dOut": 96.08,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -17051,7 +17051,7 @@
         "accum3dOut": 163.32,
         "accum5dIn": 137.49,
         "accum5dOut": 134.17,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -17113,7 +17113,7 @@
         "accum3dOut": 27.57,
         "accum5dIn": 31.82,
         "accum5dOut": 24.61,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -17679,7 +17679,7 @@
         "accum3dOut": 44.17,
         "accum5dIn": 33.99,
         "accum5dOut": 37.34,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -17807,7 +17807,7 @@
         "accum3dOut": 24.16,
         "accum5dIn": 16.79,
         "accum5dOut": 19.12,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -17869,7 +17869,7 @@
         "accum3dOut": 99.17,
         "accum5dIn": 86.19,
         "accum5dOut": 79.24,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -17935,7 +17935,7 @@
           "tag": "continuous",
           "label": "连续3日流入"
         },
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -17997,7 +17997,7 @@
         "accum3dOut": 14.02,
         "accum5dIn": 12.0,
         "accum5dOut": 12.91,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -18059,7 +18059,7 @@
         "accum3dOut": 8.99,
         "accum5dIn": 13.93,
         "accum5dOut": 11.91,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -18369,7 +18369,7 @@
         "accum3dOut": 72.95,
         "accum5dIn": 52.15,
         "accum5dOut": 51.04,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -21353,7 +21353,7 @@
         "accum3dOut": 28.24,
         "accum5dIn": 25.24,
         "accum5dOut": 25.54,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -21415,7 +21415,7 @@
         "accum3dOut": 32.72,
         "accum5dIn": 33.39,
         "accum5dOut": 33.86,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -21539,7 +21539,7 @@
         "accum3dOut": 78.48,
         "accum5dIn": 79.06,
         "accum5dOut": 73.13,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -21601,7 +21601,7 @@
         "accum3dOut": 139.4,
         "accum5dIn": 175.33,
         "accum5dOut": 156.49,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -21725,7 +21725,7 @@
         "accum3dOut": 184.7,
         "accum5dIn": 131.07,
         "accum5dOut": 122.98,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -21862,7 +21862,8 @@
       "totalFlowIn": 9530.47,
       "totalFlowOut": 9155.32,
       "netFlow": 375.14,
-      "avgChange": 1.58
+      "avgChange": 1.58,
+      "updateTime": "2026-08-05 15:30"
     }
   },
   "signals": {
@@ -22388,143 +22389,212 @@
       ]
     },
     "2026-08-05": {
+      "date": "2026-08-05",
+      "collectTime": "00:32",
       "mainLine": [
         {
-          "name": "贵金属",
-          "change": 7.72,
-          "inflow": 69.88,
-          "risePct": 100.0,
-          "stars": 5
-        },
-        {
-          "name": "电子化学品",
-          "change": 7.53,
-          "inflow": 24.16,
-          "risePct": 100.0,
-          "stars": 4
-        },
-        {
-          "name": "小金属",
-          "change": 6.12,
-          "inflow": 2.95,
-          "risePct": 100.0,
-          "stars": 3
-        },
-        {
           "name": "半导体",
-          "change": 5.63,
-          "inflow": 98.81,
-          "risePct": 97.3,
-          "stars": 5
+          "code": "881121",
+          "change_pct": 5.63,
+          "main_net_in": 98.81,
+          "rise_count": 178,
+          "fall_count": 5,
+          "rise_pct": 97.3,
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "有研硅",
+          "leader_change_pct": 17.6
         },
         {
-          "name": "非金属材料",
-          "change": 5.4,
-          "inflow": 2.63,
-          "risePct": 100.0,
-          "stars": 2
+          "name": "贵金属",
+          "code": "881169",
+          "change_pct": 7.72,
+          "main_net_in": 69.88,
+          "rise_count": 14,
+          "fall_count": 0,
+          "rise_pct": 100.0,
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "晓程科技",
+          "leader_change_pct": 11.9
         },
         {
-          "name": "元件",
-          "change": 5.12,
-          "inflow": 42.43,
-          "risePct": 96.8,
-          "stars": 4
-        },
-        {
-          "name": "其他电子",
-          "change": 4.01,
-          "inflow": 1.68,
-          "risePct": 91.2,
-          "stars": 2
-        },
-        {
-          "name": "消费电子",
-          "change": 3.81,
-          "inflow": 34.92,
-          "risePct": 91.7,
-          "stars": 3
-        },
-        {
-          "name": "能源金属",
-          "change": 3.76,
-          "inflow": 2.71,
-          "risePct": 100.0,
-          "stars": 2
-        },
-        {
-          "name": "自动化设备",
-          "change": 3.48,
-          "inflow": 7.76,
-          "risePct": 84.2,
-          "stars": 2
+          "name": "工业金属",
+          "code": "881168",
+          "change_pct": 3.11,
+          "main_net_in": 56.46,
+          "rise_count": 49,
+          "fall_count": 6,
+          "rise_pct": 89.1,
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "锌业股份",
+          "leader_change_pct": 10.1
         }
       ],
       "latent": [
         {
-          "name": "证券",
-          "change": 0.55,
-          "inflow": 10.82,
-          "tag": "温和蓄力"
+          "name": "工业金属",
+          "score": 5,
+          "reasons": [
+            "资金加速流入",
+            "涨幅不大",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ],
+          "cum_10d": 24.74,
+          "cum_3d": 47.27,
+          "avg_10d": 4.95,
+          "avg_3d": 15.76,
+          "cum_change_10d": 4.43
         },
         {
-          "name": "港口航运",
-          "change": 0.79,
-          "inflow": 7.58,
-          "tag": "温和蓄力"
+          "name": "建筑材料",
+          "score": 4,
+          "reasons": [
+            "资金加速流入",
+            "涨幅不大",
+            "3日累计流入>5亿"
+          ],
+          "cum_10d": 6.33,
+          "cum_3d": 9.89,
+          "avg_10d": 1.27,
+          "avg_3d": 3.3,
+          "cum_change_10d": 4.4
         },
         {
-          "name": "保险",
-          "change": 0.83,
-          "inflow": 3.32,
-          "tag": "温和蓄力"
+          "name": "通信设备",
+          "score": 4,
+          "reasons": [
+            "资金加速流入",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ],
+          "cum_10d": 194.65,
+          "cum_3d": 207.33,
+          "avg_10d": 38.93,
+          "avg_3d": 69.11,
+          "cum_change_10d": 8.66
         },
         {
-          "name": "养殖业",
-          "change": 0.73,
-          "inflow": 2.98,
-          "tag": "温和蓄力"
+          "name": "通用设备",
+          "score": 4,
+          "reasons": [
+            "资金加速流入",
+            "累计流入>10亿",
+            "3日累计流入>5亿"
+          ],
+          "cum_10d": 36.86,
+          "cum_3d": 38.3,
+          "avg_10d": 7.37,
+          "avg_3d": 12.77,
+          "cum_change_10d": 7.75
         },
         {
-          "name": "机场航运",
-          "change": 0.46,
-          "inflow": 2.58,
-          "tag": "微涨蓄力"
+          "name": "专用设备",
+          "score": 3,
+          "reasons": [
+            "资金加速流入",
+            "3日累计流入>5亿"
+          ],
+          "cum_10d": 0.46,
+          "cum_3d": 14.36,
+          "avg_10d": 0.09,
+          "avg_3d": 4.79,
+          "cum_change_10d": 5.82
         }
       ],
       "disaster": [
         {
           "name": "银行",
-          "change": -1.15,
-          "inflow": -33.02,
-          "fallPct": 0
+          "code": "881155",
+          "change_pct": -1.15,
+          "main_net_in": -33.02,
+          "rise_count": 0,
+          "fall_count": 0,
+          "fall_pct": 0,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
+        },
+        {
+          "name": "电网设备",
+          "code": "881278",
+          "change_pct": 1.14,
+          "main_net_in": -23.1,
+          "rise_count": 0,
+          "fall_count": 0,
+          "fall_pct": 0,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
           "name": "电力",
-          "change": 0.12,
-          "inflow": -19.66,
-          "fallPct": 0
+          "code": "881145",
+          "change_pct": 0.12,
+          "main_net_in": -19.66,
+          "rise_count": 0,
+          "fall_count": 0,
+          "fall_pct": 0,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
           "name": "白酒",
-          "change": -0.54,
-          "inflow": -16.34,
-          "fallPct": 0
+          "code": "881273",
+          "change_pct": -0.54,
+          "main_net_in": -16.34,
+          "rise_count": 0,
+          "fall_count": 0,
+          "fall_pct": 0,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         },
         {
-          "name": "中药",
-          "change": -0.59,
-          "inflow": -8.85,
-          "fallPct": 0
-        },
-        {
-          "name": "油气开采及服务",
-          "change": -0.69,
-          "inflow": -7.45,
-          "fallPct": 0
+          "name": "建筑装饰",
+          "code": "881116",
+          "change_pct": 0.78,
+          "main_net_in": -9.81,
+          "rise_count": 0,
+          "fall_count": 0,
+          "fall_pct": 0,
+          "stars": "⭐⭐⭐",
+          "verdict": "虚跌·少数权重砸盘"
         }
       ],
-      "risk": []
+      "risk": [
+        {
+          "name": "综合",
+          "code": "881165",
+          "type": "inflow_but_down",
+          "change_pct": -0.11,
+          "main_net_in": 2.09,
+          "signal": "压盘吸筹嫌疑"
+        },
+        {
+          "name": "电网设备",
+          "code": "881278",
+          "type": "outflow_but_up",
+          "change_pct": 1.14,
+          "main_net_in": -23.1,
+          "signal": "诱多嫌疑"
+        },
+        {
+          "name": "电力",
+          "code": "881145",
+          "type": "outflow_but_up",
+          "change_pct": 0.12,
+          "main_net_in": -19.66,
+          "signal": "诱多嫌疑"
+        },
+        {
+          "name": "建筑装饰",
+          "code": "881116",
+          "type": "outflow_but_up",
+          "change_pct": 0.78,
+          "main_net_in": -9.81,
+          "signal": "诱多嫌疑"
+        }
+      ]
     }
   }
 }
