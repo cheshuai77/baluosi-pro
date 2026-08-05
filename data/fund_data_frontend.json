@@ -21854,31 +21854,31 @@
       "indices": [
         {
           "name": "上证指数",
-          "value": 3866.8093,
-          "change": 1.16
+          "value": 3867.7205,
+          "change": 1.19
         },
         {
           "name": "深证成指",
-          "value": 14038.1,
-          "change": 1.1
+          "value": 14049.29,
+          "change": 1.18
         },
         {
           "name": "创业板指",
-          "value": 3494.96,
-          "change": 0.17
+          "value": 3499.41,
+          "change": 0.3
         },
         {
           "name": "科创50",
-          "value": 1682.241,
-          "change": 4.08
+          "value": 1683.4218,
+          "change": 4.15
         },
         {
           "name": "北证50",
-          "value": 1115.606,
-          "change": 2.022
+          "value": 1115.762,
+          "change": 2.037
         }
       ],
-      "updateTime": "11:12"
+      "updateTime": "11:13"
     }
   },
   "signals": {
