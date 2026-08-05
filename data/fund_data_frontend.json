@@ -22406,155 +22406,115 @@
     "2026-08-05": {
       "mainLine": [
         {
+          "name": "贵金属",
+          "change": 6.04,
+          "inflow": 45.95,
+          "stars": 5,
+          "leader": "四川黄金",
+          "leaderChange": 9.99
+        },
+        {
           "name": "半导体",
-          "change": 6.01,
-          "inflow": 219.35,
-          "risePct": 97.3,
+          "change": 4.75,
+          "inflow": 44.97,
           "stars": 5,
-          "verdict": "真热·普涨",
-          "leader_stock": "和林微纳",
-          "leader_change_pct": 20.0
+          "leader": "有研硅",
+          "leaderChange": 13.7
         },
         {
-          "name": "通信设备",
-          "change": 5.4,
-          "inflow": 182.8,
-          "risePct": 96.7,
-          "stars": 5,
-          "verdict": "真热·普涨",
-          "leader_stock": "蘅东光",
-          "leader_change_pct": 20.8
+          "name": "工业金属",
+          "change": 2.75,
+          "inflow": 39.06,
+          "stars": 3,
+          "leader": "锌业股份",
+          "leaderChange": 10.11
         },
         {
-          "name": "元件",
-          "change": 7.07,
-          "inflow": 81.68,
-          "risePct": 100.0,
+          "name": "电池",
+          "change": 2.58,
+          "inflow": 29.07,
+          "stars": 3,
+          "leader": "龙鑫智能",
+          "leaderChange": 16.48
+        },
+        {
+          "name": "电子化学品",
+          "change": 6.36,
+          "inflow": 23.01,
           "stars": 5,
-          "verdict": "真热·普涨",
-          "leader_stock": "嘉立创",
-          "leader_change_pct": 146.3
+          "leader": "中巨芯",
+          "leaderChange": 20.01
         }
       ],
       "latent": [
         {
-          "name": "汽车零部件",
-          "change": 4.02,
-          "inflow": 14.87,
-          "score": 5,
-          "reasons": [
-            "资金加速流入",
-            "涨幅不大",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
+          "name": "软件开发",
+          "change": 2.37,
+          "inflow": 22.22
+        },
+        {
+          "name": "光学光电子",
+          "change": 2.65,
+          "inflow": 17.01
         },
         {
           "name": "通用设备",
-          "change": 4.98,
-          "inflow": 20.48,
-          "score": 5,
-          "reasons": [
-            "资金加速流入",
-            "涨幅不大",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
+          "change": 2.44,
+          "inflow": 13.15
+        },
+        {
+          "name": "建筑材料",
+          "change": 1.4,
+          "inflow": 13.06
         },
         {
           "name": "IT服务",
-          "change": 128.93,
-          "inflow": 95.54,
-          "score": 4,
-          "reasons": [
-            "资金加速流入",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
-        },
-        {
-          "name": "元件",
-          "change": 56.36,
-          "inflow": 115.76,
-          "score": 4,
-          "reasons": [
-            "资金加速流入",
-            "累计流入>10亿",
-            "3日累计流入>5亿"
-          ]
-        },
-        {
-          "name": "其他电子",
-          "change": 2.79,
-          "inflow": 5.24,
-          "score": 4,
-          "reasons": [
-            "资金加速流入",
-            "涨幅不大",
-            "3日累计流入>5亿"
-          ]
+          "change": 2.82,
+          "inflow": 10.2
         }
       ],
       "disaster": [
         {
           "name": "银行",
-          "change": -2.69,
-          "inflow": -70.13,
-          "fallPct": 100.0,
-          "stars": "⭐",
-          "verdict": "真崩·普跌"
+          "change": -0.89,
+          "inflow": -22.92
+        },
+        {
+          "name": "电网设备",
+          "change": 0.61,
+          "inflow": -15.81
         },
         {
           "name": "电力",
-          "change": 0.2,
-          "inflow": -32.77,
-          "fallPct": 58.3,
-          "stars": "⭐⭐⭐",
-          "verdict": "虚跌·少数权重砸盘"
-        },
-        {
-          "name": "汽车整车",
-          "change": -1.69,
-          "inflow": -27.8,
-          "fallPct": 82.6,
-          "stars": "⭐⭐",
-          "verdict": "普跌"
-        },
-        {
-          "name": "保险",
-          "change": -2.46,
-          "inflow": -26.48,
-          "fallPct": 100.0,
-          "stars": "⭐",
-          "verdict": "真崩·普跌"
-        },
-        {
-          "name": "证券",
-          "change": 0.04,
-          "inflow": -22.09,
-          "fallPct": 56.2,
-          "stars": "⭐⭐⭐",
-          "verdict": "虚跌·少数权重砸盘"
+          "change": -0.05,
+          "inflow": -15.74
         }
       ],
       "risk": [
         {
-          "name": "电力",
-          "change": 0.2,
-          "inflow": -32.77,
-          "signal": "诱多嫌疑"
+          "name": "电网设备",
+          "change": 0.61,
+          "inflow": -15.81
         },
         {
-          "name": "证券",
-          "change": 0.04,
-          "inflow": -22.09,
-          "signal": "诱多嫌疑"
+          "name": "通信设备",
+          "change": 2.29,
+          "inflow": -5.73
         },
         {
           "name": "建筑装饰",
-          "change": 1.3,
-          "inflow": -16.07,
-          "signal": "诱多嫌疑"
+          "change": 0.84,
+          "inflow": -5.3
+        },
+        {
+          "name": "通信服务",
+          "change": 1.34,
+          "inflow": -4.85
+        },
+        {
+          "name": "文化传媒",
+          "change": 0.51,
+          "inflow": -4.37
         }
       ]
     }
