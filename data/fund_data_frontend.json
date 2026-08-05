@@ -16171,7 +16171,7 @@
           "tag": "anomaly",
           "label": "异动流入"
         },
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -16237,7 +16237,7 @@
           "tag": "anomaly",
           "label": "异动流入"
         },
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -16365,7 +16365,7 @@
         "accum3dOut": 499.34,
         "accum5dIn": 427.72,
         "accum5dOut": 440.0,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -16493,7 +16493,7 @@
         "accum3dOut": 222.41,
         "accum5dIn": 202.73,
         "accum5dOut": 182.06,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -16617,7 +16617,7 @@
         "accum3dOut": 210.4,
         "accum5dIn": 187.52,
         "accum5dOut": 175.65,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -16865,7 +16865,7 @@
         "accum3dOut": 133.27,
         "accum5dIn": 142.26,
         "accum5dOut": 96.08,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -17051,7 +17051,7 @@
         "accum3dOut": 163.32,
         "accum5dIn": 137.49,
         "accum5dOut": 134.17,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -17113,7 +17113,7 @@
         "accum3dOut": 27.57,
         "accum5dIn": 31.82,
         "accum5dOut": 24.61,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -17679,7 +17679,7 @@
         "accum3dOut": 44.17,
         "accum5dIn": 33.99,
         "accum5dOut": 37.34,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -17807,7 +17807,7 @@
         "accum3dOut": 24.16,
         "accum5dIn": 16.79,
         "accum5dOut": 19.12,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -17869,7 +17869,7 @@
         "accum3dOut": 99.17,
         "accum5dIn": 86.19,
         "accum5dOut": 79.24,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -17935,7 +17935,7 @@
           "tag": "continuous",
           "label": "连续3日流入"
         },
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -17997,7 +17997,7 @@
         "accum3dOut": 14.02,
         "accum5dIn": 12.0,
         "accum5dOut": 12.91,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -18059,7 +18059,7 @@
         "accum3dOut": 8.99,
         "accum5dIn": 13.93,
         "accum5dOut": 11.91,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -18369,7 +18369,7 @@
         "accum3dOut": 72.95,
         "accum5dIn": 52.15,
         "accum5dOut": 51.04,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -21353,7 +21353,7 @@
         "accum3dOut": 28.24,
         "accum5dIn": 25.24,
         "accum5dOut": 25.54,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -21415,7 +21415,7 @@
         "accum3dOut": 32.72,
         "accum5dIn": 33.39,
         "accum5dOut": 33.86,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -21539,7 +21539,7 @@
         "accum3dOut": 78.48,
         "accum5dIn": 79.06,
         "accum5dOut": 73.13,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -21601,7 +21601,7 @@
         "accum3dOut": 139.4,
         "accum5dIn": 175.33,
         "accum5dOut": 156.49,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -21725,7 +21725,7 @@
         "accum3dOut": 184.7,
         "accum5dIn": 131.07,
         "accum5dOut": 122.98,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -22388,9 +22388,142 @@
       ]
     },
     "2026-08-05": {
-      "mainLine": [],
-      "latent": [],
-      "disaster": [],
+      "mainLine": [
+        {
+          "name": "贵金属",
+          "change": 7.72,
+          "inflow": 69.88,
+          "risePct": 100.0,
+          "stars": 5
+        },
+        {
+          "name": "电子化学品",
+          "change": 7.53,
+          "inflow": 24.16,
+          "risePct": 100.0,
+          "stars": 4
+        },
+        {
+          "name": "小金属",
+          "change": 6.12,
+          "inflow": 2.95,
+          "risePct": 100.0,
+          "stars": 3
+        },
+        {
+          "name": "半导体",
+          "change": 5.63,
+          "inflow": 98.81,
+          "risePct": 97.3,
+          "stars": 5
+        },
+        {
+          "name": "非金属材料",
+          "change": 5.4,
+          "inflow": 2.63,
+          "risePct": 100.0,
+          "stars": 2
+        },
+        {
+          "name": "元件",
+          "change": 5.12,
+          "inflow": 42.43,
+          "risePct": 96.8,
+          "stars": 4
+        },
+        {
+          "name": "其他电子",
+          "change": 4.01,
+          "inflow": 1.68,
+          "risePct": 91.2,
+          "stars": 2
+        },
+        {
+          "name": "消费电子",
+          "change": 3.81,
+          "inflow": 34.92,
+          "risePct": 91.7,
+          "stars": 3
+        },
+        {
+          "name": "能源金属",
+          "change": 3.76,
+          "inflow": 2.71,
+          "risePct": 100.0,
+          "stars": 2
+        },
+        {
+          "name": "自动化设备",
+          "change": 3.48,
+          "inflow": 7.76,
+          "risePct": 84.2,
+          "stars": 2
+        }
+      ],
+      "latent": [
+        {
+          "name": "证券",
+          "change": 0.55,
+          "inflow": 10.82,
+          "tag": "温和蓄力"
+        },
+        {
+          "name": "港口航运",
+          "change": 0.79,
+          "inflow": 7.58,
+          "tag": "温和蓄力"
+        },
+        {
+          "name": "保险",
+          "change": 0.83,
+          "inflow": 3.32,
+          "tag": "温和蓄力"
+        },
+        {
+          "name": "养殖业",
+          "change": 0.73,
+          "inflow": 2.98,
+          "tag": "温和蓄力"
+        },
+        {
+          "name": "机场航运",
+          "change": 0.46,
+          "inflow": 2.58,
+          "tag": "微涨蓄力"
+        }
+      ],
+      "disaster": [
+        {
+          "name": "银行",
+          "change": -1.15,
+          "inflow": -33.02,
+          "fallPct": 0
+        },
+        {
+          "name": "电力",
+          "change": 0.12,
+          "inflow": -19.66,
+          "fallPct": 0
+        },
+        {
+          "name": "白酒",
+          "change": -0.54,
+          "inflow": -16.34,
+          "fallPct": 0
+        },
+        {
+          "name": "中药",
+          "change": -0.59,
+          "inflow": -8.85,
+          "fallPct": 0
+        },
+        {
+          "name": "油气开采及服务",
+          "change": -0.69,
+          "inflow": -7.45,
+          "fallPct": 0
+        }
+      ],
       "risk": []
     }
   }
