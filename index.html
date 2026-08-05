@@ -1489,8 +1489,7 @@ let analysisPeriod = 'pre';
 async function loadAnalysis() {
   if (ANALYSIS_DATA) { renderAllModules(); return; }
   try {
-    const resp = await fetch('data/daily_analysis.json?t=' + Date.now());
-    ANALYSIS_DATA = await resp.json();
+    ANALYSIS_DATA = {"date": "2026-08-05", "updateTime": "2026-08-05", "periods": {"pre": {"judgment": {"verdict": "数据待生成", "confidence": "", "indicators": {}, "reasoning": ""}, "marketRef": {"indicators": [], "note": ""}, "rotation": {"summary": "", "sectors": [], "analysis": ""}, "pool": {"pools": []}}, "mid": {"judgment": {"verdict": "数据待生成", "confidence": "", "indicators": {}, "reasoning": ""}, "marketRef": {"indicators": [], "note": ""}, "rotation": {"summary": "", "sectors": [], "analysis": ""}, "pool": {"pools": []}}, "close": {"judgment": {"verdict": "数据待生成", "confidence": "", "indicators": {}, "reasoning": ""}, "marketRef": {"indicators": [], "note": ""}, "rotation": {"summary": "", "sectors": [], "analysis": ""}, "pool": {"pools": []}}}};
     renderAllModules();
   } catch(e) {
     console.warn('Analysis data not available:', e.message);
