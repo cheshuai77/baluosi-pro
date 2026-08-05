@@ -65,10 +65,10 @@
   .container { padding: 20px 24px; max-width: 1800px; margin: 0 auto; }
 
   /* ===== 市场总览 - 2行布局 ===== */
-  .market-indices { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .market-indices { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
   .market-indices .stat-card {
     position: relative; overflow: hidden;
-    border-left: 3px solid transparent; padding-left: 15px;
+    border-left: 3px solid transparent; padding: 10px 14px 8px 15px;
     background: linear-gradient(135deg, #fff 60%, #fafbfc 100%);
   }
   /* 上证大卡占2行在左，深证/创业/科创50/北证50等小卡在右2×2 */
@@ -358,9 +358,9 @@
     .market-indices .stat-card:nth-child(1) .stat-detail { gap: 6px 12px; margin-top: 8px; }
     .market-indices .stat-change { font-size: 16px; }
     /* 数值+涨跌幅不换行 */
-    .market-indices .stat-card > div:nth-child(2) { white-space: nowrap; }
+    .market-indices .stat-card > div:nth-child(2) { white-space: nowrap; display: flex; align-items: baseline; overflow: hidden; }
     .stat-value { font-size: 22px; }
-    .stat-change { font-size: 16px; font-weight: 700; margin-left: 8px; }
+    .stat-change { font-size: 16px; font-weight: 700; margin-left: 8px; flex-shrink: 0; }
     .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
     .stat-card { padding: 10px 12px; border-radius: 10px; }
     .stat-sub { font-size: 10px; }
@@ -393,9 +393,12 @@
 
   @media (max-width: 480px) {
     .market-indices { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .market-indices .stat-card:nth-child(1) { grid-column: 1 / -1; }
     .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 6px; }
-    .stat-card { padding: 8px 10px; }
-    .stat-value { font-size: 14px; }
+    .stat-card { padding: 8px 10px; border-radius: 8px; }
+    .market-indices .stat-card { padding: 8px 10px; }
+    .stat-value { font-size: 20px; }
+    .stat-change { font-size: 14px; }
     .stat-label { font-size: 11px; }
   }
 
