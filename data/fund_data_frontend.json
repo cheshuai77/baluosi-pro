@@ -21937,31 +21937,31 @@
           "name": "电池",
           "change": -1.96,
           "inflow": 17.44,
-          "signal": "量价背离"
+          "tag": "量价背离"
         },
         {
           "name": "白色家电",
           "change": -1.79,
           "inflow": 11.55,
-          "signal": "量价背离"
+          "tag": "量价背离"
         },
         {
           "name": "石油加工贸易",
           "change": -0.62,
           "inflow": 9.32,
-          "signal": "量价背离"
+          "tag": "量价背离"
         },
         {
           "name": "证券",
           "change": 0.36,
           "inflow": -5.6,
-          "signal": "量价背离"
+          "tag": "量价背离"
         },
         {
           "name": "旅游及酒店",
           "change": 0.52,
           "inflow": -2.0,
-          "signal": "量价背离"
+          "tag": "量价背离"
         }
       ]
     },
@@ -22046,19 +22046,19 @@
           "name": "半导体",
           "change": 4.23,
           "inflow": -159.81,
-          "signal": "拉高出货"
+          "tag": "拉高出货"
         },
         {
           "name": "元件",
           "change": 4.33,
           "inflow": -44.89,
-          "signal": "拉高出货"
+          "tag": "拉高出货"
         },
         {
           "name": "建筑装饰",
           "change": 2.83,
           "inflow": -22.04,
-          "signal": "量价背离"
+          "tag": "量价背离"
         }
       ]
     },
@@ -22100,6 +22100,7 @@
           "name": "保险",
           "change": 0.81,
           "inflow": 18.24,
+          "tag": "温和蓄力",
           "score": 3,
           "reasons": [
             "涨幅不大",
@@ -22111,6 +22112,7 @@
           "name": "汽车整车",
           "change": 3.25,
           "inflow": 12.28,
+          "tag": "温和蓄力",
           "score": 3,
           "reasons": [
             "涨幅不大",
@@ -22122,6 +22124,7 @@
           "name": "港口航运",
           "change": 2.73,
           "inflow": 15.61,
+          "tag": "温和蓄力",
           "score": 3,
           "reasons": [
             "涨幅不大",
@@ -22133,6 +22136,7 @@
           "name": "电池",
           "change": -1.44,
           "inflow": 18.79,
+          "tag": "压盘吸筹",
           "score": 3,
           "reasons": [
             "涨幅不大",
@@ -22144,6 +22148,7 @@
           "name": "白色家电",
           "change": 1.24,
           "inflow": 22.57,
+          "tag": "温和蓄力",
           "score": 3,
           "reasons": [
             "涨幅不大",
@@ -22199,25 +22204,25 @@
           "name": "保险",
           "change": -0.06,
           "inflow": 4.47,
-          "signal": "量价背离"
+          "tag": "量价背离"
         },
         {
           "name": "消费电子",
           "change": 0.37,
           "inflow": -25.69,
-          "signal": "量价背离"
+          "tag": "量价背离"
         },
         {
           "name": "建筑材料",
           "change": 1.3,
           "inflow": -22.54,
-          "signal": "量价背离"
+          "tag": "量价背离"
         },
         {
           "name": "IT服务",
           "change": 0.98,
           "inflow": -21.02,
-          "signal": "量价背离"
+          "tag": "量价背离"
         }
       ]
     },
@@ -22259,6 +22264,7 @@
           "name": "汽车零部件",
           "change": 4.02,
           "inflow": 14.87,
+          "tag": "温和蓄力",
           "score": 5,
           "reasons": [
             "资金加速流入",
@@ -22271,6 +22277,7 @@
           "name": "通用设备",
           "change": 4.98,
           "inflow": 20.48,
+          "tag": "温和蓄力",
           "score": 5,
           "reasons": [
             "资金加速流入",
@@ -22283,6 +22290,7 @@
           "name": "IT服务",
           "change": 128.93,
           "inflow": 95.54,
+          "tag": "温和蓄力",
           "score": 4,
           "reasons": [
             "资金加速流入",
@@ -22294,6 +22302,7 @@
           "name": "元件",
           "change": 56.36,
           "inflow": 115.76,
+          "tag": "温和蓄力",
           "score": 4,
           "reasons": [
             "资金加速流入",
@@ -22305,6 +22314,7 @@
           "name": "其他电子",
           "change": 2.79,
           "inflow": 5.24,
+          "tag": "温和蓄力",
           "score": 4,
           "reasons": [
             "资金加速流入",
@@ -22360,19 +22370,19 @@
           "name": "电力",
           "change": 0.2,
           "inflow": -32.77,
-          "signal": "量价背离"
+          "tag": "量价背离"
         },
         {
           "name": "证券",
           "change": 0.04,
           "inflow": -22.09,
-          "signal": "量价背离"
+          "tag": "量价背离"
         },
         {
           "name": "建筑装饰",
           "change": 1.3,
           "inflow": -16.07,
-          "signal": "量价背离"
+          "tag": "量价背离"
         }
       ]
     },
@@ -22414,6 +22424,7 @@
           "name": "工业金属",
           "change": 4.43,
           "inflow": 24.74,
+          "tag": "温和蓄力",
           "score": 5,
           "reasons": [
             "资金加速流入",
@@ -22426,6 +22437,7 @@
           "name": "建筑材料",
           "change": 4.4,
           "inflow": 6.33,
+          "tag": "温和蓄力",
           "score": 4,
           "reasons": [
             "资金加速流入",
@@ -22437,6 +22449,7 @@
           "name": "通信设备",
           "change": 8.66,
           "inflow": 194.65,
+          "tag": "温和蓄力",
           "score": 4,
           "reasons": [
             "资金加速流入",
@@ -22448,6 +22461,7 @@
           "name": "通用设备",
           "change": 7.75,
           "inflow": 36.86,
+          "tag": "温和蓄力",
           "score": 4,
           "reasons": [
             "资金加速流入",
@@ -22459,6 +22473,7 @@
           "name": "专用设备",
           "change": 5.82,
           "inflow": 0.46,
+          "tag": "温和蓄力",
           "score": 3,
           "reasons": [
             "资金加速流入",
@@ -22513,25 +22528,25 @@
           "name": "综合",
           "change": -0.11,
           "inflow": 2.09,
-          "signal": "量价背离"
+          "tag": "量价背离"
         },
         {
           "name": "电网设备",
           "change": 1.14,
           "inflow": -23.1,
-          "signal": "量价背离"
+          "tag": "量价背离"
         },
         {
           "name": "电力",
           "change": 0.12,
           "inflow": -19.66,
-          "signal": "量价背离"
+          "tag": "量价背离"
         },
         {
           "name": "建筑装饰",
           "change": 0.78,
           "inflow": -9.81,
-          "signal": "量价背离"
+          "tag": "量价背离"
         }
       ]
     }
