@@ -103,7 +103,7 @@
         "accum3dOut": 212.11,
         "accum5dIn": 262.2,
         "accum5dOut": 194.06,
-        "signal": "latent",
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -137,7 +137,7 @@
         "accum3dOut": 32.19,
         "accum5dIn": 37.57,
         "accum5dOut": 31.62,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -171,7 +171,7 @@
         "accum3dOut": 30.03,
         "accum5dIn": 32.28,
         "accum5dOut": 36.02,
-        "signal": "latent",
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -205,7 +205,7 @@
         "accum3dOut": 23.79,
         "accum5dIn": 34.55,
         "accum5dOut": 25.85,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -239,7 +239,7 @@
         "accum3dOut": 20.14,
         "accum5dIn": 23.14,
         "accum5dOut": 22.84,
-        "signal": "latent",
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -273,7 +273,7 @@
         "accum3dOut": 24.98,
         "accum5dIn": 33.87,
         "accum5dOut": 30.66,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -307,7 +307,7 @@
         "accum3dOut": 7.69,
         "accum5dIn": 10.09,
         "accum5dOut": 8.18,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -545,7 +545,7 @@
         "accum3dOut": 34.62,
         "accum5dIn": 39.92,
         "accum5dOut": 37.03,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -613,7 +613,7 @@
         "accum3dOut": 9.97,
         "accum5dIn": 12.97,
         "accum5dOut": 8.28,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -749,7 +749,7 @@
         "accum3dOut": 1.42,
         "accum5dIn": 1.75,
         "accum5dOut": 1.39,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -1463,7 +1463,7 @@
         "accum3dOut": 7.94,
         "accum5dIn": 6.69,
         "accum5dOut": 5.76,
-        "signal": null,
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -2041,7 +2041,7 @@
         "accum3dOut": 88.66,
         "accum5dIn": 131.88,
         "accum5dOut": 104.69,
-        "signal": null,
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -2857,7 +2857,7 @@
         "accum3dOut": 68.51,
         "accum5dIn": 106.28,
         "accum5dOut": 103.25,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -2891,7 +2891,7 @@
         "accum3dOut": 121.63,
         "accum5dIn": 167.41,
         "accum5dOut": 128.36,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -2925,7 +2925,7 @@
         "accum3dOut": 137.67,
         "accum5dIn": 155.19,
         "accum5dOut": 174.37,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -2959,7 +2959,7 @@
         "accum3dOut": 151.02,
         "accum5dIn": 237.68,
         "accum5dOut": 238.41,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -3240,7 +3240,7 @@
         "accum3dOut": 131.72,
         "accum5dIn": 104.77,
         "accum5dOut": 114.29,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3404,7 +3404,7 @@
         "accum3dOut": 30.42,
         "accum5dIn": 30.8,
         "accum5dOut": 43.32,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3486,7 +3486,7 @@
         "accum3dOut": 43.43,
         "accum5dIn": 44.01,
         "accum5dOut": 54.6,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3568,7 +3568,7 @@
         "accum3dOut": 124.55,
         "accum5dIn": 89.68,
         "accum5dOut": 97.05,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3691,7 +3691,7 @@
         "accum3dOut": 15.72,
         "accum5dIn": 12.61,
         "accum5dOut": 19.55,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3732,7 +3732,7 @@
         "accum3dOut": 30.91,
         "accum5dIn": 20.79,
         "accum5dOut": 28.5,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -3978,7 +3978,7 @@
         "accum3dOut": 25.86,
         "accum5dIn": 25.93,
         "accum5dOut": 31.2,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -4306,7 +4306,7 @@
         "accum3dOut": 10.92,
         "accum5dIn": 6.08,
         "accum5dOut": 12.64,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -4347,7 +4347,7 @@
         "accum3dOut": 53.32,
         "accum5dIn": 38.04,
         "accum5dOut": 47.9,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -4388,7 +4388,7 @@
         "accum3dOut": 35.07,
         "accum5dIn": 33.7,
         "accum5dOut": 48.98,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -5946,7 +5946,7 @@
         "accum3dOut": 9.34,
         "accum5dIn": 8.73,
         "accum5dOut": 10.12,
-        "signal": "risk",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6192,7 +6192,7 @@
         "accum3dOut": 26.4,
         "accum5dIn": 41.47,
         "accum5dOut": 51.11,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6233,7 +6233,7 @@
         "accum3dOut": 27.18,
         "accum5dIn": 33.41,
         "accum5dOut": 49.96,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6397,7 +6397,7 @@
         "accum3dOut": 36.91,
         "accum5dIn": 37.78,
         "accum5dOut": 55.32,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6438,7 +6438,7 @@
         "accum3dOut": 37.24,
         "accum5dIn": 39.42,
         "accum5dOut": 52.94,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6520,7 +6520,7 @@
         "accum3dOut": 189.81,
         "accum5dIn": 140.0,
         "accum5dOut": 129.44,
-        "signal": "risk",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6561,7 +6561,7 @@
         "accum3dOut": 202.33,
         "accum5dIn": 162.43,
         "accum5dOut": 167.53,
-        "signal": "risk",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -6643,7 +6643,7 @@
         "accum3dOut": 202.57,
         "accum5dIn": 160.08,
         "accum5dOut": 183.35,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -6684,7 +6684,7 @@
         "accum3dOut": 89.87,
         "accum5dIn": 54.31,
         "accum5dOut": 77.4,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -6725,7 +6725,7 @@
         "accum3dOut": 376.05,
         "accum5dIn": 267.95,
         "accum5dOut": 277.12,
-        "signal": "risk",
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -6770,7 +6770,7 @@
           "tag": "anomaly",
           "label": "异动流出"
         },
-        "signal": "risk",
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -6813,7 +6813,7 @@
         "accum3dOut": 122.98,
         "accum5dIn": 97.51,
         "accum5dOut": 90.8,
-        "signal": "latent",
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -6861,7 +6861,7 @@
         "accum3dOut": 156.49,
         "accum5dIn": 161.13,
         "accum5dOut": 151.02,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -6909,7 +6909,7 @@
         "accum3dOut": 608.0,
         "accum5dIn": 484.65,
         "accum5dOut": 461.22,
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -6957,7 +6957,7 @@
         "accum3dOut": 117.02,
         "accum5dIn": 135.83,
         "accum5dOut": 121.63,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7005,7 +7005,7 @@
         "accum3dOut": 96.51,
         "accum5dIn": 68.65,
         "accum5dOut": 59.95,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7053,7 +7053,7 @@
         "accum3dOut": 23.88,
         "accum5dIn": 23.12,
         "accum5dOut": 18.15,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7149,7 +7149,7 @@
         "accum3dOut": 46.72,
         "accum5dIn": 39.92,
         "accum5dOut": 36.82,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7249,7 +7249,7 @@
           "tag": "continuous",
           "label": "连续3日流入"
         },
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -7345,7 +7345,7 @@
         "accum3dOut": 9.66,
         "accum5dIn": 10.95,
         "accum5dOut": 8.61,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7685,7 +7685,7 @@
         "accum3dOut": 51.42,
         "accum5dIn": 42.1,
         "accum5dOut": 39.59,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7881,7 +7881,7 @@
           "tag": "continuous",
           "label": "连续3日流入"
         },
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -7977,7 +7977,7 @@
         "accum3dOut": 6.36,
         "accum5dIn": 7.07,
         "accum5dOut": 5.38,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -8025,7 +8025,7 @@
         "accum3dOut": 9.67,
         "accum5dIn": 11.27,
         "accum5dOut": 7.34,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -8169,7 +8169,7 @@
         "accum3dOut": 10.42,
         "accum5dIn": 10.56,
         "accum5dOut": 11.6,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -9905,7 +9905,7 @@
         "accum3dOut": 47.37,
         "accum5dIn": 35.46,
         "accum5dOut": 30.03,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -10481,7 +10481,7 @@
         "accum3dOut": 52.39,
         "accum5dIn": 28.21,
         "accum5dOut": 23.79,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -10529,7 +10529,7 @@
         "accum3dOut": 91.63,
         "accum5dIn": 91.26,
         "accum5dOut": 89.07,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -10673,7 +10673,7 @@
         "accum3dOut": 96.08,
         "accum5dIn": 89.68,
         "accum5dOut": 88.66,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -10961,7 +10961,7 @@
         "accum3dOut": 156.92,
         "accum5dIn": 145.16,
         "accum5dOut": 136.74,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -11009,7 +11009,7 @@
         "accum3dOut": 105.07,
         "accum5dIn": 97.59,
         "accum5dOut": 72.8,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -11446,7 +11446,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -11501,7 +11501,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -11666,7 +11666,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -11776,7 +11776,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": "main_line",
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -11941,7 +11941,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -12216,7 +12216,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -12330,7 +12330,7 @@
           "tag": "continuous",
           "label": "连续3日流入"
         },
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -12444,7 +12444,7 @@
           "tag": "continuous",
           "label": "连续3日流入"
         },
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -12778,7 +12778,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": "main_line",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -13061,7 +13061,7 @@
           "tag": "continuous",
           "label": "连续3日流入"
         },
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -13171,7 +13171,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": "latent",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -14216,7 +14216,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": "risk",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -15713,7 +15713,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -15768,7 +15768,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": null,
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -15823,7 +15823,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": "disaster",
+        "signal": null,
         "history": [
           {
             "date": "2026-07-30",
@@ -15878,7 +15878,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -16051,7 +16051,7 @@
         "accum3dOut": 0,
         "accum5dIn": 0,
         "accum5dOut": 0,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -16171,7 +16171,7 @@
           "tag": "anomaly",
           "label": "异动流入"
         },
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -16237,7 +16237,7 @@
           "tag": "anomaly",
           "label": "异动流入"
         },
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -16303,7 +16303,7 @@
           "tag": "anomaly",
           "label": "异动流入"
         },
-        "signal": null,
+        "signal": "main_line",
         "history": [
           {
             "date": "2026-07-30",
@@ -16741,7 +16741,7 @@
         "accum3dOut": 174.4,
         "accum5dIn": 144.68,
         "accum5dOut": 143.04,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -16803,7 +16803,7 @@
         "accum3dOut": 141.41,
         "accum5dIn": 107.67,
         "accum5dOut": 105.07,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -17493,7 +17493,7 @@
           "tag": "continuous",
           "label": "连续4日流入"
         },
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -18245,7 +18245,7 @@
         "accum3dOut": 19.45,
         "accum5dIn": 18.16,
         "accum5dOut": 14.5,
-        "signal": null,
+        "signal": "risk",
         "history": [
           {
             "date": "2026-07-30",
@@ -18307,7 +18307,7 @@
         "accum3dOut": 139.0,
         "accum5dIn": 123.32,
         "accum5dOut": 119.93,
-        "signal": null,
+        "signal": "latent",
         "history": [
           {
             "date": "2026-07-30",
@@ -21477,7 +21477,7 @@
         "accum3dOut": 99.38,
         "accum5dIn": 84.25,
         "accum5dOut": 83.32,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -21539,7 +21539,7 @@
         "accum3dOut": 78.48,
         "accum5dIn": 79.06,
         "accum5dOut": 73.13,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -21601,7 +21601,7 @@
         "accum3dOut": 139.4,
         "accum5dIn": 175.33,
         "accum5dOut": 156.49,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -21663,7 +21663,7 @@
         "accum3dOut": 123.51,
         "accum5dIn": 133.85,
         "accum5dOut": 117.02,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -21725,7 +21725,7 @@
         "accum3dOut": 184.7,
         "accum5dIn": 131.07,
         "accum5dOut": 122.98,
-        "signal": null,
+        "signal": "disaster",
         "history": [
           {
             "date": "2026-07-30",
@@ -21862,8 +21862,7 @@
       "totalFlowIn": 9530.47,
       "totalFlowOut": 9155.32,
       "netFlow": 375.14,
-      "avgChange": 1.58,
-      "updateTime": "2026-08-05 15:30"
+      "avgChange": 1.58
     }
   },
   "signals": {
@@ -21938,31 +21937,31 @@
           "name": "电池",
           "change": -1.96,
           "inflow": 17.44,
-          "tag": "压盘吸筹嫌疑"
+          "signal": "量价背离"
         },
         {
           "name": "白色家电",
           "change": -1.79,
           "inflow": 11.55,
-          "tag": "压盘吸筹嫌疑"
+          "signal": "量价背离"
         },
         {
           "name": "石油加工贸易",
           "change": -0.62,
           "inflow": 9.32,
-          "tag": "压盘吸筹嫌疑"
+          "signal": "量价背离"
         },
         {
           "name": "证券",
           "change": 0.36,
           "inflow": -5.6,
-          "tag": "诱多嫌疑"
+          "signal": "量价背离"
         },
         {
           "name": "旅游及酒店",
           "change": 0.52,
           "inflow": -2.0,
-          "tag": "诱多嫌疑"
+          "signal": "量价背离"
         }
       ]
     },
@@ -22047,19 +22046,19 @@
           "name": "半导体",
           "change": 4.23,
           "inflow": -159.81,
-          "tag": "诱多嫌疑"
+          "signal": "拉高出货"
         },
         {
           "name": "元件",
           "change": 4.33,
           "inflow": -44.89,
-          "tag": "诱多嫌疑"
+          "signal": "拉高出货"
         },
         {
           "name": "建筑装饰",
           "change": 2.83,
           "inflow": -22.04,
-          "tag": "诱多嫌疑"
+          "signal": "量价背离"
         }
       ]
     },
@@ -22200,25 +22199,25 @@
           "name": "保险",
           "change": -0.06,
           "inflow": 4.47,
-          "tag": "压盘吸筹嫌疑"
+          "signal": "量价背离"
         },
         {
           "name": "消费电子",
           "change": 0.37,
           "inflow": -25.69,
-          "tag": "诱多嫌疑"
+          "signal": "量价背离"
         },
         {
           "name": "建筑材料",
           "change": 1.3,
           "inflow": -22.54,
-          "tag": "诱多嫌疑"
+          "signal": "量价背离"
         },
         {
           "name": "IT服务",
           "change": 0.98,
           "inflow": -21.02,
-          "tag": "诱多嫌疑"
+          "signal": "量价背离"
         }
       ]
     },
@@ -22361,19 +22360,19 @@
           "name": "电力",
           "change": 0.2,
           "inflow": -32.77,
-          "tag": "诱多嫌疑"
+          "signal": "量价背离"
         },
         {
           "name": "证券",
           "change": 0.04,
           "inflow": -22.09,
-          "tag": "诱多嫌疑"
+          "signal": "量价背离"
         },
         {
           "name": "建筑装饰",
           "change": 1.3,
           "inflow": -16.07,
-          "tag": "诱多嫌疑"
+          "signal": "量价背离"
         }
       ]
     },
@@ -22514,25 +22513,25 @@
           "name": "综合",
           "change": -0.11,
           "inflow": 2.09,
-          "tag": "压盘吸筹嫌疑"
+          "signal": "量价背离"
         },
         {
           "name": "电网设备",
           "change": 1.14,
           "inflow": -23.1,
-          "tag": "诱多嫌疑"
+          "signal": "量价背离"
         },
         {
           "name": "电力",
           "change": 0.12,
           "inflow": -19.66,
-          "tag": "诱多嫌疑"
+          "signal": "量价背离"
         },
         {
           "name": "建筑装饰",
           "change": 0.78,
           "inflow": -9.81,
-          "tag": "诱多嫌疑"
+          "signal": "量价背离"
         }
       ]
     }
