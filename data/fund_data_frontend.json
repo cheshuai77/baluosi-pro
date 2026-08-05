@@ -21859,7 +21859,54 @@
       "totalFlowOut": 133.1,
       "netFlow": 430.4,
       "avgChange": 1.36,
-      "updateTime": "13:10"
+      "updateTime": "13:11",
+      "indices": [
+        {
+          "name": "上证指数",
+          "value": 3871.3237,
+          "change": 1.28,
+          "change_amount": 49.04,
+          "open": 3815.1217,
+          "high": 3876.114,
+          "low": 3815.1217
+        },
+        {
+          "name": "深证成指",
+          "value": 14138.045,
+          "change": 1.82,
+          "change_amount": 252.33,
+          "open": 13644.835,
+          "high": 14154.852,
+          "low": 13644.835
+        },
+        {
+          "name": "创业板指",
+          "value": 3538.598,
+          "change": 1.42,
+          "change_amount": 49.63,
+          "open": 3372.082,
+          "high": 3549.663,
+          "low": 3372.042
+        },
+        {
+          "name": "科创50",
+          "value": 1690.5223,
+          "change": 4.59,
+          "change_amount": 74.16,
+          "open": 1615.2608,
+          "high": 1703.5299,
+          "low": 1615.2608
+        },
+        {
+          "name": "北证50",
+          "value": 1117.13,
+          "change": 2.16,
+          "change_amount": 23.64,
+          "open": 1093.128,
+          "high": 1120.075,
+          "low": 1080.919
+        }
+      ]
     }
   },
   "signals": {
