@@ -21784,7 +21784,7 @@
       "sectorCount": 90
     },
     "2026-08-05": {
-      "collectTime": "11:47",
+      "collectTime": "11:51",
       "type": "盘中",
       "sectorCount": 90
     }
@@ -21848,19 +21848,57 @@
     },
     "2026-08-05": {
       "totalStocks": 5622,
-      "totalRise": 0,
-      "totalFall": 0,
-      "risePct": 0,
+      "totalRise": 5348,
+      "totalFall": 222,
+      "risePct": 96.0,
       "sectorUp": 83,
       "sectorDown": 5,
       "topSector": "电子化学品",
       "topSectorChange": 6.99,
-      "totalFlowIn": 6270.28,
-      "totalFlowOut": 5838.02,
+      "totalFlowIn": 554.0,
+      "totalFlowOut": 121.8,
       "netFlow": 432.2,
       "avgChange": 1.56,
-      "updateTime": "11:47",
-      "updateDate": "2026-08-05"
+      "updateTime": "11:51",
+      "updateDate": "2026-08-05",
+      "indices": [
+        {
+          "name": "上证指数",
+          "value": 1.34,
+          "change": -97.39,
+          "change_amount": -49.9345,
+          "open": 0,
+          "high": 0,
+          "low": 0
+        },
+        {
+          "name": "深证成指",
+          "value": 1.56,
+          "change": -99.28,
+          "change_amount": -214.626,
+          "open": 0,
+          "high": 0,
+          "low": 0
+        },
+        {
+          "name": "创业板指",
+          "value": 0.89,
+          "change": -97.12,
+          "change_amount": -30.006,
+          "open": 0,
+          "high": 0,
+          "low": 0
+        },
+        {
+          "name": "科创50",
+          "value": 5.18,
+          "change": -93.81,
+          "change_amount": -78.51259999999999,
+          "open": 0,
+          "high": 0,
+          "low": 0
+        }
+      ]
     }
   },
   "signals": {
