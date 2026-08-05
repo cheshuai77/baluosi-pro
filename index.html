@@ -138,6 +138,19 @@
   .flow-badge.zero { background: rgba(174,174,178,0.15); color: var(--text-tertiary); }
   .flow-badge.turn { background: #FFA94D; }
 
+  /* 大盘研究分析面板 */
+  .analysis-panel { background: var(--bg-secondary); border-radius: var(--card-radius); box-shadow: var(--shadow); padding: 24px; min-height: 400px; }
+  .analysis-loading { text-align: center; padding: 60px 0; color: var(--text-tertiary); font-size: 14px; }
+  .analysis-empty { text-align: center; padding: 60px 0; color: var(--text-tertiary); }
+  .analysis-empty .icon { font-size: 48px; margin-bottom: 12px; display: block; }
+  .analysis-date { font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; }
+  .analysis-section { margin-bottom: 24px; }
+  .analysis-section h3 { font-size: 15px; font-weight: 600; margin-bottom: 12px; color: var(--text-primary); }
+  .analysis-section p { font-size: 13px; line-height: 1.8; color: var(--text-secondary); }
+  .analysis-section table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 10px 0; }
+  .analysis-section th { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-weight: 500; }
+  .analysis-section td { padding: 6px 10px; border-bottom: 1px solid var(--border); }
+
   /* 信号关注区：横排4列，无描述文字 */
   .signal-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
   .signal-strip .signal-card {
@@ -494,9 +507,7 @@
 <!-- Tab bar -->
 <div class="top-tab-bar">
   <div class="top-tab-item active" data-tab="today" onclick="switchTopTab('today')">📊 今日资金信息</div>
-  <div class="top-tab-item disabled" title="即将上线">🌅 盘前简报</div>
-  <div class="top-tab-item disabled" title="即将上线">📡 盘中跟踪</div>
-  <div class="top-tab-item disabled" title="即将上线">🌙 收盘复盘</div>
+  <div class="top-tab-item" data-tab="analysis" onclick="switchTopTab('analysis')">📊 大盘研究分析</div>
 </div>
 
 <!-- ==================== Tab1: 今日资金信息 ==================== -->
@@ -578,6 +589,15 @@
     </div>
   </div>
 
+</div>
+</div>
+
+<!-- ==================== Tab2: 大盘研究分析 ==================== -->
+<div class="top-tab-content" id="tab-analysis">
+<div class="container">
+  <div class="analysis-panel" id="analysisPanel">
+    <div class="analysis-loading">加载分析数据中...</div>
+  </div>
 </div>
 </div>
 
@@ -1406,11 +1426,48 @@ function switchTopTab(tabName) {
   const target = document.querySelector('.top-tab-item[data-tab="' + tabName + '"]');
   if (target && !target.classList.contains('disabled')) {
     target.classList.add('active');
-      }, 100);
-    }
+    const content = document.getElementById('tab-' + tabName);
+    if (content) content.classList.add('active');
+  }
+  if (tabName === 'analysis') loadAnalysis();
+}
+
+// ========== 大盘研究分析加载 ==========
+async function loadAnalysis() {
+  const panel = document.getElementById('analysisPanel');
+  if (!panel) return;
+  try {
+    const resp = await fetch('data/daily_analysis.json?t=' + Date.now());
+    if (!resp.ok) throw new Error('not found');
+    const data = await resp.json();
+    renderAnalysis(data);
+  } catch(e) {
+    panel.innerHTML = '<div class="analysis-empty"><span class="icon">📝</span><p>今日分析报告尚未生成</p><p style="font-size:12px;color:var(--text-tertiary);margin-top:8px;">收盘后由扒螺蛳Pro自动产出</p></div>';
   }
 }
 
+function renderAnalysis(data) {
+  const panel = document.getElementById('analysisPanel');
+  let html = '<div class="analysis-date">📅 ' + (data.date || '') + '</div>';
+  if (data.sections && data.sections.length) {
+    data.sections.forEach(sec => {
+      html += '<div class="analysis-section"><h3>' + sec.title + '</h3>';
+      if (sec.content) html += '<p>' + sec.content + '</p>';
+      if (sec.table) {
+        html += '<table><thead><tr>';
+        sec.table.headers.forEach(h => html += '<th>' + h + '</th>');
+        html += '</tr></thead><tbody>';
+        sec.table.rows.forEach(row => {
+          html += '<tr>';
+          row.forEach(cell => html += '<td>' + cell + '</td>');
+          html += '</tr>';
+        });
+        html += '</tbody></table>';
+      }
+      html += '</div>';
+    });
+  }
+  panel.innerHTML = html;
 }
 
 init();
