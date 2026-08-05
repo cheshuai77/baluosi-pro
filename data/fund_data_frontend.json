@@ -21862,7 +21862,34 @@
       "totalFlowIn": 9530.47,
       "totalFlowOut": 9155.32,
       "netFlow": 375.14,
-      "avgChange": 1.58
+      "avgChange": 1.58,
+      "indices": [
+        {
+          "name": "上证",
+          "value": 3878.4296,
+          "change": 1.47
+        },
+        {
+          "name": "深证成指",
+          "value": 14144.2,
+          "change": 1.86
+        },
+        {
+          "name": "创业板指",
+          "value": 3535.14,
+          "change": 1.32
+        },
+        {
+          "name": "科创50",
+          "value": 1693.6677,
+          "change": 4.78
+        },
+        {
+          "name": "北证50",
+          "value": 1119.46,
+          "change": 2.375
+        }
+      ]
     }
   },
   "signals": {
