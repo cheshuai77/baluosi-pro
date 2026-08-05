@@ -104,6 +104,8 @@
   .stat-value { font-size: 20px; font-weight: 700; font-family: 'SF Mono', Consolas, monospace; }
   .stat-change { font-size: 13px; font-weight: 500; margin-left: 8px; }
   .stat-sub { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
+  .stat-detail { font-size: 10px; color: var(--text-tertiary); margin-top: 4px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .stat-detail span { white-space: nowrap; }
   .rise { color: var(--rise); }
   .fall { color: var(--fall); }
 
@@ -701,10 +703,18 @@ function renderMarketOverview() {
       const cls = (idx.change || 0) >= 0 ? 'rise' : 'fall';
       const sign = (idx.change || 0) > 0 ? '+' : '';
       const arrow = (idx.change || 0) >= 0 ? '▲' : '▼';
+      const pc = idx.pre_close, op = idx.open, hi = idx.high, lo = idx.low;
+      const hasDetail = pc != null || op != null || hi != null || lo != null;
       return '<div class="stat-card">' +
         '<div class="stat-header"><span class="stat-icon">' + idxIcons[i] + '</span><span class="stat-label">' + idx.name + '</span></div>' +
         '<div><span class="stat-value">' + (idx.value || 0).toFixed(2) + '</span>' +
         '<span class="stat-change ' + cls + '">' + arrow + ' ' + sign + (idx.change || 0).toFixed(2) + '%</span></div>' +
+        (hasDetail ? '<div class="stat-detail">' +
+          (pc != null ? '<span>昨收 ' + pc.toFixed(2) + '</span>' : '') +
+          (op != null ? '<span>开 ' + op.toFixed(2) + '</span>' : '') +
+          (hi != null ? '<span>高 ' + hi.toFixed(2) + '</span>' : '') +
+          (lo != null ? '<span>低 ' + lo.toFixed(2) + '</span>' : '') +
+        '</div>' : '') +
         '</div>';
     }).join('');
   } else {
