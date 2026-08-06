@@ -231,7 +231,8 @@
   }
   .filter-btn:hover { background: var(--border); color: var(--text-primary); }
   .table-scroll { overflow: auto; flex: 1; min-height: 0; }
-  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .inflow-col { font-weight: 700; font-size: 15px; }
   th {
     position: sticky; top: 0; background: var(--bg-tertiary);
     padding: 10px 12px; text-align: right; font-weight: 500;
@@ -376,7 +377,7 @@
     .table-title { font-size: 14px; }
     .search-box { width: 100px; font-size: 12px; }
     .table-scroll { max-height: 420px; }
-    th, td { padding: 8px 8px; font-size: 11px; }
+    th, td { padding: 8px 8px; font-size: 13px; }
 
     .dragon-grid { grid-template-columns: 1fr; gap: 14px; }
     .limitup-stats { grid-template-columns: repeat(4, 1fr); gap: 6px; }
@@ -549,7 +550,7 @@
             <th data-sort="change">涨跌幅</th>
             <th data-sort="flowIn">流入(亿)</th>
             <th data-sort="flowOut">流出(亿)</th>
-            <th data-sort="inflow">净流入(亿)</th>
+            <th data-sort="inflow" class="inflow-col">净流入(亿)</th>
             <th data-sort="rankChange">名次变化</th>
             <th data-sort="riseCount">股票涨/跌</th>
             <th data-sort="risePct">比例</th>
@@ -1062,7 +1063,7 @@ function renderTable() {
       '<td class="num ' + changeClass + '">' + (s.change > 0 ? '+' : '') + s.change.toFixed(2) + '%</td>' +
       '<td class="num rise">' + flowInD + '</td>' +
       '<td class="num fall">' + flowOutD + '</td>' +
-      '<td class="num ' + inflowClass + '">' + inflowD + '</td>' +
+      '<td class="num inflow-col ' + inflowClass + '">' + inflowD + '</td>' +
       '<td class="num">' + rankChangeHtml + '</td>' +
       '<td class="num"><span class="rise">' + s.riseCount + '</span>/<span class="fall">' + s.fallCount + '</span></td>' +
       '<td class="num">' + (s.risePct || 0).toFixed(0) + '%</td>' +
