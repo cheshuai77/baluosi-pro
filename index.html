@@ -567,16 +567,6 @@
 <div class="top-tab-content" id="tab-analysis">
 <div class="container">
 
-  <!-- 时段切换器 -->
-  <div class="analysis-period-bar" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">
-    <h2 style="font-size:18px;font-weight:700;color:#1a1a1a;">📊 大盘研究分析</h2>
-    <div style="display:flex;gap:4px;background:var(--bg-tertiary);border-radius:10px;padding:3px;">
-      <button class="period-btn active" data-period="pre" onclick="switchPeriod('pre')" style="padding:6px 16px;border:none;border-radius:8px;font-size:13px;cursor:pointer;background:var(--bg-secondary);color:var(--text-primary);font-weight:500;box-shadow:0 1px 2px rgba(0,0,0,0.06);">🌅 盘前</button>
-      <button class="period-btn" data-period="mid" onclick="switchPeriod('mid')" style="padding:6px 16px;border:none;border-radius:8px;font-size:13px;cursor:pointer;background:transparent;color:var(--text-secondary);">📡 中盘</button>
-      <button class="period-btn" data-period="close" onclick="switchPeriod('close')" style="padding:6px 16px;border:none;border-radius:8px;font-size:13px;cursor:pointer;background:transparent;color:var(--text-secondary);">🌙 收盘</button>
-    </div>
-  </div>
-
   <!-- 模块1: 大盘判断 -->
   <div class="analysis-module" id="mod-judgment" style="background:var(--bg-secondary);border-radius:var(--card-radius);box-shadow:var(--shadow);padding:18px;margin-bottom:14px;">
     <div class="analysis-module-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
@@ -1487,7 +1477,6 @@ function closeYZDetail() {
 
 // ========== 大盘研究分析 ==========
 let ANALYSIS_DATA = null;
-let analysisPeriod = 'pre';
 
 async function loadAnalysis() {
   if (ANALYSIS_DATA) { renderAllModules(); return; }
@@ -1500,26 +1489,6 @@ async function loadAnalysis() {
   }
 }
 
-function switchPeriod(period) {
-  analysisPeriod = period;
-  document.querySelectorAll('.period-btn').forEach(function(b) {
-    b.classList.remove('active');
-    b.style.background = 'transparent';
-    b.style.color = 'var(--text-secondary)';
-    b.style.fontWeight = '400';
-    b.style.boxShadow = 'none';
-  });
-  var btn = document.querySelector('.period-btn[data-period="' + period + '"]');
-  if (btn) {
-    btn.classList.add('active');
-    btn.style.background = 'var(--bg-secondary)';
-    btn.style.color = 'var(--text-primary)';
-    btn.style.fontWeight = '500';
-    btn.style.boxShadow = '0 1px 2px rgba(0,0,0,0.06)';
-  }
-  if (ANALYSIS_DATA) renderAllModules();
-  else loadAnalysis();
-}
 
 function renderAllModules() {
   renderJudgment();
@@ -1531,8 +1500,10 @@ function renderAllModules() {
 
 function getPeriodData() {
   if (!ANALYSIS_DATA) return {};
+  // Return latest available period data directly (no sub-tabs)
   var periods = ANALYSIS_DATA.periods || {};
-  return periods[analysisPeriod] || {};
+  // Try close -> mid -> pre in order
+  return periods['close'] || periods['mid'] || periods['pre'] || {};
 }
 
 function showAnalysisPlaceholder() {
