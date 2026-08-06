@@ -749,9 +749,11 @@ function renderMarketOverview() {
     // 1. 涨跌家数
     '<div class="stat-card card-mixed">' +
       '<div class="stat-header"><span class="stat-icon">📊</span><span class="stat-label">涨跌家数</span></div>' +
-      '<div style="display:flex;align-items:baseline;gap:8px;margin-top:4px;">' +
+      '<div style="display:flex;align-items:baseline;gap:6px;margin-top:4px;">' +
         '<span class="stat-value-big rise">' + (mo.totalRise || 0).toLocaleString() + '</span>' +
         '<span style="font-size:15px;color:var(--text-tertiary);">涨</span>' +
+        '<span class="stat-value-big" style="color:var(--text-tertiary);">' + (mo.totalFlat || 0).toLocaleString() + '</span>' +
+        '<span style="font-size:15px;color:var(--text-tertiary);">平</span>' +
         '<span class="stat-value-big fall">' + (mo.totalFall || 0).toLocaleString() + '</span>' +
         '<span style="font-size:15px;color:var(--text-tertiary);">跌</span>' +
       '</div>' +
