@@ -99,13 +99,16 @@
   .stat-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: box-shadow 0.2s; }
   .stat-header { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
   .stat-icon { font-size: 16px; }
-  .stat-label { font-size: 12px; color: var(--text-secondary); }
+  .stat-label { font-size: 13px; color: #48484A; font-weight: 500; }
   .stat-value { font-size: 34px; font-weight: 800; font-family: 'SF Mono', Consolas, monospace; }
+  /* 上证大卡字体放大（面积是其他卡的2倍） */
+  .market-indices .stat-card:nth-child(1) .stat-value { font-size: 52px; }
+  .market-indices .stat-card:nth-child(1) .stat-change { font-size: 22px; }
   .stat-change { font-size: 18px; font-weight: 700; margin-left: 8px; }
   .market-indices .stat-card { padding: 12px 14px; }
   .market-indices .stat-detail { margin-top: 8px; }
-  .stat-sub { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
-  .stat-detail { font-size: 11px; color: var(--text-tertiary); margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .stat-sub { font-size: 12px; color: #8E8E93; font-weight: 500; margin-top: 2px; }
+  .stat-detail { font-size: 12px; color: #8E8E93; font-weight: 500; margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
   .stat-detail span { white-space: nowrap; }
   
   /* 上证大卡：细节行2×2网格 */
