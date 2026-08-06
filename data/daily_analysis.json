@@ -1,65 +1,141 @@
 {
-  "date": "2026-08-05",
-  "updateTime": "2026-08-05",
+  "date": "2026-08-06",
+  "updateTime": "2026-08-06 08:35",
   "periods": {
     "pre": {
       "judgment": {
-        "verdict": "数据待生成",
-        "confidence": "",
-        "indicators": {},
-        "reasoning": ""
+        "verdict": "小幅低开后震荡分化，3850-3900区间，防守中找结构机会",
+        "confidence": "中",
+        "indicators": {
+          "大盘": {
+            "status": "震荡",
+            "detail": "费半回调+中美反制→分化"
+          },
+          "情绪": {
+            "status": "偏多",
+            "detail": "高潮期82分，炸板率29.5%"
+          },
+          "资金": {
+            "status": "偏多",
+            "detail": "央行5000亿流动性充裕"
+          }
+        },
+        "reasoning": "费半-1.4%+SpaceX暴跌→科技获利盘压力，但英伟达5连涨+闪迪超预期提供支撑。央行5000亿流动性充裕+人民币坚挺→底部支撑不变。连续放量长阳后获利盘丰厚，3878上方套牢区抛压，今日震荡消化为主。"
       },
       "marketRef": {
-        "indicators": [],
-        "note": ""
+        "indicators": [
+          {
+            "label": "纳指",
+            "value": "-0.83%",
+            "trend": "down",
+            "note": "科技获利回吐"
+          },
+          {
+            "label": "费半",
+            "value": "-1.40%",
+            "trend": "down",
+            "note": "四连涨后回调"
+          },
+          {
+            "label": "A50期指",
+            "value": "-0.35%",
+            "trend": "down",
+            "note": "小幅偏弱"
+          },
+          {
+            "label": "COMEX金",
+            "value": "+3.74%",
+            "trend": "up",
+            "note": "4308美元新高"
+          }
+        ],
+        "note": "中美反制措施加码：商务部5项反制落地，美国拟禁中国光模块进口。央行5000亿买断式逆回购净投放2000亿中长期资金。"
       },
       "rotation": {
-        "summary": "",
-        "sectors": [],
-        "analysis": ""
+        "summary": "成长>价值，科技内部从普涨转分化验证",
+        "sectors": [
+          {
+            "name": "半导体/存储",
+            "stage": "进攻期",
+            "change": 98.81
+          },
+          {
+            "name": "贵金属",
+            "stage": "进攻期",
+            "change": 69.88
+          },
+          {
+            "name": "MLCC/元件",
+            "stage": "启动期",
+            "change": null
+          },
+          {
+            "name": "银行",
+            "stage": "退潮期",
+            "change": -33.0
+          },
+          {
+            "name": "电力",
+            "stage": "退潮期",
+            "change": -19.66
+          },
+          {
+            "name": "石油石化",
+            "stage": "退潮期",
+            "change": null
+          }
+        ],
+        "analysis": "存储涨价到2027+闪迪超预期→半导体基本面最硬。金价4300+地缘避险→贵金属直接受益。MLCC涨价扩散（三星+30%/太阳诱电跟进），库存30天历史低位。银行/电力/石油石化被虹吸，回避。"
       },
       "pool": {
-        "pools": []
-      }
-    },
-    "mid": {
-      "judgment": {
-        "verdict": "数据待生成",
-        "confidence": "",
-        "indicators": {},
-        "reasoning": ""
-      },
-      "marketRef": {
-        "indicators": [],
-        "note": ""
-      },
-      "rotation": {
-        "summary": "",
-        "sectors": [],
-        "analysis": ""
-      },
-      "pool": {
-        "pools": []
-      }
-    },
-    "close": {
-      "judgment": {
-        "verdict": "数据待生成",
-        "confidence": "",
-        "indicators": {},
-        "reasoning": ""
-      },
-      "marketRef": {
-        "indicators": [],
-        "note": ""
-      },
-      "rotation": {
-        "summary": "",
-        "sectors": [],
-        "analysis": ""
-      },
-      "pool": {
-        "pools": []
+        "pools": [
+          {
+            "type": "持仓",
+            "items": [
+              {
+                "name": "华鲁恒升",
+                "code": "600426",
+                "action": "持有观望",
+                "note": "安全垫0.48%薄，不破MA20(20.60)不动"
+              },
+              {
+                "name": "中煤能源",
+                "code": "601898",
+                "action": "🔴减仓/止损",
+                "note": "已破MA20，反弹13.40-13.50减仓，破13.20止损"
+              },
+              {
+                "name": "5GETF",
+                "code": "515050",
+                "action": "持有做T",
+                "note": "通信在主线，反弹1.02+减仓锁利"
+              }
+            ]
+          },
+          {
+            "type": "观察",
+            "items": [
+              {
+                "name": "华能国际",
+                "code": "600011",
+                "action": "等信号",
+                "note": "电力板块止跌+放量突破7.50或缩量回踩6.80"
+              },
+              {
+                "name": "风华高科",
+                "code": "000636",
+                "action": "纯观察",
+                "note": "MLCC涨价+主力+9.84亿，单日涨6%不追"
+              },
+              {
+                "name": "东山精密",
+                "code": "002384",
+                "action": "纯观察",
+                "note": "机构+9.35亿vs游资-4.59亿，等分歧消化"
+              }
+            ]
+          }
+        ]
       }
     }
   }
