@@ -21866,28 +21866,28 @@
       "indices": [
         {
           "name": "上证",
-          "value": 3878.4296,
-          "change": 1.47
+          "value": 3878.3283,
+          "change": -0.0
         },
         {
           "name": "深证成指",
-          "value": 14144.2,
-          "change": 1.86
+          "value": 0.0,
+          "change": 0.0
         },
         {
           "name": "创业板指",
-          "value": 3535.14,
-          "change": 1.32
+          "value": 0.0,
+          "change": 0.0
         },
         {
           "name": "科创50",
           "value": 1693.6677,
-          "change": 4.78
+          "change": 0.0
         },
         {
           "name": "北证50",
-          "value": 1119.46,
-          "change": 2.375
+          "value": 0.0,
+          "change": 0.0
         }
       ]
     }
