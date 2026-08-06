@@ -676,7 +676,7 @@ const state = {
 // ========== 数据加载 ==========
 async function loadData() {
   try {
-    const resp = await fetch('data/fund_data_v2.json?t=' + Date.now());
+    const resp = await fetch('data/fund_data_frontend.json?t=' + Date.now());
     FUND_DATA = await resp.json();
     state.currentDate = FUND_DATA.dates[FUND_DATA.dates.length - 1];
     updateAll();
