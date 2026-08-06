@@ -679,11 +679,49 @@ async function loadData() {
   try {
     const resp = await fetch('./data/fund_data_frontend.json?t=' + Date.now());
     FUND_DATA = await resp.json();
+    normalizeData();
     state.currentDate = FUND_DATA.dates[FUND_DATA.dates.length - 1];
     updateAll();
   } catch(e) {
     console.error('Failed to load data:', e);
     document.getElementById('sectorTable').innerHTML = '<tr><td colspan="13" style="text-align:center;padding:40px;color:#999">数据加载失败，请刷新重试</td></tr>';
+  }
+}
+
+function normalizeData() {
+  // Fix 1: Convert indices from object to array with correct field names
+  if (FUND_DATA.marketOverview) {
+    for (const date in FUND_DATA.marketOverview) {
+      const mo = FUND_DATA.marketOverview[date];
+      if (mo && mo.indices && !Array.isArray(mo.indices)) {
+        mo.indices = Object.entries(mo.indices).map(([name, d]) => ({
+          name: name,
+          value: d.price || 0,
+          change: d.changePct || 0,
+          pre_close: d.preClose || null,
+          open: d.open || null,
+          high: d.high || null,
+          low: d.low || null
+        }));
+      }
+    }
+  }
+  // Fix 2: Convert "N/A" strings to 0 in signal data
+  if (FUND_DATA.signals) {
+    for (const date in FUND_DATA.signals) {
+      const sig = FUND_DATA.signals[date];
+      if (!sig) continue;
+      ['mainLine','latent','disaster','risk'].forEach(key => {
+        if (!Array.isArray(sig[key])) return;
+        sig[key].forEach(item => {
+          if (typeof item.risePct === 'string') item.risePct = parseFloat(item.risePct) || 0;
+          if (typeof item.fallPct === 'string') item.fallPct = parseFloat(item.fallPct) || 0;
+          if (typeof item.change === 'string') item.change = parseFloat(item.change) || 0;
+          if (typeof item.inflow === 'string') item.inflow = parseFloat(item.inflow) || 0;
+          if (typeof item.stars === 'string') item.stars = parseInt(item.stars) || 3;
+        });
+      });
+    }
   }
 }
 
