@@ -743,7 +743,6 @@ function renderMarketOverview() {
 
   // 第二行：四个指标卡
   const indContainer = document.getElementById('marketIndicators');
-  const sectorUpC = (mo.sectorUp || 0) >= (mo.sectorDown || 0) ? 'rise' : 'fall';
   const netC = (mo.netFlow || 0) >= 0 ? 'rise' : 'fall';
   const topC = (mo.topSectorChange || 0) >= 0 ? 'rise' : 'fall';
   const risePct = mo.risePct || 0;
@@ -762,13 +761,13 @@ function renderMarketOverview() {
       '</div>' +
       '<div class="stat-sub">上涨占比 <b style="color:' + (risePct >= 50 ? 'var(--rise)' : 'var(--fall)') + '">' + risePct.toFixed(1) + '%</b></div>' +
     '</div>' +
-    // 2. 板块涨跌
+    // 2. 板块涨跌（涨=红，跌=绿，固定颜色）
     '<div class="stat-card card-mixed">' +
       '<div class="stat-header"><span class="stat-icon">🏭</span><span class="stat-label">板块涨跌</span></div>' +
       '<div style="display:flex;align-items:baseline;gap:8px;margin-top:4px;">' +
-        '<span class="stat-value-big ' + sectorUpC + '">' + (mo.sectorUp || 0) + '</span>' +
+        '<span class="stat-value-big rise">' + (mo.sectorUp || 0) + '</span>' +
         '<span style="font-size:15px;color:var(--text-tertiary);">涨</span>' +
-        '<span class="stat-value-big ' + (sectorUpC === 'rise' ? 'fall' : 'rise') + '">' + (mo.sectorDown || 0) + '</span>' +
+        '<span class="stat-value-big fall">' + (mo.sectorDown || 0) + '</span>' +
         '<span style="font-size:15px;color:var(--text-tertiary);">跌</span>' +
       '</div>' +
       '<div class="stat-sub">共 ' + ((mo.sectorUp||0) + (mo.sectorDown||0)) + ' 个行业板块</div>' +
