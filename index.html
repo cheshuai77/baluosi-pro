@@ -100,8 +100,8 @@
   .stat-header { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
   .stat-icon { font-size: 16px; }
   .stat-label { font-size: 12px; color: var(--text-secondary); }
-  .stat-value { font-size: 28px; font-weight: 700; font-family: 'SF Mono', Consolas, monospace; }
-  .stat-change { font-size: 16px; font-weight: 600; margin-left: 8px; }
+  .stat-value { font-size: 34px; font-weight: 800; font-family: 'SF Mono', Consolas, monospace; }
+  .stat-change { font-size: 18px; font-weight: 700; margin-left: 8px; }
   .market-indices .stat-card { padding: 12px 14px; }
   .market-indices .stat-detail { margin-top: 8px; }
   .stat-sub { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
@@ -361,8 +361,8 @@
     .market-indices .stat-change { font-size: 18px; }
     /* 数值+涨跌幅不换行 */
     .market-indices .stat-card > div:nth-child(2) { white-space: nowrap; display: flex; align-items: baseline; overflow: hidden; }
-    .stat-value { font-size: 26px; }
-    .stat-change { font-size: 18px; font-weight: 700; margin-left: 8px; flex-shrink: 0; }
+    .stat-value { font-size: 30px; }
+    .stat-change { font-size: 20px; font-weight: 700; margin-left: 8px; flex-shrink: 0; }
     .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
     .stat-card { padding: 10px 12px; border-radius: 10px; }
     .stat-sub { font-size: 10px; }
@@ -399,8 +399,8 @@
     .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 6px; }
     .stat-card { padding: 8px 10px; border-radius: 8px; }
     .market-indices .stat-card { padding: 10px 12px; }
-    .stat-value { font-size: 24px; }
-    .stat-change { font-size: 16px; }
+    .stat-value { font-size: 26px; }
+    .stat-change { font-size: 18px; }
     .stat-label { font-size: 11px; }
   }
 
@@ -726,7 +726,7 @@ function renderMarketOverview() {
       const hasDetail = pc != null || op != null || hi != null || lo != null;
       return '<div class="stat-card">' +
         '<div class="stat-header"><span class="stat-icon">' + idxIcons[i] + '</span><span class="stat-label">' + idx.name + '</span></div>' +
-        '<div><span class="stat-value">' + (idx.value || 0).toFixed(2) + '</span>' +
+        '<div><span class="stat-value ' + cls + '">' + (idx.value || 0).toFixed(2) + '</span>' +
         '<span class="stat-change ' + cls + '">' + arrow + ' ' + sign + (idx.change || 0).toFixed(2) + '%</span></div>' +
         (hasDetail ? '<div class="stat-detail">' +
           (pc != null ? '<span>昨收 ' + pc.toFixed(2) + '</span>' : '') +
