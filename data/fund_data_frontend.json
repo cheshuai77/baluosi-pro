@@ -25603,12 +25603,12 @@
         "change": 3.02,
         "indexPrice": 89125.1,
         "stockCount": 43,
-        "riseCount": 38,
-        "fallCount": 4,
+        "riseCount": 37,
+        "fallCount": 6,
         "leader": "方邦股份",
         "leaderChange": 20.0,
         "_riseEstimated": true,
-        "risePct": 90.5,
+        "risePct": 86.0,
         "flowIn": 174.54,
         "flowOut": 179.12,
         "inflow": -4.58,
@@ -26044,12 +26044,12 @@
         "change": -0.38,
         "indexPrice": 1949.09,
         "stockCount": 110,
-        "riseCount": 23,
-        "fallCount": 84,
+        "riseCount": 49,
+        "fallCount": 61,
         "leader": "聆达股份",
         "leaderChange": 12.5,
         "_riseEstimated": true,
-        "risePct": 21.5,
+        "risePct": 44.5,
         "flowIn": 66.36,
         "flowOut": 77.87,
         "inflow": -11.51,
@@ -26567,65 +26567,17 @@
     },
     "2026-08-07": {
       "totalStocks": 5623,
-      "totalRise": 2353,
-      "totalFall": 3046,
-      "risePct": 43.6,
+      "totalRise": 2769,
+      "totalFall": 2721,
+      "risePct": 50.4,
       "sectorUp": 32,
       "sectorDown": 57,
       "topSector": "医疗服务",
       "topSectorChange": 5.96,
-      "totalFlowIn": 316.3,
-      "totalFlowOut": 262.6,
-      "netFlow": 53.7,
-      "avgChange": 0.18,
-      "indices": [
-        {
-          "name": "上证指数",
-          "value": 3919.5105,
-          "change": 0.49,
-          "change_amount": 19.16,
-          "open": 3896.4854,
-          "high": 3921.5269,
-          "low": 3885.6248
-        },
-        {
-          "name": "深证成指",
-          "value": 14295.078,
-          "change": 1.31,
-          "change_amount": 184.96,
-          "open": 14152.782,
-          "high": 14323.292,
-          "low": 14049.342
-        },
-        {
-          "name": "创业板指",
-          "value": 3577.2,
-          "change": 1.75,
-          "change_amount": 61.64,
-          "open": 3537.44,
-          "high": 3595.735,
-          "low": 3507.615
-        },
-        {
-          "name": "科创50",
-          "value": 1718.5869,
-          "change": 1.02,
-          "change_amount": 17.3,
-          "open": 1697.3702,
-          "high": 1739.7729,
-          "low": 1686.6608
-        },
-        {
-          "name": "北证50",
-          "value": 1129.717,
-          "change": 0.61,
-          "change_amount": 6.84,
-          "open": 1120.875,
-          "high": 1129.798,
-          "low": 1108.535
-        }
-      ],
-      "updateTime": "12:29"
+      "totalFlowIn": 5862.26,
+      "totalFlowOut": 5808.54,
+      "netFlow": 53.71,
+      "avgChange": 0.18
     }
   },
   "signals": {
@@ -27098,51 +27050,51 @@
           "name": "医疗服务",
           "change": 5.96,
           "inflow": 29.0,
+          "risePct": 0,
           "stars": 5,
           "verdict": "真热·普涨",
-          "riseCount": 0,
-          "fallCount": 0,
-          "risePct": 0
+          "leader_stock": "",
+          "leader_change_pct": 0
         },
         {
           "name": "元件",
           "change": 5.52,
           "inflow": 11.7,
+          "risePct": 0,
           "stars": 5,
           "verdict": "真热·普涨",
-          "riseCount": 0,
-          "fallCount": 0,
-          "risePct": 0
+          "leader_stock": "",
+          "leader_change_pct": 0
         },
         {
           "name": "生物制品",
           "change": 3.75,
           "inflow": 11.7,
+          "risePct": 0,
           "stars": 4,
           "verdict": "分化",
-          "riseCount": 0,
-          "fallCount": 0,
-          "risePct": 0
+          "leader_stock": "",
+          "leader_change_pct": 0
         },
         {
           "name": "化学制药",
           "change": 2.93,
           "inflow": 41.4,
+          "risePct": 0,
           "stars": 3,
           "verdict": "分化",
-          "riseCount": 0,
-          "fallCount": 0,
-          "risePct": 0
+          "leader_stock": "",
+          "leader_change_pct": 0
         },
         {
           "name": "半导体",
           "change": 1.86,
           "inflow": 45.5,
+          "risePct": 0,
           "stars": 3,
           "verdict": "分化",
-          "riseCount": 0,
-          "fallCount": 0,
-          "risePct": 0
+          "leader_stock": "",
+          "leader_change_pct": 0
         }
       ],
       "latent": [
@@ -27150,41 +27102,41 @@
           "name": "通信设备",
           "change": 0.96,
           "inflow": 37.7,
+          "score": "",
           "reasons": [
             "资金大幅流入但涨幅较小",
             "无多周期数据，仅基于半日资金潜伏特征"
-          ],
-          "accum3d": 0
+          ]
         },
         {
           "name": "工业金属",
           "change": 1.71,
           "inflow": 29.6,
+          "score": "",
           "reasons": [
             "资金持续流入",
             "涨幅温和未爆发"
-          ],
-          "accum3d": 0
+          ]
         },
         {
           "name": "消费电子",
           "change": 0.77,
           "inflow": 26.0,
+          "score": "",
           "reasons": [
             "资金净流入居前",
             "涨幅较小处于蓄势阶段"
-          ],
-          "accum3d": 0
+          ]
         },
         {
           "name": "电池",
           "change": 0.89,
           "inflow": 10.5,
+          "score": "",
           "reasons": [
             "资金净流入",
             "涨幅不大"
-          ],
-          "accum3d": 0
+          ]
         }
       ],
       "disaster": [
@@ -27192,45 +27144,44 @@
           "name": "软件开发",
           "change": -1.39,
           "inflow": -27.1,
-          "verdict": "主力大幅出逃，板块重挫",
-          "fallCount": 0,
-          "fallPct": 0
+          "fallPct": 0,
+          "stars": "",
+          "verdict": "主力大幅出逃，板块重挫"
         },
         {
           "name": "IT服务",
           "change": -0.99,
           "inflow": -24.9,
-          "verdict": "资金大幅流出，抛压沉重",
-          "fallCount": 0,
-          "fallPct": 0
+          "fallPct": 0,
+          "stars": "",
+          "verdict": "资金大幅流出，抛压沉重"
         },
         {
           "name": "证券",
           "change": -0.64,
           "inflow": -18.7,
-          "verdict": "大金融遭资金抛弃，持续失血",
-          "fallCount": 0,
-          "fallPct": 0
+          "fallPct": 0,
+          "stars": "",
+          "verdict": "大金融遭资金抛弃，持续失血"
         },
         {
           "name": "银行",
           "change": -1.04,
           "inflow": -15.0,
-          "verdict": "资金大幅流出，板块走弱",
-          "fallCount": 0,
-          "fallPct": 0
+          "fallPct": 0,
+          "stars": "",
+          "verdict": "资金大幅流出，板块走弱"
         },
         {
           "name": "通信服务",
           "change": -1.17,
           "inflow": -14.5,
-          "verdict": "资金持续流出，跌幅明显",
-          "fallCount": 0,
-          "fallPct": 0
+          "fallPct": 0,
+          "stars": "",
+          "verdict": "资金持续流出，跌幅明显"
         }
       ],
-      "risk": [],
-      "_source": "midday_llm"
+      "risk": []
     }
   }
 }
