@@ -1671,23 +1671,54 @@ function renderPool() {
     return;
   }
 
+  // Pool type color mapping (new format)
+  var typeColors = {
+    '现在能进': 'var(--rise)',
+    '等信号': '#FFA94D',
+    '轻仓跟': 'var(--accent)',
+    '有可能性': 'var(--text-secondary)'
+  };
+  var typeIcons = {
+    '现在能进': '🔥',
+    '等信号': '⏳',
+    '轻仓跟': '📈',
+    '有可能性': '👀'
+  };
+
   var html = '';
   pools.forEach(function(pool) {
-    var tagColor = pool.type === '狙击' ? 'var(--rise)' : pool.type === '观察' ? '#FFA94D' : pool.type === '持仓' ? 'var(--accent)' : 'var(--text-secondary)';
+    var poolType = pool.type || '';
+    var tagColor = typeColors[poolType] || 'var(--text-secondary)';
+    var icon = typeIcons[poolType] || pool.icon || '📌';
     html += '<div style="background:var(--bg-tertiary);border-radius:10px;padding:12px;margin-bottom:8px;">' +
       '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">' +
-        '<span style="font-size:13px;font-weight:600;">' + (pool.icon || '📌') + ' ' + (pool.name || '') + '</span>' +
-        '<span style="font-size:10px;padding:2px 8px;border-radius:8px;background:' + tagColor + '20;color:' + tagColor + ';font-weight:600;">' + (pool.type || '') + '</span>' +
+        '<span style="font-size:13px;font-weight:600;">' + icon + ' ' + poolType + '</span>' +
       '</div>';
 
-    if (pool.stocks && pool.stocks.length > 0) {
-      html += '<div style="display:flex;flex-wrap:wrap;gap:6px;">';
-      pool.stocks.forEach(function(st) {
-        var sc = (st.change || 0) >= 0 ? 'var(--rise)' : 'var(--fall)';
-        html += '<span style="font-size:11px;background:#fff;border-radius:6px;padding:3px 8px;border:1px solid var(--border);">' +
-          st.code + ' ' + st.name +
-          (st.change != null ? ' <span style="color:' + sc + ';">' + (st.change > 0 ? '+' : '') + st.change.toFixed(1) + '%</span>' : '') +
-        '</span>';
+    // Support both "items" (new format) and "stocks" (old format)
+    var items = pool.items || pool.stocks || [];
+    if (items.length > 0) {
+      html += '<div style="display:flex;flex-direction:column;gap:6px;">';
+      items.forEach(function(item) {
+        var name = item.name || '';
+        var code = item.code || '';
+        var action = item.action || '';
+        var note = item.note || '';
+        var change = item.change;
+        html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:#fff;border-radius:8px;border:1px solid var(--border);">';
+        html += '<span style="font-size:12px;font-weight:600;min-width:90px;">' + name + '</span>';
+        html += '<span style="font-size:11px;color:var(--text-secondary);">' + code + '</span>';
+        if (action) {
+          html += '<span style="font-size:10px;padding:2px 6px;border-radius:6px;background:' + tagColor + '15;color:' + tagColor + ';">' + action + '</span>';
+        }
+        if (note) {
+          html += '<span style="font-size:11px;color:var(--text-tertiary);margin-left:auto;">' + note + '</span>';
+        }
+        if (change != null) {
+          var sc = change >= 0 ? 'var(--rise)' : 'var(--fall)';
+          html += '<span style="font-size:11px;color:' + sc + ';font-weight:600;">' + (change > 0 ? '+' : '') + change.toFixed(2) + '%</span>';
+        }
+        html += '</div>';
       });
       html += '</div>';
     }
