@@ -1,92 +1,98 @@
 {
   "date": "2026-08-07",
-  "updateTime": "2026-08-07 12:54",
+  "updateTime": "2026-08-07 13:07",
   "phase": "mid",
   "marketResearch": {
     "judgment": {
-      "verdict": "✅正常，市场探底回升，成长赛道爆发，情绪升温至亢奋",
+      "verdict": "指数分化，主线爆发，情绪亢奋",
       "confidence": "高",
       "indicators": {
-        "emotion": {
-          "status": "🌡️亢奋",
-          "detail": "涨停60家，跌停0家，炸板7家，最高4板，赚钱效应极佳"
+        "主线强度": {
+          "status": "极强",
+          "detail": "PCB与创新药批量涨停，资金抱团"
         },
-        "liquidity": {
-          "status": "充沛",
-          "detail": "两市成交额维持高位，资金向低位科技与医药切换"
+        "大盘环境": {
+          "status": "分化",
+          "detail": "上证+0.49%，创业板+1.75%，超3000股下跌"
         },
-        "market_trend": {
-          "status": "探底回升，深强沪弱",
-          "detail": "沪指低开后快速下探，随后在PCB、医药等赛道带动下翻红，深成指大涨1.31%"
+        "情绪周期": {
+          "status": "亢奋",
+          "detail": "涨停63家，0跌停，9炸板，最高4板"
         }
       },
-      "reasoning": "早盘权重休息，成长赛道（PCB、CRO）批量涨停，资金高低切换明显，市场情绪从分歧迅速修复并走向亢奋，双主线确立。"
+      "reasoning": "上午市场呈现典型的指数涨个股跌的二八分化格局，但核心主线PCB与创新药表现极强，带动情绪得分达到67分（亢奋）。外围日韩股市跳水对A股影响有限，资金从软件游戏流出，坚决切入硬件与医药，下午需警惕高位股分歧及分化加剧。"
     },
     "marketRef": {
       "indicators": [
         {
           "label": "上证指数",
-          "value": "3919.51",
-          "trend": "+0.49%",
-          "note": "探底回升"
+          "value": "4109.81",
+          "trend": "上涨",
+          "note": "+0.49%"
         },
         {
-          "label": "深成指",
+          "label": "深证成指",
           "value": "14295.08",
-          "trend": "+1.31%",
+          "trend": "上涨",
+          "note": "+1.31%"
+        },
+        {
+          "label": "创业板指",
+          "value": "涨1.75%",
+          "trend": "上涨",
           "note": "领涨"
         },
         {
-          "label": "涨停家数",
-          "value": "60",
-          "trend": "升温",
-          "note": "情绪亢奋"
-        },
-        {
-          "label": "炸板家数",
-          "value": "7",
-          "trend": "偏低",
-          "note": "封板率高"
+          "label": "半日成交",
+          "value": "16887亿",
+          "trend": "缩量",
+          "note": "较上日缩量764亿"
         },
         {
           "label": "日经225",
-          "value": "盘中",
-          "trend": "-1.1%",
-          "note": "日韩股市跳水"
+          "value": "-1.1%",
+          "trend": "下跌",
+          "note": "盘中跳水"
+        },
+        {
+          "label": "KOSPI",
+          "value": "-1.3%",
+          "trend": "下跌",
+          "note": "盘中跳水"
         }
       ],
-      "note": "外围日韩股市盘中跳水，但A股走出独立行情，深强沪弱特征明显。"
+      "note": "外资流出日韩，A股走出独立分化行情，权重搭台题材唱戏。"
     },
     "rotation": {
-      "summary": "科技硬件与医药创新双主线爆发，资金从高位新能源、AI应用撤出，向低位PCB、CRO切换。",
+      "summary": "资金高低切换，从软件/AI应用撤出，转向PCB硬件与创新药",
       "sectors": [
         {
-          "name": "PCB",
-          "stage": "高潮",
-          "change": 5.0
+          "name": "PCB/元件",
+          "stage": "主升爆发",
+          "change": 5.2
         },
         {
-          "name": "医药CRO",
-          "stage": "爆发",
-          "change": 4.5
+          "name": "创新药/医疗",
+          "stage": "修复反弹",
+          "change": 3.8
         },
         {
-          "name": "CPO/光模块",
-          "stage": "反弹",
-          "change": 3.2
+          "name": "CPO/通信",
+          "stage": "活跃轮动",
+          "change": 2.5
         },
         {
-          "name": "半导体设备",
-          "stage": "轮动补涨",
-          "change": 2.1
+          "name": "软件/游戏",
+          "stage": "退潮调整",
+          "change": -2.1
         },
         {
-          "name": "电力设备",
-          "stage": "调整",
-          "change": -1.5
+          "name": "数字货币",
+          "stage": "领跌",
+          "change": -3.5
         }
       ],
-      "analysis": "PCB受高盛研报催化及AI服务器需求放量，成为绝对王者；医药CRO超跌反弹叠加业绩预期修复，资金切入低位赛道做高低切换。"
+      "analysis": "盘面呈现极致的结构性行情，PCB板块受产业逻辑及业绩预期催化，批量涨停；创新药受政策及超跌反弹预期推动，低开高走。而前期高位的软件、游戏、数字货币等遭遇资金抛弃，呈现明显的跷跷板效应。"
     },
     "pool": {
       "pools": [
@@ -96,14 +102,14 @@
             {
               "name": "景旺电子",
               "code": "603228",
-              "action": "PCB核心，2连板，关注下午换手",
-              "note": ""
+              "action": "打板/半路",
+              "note": "PCB核心，2连板，身位优势"
             },
             {
               "name": "通宇通讯",
               "code": "002792",
-              "action": "CPO龙头，2连板，算力硬件回血",
-              "note": ""
+              "action": "低吸/打板",
+              "note": "CPO/通信核心，2连板"
             }
           ]
         },
@@ -111,16 +117,16 @@
           "type": "等信号",
           "items": [
             {
-              "name": "一博科技",
-              "code": "301366",
-              "action": "等下午封死或溢价",
-              "note": "PCB 20CM首板"
+              "name": "宝鼎科技",
+              "code": "002552",
+              "action": "等分歧转一致",
+              "note": "最高板4板，等弱转强信号"
             },
             {
-              "name": "毕得医药",
-              "code": "688073",
-              "action": "等板块情绪延续",
-              "note": "CRO 20CM首板"
+              "name": "百普赛斯",
+              "code": "301080",
+              "action": "等回踩均线",
+              "note": "创新药20cm核心，等缩量回踩"
             }
           ]
         },
@@ -128,10 +134,16 @@
           "type": "轻仓跟",
           "items": [
             {
-              "name": "宝鼎科技",
-              "code": "002552",
-              "action": "轻仓博弈空间",
-              "note": "4板最高标"
+              "name": "生益科技",
+              "code": "600183",
+              "action": "趋势低吸",
+              "note": "PCB中军，沿5日线低吸"
+            },
+            {
+              "name": "凯莱英",
+              "code": "002821",
+              "action": "趋势低吸",
+              "note": "创新药中军，首板确认趋势"
             }
           ]
         },
@@ -139,14 +151,69 @@
           "type": "有可能性",
           "items": [
             {
-              "name": "康龙化成",
-              "code": "603259",
-              "action": "纯观察资金承接",
-              "note": "CRO中军"
+              "name": "中国稀土",
+              "code": "000831",
+              "action": "观察轮动",
+              "note": "资源品异动，等板块效应"
+            },
+            {
+              "name": "云南锗业",
+              "code": "002428",
+              "action": "观察连板",
+              "note": "新材料4板，高位博弈"
             }
           ]
         }
       ]
+    },
+    "holdings": {
+      "holdings": [
+        {
+          "code": "600426",
+          "name": "华鲁恒升",
+          "shares": 400,
+          "cost_price": 20.9,
+          "current_price": 21.12,
+          "change_pct": -0.52,
+          "cost_diff_pct": 1.05,
+          "market_value": 8448.0,
+          "profit_loss": 88.0,
+          "fund_flow": "主力净流出0.31亿，占比0.33%",
+          "trend": "下跌、主力流出",
+          "suggestion": "持有",
+          "note": "与成本价差+1.05%，观望为主"
+        },
+        {
+          "code": "515050",
+          "name": "5GETF",
+          "shares": 2000,
+          "cost_price": 1.004,
+          "current_price": 1.059,
+          "change_pct": 4.44,
+          "cost_diff_pct": 5.48,
+          "market_value": 2118.0,
+          "profit_loss": 110.0,
+          "fund_flow": "份额净赎回（-1.43%）🔴持续净赎回",
+          "trend": "上涨、份额净赎回",
+          "suggestion": "持有",
+          "note": "浮盈5.48%，趋势健康可持有，设好止盈"
+        }
+      ],
+      "overview": {
+        "total_value": 10566.0,
+        "total_cost": 10368.0,
+        "total_profit_loss": 198.0,
+        "total_profit_pct": 1.91,
+        "position_ratio": "华鲁恒升 80.0%；5GETF 20.0%",
+        "risk_exposure": "共2只持仓（1只个股+1只ETF）；整体盈亏平衡附近，风险可控；持仓数量偏少，分散度不足",
+        "holding_count": 2,
+        "notes": [
+          "共2只持仓（1只个股+1只ETF）",
+          "整体盈亏平衡附近，风险可控",
+          "持仓数量偏少，分散度不足"
+        ]
+      },
+      "update_time": "2026-08-07 13:07"
     }
   }
 }
