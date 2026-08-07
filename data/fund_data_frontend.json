@@ -20858,11 +20858,11 @@
         "change": 2.33,
         "indexPrice": 16409.2,
         "stockCount": 183,
-        "riseCount": 172,
-        "fallCount": 11,
+        "riseCount": 154,
+        "fallCount": 27,
         "leader": "锴威特",
         "leaderChange": 20.0,
-        "risePct": 94.0,
+        "risePct": 85.1,
         "flowIn": 1447.42,
         "flowOut": 1361.53,
         "inflow": 85.89,
@@ -20991,11 +20991,11 @@
         "change": 7.47,
         "indexPrice": 19494.3,
         "stockCount": 56,
-        "riseCount": 53,
-        "fallCount": 3,
+        "riseCount": 51,
+        "fallCount": 4,
         "leader": "博腾股份",
         "leaderChange": 20.02,
-        "risePct": 94.6,
+        "risePct": 92.7,
         "flowIn": 170.31,
         "flowOut": 129.76,
         "inflow": 40.55,
@@ -21619,11 +21619,11 @@
         "change": 5.72,
         "indexPrice": 23617.3,
         "stockCount": 63,
-        "riseCount": 59,
-        "fallCount": 4,
+        "riseCount": 57,
+        "fallCount": 6,
         "leader": "一博科技",
         "leaderChange": 20.0,
-        "risePct": 93.7,
+        "risePct": 90.5,
         "flowIn": 584.97,
         "flowOut": 577.03,
         "inflow": 7.94,
@@ -22246,12 +22246,12 @@
         "change": 3.74,
         "indexPrice": 89740.0,
         "stockCount": 43,
-        "riseCount": 41,
-        "fallCount": 2,
+        "riseCount": 40,
+        "fallCount": 3,
         "leader": "方邦股份",
         "leaderChange": 20.0,
         "_riseEstimated": true,
-        "risePct": 95.3,
+        "risePct": 93.0,
         "flowIn": 246.93,
         "flowOut": 245.34,
         "inflow": 1.59,
@@ -25719,12 +25719,12 @@
         "change": 0.54,
         "indexPrice": 8923.37,
         "stockCount": 91,
-        "riseCount": 57,
-        "fallCount": 33,
+        "riseCount": 51,
+        "fallCount": 40,
         "leader": "武汉凡谷",
         "leaderChange": 10.01,
         "_riseEstimated": true,
-        "risePct": 63.3,
+        "risePct": 56.0,
         "flowIn": 777.74,
         "flowOut": 784.63,
         "inflow": -6.89,
@@ -26097,12 +26097,12 @@
         "change": -0.47,
         "indexPrice": 1947.37,
         "stockCount": 110,
-        "riseCount": 42,
-        "fallCount": 60,
+        "riseCount": 48,
+        "fallCount": 62,
         "leader": "聆达股份",
         "leaderChange": 8.22,
         "_riseEstimated": true,
-        "risePct": 41.2,
+        "risePct": 43.6,
         "flowIn": 96.13,
         "flowOut": 107.3,
         "inflow": -11.16,
@@ -26620,66 +26620,17 @@
     },
     "2026-08-07": {
       "totalStocks": 5623,
-      "totalRise": 2856,
-      "totalFall": 2536,
+      "totalRise": 2966,
+      "totalFall": 2633,
       "risePct": 53.0,
       "sectorUp": 37,
       "sectorDown": 53,
       "topSector": "医疗服务",
       "topSectorChange": 7.47,
-      "totalFlowIn": 375.6,
-      "totalFlowOut": 312.5,
-      "netFlow": 63.1,
-      "avgChange": 0.31,
-      "indices": [
-        {
-          "name": "上证指数",
-          "value": 3940.0371,
-          "change": 1.02,
-          "change_amount": 39.68,
-          "open": 3896.4854,
-          "high": 3940.9347,
-          "low": 3885.6248
-        },
-        {
-          "name": "深证成指",
-          "value": 14311.008,
-          "change": 1.42,
-          "change_amount": 200.89,
-          "open": 14152.782,
-          "high": 14396.075,
-          "low": 14049.342
-        },
-        {
-          "name": "创业板指",
-          "value": 3563.116,
-          "change": 1.35,
-          "change_amount": 47.56,
-          "open": 3537.44,
-          "high": 3613.871,
-          "low": 3507.615
-        },
-        {
-          "name": "科创50",
-          "value": 1744.0236,
-          "change": 2.51,
-          "change_amount": 42.73,
-          "open": 1697.3702,
-          "high": 1747.7367,
-          "low": 1686.6608
-        },
-        {
-          "name": "北证50",
-          "value": 1134.245,
-          "change": 1.01,
-          "change_amount": 11.37,
-          "open": 1120.875,
-          "high": 1135.65,
-          "low": 1108.535
-        }
-      ],
-      "sectorFlat": 0,
-      "updateTime": "15:03"
+      "totalFlowIn": 8246.88,
+      "totalFlowOut": 8183.79,
+      "netFlow": 63.06,
+      "avgChange": 0.31
     }
   },
   "signals": {
@@ -27149,187 +27100,141 @@
     "2026-08-07": {
       "mainLine": [
         {
-          "name": "半导体",
-          "change": 2.33,
-          "inflow": 85.89,
-          "stars": 3,
-          "leader": "锴威特",
-          "leaderChange": 20.0,
-          "riseCount": 154,
-          "risePct": 85.1
+          "name": "医疗服务",
+          "change": 5.96,
+          "inflow": 29.0,
+          "risePct": 0,
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "",
+          "leader_change_pct": 0
+        },
+        {
+          "name": "元件",
+          "change": 5.52,
+          "inflow": 11.7,
+          "risePct": 0,
+          "stars": 5,
+          "verdict": "真热·普涨",
+          "leader_stock": "",
+          "leader_change_pct": 0
+        },
+        {
+          "name": "生物制品",
+          "change": 3.75,
+          "inflow": 11.7,
+          "risePct": 0,
+          "stars": 4,
+          "verdict": "分化",
+          "leader_stock": "",
+          "leader_change_pct": 0
         },
         {
           "name": "化学制药",
-          "change": 3.84,
-          "inflow": 58.2,
-          "stars": 5,
-          "leader": "贝达药业",
-          "leaderChange": 13.5,
-          "riseCount": 150,
-          "risePct": 94.9
-        },
-        {
-          "name": "医疗服务",
-          "change": 7.47,
-          "inflow": 40.55,
-          "stars": 5,
-          "leader": "博腾股份",
-          "leaderChange": 20.02,
-          "riseCount": 51,
-          "risePct": 92.7
-        },
-        {
-          "name": "工业金属",
-          "change": 1.76,
-          "inflow": 36.13,
+          "change": 2.93,
+          "inflow": 41.4,
+          "risePct": 0,
           "stars": 3,
-          "leader": "西部矿业",
-          "leaderChange": 7.63,
-          "riseCount": 39,
-          "risePct": 70.9
+          "verdict": "分化",
+          "leader_stock": "",
+          "leader_change_pct": 0
         },
         {
-          "name": "贵金属",
-          "change": 3.06,
-          "inflow": 22.47,
-          "stars": 5,
-          "leader": "招金黄金",
-          "leaderChange": 10.01,
-          "riseCount": 12,
-          "risePct": 85.7
+          "name": "半导体",
+          "change": 1.86,
+          "inflow": 45.5,
+          "risePct": 0,
+          "stars": 3,
+          "verdict": "分化",
+          "leader_stock": "",
+          "leader_change_pct": 0
         }
       ],
       "latent": [
         {
+          "name": "通信设备",
+          "change": 0.96,
+          "inflow": 37.7,
+          "score": "",
+          "reasons": [
+            "资金大幅流入但涨幅较小",
+            "无多周期数据，仅基于半日资金潜伏特征"
+          ]
+        },
+        {
+          "name": "工业金属",
+          "change": 1.71,
+          "inflow": 29.6,
+          "score": "",
+          "reasons": [
+            "资金持续流入",
+            "涨幅温和未爆发"
+          ]
+        },
+        {
           "name": "消费电子",
-          "change": 0.87,
-          "inflow": 13.44,
-          "leader": "朗特智能",
-          "leaderChange": 20.0,
-          "riseCount": 58,
-          "risePct": 60.4
+          "change": 0.77,
+          "inflow": 26.0,
+          "score": "",
+          "reasons": [
+            "资金净流入居前",
+            "涨幅较小处于蓄势阶段"
+          ]
         },
         {
           "name": "电池",
-          "change": 0.91,
-          "inflow": 11.23,
-          "leader": "铜冠铜箔",
-          "leaderChange": 15.0,
-          "riseCount": 52,
-          "risePct": 49.1
-        },
-        {
-          "name": "建筑材料",
-          "change": 0.29,
-          "inflow": 10.91,
-          "leader": "志特新材",
-          "leaderChange": 20.03,
-          "riseCount": 22,
-          "risePct": 32.4
-        },
-        {
-          "name": "军工电子",
-          "change": 0.79,
-          "inflow": 10.39,
-          "leader": "展芯股份",
-          "leaderChange": 397.87,
-          "riseCount": 34,
-          "risePct": 54.8
-        },
-        {
-          "name": "元件",
-          "change": 5.72,
-          "inflow": 7.94,
-          "leader": "一博科技",
-          "leaderChange": 20.0,
-          "riseCount": 57,
-          "risePct": 90.5
+          "change": 0.89,
+          "inflow": 10.5,
+          "score": "",
+          "reasons": [
+            "资金净流入",
+            "涨幅不大"
+          ]
         }
       ],
       "disaster": [
         {
-          "name": "IT服务",
-          "change": -1.3,
-          "inflow": -34.54,
-          "leader": "网宿科技",
-          "leaderChange": 3.8,
-          "fallCount": 85,
-          "fallPct": 65.9
-        },
-        {
           "name": "软件开发",
-          "change": -1.65,
-          "inflow": -32.47,
-          "leader": "和达科技",
-          "leaderChange": 10.91,
-          "fallCount": 97,
-          "fallPct": 70.3
+          "change": -1.39,
+          "inflow": -27.1,
+          "fallPct": 0,
+          "stars": "",
+          "verdict": "主力大幅出逃，板块重挫"
         },
         {
-          "name": "银行",
-          "change": -0.75,
-          "inflow": -27.03,
-          "leader": "民生银行",
-          "leaderChange": 0.28,
-          "fallCount": 50,
-          "fallPct": 59.5
+          "name": "IT服务",
+          "change": -0.99,
+          "inflow": -24.9,
+          "fallPct": 0,
+          "stars": "",
+          "verdict": "资金大幅流出，抛压沉重"
         },
         {
           "name": "证券",
-          "change": -0.43,
-          "inflow": -18.48,
-          "leader": "华安证券",
-          "leaderChange": 0.99,
-          "fallCount": 28,
-          "fallPct": 56.0
+          "change": -0.64,
+          "inflow": -18.7,
+          "fallPct": 0,
+          "stars": "",
+          "verdict": "大金融遭资金抛弃，持续失血"
+        },
+        {
+          "name": "银行",
+          "change": -1.04,
+          "inflow": -15.0,
+          "fallPct": 0,
+          "stars": "",
+          "verdict": "资金大幅流出，板块走弱"
         },
         {
           "name": "通信服务",
-          "change": -1.48,
-          "inflow": -16.41,
-          "leader": "*ST元道",
-          "leaderChange": 4.03,
-          "fallCount": 30,
-          "fallPct": 68.2
+          "change": -1.17,
+          "inflow": -14.5,
+          "fallPct": 0,
+          "stars": "",
+          "verdict": "资金持续流出，跌幅明显"
         }
       ],
-      "risk": [
-        {
-          "name": "通信设备",
-          "change": 0.54,
-          "inflow": -6.89,
-          "leader": "武汉凡谷",
-          "leaderChange": 10.01
-        },
-        {
-          "name": "白色家电",
-          "change": 0.34,
-          "inflow": -6.51,
-          "leader": "宏昌科技",
-          "leaderChange": 19.99
-        },
-        {
-          "name": "化学制品",
-          "change": 0.43,
-          "inflow": -4.33,
-          "leader": "保利联合",
-          "leaderChange": 10.01
-        },
-        {
-          "name": "包装印刷",
-          "change": 0.03,
-          "inflow": -1.62,
-          "leader": "新莱应材",
-          "leaderChange": 6.01
-        },
-        {
-          "name": "教育",
-          "change": 0.04,
-          "inflow": -1.54,
-          "leader": "传智教育",
-          "leaderChange": 5.02
-        }
-      ]
+      "risk": []
     }
   }
 }

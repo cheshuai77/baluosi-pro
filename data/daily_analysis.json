@@ -1,103 +1,87 @@
 {
   "date": "2026-08-07",
-  "updateTime": "2026-08-07 14:02",
-  "phase": "afternoon",
+  "updateTime": "2026-08-07 17:35",
+  "phase": "close",
   "marketResearch": {
     "judgment": {
-      "verdict": "指数分化，主线爆发，情绪亢奋",
+      "verdict": "☀️升温",
       "confidence": "高",
       "indicators": {
-        "主线强度": {
-          "status": "极强",
-          "detail": "PCB与创新药批量涨停，资金抱团"
+        "emotion_score": {
+          "status": "62",
+          "detail": "情绪升温，赚钱效应回暖"
         },
-        "大盘环境": {
-          "status": "分化走强",
-          "detail": "上证+0.74%，科创50+1.73%，但个股跌多涨少"
+        "zhaban_rate": {
+          "status": "26.0%",
+          "detail": "炸板率适中，高位股有分歧"
         },
-        "情绪周期": {
-          "status": "亢奋偏高",
-          "detail": "涨停60家，跌停4家，主线PCB+医药持续活跃"
+        "zt_count": {
+          "status": "74",
+          "detail": "涨停74家，跌停0家"
         }
       },
-      "reasoning": "午后市场延续上午分化格局，指数继续走强但个股分化加剧。PCB、创新药、CPO等主线维持强势，北向资金半日净流入188亿。关键压力位3923点已被突破，但缩量反弹需警惕尾盘获利回吐。"
+      "reasoning": "指数全线收红，成交额放量至2.66万亿，涨停74家且无跌停，医药与PCB双主线爆发。但北向资金连续3日流出，内外资分歧加大，情绪处于升温期，未达高潮。"
     },
     "marketRef": {
       "indicators": [
         {
           "label": "上证指数",
-          "value": "3929",
-          "trend": "上涨",
-          "note": "+0.74%"
+          "value": "3940.04",
+          "trend": "↑",
+          "note": "+1.02%"
         },
         {
-          "label": "深证成指",
-          "value": "14302",
-          "trend": "上涨",
-          "note": "+1.36%"
+          "label": "深成指",
+          "value": "14311.01",
+          "trend": "↑",
+          "note": "+1.42%"
         },
         {
           "label": "创业板指",
-          "value": "3569",
-          "trend": "上涨",
-          "note": "+1.51%"
+          "value": "3563.12",
+          "trend": "↑",
+          "note": "+1.35%"
         },
         {
-          "label": "科创50",
-          "value": "1731",
-          "trend": "上涨",
-          "note": "+1.73%"
+          "label": "成交额",
+          "value": "2.66万亿",
+          "trend": "↑",
+          "note": "放量1356亿"
         },
         {
-          "label": "北证50",
-          "value": "+0.61%",
-          "trend": "上涨",
-          "note": "小幅跟涨"
-        },
-        {
-          "label": "涨跌家数",
-          "value": "2382/3070",
-          "trend": "分化",
-          "note": "涨43.7%跌56.3%"
+          "label": "北向资金",
+          "value": "-18.62亿",
+          "trend": "↓",
+          "note": "连续3日净流出"
         }
       ],
-      "note": "午后指数继续分化走强，科创50领涨，但个股仍跌多涨少，存量资金博弈。"
+      "note": "内资放量做多，外资逆势流出，指数全红但个股分化。"
     },
     "rotation": {
-      "summary": "资金持续聚集电子+医药，计算机+非银持续流出，光伏受关税消息催化反弹",
+      "summary": "医药CRO爆发，PCB接棒算力，科技与医药双轮驱动。",
       "sectors": [
         {
-          "name": "PCB/元件",
-          "stage": "主升延续",
-          "change": 4.8
+          "name": "医药生物(CRO)",
+          "stage": "高潮/爆发",
+          "change": 13.0
         },
         {
-          "name": "创新药/CRO",
-          "stage": "修复延续",
-          "change": 3.5
+          "name": "电子(PCB)",
+          "stage": "主升/强势",
+          "change": null
         },
         {
-          "name": "CPO/光模块",
-          "stage": "活跃",
-          "change": 2.8
+          "name": "通信(算力)",
+          "stage": "震荡/分化",
+          "change": null
         },
         {
-          "name": "光伏/硅料",
-          "stage": "消息催化反弹",
-          "change": 2.2
-        },
-        {
-          "name": "计算机/软件",
-          "stage": "持续流出",
-          "change": -1.8
-        },
-        {
-          "name": "非银金融",
-          "stage": "调整",
-          "change": -1.2
+          "name": "云计算",
+          "stage": "潜伏/蓄势",
+          "change": null
         }
       ],
-      "analysis": "午后资金延续上午方向，电子硬件（PCB/CPO/半导体）和医药（创新药/CRO）继续获得主力净流入。主力早间净流入电子、医药生物、有色金属板块，净流出计算机、非银金融、银行。光伏受美国加征关税+八大硅料企业倡议催化反弹。"
+      "analysis": "医药CRO单日暴涨13%属情绪宣泄，短线谨防分化；PCB承接算力资金，趋势较好；算力CPO受外盘影响回调，但长线资金仍在抢筹。"
     },
     "pool": {
       "pools": [
@@ -107,14 +91,14 @@
             {
               "name": "景旺电子",
               "code": "603228",
-              "action": "打板/半路",
-              "note": "PCB核心，2连板，身位优势"
+              "action": "打板/低吸",
+              "note": "PCB核心，2连板"
             },
             {
-              "name": "通宇通讯",
-              "code": "002792",
-              "action": "低吸/打板",
-              "note": "CPO/通信核心，2连板"
+              "name": "生益科技",
+              "code": "600183",
+              "action": "趋势低吸",
+              "note": "PCB趋势中军"
             }
           ]
         },
@@ -122,16 +106,16 @@
           "type": "等信号",
           "items": [
             {
-              "name": "宝鼎科技",
-              "code": "002552",
-              "action": "等分歧转一致",
-              "note": "最高板4板，等弱转强信号"
+              "name": "凯莱英",
+              "code": "002821",
+              "action": "等待分歧回踩",
+              "note": "CRO龙头，单日暴涨防分化"
             },
             {
               "name": "百普赛斯",
               "code": "301080",
-              "action": "等回踩均线",
-              "note": "创新药20cm核心，等缩量回踩"
+              "action": "等待缩量企稳",
+              "note": "CRO弹性标的"
             }
           ]
         },
@@ -139,16 +123,16 @@
           "type": "轻仓跟",
           "items": [
             {
-              "name": "生益科技",
-              "code": "600183",
-              "action": "趋势低吸",
-              "note": "PCB中军，沿5日线低吸"
+              "name": "宝鼎科技",
+              "code": "002552",
+              "action": "极小仓位试错",
+              "note": "最高板4板，博弈情绪"
             },
             {
-              "name": "凯莱英",
-              "code": "002821",
-              "action": "趋势低吸",
-              "note": "创新药中军，首板确认趋势"
+              "name": "百花医药",
+              "code": "600721",
+              "action": "快进快出",
+              "note": "4板空间龙"
             }
           ]
         },
@@ -156,69 +140,14 @@
           "type": "有可能性",
           "items": [
             {
-              "name": "中国稀土",
-              "code": "000831",
-              "action": "观察轮动",
-              "note": "资源品异动，等板块效应"
-            },
-            {
-              "name": "云南锗业",
-              "code": "002428",
-              "action": "观察连板",
-              "note": "新材料4板，高位博弈"
+              "name": "中际旭创",
+              "code": "300308",
+              "action": "跟踪长线资金",
+              "note": "投行抢筹H股，算力核心"
             }
           ]
         }
       ]
-    },
-    "holdings": {
-      "holdings": [
-        {
-          "code": "600426",
-          "name": "华鲁恒升",
-          "shares": 400,
-          "cost_price": 20.9,
-          "current_price": 21.12,
-          "change_pct": -0.52,
-          "cost_diff_pct": 1.05,
-          "market_value": 8448.0,
-          "profit_loss": 88.0,
-          "fund_flow": "主力净流出0.31亿，占比0.33%",
-          "trend": "下跌、主力流出",
-          "suggestion": "持有",
-          "note": "与成本价差+1.05%，观望为主"
-        },
-        {
-          "code": "515050",
-          "name": "5GETF",
-          "shares": 2000,
-          "cost_price": 1.004,
-          "current_price": 1.059,
-          "change_pct": 4.44,
-          "cost_diff_pct": 5.48,
-          "market_value": 2118.0,
-          "profit_loss": 110.0,
-          "fund_flow": "份额净赎回（-1.43%）🔴持续净赎回",
-          "trend": "上涨、份额净赎回",
-          "suggestion": "持有",
-          "note": "浮盈5.48%，趋势健康可持有，设好止盈"
-        }
-      ],
-      "overview": {
-        "total_value": 10566.0,
-        "total_cost": 10368.0,
-        "total_profit_loss": 198.0,
-        "total_profit_pct": 1.91,
-        "position_ratio": "华鲁恒升 80.0%；5GETF 20.0%",
-        "risk_exposure": "共2只持仓（1只个股+1只ETF）；整体盈亏平衡附近，风险可控；持仓数量偏少，分散度不足",
-        "holding_count": 2,
-        "notes": [
-          "共2只持仓（1只个股+1只ETF）",
-          "整体盈亏平衡附近，风险可控",
-          "持仓数量偏少，分散度不足"
-        ]
-      },
-      "update_time": "2026-08-07 13:07"
     }
   }
 }
