@@ -1,11 +1,152 @@
 {
   "date": "2026-08-07",
-  "updateTime": "2026-08-07 12:30",
+  "updateTime": "2026-08-07 12:54",
   "phase": "mid",
   "marketResearch": {
-    "judgment": {},
-    "marketRef": {},
-    "rotation": {},
-    "pool": {}
+    "judgment": {
+      "verdict": "✅正常，市场探底回升，成长赛道爆发，情绪升温至亢奋",
+      "confidence": "高",
+      "indicators": {
+        "emotion": {
+          "status": "🌡️亢奋",
+          "detail": "涨停60家，跌停0家，炸板7家，最高4板，赚钱效应极佳"
+        },
+        "liquidity": {
+          "status": "充沛",
+          "detail": "两市成交额维持高位，资金向低位科技与医药切换"
+        },
+        "market_trend": {
+          "status": "探底回升，深强沪弱",
+          "detail": "沪指低开后快速下探，随后在PCB、医药等赛道带动下翻红，深成指大涨1.31%"
+        }
+      },
+      "reasoning": "早盘权重休息，成长赛道（PCB、CRO）批量涨停，资金高低切换明显，市场情绪从分歧迅速修复并走向亢奋，双主线确立。"
+    },
+    "marketRef": {
+      "indicators": [
+        {
+          "label": "上证指数",
+          "value": "3919.51",
+          "trend": "+0.49%",
+          "note": "探底回升"
+        },
+        {
+          "label": "深成指",
+          "value": "14295.08",
+          "trend": "+1.31%",
+          "note": "领涨"
+        },
+        {
+          "label": "涨停家数",
+          "value": "60",
+          "trend": "升温",
+          "note": "情绪亢奋"
+        },
+        {
+          "label": "炸板家数",
+          "value": "7",
+          "trend": "偏低",
+          "note": "封板率高"
+        },
+        {
+          "label": "日经225",
+          "value": "盘中",
+          "trend": "-1.1%",
+          "note": "日韩股市跳水"
+        }
+      ],
+      "note": "外围日韩股市盘中跳水，但A股走出独立行情，深强沪弱特征明显。"
+    },
+    "rotation": {
+      "summary": "科技硬件与医药创新双主线爆发，资金从高位新能源、AI应用撤出，向低位PCB、CRO切换。",
+      "sectors": [
+        {
+          "name": "PCB",
+          "stage": "高潮",
+          "change": 5.0
+        },
+        {
+          "name": "医药CRO",
+          "stage": "爆发",
+          "change": 4.5
+        },
+        {
+          "name": "CPO/光模块",
+          "stage": "反弹",
+          "change": 3.2
+        },
+        {
+          "name": "半导体设备",
+          "stage": "轮动补涨",
+          "change": 2.1
+        },
+        {
+          "name": "电力设备",
+          "stage": "调整",
+          "change": -1.5
+        }
+      ],
+      "analysis": "PCB受高盛研报催化及AI服务器需求放量，成为绝对王者；医药CRO超跌反弹叠加业绩预期修复，资金切入低位赛道做高低切换。"
+    },
+    "pool": {
+      "pools": [
+        {
+          "type": "现在能进",
+          "items": [
+            {
+              "name": "景旺电子",
+              "code": "603228",
+              "action": "PCB核心，2连板，关注下午换手",
+              "note": ""
+            },
+            {
+              "name": "通宇通讯",
+              "code": "002792",
+              "action": "CPO龙头，2连板，算力硬件回血",
+              "note": ""
+            }
+          ]
+        },
+        {
+          "type": "等信号",
+          "items": [
+            {
+              "name": "一博科技",
+              "code": "301366",
+              "action": "等下午封死或溢价",
+              "note": "PCB 20CM首板"
+            },
+            {
+              "name": "毕得医药",
+              "code": "688073",
+              "action": "等板块情绪延续",
+              "note": "CRO 20CM首板"
+            }
+          ]
+        },
+        {
+          "type": "轻仓跟",
+          "items": [
+            {
+              "name": "宝鼎科技",
+              "code": "002552",
+              "action": "轻仓博弈空间",
+              "note": "4板最高标"
+            }
+          ]
+        },
+        {
+          "type": "有可能性",
+          "items": [
+            {
+              "name": "康龙化成",
+              "code": "603259",
+              "action": "纯观察资金承接",
+              "note": "CRO中军"
+            }
+          ]
+        }
+      ]
+    }
   }
 }
