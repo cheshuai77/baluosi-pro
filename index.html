@@ -65,10 +65,10 @@
   .container { padding: 20px 24px; max-width: 1800px; margin: 0 auto; }
 
   /* ===== 市场总览 - 2行布局 ===== */
-  .market-indices { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .market-indices { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
   .market-indices .stat-card {
     position: relative; overflow: hidden;
-    border-left: 3px solid transparent; padding-left: 15px;
+    border-left: 3px solid transparent; padding: 10px 14px 8px 15px;
     background: linear-gradient(135deg, #fff 60%, #fafbfc 100%);
   }
   /* 上证大卡占2行在左，深证/创业/科创50/北证50等小卡在右2×2 */
@@ -99,11 +99,16 @@
   .stat-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: box-shadow 0.2s; }
   .stat-header { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
   .stat-icon { font-size: 16px; }
-  .stat-label { font-size: 12px; color: var(--text-secondary); }
-  .stat-value { font-size: 20px; font-weight: 700; font-family: 'SF Mono', Consolas, monospace; }
-  .stat-change { font-size: 13px; font-weight: 500; margin-left: 8px; }
-  .stat-sub { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
-  .stat-detail { font-size: 11px; color: var(--text-tertiary); margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .stat-label { font-size: 13px; color: #48484A; font-weight: 500; }
+  .stat-value { font-size: 34px; font-weight: 800; font-family: 'SF Mono', Consolas, monospace; }
+  /* 上证大卡字体放大（面积是其他卡的2倍） */
+  .market-indices .stat-card:nth-child(1) .stat-value { font-size: 52px; }
+  .market-indices .stat-card:nth-child(1) .stat-change { font-size: 22px; }
+  .stat-change { font-size: 18px; font-weight: 700; margin-left: 8px; }
+  .market-indices .stat-card { padding: 12px 14px; }
+  .market-indices .stat-detail { margin-top: 8px; }
+  .stat-sub { font-size: 12px; color: #8E8E93; font-weight: 500; margin-top: 2px; }
+  .stat-detail { font-size: 12px; color: #8E8E93; font-weight: 500; margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
   .stat-detail span { white-space: nowrap; }
   
   /* 上证大卡：细节行2×2网格 */
@@ -229,10 +234,11 @@
   }
   .filter-btn:hover { background: var(--border); color: var(--text-primary); }
   .table-scroll { overflow: auto; flex: 1; min-height: 0; }
-  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .inflow-col { font-weight: 700; font-size: 15px; }
   th {
     position: sticky; top: 0; background: var(--bg-tertiary);
-    padding: 10px 12px; text-align: right; font-weight: 500;
+    padding: 8px 8px; text-align: right; font-weight: 500;
     color: var(--text-secondary); border-bottom: 1px solid var(--bg-tertiary);
     white-space: nowrap; cursor: pointer; user-select: none; z-index: 1;
   }
@@ -243,7 +249,7 @@
   th:last-child { text-align: center; }
   th:hover { color: var(--text-primary); background: var(--border); }
   td {
-    padding: 10px 12px; text-align: right;
+    padding: 8px 8px; text-align: right;
     border-bottom: 1px solid var(--bg-tertiary);
     font-family: 'SF Mono', Consolas, monospace; white-space: nowrap;
   }
@@ -352,13 +358,17 @@
     .date-text { min-width: 80px; font-size: 13px; }
     .container { padding: 12px 10px; }
 
-    .market-indices { grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
-    .market-indices .stat-card:nth-child(1) .stat-detail { gap: 4px 8px; margin-top: 6px; }
-    .market-indices .stat-change { font-size: 13px; }
+    /* 五大指数：上证独占一行，其他四个2×2 */
+    .market-indices { grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+    .market-indices .stat-card:nth-child(1) { grid-column: 1 / -1; grid-row: auto; }
+    .market-indices .stat-card:nth-child(1) .stat-detail { gap: 6px 12px; margin-top: 8px; }
+    .market-indices .stat-change { font-size: 18px; }
+    /* 数值+涨跌幅不换行 */
+    .market-indices .stat-card > div:nth-child(2) { white-space: nowrap; display: flex; align-items: baseline; overflow: hidden; }
+    .stat-value { font-size: 30px; }
+    .stat-change { font-size: 20px; font-weight: 700; margin-left: 8px; flex-shrink: 0; }
     .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
     .stat-card { padding: 10px 12px; border-radius: 10px; }
-    .stat-value { font-size: 16px; }
-    .stat-change { font-size: 12px; margin-left: 4px; }
     .stat-sub { font-size: 10px; }
     .stat-icon { font-size: 14px; }
 
@@ -370,7 +380,7 @@
     .table-title { font-size: 14px; }
     .search-box { width: 100px; font-size: 12px; }
     .table-scroll { max-height: 420px; }
-    th, td { padding: 8px 8px; font-size: 11px; }
+    th, td { padding: 6px 6px; font-size: 13px; }
 
     .dragon-grid { grid-template-columns: 1fr; gap: 14px; }
     .limitup-stats { grid-template-columns: repeat(4, 1fr); gap: 6px; }
@@ -389,9 +399,12 @@
 
   @media (max-width: 480px) {
     .market-indices { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .market-indices .stat-card:nth-child(1) { grid-column: 1 / -1; }
     .market-indicators { grid-template-columns: repeat(2, 1fr); gap: 6px; }
-    .stat-card { padding: 8px 10px; }
-    .stat-value { font-size: 14px; }
+    .stat-card { padding: 8px 10px; border-radius: 8px; }
+    .market-indices .stat-card { padding: 10px 12px; }
+    .stat-value { font-size: 26px; }
+    .stat-change { font-size: 18px; }
     .stat-label { font-size: 11px; }
   }
 
@@ -540,7 +553,7 @@
             <th data-sort="change">涨跌幅</th>
             <th data-sort="flowIn">流入(亿)</th>
             <th data-sort="flowOut">流出(亿)</th>
-            <th data-sort="inflow">净流入(亿)</th>
+            <th data-sort="inflow" class="inflow-col">净流入(亿)</th>
             <th data-sort="rankChange">名次变化</th>
             <th data-sort="riseCount">股票涨/跌</th>
             <th data-sort="risePct">比例</th>
@@ -560,14 +573,9 @@
 <div class="top-tab-content" id="tab-analysis">
 <div class="container">
 
-  <!-- 时段切换器 -->
-  <div class="analysis-period-bar" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">
-    <h2 style="font-size:18px;font-weight:700;color:#1a1a1a;">📊 大盘研究分析</h2>
-    <div style="display:flex;gap:4px;background:var(--bg-tertiary);border-radius:10px;padding:3px;">
-      <button class="period-btn active" data-period="pre" onclick="switchPeriod('pre')" style="padding:6px 16px;border:none;border-radius:8px;font-size:13px;cursor:pointer;background:var(--bg-secondary);color:var(--text-primary);font-weight:500;box-shadow:0 1px 2px rgba(0,0,0,0.06);">🌅 盘前</button>
-      <button class="period-btn" data-period="mid" onclick="switchPeriod('mid')" style="padding:6px 16px;border:none;border-radius:8px;font-size:13px;cursor:pointer;background:transparent;color:var(--text-secondary);">📡 中盘</button>
-      <button class="period-btn" data-period="close" onclick="switchPeriod('close')" style="padding:6px 16px;border:none;border-radius:8px;font-size:13px;cursor:pointer;background:transparent;color:var(--text-secondary);">🌙 收盘</button>
-    </div>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+    <h2 style="font-size:18px;font-weight:700;color:#1a1a1a;margin:0;">📊 大盘研究分析</h2>
+    <span id="analysisUpdateTime" style="font-size:12px;color:var(--text-secondary);background:var(--bg-tertiary);padding:3px 10px;border-radius:6px;">数据加载中...</span>
   </div>
 
   <!-- 模块1: 大盘判断 -->
@@ -677,51 +685,13 @@ const state = {
 // ========== 数据加载 ==========
 async function loadData() {
   try {
-    const resp = await fetch('./data/fund_data_frontend.json?t=' + Date.now());
+    const resp = await fetch('data/fund_data_frontend.json?t=' + Date.now());
     FUND_DATA = await resp.json();
-    normalizeData();
     state.currentDate = FUND_DATA.dates[FUND_DATA.dates.length - 1];
     updateAll();
   } catch(e) {
     console.error('Failed to load data:', e);
     document.getElementById('sectorTable').innerHTML = '<tr><td colspan="13" style="text-align:center;padding:40px;color:#999">数据加载失败，请刷新重试</td></tr>';
-  }
-}
-
-function normalizeData() {
-  // Fix 1: Convert indices from object to array with correct field names
-  if (FUND_DATA.marketOverview) {
-    for (const date in FUND_DATA.marketOverview) {
-      const mo = FUND_DATA.marketOverview[date];
-      if (mo && mo.indices && !Array.isArray(mo.indices)) {
-        mo.indices = Object.entries(mo.indices).map(([name, d]) => ({
-          name: name,
-          value: d.price || 0,
-          change: d.changePct || 0,
-          pre_close: d.preClose || null,
-          open: d.open || null,
-          high: d.high || null,
-          low: d.low || null
-        }));
-      }
-    }
-  }
-  // Fix 2: Convert "N/A" strings to 0 in signal data
-  if (FUND_DATA.signals) {
-    for (const date in FUND_DATA.signals) {
-      const sig = FUND_DATA.signals[date];
-      if (!sig) continue;
-      ['mainLine','latent','disaster','risk'].forEach(key => {
-        if (!Array.isArray(sig[key])) return;
-        sig[key].forEach(item => {
-          if (typeof item.risePct === 'string') item.risePct = parseFloat(item.risePct) || 0;
-          if (typeof item.fallPct === 'string') item.fallPct = parseFloat(item.fallPct) || 0;
-          if (typeof item.change === 'string') item.change = parseFloat(item.change) || 0;
-          if (typeof item.inflow === 'string') item.inflow = parseFloat(item.inflow) || 0;
-          if (typeof item.stars === 'string') item.stars = parseInt(item.stars) || 3;
-        });
-      });
-    }
   }
 }
 
@@ -763,7 +733,7 @@ function renderMarketOverview() {
       const hasDetail = pc != null || op != null || hi != null || lo != null;
       return '<div class="stat-card">' +
         '<div class="stat-header"><span class="stat-icon">' + idxIcons[i] + '</span><span class="stat-label">' + idx.name + '</span></div>' +
-        '<div><span class="stat-value">' + (idx.value || 0).toFixed(2) + '</span>' +
+        '<div><span class="stat-value ' + cls + '">' + (idx.value || 0).toFixed(2) + '</span>' +
         '<span class="stat-change ' + cls + '">' + arrow + ' ' + sign + (idx.change || 0).toFixed(2) + '%</span></div>' +
         (hasDetail ? '<div class="stat-detail">' +
           (pc != null ? '<span>昨收 ' + pc.toFixed(2) + '</span>' : '') +
@@ -788,9 +758,11 @@ function renderMarketOverview() {
     // 1. 涨跌家数
     '<div class="stat-card card-mixed">' +
       '<div class="stat-header"><span class="stat-icon">📊</span><span class="stat-label">涨跌家数</span></div>' +
-      '<div style="display:flex;align-items:baseline;gap:8px;margin-top:4px;">' +
+      '<div style="display:flex;align-items:baseline;gap:6px;margin-top:4px;">' +
         '<span class="stat-value-big rise">' + (mo.totalRise || 0).toLocaleString() + '</span>' +
         '<span style="font-size:15px;color:var(--text-tertiary);">涨</span>' +
+        '<span class="stat-value-big" style="color:var(--text-tertiary);">' + (mo.totalFlat || 0).toLocaleString() + '</span>' +
+        '<span style="font-size:15px;color:var(--text-tertiary);">平</span>' +
         '<span class="stat-value-big fall">' + (mo.totalFall || 0).toLocaleString() + '</span>' +
         '<span style="font-size:15px;color:var(--text-tertiary);">跌</span>' +
       '</div>' +
@@ -1097,7 +1069,7 @@ function renderTable() {
       '<td class="num ' + changeClass + '">' + (s.change > 0 ? '+' : '') + s.change.toFixed(2) + '%</td>' +
       '<td class="num rise">' + flowInD + '</td>' +
       '<td class="num fall">' + flowOutD + '</td>' +
-      '<td class="num ' + inflowClass + '">' + inflowD + '</td>' +
+      '<td class="num inflow-col ' + inflowClass + '">' + inflowD + '</td>' +
       '<td class="num">' + rankChangeHtml + '</td>' +
       '<td class="num"><span class="rise">' + s.riseCount + '</span>/<span class="fall">' + s.fallCount + '</span></td>' +
       '<td class="num">' + (s.risePct || 0).toFixed(0) + '%</td>' +
@@ -1518,13 +1490,16 @@ function closeYZDetail() {
 
 // ========== 大盘研究分析 ==========
 let ANALYSIS_DATA = null;
-let analysisPeriod = 'pre';
 
 async function loadAnalysis() {
   if (ANALYSIS_DATA) { renderAllModules(); return; }
   try {
-    const resp = await fetch('data/daily_analysis.json?t=' + Date.now());
-    ANALYSIS_DATA = await resp.json();
+    if (window.FUND_DATA && window.FUND_DATA.analysisData) {
+      ANALYSIS_DATA = window.FUND_DATA.analysisData;
+    } else {
+      var resp = await fetch('data/daily_analysis.json?v=' + Date.now());
+      ANALYSIS_DATA = await resp.json();
+    }
     renderAllModules();
   } catch(e) {
     console.warn('Analysis data not available:', e.message);
@@ -1532,28 +1507,21 @@ async function loadAnalysis() {
   }
 }
 
-function switchPeriod(period) {
-  analysisPeriod = period;
-  document.querySelectorAll('.period-btn').forEach(function(b) {
-    b.classList.remove('active');
-    b.style.background = 'transparent';
-    b.style.color = 'var(--text-secondary)';
-    b.style.fontWeight = '400';
-    b.style.boxShadow = 'none';
-  });
-  var btn = document.querySelector('.period-btn[data-period="' + period + '"]');
-  if (btn) {
-    btn.classList.add('active');
-    btn.style.background = 'var(--bg-secondary)';
-    btn.style.color = 'var(--text-primary)';
-    btn.style.fontWeight = '500';
-    btn.style.boxShadow = '0 1px 2px rgba(0,0,0,0.06)';
-  }
-  if (ANALYSIS_DATA) renderAllModules();
-  else loadAnalysis();
-}
 
 function renderAllModules() {
+  // 显示更新时间 + 阶段标注
+  var timeEl = document.getElementById('analysisUpdateTime');
+  if (timeEl && ANALYSIS_DATA) {
+    var updateTime = ANALYSIS_DATA.updateTime || '';
+    var phase = ANALYSIS_DATA.phase || '';
+    var phaseMap = { 'pre': '盘前', 'mid': '中盘', 'close': '收盘' };
+    var phaseLabel = phaseMap[phase] ? '（' + phaseMap[phase] + '）' : (phase ? '（' + phase + '）' : '');
+    if (updateTime) {
+      timeEl.textContent = '更新时间：' + updateTime + ' ' + phaseLabel;
+    } else {
+      timeEl.textContent = '等待数据更新...';
+    }
+  }
   renderJudgment();
   renderMarketRef();
   renderRotation();
@@ -1563,8 +1531,8 @@ function renderAllModules() {
 
 function getPeriodData() {
   if (!ANALYSIS_DATA) return {};
-  var periods = ANALYSIS_DATA.periods || {};
-  return periods[analysisPeriod] || {};
+  // 扁平覆盖结构：直接从 marketResearch 读取，不再使用 periods 嵌套
+  return ANALYSIS_DATA.marketResearch || {};
 }
 
 function showAnalysisPlaceholder() {
