@@ -685,7 +685,7 @@ const state = {
 // ========== 数据加载 ==========
 async function loadData() {
   try {
-    const resp = await fetch('https://cdn.jsdelivr.net/gh/cheshuai77/baluosi-pro@main/data/fund_data_frontend.json?t=' + Date.now());
+    const resp = await fetch('https://raw.githubusercontent.com/cheshuai77/baluosi-pro/main/data/fund_data_frontend.json?t=' + Date.now());
     FUND_DATA = await resp.json();
     state.currentDate = FUND_DATA.dates[FUND_DATA.dates.length - 1];
     updateAll();
