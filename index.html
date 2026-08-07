@@ -1497,7 +1497,7 @@ async function loadAnalysis() {
     if (window.FUND_DATA && window.FUND_DATA.analysisData) {
       ANALYSIS_DATA = window.FUND_DATA.analysisData;
     } else {
-      var resp = await fetch('https://cdn.jsdelivr.net/gh/cheshuai77/baluosi-pro@main/data/daily_analysis.json?v=' + Date.now());
+      var resp = await fetch('https://raw.githubusercontent.com/cheshuai77/baluosi-pro/main/data/daily_analysis.json?v=' + Date.now());
       ANALYSIS_DATA = await resp.json();
     }
     renderAllModules();
