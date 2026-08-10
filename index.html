@@ -7,7 +7,7 @@
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>扒螺蛳股票投资助手PRO · 股票资金看板</title>
-<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   
@@ -1673,7 +1673,7 @@ function renderMarketRef() {
         '<span style="font-size:12px;color:var(--text-secondary);font-weight:500;">' + (ind.label || '') + '</span>' +
         (ind.trend ? '<span style="font-size:11px;color:' + c + ';font-weight:600;">' + arrow + ' ' + ind.trend + '</span>' : '') +
       '</div>' +
-      '<div style="font-size:22px;font-weight:700;color:' + c + ';font-family:'SF Mono',Consolas,monospace;letter-spacing:-0.5px;">' + (ind.value || '-') + '</div>' +
+      '<div style="font-size:22px;font-weight:700;color:' + c + ';font-family:\'SF Mono\',Consolas,monospace;letter-spacing:-0.5px;">' + (ind.value || '-') + '</div>' +
       (ind.note ? '<div style="font-size:11px;color:var(--text-tertiary);line-height:1.4;">' + ind.note + '</div>' : '') +
     '</div>';
   });
