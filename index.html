@@ -1530,8 +1530,8 @@ let ANALYSIS_DATA = null;
 async function loadAnalysis() {
   if (ANALYSIS_DATA) { renderAllModules(); return; }
   try {
-    if (window.FUND_DATA && window.FUND_DATA.analysisData) {
-      ANALYSIS_DATA = window.FUND_DATA.analysisData;
+    if (FUND_DATA && FUND_DATA.analysisData) {
+      ANALYSIS_DATA = FUND_DATA.analysisData;
     } else {
       var resp = await fetch('data/daily_analysis.json?v=' + Date.now());
       ANALYSIS_DATA = await resp.json();
