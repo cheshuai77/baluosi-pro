@@ -23046,11 +23046,11 @@
         "change": 2.84,
         "indexPrice": 20210.3,
         "stockCount": 56,
-        "riseCount": 53,
-        "fallCount": 3,
+        "riseCount": 51,
+        "fallCount": 5,
         "leader": "药康生物",
         "leaderChange": 19.99,
-        "risePct": 94.6,
+        "risePct": 91.1,
         "flowIn": 63.56,
         "flowOut": 62.95,
         "inflow": 0.62,
@@ -26413,12 +26413,12 @@
         "change": 0.14,
         "indexPrice": 1962.64,
         "stockCount": 110,
-        "riseCount": 78,
-        "fallCount": 26,
+        "riseCount": 56,
+        "fallCount": 54,
         "leader": "绿发电力",
         "leaderChange": 10.05,
         "_riseEstimated": true,
-        "risePct": 75.0,
+        "risePct": 50.9,
         "flowIn": 25.11,
         "flowOut": 28.2,
         "inflow": -3.09,
@@ -26476,12 +26476,12 @@
         "change": -1.87,
         "indexPrice": 88741.5,
         "stockCount": 43,
-        "riseCount": 9,
-        "fallCount": 34,
+        "riseCount": 11,
+        "fallCount": 32,
         "leader": "兴福电子",
         "leaderChange": 4.12,
         "_riseEstimated": true,
-        "risePct": 20.9,
+        "risePct": 25.6,
         "flowIn": 61.79,
         "flowOut": 65.3,
         "inflow": -3.51,
@@ -27492,12 +27492,12 @@
         "change": -2.22,
         "indexPrice": 8795.2,
         "stockCount": 91,
-        "riseCount": 12,
-        "fallCount": 79,
+        "riseCount": 21,
+        "fallCount": 70,
         "leader": "致尚科技",
         "leaderChange": 2.95,
         "_riseEstimated": true,
-        "risePct": 13.2,
+        "risePct": 23.1,
         "flowIn": 187.51,
         "flowOut": 220.92,
         "inflow": -33.41,
@@ -27555,12 +27555,12 @@
         "change": -2.37,
         "indexPrice": 23217.0,
         "stockCount": 63,
-        "riseCount": 24,
-        "fallCount": 38,
+        "riseCount": 13,
+        "fallCount": 50,
         "leader": "宝鼎科技",
         "leaderChange": 10.0,
         "_riseEstimated": true,
-        "risePct": 38.7,
+        "risePct": 20.6,
         "flowIn": 142.22,
         "flowOut": 176.44,
         "inflow": -34.21,
@@ -27618,12 +27618,12 @@
         "change": -0.89,
         "indexPrice": 16428.9,
         "stockCount": 184,
-        "riseCount": 35,
-        "fallCount": 147,
+        "riseCount": 72,
+        "fallCount": 112,
         "leader": "晶华微",
         "leaderChange": 13.26,
         "_riseEstimated": true,
-        "risePct": 19.2,
+        "risePct": 39.1,
         "flowIn": 306.35,
         "flowOut": 343.52,
         "inflow": -37.16,
@@ -27722,62 +27722,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3949.96,
+          "value": 3962.23,
           "open": 3943.82,
-          "high": 3957.53,
+          "high": 3965.83,
           "low": 3943.81,
-          "close": 3949.96,
+          "close": 3962.23,
           "prevClose": 3940.04,
-          "change": 0.25,
-          "changeAmount": 9.92
+          "change": 0.56,
+          "changeAmount": 22.2
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14220.6,
+          "value": 14276.22,
           "open": 14348.95,
           "high": 14373.77,
           "low": 14212.42,
-          "close": 14220.6,
+          "close": 14276.22,
           "prevClose": 14311.01,
-          "change": -0.63,
-          "changeAmount": -90.41
+          "change": -0.24,
+          "changeAmount": -34.79
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3515.2,
+          "value": 3530.2,
           "open": 3567.05,
           "high": 3575.59,
           "low": 3512.13,
-          "close": 3515.2,
+          "close": 3530.2,
           "prevClose": 3563.12,
-          "change": -1.34,
-          "changeAmount": -47.92
+          "change": -0.92,
+          "changeAmount": -32.91
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1718.11,
+          "value": 1735.52,
           "open": 1740.14,
           "high": 1752.93,
-          "low": 1718.11,
-          "close": 1718.11,
+          "low": 1717.46,
+          "close": 1735.52,
           "prevClose": 1744.02,
-          "change": -1.49,
-          "changeAmount": -25.91
+          "change": -0.49,
+          "changeAmount": -8.51
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1123.79,
+          "value": 1128.46,
           "open": 1142.03,
           "high": 1142.03,
           "low": 1123.79,
-          "close": 1123.79,
+          "close": 1128.46,
           "prevClose": 1134.24,
-          "change": -0.92,
-          "changeAmount": -10.45
+          "change": -0.51,
+          "changeAmount": -5.78
         }
       ]
     },
@@ -27798,62 +27798,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3949.96,
+          "value": 3962.23,
           "open": 3943.82,
-          "high": 3957.53,
+          "high": 3965.83,
           "low": 3943.81,
-          "close": 3949.96,
+          "close": 3962.23,
           "prevClose": 3940.04,
-          "change": 0.25,
-          "changeAmount": 9.92
+          "change": 0.56,
+          "changeAmount": 22.2
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14220.6,
+          "value": 14276.22,
           "open": 14348.95,
           "high": 14373.77,
           "low": 14212.42,
-          "close": 14220.6,
+          "close": 14276.22,
           "prevClose": 14311.01,
-          "change": -0.63,
-          "changeAmount": -90.41
+          "change": -0.24,
+          "changeAmount": -34.79
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3515.2,
+          "value": 3530.2,
           "open": 3567.05,
           "high": 3575.59,
           "low": 3512.13,
-          "close": 3515.2,
+          "close": 3530.2,
           "prevClose": 3563.12,
-          "change": -1.34,
-          "changeAmount": -47.92
+          "change": -0.92,
+          "changeAmount": -32.91
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1718.11,
+          "value": 1735.52,
           "open": 1740.14,
           "high": 1752.93,
-          "low": 1718.11,
-          "close": 1718.11,
+          "low": 1717.46,
+          "close": 1735.52,
           "prevClose": 1744.02,
-          "change": -1.49,
-          "changeAmount": -25.91
+          "change": -0.49,
+          "changeAmount": -8.51
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1123.79,
+          "value": 1128.46,
           "open": 1142.03,
           "high": 1142.03,
           "low": 1123.79,
-          "close": 1123.79,
+          "close": 1128.46,
           "prevClose": 1134.24,
-          "change": -0.92,
-          "changeAmount": -10.45
+          "change": -0.51,
+          "changeAmount": -5.78
         }
       ]
     },
@@ -27874,62 +27874,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3949.96,
+          "value": 3962.23,
           "open": 3943.82,
-          "high": 3957.53,
+          "high": 3965.83,
           "low": 3943.81,
-          "close": 3949.96,
+          "close": 3962.23,
           "prevClose": 3940.04,
-          "change": 0.25,
-          "changeAmount": 9.92
+          "change": 0.56,
+          "changeAmount": 22.2
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14220.6,
+          "value": 14276.22,
           "open": 14348.95,
           "high": 14373.77,
           "low": 14212.42,
-          "close": 14220.6,
+          "close": 14276.22,
           "prevClose": 14311.01,
-          "change": -0.63,
-          "changeAmount": -90.41
+          "change": -0.24,
+          "changeAmount": -34.79
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3515.2,
+          "value": 3530.2,
           "open": 3567.05,
           "high": 3575.59,
           "low": 3512.13,
-          "close": 3515.2,
+          "close": 3530.2,
           "prevClose": 3563.12,
-          "change": -1.34,
-          "changeAmount": -47.92
+          "change": -0.92,
+          "changeAmount": -32.91
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1718.11,
+          "value": 1735.52,
           "open": 1740.14,
           "high": 1752.93,
-          "low": 1718.11,
-          "close": 1718.11,
+          "low": 1717.46,
+          "close": 1735.52,
           "prevClose": 1744.02,
-          "change": -1.49,
-          "changeAmount": -25.91
+          "change": -0.49,
+          "changeAmount": -8.51
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1123.79,
+          "value": 1128.46,
           "open": 1142.03,
           "high": 1142.03,
           "low": 1123.79,
-          "close": 1123.79,
+          "close": 1128.46,
           "prevClose": 1134.24,
-          "change": -0.92,
-          "changeAmount": -10.45
+          "change": -0.51,
+          "changeAmount": -5.78
         }
       ]
     },
@@ -27950,127 +27950,140 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3949.96,
+          "value": 3962.23,
           "open": 3943.82,
-          "high": 3957.53,
+          "high": 3965.83,
           "low": 3943.81,
-          "close": 3949.96,
+          "close": 3962.23,
           "prevClose": 3940.04,
-          "change": 0.25,
-          "changeAmount": 9.92
+          "change": 0.56,
+          "changeAmount": 22.2
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14220.6,
+          "value": 14276.22,
           "open": 14348.95,
           "high": 14373.77,
           "low": 14212.42,
-          "close": 14220.6,
+          "close": 14276.22,
           "prevClose": 14311.01,
-          "change": -0.63,
-          "changeAmount": -90.41
+          "change": -0.24,
+          "changeAmount": -34.79
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3515.2,
+          "value": 3530.2,
           "open": 3567.05,
           "high": 3575.59,
           "low": 3512.13,
-          "close": 3515.2,
+          "close": 3530.2,
           "prevClose": 3563.12,
-          "change": -1.34,
-          "changeAmount": -47.92
+          "change": -0.92,
+          "changeAmount": -32.91
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1718.11,
+          "value": 1735.52,
           "open": 1740.14,
           "high": 1752.93,
-          "low": 1718.11,
-          "close": 1718.11,
+          "low": 1717.46,
+          "close": 1735.52,
           "prevClose": 1744.02,
-          "change": -1.49,
-          "changeAmount": -25.91
+          "change": -0.49,
+          "changeAmount": -8.51
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1123.79,
+          "value": 1128.46,
           "open": 1142.03,
           "high": 1142.03,
           "low": 1123.79,
-          "close": 1123.79,
+          "close": 1128.46,
           "prevClose": 1134.24,
-          "change": -0.92,
-          "changeAmount": -10.45
+          "change": -0.51,
+          "changeAmount": -5.78
         }
       ]
     },
     "2026-08-10": {
       "totalStocks": 5452,
-      "totalRise": 2742,
-      "totalFall": 2632,
-      "risePct": 51.0,
+      "totalRise": 2747,
+      "totalFall": 2502,
+      "risePct": 52.3,
       "sectorUp": 32,
       "sectorDown": 55,
       "topSector": "能源金属",
       "topSectorChange": 5.29,
-      "totalFlowIn": 36.7,
-      "totalFlowOut": 249.0,
-      "netFlow": -212.3,
+      "totalFlowIn": 1907.8,
+      "totalFlowOut": 2120.19,
+      "netFlow": -212.33,
       "avgChange": -0.07,
       "indices": [
         {
           "name": "上证指数",
-          "value": 3949.962,
-          "change": 0.25,
-          "change_amount": 9.92,
-          "open": 3943.816,
-          "high": 3957.5255,
-          "low": 3943.8082
+          "code": "sh000001",
+          "value": 3962.23,
+          "open": 3943.82,
+          "high": 3965.83,
+          "low": 3943.81,
+          "close": 3962.23,
+          "prevClose": 3940.04,
+          "change": 0.56,
+          "changeAmount": 22.2
         },
         {
           "name": "深证成指",
-          "value": 14220.603,
-          "change": -0.63,
-          "change_amount": -90.41,
+          "code": "sz399001",
+          "value": 14276.22,
           "open": 14348.95,
-          "high": 14373.772,
-          "low": 14212.424
+          "high": 14373.77,
+          "low": 14212.42,
+          "close": 14276.22,
+          "prevClose": 14311.01,
+          "change": -0.24,
+          "changeAmount": -34.79
         },
         {
           "name": "创业板指",
-          "value": 3515.196,
-          "change": -1.34,
-          "change_amount": -47.92,
-          "open": 3567.046,
-          "high": 3575.589,
-          "low": 3512.134
+          "code": "sz399006",
+          "value": 3530.2,
+          "open": 3567.05,
+          "high": 3575.59,
+          "low": 3512.13,
+          "close": 3530.2,
+          "prevClose": 3563.12,
+          "change": -0.92,
+          "changeAmount": -32.91
         },
         {
           "name": "科创50",
-          "value": 1718.1089,
-          "change": -1.49,
-          "change_amount": -25.91,
-          "open": 1740.1356,
-          "high": 1752.9311,
-          "low": 1718.1089
+          "code": "sh000688",
+          "value": 1735.52,
+          "open": 1740.14,
+          "high": 1752.93,
+          "low": 1717.46,
+          "close": 1735.52,
+          "prevClose": 1744.02,
+          "change": -0.49,
+          "changeAmount": -8.51
         },
         {
           "name": "北证50",
-          "value": 1123.79,
-          "change": -0.92,
-          "change_amount": -10.45,
-          "open": 1142.028,
-          "high": 1142.028,
-          "low": 1123.79
+          "code": "bj899050",
+          "value": 1128.46,
+          "open": 1142.03,
+          "high": 1142.03,
+          "low": 1123.79,
+          "close": 1128.46,
+          "prevClose": 1134.24,
+          "change": -0.51,
+          "changeAmount": -5.78
         }
-      ],
-      "sectorFlat": 1,
-      "updateTime": "09:45"
+      ]
     }
   },
   "signals": {
@@ -28551,52 +28564,87 @@
       "risk": []
     },
     "2026-08-10": {
-      "mainLine": [],
-      "latent": [
-        {
-          "name": "农化制品",
-          "change": 1.4,
-          "inflow": 4.27,
-          "leader": "兴发集团",
-          "leaderChange": 9.63,
-          "riseCount": 55,
-          "risePct": 91.7
-        },
-        {
-          "name": "证券",
-          "change": 0.27,
-          "inflow": 3.85,
-          "leader": "国泰海通",
-          "leaderChange": 1.06,
-          "riseCount": 38,
-          "risePct": 82.6
-        },
+      "mainLine": [
         {
           "name": "能源金属",
           "change": 5.29,
           "inflow": 3.78,
-          "leader": "寒锐钴业",
-          "leaderChange": 12.18,
-          "riseCount": 12,
-          "risePct": 100.0
+          "risePct": 100.0,
+          "stars": 5
+        },
+        {
+          "name": "医疗服务",
+          "change": 2.84,
+          "inflow": 0.62,
+          "risePct": 91.1,
+          "stars": 3
+        },
+        {
+          "name": "医药商业",
+          "change": 1.54,
+          "inflow": 0.62,
+          "risePct": 93.8,
+          "stars": 2
+        },
+        {
+          "name": "养殖业",
+          "change": 1.42,
+          "inflow": 2.15,
+          "risePct": 86.1,
+          "stars": 3
+        },
+        {
+          "name": "农化制品",
+          "change": 1.4,
+          "inflow": 4.27,
+          "risePct": 91.7,
+          "stars": 4
         },
         {
           "name": "工业金属",
           "change": 1.18,
           "inflow": 2.73,
-          "leader": "鹏欣资源",
-          "leaderChange": 10.03,
-          "riseCount": 38,
-          "risePct": 69.1
+          "risePct": 69.1,
+          "stars": 3
+        },
+        {
+          "name": "贵金属",
+          "change": 0.92,
+          "inflow": 2.28,
+          "risePct": 64.3,
+          "stars": 2
+        }
+      ],
+      "latent": [
+        {
+          "name": "银行",
+          "change": 0.41,
+          "inflow": 5.49,
+          "tag": "微涨蓄力"
+        },
+        {
+          "name": "证券",
+          "change": 0.27,
+          "inflow": 3.85,
+          "tag": "微涨蓄力"
         },
         {
           "name": "化学制品",
           "change": -0.13,
           "inflow": 2.65,
-          "leader": "宿迁联盛",
-          "leaderChange": 9.97,
-          "riseCount": 82,
-          "risePct": 48.0
+          "tag": "逆势吸筹"
+        },
+        {
+          "name": "贵金属",
+          "change": 0.92,
+          "inflow": 2.28,
+          "tag": "温和蓄力"
+        },
+        {
+          "name": "综合",
+          "change": -0.05,
+          "inflow": 1.12,
+          "tag": "逆势吸筹"
         }
       ],
       "disaster": [
@@ -28604,85 +28652,34 @@
           "name": "半导体",
           "change": -0.89,
           "inflow": -37.16,
-          "leader": "晶华微",
-          "leaderChange": 13.26,
-          "fallCount": 112,
           "fallPct": 60.9
         },
         {
           "name": "元件",
           "change": -2.37,
           "inflow": -34.21,
-          "leader": "宝鼎科技",
-          "leaderChange": 10.0,
-          "fallCount": 50,
           "fallPct": 79.4
         },
         {
           "name": "通信设备",
           "change": -2.22,
           "inflow": -33.41,
-          "leader": "致尚科技",
-          "leaderChange": 2.95,
-          "fallCount": 70,
           "fallPct": 76.9
         },
         {
           "name": "光学光电子",
           "change": -1.44,
           "inflow": -20.08,
-          "leader": "*ST宁视",
-          "leaderChange": 11.03,
-          "fallCount": 72,
           "fallPct": 67.3
         },
         {
           "name": "IT服务",
           "change": -1.08,
           "inflow": -15.34,
-          "leader": "新开普",
-          "leaderChange": 3.52,
-          "fallCount": 82,
           "fallPct": 63.6
         }
       ],
-      "risk": [
-        {
-          "name": "化学制药",
-          "change": 0.74,
-          "inflow": -5.64,
-          "leader": "亚太药业",
-          "leaderChange": 10.04
-        },
-        {
-          "name": "影视院线",
-          "change": 0.23,
-          "inflow": -4.67,
-          "leader": "北京文化",
-          "leaderChange": 10.07
-        },
-        {
-          "name": "电力",
-          "change": 0.14,
-          "inflow": -3.09,
-          "leader": "绿发电力",
-          "leaderChange": 10.05
-        },
-        {
-          "name": "生物制品",
-          "change": 1.03,
-          "inflow": -2.6,
-          "leader": "百普赛斯",
-          "leaderChange": 20.0
-        },
-        {
-          "name": "小金属",
-          "change": 1.61,
-          "inflow": -2.13,
-          "leader": "东方锆业",
-          "leaderChange": 5.98
-        }
-      ]
+      "risk": []
     }
   }
 }
