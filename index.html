@@ -1304,8 +1304,8 @@ function openDrawer(sectorName) {
       const cc = h.change >= 0 ? 'rise' : 'fall';
       histHtml += '<tr style="border-bottom:1px solid #f0f0f0;">' +
         '<td style="padding:5px 4px;font-family:monospace;font-size:11px;">' + h.date.slice(5) + '</td>' +
-        '<td style="padding:5px 4px;text-align:right;color:var(--rise);">' + h.flowIn.toFixed(1) + '</td>' +
-        '<td style="padding:5px 4px;text-align:right;color:var(--fall);">' + h.flowOut.toFixed(1) + '</td>' +
+        '<td style="padding:5px 4px;text-align:right;color:var(--rise);">' + (h.flowIn||0).toFixed(1) + '</td>' +
+        '<td style="padding:5px 4px;text-align:right;color:var(--fall);">' + (h.flowOut||0).toFixed(1) + '</td>' +
         '<td style="padding:5px 4px;text-align:right;" class="' + nc + '">' + (h.inflow > 0 ? '+' : '') + h.inflow.toFixed(1) + '</td>' +
         '<td style="padding:5px 4px;text-align:right;" class="' + cc + '">' + (h.change > 0 ? '+' : '') + h.change.toFixed(2) + '%</td>' +
       '</tr>';
