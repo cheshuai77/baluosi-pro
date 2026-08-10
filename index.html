@@ -622,23 +622,14 @@
     </div>
   </div>
 
-  <!-- 模块4: 龙虎榜 -->
+  <!-- 模块4: 游资动向 -->
   <div class="analysis-module" id="mod-lhb" style="background:var(--bg-secondary);border-radius:var(--card-radius);box-shadow:var(--shadow);padding:18px;margin-bottom:14px;">
     <div class="analysis-module-header" style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-      <span style="font-size:18px;">🐉</span>
-      <span style="font-size:15px;font-weight:600;">龙虎榜</span>
+      <span style="font-size:18px;">🎯</span>
+      <span style="font-size:15px;font-weight:600;">游资动向</span>
     </div>
     <div class="analysis-module-body" id="lhb-body" style="font-size:13px;line-height:1.8;">
-      <div class="lhb-columns" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-        <div class="lhb-col">
-          <h4 style="font-size:13px;font-weight:600;margin-bottom:10px;">🔒 涨停榜</h4>
-          <div id="ztContent"></div>
-        </div>
-        <div class="lhb-col">
-          <h4 style="font-size:13px;font-weight:600;margin-bottom:10px;">🎯 游资动向</h4>
-          <div id="yzContent"></div>
-        </div>
-      </div>
+      <div id="yzContent"></div>
     </div>
   </div>
 
@@ -1184,98 +1175,9 @@ function renderTable() {
   }).join('');
 }
 
-// ========== 龙虎榜 ==========
+// ========== 游资动向 ==========
 function renderLHB() {
-  renderZT();
   renderYZ();
-}
-
-function renderZT() {
-  const el = document.getElementById('ztContent');
-  const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
-
-  // 组装数据：优先用 marketOverview，没有则 fallback 到 ANALYSIS_DATA
-  let zt = {};
-  if (mo.ztCount || mo.emotionScore || mo.zbRate || mo.maxBoard) {
-    zt = mo;
-  } else if (ANALYSIS_DATA && ANALYSIS_DATA.marketResearch && ANALYSIS_DATA.marketResearch.judgment) {
-    const jd = ANALYSIS_DATA.marketResearch.judgment;
-    const emo = jd.indicators && jd.indicators.emotion;
-    if (emo) {
-      const detail = emo.detail || '';
-      zt.ztCount = (detail.match(/涨停(\d+)家/) || [])[1] || null;
-      zt.zbRate = (detail.match(/炸板率([\d.]+)%/) || [])[1] || null;
-      zt.emotionScore = (detail.match(/情绪评分(\d+)/) || [])[1] || null;
-      zt.maxBoard = (detail.match(/最高(\d+)板/) || [])[1] || null;
-      zt.emotionStage = emo.status || null;
-      // 字符串转数字
-      if (zt.ztCount) zt.ztCount = parseInt(zt.ztCount);
-      if (zt.emotionScore) zt.emotionScore = parseInt(zt.emotionScore);
-      if (zt.maxBoard) zt.maxBoard = parseInt(zt.maxBoard);
-      if (zt.zbRate) zt.zbRate = parseFloat(zt.zbRate);
-    }
-  }
-
-  if (!zt.ztCount && !zt.emotionScore && !zt.zbRate && !zt.maxBoard) {
-    el.innerHTML = '<div style="color:var(--text-tertiary);font-size:12px;padding:12px 0;">数据待更新</div>';
-    return;
-  }
-  let html = '';
-  // 涨停统计
-  if (zt.ztCount || zt.zbRate) {
-    html += '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px;">' +
-      '<div style="text-align:center;padding:8px 4px;background:var(--bg-tertiary);border-radius:6px;"><span style="font-size:18px;font-weight:700;display:block;color:var(--rise);">' + (zt.ztCount||0) + '</span><span style="font-size:10px;color:var(--text-secondary);">涨停</span></div>' +
-      '<div style="text-align:center;padding:8px 4px;background:var(--bg-tertiary);border-radius:6px;"><span style="font-size:18px;font-weight:700;display:block;color:var(--fall);">' + (zt.dtCount||0) + '</span><span style="font-size:10px;color:var(--text-secondary);">跌停</span></div>' +
-      '<div style="text-align:center;padding:8px 4px;background:var(--bg-tertiary);border-radius:6px;"><span style="font-size:18px;font-weight:700;display:block;color:#FFA94D;">' + (zt.zbCount||'-') + '</span><span style="font-size:10px;color:var(--text-secondary);">炸板</span></div>' +
-      '<div style="text-align:center;padding:8px 4px;background:var(--bg-tertiary);border-radius:6px;"><span style="font-size:18px;font-weight:700;display:block;color:#FFA94D;">' + (zt.zbRate != null ? zt.zbRate.toFixed(1) + '%' : '-') + '</span><span style="font-size:10px;color:var(--text-secondary);">炸板率</span></div>' +
-      '</div>';
-  }
-  // 最高连板
-  if (zt.maxBoard) {
-    html += '<div style="margin-bottom:10px;padding:10px 12px;background:var(--bg-tertiary);border-radius:8px;display:flex;align-items:center;gap:10px;">' +
-      '<span style="font-size:20px;">🔥</span>' +
-      '<div><div style="font-size:11px;color:var(--text-secondary);">最高连板</div>' +
-      '<div style="font-size:16px;font-weight:700;" class="rise">' + zt.maxBoard + '板 · ' + (zt.maxBoardName || '-') + '</div></div></div>';
-  }
-  // 连板梯队 - 可视化阶梯图
-  if (zt.ladder) {
-    html += renderLadderChart(zt.ladder);
-  }
-  // 情绪周期
-  if (zt.emotionScore) {
-    const score = parseInt(zt.emotionScore);
-    const emoji = score >= 70 ? '🔥' : score >= 50 ? '☀️' : score >= 30 ? '🌥️' : '❄️';
-    html += '<div style="padding:10px 12px;background:var(--bg-tertiary);border-radius:8px;margin-top:8px;">' +
-      '<div style="font-size:12px;color:var(--text-secondary);margin-bottom:4px;">' + emoji + ' 情绪周期</div>' +
-      '<div style="font-size:14px;font-weight:600;">' + (zt.emotionStage || '-') + ' · ' + score + '/100</div></div>';
-  }
-  el.innerHTML = html;
-}
-
-function renderLadderChart(ladderStr, ladderDetail) {
-  if (ladderDetail == null) {
-    const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
-    ladderDetail = mo.ladderDetail || null;
-  }
-  const parts = ladderStr.split('→');
-  let html = '<div style="margin-bottom:10px;padding:10px 12px;background:var(--bg-tertiary);border-radius:8px;">';
-  html += '<div style="font-size:12px;color:var(--text-secondary);margin-bottom:8px;">🏔️ 连板梯队</div>';
-  let items = [];
-  parts.forEach((part) => {
-    let boards, count;
-    const match = part.match(/(\d+)板×(\d+)/);
-    if (match) { boards = parseInt(match[1]); count = parseInt(match[2]); }
-    else { boards = parseInt(part); count = 1; }
-    if (isNaN(boards)) return;
-    let names = '';
-    if (ladderDetail && ladderDetail[String(boards)]) {
-      names = ' · ' + ladderDetail[String(boards)].join('、');
-    }
-    items.push('<span style="font-size:12px;">' + boards + '板×' + count + '只' + names + '</span>');
-  });
-  html += '<div style="display:flex;flex-direction:column;gap:4px;">' + items.join('') + '</div>';
-  html += '</div>';
-  return html;
 }
 
 function renderYZ() {
@@ -1863,7 +1765,7 @@ function toggleRotationAnalysis() {
   }
 }
 
-// 模块4: 龙虎榜（复用原有renderZT/renderYZ）
+// 模块4: 游资动向
 // renderLHB() 已在上面定义，直接调用即可
 
 // 模块5: 关注池
