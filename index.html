@@ -856,7 +856,7 @@ function updateDateNav() {
   // 优先从 metaByDate 读取 collectTime
   const meta = (FUND_DATA.metaByDate && FUND_DATA.metaByDate[state.currentDate]) || {};
   const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
-  let timeStr = meta.collectTime || mo.updateTime || null;
+  let timeStr = mo.updateTime || meta.collectTime || null;
   if (timeStr && state.currentDate) {
     const dt = timeStr.length > 10 ? timeStr : (state.currentDate + ' ' + timeStr);
     tl.textContent = '📡 数据时间：' + dt;
