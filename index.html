@@ -249,18 +249,6 @@
   .stars { color: var(--warning); font-size: 11px; letter-spacing: 1px; }
   .signal-empty { color: var(--text-tertiary); font-size: 12px; text-align: center; padding: 8px 0; }
 
-  /* 时段切换标签 */
-  .phase-tab {
-    padding: 5px 14px; border: 1px solid var(--border); border-radius: 8px;
-    background: var(--bg-secondary); font-size: 12px; font-weight: 500;
-    color: var(--text-secondary); cursor: pointer; transition: all 0.15s;
-    white-space: nowrap;
-  }
-  .phase-tab:hover { border-color: var(--accent); color: var(--accent); }
-  .phase-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600; }
-  .phase-tab.no-data { opacity: 0.5; cursor: not-allowed; }
-  .phase-tab.no-data:hover { border-color: var(--border); color: var(--text-secondary); }
-
   /* 表格区 */
   .table-panel {
     background: var(--bg-secondary); border: none;
@@ -640,12 +628,7 @@
 
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
     <h2 style="font-size:18px;font-weight:700;color:#1a1a1a;margin:0;">📊 大盘研究分析</h2>
-    <div id="phaseTabs" style="display:flex;gap:6px;">
-      <button class="phase-tab active" data-phase="pre" onclick="switchPhase('pre')">🌅 盘前</button>
-      <button class="phase-tab" data-phase="mid" onclick="switchPhase('mid')">☀️ 中盘</button>
-      <button class="phase-tab" data-phase="close" onclick="switchPhase('close')">🌙 收盘</button>
-    </div>
-    <span id="analysisUpdateTime" style="font-size:12px;color:var(--text-secondary);background:var(--bg-tertiary);padding:3px 10px;border-radius:6px;margin-left:auto;">数据加载中...</span>
+    <span id="analysisUpdateTime" style="font-size:12px;color:var(--text-secondary);background:var(--bg-tertiary);padding:3px 10px;border-radius:6px;">数据加载中...</span>
   </div>
 
   <!-- 模块1: 大盘判断 -->
@@ -1745,7 +1728,6 @@ function closeYZDetail() {
 
 // ========== 大盘研究分析 ==========
 let ANALYSIS_DATA = null;
-let currentPhase = 'pre';  // 当前展示的时段
 
 async function loadAnalysis() {
   if (ANALYSIS_DATA) { renderAllModules(); return; }
@@ -1756,8 +1738,6 @@ async function loadAnalysis() {
       var resp = await fetch('data/daily_analysis.json?v=' + Date.now());
       ANALYSIS_DATA = await resp.json();
     }
-    // 自动选择时段：根据当前时间
-    autoSelectPhase();
     renderAllModules();
   } catch(e) {
     console.warn('Analysis data not available:', e.message);
@@ -1765,59 +1745,16 @@ async function loadAnalysis() {
   }
 }
 
-function autoSelectPhase() {
-  var hour = new Date().getHours();
-  if (hour < 12) currentPhase = 'pre';
-  else if (hour < 15) currentPhase = 'mid';
-  else currentPhase = 'close';
-  
-  // Fallback: use the phase from data if multi-phase not available
-  if (!ANALYSIS_DATA.phases) {
-    currentPhase = ANALYSIS_DATA.phase || currentPhase;
-  }
-  
-  updatePhaseTabs();
-}
-
-function switchPhase(phase) {
-  currentPhase = phase;
-  updatePhaseTabs();
-  renderAllModules();
-}
-
-function updatePhaseTabs() {
-  var tabs = document.querySelectorAll('.phase-tab');
-  tabs.forEach(function(tab) {
-    var p = tab.getAttribute('data-phase');
-    tab.classList.toggle('active', p === currentPhase);
-    
-    // 检查该时段是否有数据
-    if (ANALYSIS_DATA && ANALYSIS_DATA.phases) {
-      var hasData = !!ANALYSIS_DATA.phases[p];
-      tab.classList.toggle('no-data', !hasData);
-    }
-  });
-}
-
 
 function renderAllModules() {
   // 显示更新时间 + 阶段标注
   var timeEl = document.getElementById('analysisUpdateTime');
   if (timeEl && ANALYSIS_DATA) {
-    var phaseMap = { 'pre': '盘前', 'mid': '中盘', 'close': '收盘' };
-    var phaseLabel = phaseMap[currentPhase] || currentPhase;
-    // 多时段结构：从 phases[currentPhase] 取时间
-    var updateTime = '';
-    if (ANALYSIS_DATA.phases && ANALYSIS_DATA.phases[currentPhase]) {
-      updateTime = ANALYSIS_DATA.phases[currentPhase].updateTime || '';
-    } else {
-      updateTime = ANALYSIS_DATA.updateTime || '';
-    }
-    if (updateTime) {
-      timeEl.textContent = '「' + phaseLabel + '」' + updateTime;
-    } else {
-      timeEl.textContent = '「' + phaseLabel + '」等待数据更新...';
-    }
+    var updateTime = ANALYSIS_DATA.updateTime || '';
+    var phase = ANALYSIS_DATA.phase || '';
+    var phaseMap = { 'pre': '🌅盘前', 'mid': '☀️中盘', 'close': '🌙收盘' };
+    var phaseLabel = phaseMap[phase] || phase;
+    timeEl.textContent = updateTime ? phaseLabel + ' · ' + updateTime : '等待数据更新...';
   }
   renderJudgment();
   renderMarketRef();
@@ -1828,11 +1765,6 @@ function renderAllModules() {
 
 function getPeriodData() {
   if (!ANALYSIS_DATA) return {};
-  // 多时段结构：phases.pre/mid/close.marketResearch
-  if (ANALYSIS_DATA.phases && ANALYSIS_DATA.phases[currentPhase]) {
-    return ANALYSIS_DATA.phases[currentPhase].marketResearch || {};
-  }
-  // 兜底：旧版扁平结构
   return ANALYSIS_DATA.marketResearch || {};
 }
 
