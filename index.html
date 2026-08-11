@@ -622,7 +622,7 @@
     <div class="table-header">
       <div class="table-title">
         📊 90行业资金排行
-        <span id="tableIntradayChange" style="font-size:12px;color:var(--text-secondary);margin-left:8px;font-weight:normal;"></span>
+
       </div>
       <div class="table-tools">
         <input type="text" class="search-box" id="searchBox" placeholder="搜索板块...">
@@ -648,7 +648,7 @@
             <th class="intraday-col">13:30</th>
             <th class="intraday-col">14点</th>
             <th class="intraday-col">收盘</th>
-            <th data-sort="intradayChange" style="width:72px;">变动(亿)</th>
+
             <th data-sort="rankChange">名次变化</th>
             <th data-sort="riseCount">股票涨/跌</th>
             <th data-sort="risePct">比例</th>
@@ -1507,7 +1507,6 @@ function renderTable() {
       '<td class="num fall">' + flowOutD + '</td>' +
       '<td class="num inflow-col ' + inflowClass + '">' + inflowD + '</td>' +
       intradayCells +
-      '<td class="num intraday-col">' + getIntradayChangeHtml(s.name) + '</td>' +
       '<td class="num">' + rankChangeHtml + '</td>' +
       '<td class="num"><span class="rise">' + s.riseCount + '</span>/<span class="fall">' + s.fallCount + '</span></td>' +
       '<td class="num">' + (s.risePct || 0).toFixed(0) + '%</td>' +
