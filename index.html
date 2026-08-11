@@ -174,13 +174,16 @@
   .tl-down { color: var(--fall); }
   .tl-flat { color: var(--text-tertiary); }
   .signal-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
-  .signal-strip .signal-card {
+  .signal-strip-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+  .signal-strip .signal-card, .signal-strip-2 .signal-card {
     background: var(--bg-secondary); border: none; border-top: 3px solid transparent;
     border-radius: var(--card-radius); padding: 16px;
     box-shadow: var(--shadow); display: flex; flex-direction: column;
   }
   .signal-card.offense { border-top-color: var(--rise); }
   .signal-card.defense { border-top-color: var(--fall); }
+  .signal-card.streak-in { border-top-color: #e53e3e; background: linear-gradient(135deg, rgba(229,62,62,0.04), var(--bg-secondary)); }
+  .signal-card.streak-out { border-top-color: #38a169; background: linear-gradient(135deg, rgba(56,161,105,0.04), var(--bg-secondary)); }
   .signal-title {
     font-size: 14px; font-weight: 700; color: var(--text-primary);
     margin-bottom: 10px; display: flex; align-items: center; gap: 6px; min-height: 20px;
@@ -205,6 +208,8 @@
   .signal-item-tag.latent { background: #e8f4fd; color: #2b6cb0; }
   .signal-item-tag.disaster { background: #e8fde8; color: #276749; }
   .signal-item-tag.risk { background: #fefcbf; color: #975a16; }
+  .signal-item-tag.streakIn { background: #fed7d7; color: #9b2c2c; font-weight: 600; }
+  .signal-item-tag.streakOut { background: #c6f6d5; color: #276749; font-weight: 600; }
   .signal-item-flow {
     display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
     font-family: 'SF Mono', Monaco, monospace;
@@ -296,6 +301,10 @@
   .table-scroll { overflow: auto; flex: 1; min-height: 0; }
   table { width: 100%; border-collapse: collapse; font-size: 14px; }
   .inflow-col { font-weight: 700; font-size: 15px; }
+  .intraday-col { font-size: 11px; font-family: 'SF Mono', Monaco, monospace; white-space: nowrap; min-width: 48px; text-align: center; }
+  .intraday-col.id-rise { color: var(--rise); }
+  .intraday-col.id-fall { color: var(--fall); }
+  thead .intraday-col { font-size: 10px; font-family: inherit; color: var(--text-secondary); font-weight: 500; }
   th {
     position: sticky; top: 0; background: var(--bg-tertiary);
     padding: 8px 8px; text-align: right; font-weight: 500;
@@ -430,7 +439,8 @@
     .stat-icon { font-size: 14px; }
 
     .signal-strip { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
-    .signal-strip .signal-card { padding: 12px; }
+    .signal-strip-2 { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
+    .signal-strip .signal-card, .signal-strip-2 .signal-card { padding: 12px; }
     .signal-title { font-size: 12px; }
 
     .table-header { padding: 12px 14px; }
@@ -582,6 +592,17 @@
     </div>
   </div>
 
+  <div class="signal-strip-2" id="signalStrip2">
+    <div class="signal-card streak-in">
+      <div class="signal-title"><span class="icon">🔴</span> 连入4天+<span class="count" id="streakInCount"></span></div>
+      <div class="signal-list" id="signalStreakIn"><div class="signal-empty-card">加载中...</div></div>
+    </div>
+    <div class="signal-card streak-out">
+      <div class="signal-title"><span class="icon">🟢</span> 连出4天+<span class="count" id="streakOutCount"></span></div>
+      <div class="signal-list" id="signalStreakOut"><div class="signal-empty-card">加载中...</div></div>
+    </div>
+  </div>
+
   <!-- 信号详情半屏弹窗 -->  </div>
 
   <!-- 信号详情半屏弹窗 -->
@@ -616,6 +637,15 @@
             <th data-sort="flowIn">流入(亿)</th>
             <th data-sort="flowOut">流出(亿)</th>
             <th data-sort="inflow" class="inflow-col">净流入(亿)</th>
+            <th class="intraday-col">开盘</th>
+            <th class="intraday-col">10点</th>
+            <th class="intraday-col">10:30</th>
+            <th class="intraday-col">11点</th>
+            <th class="intraday-col">11:30</th>
+            <th class="intraday-col">13点</th>
+            <th class="intraday-col">13:30</th>
+            <th class="intraday-col">14点</th>
+            <th class="intraday-col">收盘</th>
             <th data-sort="intradayChange" style="width:72px;">变动(亿)</th>
             <th data-sort="rankChange">名次变化</th>
             <th data-sort="riseCount">股票涨/跌</th>
@@ -955,6 +985,23 @@ function renderMergedSignals() {
 
   // Also update the intraday summary bar
   renderIntradaySummary();
+
+  // === 连入4天+ / 连出4天+ ===
+  const allSectors = FUND_DATA.sectorsByDate[date] || [];
+  const streakInItems = allSectors.filter(s => (s.continuousDays || 0) >= 4)
+    .sort((a, b) => (b.continuousDays || 0) - (a.continuousDays || 0));
+  const streakOutItems = allSectors.filter(s => (s.continuousDays || 0) <= -4)
+    .sort((a, b) => (a.continuousDays || 0) - (b.continuousDays || 0));
+
+  const streakInCount = document.getElementById('streakInCount');
+  const streakOutCount = document.getElementById('streakOutCount');
+  if (streakInCount) streakInCount.textContent = streakInItems.length ? '(' + streakInItems.length + ')' : '';
+  if (streakOutCount) streakOutCount.textContent = streakOutItems.length ? '(' + streakOutItems.length + ')' : '';
+
+  const streakInEl = document.getElementById('signalStreakIn');
+  if (streakInEl) streakInEl.innerHTML = buildStreakItems(streakInItems, 'streak-in', icMap);
+  const streakOutEl = document.getElementById('signalStreakOut');
+  if (streakOutEl) streakOutEl.innerHTML = buildStreakItems(streakOutItems, 'streak-out', icMap);
 }
 
 function buildMergedItems(items, zone, icMap) {
@@ -1027,18 +1074,72 @@ function buildMergedItems(items, zone, icMap) {
       else { suggestHtml = '⚠️ 风险较高，建议观望'; suggestClass = 'caution'; }
     }
 
-    // 分时净流金额行
-    let intradayHtml = '';
-    if (s.intraday && s.intraday.length > 0) {
-      const pts = s.intraday.map(p => {
-        const t = p.time;
-        const timeStr = t.substring(0,2) + ':' + t.substring(2);
-        const v = p.net;
-        const vs = (v >= 0 ? '+' : '') + v.toFixed(1);
-        const vc = v >= 0 ? 'rise' : 'fall';
-        return '<span class="intraday-pt ' + vc + '">' + timeStr + ' <b>' + vs + '</b></span>';
-      }).join('');
-      intradayHtml = '<div class="signal-item-intraday">' + pts + '</div>';
+    return '<div class="signal-item" onclick="openDrawer(\'' + (s.name||'').replace(/'/g, "\\'") + '\')">' +
+      '<div class="signal-item-top">' +
+        '<span class="signal-item-name">' +
+          '<span>' + (i+1) + '. ' + s.name + '</span>' +
+          '<span class="signal-item-tag ' + tag + '">' + tagLabel + '</span>' +
+        '</span>' +
+        '<span class="signal-item-flow ' + flowClass + '">' + inflowStr + '亿' + changeHtml + '</span>' +
+      '</div>' +
+      '<div class="signal-reason">' + reasonHtml + '</div>' +
+      '<div class="signal-suggest ' + suggestClass + '">' + suggestHtml + '</div>' +
+    '</div>';
+  }
+
+  let html = showItems.map((s, i) => buildItem(s, i)).join('');
+  if (hasMore) {
+    html += '<div class="signal-more-btn" onclick="showSignalModal(\'' + zone + '\')">查看全部 ' + items.length + ' 个板块</div>';
+  }
+  return html;
+}
+
+// ========== 连入/连出信号卡渲染 ==========
+function buildStreakItems(items, zone, icMap) {
+  if (!items || items.length === 0) {
+    return '<div class="signal-empty-card">暂无信号</div>';
+  }
+  const MAX_SHOW = 8;
+  const showItems = items.slice(0, MAX_SHOW);
+  const hasMore = items.length > MAX_SHOW;
+
+  function buildItem(s, i) {
+    const isStreakIn = zone === 'streak-in';
+    const days = s.continuousDays || 0;
+    const absDays = Math.abs(days);
+    const inflow = s.inflow || 0;
+    const inflowStr = inflow >= 0 ? '+' + inflow.toFixed(1) : inflow.toFixed(1);
+    const flowClass = inflow >= 0 ? 'rise' : 'fall';
+    const tagLabel = isStreakIn ? '连入' + absDays + '天' : '连出' + absDays + '天';
+    const tag = isStreakIn ? 'streakIn' : 'streakOut';
+
+    // Intraday change
+    const intradayChange = icMap[s.name];
+    let changeHtml = '';
+    if (intradayChange !== undefined) {
+      const absChange = Math.abs(intradayChange);
+      if (absChange < 0.05) {
+        changeHtml = '<span class="signal-item-change flat">→ 持平</span>';
+      } else if (intradayChange > 0) {
+        changeHtml = '<span class="signal-item-change up">↑ +' + intradayChange.toFixed(1) + '亿</span>';
+      } else {
+        changeHtml = '<span class="signal-item-change down">↓ ' + intradayChange.toFixed(1) + '亿</span>';
+      }
+    }
+
+    // Reason
+    const reasonHtml = isStreakIn
+      ? '连续' + absDays + '日净流入 · 今日' + inflowStr + '亿'
+      : '连续' + absDays + '日净流出 · 今日' + inflowStr + '亿';
+
+    // Suggest
+    let suggestHtml = '', suggestClass = 'hold';
+    if (isStreakIn) {
+      if (absDays >= 6) { suggestHtml = '⛔ 连续流入过久，警惕高位兑现'; suggestClass = 'avoid'; }
+      else if (absDays >= 4) { suggestHtml = '💡 持续吸筹，关注回调买点'; suggestClass = 'hold'; }
+    } else {
+      if (absDays >= 6) { suggestHtml = '💡 超跌充分，关注企稳反弹机会'; suggestClass = 'hold'; }
+      else if (absDays >= 4) { suggestHtml = '⛔ 持续失血，暂回避等企稳'; suggestClass = 'avoid'; }
     }
 
     return '<div class="signal-item" onclick="openDrawer(\'' + (s.name||'').replace(/'/g, "\\'") + '\')">' +
@@ -1049,7 +1150,6 @@ function buildMergedItems(items, zone, icMap) {
         '</span>' +
         '<span class="signal-item-flow ' + flowClass + '">' + inflowStr + '亿' + changeHtml + '</span>' +
       '</div>' +
-      intradayHtml +
       '<div class="signal-reason">' + reasonHtml + '</div>' +
       '<div class="signal-suggest ' + suggestClass + '">' + suggestHtml + '</div>' +
     '</div>';
@@ -1130,7 +1230,9 @@ const SIG_TYPE_LABELS = {
   mainline: '🔥 主线确认',
   latent: '👀 潜伏机会',
   disaster: '💀 砸盘重灾',
-  risk: '⚠️ 风险预警'
+  risk: '⚠️ 风险预警',
+  'streak-in': '🔴 连入4天+',
+  'streak-out': '🟢 连出4天+'
 };
 
 function showSignalModal(type) {
@@ -1147,6 +1249,16 @@ function showSignalModal(type) {
       ...(sig.disaster || []).map(s => ({...s, _type: 'disaster'})),
       ...(sig.risk || []).map(s => ({...s, _type: 'risk'}))
     ];
+  } else if (type === 'streak-in') {
+    const allSectors = FUND_DATA.sectorsByDate[date] || [];
+    items = allSectors.filter(s => (s.continuousDays || 0) >= 4)
+      .sort((a, b) => (b.continuousDays || 0) - (a.continuousDays || 0))
+      .map(s => ({...s, _type: 'streakIn'}));
+  } else if (type === 'streak-out') {
+    const allSectors = FUND_DATA.sectorsByDate[date] || [];
+    items = allSectors.filter(s => (s.continuousDays || 0) <= -4)
+      .sort((a, b) => (a.continuousDays || 0) - (b.continuousDays || 0))
+      .map(s => ({...s, _type: 'streakOut'}));
   } else {
     items = sig[type === 'mainline' ? 'mainLine' : type] || [];
   }
@@ -1186,26 +1298,22 @@ function showSignalModal(type) {
       if (s.tag === '拉高出货') { suggestText = '⛔ 主力出货，建议回避'; suggestClass = 'avoid'; }
       else if (s.tag === '量价背离') { suggestText = '⚠️ 量价背离，谨慎追高'; suggestClass = 'caution'; }
       else { suggestText = '⚠️ 风险较高，建议观望'; suggestClass = 'caution'; }
-    }
-    // 分时净流金额行
-    let intradayHtml = '';
-    if (s.intraday && s.intraday.length > 0) {
-      const pts = s.intraday.map(p => {
-        const t = p.time;
-        const timeStr = t.substring(0,2) + ':' + t.substring(2);
-        const v = p.net;
-        const vs = (v >= 0 ? '+' : '') + v.toFixed(1);
-        const vc = v >= 0 ? 'rise' : 'fall';
-        return '<span class="intraday-pt ' + vc + '">' + timeStr + ' <b>' + vs + '</b></span>';
-      }).join('');
-      intradayHtml = '<div class="signal-item-intraday">' + pts + '</div>';
+    } else if (itemType === 'streakIn') {
+      const days = s.continuousDays || 0;
+      reason = '连续' + days + '日净流入 · 今日' + inflowStr + '亿';
+      suggestText = days >= 6 ? '⛔ 连续流入过久，警惕高位兑现' : '💡 持续吸筹，关注回调买点';
+      suggestClass = days >= 6 ? 'avoid' : 'hold';
+    } else if (itemType === 'streakOut') {
+      const days = Math.abs(s.continuousDays || 0);
+      reason = '连续' + days + '日净流出 · 今日' + inflowStr + '亿';
+      suggestText = days >= 6 ? '💡 超跌充分，关注企稳反弹机会' : '⛔ 持续失血，暂回避等企稳';
+      suggestClass = days >= 6 ? 'hold' : 'avoid';
     }
     return '<div class="signal-item" onclick="closeSignalModal();openDrawer(\'' + (s.name||'').replace(/'/g, "\\'") + '\')">' +
       '<div class="signal-item-top">' +
         '<span><span class="signal-rank ' + rc + '">' + (i+1) + '</span><span class="signal-name">' + namePrefix + s.name + '</span></span>' +
         '<span class="signal-value ' + changeClass + '">' + changeStr + '</span>' +
       '</div>' +
-      intradayHtml +
       '<div class="signal-reason">' + reason + '</div>' +
       '<div class="signal-suggest ' + suggestClass + '">' + suggestText + '</div>' +
     '</div>';
@@ -1364,6 +1472,18 @@ function renderTable() {
     const flowOutD = s.flowOut != null ? s.flowOut.toFixed(1) : '-';
     const escName = s.name.replace(/'/g, "\\'");
 
+    // 分时净流数据列
+    const INTRADAY_SLOTS = ['0932','1010','1032','1108','1232','1311','1339','1415','1645'];
+    const intradayMap = {};
+    if (s.intraday) { s.intraday.forEach(p => { intradayMap[p.time] = p.net; }); }
+    let intradayCells = INTRADAY_SLOTS.map(t => {
+      const v = intradayMap[t];
+      if (v === undefined) return '<td class="num intraday-col">-</td>';
+      const vs = (v >= 0 ? '+' : '') + v.toFixed(1);
+      const vc = v >= 0 ? 'id-rise' : 'id-fall';
+      return '<td class="num intraday-col ' + vc + '">' + vs + '</td>';
+    }).join('');
+
     return '<tr onclick="openDrawer(\'' + escName + '\')">' +
       '<td class="rank-cell">' + rank + '</td>' +
       '<td style="text-align:left;font-family:inherit;"><span class="sector-name">' + s.name + '</span></td>' +
@@ -1372,6 +1492,7 @@ function renderTable() {
       '<td class="num rise">' + flowInD + '</td>' +
       '<td class="num fall">' + flowOutD + '</td>' +
       '<td class="num inflow-col ' + inflowClass + '">' + inflowD + '</td>' +
+      intradayCells +
       '<td class="num intraday-col">' + getIntradayChangeHtml(s.name) + '</td>' +
       '<td class="num">' + rankChangeHtml + '</td>' +
       '<td class="num"><span class="rise">' + s.riseCount + '</span>/<span class="fall">' + s.fallCount + '</span></td>' +
