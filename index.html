@@ -870,10 +870,24 @@ function updateAll() {
 function updateDateNav() {
   const tl = document.getElementById('updateTime');
   if (!tl) return;
-  // 优先从 metaByDate 读取 collectTime
+  // 优先从 intradayChanges 获取实际采集时间
+  const ic = FUND_DATA.intradayChanges || {};
+  const currentPollTime = ic.currentPollTime || null;
   const meta = (FUND_DATA.metaByDate && FUND_DATA.metaByDate[state.currentDate]) || {};
   const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
-  let timeStr = mo.updateTime || meta.collectTime || null;
+  
+  let timeStr = null;
+  if (currentPollTime && state.currentDate === ic.date) {
+    // 盘中数据：使用实际采集时间 (格式: 1415 -> 14:15)
+    const hh = currentPollTime.substring(0, 2);
+    const mm = currentPollTime.substring(2, 4);
+    timeStr = state.currentDate + ' ' + hh + ':' + mm;
+  } else if (mo.updateTime) {
+    timeStr = mo.updateTime;
+  } else if (meta.collectTime && meta.collectTime !== '17:30') {
+    timeStr = meta.collectTime;
+  }
+  
   if (timeStr && state.currentDate) {
     const dt = timeStr.length > 10 ? timeStr : (state.currentDate + ' ' + timeStr);
     tl.textContent = '📡 数据时间：' + dt;
