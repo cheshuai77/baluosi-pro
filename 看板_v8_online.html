@@ -639,15 +639,16 @@
             <th data-sort="flowIn">流入(亿)</th>
             <th data-sort="flowOut">流出(亿)</th>
             <th data-sort="inflow" class="inflow-col">净流入(亿)</th>
-            <th class="intraday-col">开盘</th>
-            <th class="intraday-col">10点</th>
-            <th class="intraday-col">10:30</th>
-            <th class="intraday-col">11点</th>
-            <th class="intraday-col">11:30</th>
-            <th class="intraday-col">13点</th>
-            <th class="intraday-col">13:30</th>
-            <th class="intraday-col">14点</th>
-            <th class="intraday-col">收盘</th>
+            <th class="intraday-col">9:32</th>
+            <th class="intraday-col">10:10</th>
+            <th class="intraday-col">10:32</th>
+            <th class="intraday-col">11:08</th>
+            <th class="intraday-col">12:32</th>
+            <th class="intraday-col">13:11</th>
+            <th class="intraday-col">13:39</th>
+            <th class="intraday-col">14:15</th>
+            <th class="intraday-col">14:30</th>
+            <th class="intraday-col">16:45</th>
 
             <th data-sort="rankChange">名次变化</th>
             <th data-sort="riseCount">股票涨/跌</th>
@@ -1487,7 +1488,7 @@ function renderTable() {
     const escName = s.name.replace(/'/g, "\\'");
 
     // 分时净流数据列
-    const INTRADAY_SLOTS = ['0932','1010','1032','1108','1232','1311','1339','1415','1645'];
+    const INTRADAY_SLOTS = ['0932','1010','1032','1108','1232','1311','1339','1415','1430','1645'];
     const intradayMap = {};
     if (s.intraday) { s.intraday.forEach(p => { intradayMap[p.time] = p.net; }); }
     let intradayCells = INTRADAY_SLOTS.map(t => {
