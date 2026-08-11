@@ -879,7 +879,7 @@ function updateDateNav() {
   // 优先从 metaByDate 读取 collectTime
   const meta = (FUND_DATA.metaByDate && FUND_DATA.metaByDate[state.currentDate]) || {};
   const mo = (FUND_DATA.marketOverview && FUND_DATA.marketOverview[state.currentDate]) || {};
-  let timeStr = meta.collectTime || mo.updateTime || null;
+  let timeStr = mo.updateTime || meta.collectTime || null;
   if (timeStr && state.currentDate) {
     const dt = timeStr.length > 10 ? timeStr : (state.currentDate + ' ' + timeStr);
     tl.textContent = '📡 数据时间：' + dt;
@@ -1673,16 +1673,18 @@ let ANALYSIS_DATA = null;
 async function loadAnalysis() {
   if (ANALYSIS_DATA) { renderAllModules(); return; }
   try {
-    if (FUND_DATA && FUND_DATA.analysisData) {
-      ANALYSIS_DATA = FUND_DATA.analysisData;
-    } else {
-      var resp = await fetch('data/daily_analysis.json?v=' + Date.now());
-      ANALYSIS_DATA = await resp.json();
-    }
+    var resp = await fetch('daily_analysis.json?v=' + Date.now());
+    ANALYSIS_DATA = await resp.json();
     renderAllModules();
   } catch(e) {
-    console.warn('Analysis data not available:', e.message);
-    showAnalysisPlaceholder();
+    // fallback to embedded
+    if (FUND_DATA && FUND_DATA.analysisData) {
+      ANALYSIS_DATA = FUND_DATA.analysisData;
+      renderAllModules();
+    } else {
+      console.warn('Analysis data not available:', e.message);
+      showAnalysisPlaceholder();
+    }
   }
 }
 
@@ -1993,10 +1995,3 @@ function init() {
   window.addEventListener('resize', function() {
     if (drawerChartInstance) drawerChartInstance.resize();
   });
-}
-
-init();
-loadData();
-</script>
-</body>
-</html>
