@@ -173,9 +173,8 @@
   .tl-up { color: var(--rise); }
   .tl-down { color: var(--fall); }
   .tl-flat { color: var(--text-tertiary); }
-  .signal-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
-  .signal-strip-2 { display: flex; flex-direction: column; gap: 14px; margin-bottom: 18px; }
-  .signal-strip .signal-card, .signal-strip-2 .signal-card {
+  .signal-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
+  .signal-strip .signal-card {
     background: var(--bg-secondary); border: none; border-top: 3px solid transparent;
     border-radius: var(--card-radius); padding: 16px;
     box-shadow: var(--shadow); display: flex; flex-direction: column;
@@ -238,6 +237,15 @@
     transition: all 0.15s;
   }
   .signal-more-btn:hover { background: var(--bg-tertiary); border-color: var(--accent); }
+  /* 紧凑卡片项（四列模式） */
+  .signal-item.compact { padding: 8px 10px; gap: 2px; }
+  .signal-item.compact .signal-item-top { gap: 4px; }
+  .signal-item.compact .signal-item-name span:first-child { font-size: 12px; }
+  .signal-item.compact .signal-item-tag { font-size: 9px; padding: 0px 4px; }
+  .signal-item.compact .signal-item-flow { font-size: 12px; }
+  .signal-item.compact .signal-item-change { font-size: 10px; padding: 0px 4px; }
+  .signal-item.compact .signal-reason { display: none; }
+  .signal-item.compact .signal-suggest { font-size: 10px; line-height: 1.3; margin-top: 1px; }
   .signal-empty-card {
     color: var(--text-tertiary); font-size: 12px; text-align: center;
     padding: 20px 0; flex: 1; display: flex; align-items: center; justify-content: center;
@@ -439,7 +447,7 @@
     .stat-icon { font-size: 14px; }
 
     .signal-strip { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
-    .signal-strip .signal-card, .signal-strip-2 .signal-card { padding: 12px; }
+    .signal-strip .signal-card { padding: 12px; }
     .signal-title { font-size: 12px; }
 
     .table-header { padding: 12px 14px; }
@@ -589,9 +597,6 @@
       <div class="signal-title"><span class="icon">💀</span> 资金撤退区<span class="count" id="defenseCount"></span></div>
       <div class="signal-list" id="signalDefense"><div class="signal-empty-card">加载中...</div></div>
     </div>
-  </div>
-
-  <div class="signal-strip-2" id="signalStrip2">
     <div class="signal-card streak-in">
       <div class="signal-title"><span class="icon">🔴</span> 连入4天+<span class="count" id="streakInCount"></span></div>
       <div class="signal-list" id="signalStreakIn"><div class="signal-empty-card">加载中...</div></div>
@@ -601,8 +606,6 @@
       <div class="signal-list" id="signalStreakOut"><div class="signal-empty-card">加载中...</div></div>
     </div>
   </div>
-
-  <!-- 信号详情半屏弹窗 -->  </div>
 
   <!-- 信号详情半屏弹窗 -->
   <div class="signal-modal-mask" id="sigModalMask" onclick="closeSignalModal()"></div>
@@ -1008,7 +1011,7 @@ function buildMergedItems(items, zone, icMap) {
     return '<div class="signal-empty-card">暂无信号</div>';
   }
 
-  const MAX_SHOW = 8;
+  const MAX_SHOW = 3;
   const showItems = items.slice(0, MAX_SHOW);
   const hasMore = items.length > MAX_SHOW;
 
@@ -1073,7 +1076,7 @@ function buildMergedItems(items, zone, icMap) {
       else { suggestHtml = '⚠️ 风险较高，建议观望'; suggestClass = 'caution'; }
     }
 
-    return '<div class="signal-item" onclick="openDrawer(\'' + (s.name||'').replace(/'/g, "\\'") + '\')">' +
+    return '<div class="signal-item compact" onclick="openDrawer(\'' + (s.name||'').replace(/'/g, "\\'") + '\')">' +
       '<div class="signal-item-top">' +
         '<span class="signal-item-name">' +
           '<span>' + (i+1) + '. ' + s.name + '</span>' +
@@ -1098,7 +1101,7 @@ function buildStreakItems(items, zone, icMap) {
   if (!items || items.length === 0) {
     return '<div class="signal-empty-card">暂无信号</div>';
   }
-  const MAX_SHOW = 8;
+  const MAX_SHOW = 3;
   const showItems = items.slice(0, MAX_SHOW);
   const hasMore = items.length > MAX_SHOW;
 
@@ -1141,7 +1144,7 @@ function buildStreakItems(items, zone, icMap) {
       else if (absDays >= 4) { suggestHtml = '⛔ 持续失血，暂回避等企稳'; suggestClass = 'avoid'; }
     }
 
-    return '<div class="signal-item" onclick="openDrawer(\'' + (s.name||'').replace(/'/g, "\\'") + '\')">' +
+    return '<div class="signal-item compact" onclick="openDrawer(\'' + (s.name||'').replace(/'/g, "\\'") + '\')">' +
       '<div class="signal-item-top">' +
         '<span class="signal-item-name">' +
           '<span>' + (i+1) + '. ' + s.name + '</span>' +
@@ -1308,10 +1311,22 @@ function showSignalModal(type) {
       suggestText = days >= 6 ? '💡 超跌充分，关注企稳反弹机会' : '⛔ 持续失血，暂回避等企稳';
       suggestClass = days >= 6 ? 'hold' : 'avoid';
     }
+    const TAG_LABELS_MODAL = {
+      mainline: '主线确认', latent: '潜伏机会', disaster: '砸盘重灾', risk: '风险预警',
+      streakIn: '连入' + (Math.abs(s.continuousDays || 0)) + '天',
+      streakOut: '连出' + (Math.abs(s.continuousDays || 0)) + '天'
+    };
+    const tagLabel = TAG_LABELS_MODAL[itemType] || itemType;
+    const inflowClass = inflow >= 0 ? 'rise' : 'fall';
     return '<div class="signal-item" onclick="closeSignalModal();openDrawer(\'' + (s.name||'').replace(/'/g, "\\'") + '\')">' +
       '<div class="signal-item-top">' +
-        '<span><span class="signal-rank ' + rc + '">' + (i+1) + '</span><span class="signal-name">' + namePrefix + s.name + '</span></span>' +
+        '<span><span class="signal-rank ' + rc + '">' + (i+1) + '</span><span class="signal-name">' + namePrefix + s.name + '</span>' +
+        '<span class="signal-item-tag ' + itemType + '" style="margin-left:6px;">' + tagLabel + '</span></span>' +
         '<span class="signal-value ' + changeClass + '">' + changeStr + '</span>' +
+      '</div>' +
+      '<div style="display:flex;align-items:center;gap:8px;margin:4px 0 2px;">' +
+        '<span class="signal-item-flow ' + inflowClass + '" style="font-size:13px;">净流入 ' + inflowStr + '亿</span>' +
+        (s.continuousDays ? '<span style="font-size:11px;color:var(--text-secondary);">净流天数 ' + s.continuousDays + '天</span>' : '') +
       '</div>' +
       '<div class="signal-reason">' + reason + '</div>' +
       '<div class="signal-suggest ' + suggestClass + '">' + suggestText + '</div>' +
