@@ -1735,7 +1735,7 @@ async function loadAnalysis() {
     if (FUND_DATA && FUND_DATA.analysisData) {
       ANALYSIS_DATA = FUND_DATA.analysisData;
     } else {
-      var resp = await fetch('data/daily_analysis.json?v=' + Date.now());
+      var resp = await fetch('daily_analysis.json?v=' + Date.now());
       ANALYSIS_DATA = await resp.json();
     }
     renderAllModules();
