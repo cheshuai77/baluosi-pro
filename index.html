@@ -332,9 +332,6 @@
   .num { font-variant-numeric: tabular-nums; }
 
 
-
-
-
   .coming-soon {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 60px 20px; color: var(--text-tertiary); font-size: 14px;
@@ -513,7 +510,6 @@
   .yz-action .amount { font-weight: 600; font-family: 'SF Mono', Consolas, monospace; }
 
 
-
   /* 游资详情overlay */
   .yz-detail-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; display: none; align-items: center; justify-content: center; }
   .yz-detail-overlay.show { display: flex; }
@@ -558,14 +554,6 @@
   <div class="market-indicators-5" id="marketIndicators"></div>
 </div>
 
-<!-- Tab bar -->
-<div class="top-tab-bar">
-  <div class="top-tab-item active" data-tab="today" onclick="switchTopTab('today')">📊 板块资金信息</div>
-  <div class="top-tab-item" data-tab="analysis" onclick="switchTopTab('analysis')">📊 大盘研究分析</div>
-</div>
-
-<!-- ==================== Tab1: 板块资金信息 ==================== -->
-<div class="top-tab-content active" id="tab-today">
 <div class="container">
 
   <!-- 信号关注区（动态渲染） -->
@@ -638,77 +626,6 @@
 
 </div>
 </div>
-
-<!-- ==================== Tab2: 大盘研究分析 ==================== -->
-<div class="top-tab-content" id="tab-analysis">
-<div class="container">
-
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
-    <h2 style="font-size:18px;font-weight:700;color:#1a1a1a;margin:0;">📊 大盘研究分析</h2>
-    <span id="analysisUpdateTime" style="font-size:12px;color:var(--text-secondary);background:var(--bg-tertiary);padding:3px 10px;border-radius:6px;">数据加载中...</span>
-  </div>
-
-  <!-- 模块1: 大盘判断 -->
-  <div class="analysis-module" id="mod-judgment" style="background:var(--bg-secondary);border-radius:var(--card-radius);box-shadow:var(--shadow);padding:18px;margin-bottom:14px;">
-    <div class="analysis-module-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-      <div style="display:flex;align-items:center;gap:8px;">
-        <span style="font-size:18px;">🧭</span>
-        <span style="font-size:15px;font-weight:600;">大盘判断</span>
-      </div>
-      <span class="analysis-confidence" id="judgment-confidence" style="font-size:11px;padding:2px 8px;border-radius:8px;background:var(--bg-tertiary);"></span>
-    </div>
-    <div class="analysis-module-body" id="judgment-body" style="font-size:13px;line-height:1.8;color:var(--text-primary);">
-      <div style="color:var(--text-tertiary);padding:12px 0;">数据加载中...</div>
-    </div>
-  </div>
-
-  <!-- 模块2: 市场参考 -->
-  <div class="analysis-module" id="mod-marketref" style="background:var(--bg-secondary);border-radius:var(--card-radius);box-shadow:var(--shadow);padding:18px;margin-bottom:14px;">
-    <div class="analysis-module-header" style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-      <span style="font-size:18px;">🌐</span>
-      <span style="font-size:15px;font-weight:600;">市场参考</span>
-    </div>
-    <div class="analysis-module-body" id="marketref-body" style="font-size:13px;line-height:1.8;color:var(--text-primary);">
-      <div style="color:var(--text-tertiary);padding:12px 0;">数据加载中...</div>
-    </div>
-  </div>
-
-  <!-- 模块3: 板块轮动分析 -->
-  <div class="analysis-module" id="mod-rotation" style="background:var(--bg-secondary);border-radius:var(--card-radius);box-shadow:var(--shadow);padding:18px;margin-bottom:14px;">
-    <div class="analysis-module-header" style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-      <span style="font-size:18px;">🔄</span>
-      <span style="font-size:15px;font-weight:600;">板块轮动分析</span>
-    </div>
-    <div class="analysis-module-body" id="rotation-body" style="font-size:13px;line-height:1.8;color:var(--text-primary);">
-      <div style="color:var(--text-tertiary);padding:12px 0;">数据加载中...</div>
-    </div>
-  </div>
-
-  <!-- 模块4: 游资动向 -->
-  <div class="analysis-module" id="mod-lhb" style="background:var(--bg-secondary);border-radius:var(--card-radius);box-shadow:var(--shadow);padding:18px;margin-bottom:14px;">
-    <div class="analysis-module-header" style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-      <span style="font-size:18px;">🎯</span>
-      <span style="font-size:15px;font-weight:600;">游资动向</span>
-    </div>
-    <div class="analysis-module-body" id="lhb-body" style="font-size:13px;line-height:1.8;">
-      <div id="yzContent"></div>
-    </div>
-  </div>
-
-  <!-- 模块5: 关注池 -->
-  <div class="analysis-module" id="mod-pool" style="background:var(--bg-secondary);border-radius:var(--card-radius);box-shadow:var(--shadow);padding:18px;margin-bottom:14px;">
-    <div class="analysis-module-header" style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-      <span style="font-size:18px;">🎯</span>
-      <span style="font-size:15px;font-weight:600;">关注池</span>
-    </div>
-    <div class="analysis-module-body" id="pool-body" style="font-size:13px;line-height:1.8;color:var(--text-primary);">
-      <div style="color:var(--text-tertiary);padding:12px 0;">数据加载中...</div>
-    </div>
-  </div>
-
-</div>
-</div>
-
 
 
 <!-- 遮罩 -->
@@ -853,8 +770,7 @@ FUND_DATA.lhb = {
   }
 };
   state.currentDate = FUND_DATA.dates[FUND_DATA.dates.length - 1];
-  FUND_DATA.analysisData = {"date": "2026-08-11", "updateTime": "2026-08-11 08:45", "phase": "pre", "marketResearch": {"judgment": {"verdict": "震荡偏强，结构性行情延续", "confidence": "高", "indicators": {"emotion_cycle": {"status": "亢奋", "detail": "涨停99家，无跌停，情绪评分77"}, "external_impact": {"status": "neutral", "detail": "美股微跌半导体承压，原油黄金大涨利好资源股"}, "market_trend": {"status": "up", "detail": "上证领涨，深创分化，整体震荡偏强"}}, "reasoning": "市场处于情绪亢奋期，连板梯队完整，中报业绩和政策利好双轮驱动。但外盘半导体走弱和原油大涨带来一定扰动，大盘指数层面呈现沪强深弱格局，预计今日维持震荡偏强，重点在资源、医药及政策催化方向。"}, "marketRef": {"indicators": [{"label": "上证指数", "value": "3966.59", "trend": "up", "note": "+0.67%"}, {"label": "深证成指", "value": "14316.96", "trend": "flat", "note": "+0.04%"}, {"label": "创业板指", "value": "3537.21", "trend": "down", "note": "-0.73%"}, {"label": "科创50", "value": "1737.77", "trend": "down", "note": "-0.36%"}, {"label": "北证50", "value": "1122.88", "trend": "down", "note": "-1.00%"}], "note": "A股大盘指数数据基于2026-08-10收盘真实数据"}, "rotation": {"summary": "医药、资源股领涨，科技股受外盘拖累分化", "sectors": [{"name": "医药", "stage": "主升浪", "change": 2.5}, {"name": "黄金/有色", "stage": "加速", "change": 3.0}, {"name": "半导体", "stage": "回调", "change": -1.5}, {"name": "机器人", "stage": "启动", "change": 1.2}], "analysis": "资金在医药和资源股中抱团明显，连板效应突出。半导体受美股映射影响表现较弱，机器人受地方政策催化有启动迹象。"}, "pool": {"pools": [{"type": "现在能进", "items": [{"name": "宝鼎科技", "code": "002552", "action": "打板/接力", "note": "5连板最高标，情绪龙头，竞价超预期则上"}, {"name": "鹏欣资源", "code": "600490", "action": "趋势跟随", "note": "国际金价油价大涨，资源股受益，回踩5日线低吸"}]}, {"type": "等信号", "items": [{"name": "百花医药", "code": "600721", "action": "观察竞价", "note": "5连板，等待开盘竞价确认是否继续一字或换手晋级"}, {"name": "哈药股份", "code": "600664", "action": "弱转强", "note": "医药2连板，等待板块分歧时的弱转强信号"}, {"name": "百普赛斯", "code": "301080", "action": "情绪共振", "note": "医药20cm 2连板，等待创业板情绪共振"}]}, {"type": "轻仓跟", "items": [{"name": "机器人概念", "code": "885517", "action": "低吸做T", "note": "验证天津政策催化逻辑，关注早盘冲高回落时的低吸机会"}]}, {"type": "有可能性", "items": [{"name": "江波龙", "code": "301308", "action": "观察", "note": "中报业绩大增，存储芯片龙头"}, {"name": "藏格矿业", "code": "000408", "action": "观察", "note": "中报业绩大增，锂/钾肥资源股"}]}]}}};
-  
+    
   updateAll();
 }
 
@@ -1440,9 +1356,7 @@ function renderYZ() {
   const el = document.getElementById('yzContent');
   const lhb = FUND_DATA.lhb || {};
   let data = lhb[state.currentDate];
-  // Fallback: 如果 FUND_DATA.lhb 没有数据，尝试从 ANALYSIS_DATA 获取
-  if ((!data || (!data.traders && !data.summary)) && ANALYSIS_DATA && ANALYSIS_DATA.lhb) {
-    data = ANALYSIS_DATA.lhb;
+  // 没有数据则跳过渲染
   }
   if (!data || (!data.traders && !data.summary && !data.attitude && !data.linkage)) {
     el.innerHTML = '<div style="color:var(--text-tertiary);font-size:12px;padding:12px 0;">数据待更新</div>';
@@ -1679,7 +1593,6 @@ if (leaders.length > 0) {
     '</div>' +
 
 
-
     histHtml;
 
   drawer.classList.add('open');
@@ -1750,17 +1663,8 @@ function handleSort(field) {
 }
 
 // ========== Tab切换 ==========
-function switchTopTab(tabName) {
-  document.querySelectorAll('.top-tab-item').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.top-tab-content').forEach(c => c.classList.remove('active'));
-  const target = document.querySelector('.top-tab-item[data-tab="' + tabName + '"]');
-  if (target) {
-    target.classList.add('active');
-    document.getElementById('tab-' + tabName).classList.add('active');
-    if (tabName === 'analysis') loadAnalysis();
-  }
+// switchTopTab removed: single-tab mode
 }
-
 
 
 // ========== 游资详情弹窗 ==========
@@ -1780,312 +1684,6 @@ function showYZDetail(yzName) {
 
 function closeYZDetail() {
   document.getElementById('yzDetailOverlay').classList.remove('show');
-}
-
-// ========== 大盘研究分析 ==========
-let ANALYSIS_DATA = null;
-
-async function loadAnalysis() {
-  if (ANALYSIS_DATA) { renderAllModules(); return; }
-  try {
-    if (FUND_DATA && FUND_DATA.analysisData) {
-      ANALYSIS_DATA = FUND_DATA.analysisData;
-    } else {
-      var resp = await fetch('daily_analysis.json?v=' + Date.now());
-      ANALYSIS_DATA = await resp.json();
-    }
-    renderAllModules();
-  } catch(e) {
-    console.warn('Analysis data not available:', e.message);
-    showAnalysisPlaceholder();
-  }
-}
-
-
-function renderAllModules() {
-  // 显示更新时间 + 阶段标注
-  var timeEl = document.getElementById('analysisUpdateTime');
-  if (timeEl && ANALYSIS_DATA) {
-    var updateTime = ANALYSIS_DATA.updateTime || '';
-    var phase = ANALYSIS_DATA.phase || '';
-    var phaseMap = { 'pre': '🌅盘前', 'mid': '☀️中盘', 'close': '🌙收盘' };
-    var phaseLabel = phaseMap[phase] || phase;
-    timeEl.textContent = updateTime ? phaseLabel + ' · ' + updateTime : '等待数据更新...';
-  }
-  renderJudgment();
-  renderMarketRef();
-  renderRotation();
-  renderLHB();
-  renderPool();
-}
-
-function getPeriodData() {
-  if (!ANALYSIS_DATA) return {};
-  return ANALYSIS_DATA.marketResearch || {};
-}
-
-function showAnalysisPlaceholder() {
-  var ids = ['judgment-body','marketref-body','rotation-body','pool-body'];
-  ids.forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) el.innerHTML = '<div style="color:var(--text-tertiary);padding:12px 0;">分析数据待生成（需运行盘前/中盘/收盘报告）</div>';
-  });
-}
-
-// 模块1: 大盘判断
-function renderJudgment() {
-  var pd = getPeriodData();
-  var j = pd.judgment || {};
-  var body = document.getElementById('judgment-body');
-  var conf = document.getElementById('judgment-confidence');
-  if (!body) return;
-
-  if (!j.verdict) {
-    body.innerHTML = '<div style="color:var(--text-tertiary);padding:12px 0;">暂无判断数据</div>';
-    if (conf) conf.textContent = '';
-    return;
-  }
-
-  if (conf) {
-    var level = j.confidence || '中';
-    var bg = level === '高' ? 'rgba(255,107,107,0.12)' : level === '低' ? 'rgba(255,169,77,0.12)' : 'var(--bg-tertiary)';
-    var color = level === '高' ? 'var(--rise)' : level === '低' ? '#FFA94D' : 'var(--text-secondary)';
-    conf.textContent = '置信度: ' + level;
-    conf.style.background = bg;
-    conf.style.color = color;
-  }
-
-  var html = '';
-
-  // 1. 顶部醒目 verdict 卡片 - 大字+渐变背景
-  var verdictGradient = 'linear-gradient(135deg, #FF6B6B 0%, #FFA94D 50%, #FFD43B 100%)';
-  html += '<div style="position:relative;border-radius:14px;padding:20px 22px;margin-bottom:16px;background:' + verdictGradient + ';color:#fff;overflow:hidden;">' +
-    '<div style="position:absolute;right:-10px;top:-20px;font-size:80px;opacity:0.15;">📈</div>' +
-    '<div style="position:relative;z-index:1;">' +
-      '<div style="font-size:11px;opacity:0.85;margin-bottom:6px;font-weight:500;">🧭 今日判断</div>' +
-      '<div style="font-size:18px;font-weight:700;line-height:1.5;letter-spacing:0.3px;">' + (j.verdict || '') + '</div>' +
-    '</div>' +
-  '</div>';
-
-  // 2. 三个 indicators - 三列卡片，图标+状态大字+详情小字
-  if (j.indicators) {
-    var indIconMap = { capital: '💰 资金面', emotion: '🌡️ 情绪面', trend: '📈 趋势面' };
-    html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;">';
-    var inds = j.indicators;
-    Object.keys(inds).forEach(function(k) {
-      var v = inds[k];
-      var label = indIconMap[k] || k;
-      var statusText = v.status || '-';
-      // 判断颜色：包含"涨/升/多/亢奋/阳"等偏多→红，包含"跌/降/空/冷/阴"偏空→绿，其他→橙色
-      var c = 'var(--text-secondary)';
-      if (/涨|升|多|亢奋|阳|高|强|进攻|流入|增加|普涨/.test(statusText)) c = 'var(--rise)';
-      else if (/跌|降|空|冷|阴|低|弱|退潮|流出|减少|分化/.test(statusText)) c = 'var(--fall)';
-      else if (/震荡|切换|分化|观望|蓄力|脉冲/.test(statusText)) c = '#FFA94D';
-      html += '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:14px;position:relative;overflow:hidden;">' +
-        '<div style="font-size:13px;color:var(--text-secondary);margin-bottom:6px;font-weight:500;">' + label + '</div>' +
-        '<div style="font-size:17px;font-weight:700;color:' + c + ';margin-bottom:4px;">' + statusText + '</div>' +
-        '<div style="font-size:11px;color:var(--text-tertiary);line-height:1.5;">' + (v.detail || '') + '</div>' +
-      '</div>';
-    });
-    html += '</div>';
-  }
-
-  // 3. reasoning - 左边框引用块
-  if (j.reasoning) {
-    html += '<div style="border-left:3px solid var(--accent);padding:12px 16px;background:rgba(116,192,252,0.08);border-radius:0 10px 10px 0;font-size:13px;color:var(--text-secondary);line-height:1.8;">' +
-      '<div style="font-weight:600;color:var(--text-primary);margin-bottom:4px;">📋 分析理由</div>' +
-      j.reasoning + '</div>';
-  }
-
-  body.innerHTML = html;
-}
-
-// 模块2: 市场参考
-function renderMarketRef() {
-  var pd = getPeriodData();
-  var mr = pd.marketRef || {};
-  var body = document.getElementById('marketref-body');
-  if (!body) return;
-
-  if (!mr.indicators || mr.indicators.length === 0) {
-    body.innerHTML = '<div style="color:var(--text-tertiary);padding:12px 0;">暂无市场参考数据</div>';
-    return;
-  }
-
-  var html = '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px;">';
-  mr.indicators.forEach(function(ind) {
-    var t = (ind.trend || '').toLowerCase();
-    var c = 'var(--text-primary)';
-    var arrow = '';
-    if (/涨|升|多|流入|增加|up/.test(t)) { c = 'var(--rise)'; arrow = '↑'; }
-    else if (/跌|降|空|流出|减少|down/.test(t)) { c = 'var(--fall)'; arrow = '↓'; }
-    else if (/缩量|震荡|平/.test(t)) { c = 'var(--text-tertiary)'; arrow = '→'; }
-    else { c = 'var(--text-secondary)'; }
-
-    html += '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;">' +
-      '<div style="display:flex;align-items:center;justify-content:space-between;">' +
-        '<span style="font-size:12px;color:var(--text-secondary);font-weight:500;">' + (ind.label || '') + '</span>' +
-        (ind.trend ? '<span style="font-size:11px;color:' + c + ';font-weight:600;">' + arrow + ' ' + ind.trend + '</span>' : '') +
-      '</div>' +
-      '<div style="font-size:22px;font-weight:700;color:' + c + ';font-family:\'SF Mono\',Consolas,monospace;letter-spacing:-0.5px;">' + (ind.value || '-') + '</div>' +
-      (ind.note ? '<div style="font-size:11px;color:var(--text-tertiary);line-height:1.4;">' + ind.note + '</div>' : '') +
-    '</div>';
-  });
-  html += '</div>';
-
-  if (mr.note) {
-    html += '<div style="padding:10px 14px;background:var(--bg-tertiary);border-radius:10px;font-size:12px;color:var(--text-secondary);line-height:1.7;">💡 ' + mr.note + '</div>';
-  }
-
-  body.innerHTML = html;
-}
-
-// 模块3: 板块轮动分析
-function renderRotation() {
-  var pd = getPeriodData();
-  var r = pd.rotation || {};
-  var body = document.getElementById('rotation-body');
-  if (!body) return;
-
-  if (!r.summary && (!r.sectors || r.sectors.length === 0)) {
-    body.innerHTML = '<div style="color:var(--text-tertiary);padding:12px 0;">暂无轮动分析数据</div>';
-    return;
-  }
-
-  var html = '';
-
-  // 1. 顶部 summary banner 条
-  if (r.summary) {
-    html += '<div style="background:linear-gradient(90deg, rgba(116,192,252,0.15) 0%, rgba(255,169,77,0.1) 100%);border-radius:10px;padding:12px 16px;margin-bottom:14px;border-left:3px solid var(--accent);">' +
-      '<span style="font-size:13px;font-weight:600;color:var(--text-primary);">🔄 ' + r.summary + '</span>' +
-    '</div>';
-  }
-
-  // 2. sectors 横向滚动标签条，每个标签阶段颜色
-  if (r.sectors && r.sectors.length > 0) {
-    // 阶段颜色映射
-    function getStageColor(stage) {
-      if (!stage) return 'var(--text-secondary)';
-      if (/进攻|主升|启动|爆发|涨/.test(stage)) return 'var(--rise)';
-      if (/退潮|调整|见顶|跌/.test(stage)) return 'var(--fall)';
-      if (/蓄力|反弹|启动|修复/.test(stage)) return '#FFA94D';
-      if (/脉冲|异动|震荡/.test(stage)) return '#9B59B6';
-      return 'var(--text-secondary)';
-    }
-
-    html += '<div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:14px;scrollbar-width:thin;">';
-    r.sectors.forEach(function(s) {
-      var sc = getStageColor(s.stage);
-      var chgColor = (s.change || 0) >= 0 ? 'var(--rise)' : 'var(--fall)';
-      var sign = (s.change || 0) > 0 ? '+' : '';
-      html += '<div style="flex:0 0 auto;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:10px 12px;min-width:130px;">' +
-        '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">' +
-          '<span style="font-size:12px;font-weight:600;">' + (s.name || '') + '</span>' +
-          '<span style="font-size:10px;padding:1px 6px;border-radius:5px;background:' + sc + '20;color:' + sc + ';font-weight:600;white-space:nowrap;">' + (s.stage || '') + '</span>' +
-        '</div>' +
-        (s.change != null ? '<div style="font-size:15px;font-weight:700;color:' + chgColor + ';font-family:monospace;">' + sign + s.change.toFixed(1) + '%</div>' : '') +
-      '</div>';
-    });
-    html += '</div>';
-  }
-
-  // 3. analysis 可折叠分析段落
-  if (r.analysis) {
-    html += '<div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;">' +
-      '<div id="rot-toggle" style="padding:10px 14px;background:var(--bg-tertiary);cursor:pointer;display:flex;align-items:center;justify-content:space-between;" onclick="toggleRotationAnalysis()">' +
-        '<span style="font-size:12px;font-weight:600;color:var(--text-primary);">📝 深度分析</span>' +
-        '<span id="rot-arrow" style="font-size:11px;color:var(--text-secondary);transition:transform 0.2s;">▼</span>' +
-      '</div>' +
-      '<div id="rot-analysis-body" style="padding:12px 16px;font-size:13px;color:var(--text-secondary);line-height:1.8;display:block;">' + r.analysis + '</div>' +
-    '</div>';
-  }
-
-  body.innerHTML = html;
-}
-
-function toggleRotationAnalysis() {
-  var body = document.getElementById('rot-analysis-body');
-  var arrow = document.getElementById('rot-arrow');
-  if (!body) return;
-  if (body.style.display === 'none') {
-    body.style.display = 'block';
-    if (arrow) arrow.style.transform = 'rotate(0deg)';
-  } else {
-    body.style.display = 'none';
-    if (arrow) arrow.style.transform = 'rotate(-90deg)';
-  }
-}
-
-// 模块4: 游资动向
-// renderLHB() 已在上面定义，直接调用即可
-
-// 模块5: 关注池
-function renderPool() {
-  var pd = getPeriodData();
-  var p = pd.pool || {};
-  var body = document.getElementById('pool-body');
-  if (!body) return;
-
-  var pools = p.pools || [];
-  if (pools.length === 0) {
-    body.innerHTML = '<div style="color:var(--text-tertiary);padding:12px 0;">暂无关注池数据</div>';
-    return;
-  }
-
-  // type 颜色映射
-  function getPoolColor(type) {
-    if (type === '现在能进') return { bg: 'var(--rise)', light: 'rgba(255,107,107,0.12)' };
-    if (type === '等信号') return { bg: '#FFA94D', light: 'rgba(255,169,77,0.12)' };
-    if (type === '轻仓跟') return { bg: 'var(--accent)', light: 'rgba(116,192,252,0.12)' };
-    if (type === '有可能性') return { bg: 'var(--text-secondary)', light: 'rgba(99,99,102,0.1)' };
-    return { bg: 'var(--text-secondary)', light: 'var(--bg-tertiary)' };
-  }
-
-  var html = '<div style="display:grid;grid-template-columns:repeat(' + Math.min(pools.length, 4) + ',1fr);gap:12px;">';
-  // 如果超过4个池子，自适应2行
-  if (pools.length > 4) {
-    html = '<div style="display:grid;grid-template-columns:repeat(' + Math.ceil(Math.sqrt(pools.length)) + ',1fr);gap:12px;">';
-  }
-
-  pools.forEach(function(pool) {
-    var typeName = pool.type || pool.name || '未分类';
-    var color = getPoolColor(typeName);
-    var items = pool.items || pool.stocks || [];
-
-    html += '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">';
-
-    // 顶部彩色标题栏
-    html += '<div style="background:' + color.light + ';padding:10px 14px;border-bottom:1px solid var(--border);">' +
-      '<span style="font-size:13px;font-weight:700;color:' + color.bg + ';">' + typeName + '</span>' +
-      '<span style="font-size:11px;color:var(--text-secondary);margin-left:6px;">(' + items.length + ')</span>' +
-    '</div>';
-
-    // 股票卡片列表
-    if (items.length > 0) {
-      html += '<div style="padding:10px;display:flex;flex-direction:column;gap:8px;">';
-      items.forEach(function(st) {
-        html += '<div style="background:var(--bg-tertiary);border-radius:8px;padding:8px 10px;">' +
-          '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">' +
-            '<span style="font-size:12px;font-weight:600;">' + (st.name || '') + '</span>' +
-            '<span style="font-size:10px;color:var(--text-tertiary);font-family:monospace;">' + (st.code || '') + '</span>' +
-          '</div>' +
-          (st.action ? '<div style="font-size:11px;color:' + color.bg + ';font-weight:600;margin-bottom:2px;">⚡ ' + st.action + '</div>' : '') +
-          (st.note ? '<div style="font-size:10px;color:var(--text-secondary);line-height:1.4;">' + st.note + '</div>' : '') +
-        '</div>';
-      });
-      html += '</div>';
-    } else {
-      html += '<div style="padding:16px;text-align:center;font-size:11px;color:var(--text-tertiary);">暂无标的</div>';
-    }
-
-    if (pool.note) {
-      html += '<div style="padding:8px 12px;font-size:10px;color:var(--text-secondary);border-top:1px solid var(--border);background:var(--bg-tertiary);">💡 ' + pool.note + '</div>';
-    }
-    html += '</div>';
-  });
-
-  html += '</div>';
-  body.innerHTML = html;
 }
 
 // ========== 初始化 ==========
