@@ -1075,7 +1075,7 @@ function buildMergedItems(items, zone, icMap) {
       else { suggestHtml = '⚠️ 风险较高，建议观望'; suggestClass = 'caution'; }
     }
 
-    return '<div class="signal-item" onclick="openDrawer('' + (s.name||'').replace(/'/g, "\\'") + '')">' +
+    return '<div class="signal-item" onclick="openDrawer(\'' + (s.name||'').replace(/'/g, "\\'") + '\')">' +
       '<div class="signal-item-top">' +
         '<span class="signal-item-name">' +
           '<span>' + (i+1) + '. ' + s.name + '</span>' +
