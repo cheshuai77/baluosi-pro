@@ -609,12 +609,11 @@
             <th data-sort="flowIn">流入(亿)</th>
             <th data-sort="flowOut">流出(亿)</th>
             <th data-sort="inflow" class="inflow-col">净流入(亿)</th>
-            <th class="intraday-col">9:30</th>
+            <th class="intraday-col">开盘</th>
             <th class="intraday-col">10:00</th>
             <th class="intraday-col">10:30</th>
             <th class="intraday-col">11:00</th>
             <th class="intraday-col">中盘</th>
-            <th class="intraday-col">13:00</th>
             <th class="intraday-col">13:30</th>
             <th class="intraday-col">14:00</th>
             <th class="intraday-col">14:30</th>
@@ -1393,7 +1392,7 @@ function renderTable() {
     const escName = s.name.replace(/'/g, "\\'");
 
     // 分时净流数据列
-    const INTRADAY_SLOTS = ['0930','1000','1030','1100','1130','1300','1330','1400','1430','1500'];
+    const INTRADAY_SLOTS = ['0930','1000','1030','1100','1130','1330','1400','1430','1500'];
     const intradayMap = {};
     if (s.intraday) { s.intraday.forEach(p => { intradayMap[p.time] = p.net; }); }
     let prevVal = null;
