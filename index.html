@@ -148,15 +148,31 @@
 
   /* 信号区：进攻+撤退 2列 + 分时融合 */
   .intraday-summary-bar {
-    display: flex; align-items: center; gap: 10px;
-    padding: 10px 18px; margin-bottom: 12px;
+    padding: 12px 18px; margin-bottom: 12px;
     background: linear-gradient(135deg, var(--bg-secondary) 60%, var(--bg-tertiary));
     border-radius: 12px; font-size: 13px; color: var(--text-secondary);
     box-shadow: var(--shadow);
   }
-  .intraday-summary-bar .label { font-weight: 500; }
-  .intraday-summary-bar .value { font-weight: 700; font-family: 'SF Mono', Monaco, monospace; }
-  .intraday-summary-bar .time { font-size: 11px; color: var(--text-tertiary); margin-left: auto; }
+  .intraday-summary-bar .timeline-header {
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;
+  }
+  .intraday-summary-bar .timeline-header .label { font-weight: 600; font-size: 13px; }
+  .intraday-summary-bar .timeline-header .latest { font-weight: 700; font-family: 'SF Mono', Monaco, monospace; font-size: 14px; }
+  .intraday-timeline {
+    display: flex; flex-wrap: wrap; gap: 4px 0; margin-top: 6px;
+  }
+  .intraday-timeline .tl-item {
+    display: flex; align-items: center; gap: 4px;
+    padding: 3px 10px; border-radius: 6px; font-size: 11px;
+    background: var(--bg-tertiary); white-space: nowrap;
+  }
+  .intraday-timeline .tl-item .tl-time { color: var(--text-tertiary); font-family: 'SF Mono', Monaco, monospace; }
+  .intraday-timeline .tl-item .tl-value { font-weight: 600; font-family: 'SF Mono', Monaco, monospace; }
+  .intraday-timeline .tl-item .tl-change { font-size: 10px; font-family: 'SF Mono', Monaco, monospace; }
+  .intraday-timeline .tl-item.latest { background: rgba(116,192,252,0.12); border: 1px solid rgba(116,192,252,0.3); }
+  .tl-up { color: var(--rise); }
+  .tl-down { color: var(--fall); }
+  .tl-flat { color: var(--text-tertiary); }
   .signal-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
   .signal-strip .signal-card {
     background: var(--bg-secondary); border: none; border-top: 3px solid transparent;
@@ -553,12 +569,13 @@
 <div class="container">
 
   <!-- 信号关注区（动态渲染） -->
-  <!-- 分时汇总条 -->
+  <!-- 分时资金变动时间线 -->
   <div class="intraday-summary-bar" id="intradaySummaryBar" style="display:none;">
-    <span class="label">🕐 盘中资金变动</span>
-    <span>较上次采集：全市场净流入变化</span>
-    <span class="value" id="intradayTotalChange">--</span>
-    <span class="time" id="intradayTimeRange">--</span>
+    <div class="timeline-header">
+      <span class="label">🕐 盘中资金变动时间线</span>
+      <span class="latest" id="intradayTotalChange">--</span>
+    </div>
+    <div class="intraday-timeline" id="intradayTimeline"></div>
   </div>
 
   <div class="signal-strip" id="signalStrip">
@@ -1095,7 +1112,7 @@ function buildMergedItems(items, zone, icMap) {
   return html;
 }
 
-// ========== 盘中分时汇总条 ==========
+// ========== 盘中资金变动时间线 ==========
 function renderIntradaySummary() {
   const bar = document.getElementById('intradaySummaryBar');
   if (!bar) return;
@@ -1108,20 +1125,45 @@ function renderIntradaySummary() {
     return;
   }
 
-  bar.style.display = 'flex';
+  bar.style.display = 'block';
 
   const formatTime = (t) => t ? t.substring(0, 2) + ':' + t.substring(2) : '--';
   const timeStr = formatTime(ic.prevPollTime) + ' → ' + formatTime(ic.currentPollTime);
   const totalChange = ic.totalChange;
 
+  // Header: latest total change
   const totalEl = document.getElementById('intradayTotalChange');
   if (totalEl) {
-    totalEl.textContent = (totalChange >= 0 ? '+' : '') + totalChange.toFixed(1) + '亿';
+    totalEl.textContent = '全市场 ' + (totalChange >= 0 ? '+' : '') + totalChange.toFixed(1) + '亿';
     totalEl.style.color = totalChange >= 0 ? 'var(--rise)' : 'var(--fall)';
   }
 
-  const timeEl = document.getElementById('intradayTimeRange');
-  if (timeEl) timeEl.textContent = timeStr;
+  // Timeline: render all collection time points
+  const tlContainer = document.getElementById('intradayTimeline');
+  if (tlContainer && ic.timeline && ic.timeline.length > 0) {
+    let html = '';
+    ic.timeline.forEach((pt, idx) => {
+      const isLatest = idx === ic.timeline.length - 1;
+      const timeStr = formatTime(pt.time);
+      const inflow = pt.totalInflow;
+      const change = pt.change;
+
+      let changeHtml = '';
+      if (change !== null && change !== undefined) {
+        const changeClass = change > 0 ? 'tl-up' : (change < 0 ? 'tl-down' : 'tl-flat');
+        const arrow = change > 0 ? '↑' : (change < 0 ? '↓' : '─');
+        changeHtml = '<span class="tl-change ' + changeClass + '">' + arrow + (change >= 0 ? '+' : '') + change.toFixed(1) + '</span>';
+      }
+
+      const valueClass = inflow >= 0 ? 'tl-up' : 'tl-down';
+      html += '<div class="tl-item' + (isLatest ? ' latest' : '') + '">'
+        + '<span class="tl-time">' + timeStr + '</span>'
+        + '<span class="tl-value ' + valueClass + '">' + (inflow >= 0 ? '+' : '') + inflow.toFixed(1) + '亿</span>'
+        + changeHtml
+        + '</div>';
+    });
+    tlContainer.innerHTML = html;
+  }
 
   // Also update table header
   const tableChange = document.getElementById('tableIntradayChange');
