@@ -174,7 +174,7 @@
   .tl-down { color: var(--fall); }
   .tl-flat { color: var(--text-tertiary); }
   .signal-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
-  .signal-strip-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+  .signal-strip-2 { display: flex; flex-direction: column; gap: 14px; margin-bottom: 18px; }
   .signal-strip .signal-card, .signal-strip-2 .signal-card {
     background: var(--bg-secondary); border: none; border-top: 3px solid transparent;
     border-radius: var(--card-radius); padding: 16px;
@@ -439,7 +439,6 @@
     .stat-icon { font-size: 14px; }
 
     .signal-strip { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
-    .signal-strip-2 { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
     .signal-strip .signal-card, .signal-strip-2 .signal-card { padding: 12px; }
     .signal-title { font-size: 12px; }
 
