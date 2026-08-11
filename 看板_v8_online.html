@@ -309,9 +309,14 @@
   .table-scroll { overflow: auto; flex: 1; min-height: 0; }
   table { width: 100%; border-collapse: collapse; font-size: 14px; }
   .inflow-col { font-weight: 700; font-size: 15px; }
-  .intraday-col { font-size: 11px; font-family: 'SF Mono', Monaco, monospace; white-space: nowrap; min-width: 48px; text-align: center; }
+  .intraday-col { font-family: 'SF Mono', Monaco, monospace; white-space: nowrap; min-width: 48px; text-align: center; padding: 4px 2px; vertical-align: middle; }
   .intraday-col.id-rise { color: var(--rise); }
   .intraday-col.id-fall { color: var(--fall); }
+  .intraday-col .id-val { font-size: 12px; font-weight: 500; display: block; }
+  .intraday-col .id-delta { font-size: 9px; display: block; margin-top: 1px; opacity: 0.85; }
+  .intraday-col .id-delta-up { color: var(--rise); }
+  .intraday-col .id-delta-down { color: var(--fall); }
+  .intraday-col .id-delta-flat { color: var(--text-secondary); }
   thead .intraday-col { font-size: 10px; font-family: inherit; color: var(--text-secondary); font-weight: 500; }
   th {
     position: sticky; top: 0; background: var(--bg-tertiary);
@@ -639,16 +644,16 @@
             <th data-sort="flowIn">流入(亿)</th>
             <th data-sort="flowOut">流出(亿)</th>
             <th data-sort="inflow" class="inflow-col">净流入(亿)</th>
-            <th class="intraday-col">9:32</th>
-            <th class="intraday-col">10:10</th>
-            <th class="intraday-col">10:32</th>
-            <th class="intraday-col">11:08</th>
-            <th class="intraday-col">12:32</th>
-            <th class="intraday-col">13:11</th>
-            <th class="intraday-col">13:39</th>
-            <th class="intraday-col">14:15</th>
+            <th class="intraday-col">9:30</th>
+            <th class="intraday-col">10:00</th>
+            <th class="intraday-col">10:30</th>
+            <th class="intraday-col">11:00</th>
+            <th class="intraday-col">11:30</th>
+            <th class="intraday-col">13:00</th>
+            <th class="intraday-col">13:30</th>
+            <th class="intraday-col">14:00</th>
             <th class="intraday-col">14:30</th>
-            <th class="intraday-col">16:45</th>
+            <th class="intraday-col">15:00</th>
 
             <th data-sort="rankChange">名次变化</th>
             <th data-sort="riseCount">股票涨/跌</th>
@@ -1488,15 +1493,25 @@ function renderTable() {
     const escName = s.name.replace(/'/g, "\\'");
 
     // 分时净流数据列
-    const INTRADAY_SLOTS = ['0932','1010','1032','1108','1232','1311','1339','1415','1430','1645'];
+    const INTRADAY_SLOTS = ['0930','1000','1030','1100','1130','1300','1330','1400','1430','1500'];
     const intradayMap = {};
     if (s.intraday) { s.intraday.forEach(p => { intradayMap[p.time] = p.net; }); }
+    let prevVal = null;
     let intradayCells = INTRADAY_SLOTS.map(t => {
       const v = intradayMap[t];
-      if (v === undefined) return '<td class="num intraday-col">-</td>';
+      if (v === undefined) { return '<td class="num intraday-col"><span class="id-val">-</span></td>'; }
       const vs = (v >= 0 ? '+' : '') + v.toFixed(1);
       const vc = v >= 0 ? 'id-rise' : 'id-fall';
-      return '<td class="num intraday-col ' + vc + '">' + vs + '</td>';
+      let deltaHtml = '';
+      if (prevVal !== null) {
+        const delta = v - prevVal;
+        const ds = (delta >= 0 ? '+' : '') + delta.toFixed(1);
+        const dc = delta > 0 ? 'id-delta-up' : (delta < 0 ? 'id-delta-down' : 'id-delta-flat');
+        const arrow = delta > 0 ? '↑' : (delta < 0 ? '↓' : '─');
+        deltaHtml = '<span class="id-delta ' + dc + '">' + arrow + ds + '</span>';
+      }
+      prevVal = v;
+      return '<td class="num intraday-col ' + vc + '"><span class="id-val">' + vs + '</span>' + deltaHtml + '</td>';
     }).join('');
 
     return '<tr onclick="openDrawer(\'' + escName + '\')">' +
