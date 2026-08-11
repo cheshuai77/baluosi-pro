@@ -29483,5 +29483,158 @@
         }
       ]
     }
+  },
+  "intradayChanges": {
+    "prevTime": "1108",
+    "curTime": "1232",
+    "summary": {
+      "prevTotalNet": -42.71,
+      "curTotalNet": -55.11,
+      "delta": -12.4
+    },
+    "topInflowDelta": [
+      {
+        "name": "化学制药",
+        "prevNet": 14.27,
+        "curNet": 19.35,
+        "delta": 5.08,
+        "change": 1.52
+      },
+      {
+        "name": "生物制品",
+        "prevNet": 5.63,
+        "curNet": 8.14,
+        "delta": 2.51,
+        "change": 3.08
+      },
+      {
+        "name": "零售",
+        "prevNet": -4.47,
+        "curNet": -2.17,
+        "delta": 2.3,
+        "change": 0.29
+      },
+      {
+        "name": "影视院线",
+        "prevNet": -2.53,
+        "curNet": -0.62,
+        "delta": 1.91,
+        "change": 3.23
+      },
+      {
+        "name": "房地产",
+        "prevNet": -0.35,
+        "curNet": 1.56,
+        "delta": 1.91,
+        "change": 0.82
+      },
+      {
+        "name": "汽车零部件",
+        "prevNet": 1.26,
+        "curNet": 3.08,
+        "delta": 1.82,
+        "change": -0.22
+      },
+      {
+        "name": "煤炭开采加工",
+        "prevNet": -3.59,
+        "curNet": -1.79,
+        "delta": 1.8,
+        "change": 0.03
+      },
+      {
+        "name": "电力",
+        "prevNet": -4.47,
+        "curNet": -2.73,
+        "delta": 1.74,
+        "change": 0.29
+      },
+      {
+        "name": "银行",
+        "prevNet": -9.67,
+        "curNet": -8.0,
+        "delta": 1.67,
+        "change": -0.25
+      },
+      {
+        "name": "电池",
+        "prevNet": 6.79,
+        "curNet": 8.17,
+        "delta": 1.38,
+        "change": 0.0
+      }
+    ],
+    "topOutflowDelta": [
+      {
+        "name": "半导体",
+        "prevNet": 57.09,
+        "curNet": 46.38,
+        "delta": -10.71,
+        "change": 0.48
+      },
+      {
+        "name": "元件",
+        "prevNet": 27.0,
+        "curNet": 20.01,
+        "delta": -6.99,
+        "change": 1.29
+      },
+      {
+        "name": "通信设备",
+        "prevNet": 30.1,
+        "curNet": 26.52,
+        "delta": -3.58,
+        "change": 0.46
+      },
+      {
+        "name": "军工装备",
+        "prevNet": -10.14,
+        "curNet": -12.16,
+        "delta": -2.02,
+        "change": -1.96
+      },
+      {
+        "name": "消费电子",
+        "prevNet": -1.29,
+        "curNet": -3.29,
+        "delta": -2.0,
+        "change": 0.19
+      },
+      {
+        "name": "计算机设备",
+        "prevNet": -0.54,
+        "curNet": -2.53,
+        "delta": -1.99,
+        "change": -0.08
+      },
+      {
+        "name": "光学光电子",
+        "prevNet": 17.5,
+        "curNet": 15.85,
+        "delta": -1.65,
+        "change": 0.09
+      },
+      {
+        "name": "专用设备",
+        "prevNet": -1.1,
+        "curNet": -2.65,
+        "delta": -1.55,
+        "change": 0.02
+      },
+      {
+        "name": "建筑材料",
+        "prevNet": -6.0,
+        "curNet": -7.37,
+        "delta": -1.37,
+        "change": -0.59
+      },
+      {
+        "name": "其他电子",
+        "prevNet": 1.92,
+        "curNet": 0.81,
+        "delta": -1.11,
+        "change": 0.47
+      }
+    ]
   }
 }
