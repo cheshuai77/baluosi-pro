@@ -178,6 +178,44 @@
     transition: all 0.15s;
   }
   .signal-more-btn:hover { background: var(--bg-tertiary); border-color: var(--accent); }
+
+  /* 盘中资金变化模块 */
+  .intraday-change-strip {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px;
+  }
+  .intraday-change-card {
+    background: var(--bg-secondary); border: none;
+    border-radius: var(--card-radius); padding: 16px;
+    box-shadow: var(--shadow);
+  }
+  .intraday-change-header {
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
+  }
+  .intraday-change-title {
+    font-size: 13px; font-weight: 600; color: var(--text-primary);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .intraday-change-time {
+    font-size: 11px; color: var(--text-secondary); background: var(--bg-tertiary);
+    padding: 2px 8px; border-radius: 6px;
+  }
+  .intraday-change-list {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .intraday-change-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 12px; background: var(--bg-tertiary); border-radius: 8px; font-size: 13px;
+  }
+  .intraday-change-name { font-weight: 500; }
+  .intraday-change-value { font-weight: 600; font-family: 'SF Mono', Monaco, monospace; }
+  .intraday-change-value.positive { color: var(--rise); }
+  .intraday-change-value.negative { color: var(--fall); }
+  .intraday-summary {
+    text-align: center; padding: 10px; margin-bottom: 12px;
+    background: var(--bg-tertiary); border-radius: 8px; font-size: 13px;
+  }
+  .intraday-summary-value { font-weight: 600; font-family: 'SF Mono', Monaco, monospace; margin-left: 6px; }
+
   /* 信号弹窗（右侧半屏） */
   .signal-modal-mask { position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 200; display: none; }
   .signal-modal-mask.show { display: block; }
@@ -533,6 +571,33 @@
     </div>
   </div>
 
+  <!-- 盘中资金变化区（动态渲染） -->
+  <div id="intradayChangeArea" style="display:none;">
+    <div class="intraday-summary" id="intradaySummary">
+      较上次采集：全市场净流入变化<span class="intraday-summary-value" id="intradayTotalChange">--</span>
+    </div>
+    <div class="intraday-change-strip">
+      <div class="intraday-change-card">
+        <div class="intraday-change-header">
+          <div class="intraday-change-title">⚡ 加速流入TOP8</div>
+          <div class="intraday-change-time" id="intradayTimeIn">--</div>
+        </div>
+        <div class="intraday-change-list" id="intradayTopIn">
+          <div class="signal-empty">暂无数据</div>
+        </div>
+      </div>
+      <div class="intraday-change-card">
+        <div class="intraday-change-header">
+          <div class="intraday-change-title">💨 加速流出TOP8</div>
+          <div class="intraday-change-time" id="intradayTimeOut">--</div>
+        </div>
+        <div class="intraday-change-list" id="intradayTopOut">
+          <div class="signal-empty">暂无数据</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 信号详情半屏弹窗 -->
   <div class="signal-modal-mask" id="sigModalMask" onclick="closeSignalModal()"></div>
   <div class="signal-modal" id="sigModal">
@@ -546,7 +611,10 @@
   <!-- 主体：表格 -->
   <div class="table-panel">
     <div class="table-header">
-      <div class="table-title">📊 90行业资金排行</div>
+      <div class="table-title">
+        📊 90行业资金排行
+        <span id="tableIntradayChange" style="font-size:12px;color:var(--text-secondary);margin-left:8px;font-weight:normal;"></span>
+      </div>
       <div class="table-tools">
         <input type="text" class="search-box" id="searchBox" placeholder="搜索板块...">
       </div>
@@ -793,6 +861,7 @@ function updateAll() {
   updateDateNav();
   renderMarketOverview();
   renderSignals();
+  renderIntradayChanges();
   renderTable();
 }
 
@@ -966,6 +1035,71 @@ function renderSignalItems(containerId, items, type) {
     html += '<div class="signal-more-btn" onclick="showSignalModal(\'' + type + '\')">查看更多</div>';
   }
   container.innerHTML = html;
+}
+
+// ========== 盘中资金变化 ==========
+function renderIntradayChanges() {
+  const area = document.getElementById('intradayChangeArea');
+  if (!area) return;
+  
+  const ic = FUND_DATA.intradayChanges;
+  if (!ic || !ic.sectors || ic.sectors.length === 0) {
+    area.style.display = 'none';
+    const tableChange = document.getElementById('tableIntradayChange');
+    if (tableChange) tableChange.textContent = '';
+    return;
+  }
+  
+  area.style.display = 'block';
+  
+  // 格式化时间显示（1010 → 10:10）
+  const formatTime = (t) => t ? t.substring(0, 2) + ':' + t.substring(2) : '--';
+  
+  // 更新摘要
+  const totalChange = ic.totalChange;
+  const totalEl = document.getElementById('intradayTotalChange');
+  if (totalEl) {
+    totalEl.textContent = (totalChange >= 0 ? '+' : '') + totalChange.toFixed(1) + '亿';
+    totalEl.style.color = totalChange >= 0 ? 'var(--rise)' : 'var(--fall)';
+  }
+  
+  // 更新时间标签
+  const timeStr = formatTime(ic.prevPollTime) + '→' + formatTime(ic.currentPollTime);
+  const timeInEl = document.getElementById('intradayTimeIn');
+  const timeOutEl = document.getElementById('intradayTimeOut');
+  if (timeInEl) timeInEl.textContent = timeStr;
+  if (timeOutEl) timeOutEl.textContent = timeStr;
+  
+  // 更新表格标题旁边的摘要
+  const tableChange = document.getElementById('tableIntradayChange');
+  if (tableChange) {
+    tableChange.textContent = `较上次采集(${timeStr})：全市场净流入${totalChange >= 0 ? '+' : ''}${totalChange.toFixed(1)}亿`;
+    tableChange.style.color = totalChange >= 0 ? 'var(--rise)' : 'var(--fall)';
+  }
+  
+  // 加速流入TOP8
+  const topIn = ic.sectors.slice(0, 8);
+  const topInEl = document.getElementById('intradayTopIn');
+  if (topInEl) {
+    topInEl.innerHTML = topIn.map(s => `
+      <div class="intraday-change-item">
+        <span class="intraday-change-name">${s.name}</span>
+        <span class="intraday-change-value positive">+${s.change.toFixed(1)}亿</span>
+      </div>
+    `).join('');
+  }
+  
+  // 加速流出TOP8（倒序取最后8个）
+  const topOut = ic.sectors.slice(-8).reverse();
+  const topOutEl = document.getElementById('intradayTopOut');
+  if (topOutEl) {
+    topOutEl.innerHTML = topOut.map(s => `
+      <div class="intraday-change-item">
+        <span class="intraday-change-name">${s.name}</span>
+        <span class="intraday-change-value negative">${s.change.toFixed(1)}亿</span>
+      </div>
+    `).join('');
+  }
 }
 
 // ========== 信号弹窗 ==========
