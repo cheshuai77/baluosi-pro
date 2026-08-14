@@ -201310,16 +201310,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑↑",
-        "marginalLabel": "加速流入",
-        "marginalColor": "#cc0000",
-        "marginalBg": "#ffebee",
-        "marginalScore": 100,
-        "watchTag": "🔴主线",
-        "watchTagLabel": "主线",
-        "watchTagColor": "#cc0000",
-        "watchTagBg": "#ffebee",
-        "score": 79.4,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 66.9,
         "signal": "main_line",
         "history": [
           {
@@ -201463,7 +201463,7 @@
             "change": 2.33
           }
         ],
-        "aiQuickReview": "主力大幅净流入117.5亿，边际加速流入。板块上涨2.33%。当前处于主线确认区，量价配合良好，可持续关注。"
+        "aiQuickReview": "主力大幅净流入117.5亿。板块上涨2.33%。当前处于主线确认区，量价配合良好，可持续关注。"
       },
       {
         "name": "小金属",
@@ -201509,16 +201509,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑↑",
-        "marginalLabel": "加速流入",
-        "marginalColor": "#cc0000",
-        "marginalBg": "#ffebee",
-        "marginalScore": 100,
-        "watchTag": "🔴主线",
-        "watchTagLabel": "主线",
-        "watchTagColor": "#cc0000",
-        "watchTagBg": "#ffebee",
-        "score": 67.4,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 54.9,
         "signal": "main_line",
         "history": [
           {
@@ -201662,7 +201662,7 @@
             "change": 1.99
           }
         ],
-        "aiQuickReview": "主力大幅净流入28.4亿，边际加速流入。板块上涨1.99%。当前处于主线确认区，量价配合良好，可持续关注。"
+        "aiQuickReview": "主力大幅净流入28.4亿。板块上涨1.99%。当前处于主线确认区，量价配合良好，可持续关注。"
       },
       {
         "name": "通信服务",
@@ -201708,16 +201708,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑↑",
-        "marginalLabel": "加速流入",
-        "marginalColor": "#cc0000",
-        "marginalBg": "#ffebee",
-        "marginalScore": 100,
-        "watchTag": "🔴主线",
-        "watchTagLabel": "主线",
-        "watchTagColor": "#cc0000",
-        "watchTagBg": "#ffebee",
-        "score": 65.8,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 53.3,
         "signal": "main_line",
         "history": [
           {
@@ -201861,22 +201861,21 @@
             "change": 1.38
           }
         ],
-        "aiQuickReview": "主力大幅净流入22.0亿，边际加速流入。板块上涨1.38%。当前处于主线确认区，量价配合良好，可持续关注。"
+        "aiQuickReview": "主力大幅净流入22.0亿。板块上涨1.38%。当前处于主线确认区，量价配合良好，可持续关注。"
       },
       {
         "name": "IT服务",
         "code": "881271",
         "change": 0.08,
         "indexPrice": 0,
-        "stockCount": 129,
+        "stockCount": 0,
         "riseCount": 65,
         "fallCount": 64,
         "leader": "",
         "leaderChange": 0,
-        "_riseEstimated": true,
         "risePct": 50.4,
-        "flowIn": 245.41,
-        "flowOut": 228.9,
+        "flowIn": 0,
+        "flowOut": 0,
         "inflow": 16.52,
         "intraday": [
           {
@@ -201904,28 +201903,21 @@
             "net": 16.52
           }
         ],
-        "consecutiveInDays": 1,
+        "consecutiveInDays": 2,
         "consecutiveOutDays": 0,
-        "continuousDays": 1,
-        "marginalTag": "↑↑",
-        "marginalLabel": "加速流入",
-        "marginalColor": "#cc0000",
-        "marginalBg": "#ffebee",
-        "marginalScore": 100,
-        "watchTag": "🔴主线",
-        "watchTagLabel": "主线",
-        "watchTagColor": "#cc0000",
-        "watchTagBg": "#ffebee",
-        "score": 62.0,
+        "continuousDays": 2,
+        "marginalTag": "🔄",
+        "marginalLabel": "持平",
+        "marginalColor": "#ff9800",
+        "marginalBg": "#fff3e0",
+        "marginalScore": 50,
+        "watchTag": "🟡反转",
+        "watchTagLabel": "反转",
+        "watchTagColor": "#ff9800",
+        "watchTagBg": "#fff3e0",
+        "score": 51.2,
         "signal": "latent",
         "history": [
-          {
-            "date": "2026-06-16",
-            "flowIn": 253.01,
-            "flowOut": 268.69,
-            "inflow": -15.68,
-            "change": 0.81
-          },
           {
             "date": "2026-06-17",
             "flowIn": 240.41,
@@ -202058,9 +202050,16 @@
             "flowOut": 228.9,
             "inflow": 16.52,
             "change": 0.08
+          },
+          {
+            "date": "2026-08-14",
+            "flowIn": 0,
+            "flowOut": 0,
+            "inflow": 16.52,
+            "change": 0.08
           }
         ],
-        "aiQuickReview": "主力净流入16.5亿，边际加速流入。板块微幅震荡。当前处于潜伏观察区，资金先行布局，可等待启动信号。"
+        "aiQuickReview": "主力净流入16.5亿，边际持平。板块微幅震荡。当前处于潜伏观察区，资金先行布局，可等待启动信号。"
       },
       {
         "name": "电子化学品",
@@ -202106,16 +202105,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑↑",
-        "marginalLabel": "加速流入",
-        "marginalColor": "#cc0000",
-        "marginalBg": "#ffebee",
-        "marginalScore": 100,
-        "watchTag": "🔴主线",
-        "watchTagLabel": "主线",
-        "watchTagColor": "#cc0000",
-        "watchTagBg": "#ffebee",
-        "score": 68.5,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 56.0,
         "signal": "main_line",
         "history": [
           {
@@ -202259,22 +202258,21 @@
             "change": 4.07
           }
         ],
-        "aiQuickReview": "主力净流入16.2亿，边际加速流入。板块大涨4.07%。当前处于主线确认区，量价配合良好，可持续关注。"
+        "aiQuickReview": "主力净流入16.2亿。板块大涨4.07%。当前处于主线确认区，量价配合良好，可持续关注。"
       },
       {
         "name": "建筑材料",
         "code": "881115",
         "change": 0.15,
         "indexPrice": 0,
-        "stockCount": 73,
+        "stockCount": 0,
         "riseCount": 37,
         "fallCount": 36,
         "leader": "",
         "leaderChange": 0,
-        "_riseEstimated": true,
         "risePct": 50.7,
-        "flowIn": 107.21,
-        "flowOut": 92.73,
+        "flowIn": 0,
+        "flowOut": 0,
         "inflow": 14.48,
         "intraday": [
           {
@@ -202302,28 +202300,21 @@
             "net": 14.48
           }
         ],
-        "consecutiveInDays": 1,
+        "consecutiveInDays": 2,
         "consecutiveOutDays": 0,
-        "continuousDays": 1,
-        "marginalTag": "↑↑",
-        "marginalLabel": "加速流入",
-        "marginalColor": "#cc0000",
-        "marginalBg": "#ffebee",
-        "marginalScore": 100,
-        "watchTag": "🔴主线",
-        "watchTagLabel": "主线",
-        "watchTagColor": "#cc0000",
-        "watchTagBg": "#ffebee",
-        "score": 62.2,
+        "continuousDays": 2,
+        "marginalTag": "🔄",
+        "marginalLabel": "持平",
+        "marginalColor": "#ff9800",
+        "marginalBg": "#fff3e0",
+        "marginalScore": 50,
+        "watchTag": "🟡反转",
+        "watchTagLabel": "反转",
+        "watchTagColor": "#ff9800",
+        "watchTagBg": "#fff3e0",
+        "score": 51.0,
         "signal": "latent",
         "history": [
-          {
-            "date": "2026-06-17",
-            "flowIn": 210.32,
-            "flowOut": 238.41,
-            "inflow": -28.09,
-            "change": 0.94
-          },
           {
             "date": "2026-06-22",
             "flowIn": 240.98,
@@ -202456,24 +202447,30 @@
             "flowOut": 92.73,
             "inflow": 14.48,
             "change": 0.15
+          },
+          {
+            "date": "2026-08-14",
+            "flowIn": 0,
+            "flowOut": 0,
+            "inflow": 14.48,
+            "change": 0.15
           }
         ],
-        "aiQuickReview": "主力净流入14.5亿，边际加速流入。板块微幅震荡。当前处于潜伏观察区，资金先行布局，可等待启动信号。"
+        "aiQuickReview": "主力净流入14.5亿，边际持平。板块微幅震荡。当前处于潜伏观察区，资金先行布局，可等待启动信号。"
       },
       {
         "name": "电池",
         "code": "881281",
         "change": 0.89,
         "indexPrice": 0,
-        "stockCount": 106,
+        "stockCount": 0,
         "riseCount": 64,
         "fallCount": 42,
         "leader": "",
         "leaderChange": 0,
-        "_riseEstimated": true,
         "risePct": 60.4,
-        "flowIn": 197.76,
-        "flowOut": 183.91,
+        "flowIn": 0,
+        "flowOut": 0,
         "inflow": 13.84,
         "intraday": [
           {
@@ -202501,28 +202498,21 @@
             "net": 13.84
           }
         ],
-        "consecutiveInDays": 1,
+        "consecutiveInDays": 2,
         "consecutiveOutDays": 0,
-        "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 55.7,
+        "continuousDays": 2,
+        "marginalTag": "🔄",
+        "marginalLabel": "持平",
+        "marginalColor": "#ff9800",
+        "marginalBg": "#fff3e0",
+        "marginalScore": 50,
+        "watchTag": "🟡反转",
+        "watchTagLabel": "反转",
+        "watchTagColor": "#ff9800",
+        "watchTagBg": "#fff3e0",
+        "score": 52.3,
         "signal": "latent",
         "history": [
-          {
-            "date": "2026-06-12",
-            "flowIn": 613.5,
-            "flowOut": 567.2,
-            "inflow": 46.3,
-            "change": 2.67
-          },
           {
             "date": "2026-06-14",
             "flowIn": 613.5,
@@ -202655,9 +202645,16 @@
             "flowOut": 183.91,
             "inflow": 13.84,
             "change": 0.89
+          },
+          {
+            "date": "2026-08-14",
+            "flowIn": 0,
+            "flowOut": 0,
+            "inflow": 13.84,
+            "change": 0.89
           }
         ],
-        "aiQuickReview": "主力净流入13.8亿，边际流入减速。板块微幅震荡。当前处于潜伏观察区，资金先行布局，可等待启动信号。"
+        "aiQuickReview": "主力净流入13.8亿，边际持平。板块微幅震荡。当前处于潜伏观察区，资金先行布局，可等待启动信号。"
       },
       {
         "name": "游戏",
@@ -202703,16 +202700,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑↑",
-        "marginalLabel": "加速流入",
-        "marginalColor": "#cc0000",
-        "marginalBg": "#ffebee",
-        "marginalScore": 100,
-        "watchTag": "🔴主线",
-        "watchTagLabel": "主线",
-        "watchTagColor": "#cc0000",
-        "watchTagBg": "#ffebee",
-        "score": 63.8,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 51.3,
         "signal": null,
         "history": [
           {
@@ -202856,22 +202853,21 @@
             "change": 1.22
           }
         ],
-        "aiQuickReview": "主力净流入11.6亿，边际加速流入。板块上涨1.22%。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流入11.6亿。板块上涨1.22%。综合评分中性，多空分歧较大。"
       },
       {
         "name": "互联网电商",
         "code": "881177",
         "change": -0.45,
         "indexPrice": 0,
-        "stockCount": 20,
+        "stockCount": 0,
         "riseCount": 8,
         "fallCount": 12,
         "leader": "",
         "leaderChange": 0,
-        "_riseEstimated": true,
         "risePct": 40.0,
-        "flowIn": 36.93,
-        "flowOut": 29.68,
+        "flowIn": 0,
+        "flowOut": 0,
         "inflow": 7.25,
         "intraday": [
           {
@@ -202899,28 +202895,21 @@
             "net": 7.25
           }
         ],
-        "consecutiveInDays": 1,
+        "consecutiveInDays": 2,
         "consecutiveOutDays": 0,
-        "continuousDays": 1,
-        "marginalTag": "↑↑",
-        "marginalLabel": "加速流入",
-        "marginalColor": "#cc0000",
-        "marginalBg": "#ffebee",
-        "marginalScore": 100,
-        "watchTag": "🔴主线",
-        "watchTagLabel": "主线",
-        "watchTagColor": "#cc0000",
-        "watchTagBg": "#ffebee",
-        "score": 60.0,
+        "continuousDays": 2,
+        "marginalTag": "🔄",
+        "marginalLabel": "持平",
+        "marginalColor": "#ff9800",
+        "marginalBg": "#fff3e0",
+        "marginalScore": 50,
+        "watchTag": "🟡反转",
+        "watchTagLabel": "反转",
+        "watchTagColor": "#ff9800",
+        "watchTagBg": "#fff3e0",
+        "score": 48.4,
         "signal": "latent",
         "history": [
-          {
-            "date": "2026-06-23",
-            "flowIn": 26.06,
-            "flowOut": 28.45,
-            "inflow": -2.38,
-            "change": -0.3
-          },
           {
             "date": "2026-06-24",
             "flowIn": 29.31,
@@ -203053,24 +203042,30 @@
             "flowOut": 29.68,
             "inflow": 7.25,
             "change": -0.45
+          },
+          {
+            "date": "2026-08-14",
+            "flowIn": 0,
+            "flowOut": 0,
+            "inflow": 7.25,
+            "change": -0.45
           }
         ],
-        "aiQuickReview": "主力净流入7.2亿，边际加速流入。板块微幅震荡。当前处于潜伏观察区，资金先行布局，可等待启动信号。"
+        "aiQuickReview": "主力净流入7.2亿，边际持平。板块微幅震荡。当前处于潜伏观察区，资金先行布局，可等待启动信号。"
       },
       {
         "name": "煤炭开采加工",
         "code": "881105",
         "change": 0.91,
         "indexPrice": 0,
-        "stockCount": 34,
+        "stockCount": 0,
         "riseCount": 20,
         "fallCount": 14,
         "leader": "",
         "leaderChange": 0,
-        "_riseEstimated": true,
         "risePct": 58.8,
-        "flowIn": 45.04,
-        "flowOut": 38.17,
+        "flowIn": 0,
+        "flowOut": 0,
         "inflow": 6.87,
         "intraday": [
           {
@@ -203094,28 +203089,21 @@
             "net": 6.87
           }
         ],
-        "consecutiveInDays": 1,
+        "consecutiveInDays": 2,
         "consecutiveOutDays": 0,
-        "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 55.0,
+        "continuousDays": 2,
+        "marginalTag": "🔄",
+        "marginalLabel": "持平",
+        "marginalColor": "#ff9800",
+        "marginalBg": "#fff3e0",
+        "marginalScore": 50,
+        "watchTag": "🟡反转",
+        "watchTagLabel": "反转",
+        "watchTagColor": "#ff9800",
+        "watchTagBg": "#fff3e0",
+        "score": 51.2,
         "signal": "latent",
         "history": [
-          {
-            "date": "2026-06-23",
-            "flowIn": 69.79,
-            "flowOut": 78.1,
-            "inflow": -8.31,
-            "change": -0.04
-          },
           {
             "date": "2026-06-25",
             "flowIn": 65.15,
@@ -203248,9 +203236,16 @@
             "flowOut": 38.17,
             "inflow": 6.87,
             "change": 0.91
+          },
+          {
+            "date": "2026-08-14",
+            "flowIn": 0,
+            "flowOut": 0,
+            "inflow": 6.87,
+            "change": 0.91
           }
         ],
-        "aiQuickReview": "主力净流入6.9亿，边际流入减速。板块微幅震荡。当前处于潜伏观察区，资金先行布局，可等待启动信号。"
+        "aiQuickReview": "主力净流入6.9亿，边际持平。板块微幅震荡。当前处于潜伏观察区，资金先行布局，可等待启动信号。"
       },
       {
         "name": "金属新材料",
@@ -203296,16 +203291,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑↑",
-        "marginalLabel": "加速流入",
-        "marginalColor": "#cc0000",
-        "marginalBg": "#ffebee",
-        "marginalScore": 100,
-        "watchTag": "🔴主线",
-        "watchTagLabel": "主线",
-        "watchTagColor": "#cc0000",
-        "watchTagBg": "#ffebee",
-        "score": 65.1,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 52.6,
         "signal": "main_line",
         "history": [
           {
@@ -203449,7 +203444,7 @@
             "change": 2.05
           }
         ],
-        "aiQuickReview": "主力净流入6.3亿，边际加速流入。板块上涨2.05%。当前处于主线确认区，量价配合良好，可持续关注。"
+        "aiQuickReview": "主力净流入6.3亿。板块上涨2.05%。当前处于主线确认区，量价配合良好，可持续关注。"
       },
       {
         "name": "贵金属",
@@ -203495,16 +203490,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 53.1,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 48.1,
         "signal": null,
         "history": [
           {
@@ -203648,7 +203643,7 @@
             "change": 0.41
           }
         ],
-        "aiQuickReview": "主力净流入5.7亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流入5.7亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "专用设备",
@@ -203694,16 +203689,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑↑",
-        "marginalLabel": "加速流入",
-        "marginalColor": "#cc0000",
-        "marginalBg": "#ffebee",
-        "marginalScore": 100,
-        "watchTag": "🔴主线",
-        "watchTagLabel": "主线",
-        "watchTagColor": "#cc0000",
-        "watchTagBg": "#ffebee",
-        "score": 61.6,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 49.1,
         "signal": null,
         "history": [
           {
@@ -203847,7 +203842,7 @@
             "change": 0.69
           }
         ],
-        "aiQuickReview": "主力净流入5.5亿，边际加速流入。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流入5.5亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "自动化设备",
@@ -203893,16 +203888,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑↑",
-        "marginalLabel": "加速流入",
-        "marginalColor": "#cc0000",
-        "marginalBg": "#ffebee",
-        "marginalScore": 100,
-        "watchTag": "🔴主线",
-        "watchTagLabel": "主线",
-        "watchTagColor": "#cc0000",
-        "watchTagBg": "#ffebee",
-        "score": 62.5,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 50.0,
         "signal": null,
         "history": [
           {
@@ -204046,7 +204041,7 @@
             "change": 1.24
           }
         ],
-        "aiQuickReview": "主力小幅净流入5.0亿，边际加速流入。板块上涨1.24%。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流入5.0亿。板块上涨1.24%。综合评分中性，多空分歧较大。"
       },
       {
         "name": "钢铁",
@@ -204092,16 +204087,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 53.6,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 48.6,
         "signal": null,
         "history": [
           {
@@ -204245,7 +204240,7 @@
             "change": 0.02
           }
         ],
-        "aiQuickReview": "主力小幅净流入4.9亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流入4.9亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "消费电子",
@@ -204291,16 +204286,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 54.0,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 49.0,
         "signal": null,
         "history": [
           {
@@ -204444,7 +204439,7 @@
             "change": 0.78
           }
         ],
-        "aiQuickReview": "主力小幅净流入4.7亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流入4.7亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "其他电子",
@@ -204490,16 +204485,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 55.3,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 50.3,
         "signal": "main_line",
         "history": [
           {
@@ -204643,7 +204638,7 @@
             "change": 1.7
           }
         ],
-        "aiQuickReview": "主力小幅净流入3.1亿，边际流入减速。板块上涨1.70%。当前处于主线确认区，量价配合良好，可持续关注。"
+        "aiQuickReview": "主力小幅净流入3.1亿。板块上涨1.70%。当前处于主线确认区，量价配合良好，可持续关注。"
       },
       {
         "name": "综合",
@@ -204689,16 +204684,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 52.2,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 47.2,
         "signal": null,
         "history": [
           {
@@ -204842,7 +204837,7 @@
             "change": -0.14
           }
         ],
-        "aiQuickReview": "主力小幅净流入3.1亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流入3.1亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "石油加工贸易",
@@ -205083,16 +205078,16 @@
         "consecutiveInDays": 3,
         "consecutiveOutDays": 0,
         "continuousDays": 3,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 58.0,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 53.0,
         "signal": null,
         "history": [
           {
@@ -205236,7 +205231,7 @@
             "change": 0.89
           }
         ],
-        "aiQuickReview": "主力小幅净流入1.7亿，边际流入减速。板块微幅震荡。已连续3日流入。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流入1.7亿。板块微幅震荡。已连续3日流入。综合评分中性，多空分歧较大。"
       },
       {
         "name": "燃气",
@@ -205282,16 +205277,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 50.7,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 45.7,
         "signal": null,
         "history": [
           {
@@ -205435,7 +205430,7 @@
             "change": -0.99
           }
         ],
-        "aiQuickReview": "主力小幅净流入1.3亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流入1.3亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "非金属材料",
@@ -205481,16 +205476,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 59.0,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 54.0,
         "signal": "main_line",
         "history": [
           {
@@ -205634,7 +205629,7 @@
             "change": 3.84
           }
         ],
-        "aiQuickReview": "主力小幅净流入1.3亿，边际流入减速。板块大涨3.84%。当前处于主线确认区，量价配合良好，可持续关注。"
+        "aiQuickReview": "主力小幅净流入1.3亿。板块大涨3.84%。当前处于主线确认区，量价配合良好，可持续关注。"
       },
       {
         "name": "环保设备",
@@ -205680,16 +205675,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 54.8,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 49.8,
         "signal": "main_line",
         "history": [
           {
@@ -205833,7 +205828,7 @@
             "change": 1.55
           }
         ],
-        "aiQuickReview": "主力小幅净流入1.0亿，边际流入减速。板块上涨1.55%。当前处于主线确认区，量价配合良好，可持续关注。"
+        "aiQuickReview": "主力小幅净流入1.0亿。板块上涨1.55%。当前处于主线确认区，量价配合良好，可持续关注。"
       },
       {
         "name": "橡胶制品",
@@ -205879,16 +205874,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 53.4,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 48.4,
         "signal": null,
         "history": [
           {
@@ -206032,7 +206027,7 @@
             "change": 0.56
           }
         ],
-        "aiQuickReview": "主力小幅净流入0.7亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流入0.7亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "半导体",
@@ -206078,16 +206073,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 55.4,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 50.4,
         "signal": "main_line",
         "history": [
           {
@@ -206231,7 +206226,7 @@
             "change": 1.86
           }
         ],
-        "aiQuickReview": "主力小幅净流入0.6亿，边际流入减速。板块上涨1.86%。当前处于主线确认区，量价配合良好，可持续关注。"
+        "aiQuickReview": "主力小幅净流入0.6亿。板块上涨1.86%。当前处于主线确认区，量价配合良好，可持续关注。"
       },
       {
         "name": "贸易",
@@ -206277,16 +206272,16 @@
         "consecutiveInDays": 1,
         "consecutiveOutDays": 0,
         "continuousDays": 1,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 52.4,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 47.4,
         "signal": null,
         "history": [
           {
@@ -206430,7 +206425,7 @@
             "change": 0.02
           }
         ],
-        "aiQuickReview": "主力小幅净流入0.2亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流入0.2亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "教育",
@@ -206476,16 +206471,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 47.5,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 42.5,
         "signal": null,
         "history": [
           {
@@ -206629,7 +206624,7 @@
             "change": -0.91
           }
         ],
-        "aiQuickReview": "主力小幅净流出0.1亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出0.1亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "油气开采及服务",
@@ -206675,16 +206670,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 3,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 48.7,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.7,
         "signal": null,
         "history": [
           {
@@ -206828,7 +206823,7 @@
             "change": -0.52
           }
         ],
-        "aiQuickReview": "主力小幅净流出0.2亿，边际流入减速。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出0.2亿。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "汽车服务及其他",
@@ -206874,16 +206869,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 3,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 49.2,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 44.2,
         "signal": null,
         "history": [
           {
@@ -207027,7 +207022,7 @@
             "change": -0.32
           }
         ],
-        "aiQuickReview": "主力小幅净流出0.3亿，边际流入减速。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出0.3亿。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "厨卫电器",
@@ -207073,16 +207068,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 44.7,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 39.7,
         "signal": null,
         "history": [
           {
@@ -207226,7 +207221,7 @@
             "change": -1.52
           }
         ],
-        "aiQuickReview": "主力小幅净流出0.5亿，边际流入减速。板块下跌1.52%。已连续4日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出0.5亿。板块下跌1.52%。已连续4日流出。综合评分偏低，资金面偏弱。"
       },
       {
         "name": "小家电",
@@ -207272,16 +207267,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 47.6,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 42.6,
         "signal": null,
         "history": [
           {
@@ -207418,7 +207413,7 @@
             "change": -0.76
           }
         ],
-        "aiQuickReview": "主力小幅净流出0.6亿，边际流入减速。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出0.6亿。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "造纸",
@@ -207464,16 +207459,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 39.5,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 44.5,
         "signal": null,
         "history": [
           {
@@ -207617,7 +207612,7 @@
             "change": 0.13
           }
         ],
-        "aiQuickReview": "主力小幅净流出0.6亿，边际流出减速。板块微幅震荡。已连续4日流出。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力小幅净流出0.6亿。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "公路铁路运输",
@@ -207663,16 +207658,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 38.6,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.6,
         "signal": null,
         "history": [
           {
@@ -207816,7 +207811,7 @@
             "change": -0.38
           }
         ],
-        "aiQuickReview": "主力小幅净流出0.6亿，边际流出减速。板块微幅震荡。已连续4日流出。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力小幅净流出0.6亿。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "家居用品",
@@ -207862,16 +207857,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 49.5,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 44.5,
         "signal": null,
         "history": [
           {
@@ -208015,7 +208010,7 @@
             "change": -0.11
           }
         ],
-        "aiQuickReview": "主力小幅净流出0.7亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出0.7亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "物流",
@@ -208061,16 +208056,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 48.2,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.2,
         "signal": null,
         "history": [
           {
@@ -208214,7 +208209,7 @@
             "change": -0.61
           }
         ],
-        "aiQuickReview": "主力小幅净流出1.0亿，边际流入减速。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出1.0亿。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "其他社会服务",
@@ -208260,16 +208255,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 49.1,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 44.1,
         "signal": null,
         "history": [
           {
@@ -208413,7 +208408,7 @@
             "change": -0.13
           }
         ],
-        "aiQuickReview": "主力小幅净流出1.0亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出1.0亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "轨交设备",
@@ -208459,16 +208454,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 38.3,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.3,
         "signal": null,
         "history": [
           {
@@ -208612,7 +208607,7 @@
             "change": -0.2
           }
         ],
-        "aiQuickReview": "主力小幅净流出1.1亿，边际流出减速。板块微幅震荡。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力小幅净流出1.1亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "旅游及酒店",
@@ -208658,15 +208653,15 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "🔄",
-        "marginalLabel": "持平",
-        "marginalColor": "#ff9800",
-        "marginalBg": "#fff3e0",
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
         "marginalScore": 50,
-        "watchTag": "🟡反转",
-        "watchTagLabel": "反转",
-        "watchTagColor": "#ff9800",
-        "watchTagBg": "#fff3e0",
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
         "score": 41.8,
         "signal": null,
         "history": [
@@ -208811,7 +208806,7 @@
             "change": -0.87
           }
         ],
-        "aiQuickReview": "主力小幅净流出1.6亿，边际持平。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出1.6亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "服装家纺",
@@ -208857,16 +208852,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 49.3,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 44.3,
         "signal": null,
         "history": [
           {
@@ -209010,7 +209005,7 @@
             "change": -0.02
           }
         ],
-        "aiQuickReview": "主力小幅净流出1.6亿，边际流入减速。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出1.6亿。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "农产品加工",
@@ -209056,16 +209051,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 46.9,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 41.9,
         "signal": null,
         "history": [
           {
@@ -209209,7 +209204,7 @@
             "change": -1.13
           }
         ],
-        "aiQuickReview": "主力小幅净流出1.7亿，边际流入减速。板块下跌1.13%。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出1.7亿。板块下跌1.13%。综合评分中性，多空分歧较大。"
       },
       {
         "name": "工程机械",
@@ -209255,16 +209250,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 48.9,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.9,
         "signal": null,
         "history": [
           {
@@ -209408,7 +209403,7 @@
             "change": -0.13
           }
         ],
-        "aiQuickReview": "主力小幅净流出1.7亿，边际流入减速。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出1.7亿。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "纺织制造",
@@ -209454,16 +209449,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 48.7,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.7,
         "signal": null,
         "history": [
           {
@@ -209607,7 +209602,7 @@
             "change": -0.11
           }
         ],
-        "aiQuickReview": "主力小幅净流出1.8亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出1.8亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "农化制品",
@@ -209653,16 +209648,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 48.9,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.9,
         "signal": null,
         "history": [
           {
@@ -209806,7 +209801,7 @@
             "change": -0.3
           }
         ],
-        "aiQuickReview": "主力小幅净流出1.9亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出1.9亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "港口航运",
@@ -209852,16 +209847,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 47.6,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 42.6,
         "signal": null,
         "history": [
           {
@@ -210005,7 +210000,7 @@
             "change": -0.91
           }
         ],
-        "aiQuickReview": "主力小幅净流出1.9亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出1.9亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "包装印刷",
@@ -210051,16 +210046,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 38.0,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.0,
         "signal": null,
         "history": [
           {
@@ -210204,7 +210199,7 @@
             "change": -0.47
           }
         ],
-        "aiQuickReview": "主力小幅净流出2.0亿，边际流出减速。板块微幅震荡。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力小幅净流出2.0亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "食品加工制造",
@@ -210250,16 +210245,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 48.6,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.6,
         "signal": null,
         "history": [
           {
@@ -210403,7 +210398,7 @@
             "change": -0.38
           }
         ],
-        "aiQuickReview": "主力小幅净流出2.0亿，边际流入减速。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出2.0亿。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "军工装备",
@@ -210449,16 +210444,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 40.7,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 45.7,
         "signal": null,
         "history": [
           {
@@ -210602,7 +210597,7 @@
             "change": 0.64
           }
         ],
-        "aiQuickReview": "主力小幅净流出2.1亿，边际流出减速。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出2.1亿。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "能源金属",
@@ -210648,16 +210643,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 49.5,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 44.5,
         "signal": null,
         "history": [
           {
@@ -210801,7 +210796,7 @@
             "change": 0.68
           }
         ],
-        "aiQuickReview": "主力小幅净流出2.2亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出2.2亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "环境治理",
@@ -210847,16 +210842,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 39.6,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 44.6,
         "signal": null,
         "history": [
           {
@@ -211000,7 +210995,7 @@
             "change": 0.15
           }
         ],
-        "aiQuickReview": "主力小幅净流出2.5亿，边际流出减速。板块微幅震荡。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力小幅净流出2.5亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "多元金融",
@@ -211046,16 +211041,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 46.9,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 41.9,
         "signal": null,
         "history": [
           {
@@ -211199,7 +211194,7 @@
             "change": -0.92
           }
         ],
-        "aiQuickReview": "主力小幅净流出2.5亿，边际流入减速。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出2.5亿。板块微幅震荡。已连续4日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "生物制品",
@@ -211440,16 +211435,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 1,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 50.5,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 45.5,
         "signal": null,
         "history": [
           {
@@ -211593,7 +211588,7 @@
             "change": 0.99
           }
         ],
-        "aiQuickReview": "主力小幅净流出2.8亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出2.8亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "其他电源设备",
@@ -211639,16 +211634,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 50.4,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 45.4,
         "signal": null,
         "history": [
           {
@@ -211792,7 +211787,7 @@
             "change": 0.72
           }
         ],
-        "aiQuickReview": "主力小幅净流出2.8亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出2.8亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "电机",
@@ -211838,16 +211833,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 3,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 37.3,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 42.3,
         "signal": null,
         "history": [
           {
@@ -211991,7 +211986,7 @@
             "change": -0.37
           }
         ],
-        "aiQuickReview": "主力小幅净流出3.1亿，边际流出减速。板块微幅震荡。已连续3日流出。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力小幅净流出3.1亿。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "机场航运",
@@ -212033,16 +212028,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 35.7,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 40.7,
         "signal": null,
         "history": [
           {
@@ -212186,7 +212181,7 @@
             "change": -0.8
           }
         ],
-        "aiQuickReview": "主力小幅净流出3.1亿，边际流出减速。板块微幅震荡。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力小幅净流出3.1亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "塑料制品",
@@ -212232,16 +212227,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 5,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 51.0,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 46.0,
         "signal": null,
         "history": [
           {
@@ -212385,7 +212380,7 @@
             "change": 1.0
           }
         ],
-        "aiQuickReview": "主力小幅净流出3.1亿，边际流入减速。板块微幅震荡。已连续5日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出3.1亿。板块微幅震荡。已连续5日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "美容护理",
@@ -212431,16 +212426,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 35.2,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 40.2,
         "signal": null,
         "history": [
           {
@@ -212584,7 +212579,7 @@
             "change": -1.38
           }
         ],
-        "aiQuickReview": "主力小幅净流出3.7亿，边际流出减速。板块下跌1.38%。已连续4日流出。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力小幅净流出3.7亿。板块下跌1.38%。已连续4日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "元件",
@@ -212630,16 +212625,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 53.9,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 48.9,
         "signal": null,
         "history": [
           {
@@ -212783,7 +212778,7 @@
             "change": 2.52
           }
         ],
-        "aiQuickReview": "主力小幅净流出3.9亿，边际流入减速。板块上涨2.52%。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出3.9亿。板块上涨2.52%。综合评分中性，多空分歧较大。"
       },
       {
         "name": "军工电子",
@@ -212829,16 +212824,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 5,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 49.7,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 44.7,
         "signal": null,
         "history": [
           {
@@ -212982,7 +212977,7 @@
             "change": 0.46
           }
         ],
-        "aiQuickReview": "主力小幅净流出4.0亿，边际流入减速。板块微幅震荡。已连续5日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出4.0亿。板块微幅震荡。已连续5日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "种植业与林业",
@@ -213028,16 +213023,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 34.4,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 39.4,
         "signal": null,
         "history": [
           {
@@ -213181,7 +213176,7 @@
             "change": -1.54
           }
         ],
-        "aiQuickReview": "主力小幅净流出4.0亿，边际流出减速。板块下跌1.54%。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力小幅净流出4.0亿。板块下跌1.54%。综合评分偏低，资金面偏弱。"
       },
       {
         "name": "银行",
@@ -213227,15 +213222,15 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 1,
         "continuousDays": 0,
-        "marginalTag": "🔄",
-        "marginalLabel": "方向反转",
-        "marginalColor": "#ff9800",
-        "marginalBg": "#fff3e0",
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
         "marginalScore": 50,
-        "watchTag": "🟡反转",
-        "watchTagLabel": "反转",
-        "watchTagColor": "#ff9800",
-        "watchTagBg": "#fff3e0",
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
         "score": 43.2,
         "signal": null,
         "history": [
@@ -213380,7 +213375,7 @@
             "change": -0.54
           }
         ],
-        "aiQuickReview": "主力小幅净流出4.0亿，边际方向反转。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出4.0亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "房地产",
@@ -213426,16 +213421,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 46.8,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 41.8,
         "signal": null,
         "history": [
           {
@@ -213579,7 +213574,7 @@
             "change": -1.22
           }
         ],
-        "aiQuickReview": "主力小幅净流出4.2亿，边际流入减速。板块下跌1.22%。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出4.2亿。板块下跌1.22%。综合评分中性，多空分歧较大。"
       },
       {
         "name": "养殖业",
@@ -213625,16 +213620,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 1,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 46.0,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 41.0,
         "signal": null,
         "history": [
           {
@@ -213778,7 +213773,7 @@
             "change": -1.11
           }
         ],
-        "aiQuickReview": "主力小幅净流出4.9亿，边际流入减速。板块下跌1.11%。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力小幅净流出4.9亿。板块下跌1.11%。综合评分中性，多空分歧较大。"
       },
       {
         "name": "风电设备",
@@ -213824,16 +213819,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 47.0,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 42.0,
         "signal": null,
         "history": [
           {
@@ -213977,7 +213972,7 @@
             "change": -0.55
           }
         ],
-        "aiQuickReview": "主力净流出5.0亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流出5.0亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "汽车零部件",
@@ -214023,16 +214018,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 3,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 49.2,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 44.2,
         "signal": null,
         "history": [
           {
@@ -214176,7 +214171,7 @@
             "change": 0.06
           }
         ],
-        "aiQuickReview": "主力净流出5.2亿，边际流入减速。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流出5.2亿。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "饮料制造",
@@ -214222,16 +214217,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 35.4,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 40.4,
         "signal": null,
         "history": [
           {
@@ -214375,7 +214370,7 @@
             "change": -1.68
           }
         ],
-        "aiQuickReview": "主力净流出5.3亿，边际流出减速。板块下跌1.68%。已连续4日流出。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力净流出5.3亿。板块下跌1.68%。已连续4日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "通用设备",
@@ -214421,16 +214416,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 50.3,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 45.3,
         "signal": null,
         "history": [
           {
@@ -214574,7 +214569,7 @@
             "change": 0.69
           }
         ],
-        "aiQuickReview": "主力净流出5.5亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流出5.5亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "化学原料",
@@ -214620,16 +214615,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 37.4,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 42.4,
         "signal": null,
         "history": [
           {
@@ -214773,7 +214768,7 @@
             "change": -0.45
           }
         ],
-        "aiQuickReview": "主力净流出6.1亿，边际流出减速。板块微幅震荡。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力净流出6.1亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "化学纤维",
@@ -214819,16 +214814,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 38.0,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.0,
         "signal": null,
         "history": [
           {
@@ -214972,7 +214967,7 @@
             "change": 0.58
           }
         ],
-        "aiQuickReview": "主力净流出6.1亿，边际流出减速。板块微幅震荡。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力净流出6.1亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "工业金属",
@@ -215018,16 +215013,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 50.4,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 45.4,
         "signal": null,
         "history": [
           {
@@ -215171,7 +215166,7 @@
             "change": 0.94
           }
         ],
-        "aiQuickReview": "主力净流出6.2亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流出6.2亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "白色家电",
@@ -215217,16 +215212,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 3,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 38.5,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.5,
         "signal": null,
         "history": [
           {
@@ -215370,7 +215365,7 @@
             "change": 0.22
           }
         ],
-        "aiQuickReview": "主力净流出6.5亿，边际流出减速。板块微幅震荡。已连续3日流出。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力净流出6.5亿。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "医疗器械",
@@ -215416,16 +215411,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 1,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 38.0,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.0,
         "signal": null,
         "history": [
           {
@@ -215569,7 +215564,7 @@
             "change": -0.12
           }
         ],
-        "aiQuickReview": "主力净流出8.3亿，边际流出减速。板块微幅震荡。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力净流出8.3亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "影视院线",
@@ -215615,16 +215610,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 8,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 32.2,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 37.2,
         "signal": null,
         "history": [
           {
@@ -215768,7 +215763,7 @@
             "change": -2.56
           }
         ],
-        "aiQuickReview": "主力净流出8.6亿，边际流出减速。板块下跌2.56%。已连续8日流出。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力净流出8.6亿。板块下跌2.56%。已连续8日流出。综合评分偏低，资金面偏弱。"
       },
       {
         "name": "汽车整车",
@@ -215814,16 +215809,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 34.9,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 39.9,
         "signal": null,
         "history": [
           {
@@ -215967,7 +215962,7 @@
             "change": -1.24
           }
         ],
-        "aiQuickReview": "主力净流出9.0亿，边际流出减速。板块下跌1.24%。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力净流出9.0亿。板块下跌1.24%。综合评分偏低，资金面偏弱。"
       },
       {
         "name": "光伏设备",
@@ -216013,16 +216008,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 3,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 48.0,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.0,
         "signal": null,
         "history": [
           {
@@ -216166,7 +216161,7 @@
             "change": -0.07
           }
         ],
-        "aiQuickReview": "主力净流出9.3亿，边际流入减速。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流出9.3亿。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "光学光电子",
@@ -216212,16 +216207,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 3,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 50.6,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 45.6,
         "signal": null,
         "history": [
           {
@@ -216365,7 +216360,7 @@
             "change": 1.29
           }
         ],
-        "aiQuickReview": "主力净流出10.2亿，边际流入减速。板块上涨1.29%。已连续3日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流出10.2亿。板块上涨1.29%。已连续3日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "零售",
@@ -216411,16 +216406,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 4,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 44.4,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 39.4,
         "signal": null,
         "history": [
           {
@@ -216564,7 +216559,7 @@
             "change": -1.52
           }
         ],
-        "aiQuickReview": "主力净流出10.3亿，边际流入减速。板块下跌1.52%。已连续4日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流出10.3亿。板块下跌1.52%。已连续4日流出。综合评分偏低，资金面偏弱。"
       },
       {
         "name": "中药",
@@ -216610,16 +216605,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 1,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 46.1,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 41.1,
         "signal": null,
         "history": [
           {
@@ -216763,7 +216758,7 @@
             "change": -0.81
           }
         ],
-        "aiQuickReview": "主力净流出10.7亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流出10.7亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "软件开发",
@@ -216809,16 +216804,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 3,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 48.2,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.2,
         "signal": null,
         "history": [
           {
@@ -216962,7 +216957,7 @@
             "change": 0.05
           }
         ],
-        "aiQuickReview": "主力净流出11.2亿，边际流入减速。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流出11.2亿。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "化学制品",
@@ -217008,16 +217003,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 38.2,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 43.2,
         "signal": null,
         "history": [
           {
@@ -217161,7 +217156,7 @@
             "change": 0.09
           }
         ],
-        "aiQuickReview": "主力净流出11.2亿，边际流出减速。板块微幅震荡。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力净流出11.2亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "建筑装饰",
@@ -217207,16 +217202,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 3,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 47.5,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 42.5,
         "signal": null,
         "history": [
           {
@@ -217360,7 +217355,7 @@
             "change": -0.13
           }
         ],
-        "aiQuickReview": "主力净流出12.1亿，边际流入减速。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流出12.1亿。板块微幅震荡。已连续3日流出。综合评分中性，多空分歧较大。"
       },
       {
         "name": "保险",
@@ -217406,16 +217401,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 7,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 31.3,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 36.3,
         "signal": null,
         "history": [
           {
@@ -217559,7 +217554,7 @@
             "change": -1.79
           }
         ],
-        "aiQuickReview": "主力净流出12.6亿，边际流出减速。板块下跌1.79%。已连续7日流出。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力净流出12.6亿。板块下跌1.79%。已连续7日流出。综合评分偏低，资金面偏弱。"
       },
       {
         "name": "计算机设备",
@@ -217605,16 +217600,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 1,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 47.3,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 42.3,
         "signal": null,
         "history": [
           {
@@ -217758,22 +217753,21 @@
             "change": 0.24
           }
         ],
-        "aiQuickReview": "主力净流出17.9亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力净流出17.9亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "白酒",
         "code": "881273",
         "change": -1.94,
         "indexPrice": 0,
-        "stockCount": 19,
+        "stockCount": 0,
         "riseCount": 5,
         "fallCount": 14,
         "leader": "",
         "leaderChange": 0,
-        "_riseEstimated": true,
         "risePct": 26.3,
-        "flowIn": 34.11,
-        "flowOut": 53.36,
+        "flowIn": 0,
+        "flowOut": 0,
         "inflow": -19.25,
         "intraday": [
           {
@@ -217802,27 +217796,20 @@
           }
         ],
         "consecutiveInDays": 0,
-        "consecutiveOutDays": 1,
+        "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 31.8,
+        "marginalTag": "🔄",
+        "marginalLabel": "持平",
+        "marginalColor": "#ff9800",
+        "marginalBg": "#fff3e0",
+        "marginalScore": 50,
+        "watchTag": "🟡反转",
+        "watchTagLabel": "反转",
+        "watchTagColor": "#ff9800",
+        "watchTagBg": "#fff3e0",
+        "score": 39.0,
         "signal": "disaster",
         "history": [
-          {
-            "date": "2026-06-11",
-            "flowIn": 53.3,
-            "flowOut": 52.31,
-            "inflow": 0.98,
-            "change": -1.08
-          },
           {
             "date": "2026-06-15",
             "flowIn": 54.91,
@@ -217955,24 +217942,30 @@
             "flowOut": 53.36,
             "inflow": -19.25,
             "change": -1.94
+          },
+          {
+            "date": "2026-08-14",
+            "flowIn": 0,
+            "flowOut": 0,
+            "inflow": -19.25,
+            "change": -1.94
           }
         ],
-        "aiQuickReview": "主力净流出19.2亿，边际流出减速。板块下跌1.94%。当前处于砸盘重灾区，资金持续出逃，建议规避。"
+        "aiQuickReview": "主力净流出19.2亿，边际持平。板块下跌1.94%。当前处于砸盘重灾区，资金持续出逃，建议规避。"
       },
       {
         "name": "电网设备",
         "code": "881278",
         "change": -0.89,
         "indexPrice": 0,
-        "stockCount": 140,
+        "stockCount": 0,
         "riseCount": 55,
         "fallCount": 85,
         "leader": "",
         "leaderChange": 0,
-        "_riseEstimated": true,
         "risePct": 39.3,
-        "flowIn": 105.41,
-        "flowOut": 130.08,
+        "flowIn": 0,
+        "flowOut": 0,
         "inflow": -24.67,
         "intraday": [
           {
@@ -218001,27 +217994,20 @@
           }
         ],
         "consecutiveInDays": 0,
-        "consecutiveOutDays": 2,
+        "consecutiveOutDays": 3,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 44.2,
+        "marginalTag": "🔄",
+        "marginalLabel": "持平",
+        "marginalColor": "#ff9800",
+        "marginalBg": "#fff3e0",
+        "marginalScore": 50,
+        "watchTag": "🟡反转",
+        "watchTagLabel": "反转",
+        "watchTagColor": "#ff9800",
+        "watchTagBg": "#fff3e0",
+        "score": 40.2,
         "signal": "disaster",
         "history": [
-          {
-            "date": "2026-06-12",
-            "flowIn": 250.53,
-            "flowOut": 259.5,
-            "inflow": -8.97,
-            "change": 1.3
-          },
           {
             "date": "2026-06-14",
             "flowIn": 250.53,
@@ -218154,9 +218140,16 @@
             "flowOut": 130.08,
             "inflow": -24.67,
             "change": -0.89
+          },
+          {
+            "date": "2026-08-14",
+            "flowIn": 0,
+            "flowOut": 0,
+            "inflow": -24.67,
+            "change": -0.89
           }
         ],
-        "aiQuickReview": "主力大幅净流出24.7亿，边际流入减速。板块微幅震荡。当前处于砸盘重灾区，资金持续出逃，建议规避。"
+        "aiQuickReview": "主力大幅净流出24.7亿，边际持平。板块微幅震荡。已连续3日流出。当前处于砸盘重灾区，资金持续出逃，建议规避。"
       },
       {
         "name": "医疗服务",
@@ -218202,16 +218195,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 1,
         "continuousDays": 0,
-        "marginalTag": "↓",
-        "marginalLabel": "流出减速",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 30,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 35.0,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 40.0,
         "signal": null,
         "history": [
           {
@@ -218355,22 +218348,21 @@
             "change": -0.33
           }
         ],
-        "aiQuickReview": "主力大幅净流出25.9亿，边际流出减速。板块微幅震荡。综合评分偏低，资金面偏弱。"
+        "aiQuickReview": "主力大幅净流出25.9亿。板块微幅震荡。综合评分中性，多空分歧较大。"
       },
       {
         "name": "文化传媒",
         "code": "881164",
         "change": -1.25,
         "indexPrice": 0,
-        "stockCount": 84,
+        "stockCount": 0,
         "riseCount": 29,
         "fallCount": 55,
         "leader": "",
         "leaderChange": 0,
-        "_riseEstimated": true,
         "risePct": 34.5,
-        "flowIn": 92.2,
-        "flowOut": 123.92,
+        "flowIn": 0,
+        "flowOut": 0,
         "inflow": -31.71,
         "intraday": [
           {
@@ -218399,27 +218391,20 @@
           }
         ],
         "consecutiveInDays": 0,
-        "consecutiveOutDays": 2,
+        "consecutiveOutDays": 3,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 42.2,
+        "marginalTag": "🔄",
+        "marginalLabel": "持平",
+        "marginalColor": "#ff9800",
+        "marginalBg": "#fff3e0",
+        "marginalScore": 50,
+        "watchTag": "🟡反转",
+        "watchTagLabel": "反转",
+        "watchTagColor": "#ff9800",
+        "watchTagBg": "#fff3e0",
+        "score": 38.6,
         "signal": "disaster",
         "history": [
-          {
-            "date": "2026-06-18",
-            "flowIn": 129.99,
-            "flowOut": 130.46,
-            "inflow": -0.47,
-            "change": -0.14
-          },
           {
             "date": "2026-06-22",
             "flowIn": 152.14,
@@ -218552,9 +218537,16 @@
             "flowOut": 123.92,
             "inflow": -31.71,
             "change": -1.25
+          },
+          {
+            "date": "2026-08-14",
+            "flowIn": 0,
+            "flowOut": 0,
+            "inflow": -31.71,
+            "change": -1.25
           }
         ],
-        "aiQuickReview": "主力大幅净流出31.7亿，边际流入减速。板块下跌1.25%。当前处于砸盘重灾区，资金持续出逃，建议规避。"
+        "aiQuickReview": "主力大幅净流出31.7亿，边际持平。板块下跌1.25%。已连续3日流出。当前处于砸盘重灾区，资金持续出逃，建议规避。"
       },
       {
         "name": "化学制药",
@@ -218600,16 +218592,16 @@
         "consecutiveInDays": 0,
         "consecutiveOutDays": 1,
         "continuousDays": 0,
-        "marginalTag": "↑",
-        "marginalLabel": "流入减速",
-        "marginalColor": "#4caf50",
-        "marginalBg": "#e8f5e9",
-        "marginalScore": 70,
-        "watchTag": "🟢潜伏",
-        "watchTagLabel": "潜伏",
-        "watchTagColor": "#4caf50",
-        "watchTagBg": "#e8f5e9",
-        "score": 42.8,
+        "marginalTag": "",
+        "marginalLabel": "",
+        "marginalColor": "#999",
+        "marginalBg": "#f5f5f5",
+        "marginalScore": 50,
+        "watchTag": "",
+        "watchTagLabel": "",
+        "watchTagColor": "#999",
+        "watchTagBg": "#f5f5f5",
+        "score": 37.8,
         "signal": null,
         "history": [
           {
@@ -218753,22 +218745,21 @@
             "change": -0.46
           }
         ],
-        "aiQuickReview": "主力大幅净流出40.9亿，边际流入减速。板块微幅震荡。综合评分中性，多空分歧较大。"
+        "aiQuickReview": "主力大幅净流出40.9亿。板块微幅震荡。综合评分偏低，资金面偏弱。"
       },
       {
         "name": "证券",
         "code": "881157",
         "change": -1.31,
         "indexPrice": 0,
-        "stockCount": 50,
+        "stockCount": 0,
         "riseCount": 17,
         "fallCount": 33,
         "leader": "",
         "leaderChange": 0,
-        "_riseEstimated": true,
         "risePct": 34.0,
-        "flowIn": 68.29,
-        "flowOut": 114.39,
+        "flowIn": 0,
+        "flowOut": 0,
         "inflow": -46.1,
         "intraday": [
           {
@@ -218797,27 +218788,20 @@
           }
         ],
         "consecutiveInDays": 0,
-        "consecutiveOutDays": 1,
+        "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↓↓",
-        "marginalLabel": "加速流出",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 0,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 21.7,
+        "marginalTag": "🔄",
+        "marginalLabel": "持平",
+        "marginalColor": "#ff9800",
+        "marginalBg": "#fff3e0",
+        "marginalScore": 50,
+        "watchTag": "🟡反转",
+        "watchTagLabel": "反转",
+        "watchTagColor": "#ff9800",
+        "watchTagBg": "#fff3e0",
+        "score": 36.7,
         "signal": "disaster",
         "history": [
-          {
-            "date": "2026-06-17",
-            "flowIn": 163.88,
-            "flowOut": 185.64,
-            "inflow": -21.76,
-            "change": -0.29
-          },
           {
             "date": "2026-06-22",
             "flowIn": 532.35,
@@ -218950,24 +218934,30 @@
             "flowOut": 114.39,
             "inflow": -46.1,
             "change": -1.31
+          },
+          {
+            "date": "2026-08-14",
+            "flowIn": 0,
+            "flowOut": 0,
+            "inflow": -46.1,
+            "change": -1.31
           }
         ],
-        "aiQuickReview": "主力大幅净流出46.1亿，边际加速流出。板块下跌1.31%。当前处于砸盘重灾区，资金持续出逃，建议规避。"
+        "aiQuickReview": "主力大幅净流出46.1亿，边际持平。板块下跌1.31%。当前处于砸盘重灾区，资金持续出逃，建议规避。"
       },
       {
         "name": "电力",
         "code": "881145",
         "change": -2.65,
         "indexPrice": 0,
-        "stockCount": 110,
+        "stockCount": 0,
         "riseCount": 20,
         "fallCount": 90,
         "leader": "",
         "leaderChange": 0,
-        "_riseEstimated": true,
         "risePct": 18.2,
-        "flowIn": 130.87,
-        "flowOut": 191.52,
+        "flowIn": 0,
+        "flowOut": 0,
         "inflow": -60.65,
         "intraday": [
           {
@@ -218996,18 +218986,18 @@
           }
         ],
         "consecutiveInDays": 0,
-        "consecutiveOutDays": 1,
+        "consecutiveOutDays": 2,
         "continuousDays": 0,
-        "marginalTag": "↓↓",
-        "marginalLabel": "加速流出",
-        "marginalColor": "#78909c",
-        "marginalBg": "#eceff1",
-        "marginalScore": 0,
-        "watchTag": "⚫撤退",
-        "watchTagLabel": "撤退",
-        "watchTagColor": "#78909c",
-        "watchTagBg": "#eceff1",
-        "score": 18.1,
+        "marginalTag": "🔄",
+        "marginalLabel": "持平",
+        "marginalColor": "#ff9800",
+        "marginalBg": "#fff3e0",
+        "marginalScore": 50,
+        "watchTag": "🟡反转",
+        "watchTagLabel": "反转",
+        "watchTagColor": "#ff9800",
+        "watchTagBg": "#fff3e0",
+        "score": 32.5,
         "signal": "disaster",
         "history": [
           {
@@ -219142,9 +219132,16 @@
             "flowOut": 191.52,
             "inflow": -60.65,
             "change": -2.65
+          },
+          {
+            "date": "2026-08-14",
+            "flowIn": 0,
+            "flowOut": 0,
+            "inflow": -60.65,
+            "change": -2.65
           }
         ],
-        "aiQuickReview": "主力大幅净流出60.6亿，边际加速流出。板块下跌2.65%。当前处于砸盘重灾区，资金持续出逃，建议规避。"
+        "aiQuickReview": "主力大幅净流出60.6亿，边际持平。板块下跌2.65%。当前处于砸盘重灾区，资金持续出逃，建议规避。"
       }
     ]
   },
@@ -220696,7 +220693,7 @@
       ]
     },
     "2026-08-14": {
-      "totalStocks": 5628,
+      "totalStocks": 4863,
       "totalRise": 2848,
       "totalFall": 2780,
       "risePct": 50.6,
@@ -220704,8 +220701,8 @@
       "sectorDown": 49,
       "topSector": "电子化学品",
       "topSectorChange": 4.07,
-      "totalFlowIn": 7153.45,
-      "totalFlowOut": 7356.35,
+      "totalFlowIn": 6090.22,
+      "totalFlowOut": 6169.69,
       "netFlow": -202.92,
       "avgChange": 0.01,
       "indices": [
@@ -227336,11 +227333,11 @@
               "net": 16.19
             }
           ],
-          "score": 68.5,
-          "marginalTag": "↑↑",
-          "marginalLabel": "加速流入",
-          "watchTag": "🔴主线",
-          "watchTagColor": "#cc0000"
+          "score": 56.0,
+          "marginalTag": "",
+          "marginalLabel": "",
+          "watchTag": "",
+          "watchTagColor": "#999"
         },
         {
           "name": "非金属材料",
@@ -227374,11 +227371,11 @@
               "net": 1.28
             }
           ],
-          "score": 59.0,
-          "marginalTag": "↑",
-          "marginalLabel": "流入减速",
-          "watchTag": "🟢潜伏",
-          "watchTagColor": "#4caf50"
+          "score": 54.0,
+          "marginalTag": "",
+          "marginalLabel": "",
+          "watchTag": "",
+          "watchTagColor": "#999"
         },
         {
           "name": "通信设备",
@@ -227412,11 +227409,11 @@
               "net": 117.55
             }
           ],
-          "score": 79.4,
-          "marginalTag": "↑↑",
-          "marginalLabel": "加速流入",
-          "watchTag": "🔴主线",
-          "watchTagColor": "#cc0000"
+          "score": 66.9,
+          "marginalTag": "",
+          "marginalLabel": "",
+          "watchTag": "",
+          "watchTagColor": "#999"
         },
         {
           "name": "金属新材料",
@@ -227450,11 +227447,11 @@
               "net": 6.35
             }
           ],
-          "score": 65.1,
-          "marginalTag": "↑↑",
-          "marginalLabel": "加速流入",
-          "watchTag": "🔴主线",
-          "watchTagColor": "#cc0000"
+          "score": 52.6,
+          "marginalTag": "",
+          "marginalLabel": "",
+          "watchTag": "",
+          "watchTagColor": "#999"
         },
         {
           "name": "小金属",
@@ -227488,11 +227485,11 @@
               "net": 28.38
             }
           ],
-          "score": 67.4,
-          "marginalTag": "↑↑",
-          "marginalLabel": "加速流入",
-          "watchTag": "🔴主线",
-          "watchTagColor": "#cc0000"
+          "score": 54.9,
+          "marginalTag": "",
+          "marginalLabel": "",
+          "watchTag": "",
+          "watchTagColor": "#999"
         },
         {
           "name": "半导体",
@@ -227526,11 +227523,11 @@
               "net": 0.59
             }
           ],
-          "score": 55.4,
-          "marginalTag": "↑",
-          "marginalLabel": "流入减速",
-          "watchTag": "🟢潜伏",
-          "watchTagColor": "#4caf50"
+          "score": 50.4,
+          "marginalTag": "",
+          "marginalLabel": "",
+          "watchTag": "",
+          "watchTagColor": "#999"
         },
         {
           "name": "其他电子",
@@ -227564,11 +227561,11 @@
               "net": 3.07
             }
           ],
-          "score": 55.3,
-          "marginalTag": "↑",
-          "marginalLabel": "流入减速",
-          "watchTag": "🟢潜伏",
-          "watchTagColor": "#4caf50"
+          "score": 50.3,
+          "marginalTag": "",
+          "marginalLabel": "",
+          "watchTag": "",
+          "watchTagColor": "#999"
         },
         {
           "name": "环保设备",
@@ -227602,11 +227599,11 @@
               "net": 0.96
             }
           ],
-          "score": 54.8,
-          "marginalTag": "↑",
-          "marginalLabel": "流入减速",
-          "watchTag": "🟢潜伏",
-          "watchTagColor": "#4caf50"
+          "score": 49.8,
+          "marginalTag": "",
+          "marginalLabel": "",
+          "watchTag": "",
+          "watchTagColor": "#999"
         },
         {
           "name": "通信服务",
@@ -227640,11 +227637,11 @@
               "net": 21.96
             }
           ],
-          "score": 65.8,
-          "marginalTag": "↑↑",
-          "marginalLabel": "加速流入",
-          "watchTag": "🔴主线",
-          "watchTagColor": "#cc0000"
+          "score": 53.3,
+          "marginalTag": "",
+          "marginalLabel": "",
+          "watchTag": "",
+          "watchTagColor": "#999"
         }
       ],
       "latent": [
@@ -227679,11 +227676,11 @@
               "net": 16.52
             }
           ],
-          "score": 62.0,
-          "marginalTag": "↑↑",
-          "marginalLabel": "加速流入",
-          "watchTag": "🔴主线",
-          "watchTagColor": "#cc0000"
+          "score": 51.2,
+          "marginalTag": "🔄",
+          "marginalLabel": "持平",
+          "watchTag": "🟡反转",
+          "watchTagColor": "#ff9800"
         },
         {
           "name": "建筑材料",
@@ -227716,11 +227713,11 @@
               "net": 14.48
             }
           ],
-          "score": 62.2,
-          "marginalTag": "↑↑",
-          "marginalLabel": "加速流入",
-          "watchTag": "🔴主线",
-          "watchTagColor": "#cc0000"
+          "score": 51.0,
+          "marginalTag": "🔄",
+          "marginalLabel": "持平",
+          "watchTag": "🟡反转",
+          "watchTagColor": "#ff9800"
         },
         {
           "name": "电池",
@@ -227753,11 +227750,11 @@
               "net": 13.84
             }
           ],
-          "score": 55.7,
-          "marginalTag": "↑",
-          "marginalLabel": "流入减速",
-          "watchTag": "🟢潜伏",
-          "watchTagColor": "#4caf50"
+          "score": 52.3,
+          "marginalTag": "🔄",
+          "marginalLabel": "持平",
+          "watchTag": "🟡反转",
+          "watchTagColor": "#ff9800"
         },
         {
           "name": "互联网电商",
@@ -227790,11 +227787,11 @@
               "net": 7.25
             }
           ],
-          "score": 60.0,
-          "marginalTag": "↑↑",
-          "marginalLabel": "加速流入",
-          "watchTag": "🔴主线",
-          "watchTagColor": "#cc0000"
+          "score": 48.4,
+          "marginalTag": "🔄",
+          "marginalLabel": "持平",
+          "watchTag": "🟡反转",
+          "watchTagColor": "#ff9800"
         },
         {
           "name": "煤炭开采加工",
@@ -227823,11 +227820,11 @@
               "net": 6.87
             }
           ],
-          "score": 55.0,
-          "marginalTag": "↑",
-          "marginalLabel": "流入减速",
-          "watchTag": "🟢潜伏",
-          "watchTagColor": "#4caf50"
+          "score": 51.2,
+          "marginalTag": "🔄",
+          "marginalLabel": "持平",
+          "watchTag": "🟡反转",
+          "watchTagColor": "#ff9800"
         }
       ],
       "disaster": [
@@ -227862,11 +227859,11 @@
               "net": -60.65
             }
           ],
-          "score": 18.1,
-          "marginalTag": "↓↓",
-          "marginalLabel": "加速流出",
-          "watchTag": "⚫撤退",
-          "watchTagColor": "#78909c"
+          "score": 32.5,
+          "marginalTag": "🔄",
+          "marginalLabel": "持平",
+          "watchTag": "🟡反转",
+          "watchTagColor": "#ff9800"
         },
         {
           "name": "证券",
@@ -227899,11 +227896,11 @@
               "net": -46.1
             }
           ],
-          "score": 21.7,
-          "marginalTag": "↓↓",
-          "marginalLabel": "加速流出",
-          "watchTag": "⚫撤退",
-          "watchTagColor": "#78909c"
+          "score": 36.7,
+          "marginalTag": "🔄",
+          "marginalLabel": "持平",
+          "watchTag": "🟡反转",
+          "watchTagColor": "#ff9800"
         },
         {
           "name": "文化传媒",
@@ -227936,11 +227933,11 @@
               "net": -31.71
             }
           ],
-          "score": 42.2,
-          "marginalTag": "↑",
-          "marginalLabel": "流入减速",
-          "watchTag": "🟢潜伏",
-          "watchTagColor": "#4caf50"
+          "score": 38.6,
+          "marginalTag": "🔄",
+          "marginalLabel": "持平",
+          "watchTag": "🟡反转",
+          "watchTagColor": "#ff9800"
         },
         {
           "name": "电网设备",
@@ -227973,11 +227970,11 @@
               "net": -24.67
             }
           ],
-          "score": 44.2,
-          "marginalTag": "↑",
-          "marginalLabel": "流入减速",
-          "watchTag": "🟢潜伏",
-          "watchTagColor": "#4caf50"
+          "score": 40.2,
+          "marginalTag": "🔄",
+          "marginalLabel": "持平",
+          "watchTag": "🟡反转",
+          "watchTagColor": "#ff9800"
         },
         {
           "name": "白酒",
@@ -228010,11 +228007,11 @@
               "net": -19.25
             }
           ],
-          "score": 31.8,
-          "marginalTag": "↓",
-          "marginalLabel": "流出减速",
-          "watchTag": "⚫撤退",
-          "watchTagColor": "#78909c"
+          "score": 39.0,
+          "marginalTag": "🔄",
+          "marginalLabel": "持平",
+          "watchTag": "🟡反转",
+          "watchTagColor": "#ff9800"
         }
       ],
       "risk": []
@@ -228022,537 +228019,69 @@
   },
   "intradayChanges": {
     "date": "2026-08-14",
-    "prevPollTime": "1403",
+    "prevPollTime": "1506",
     "currentPollTime": "1657",
-    "totalChange": 130.84,
+    "totalChange": 0.0,
     "sectors": [
       {
-        "name": "半导体",
-        "prevInflow": -17.71,
-        "currInflow": 0.59,
-        "change": 18.3
-      },
-      {
-        "name": "小金属",
-        "prevInflow": 14.95,
-        "currInflow": 28.38,
-        "change": 13.43
-      },
-      {
-        "name": "通信设备",
-        "prevInflow": 104.13,
-        "currInflow": 117.55,
-        "change": 13.42
-      },
-      {
         "name": "IT服务",
-        "prevInflow": 5.81,
+        "prevInflow": 16.52,
         "currInflow": 16.52,
-        "change": 10.71
-      },
-      {
-        "name": "消费电子",
-        "prevInflow": -3.38,
-        "currInflow": 4.74,
-        "change": 8.12
-      },
-      {
-        "name": "软件开发",
-        "prevInflow": -19.12,
-        "currInflow": -11.16,
-        "change": 7.96
-      },
-      {
-        "name": "元件",
-        "prevInflow": -11.21,
-        "currInflow": -3.91,
-        "change": 7.3
-      },
-      {
-        "name": "通用设备",
-        "prevInflow": -12.58,
-        "currInflow": -5.53,
-        "change": 7.05
-      },
-      {
-        "name": "光学光电子",
-        "prevInflow": -15.32,
-        "currInflow": -10.21,
-        "change": 5.11
-      },
-      {
-        "name": "自动化设备",
-        "prevInflow": 0.14,
-        "currInflow": 4.96,
-        "change": 4.82
-      },
-      {
-        "name": "游戏",
-        "prevInflow": 7.08,
-        "currInflow": 11.59,
-        "change": 4.51
-      },
-      {
-        "name": "建筑材料",
-        "prevInflow": 10.33,
-        "currInflow": 14.48,
-        "change": 4.15
-      },
-      {
-        "name": "专用设备",
-        "prevInflow": 1.42,
-        "currInflow": 5.52,
-        "change": 4.1
-      },
-      {
-        "name": "通信服务",
-        "prevInflow": 18.02,
-        "currInflow": 21.96,
-        "change": 3.94
-      },
-      {
-        "name": "汽车零部件",
-        "prevInflow": -8.83,
-        "currInflow": -5.18,
-        "change": 3.65
-      },
-      {
-        "name": "互联网电商",
-        "prevInflow": 4.27,
-        "currInflow": 7.25,
-        "change": 2.98
-      },
-      {
-        "name": "化学制药",
-        "prevInflow": -43.8,
-        "currInflow": -40.9,
-        "change": 2.9
-      },
-      {
-        "name": "电子化学品",
-        "prevInflow": 13.64,
-        "currInflow": 16.19,
-        "change": 2.55
-      },
-      {
-        "name": "计算机设备",
-        "prevInflow": -20.36,
-        "currInflow": -17.85,
-        "change": 2.51
-      },
-      {
-        "name": "金属新材料",
-        "prevInflow": 3.99,
-        "currInflow": 6.35,
-        "change": 2.36
-      },
-      {
-        "name": "黑色家电",
-        "prevInflow": -0.62,
-        "currInflow": 1.67,
-        "change": 2.29
-      },
-      {
-        "name": "能源金属",
-        "prevInflow": -4.25,
-        "currInflow": -2.25,
-        "change": 2.0
-      },
-      {
-        "name": "钢铁",
-        "prevInflow": 2.93,
-        "currInflow": 4.92,
-        "change": 1.99
-      },
-      {
-        "name": "军工电子",
-        "prevInflow": -5.96,
-        "currInflow": -4.01,
-        "change": 1.95
-      },
-      {
-        "name": "其他电子",
-        "prevInflow": 1.3,
-        "currInflow": 3.07,
-        "change": 1.77
-      },
-      {
-        "name": "煤炭开采加工",
-        "prevInflow": 5.26,
-        "currInflow": 6.87,
-        "change": 1.61
-      },
-      {
-        "name": "塑料制品",
-        "prevInflow": -4.52,
-        "currInflow": -3.14,
-        "change": 1.38
-      },
-      {
-        "name": "油气开采及服务",
-        "prevInflow": -1.56,
-        "currInflow": -0.18,
-        "change": 1.38
-      },
-      {
-        "name": "非金属材料",
-        "prevInflow": 0.01,
-        "currInflow": 1.28,
-        "change": 1.27
-      },
-      {
-        "name": "房地产",
-        "prevInflow": -5.37,
-        "currInflow": -4.21,
-        "change": 1.16
-      },
-      {
-        "name": "中药",
-        "prevInflow": -11.73,
-        "currInflow": -10.7,
-        "change": 1.03
-      },
-      {
-        "name": "医药商业",
-        "prevInflow": -3.69,
-        "currInflow": -2.78,
-        "change": 0.91
-      },
-      {
-        "name": "环保设备",
-        "prevInflow": 0.06,
-        "currInflow": 0.96,
-        "change": 0.9
-      },
-      {
-        "name": "服装家纺",
-        "prevInflow": -2.48,
-        "currInflow": -1.64,
-        "change": 0.84
-      },
-      {
-        "name": "建筑装饰",
-        "prevInflow": -12.91,
-        "currInflow": -12.09,
-        "change": 0.82
-      },
-      {
-        "name": "其他电源设备",
-        "prevInflow": -3.64,
-        "currInflow": -2.83,
-        "change": 0.81
-      },
-      {
-        "name": "食品加工制造",
-        "prevInflow": -2.85,
-        "currInflow": -2.04,
-        "change": 0.81
-      },
-      {
-        "name": "风电设备",
-        "prevInflow": -5.79,
-        "currInflow": -5.04,
-        "change": 0.75
-      },
-      {
-        "name": "家居用品",
-        "prevInflow": -1.42,
-        "currInflow": -0.7,
-        "change": 0.72
-      },
-      {
-        "name": "农化制品",
-        "prevInflow": -2.55,
-        "currInflow": -1.88,
-        "change": 0.67
-      },
-      {
-        "name": "综合",
-        "prevInflow": 2.45,
-        "currInflow": 3.07,
-        "change": 0.62
-      },
-      {
-        "name": "工业金属",
-        "prevInflow": -6.8,
-        "currInflow": -6.23,
-        "change": 0.57
-      },
-      {
-        "name": "电网设备",
-        "prevInflow": -25.24,
-        "currInflow": -24.67,
-        "change": 0.57
-      },
-      {
-        "name": "养殖业",
-        "prevInflow": -5.48,
-        "currInflow": -4.94,
-        "change": 0.54
-      },
-      {
-        "name": "教育",
-        "prevInflow": -0.59,
-        "currInflow": -0.06,
-        "change": 0.53
-      },
-      {
-        "name": "工程机械",
-        "prevInflow": -2.2,
-        "currInflow": -1.69,
-        "change": 0.51
-      },
-      {
-        "name": "橡胶制品",
-        "prevInflow": 0.25,
-        "currInflow": 0.73,
-        "change": 0.48
-      },
-      {
-        "name": "其他社会服务",
-        "prevInflow": -1.44,
-        "currInflow": -1.03,
-        "change": 0.41
-      },
-      {
-        "name": "光伏设备",
-        "prevInflow": -9.66,
-        "currInflow": -9.28,
-        "change": 0.38
-      },
-      {
-        "name": "文化传媒",
-        "prevInflow": -32.08,
-        "currInflow": -31.71,
-        "change": 0.37
-      },
-      {
-        "name": "电池",
-        "prevInflow": 13.47,
-        "currInflow": 13.84,
-        "change": 0.37
-      },
-      {
-        "name": "零售",
-        "prevInflow": -10.63,
-        "currInflow": -10.3,
-        "change": 0.33
-      },
-      {
-        "name": "贵金属",
-        "prevInflow": 5.37,
-        "currInflow": 5.67,
-        "change": 0.3
-      },
-      {
-        "name": "港口航运",
-        "prevInflow": -2.12,
-        "currInflow": -1.89,
-        "change": 0.23
-      },
-      {
-        "name": "多元金融",
-        "prevInflow": -2.71,
-        "currInflow": -2.51,
-        "change": 0.2
-      },
-      {
-        "name": "燃气",
-        "prevInflow": 1.09,
-        "currInflow": 1.29,
-        "change": 0.2
-      },
-      {
-        "name": "纺织制造",
-        "prevInflow": -1.97,
-        "currInflow": -1.78,
-        "change": 0.19
-      },
-      {
-        "name": "农产品加工",
-        "prevInflow": -1.85,
-        "currInflow": -1.67,
-        "change": 0.18
-      },
-      {
-        "name": "厨卫电器",
-        "prevInflow": -0.63,
-        "currInflow": -0.49,
-        "change": 0.14
-      },
-      {
-        "name": "贸易",
-        "prevInflow": 0.13,
-        "currInflow": 0.24,
-        "change": 0.11
-      },
-      {
-        "name": "物流",
-        "prevInflow": -1.04,
-        "currInflow": -0.98,
-        "change": 0.06
-      },
-      {
-        "name": "小家电",
-        "prevInflow": -0.63,
-        "currInflow": -0.58,
-        "change": 0.05
-      },
-      {
-        "name": "汽车服务及其他",
-        "prevInflow": -0.28,
-        "currInflow": -0.26,
-        "change": 0.02
-      },
-      {
-        "name": "旅游及酒店",
-        "prevInflow": -1.6,
-        "currInflow": -1.6,
         "change": 0.0
       },
       {
-        "name": "造纸",
-        "prevInflow": -0.52,
-        "currInflow": -0.59,
-        "change": -0.07
+        "name": "互联网电商",
+        "prevInflow": 7.25,
+        "currInflow": 7.25,
+        "change": 0.0
       },
       {
-        "name": "轨交设备",
-        "prevInflow": -1.04,
-        "currInflow": -1.12,
-        "change": -0.08
+        "name": "建筑材料",
+        "prevInflow": 14.48,
+        "currInflow": 14.48,
+        "change": 0.0
       },
       {
-        "name": "化学制品",
-        "prevInflow": -11.12,
-        "currInflow": -11.21,
-        "change": -0.09
+        "name": "文化传媒",
+        "prevInflow": -31.71,
+        "currInflow": -31.71,
+        "change": 0.0
       },
       {
-        "name": "化学纤维",
-        "prevInflow": -6.03,
-        "currInflow": -6.14,
-        "change": -0.11
-      },
-      {
-        "name": "医疗器械",
-        "prevInflow": -8.17,
-        "currInflow": -8.28,
-        "change": -0.11
-      },
-      {
-        "name": "汽车整车",
-        "prevInflow": -8.87,
-        "currInflow": -9.0,
-        "change": -0.13
-      },
-      {
-        "name": "包装印刷",
-        "prevInflow": -1.81,
-        "currInflow": -1.97,
-        "change": -0.16
-      },
-      {
-        "name": "电机",
-        "prevInflow": -2.78,
-        "currInflow": -3.08,
-        "change": -0.3
-      },
-      {
-        "name": "美容护理",
-        "prevInflow": -3.38,
-        "currInflow": -3.69,
-        "change": -0.31
-      },
-      {
-        "name": "公路铁路运输",
-        "prevInflow": -0.29,
-        "currInflow": -0.63,
-        "change": -0.34
-      },
-      {
-        "name": "机场航运",
-        "prevInflow": -2.72,
-        "currInflow": -3.1,
-        "change": -0.38
-      },
-      {
-        "name": "种植业与林业",
-        "prevInflow": -3.63,
-        "currInflow": -4.02,
-        "change": -0.39
-      },
-      {
-        "name": "影视院线",
-        "prevInflow": -8.17,
-        "currInflow": -8.6,
-        "change": -0.43
-      },
-      {
-        "name": "医疗服务",
-        "prevInflow": -25.22,
-        "currInflow": -25.86,
-        "change": -0.64
-      },
-      {
-        "name": "饮料制造",
-        "prevInflow": -4.56,
-        "currInflow": -5.33,
-        "change": -0.77
-      },
-      {
-        "name": "化学原料",
-        "prevInflow": -5.3,
-        "currInflow": -6.1,
-        "change": -0.8
-      },
-      {
-        "name": "军工装备",
-        "prevInflow": -1.08,
-        "currInflow": -2.06,
-        "change": -0.98
-      },
-      {
-        "name": "白色家电",
-        "prevInflow": -5.46,
-        "currInflow": -6.55,
-        "change": -1.09
-      },
-      {
-        "name": "保险",
-        "prevInflow": -11.11,
-        "currInflow": -12.6,
-        "change": -1.49
-      },
-      {
-        "name": "环境治理",
-        "prevInflow": -0.85,
-        "currInflow": -2.45,
-        "change": -1.6
-      },
-      {
-        "name": "白酒",
-        "prevInflow": -17.44,
-        "currInflow": -19.25,
-        "change": -1.81
-      },
-      {
-        "name": "银行",
-        "prevInflow": 1.62,
-        "currInflow": -4.03,
-        "change": -5.65
+        "name": "煤炭开采加工",
+        "prevInflow": 6.87,
+        "currInflow": 6.87,
+        "change": 0.0
       },
       {
         "name": "电力",
-        "prevInflow": -53.88,
+        "prevInflow": -60.65,
         "currInflow": -60.65,
-        "change": -6.77
+        "change": 0.0
+      },
+      {
+        "name": "电池",
+        "prevInflow": 13.84,
+        "currInflow": 13.84,
+        "change": 0.0
+      },
+      {
+        "name": "电网设备",
+        "prevInflow": -24.67,
+        "currInflow": -24.67,
+        "change": 0.0
+      },
+      {
+        "name": "白酒",
+        "prevInflow": -19.25,
+        "currInflow": -19.25,
+        "change": 0.0
       },
       {
         "name": "证券",
-        "prevInflow": -39.15,
+        "prevInflow": -46.1,
         "currInflow": -46.1,
-        "change": -6.95
+        "change": 0.0
       }
     ],
     "timeline": [
@@ -228588,9 +228117,15 @@
       },
       {
         "time": "1500",
+        "totalInflow": -123.42,
+        "sectorCount": 10,
+        "change": 210.04
+      },
+      {
+        "time": "1500",
         "totalInflow": -202.92,
         "sectorCount": 90,
-        "change": 130.54
+        "change": -79.5
       }
     ],
     "pollTimes": [
@@ -228599,6 +228134,7 @@
       "1113",
       "1152",
       "1403",
+      "1506",
       "1657"
     ]
   }

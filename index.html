@@ -648,8 +648,6 @@ function openModuleDrawer(type) {
       const full = SECTORS.find(fs => fs.name === s.name);
       return full || s;
     });
-    const allInflow = SECTORS.filter(s => s.inflow > 0).sort((a, b) => b.inflow - a.inflow);
-    list = allInflow;
   } else if (type === 'outflow') {
     title.textContent = '💀 主力在卖 · 砸盘重灾板块';
     const allOutflow = SECTORS.filter(s => s.inflow <= 0).sort((a, b) => a.inflow - b.inflow);
