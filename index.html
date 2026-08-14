@@ -214,7 +214,7 @@ function getSignalLabel(signal) {
 
 function getWatchTagHtml(s) {
   if (s.watchTag && s.watchTagLabel) {
-    return '<span class="tag" style="background:' + s.watchTagBg + ';color:' + s.watchTagColor + '">' + s.watchTag + ' ' + s.watchTagLabel + '</span>';
+    return '<span class="tag" style="background:' + s.watchTagBg + ';color:' + s.watchTagColor + '">' + s.watchTagLabel + '</span>';
   }
   if (s.watchTag) {
     return '<span class="tag" style="background:' + s.watchTagBg + ';color:' + s.watchTagColor + '">' + s.watchTag + '</span>';
@@ -281,6 +281,12 @@ function render() {
   let flowInChange = 0, flowOutChange = 0, netChange = 0;
   if (INTRADAY_CHANGES && INTRADAY_CHANGES.totalChange !== undefined) {
     netChange = INTRADAY_CHANGES.totalChange;
+    // Calculate flowIn/flowOut changes from sector changes
+    const sectors = INTRADAY_CHANGES.sectors || [];
+    sectors.forEach(s => {
+      if (s.change > 0) flowInChange += s.change;
+      else if (s.change < 0) flowOutChange += Math.abs(s.change);
+    });
   }
   
   // Strongest sector
