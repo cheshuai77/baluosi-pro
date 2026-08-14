@@ -582,7 +582,10 @@ function buildChart(containerId, history) {
   const maxAbs = Math.max(...history.map(h => Math.abs(h.inflow)), 0.01);
   let html = '<div class="zero-line"></div>';
   html += '<span class="axis-label top">流入 ↑</span><span class="axis-label mid">— 0 —</span><span class="axis-label bot">流出 ↓</span>';
-  history.forEach(h => {
+  const totalBars = history.length;
+  // 数据量大时隔行显示日期标签，避免拥挤
+  const labelInterval = totalBars > 15 ? 3 : totalBars > 10 ? 2 : 1;
+  history.forEach((h, i) => {
     const val = h.inflow;
     const pct = (Math.abs(val) / maxAbs) * 40;
     const isPos = val >= 0;
@@ -590,10 +593,11 @@ function buildChart(containerId, history) {
     const valCls = isPos ? 'pos' : 'neg';
     const valText = val.toFixed(1);
     const dateLabel = h.date ? h.date.slice(5) : '';
+    const showLabel = (i % labelInterval === 0) || i === totalBars - 1;
     if (isPos) {
-      html += '<div class="bar-wrapper"><div class="bar-value ' + valCls + '" style="bottom:calc(50% + ' + pct + '% + 2px)">' + valText + '</div><div class="bar ' + barCls + '" style="height:' + pct + '%;bottom:50%"></div><div class="bar-label">' + dateLabel + '</div></div>';
+      html += '<div class="bar-wrapper"><div class="bar-value ' + valCls + '" style="bottom:calc(50% + ' + pct + '% + 2px)">' + valText + '</div><div class="bar ' + barCls + '" style="height:' + pct + '%;bottom:50%"></div><div class="bar-label">' + (showLabel ? dateLabel : '') + '</div></div>';
     } else {
-      html += '<div class="bar-wrapper"><div class="bar-value ' + valCls + '" style="top:calc(50% + ' + pct + '% + 2px)">' + valText + '</div><div class="bar ' + barCls + '" style="height:' + pct + '%;top:50%"></div><div class="bar-label">' + dateLabel + '</div></div>';
+      html += '<div class="bar-wrapper"><div class="bar-value ' + valCls + '" style="top:calc(50% + ' + pct + '% + 2px)">' + valText + '</div><div class="bar ' + barCls + '" style="height:' + pct + '%;top:50%"></div><div class="bar-label">' + (showLabel ? dateLabel : '') + '</div></div>';
     }
   });
   container.innerHTML = html;
