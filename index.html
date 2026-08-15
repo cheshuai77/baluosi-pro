@@ -201,14 +201,14 @@ table{border-collapse:collapse;width:100%}
   padding:1px 8px;border-radius:4px;margin:0 2px;
 }
 
-.four-zones{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.four-zones{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .zone{
   background:var(--bg-card);border-radius:var(--radius-lg);
-  padding:12px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;
+  padding:16px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;
 }
 .zone-head{
   display:flex;justify-content:space-between;align-items:center;
-  margin-bottom:8px;padding-bottom:6px;border-bottom:1px dashed var(--border-soft);
+  margin-bottom:12px;padding-bottom:10px;border-bottom:1px dashed var(--border-soft);
 }
 .zone-title{font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px}
 .zone-count{
@@ -220,9 +220,9 @@ table{border-collapse:collapse;width:100%}
 .zone.zone-sell .ind{background:var(--color-down)}
 .zone.zone-flow-in .ind{background:var(--color-up)}
 .zone.zone-flow-out .ind{background:var(--color-down)}
-.cards{display:flex;flex-direction:column;gap:6px;flex:1}
+.cards{display:flex;flex-direction:column;gap:8px;flex:1}
 .card{
-  padding:8px 10px;border:1px solid var(--border-soft);border-radius:var(--radius-md);
+  padding:12px;border:1px solid var(--border-soft);border-radius:var(--radius-md);
   background:var(--bg-soft);cursor:pointer;transition:all .2s;
 }
 .card:hover{border-color:var(--color-blue);background:#fff;transform:translateY(-1px);box-shadow:var(--shadow-sm)}
@@ -283,18 +283,25 @@ table{border-collapse:collapse;width:100%}
 .search-box::before{
   content:"🔍";position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.5;
 }
-.ranking-table{width:100%;font-size:13px}
+.ranking-table{width:100%;font-size:13px;table-layout:fixed}
+.ranking-table colgroup col:nth-child(1){width:36px}
+.ranking-table colgroup col:nth-child(2){width:auto}
+.ranking-table colgroup col:nth-child(3){width:72px}
+.ranking-table colgroup col:nth-child(4){width:44px}
+.ranking-table colgroup col:nth-child(5){width:52px}
+.ranking-table colgroup col:nth-child(6){width:80px}
+.ranking-table colgroup col:nth-child(7){width:64px}
 .ranking-table thead th{
-  text-align:left;padding:7px 10px;font-weight:600;color:var(--text-secondary);
+  text-align:left;padding:6px 6px;font-weight:600;color:var(--text-secondary);
   font-size:12px;background:var(--bg-soft);border-radius:6px;white-space:nowrap;
 }
 .ranking-table thead th:first-child{border-radius:6px 0 0 6px}
 .ranking-table thead th:last-child{border-radius:0 6px 6px 0;text-align:right}
 .ranking-table tbody tr{cursor:pointer;transition:background .15s}
 .ranking-table tbody tr:hover{background:var(--bg-soft)}
-.ranking-table tbody td{padding:7px 10px;border-bottom:1px solid var(--border-soft);white-space:nowrap}
+.ranking-table tbody td{padding:6px 6px;border-bottom:1px solid var(--border-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ranking-table tbody tr:last-child td{border-bottom:none}
-.ranking-table .col-rank{width:44px;font-weight:600;color:var(--text-muted);font-feature-settings:"tnum"}
+.ranking-table .col-rank{font-weight:600;color:var(--text-muted);font-feature-settings:"tnum"}
 .ranking-table .top3 .col-rank{color:var(--color-up)}
 .ranking-table .col-name{font-weight:600;display:flex;align-items:center;gap:8px}
 .ranking-table .col-name .mini-bar{
@@ -489,6 +496,7 @@ table{border-collapse:collapse;width:100%}
         </div>
       </div>
       <table class="ranking-table">
+        <colgroup><col><col><col><col><col><col><col></colgroup>
         <thead>
           <tr>
             <th class="col-rank">排名</th>
