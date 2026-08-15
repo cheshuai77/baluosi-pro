@@ -424,7 +424,7 @@ table{border-collapse:collapse;width:100%}
 <div class="app">
   <header class="top-bar">
     <div class="brand">
-      <div class="brand-logo">苏</div>
+      <div class="brand-logo">苏然</div>
       <div>
         <div class="brand-name">扒螺蛳全能投资助手PRO <span class="brand-tag">v2.3</span></div>
         <div style="font-size:11px;color:var(--text-muted);margin-top:3px">
@@ -14920,7 +14920,7 @@ function historyBarChart(history) {
   var plotH = H - padT - padB;
   var n = history.length;
   if (n === 0) return '<svg viewBox="0 0 '+W+' '+H+'"><text x="'+W/2+'" y="'+H/2+'" text-anchor="middle" fill="#9ca3af" font-size="13">暂无历史数据</text></svg>';
-  var flows = history.map(function(h){return h.flow;});
+  var flows = history.map(function(h){return h.inflow;});
   var maxV = Math.max.apply(null, flows.concat([0]));
   var minV = Math.min.apply(null, flows.concat([0]));
   var range = (maxV - minV) || 1;
@@ -14931,7 +14931,7 @@ function historyBarChart(history) {
   var bars = '';
   history.forEach(function(h,i){
     var x = padX + i*slot + (slot-barW)/2;
-    var v = h.flow;
+    var v = h.inflow;
     var y = v>=0 ? zeroY - (v/range)*plotH : zeroY;
     var hgt = Math.max(Math.abs(v/range)*plotH, 1.5);
     var color = v>=0 ? '#e74c3c' : '#16a34a';
@@ -14991,16 +14991,16 @@ function openDetailModal(name) {
 
   // Build history from sector.history array
   var histData = (sector.history || []).map(function(h) {
-    return { date: h.date.slice(5), flow: h.inflow || 0 };
+    return { date: h.date.slice(5), inflow: h.inflow || 0 };
   });
   // Ensure last entry matches current day
   if (histData.length > 0) {
-    histData[histData.length - 1] = { date: date.slice(5), flow: sector.inflow };
+    histData[histData.length - 1] = { date: date.slice(5), inflow: sector.inflow };
   } else {
-    histData = [{ date: date.slice(5), flow: sector.inflow }];
+    histData = [{ date: date.slice(5), inflow: sector.inflow }];
   }
 
-  var flows = histData.map(function(h){return h.flow;});
+  var flows = histData.map(function(h){return h.inflow;});
   var total20 = flows.reduce(function(a,b){return a+b;}, 0);
   var last5 = flows.slice(-5).reduce(function(a,b){return a+b;}, 0);
   var maxV = Math.max.apply(null, flows);
