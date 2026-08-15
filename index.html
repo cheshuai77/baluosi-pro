@@ -236,6 +236,10 @@ table{border-collapse:collapse;width:100%}
 .signal.s-retreat{background:var(--color-down)}
 .signal.s-reversal{background:var(--color-blue)}
 .signal.s-latent{background:var(--color-orange)}
+.streak{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10.5px;font-weight:600;color:#fff;white-space:nowrap}
+.streak.s-in{background:var(--color-up)}
+.streak.s-out{background:var(--color-down)}
+.streak.s-none{background:var(--border);color:var(--text-muted);font-weight:400}
 .card-data{
   font-size:12.5px;color:var(--text-secondary);display:flex;gap:12px;
   margin-bottom:4px;font-feature-settings:"tnum";
@@ -298,7 +302,8 @@ table{border-collapse:collapse;width:100%}
 }
 .ranking-table .col-name .mini-bar .fill{height:100%;background:linear-gradient(90deg,var(--color-up),#f87171)}
 .ranking-table .col-flow,.ranking-table .col-change{font-feature-settings:"tnum";text-align:right}
-.ranking-table .col-change{text-align:right}
+.ranking-table .col-flow.up,.ranking-table .col-change.up{color:var(--color-up);font-weight:600}
+.ranking-table .col-flow.down,.ranking-table .col-change.down{color:var(--color-down);font-weight:600}
 .ranking-footer{
   display:flex;justify-content:space-between;align-items:center;margin-top:14px;
   padding-top:12px;border-top:1px solid var(--border-soft);font-size:12px;color:var(--text-muted);
@@ -489,7 +494,7 @@ table{border-collapse:collapse;width:100%}
             <th>连续</th>
             <th>评分</th>
             <th>信号区</th>
-            <th class="col-flow">净流入</th>
+            <th class="col-flow">净流金额</th>
             <th class="col-change">涨跌幅</th>
           </tr>
         </thead>
@@ -14827,16 +14832,16 @@ function renderRanking(sectors, filter, keyword) {
     var widthPct = Math.max(8, Math.min(100, d.score || 0));
     var sigLabel = SIGNAL_LABEL[d.signal] || '—';
     var sigCls = SIGNAL_CLS[d.signal] || '';
-    var streak = '';
-    if (d.consecutiveInDays > 0) streak = '连入 ' + d.consecutiveInDays + ' 天';
-    else if (d.consecutiveOutDays > 0) streak = '连出 ' + d.consecutiveOutDays + ' 天';
+    var streak = '', streakCls = 's-none';
+    if (d.consecutiveInDays > 0) { streak = '连入 ' + d.consecutiveInDays + '天'; streakCls = 's-in'; }
+    else if (d.consecutiveOutDays > 0) { streak = '连出 ' + d.consecutiveOutDays + '天'; streakCls = 's-out'; }
     else streak = '—';
 
     return '<tr class="' + (isTop?'top3':'') + '" data-name="' + d.name + '">' +
       '<td class="col-rank">' + String(idx+1).padStart(2,'0') + '</td>' +
       '<td class="col-name">' + d.name +
       '<span class="mini-bar"><span class="fill" style="width:' + widthPct + '%"></span></span></td>' +
-      '<td>' + streak + '</td>' +
+      '<td><span class="streak ' + streakCls + '">' + streak + '</span></td>' +
       '<td style="font-feature-settings:\'tnum\';font-weight:600">' + (d.score||0).toFixed(1) + '</td>' +
       '<td>' + (d.signal ? '<span class="signal ' + sigCls + '">' + sigLabel + '</span>' : '—') + '</td>' +
       '<td class="col-flow ' + flowCls + '">' + flowTxt + '</td>' +
@@ -15044,9 +15049,9 @@ function openDetailModal(name) {
     leaderHtml = '<div style="font-size:12px;color:var(--text-muted)">暂无龙头数据</div>';
   }
 
-  var streak = '';
-  if (sector.consecutiveInDays > 0) streak = '连入 ' + sector.consecutiveInDays + ' 天';
-  else if (sector.consecutiveOutDays > 0) streak = '连出 ' + sector.consecutiveOutDays + ' 天';
+  var streak = '', streakCls = 's-none';
+  if (sector.consecutiveInDays > 0) { streak = '连入 ' + sector.consecutiveInDays + '天'; streakCls = 's-in'; }
+  else if (sector.consecutiveOutDays > 0) { streak = '连出 ' + sector.consecutiveOutDays + '天'; streakCls = 's-out'; }
   else streak = '—';
   var margin = sector.inflow >= 0 ? '主力净流入持续' : '主力净流出持续';
 
@@ -15055,7 +15060,7 @@ function openDetailModal(name) {
       '<div class="detail-cell"><div class="k">五因子评分</div><div class="v blue">'+(sector.score||0).toFixed(1)+'</div></div>' +
       '<div class="detail-cell"><div class="k">主力净流入</div><div class="v '+flowCls+'">'+(sector.inflow>=0?'+':'')+sector.inflow.toFixed(2)+'<span style="font-size:12px;font-weight:500;color:var(--text-muted)"> 亿</span></div><div class="sub">'+margin+'</div></div>' +
       '<div class="detail-cell"><div class="k">涨跌幅</div><div class="v '+chgCls+'">'+(sector.change>=0?'+':'')+sector.change.toFixed(2)+'%</div><div class="sub">涨 '+sector.riseCount+' 家 / 跌 '+sector.fallCount+' 家</div></div>' +
-      '<div class="detail-cell"><div class="k">连续天数</div><div class="v '+(sector.inflow>=0?'up':'down')+'">'+streak+'</div><div class="sub">'+margin+'</div></div>' +
+      '<div class="detail-cell"><div class="k">连续天数</div><div class="v"><span class="streak '+streakCls+'">'+streak+'</span></div><div class="sub">'+margin+'</div></div>' +
     '</div>' +
     '<div class="detail-section"><div class="h">近 '+histData.length+' 日主力净流入</div>' +
       '<div class="hist-stats">' +
