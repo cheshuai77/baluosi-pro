@@ -283,14 +283,7 @@ table{border-collapse:collapse;width:100%}
 .search-box::before{
   content:"🔍";position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.5;
 }
-.ranking-table{width:100%;font-size:13px;table-layout:fixed}
-.ranking-table colgroup col:nth-child(1){width:36px}
-.ranking-table colgroup col:nth-child(2){width:auto}
-.ranking-table colgroup col:nth-child(3){width:72px}
-.ranking-table colgroup col:nth-child(4){width:44px}
-.ranking-table colgroup col:nth-child(5){width:52px}
-.ranking-table colgroup col:nth-child(6){width:80px}
-.ranking-table colgroup col:nth-child(7){width:64px}
+.ranking-table{width:100%;font-size:13px}
 .ranking-table thead th{
   text-align:left;padding:6px 6px;font-weight:600;color:var(--text-secondary);
   font-size:12px;background:var(--bg-soft);border-radius:6px;white-space:nowrap;
@@ -299,9 +292,9 @@ table{border-collapse:collapse;width:100%}
 .ranking-table thead th:last-child{border-radius:0 6px 6px 0;text-align:right}
 .ranking-table tbody tr{cursor:pointer;transition:background .15s}
 .ranking-table tbody tr:hover{background:var(--bg-soft)}
-.ranking-table tbody td{padding:6px 6px;border-bottom:1px solid var(--border-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ranking-table tbody td{padding:6px 8px;border-bottom:1px solid var(--border-soft);white-space:nowrap}
 .ranking-table tbody tr:last-child td{border-bottom:none}
-.ranking-table .col-rank{font-weight:600;color:var(--text-muted);font-feature-settings:"tnum"}
+.ranking-table .col-rank{width:44px;font-weight:600;color:var(--text-muted);font-feature-settings:"tnum"}
 .ranking-table .top3 .col-rank{color:var(--color-up)}
 .ranking-table .col-name{font-weight:600;display:flex;align-items:center;gap:8px}
 .ranking-table .col-name .mini-bar{
@@ -496,7 +489,6 @@ table{border-collapse:collapse;width:100%}
         </div>
       </div>
       <table class="ranking-table">
-        <colgroup><col><col><col><col><col><col><col></colgroup>
         <thead>
           <tr>
             <th class="col-rank">排名</th>
