@@ -1117,13 +1117,6 @@ var INLINE_DATA = {
           },
           {
             "date": "2026-08-14",
-            "flowIn": 245.41,
-            "flowOut": 228.9,
-            "inflow": 16.52,
-            "change": 0.08
-          },
-          {
-            "date": "2026-08-14",
             "flowIn": 0,
             "flowOut": 0,
             "inflow": 16.52,
@@ -1409,13 +1402,6 @@ var INLINE_DATA = {
           },
           {
             "date": "2026-08-14",
-            "flowIn": 107.21,
-            "flowOut": 92.73,
-            "inflow": 14.48,
-            "change": 0.15
-          },
-          {
-            "date": "2026-08-14",
             "flowIn": 0,
             "flowOut": 0,
             "inflow": 14.48,
@@ -1555,13 +1541,6 @@ var INLINE_DATA = {
             "flowOut": 210.66,
             "inflow": -9.84,
             "change": -1.46
-          },
-          {
-            "date": "2026-08-14",
-            "flowIn": 197.76,
-            "flowOut": 183.91,
-            "inflow": 13.84,
-            "change": 0.89
           },
           {
             "date": "2026-08-14",
@@ -1850,13 +1829,6 @@ var INLINE_DATA = {
           },
           {
             "date": "2026-08-14",
-            "flowIn": 36.93,
-            "flowOut": 29.68,
-            "inflow": 7.25,
-            "change": -0.45
-          },
-          {
-            "date": "2026-08-14",
             "flowIn": 0,
             "flowOut": 0,
             "inflow": 7.25,
@@ -1992,13 +1964,6 @@ var INLINE_DATA = {
             "flowOut": 37.53,
             "inflow": -4.29,
             "change": -1.1
-          },
-          {
-            "date": "2026-08-14",
-            "flowIn": 45.04,
-            "flowOut": 38.17,
-            "inflow": 6.87,
-            "change": 0.91
           },
           {
             "date": "2026-08-14",
@@ -12571,13 +12536,6 @@ var INLINE_DATA = {
           },
           {
             "date": "2026-08-14",
-            "flowIn": 34.11,
-            "flowOut": 53.36,
-            "inflow": -19.25,
-            "change": -1.94
-          },
-          {
-            "date": "2026-08-14",
             "flowIn": 0,
             "flowOut": 0,
             "inflow": -19.25,
@@ -12717,13 +12675,6 @@ var INLINE_DATA = {
             "flowOut": 152.74,
             "inflow": -20.21,
             "change": -0.72
-          },
-          {
-            "date": "2026-08-14",
-            "flowIn": 105.41,
-            "flowOut": 130.08,
-            "inflow": -24.67,
-            "change": -0.89
           },
           {
             "date": "2026-08-14",
@@ -13012,13 +12963,6 @@ var INLINE_DATA = {
           },
           {
             "date": "2026-08-14",
-            "flowIn": 92.2,
-            "flowOut": 123.92,
-            "inflow": -31.71,
-            "change": -1.25
-          },
-          {
-            "date": "2026-08-14",
             "flowIn": 0,
             "flowOut": 0,
             "inflow": -31.71,
@@ -13304,13 +13248,6 @@ var INLINE_DATA = {
           },
           {
             "date": "2026-08-14",
-            "flowIn": 68.29,
-            "flowOut": 114.39,
-            "inflow": -46.1,
-            "change": -1.31
-          },
-          {
-            "date": "2026-08-14",
             "flowIn": 0,
             "flowOut": 0,
             "inflow": -46.1,
@@ -13450,13 +13387,6 @@ var INLINE_DATA = {
             "flowOut": 177.44,
             "inflow": 17.85,
             "change": 0.25
-          },
-          {
-            "date": "2026-08-14",
-            "flowIn": 130.87,
-            "flowOut": 191.52,
-            "inflow": -60.65,
-            "change": -2.65
           },
           {
             "date": "2026-08-14",
@@ -14396,6 +14326,7 @@ var INLINE_DATA = {
     ]
   }
 };
+;
 
 /* ====================================================
    AI 速评模板引擎（来自 ai_review_template.js）
@@ -14956,7 +14887,7 @@ function historyBarChart(history) {
   var maPts = [];
   for (var i=4; i<n; i++) {
     var avg = (flows[i-4]+flows[i-3]+flows[i-2]+flows[i-1]+flows[i])/5;
-    maPts.push({ x: padX + (i-2)*slot + slot/2, y: zeroY - (avg/range)*plotH });
+    maPts.push({ x: padX + i*slot + slot/2, y: zeroY - (avg/range)*plotH });
   }
   if (maPts.length > 1) {
     line = '<polyline points="'+maPts.map(function(p){return p.x.toFixed(1)+','+p.y.toFixed(1);}).join(' ')+'" fill="none" stroke="#f59e0b" stroke-width="1.6" opacity="0.9"/>';
