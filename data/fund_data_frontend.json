@@ -261234,62 +261234,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     },
@@ -261310,62 +261310,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     },
@@ -261386,62 +261386,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     },
@@ -261462,62 +261462,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     },
@@ -261538,62 +261538,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     },
@@ -261614,62 +261614,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     },
@@ -261690,62 +261690,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     },
@@ -261766,62 +261766,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     },
@@ -261842,62 +261842,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     },
@@ -261918,62 +261918,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     },
@@ -261994,62 +261994,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     },
@@ -262070,62 +262070,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     },
@@ -262146,62 +262146,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3975.13,
+          "value": 3976.44,
           "open": 3930.1,
           "high": 3977.41,
           "low": 3924.47,
-          "close": 3975.13,
+          "close": 3976.44,
           "prevClose": 3927.18,
-          "change": 1.22,
-          "changeAmount": 47.95
+          "change": 1.25,
+          "changeAmount": 49.26
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14665.45,
+          "value": 14672.7,
           "open": 14399.2,
           "high": 14676.43,
           "low": 14348.47,
-          "close": 14665.45,
+          "close": 14672.7,
           "prevClose": 14354.31,
-          "change": 2.17,
-          "changeAmount": 311.14
+          "change": 2.22,
+          "changeAmount": 318.4
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3727.84,
+          "value": 3731.03,
           "open": 3632.78,
-          "high": 3730.03,
+          "high": 3731.03,
           "low": 3604.17,
-          "close": 3727.84,
+          "close": 3731.03,
           "prevClose": 3626.3,
-          "change": 2.8,
-          "changeAmount": 101.55
+          "change": 2.89,
+          "changeAmount": 104.73
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1779.69,
+          "value": 1780.86,
           "open": 1721.55,
           "high": 1781.77,
           "low": 1718.61,
-          "close": 1779.69,
+          "close": 1780.86,
           "prevClose": 1717.68,
-          "change": 3.61,
-          "changeAmount": 62.01
+          "change": 3.68,
+          "changeAmount": 63.18
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1105.31,
+          "value": 1105.4,
           "open": 1088.69,
-          "high": 1105.31,
+          "high": 1105.51,
           "low": 1080.98,
-          "close": 1105.31,
+          "close": 1105.4,
           "prevClose": 1087.52,
           "change": 1.64,
-          "changeAmount": 17.79
+          "changeAmount": 17.88
         }
       ]
     }
@@ -267630,5 +267630,5 @@
       "1506"
     ]
   },
-  "lastUpdateTime": "2026-08-17 14:41"
+  "lastUpdateTime": "2026-08-17 14:43"
 }
