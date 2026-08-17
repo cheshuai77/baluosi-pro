@@ -262304,7 +262304,7 @@ var INLINE_DATA = {
       "1506"
     ]
   },
-  "lastUpdateTime": "2026-08-17 11:54"
+  "lastUpdateTime": "2026-08-17 11:58"
 };
 ;
 
@@ -262467,7 +262467,7 @@ function renderCapitalOverview(sectors, mo) {
       type:'strongest', icon:'★', iconCls:'star',
       label:'最强板块',
       value: strongest ? strongest.name : '--', unit:'',
-      valueCls:'blue', strongest:true,
+      valueCls:'up', strongest:true,
       indicators: strongest ? [
         { k:'评分', v: strongest.score.toFixed(1), cls:'' },
         { k:'净流', v: (strongest.inflow>=0?'+':'') + strongest.inflow.toFixed(2) + ' 亿', cls: strongest.inflow>=0?'up':'down' },
