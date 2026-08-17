@@ -262304,7 +262304,7 @@ var INLINE_DATA = {
       "1506"
     ]
   },
-  "lastUpdateTime": "2026-08-17 11:58"
+  "lastUpdateTime": "2026-08-17 12:05"
 };
 ;
 
@@ -262385,7 +262385,7 @@ function renderAIReview(data) {
   var toneColor = toneColorMap[data.market.toneType] || 'var(--text-secondary)';
   var sections = [renderTone(data.market), renderDirection(data.direction), renderRotation(data.rotation), renderRisks(data.risks), renderSuggestion(data.suggestion)].filter(Boolean).join('');
   return '<div class="ai-card"><div class="ai-head"><span class="ai-badge">AI</span>' +
-    '<span class="ai-headline">' + data.date + ' 收盘点评 · 今日资金呈现<span style="color:' + toneColor + '">「' + data.market.tone + '」</span>特征</span>' +
+    '<span class="ai-headline">' + data.date + ' ' + (data.reviewType || '盘中速报') + ' · 今日资金呈现<span style="color:' + toneColor + '">「' + data.market.tone + '」</span>特征</span>' +
     '</div><ul class="ai-list">' + sections + '</ul></div>';
 }
 
@@ -262553,8 +262553,11 @@ function generateReviewData(date, sectors, mo, signals) {
   // suggestion
   var focusSectors = buySectors.slice(0, 2).map(function(s){ return { name: s.name }; });
 
+  var metaType = (APP_DATA.metaByDate || {})[date];
+  var reviewType = metaType && metaType.type === '收盘' ? '收盘点评' : '盘中速报';
   return {
     date: date,
+    reviewType: reviewType,
     market: {
       tone: tone, toneType: toneType,
       netFlow: Number(netFlow.toFixed(1)),
@@ -262918,32 +262921,20 @@ function openDetailModal(name) {
   // Intraday data
   var intraday = sector.intraday || [];
   var timelineHtml = '';
-  // 优先用跨天趋势数据（trend），回退到当日分时（intraday）
-  var trendData = sector.trend && sector.trend.length > 0 ? sector.trend : null;
-  var dataSource = trendData || intraday;
-  var isMultiDay = !!trendData;
-
-  if (dataSource.length > 0) {
+  if (intraday.length > 0) {
     var timeLabels = {'0930':'09:30','1000':'10:00','1100':'11:00','1130':'11:30','1400':'14:00','1500':'15:00'};
-    var lastDate = '';
-    timelineHtml = dataSource.map(function(t, idx) {
-      var isFinal = idx === dataSource.length - 1;
+    timelineHtml = intraday.map(function(t, idx) {
+      var isFinal = idx === intraday.length - 1;
       var isClosing = /^1[45]\d{2}$/.test(t.time) || t.time >= '1500';
       var timeStr = timeLabels[t.time] || t.time;
       var fCls = t.net >= 0 ? 'delta-up' : 'delta-down';
-      var delta = idx > 0 ? t.net - dataSource[idx-1].net : null;
+      var delta = idx > 0 ? t.net - intraday[idx-1].net : null;
       var deltaCls, deltaTxt, arrow;
       if (delta === null) { deltaCls='delta-zero'; deltaTxt='—'; arrow=''; }
       else if (Math.abs(delta) < 0.05) { deltaCls='delta-zero'; deltaTxt='0.00 亿'; arrow='—'; }
       else if (delta > 0) { deltaCls='delta-up'; deltaTxt='+'+delta.toFixed(2)+' 亿'; arrow='↑'; }
       else { deltaCls='delta-down'; deltaTxt=delta.toFixed(2)+' 亿'; arrow='↓'; }
-      // 多日趋势：在日期变化时插入日期分隔行
-      var dateHeader = '';
-      if (isMultiDay && t.date && t.date !== lastDate) {
-        lastDate = t.date;
-        dateHeader = '<tr class="date-separator"><td colspan="3" style="text-align:center;padding:4px 0;font-size:11px;color:var(--text-muted);border-top:1px solid var(--border);">' + t.date + '</td></tr>';
-      }
-      return dateHeader + '<tr class="'+(isFinal?'final':'')+'"><td>'+timeStr+(isClosing?' <span style="font-size:11px;color:var(--text-muted)">(收盘)</span>':'')+'</td>' +
+      return '<tr class="'+(isFinal?'final':'')+'"><td>'+timeStr+(isClosing?' <span style="font-size:11px;color:var(--text-muted)">(收盘)</span>':'')+'</td>' +
         '<td class="'+fCls+'">'+(t.net>=0?'+':'')+t.net.toFixed(2)+' 亿</td>' +
         '<td class="'+deltaCls+'">'+arrow+' '+deltaTxt+'</td></tr>';
     }).join('');
