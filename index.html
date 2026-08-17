@@ -275613,7 +275613,7 @@ var INLINE_DATA = {
       "1515"
     ]
   },
-  "lastUpdateTime": "2026-08-17 15:51"
+  "lastUpdateTime": "2026-08-17 15:56"
 };
 ;
 
@@ -276240,11 +276240,12 @@ function openDetailModal(name) {
   var intraday = sector.intraday || [];
   var timelineHtml = '';
   if (intraday.length > 0) {
-    var timeLabels = {'0930':'09:30','1000':'10:00','1100':'11:00','1130':'11:30','1400':'14:00','1500':'15:00'};
+    var timeLabels = {'0930':'09:30','1000':'10:00','1030':'10:30','1100':'11:00','1130':'11:30','1330':'13:30','1400':'14:00','1430':'14:30','1500':'15:00'};
     timelineHtml = intraday.map(function(t, idx) {
       var isFinal = idx === intraday.length - 1;
       var isClosing = isFinal && t.time >= '1500';
-      var timeStr = timeLabels[t.time] || t.time;
+      var rawT = String(t.time); if(rawT.length===3) rawT='0'+rawT;
+      var timeStr = timeLabels[t.time] || (rawT.substring(0,2)+':'+rawT.substring(2));
       var fCls = t.net >= 0 ? 'delta-up' : 'delta-down';
       var delta = idx > 0 ? t.net - intraday[idx-1].net : null;
       var deltaCls, deltaTxt, arrow;
