@@ -275613,7 +275613,7 @@ var INLINE_DATA = {
       "1515"
     ]
   },
-  "lastUpdateTime": "2026-08-17 15:47"
+  "lastUpdateTime": "2026-08-17 15:50"
 };
 ;
 
@@ -275863,7 +275863,7 @@ function generateReviewData(date, sectors, mo, signals) {
   var focusSectors = buySectors.slice(0, 2).map(function(s){ return { name: s.name }; });
 
   var metaType = (APP_DATA.metaByDate || {})[date];
-  var reviewType = metaType && metaType.type === '收盘' ? '收盘点评' : '盘中速报';
+  var reviewType = '实时点评';
   return {
     date: date,
     reviewType: reviewType,
