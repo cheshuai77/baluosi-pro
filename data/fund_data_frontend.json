@@ -3454,62 +3454,62 @@
         {
           "name": "上证指数",
           "code": "sh000001",
-          "value": 3954.41,
+          "value": 3960.19,
           "open": 3930.1,
-          "high": 3955.97,
+          "high": 3961.82,
           "low": 3924.47,
-          "close": 3954.41,
+          "close": 3960.19,
           "prevClose": 3927.18,
-          "change": 0.69,
-          "changeAmount": 27.24
+          "change": 0.84,
+          "changeAmount": 33.01
         },
         {
           "name": "深证成指",
           "code": "sz399001",
-          "value": 14526.81,
+          "value": 14534.46,
           "open": 14399.2,
-          "high": 14538.52,
+          "high": 14541.01,
           "low": 14348.47,
-          "close": 14526.81,
+          "close": 14534.46,
           "prevClose": 14354.31,
-          "change": 1.2,
-          "changeAmount": 172.5
+          "change": 1.26,
+          "changeAmount": 180.15
         },
         {
           "name": "创业板指",
           "code": "sz399006",
-          "value": 3674.17,
+          "value": 3674.68,
           "open": 3632.78,
           "high": 3678.84,
           "low": 3604.17,
-          "close": 3674.17,
+          "close": 3674.68,
           "prevClose": 3626.3,
-          "change": 1.32,
-          "changeAmount": 47.87
+          "change": 1.33,
+          "changeAmount": 48.39
         },
         {
           "name": "科创50",
           "code": "sh000688",
-          "value": 1767.07,
+          "value": 1769.93,
           "open": 1721.55,
           "high": 1771.72,
           "low": 1718.61,
-          "close": 1767.07,
+          "close": 1769.93,
           "prevClose": 1717.68,
-          "change": 2.88,
-          "changeAmount": 49.39
+          "change": 3.04,
+          "changeAmount": 52.25
         },
         {
           "name": "北证50",
           "code": "bj899050",
-          "value": 1097.69,
+          "value": 1102.85,
           "open": 1088.69,
-          "high": 1097.88,
+          "high": 1102.85,
           "low": 1080.98,
-          "close": 1097.69,
+          "close": 1102.85,
           "prevClose": 1087.52,
-          "change": 0.93,
-          "changeAmount": 10.17
+          "change": 1.41,
+          "changeAmount": 15.33
         }
       ]
     }
@@ -4000,5 +4000,6 @@
       "1043",
       "1506"
     ]
-  }
+  },
+  "lastUpdateTime": "2026-08-17 11:33"
 }
