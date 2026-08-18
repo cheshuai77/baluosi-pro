@@ -1,83 +1,79 @@
 {
   "marketResearch": {
     "judgment": {
-      "verdict": "✅正常",
+      "verdict": "震荡偏强",
       "confidence": "高",
       "indicators": {
-        "emotion": {
+        "a50": {
+          "status": "微跌",
+          "detail": "A50期指跌0.20%"
+        },
+        "sentiment": {
           "status": "亢奋",
-          "detail": "涨停78家，最高4板，炸板率13.3%"
+          "detail": "涨停106家，情绪评分77"
         },
-        "trend": {
-          "status": "上涨",
-          "detail": "三大指数全线上涨，创业板领涨"
-        },
-        "volume": {
-          "status": "放量",
-          "detail": "半日成交1.5万亿，较昨日放量1097亿"
+        "us_market": {
+          "status": "分化",
+          "detail": "纳指跌0.32%，费半涨1.64%"
         }
       },
-      "reasoning": "上午市场放量拉升，三大指数全线飘红，情绪进入亢奋期，涨停家数达78家，CPO、PCB等科技主线与农业、大消费形成双轮驱动，赚钱效应显著。"
+      "reasoning": "央行维持流动性充裕，外围半导体爆发映射A股科技主线，情绪处于亢奋期，但A50微跌及美股大型科技股下跌带来一定扰动，预计大盘震荡偏强，结构性行情为主。"
     },
     "marketRef": {
       "indicators": [
         {
           "label": "上证指数",
-          "value": "3954.85",
-          "trend": "+0.70%",
-          "note": "半日成交6645亿"
+          "value": "3982.65",
+          "trend": "up",
+          "note": "+1.41%"
         },
         {
           "label": "深证成指",
-          "value": "14506.61",
-          "trend": "+1.06%",
-          "note": "半日成交7370亿"
+          "value": "14704.27",
+          "trend": "up",
+          "note": "+2.44%"
         },
         {
           "label": "创业板指",
-          "value": "3667.30",
-          "trend": "+1.13%",
-          "note": "半日成交3607亿"
+          "value": "3740.16",
+          "trend": "up",
+          "note": "+3.14%"
         },
         {
-          "label": "北向资金",
-          "value": "-290亿(盘中)",
-          "trend": "净流出",
-          "note": "午后回流，偏好光通信/CPO"
+          "label": "科创50",
+          "value": "1788.85",
+          "trend": "up",
+          "note": "+4.14%"
+        },
+        {
+          "label": "北证50",
+          "value": "1108.28",
+          "trend": "up",
+          "note": "+1.91%"
         }
       ],
-      "note": "沪深两市半日成交额1.5万亿，较上个交易日放量1097亿。"
+      "note": "上一交易日收盘真实数据"
     },
     "rotation": {
-      "summary": "科技（CPO/PCB/存储）与消费（农业/大消费/创新药）双主线共振，影视院线领跌。",
+      "summary": "科技成长领涨，半导体/光通信受外围映射走强",
       "sectors": [
         {
-          "name": "CPO/光通信",
-          "stage": "高潮",
+          "name": "半导体/光通信",
+          "stage": "启动期",
           "change": 3.5
         },
         {
-          "name": "PCB",
-          "stage": "发酵",
-          "change": 2.8
-        },
-        {
-          "name": "农业",
-          "stage": "异动",
+          "name": "消费电子",
+          "stage": "升温期",
           "change": 2.1
         },
         {
-          "name": "大消费",
-          "stage": "轮动",
-          "change": 1.9
-        },
-        {
-          "name": "影视院线",
-          "stage": "退潮",
-          "change": -3.2
+          "name": "航空/传统科技",
+          "stage": "退潮期",
+          "change": -1.5
         }
       ],
-      "analysis": "上午资金主攻科技硬件（CPO、PCB、存储）及防御/消费属性（农业、大消费、创新药），长鑫科技大涨带动存储芯片。影视院线及白酒等前期高位或权重板块遭遇资金抛售。"
+      "analysis": "美股费城半导体指数大涨1.64%，光通信、存储芯片爆发，直接映射A股相关产业链。央行货币政策报告强调适度宽松，利好成长股估值修复。风格明显偏向科技成长。"
     },
     "pool": {
       "pools": [
@@ -85,16 +81,16 @@
           "type": "现在能进",
           "items": [
             {
-              "name": "共进股份",
-              "code": "603118",
-              "action": "CPO核心3连板，逢低吸纳",
-              "note": "3板"
+              "name": "通富微电",
+              "code": "002156",
+              "action": "买入",
+              "note": "半导体封测，美股映射"
             },
             {
-              "name": "华正新材",
-              "code": "603186",
-              "action": "PCB方向2连板，确认趋势",
-              "note": "2板"
+              "name": "太辰光",
+              "code": "300570",
+              "action": "买入",
+              "note": "光通信，CPO核心"
             }
           ]
         },
@@ -104,14 +100,14 @@
             {
               "name": "天洋新材",
               "code": "603330",
-              "action": "4板最高标，等换手板或分歧转一致",
-              "note": "4板"
+              "action": "观察",
+              "note": "4板最高标，等晋级"
             },
             {
-              "name": "中石科技",
-              "code": "300684",
-              "action": "CPO 20cm 2连板，等回封或均线低吸",
-              "note": "20cm"
+              "name": "金螳螂",
+              "code": "002081",
+              "action": "观察",
+              "note": "4板连板，等承接"
             }
           ]
         },
@@ -119,10 +115,10 @@
           "type": "轻仓跟",
           "items": [
             {
-              "name": "金健米业",
-              "code": "600127",
-              "action": "农业板块异动先锋，轻仓试错",
-              "note": "首板"
+              "name": "华正新材",
+              "code": "603186",
+              "action": "逢低吸纳",
+              "note": "2板，半导体材料"
             }
           ]
         },
@@ -130,80 +126,23 @@
           "type": "有可能性",
           "items": [
             {
-              "name": "长鑫科技",
-              "code": "688503",
-              "action": "存储芯片中军大涨9%，观察趋势延续性",
-              "note": "大涨9%"
+              "name": "中石科技",
+              "code": "300684",
+              "action": "观察",
+              "note": "2板，散热概念"
+            },
+            {
+              "name": "电连技术",
+              "code": "300679",
+              "action": "观察",
+              "note": "1板，连接器"
             }
           ]
         }
       ]
-    },
-    "holdings": {
-      "holdings": [
-        {
-          "code": "600426",
-          "name": "华鲁恒升",
-          "shares": 1200,
-          "cost_price": 20.881,
-          "current_price": 20.75,
-          "change_pct": 0.68,
-          "cost_diff_pct": -0.63,
-          "market_value": 24900.0,
-          "profit_loss": -157.2,
-          "fund_flow": "主力净流出1.01亿，占比0.27%",
-          "trend": "上涨、主力流出",
-          "suggestion": "持有",
-          "note": "与成本价差-0.63%，观望为主"
-        },
-        {
-          "code": "600867",
-          "name": "通化东宝",
-          "shares": 1400,
-          "cost_price": 8.37,
-          "current_price": 8.41,
-          "change_pct": -1.87,
-          "cost_diff_pct": 0.48,
-          "market_value": 11774.0,
-          "profit_loss": 56.0,
-          "fund_flow": "主力净流入0.28亿，占比0.31%",
-          "trend": "下跌、主力流入",
-          "suggestion": "持有",
-          "note": "与成本价差+0.48%，观望为主"
-        },
-        {
-          "code": "515050",
-          "name": "通信ETF",
-          "shares": 2000,
-          "cost_price": 1.004,
-          "current_price": 1.094,
-          "change_pct": 1.86,
-          "cost_diff_pct": 8.96,
-          "market_value": 2188.0,
-          "profit_loss": 180.0,
-          "fund_flow": "份额净赎回（-0.68%）🔴持续净赎回",
-          "trend": "上涨、份额净赎回",
-          "suggestion": "持有",
-          "note": "浮盈8.96%，趋势健康可持有，设好止盈"
-        }
-      ],
-      "overview": {
-        "total_value": 38862.0,
-        "total_cost": 38783.2,
-        "total_profit_loss": 78.8,
-        "total_profit_pct": 0.2,
-        "position_ratio": "华鲁恒升 64.1%；通化东宝 30.3%；通信ETF 5.6%",
-        "risk_exposure": "共3只持仓（2只个股+1只ETF）；整体盈亏平衡附近，风险可控",
-        "holding_count": 3,
-        "notes": [
-          "共3只持仓（2只个股+1只ETF）",
-          "整体盈亏平衡附近，风险可控"
-        ]
-      },
-      "update_time": "2026-08-17 12:11"
     }
   },
-  "phase": "mid",
-  "date": "2026-08-17",
-  "updateTime": "2026-08-17 12:11"
+  "phase": "pre",
+  "date": "2026-08-18",
+  "updateTime": "2026-08-18 08:44"
 }
