@@ -1,113 +1,121 @@
 {
   "marketResearch": {
     "judgment": {
-      "verdict": "震荡偏强",
+      "verdict": "指数调整，结构分化，科技退潮农业爆发",
       "confidence": "高",
       "indicators": {
-        "a50": {
-          "status": "微跌",
-          "detail": "A50期指跌0.20%"
+        "emotion": {
+          "status": "升温",
+          "detail": "涨停55家，炸板25家，最高5板，情绪得分57"
         },
-        "sentiment": {
-          "status": "亢奋",
-          "detail": "涨停106家，情绪评分77"
+        "market_trend": {
+          "status": "下跌",
+          "detail": "上证跌0.39%，创业板跌1.3%，放量下跌"
         },
-        "us_market": {
-          "status": "分化",
-          "detail": "纳指跌0.32%，费半涨1.64%"
+        "sector_rotation": {
+          "status": "防御/事件驱动",
+          "detail": "粮食/猪肉爆发，算力/软件领跌"
         }
       },
-      "reasoning": "央行维持流动性充裕，外围半导体爆发映射A股科技主线，情绪处于亢奋期，但A50微跌及美股大型科技股下跌带来一定扰动，预计大盘震荡偏强，结构性行情为主。"
+      "reasoning": "受厄尔尼诺现象催化，资金从高位科技股流出，转向农业、猪肉等防御及事件驱动板块。指数虽然调整，但连板梯队完整，情绪处于升温期，市场呈现明显的跷跷板效应。"
     },
     "marketRef": {
       "indicators": [
         {
           "label": "上证指数",
-          "value": "3982.65",
-          "trend": "up",
-          "note": "+1.41%"
+          "value": "跌0.39%",
+          "trend": "down",
+          "note": ""
         },
         {
           "label": "深证成指",
-          "value": "14704.27",
-          "trend": "up",
-          "note": "+2.44%"
+          "value": "跌1.09%",
+          "trend": "down",
+          "note": ""
         },
         {
           "label": "创业板指",
-          "value": "3740.16",
-          "trend": "up",
-          "note": "+3.14%"
+          "value": "跌1.3%",
+          "trend": "down",
+          "note": ""
         },
         {
-          "label": "科创50",
-          "value": "1788.85",
+          "label": "成交额",
+          "value": "16494亿",
           "trend": "up",
-          "note": "+4.14%"
+          "note": "较上日放量1424亿"
         },
         {
-          "label": "北证50",
-          "value": "1108.28",
-          "trend": "up",
-          "note": "+1.91%"
+          "label": "日经225",
+          "value": "跌1.62%",
+          "trend": "down",
+          "note": ""
+        },
+        {
+          "label": "KOSPI",
+          "value": "跌0.56%",
+          "trend": "down",
+          "note": "盘中转跌"
         }
       ],
-      "note": "上一交易日收盘真实数据"
+      "note": "全市场超3900只个股下跌，科技股获利回吐明显。"
     },
     "rotation": {
-      "summary": "科技成长领涨，半导体/光通信受外围映射走强",
+      "summary": "科技退潮，农业/猪肉/油气爆发，呈现防御与事件驱动特征",
       "sectors": [
         {
-          "name": "半导体/光通信",
-          "stage": "启动期",
-          "change": 3.5
+          "name": "种植业与林业",
+          "stage": "高潮",
+          "change": 2.5
         },
         {
-          "name": "消费电子",
-          "stage": "升温期",
-          "change": 2.1
+          "name": "粮食概念",
+          "stage": "高潮",
+          "change": 2.2
         },
         {
-          "name": "航空/传统科技",
-          "stage": "退潮期",
-          "change": -1.5
+          "name": "猪肉",
+          "stage": "发酵",
+          "change": 1.8
+        },
+        {
+          "name": "油气开采及服务",
+          "stage": "活跃",
+          "change": 1.2
+        },
+        {
+          "name": "算力租赁",
+          "stage": "退潮",
+          "change": -2.5
+        },
+        {
+          "name": "软件开发",
+          "stage": "退潮",
+          "change": -2.0
         }
       ],
-      "analysis": "美股费城半导体指数大涨1.64%，光通信、存储芯片爆发，直接映射A股相关产业链。央行货币政策报告强调适度宽松，利好成长股估值修复。风格明显偏向科技成长。"
+      "analysis": "受厄尔尼诺现象预期影响，农业种植、粮食概念集体爆发，多股涨停。猪肉板块受周期及事件催化表现活跃。相反，前期强势的算力租赁、AI语料、软件开发等科技板块遭遇获利盘兑现，大幅领跌。市场风格短期偏向防御和事件驱动。"
     },
     "pool": {
       "pools": [
         {
           "type": "现在能进",
-          "items": [
-            {
-              "name": "通富微电",
-              "code": "002156",
-              "action": "买入",
-              "note": "半导体封测，美股映射"
-            },
-            {
-              "name": "太辰光",
-              "code": "300570",
-              "action": "买入",
-              "note": "光通信，CPO核心"
-            }
-          ]
+          "items": []
         },
         {
           "type": "等信号",
           "items": [
             {
-              "name": "天洋新材",
-              "code": "603330",
-              "action": "观察",
-              "note": "4板最高标，等晋级"
+              "name": "金健米业",
+              "code": "000716",
+              "action": "等开板换手回封信号",
+              "note": "粮食概念前排"
             },
             {
-              "name": "金螳螂",
-              "code": "002081",
-              "action": "观察",
-              "note": "4板连板，等承接"
+              "name": "农发种业",
+              "code": "600313",
+              "action": "等分歧转一致",
+              "note": "种业核心"
             }
           ]
         },
@@ -115,10 +123,10 @@
           "type": "轻仓跟",
           "items": [
             {
-              "name": "华正新材",
-              "code": "603186",
-              "action": "逢低吸纳",
-              "note": "2板，半导体材料"
+              "name": "天邦食品",
+              "code": "002124",
+              "action": "验证猪肉板块持续性",
+              "note": "猪肉前排"
             }
           ]
         },
@@ -126,23 +134,80 @@
           "type": "有可能性",
           "items": [
             {
-              "name": "中石科技",
-              "code": "300684",
-              "action": "观察",
-              "note": "2板，散热概念"
-            },
-            {
-              "name": "电连技术",
-              "code": "300679",
-              "action": "观察",
-              "note": "1板，连接器"
+              "name": "秋乐种业",
+              "code": "831101",
+              "action": "观察30cm弹性标的分化",
+              "note": "北证/种业弹性"
             }
           ]
         }
       ]
+    },
+    "holdings": {
+      "holdings": [
+        {
+          "code": "600426",
+          "name": "华鲁恒升",
+          "shares": 1200,
+          "cost_price": 20.881,
+          "current_price": 20.95,
+          "change_pct": 0.14,
+          "cost_diff_pct": 0.33,
+          "market_value": 25140.0,
+          "profit_loss": 82.8,
+          "fund_flow": "主力净流出0.28亿，占比0.35%",
+          "trend": "上涨、主力流出",
+          "suggestion": "持有",
+          "note": "与成本价差+0.33%，观望为主"
+        },
+        {
+          "code": "600867",
+          "name": "通化东宝",
+          "shares": 1400,
+          "cost_price": 8.37,
+          "current_price": 8.39,
+          "change_pct": -0.83,
+          "cost_diff_pct": 0.24,
+          "market_value": 11746.0,
+          "profit_loss": 28.0,
+          "fund_flow": "主力净流入0.28亿，占比0.31%",
+          "trend": "下跌、主力流入",
+          "suggestion": "持有",
+          "note": "与成本价差+0.24%，观望为主"
+        },
+        {
+          "code": "515050",
+          "name": "通信ETF",
+          "shares": 2000,
+          "cost_price": 1.004,
+          "current_price": 1.095,
+          "change_pct": -1.97,
+          "cost_diff_pct": 9.06,
+          "market_value": 2190.0,
+          "profit_loss": 182.0,
+          "fund_flow": "份额净赎回（-0.33%）🔴持续净赎回",
+          "trend": "下跌、份额净赎回",
+          "suggestion": "持有",
+          "note": "浮盈9.06%，趋势健康可持有，设好止盈"
+        }
+      ],
+      "overview": {
+        "total_value": 39076.0,
+        "total_cost": 38783.2,
+        "total_profit_loss": 292.8,
+        "total_profit_pct": 0.75,
+        "position_ratio": "华鲁恒升 64.3%；通化东宝 30.1%；通信ETF 5.6%",
+        "risk_exposure": "共3只持仓（2只个股+1只ETF）；整体盈亏平衡附近，风险可控",
+        "holding_count": 3,
+        "notes": [
+          "共3只持仓（2只个股+1只ETF）",
+          "整体盈亏平衡附近，风险可控"
+        ]
+      },
+      "update_time": "2026-08-18 12:13"
     }
   },
-  "phase": "pre",
+  "phase": "mid",
   "date": "2026-08-18",
-  "updateTime": "2026-08-18 08:44"
+  "updateTime": "2026-08-18 12:13"
 }
