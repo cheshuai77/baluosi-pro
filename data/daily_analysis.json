@@ -1,94 +1,83 @@
 {
   "marketResearch": {
     "judgment": {
-      "verdict": "⚠️谨慎",
+      "verdict": "指数重挫，高位退潮，资金避险",
       "confidence": "高",
       "indicators": {
+        "capital_flow": {
+          "status": "大幅流出",
+          "detail": "主力净流出超1700亿，科技股遭重挫"
+        },
         "emotion": {
           "status": "降温",
-          "detail": "涨停29家，炸板15家，高位股集体退潮跌停"
-        },
-        "external": {
-          "status": "恶化",
-          "detail": "日韩股市暴跌，KOSPI一度跌超6%"
+          "detail": "情绪评分47，高位妖股跌停，炸板率25%"
         },
         "market_trend": {
-          "status": "大跌",
-          "detail": "沪指跌1.96%，创业板跌4.98%，超4900股下跌"
+          "status": "下跌",
+          "detail": "三大指数全线大跌，创业板跌超6%"
         }
       },
-      "reasoning": "受隔夜美股科技股重挫及美债收益率飙升影响，亚太科技股集体崩盘，A股跟随大幅调整，高位题材股退潮，资金转向煤炭、银行等防御板块避险。"
+      "reasoning": "市场遭遇重挫，超5000股下跌，高位妖股遭监管核按钮集体跌停。资金大幅流出电子、通信等科技板块，转而流入煤炭、农业、房地产等低位防御及政策博弈板块，避险情绪浓厚。"
     },
     "marketRef": {
       "indicators": [
         {
           "label": "上证指数",
           "value": "3912.17",
-          "trend": "↓",
-          "note": "-1.96%"
+          "trend": "下跌",
+          "note": "-2.40%"
         },
         {
-          "label": "深证成指",
+          "label": "深成指",
           "value": "14041.76",
-          "trend": "↓",
-          "note": "-3.97%"
+          "trend": "下跌",
+          "note": "-5.01%"
         },
         {
           "label": "创业板指",
           "value": "3520.97",
-          "trend": "↓",
-          "note": "-4.98%"
-        },
-        {
-          "label": "科创50",
-          "value": "1682.2",
-          "trend": "↓",
-          "note": "-6.07%"
+          "trend": "下跌",
+          "note": "-6.26%"
         },
         {
           "label": "成交额",
-          "value": "1.63万亿",
-          "trend": "↓",
-          "note": "缩量182亿"
+          "value": "半日1.62万亿",
+          "trend": "缩量",
+          "note": "全天预估3.2万亿+"
         }
       ],
-      "note": "全市场超4900只个股下跌，仅500余只上涨，市场呈现极端分化与恐慌。"
+      "note": "市场遭遇重挫，超5000股下跌，科技股领跌，资金避险情绪升温。"
     },
     "rotation": {
-      "summary": "高位科技题材全面退潮，资金避险流入煤炭、银行、农业及房地产等低位防御板块。",
+      "summary": "资金从科技高位股大幅撤离，流向煤炭、农业、房地产等低位防御板块。",
       "sectors": [
         {
           "name": "煤炭",
-          "stage": "高潮",
-          "change": 5.2
+          "stage": "启动",
+          "change": 0.73
+        },
+        {
+          "name": "农业",
+          "stage": "活跃",
+          "change": null
         },
         {
           "name": "房地产",
-          "stage": "启动",
-          "change": 2.1
+          "stage": "轮动",
+          "change": null
         },
         {
-          "name": "银行",
-          "stage": "走强",
-          "change": 1.5
-        },
-        {
-          "name": "半导体",
+          "name": "电子",
           "stage": "退潮",
-          "change": -6.5
+          "change": -7.77
         },
         {
-          "name": "机器人",
+          "name": "通信",
           "stage": "退潮",
-          "change": -5.8
-        },
-        {
-          "name": "CPO",
-          "stage": "退潮",
-          "change": -5.2
+          "change": -7.95
         }
       ],
-      "analysis": "美债收益率飙升压制高估值科技股，A股算力、半导体、机器人等前期高位主线遭遇资金集中抛售。煤炭受供给侧及避险情绪推动逆势走强，农业和房地产作为低位防御板块获资金轮动。"
+      "analysis": "市场主线切换，科技股遭遇资金大幅净流出，煤炭、农业受消息面及避险情绪推动逆势走强，房地产受公积金政策利好刺激活跃。"
     },
     "pool": {
       "pools": [
@@ -98,14 +87,8 @@
             {
               "name": "宝泰隆",
               "code": "601011",
-              "action": "煤炭龙头，若开板可低吸",
-              "note": "3040"
-            },
-            {
-              "name": "我爱我家",
-              "code": "000560",
-              "action": "房地产服务龙头，逢低吸纳",
-              "note": "2380"
+              "action": "关注煤炭板块低位补涨",
+              "note": "焦炭涨价催化，逆势涨停"
             }
           ]
         },
@@ -115,14 +98,8 @@
             {
               "name": "斯达半导",
               "code": "603290",
-              "action": "半导体超跌，等放量止跌信号",
-              "note": "100310"
-            },
-            {
-              "name": "中大力德",
-              "code": "002896",
-              "action": "机器人退潮，等企稳反弹信号",
-              "note": "跌停中"
+              "action": "等待半导体板块企稳",
+              "note": "科技股大跌，需防惯性下杀"
             }
           ]
         },
@@ -130,10 +107,10 @@
           "type": "轻仓跟",
           "items": [
             {
-              "name": "京粮控股",
-              "code": "000505",
-              "action": "农业3连板，轻仓博弈4板",
-              "note": "7470"
+              "name": "我爱我家",
+              "code": "000560",
+              "action": "博弈房地产政策落地",
+              "note": "公积金新规利好"
             }
           ]
         },
@@ -141,80 +118,17 @@
           "type": "有可能性",
           "items": [
             {
-              "name": "日出东方",
-              "code": "603366",
-              "action": "厨卫电器异动，观察能否连板",
-              "note": "7630"
+              "name": "中大力德",
+              "code": "002896",
+              "action": "关注人形机器人超跌反弹",
+              "note": "前期错杀，等待情绪修复"
             }
           ]
         }
       ]
-    },
-    "holdings": {
-      "holdings": [
-        {
-          "code": "600426",
-          "name": "华鲁恒升",
-          "shares": 600,
-          "cost_price": 20.881,
-          "current_price": 21.22,
-          "change_pct": 0.86,
-          "cost_diff_pct": 1.62,
-          "market_value": 12732.0,
-          "profit_loss": 203.4,
-          "fund_flow": "主力净流入0.96亿，占比0.44%",
-          "trend": "上涨、主力流入",
-          "suggestion": "持有",
-          "note": "与成本价差+1.62%，观望为主"
-        },
-        {
-          "code": "600867",
-          "name": "通化东宝",
-          "shares": 1400,
-          "cost_price": 8.37,
-          "current_price": 8.23,
-          "change_pct": -1.56,
-          "cost_diff_pct": -1.67,
-          "market_value": 11522.0,
-          "profit_loss": -196.0,
-          "fund_flow": "主力净流入0.28亿，占比0.31%",
-          "trend": "下跌、主力流入",
-          "suggestion": "持有",
-          "note": "与成本价差-1.67%，观望为主"
-        },
-        {
-          "code": "515050",
-          "name": "通信ETF",
-          "shares": 2000,
-          "cost_price": 1.004,
-          "current_price": 1.029,
-          "change_pct": -6.54,
-          "cost_diff_pct": 2.49,
-          "market_value": 2058.0,
-          "profit_loss": 50.0,
-          "fund_flow": "份额净申购（+1.34%）⚪份额稳定",
-          "trend": "下跌、份额净申购",
-          "suggestion": "持有",
-          "note": "与成本价差+2.49%，观望为主"
-        }
-      ],
-      "overview": {
-        "total_value": 26312.0,
-        "total_cost": 26254.6,
-        "total_profit_loss": 57.4,
-        "total_profit_pct": 0.22,
-        "position_ratio": "华鲁恒升 48.4%；通化东宝 43.8%；通信ETF 7.8%",
-        "risk_exposure": "共3只持仓（2只个股+1只ETF）；整体盈亏平衡附近，风险可控",
-        "holding_count": 3,
-        "notes": [
-          "共3只持仓（2只个股+1只ETF）",
-          "整体盈亏平衡附近，风险可控"
-        ]
-      },
-      "update_time": "2026-08-19 12:05"
     }
   },
-  "phase": "mid",
+  "phase": "close",
   "date": "2026-08-19",
-  "updateTime": "2026-08-19 12:05"
+  "updateTime": "2026-08-19 17:40"
 }
