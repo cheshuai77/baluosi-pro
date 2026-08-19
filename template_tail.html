@@ -1,0 +1,758 @@
+;
+
+/* ====================================================
+   AI 速评模板引擎（来自 ai_review_template.js）
+   ==================================================== */
+function numPill(val, suffix) {
+  suffix = suffix || '';
+  var cls = val >= 0 ? 'hl-up' : 'hl-down';
+  var sign = val >= 0 ? '+' : '';
+  return '<span class="' + cls + '">' + sign + val + suffix + '</span>';
+}
+function pctPill(val) {
+  var cls = val >= 0 ? 'hl-up' : 'hl-down';
+  var sign = val >= 0 ? '+' : '';
+  return '<span class="' + cls + '">' + sign + val + '%</span>';
+}
+function sentimentPill(val) {
+  var cls = val >= 50 ? 'hl-up' : 'hl-down';
+  return '<span class="' + cls + '">' + val + '</span>';
+}
+function sectorPill(name) {
+  return '<span class="hl-sector">' + name + '</span>';
+}
+function warnPill(text) {
+  return '<span class="hl-warn">' + text + '</span>';
+}
+function pillByType(text, type) {
+  switch (type) {
+    case 'up': return '<span class="hl-up">' + text + '</span>';
+    case 'down': return '<span class="hl-down">' + text + '</span>';
+    case 'sector': return sectorPill(text);
+    case 'warn': return warnPill(text);
+    default: return text;
+  }
+}
+function renderTone(m) {
+  return '<li><div class="ai-tag t-tone">大盘定调</div><div class="text">' +
+    '今日大盘' + m.tone + '，主力净流入 ' + numPill(m.netFlow, ' 亿') +
+    '，沪指 ' + pctPill(m.shChange) + ' / 深成指 ' + pctPill(m.szChange) +
+    '，情绪指数' + (m.sentiment >= 50 ? '回升至' : '回落至') + ' ' + sentimentPill(m.sentiment) + '。</div></li>';
+}
+function renderDirection(d) {
+  var buyPills = (d.buy || []).map(function(s){ return sectorPill(s.name); }).join('');
+  var sellPills = (d.sell || []).map(function(s){ return warnPill(s.name); }).join('');
+  return '<li><div class="ai-tag t-dir">主力方向</div><div class="text">加仓 ' +
+    buyPills + '；抛压 ' + sellPills + '。</div></li>';
+}
+function renderRotation(r) {
+  var fromLabel = pillByType(r.from.label, r.from.type || 'warn');
+  var fromSubs = r.from.subs ? '（' + r.from.subs.join('/') + '）' : '';
+  var toLabel = pillByType(r.to.label, r.to.type || 'sector');
+  var noteHtml = r.note ? '，' + pillByType(r.note, r.noteType || 'plain') : '';
+  return '<li><div class="ai-tag t-rotate">轮动特征</div><div class="text">资金由 ' +
+    fromLabel + fromSubs + ' 切向 ' + toLabel + noteHtml + '。</div></li>';
+}
+function renderRisks(risks) {
+  if (!risks || risks.length === 0) return '';
+  var items = risks.map(function(r) {
+    var sector = warnPill(r.sector);
+    var desc = pillByType(r.desc, r.descType || 'plain');
+    var action = r.action ? ' ' + pillByType(r.action, r.actionType || 'warn') : '';
+    return sector + ' ' + desc + action;
+  }).join('；');
+  return '<li><div class="ai-tag t-risk">风险提示</div><div class="text">' + items + '。</div></li>';
+}
+function renderSuggestion(s) {
+  var focusPills = (s.focus || []).map(function(f){ return sectorPill(f.name); }).join('');
+  var focusAction = s.focusAction ? '<span class="hl-strong">' + s.focusAction + '</span>' : '';
+  var avoid = s.avoid ? '<span class="hl-avoid">' + s.avoid + '</span>' : '';
+  var avoidTarget = s.avoidTarget || '';
+  var position = s.position || '';
+  return '<li class="li-action"><div class="ai-tag t-act">操作建议</div><div class="text" style="color:var(--text-primary)">' +
+    focusAction + ' ' + focusPills + '，' + avoid + ' ' + avoidTarget + '，' + position + '。</div></li>';
+}
+function renderAIReview(data) {
+  var toneColorMap = { bullish: 'var(--color-up)', bearish: 'var(--color-down)', neutral: 'var(--text-secondary)' };
+  var toneColor = toneColorMap[data.market.toneType] || 'var(--text-secondary)';
+  var sections = [renderTone(data.market), renderDirection(data.direction), renderRotation(data.rotation), renderRisks(data.risks), renderSuggestion(data.suggestion)].filter(Boolean).join('');
+  return '<div class="ai-card"><div class="ai-head"><span class="ai-badge">AI</span>' +
+    '<span class="ai-headline">' + data.date + ' ' + (data.reviewType || '盘中速报') + ' · 今日资金呈现<span style="color:' + toneColor + '">「' + data.market.tone + '」</span>特征</span>' +
+    '</div><ul class="ai-list">' + sections + '</ul></div>';
+}
+
+/* ====================================================
+   全局状态
+   ==================================================== */
+var APP_DATA = null;
+var CURRENT_DATE = '';
+
+/* Signal mapping */
+var SIGNAL_LABEL = { 'main_line': '主线确认', 'disaster': '撤退流出', 'latent': '潜伏机会' };
+var SIGNAL_CLS   = { 'main_line': 's-main', 'disaster': 's-retreat', 'latent': 's-latent' };
+
+/* ====================================================
+   数据加载
+   ==================================================== */
+function loadData() {
+  return new Promise(function(resolve) {
+    var json = INLINE_DATA;
+    APP_DATA = json;
+    CURRENT_DATE = json.dates[json.dates.length - 1];
+    renderAll();
+    resolve();
+  });
+}
+
+function renderAll() {
+  var date = CURRENT_DATE;
+  var sectors = APP_DATA.sectorsByDate[date] || [];
+  var mo = APP_DATA.marketOverview[date] || {};
+  var signals = APP_DATA.signals[date] || {};
+
+  renderCapitalOverview(sectors, mo);
+  renderAIReviewSection(date, sectors, mo, signals);
+  renderFourZones(sectors, signals);
+  renderRanking(sectors, 'all', '');
+  updateTimestamp(date);
+}
+
+/* ====================================================
+   资金全景
+   ==================================================== */
+function renderCapitalOverview(sectors, mo) {
+  // 同花顺90行业只有净流入数据，无总流入/总流出
+  // 因此只展示净流入合计，不展示误导性的"总流入/总流出"
+  var netFlow = mo.netFlow;
+  if (netFlow === undefined || netFlow === null) {
+    netFlow = sectors.reduce(function(s,x){ return s + (x.inflow || 0); }, 0);
+  }
+
+  // find strongest sector
+  var strongest = sectors.slice().sort(function(a,b){ return (b.score||0) - (a.score||0); })[0];
+
+  var cards = [
+    {
+      type:'net', icon:'∑',
+      iconCls: netFlow >= 0 ? 'net-up' : 'net-down',
+      label:'主力总净流', value: (netFlow >= 0 ? '+' : '') + netFlow.toFixed(1), unit:'亿',
+      valueCls: netFlow >= 0 ? 'up' : 'down',
+      metaTags: (function() {
+        var tags = [];
+        if (mo.indices) {
+          var sh = mo.indices.find(function(x){ return x.code === 'sh000001'; });
+          var sz = mo.indices.find(function(x){ return x.code === 'sz399001'; });
+          if (sh) tags.push(['沪指', (sh.change>=0?'+':'') + sh.change + '%']);
+          if (sz) tags.push(['深成', (sz.change>=0?'+':'') + sz.change + '%']);
+        }
+        return tags;
+      })()
+    },
+    {
+      type:'strongest', icon:'★', iconCls:'star',
+      label:'最强板块',
+      value: strongest ? strongest.name : '--', unit:'',
+      valueCls:'up', strongest:true,
+      indicators: strongest ? [
+        { k:'评分', v: strongest.score.toFixed(1), cls:'' },
+        { k:'净流', v: (strongest.inflow>=0?'+':'') + strongest.inflow.toFixed(2) + ' 亿', cls: strongest.inflow>=0?'up':'down' },
+        { k:'涨幅', v: (strongest.change>=0?'+':'') + strongest.change.toFixed(2) + '%', cls: strongest.change>=0?'up':'down' }
+      ] : []
+    }
+  ];
+
+  var root = document.getElementById('capitalOverview');
+  root.innerHTML = cards.map(function(c){
+    var typeCls = c.type==='in'?'cap-in':c.type==='out'?'cap-out':c.type==='net'?'cap-net':'cap-strongest';
+    var body = '';
+    if(c.strongest){
+      body = '<div class="cap-sub">基于五因子综合评分</div><div class="cap-ind">' +
+        c.indicators.map(function(i){ return '<span>' + i.k + '<span class="v ' + i.cls + '">' + i.v + '</span></span>'; }).join('') +
+        '</div>';
+    } else {
+      body = '<div class="cap-meta">' +
+        c.metaTags.map(function(kv){
+          var cls = kv[2] || (kv[1].includes('+') ? 'delta-up' : kv[1].includes('-') ? 'delta-down' : '');
+          return '<span>' + kv[0] + ' <span class="delta ' + cls + '">' + kv[1] + '</span></span>';
+        }).join('') + '</div>';
+    }
+    return '<div class="cap-card ' + typeCls + '">' +
+      '<div class="cap-label"><span class="cap-icon ' + c.iconCls + '">' + c.icon + '</span>' + c.label + '</div>' +
+      '<div class="cap-value ' + c.valueCls + '">' + c.value + (c.unit ? '<span class="cap-unit"> ' + c.unit + '</span>' : '') + '</div>' +
+      body + '</div>';
+  }).join('');
+}
+
+/* ====================================================
+   AI 速评 — 数据生成 + 渲染
+   ==================================================== */
+function generateReviewData(date, sectors, mo, signals) {
+  var netFlow = mo.netFlow || 0;
+  var shIdx = (mo.indices||[]).find(function(x){return x.code==='sh000001';}) || {};
+  var szIdx = (mo.indices||[]).find(function(x){return x.code==='sz399001';}) || {};
+  var shChange = shIdx.change || 0;
+  var szChange = szIdx.change || 0;
+
+  // sentiment: based on risePct (0-100 scale, map to sentiment)
+  var sentiment = Math.round(mo.risePct || 50);
+
+  // tone determination
+  var tone, toneType;
+  if (netFlow > 300) { tone = '强势进攻'; toneType = 'bullish'; }
+  else if (netFlow > 100) { tone = '温和进攻'; toneType = 'bullish'; }
+  else if (netFlow > 0) { tone = '谨慎偏多'; toneType = 'neutral'; }
+  else if (netFlow > -200) { tone = '谨慎防守'; toneType = 'neutral'; }
+  else { tone = '全面防御'; toneType = 'bearish'; }
+
+  // direction: buy = mainLine signal sectors, sell = disaster sectors
+  var buySectors = (signals.mainLine || []).slice(0, 3).map(function(s){ return { name: s.name, star: (s.stars||0)>=4 }; });
+  var sellSectors = (signals.disaster || []).slice(0, 3).map(function(s){ return { name: s.name, star: true }; });
+
+  // rotation: compare with previous date
+  var prevIdx = APP_DATA.dates.indexOf(date) - 1;
+  var prevDate = prevIdx >= 0 ? APP_DATA.dates[prevIdx] : null;
+  var prevSignals = prevDate ? (APP_DATA.signals[prevDate] || {}) : {};
+  var prevMainNames = (prevSignals.mainLine || []).map(function(s){ return s.name; });
+  var currMainNames = (signals.mainLine || []).map(function(s){ return s.name; });
+
+  // find new entries (rotation target) and exits (rotation source)
+  var newEntries = currMainNames.filter(function(n){ return prevMainNames.indexOf(n)===-1; });
+  var exits = prevMainNames.filter(function(n){ return currMainNames.indexOf(n)===-1; });
+
+  // determine rotation category
+  var techSectors = ['通信设备','半导体','AI算力','软件开发','消费电子','互联网','云计算','光学光电子','电子元件','IT服务'];
+  var defSectors = ['银行','保险','房地产','煤炭','钢铁','建材','电力','公用事业'];
+
+  var fromLabel = exits.length > 0 ? categorizeSector(exits[0], techSectors, defSectors) : '防御类';
+  var toLabel = newEntries.length > 0 ? newEntries[0] : (currMainNames[0] || '科技主线');
+  var isToSector = techSectors.indexOf(toLabel) >= 0 || currMainNames.length > 0;
+
+  // risks: sectors with consecutive out days and lowest scores
+  var disasterSectors = (signals.disaster || []);
+  var riskSectors = disasterSectors.filter(function(s){ return (s.score||100) < 45; }).slice(0, 3);
+  if (riskSectors.length === 0) {
+    // fallback: disaster sectors sorted by inflow
+    riskSectors = disasterSectors.slice(0, 2);
+  }
+
+  // suggestion
+  var focusSectors = buySectors.slice(0, 2).map(function(s){ return { name: s.name }; });
+
+  var metaType = (APP_DATA.metaByDate || {})[date];
+  var reviewType = '实时点评';
+  return {
+    date: date,
+    reviewType: reviewType,
+    market: {
+      tone: tone, toneType: toneType,
+      netFlow: Number(netFlow.toFixed(1)),
+      shChange: Number(shChange.toFixed(2)),
+      szChange: Number(szChange.toFixed(2)),
+      sentiment: sentiment
+    },
+    direction: { buy: buySectors, sell: sellSectors },
+    rotation: {
+      from: { label: exits.length > 0 ? exits[0] : fromLabel, type: 'warn' },
+      to: { label: toLabel, type: isToSector ? 'sector' : 'sector' },
+      note: newEntries.length > 0 ? newEntries[0] + '新进入主线' : (currMainNames[0] || '') + '维持主线',
+      noteType: 'sector'
+    },
+    risks: riskSectors.map(function(s){
+      var consDays = findConsecutiveOutDays(date, s.name);
+      return {
+        sector: s.name,
+        desc: '连续' + consDays + '日净流出 ' + (s.inflow||0).toFixed(1) + '亿',
+        descType: 'down',
+        action: (s.change||0) < -2 ? '警惕加速下跌' : '注意资金撤离',
+        actionType: 'warn'
+      };
+    }),
+    suggestion: {
+      focus: focusSectors,
+      focusAction: '聚焦主线',
+      avoid: '回避撤退区',
+      avoidTarget: '高估值品种',
+      position: netFlow > 0 ? '半仓滚动操作为宜' : '控制仓位观望为主'
+    }
+  };
+}
+
+function categorizeSector(name, techSectors, defSectors) {
+  if (techSectors.indexOf(name) >= 0) return '科技类';
+  if (defSectors.indexOf(name) >= 0) return '防御类';
+  return name;
+}
+
+function findConsecutiveOutDays(date, sectorName) {
+  var dateIdx = APP_DATA.dates.indexOf(date);
+  var count = 0;
+  for (var i = dateIdx; i >= 0; i--) {
+    var d = APP_DATA.dates[i];
+    var sectors = APP_DATA.sectorsByDate[d] || [];
+    var s = sectors.find(function(x){ return x.name === sectorName; });
+    if (s && s.inflow < 0) count++;
+    else break;
+  }
+  return Math.max(count, 1);
+}
+
+function renderAIReviewSection(date, sectors, mo, signals) {
+  var reviewData = generateReviewData(date, sectors, mo, signals);
+  var html = renderAIReview(reviewData);
+  document.getElementById('aiReviewContainer').innerHTML = html;
+}
+
+/* ====================================================
+   四大区
+   ==================================================== */
+function renderFourZones(sectors, signals) {
+  var date = CURRENT_DATE;
+
+  // Zone 1: 主力在买 — mainLine sectors
+  var buySectors = (signals.mainLine || []).slice(0, 5).map(function(s) {
+    return buildZoneCard(s.name, date, '主线确认', 's-main');
+  });
+
+  // Zone 2: 主力在卖 — disaster sectors
+  var sellSectors = (signals.disaster || []).slice(0, 5).map(function(s) {
+    return buildZoneCard(s.name, date, '撤退流出', 's-retreat');
+  });
+
+  // Zone 3: 连入板块 — 历史连入且今日仍净流入
+  var flowInFiltered = sectors.filter(function(s){ return s.consecutiveInDays >= 4 && s.inflow > 0; });
+  var flowInSectors = flowInFiltered
+    .sort(function(a,b){ return b.consecutiveInDays - a.consecutiveInDays || (b.score||0) - (a.score||0); })
+    .slice(0, 5)
+    .map(function(s) {
+      var sigLabel = SIGNAL_LABEL[s.signal] || '—';
+      var sigCls = SIGNAL_CLS[s.signal] || '';
+      return buildZoneCard(s.name, date, sigLabel, sigCls);
+    });
+
+  // Zone 4: 连出板块 — 历史连出且今日仍净流出
+  var flowOutFiltered = sectors.filter(function(s){ return s.consecutiveOutDays >= 4 && s.inflow < 0; });
+  var flowOutSectors = flowOutFiltered
+    .sort(function(a,b){ return b.consecutiveOutDays - a.consecutiveOutDays || (a.score||0) - (b.score||0); })
+    .slice(0, 5)
+    .map(function(s) {
+      var sigLabel = SIGNAL_LABEL[s.signal] || '撤退流出';
+      var sigCls = SIGNAL_CLS[s.signal] || 's-retreat';
+      return buildZoneCard(s.name, date, sigLabel, sigCls);
+    });
+
+  var zones = [
+    { key:'buy', cls:'zone-buy', title:'主力在买', count: (signals.mainLine||[]).length, cards: buySectors },
+    { key:'sell', cls:'zone-sell', title:'主力在卖', count: (signals.disaster||[]).length, cards: sellSectors },
+    { key:'flow-in', cls:'zone-flow-in', title:'连入板块', count: flowInFiltered.length, cards: flowInSectors },
+    { key:'flow-out', cls:'zone-flow-out', title:'连出板块', count: flowOutFiltered.length, cards: flowOutSectors }
+  ];
+
+  var root = document.getElementById('fourZones');
+  root.innerHTML = zones.map(function(z){
+    return '<div class="zone ' + z.cls + '">' +
+      '<div class="zone-head"><div class="zone-title"><span class="ind"></span>' + z.title +
+      '<span class="zone-count">共 ' + z.count + '</span></div>' +
+      '<span style="font-size:11px;color:var(--text-muted)">评分 · 净流</span></div>' +
+      '<div class="cards">' + z.cards.map(function(c){ return cardHtml(c); }).join('') + '</div>' +
+      '<button class="view-more" data-zone="' + z.key + '">查看更多 →</button></div>';
+  }).join('');
+
+  root.querySelectorAll('.view-more').forEach(function(btn){
+    btn.addEventListener('click', function(){ openSideModal(btn.dataset.zone); });
+  });
+  root.querySelectorAll('.card').forEach(function(cd){
+    cd.addEventListener('click', function(){ openDetailModal(cd.dataset.name); });
+  });
+}
+
+function buildZoneCard(name, date, signalLabel, signalCls) {
+  var sector = findSector(date, name);
+  if (!sector) return { name:name, signal:signalLabel, sCls:signalCls, flow:'--', change:'--', fCls:'', margin:'暂无数据', trend:'up' };
+  var flowStr = (sector.inflow >= 0 ? '+' : '') + sector.inflow.toFixed(2) + ' 亿';
+  var chgStr = (sector.change >= 0 ? '+' : '') + sector.change.toFixed(2) + '%';
+  var fCls = sector.inflow >= 0 ? 'v-up' : 'v-down';
+  var inDays = sector.consecutiveInDays || 0;
+  var outDays = sector.consecutiveOutDays || 0;
+  var margin = '';
+  var trend = sector.inflow >= 0 ? 'up' : 'down';
+  if (inDays > 0) margin = '连入 ' + inDays + ' 天';
+  else if (outDays > 0) margin = '连出 ' + outDays + ' 天';
+  else margin = '主力' + (sector.inflow >= 0 ? '流入' : '流出');
+
+  // 盘中反转标记
+  var reversalBadge = '';
+  if (sector.reversalSignal === 'wash_recovery') {
+    reversalBadge = ' ↩洗盘+' + (sector.reversalAmount||0).toFixed(0) + '亿';
+  } else if (sector.reversalSignal === 'distribution_retreat') {
+    reversalBadge = ' ↩出货' + (sector.reversalAmount||0).toFixed(0) + '亿';
+  }
+
+  return {
+    name: name, signal: signalLabel, sCls: signalCls,
+    flow: flowStr, change: chgStr, fCls: fCls,
+    margin: margin, trend: trend, reversalBadge: reversalBadge
+  };
+}
+
+function findSector(date, name) {
+  var sectors = APP_DATA.sectorsByDate[date] || [];
+  return sectors.find(function(s){ return s.name === name; }) || null;
+}
+
+function cardHtml(c) {
+  var arrow = c.trend==='up'?'▲':'▼';
+  var reversalHtml = c.reversalBadge ? '<span class="reversal-tag" style="font-size:11px;color:#ff9800;margin-left:4px;">' + c.reversalBadge + '</span>' : '';
+  return '<div class="card" data-name="' + c.name + '">' +
+    '<div class="card-head"><div class="card-name">' + c.name + '</div>' +
+    '<span class="signal ' + c.sCls + '">' + c.signal + '</span></div>' +
+    '<div class="card-data"><span>净流入 <span class="' + c.fCls + '">' + c.flow + '</span></span>' +
+    '<span>涨幅 <span class="' + c.fCls + '">' + c.change + '</span></span></div>' +
+    '<div class="card-sub"><span class="trend-icon ' + (c.trend==='down'?'down':'') + '">' + arrow + '</span>' +
+    '<span>' + c.margin + '</span>' + reversalHtml + '</div></div>';
+}
+
+/* ====================================================
+   排行表
+   ==================================================== */
+var _rankingData = [];
+function renderRanking(sectors, filter, keyword) {
+  // Sort by score desc
+  _rankingData = sectors.slice().sort(function(a,b){ return (b.score||0) - (a.score||0); });
+
+  var data = _rankingData.slice();
+  if (filter !== 'all') {
+    var signalMap = { 'main':'main_line', 'latent':'latent', 'disaster':'disaster' };
+    data = data.filter(function(d){ return d.signal === signalMap[filter]; });
+  }
+  if (keyword) {
+    var k = keyword.trim().toLowerCase();
+    data = data.filter(function(d){ return d.name.toLowerCase().includes(k) || (d.code && d.code.includes(k)); });
+  }
+
+  document.getElementById('rankShow').textContent = data.length;
+  document.getElementById('rankTotal').textContent = _rankingData.length;
+
+  var root = document.getElementById('rankingBody');
+  root.innerHTML = data.map(function(d, idx){
+    var flowCls = d.inflow>=0?'up':'down';
+    var chgCls = d.change>=0?'up':'down';
+    var flowSign = d.inflow>=0?'+':'';
+    var chgSign = d.change>=0?'+':'';
+    var flowTxt = flowSign + d.inflow.toFixed(2) + ' 亿';
+    var chgTxt = chgSign + d.change.toFixed(2) + '%';
+    var isTop = idx < 3;
+    var widthPct = Math.max(8, Math.min(100, d.score || 0));
+    var sigLabel = SIGNAL_LABEL[d.signal] || '—';
+    var sigCls = SIGNAL_CLS[d.signal] || '';
+    var streak = '', streakCls = 's-none';
+    if (d.consecutiveInDays > 0) { streak = '连入 ' + d.consecutiveInDays + '天'; streakCls = 's-in'; }
+    else if (d.consecutiveOutDays > 0) { streak = '连出 ' + d.consecutiveOutDays + '天'; streakCls = 's-out'; }
+    else streak = '—';
+
+    return '<tr class="' + (isTop?'top3':'') + '" data-name="' + d.name + '">' +
+      '<td class="col-rank">' + String(idx+1).padStart(2,'0') + '</td>' +
+      '<td class="col-name">' + d.name +
+      '<span class="mini-bar"><span class="fill" style="width:' + widthPct + '%"></span></span></td>' +
+      '<td><span class="streak ' + streakCls + '">' + streak + '</span></td>' +
+      '<td style="font-feature-settings:\'tnum\';font-weight:600">' + (d.score||0).toFixed(1) + '</td>' +
+      '<td>' + (d.signal ? '<span class="signal ' + sigCls + '">' + sigLabel + '</span>' : '—') + '</td>' +
+      '<td class="col-flow ' + flowCls + '">' + flowTxt + '</td>' +
+      '<td class="col-change ' + chgCls + '">' + chgTxt + '</td></tr>';
+  }).join('');
+
+  if (data.length === 0) {
+    root.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--text-muted)">没有符合条件的板块</td></tr>';
+  }
+  root.querySelectorAll('tr[data-name]').forEach(function(tr){
+    tr.addEventListener('click', function(){ openDetailModal(tr.dataset.name); });
+  });
+}
+
+/* ====================================================
+   弹窗 A：侧边弹窗
+   ==================================================== */
+function openSideModal(zoneKey) {
+  var date = CURRENT_DATE;
+  var sectors = APP_DATA.sectorsByDate[date] || [];
+  var signals = APP_DATA.signals[date] || {};
+  var list = [];
+  var title = '';
+  var meta = '';
+
+  switch (zoneKey) {
+    case 'buy':
+      title = '主力在买 · 共 ' + (signals.mainLine||[]).length + ' 个板块';
+      meta = '按五因子评分从高到低排序';
+      list = (signals.mainLine||[]).sort(function(a,b){ return (b.score||0)-(a.score||0); });
+      break;
+    case 'sell':
+      title = '主力在卖 · 共 ' + (signals.disaster||[]).length + ' 个板块';
+      meta = '按主力净流出绝对值从大到小排序';
+      list = (signals.disaster||[]).sort(function(a,b){ return (a.inflow||0)-(b.inflow||0); });
+      break;
+    case 'flow-in':
+      var flowInAll = sectors.filter(function(s){ return s.consecutiveInDays >= 4 && s.inflow > 0; })
+        .sort(function(a,b){ return b.consecutiveInDays - a.consecutiveInDays; });
+      title = '连入板块 · 共 ' + flowInAll.length + ' 个板块';
+      meta = '历史连续流入 且 今日仍净流入';
+      list = flowInAll;
+      break;
+    case 'flow-out':
+      var flowOutAll = sectors.filter(function(s){ return s.consecutiveOutDays >= 4 && s.inflow < 0; })
+        .sort(function(a,b){ return b.consecutiveOutDays - a.consecutiveOutDays; });
+      title = '连出板块 · 共 ' + flowOutAll.length + ' 个板块';
+      meta = '历史连续流出 且 今日仍净流出';
+      list = flowOutAll;
+      break;
+  }
+
+  document.getElementById('sideModalTitle').textContent = title;
+  document.getElementById('sideModalMeta').textContent = meta;
+
+  var body = document.getElementById('sideModalBody');
+  var cardsHtml = list.map(function(s){
+    var sigLabel = SIGNAL_LABEL[s.signal] || '—';
+    var sigCls = SIGNAL_CLS[s.signal] || '';
+    return cardHtml(buildZoneCard(s.name, date, sigLabel, sigCls));
+  }).join('');
+  body.innerHTML = '<div class="cards">' + cardsHtml + '</div>';
+  body.querySelectorAll('.card').forEach(function(cd){
+    cd.addEventListener('click', function(){ openDetailModal(cd.dataset.name); });
+  });
+
+  document.getElementById('sideMask').classList.add('show');
+  document.getElementById('sideModal').classList.add('show');
+}
+
+function closeSideModal(){
+  document.getElementById('sideMask').classList.remove('show');
+  document.getElementById('sideModal').classList.remove('show');
+}
+
+/* ====================================================
+   柱状图 SVG
+   ==================================================== */
+function historyBarChart(history) {
+  var W=620, H=190, padX=10, padT=14, padB=24;
+  var plotH = H - padT - padB;
+  var n = history.length;
+  if (n === 0) return '<svg viewBox="0 0 '+W+' '+H+'"><text x="'+W/2+'" y="'+H/2+'" text-anchor="middle" fill="#9ca3af" font-size="13">暂无历史数据</text></svg>';
+  var flows = history.map(function(h){return h.inflow;});
+  var maxV = Math.max.apply(null, flows.concat([0]));
+  var minV = Math.min.apply(null, flows.concat([0]));
+  var range = (maxV - minV) || 1;
+  var zeroY = padT + (maxV/range)*plotH;
+  var slot = (W - padX*2)/n;
+  var barW = Math.min(slot*0.55, 15);
+
+  var bars = '';
+  history.forEach(function(h,i){
+    var x = padX + i*slot + (slot-barW)/2;
+    var v = h.inflow;
+    var y = v>=0 ? zeroY - (v/range)*plotH : zeroY;
+    var hgt = Math.max(Math.abs(v/range)*plotH, 1.5);
+    var color = v>=0 ? '#e74c3c' : '#16a34a';
+    var isLast = i===n-1;
+    bars += '<rect x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+barW.toFixed(1)+'" height="'+hgt.toFixed(1)+'" rx="2" fill="'+color+'" opacity="'+(isLast?1:0.72)+'"><title>'+h.date+' 净流入 '+(v>=0?'+':'')+v.toFixed(2)+' 亿</title></rect>';
+    if (isLast) {
+      bars += '<text x="'+(x+barW/2).toFixed(1)+'" y="'+(y-4).toFixed(1)+'" text-anchor="middle" font-size="10" font-weight="700" fill="'+color+'">'+(v>=0?'+':'')+v.toFixed(1)+'</text>';
+    }
+  });
+
+  var labelIdx = [0, Math.floor(n/4), Math.floor(n/2), Math.floor(n*3/4), n-1];
+  var labels = labelIdx.map(function(i){
+    var x = padX + i*slot + slot/2;
+    return '<text x="'+x.toFixed(1)+'" y="'+(H-6)+'" text-anchor="middle" font-size="9.5" fill="#9ca3af">'+history[i].date+'</text>';
+  }).join('');
+
+  return '<svg viewBox="0 0 '+W+' '+H+'" role="img">' +
+    '<line x1="'+padX+'" y1="'+zeroY.toFixed(1)+'" x2="'+(W-padX)+'" y2="'+zeroY.toFixed(1)+'" stroke="#d1d5db" stroke-width="1" stroke-dasharray="3,3"/>' +
+    bars + labels + '</svg>';
+}
+
+/* ====================================================
+   弹窗 B：详情弹窗
+   ==================================================== */
+function openDetailModal(name) {
+  var date = CURRENT_DATE;
+  var sector = findSector(date, name);
+  if (!sector) { sector = generateFallback(name); }
+
+  document.getElementById('detailName').textContent = name;
+  var sig = document.getElementById('detailSignal');
+  if (sector.signal && SIGNAL_LABEL[sector.signal]) {
+    sig.textContent = SIGNAL_LABEL[sector.signal];
+    sig.className = 'signal ' + (SIGNAL_CLS[sector.signal] || '');
+    sig.style.display = '';
+  } else {
+    sig.style.display = 'none';
+  }
+  document.getElementById('detailUpdate').textContent = '数据更新 ' + ((APP_DATA && APP_DATA.lastUpdateTime) || date);
+  document.getElementById('detailCode').textContent = '板块代码 · ' + (sector.code || '--');
+
+  var body = document.getElementById('detailBody');
+  var flowCls = sector.inflow >= 0 ? 'up' : 'down';
+  var chgCls = sector.change >= 0 ? 'up' : 'down';
+
+  // Build history from sector.history array
+  var histData = (sector.history || []).map(function(h) {
+    return { date: h.date.slice(5), inflow: h.inflow || 0 };
+  });
+  // Ensure last entry matches current day
+  if (histData.length > 0) {
+    histData[histData.length - 1] = { date: date.slice(5), inflow: sector.inflow };
+  } else {
+    histData = [{ date: date.slice(5), inflow: sector.inflow }];
+  }
+
+  var flows = histData.map(function(h){return h.inflow;});
+  var total20 = flows.reduce(function(a,b){return a+b;}, 0);
+  var last5 = flows.slice(-5).reduce(function(a,b){return a+b;}, 0);
+  var maxV = Math.max.apply(null, flows);
+  var maxDay = histData[flows.indexOf(maxV)].date;
+  var cntUp = flows.filter(function(v){return v>0;}).length;
+
+  // Intraday data
+  var intraday = sector.intraday || [];
+  var timelineHtml = '';
+  if (intraday.length > 0) {
+    var timeLabels = {'0930':'09:30','1000':'10:00','1030':'10:30','1100':'11:00','1130':'11:30','1330':'13:30','1400':'14:00','1430':'14:30','1500':'15:00'};
+    timelineHtml = intraday.map(function(t, idx) {
+      var isFinal = idx === intraday.length - 1;
+      var isClosing = isFinal && t.time >= '1500';
+      var rawT = String(t.time); if(rawT.length===3) rawT='0'+rawT;
+      var timeStr = timeLabels[t.time] || (rawT.substring(0,2)+':'+rawT.substring(2));
+      var fCls = t.net >= 0 ? 'delta-up' : 'delta-down';
+      var delta = idx > 0 ? t.net - intraday[idx-1].net : null;
+      var deltaCls, deltaTxt, arrow;
+      if (delta === null) { deltaCls='delta-zero'; deltaTxt='—'; arrow=''; }
+      else if (Math.abs(delta) < 0.05) { deltaCls='delta-zero'; deltaTxt='0.00 亿'; arrow='—'; }
+      else if (delta > 0) { deltaCls='delta-up'; deltaTxt='+'+delta.toFixed(2)+' 亿'; arrow='↑'; }
+      else { deltaCls='delta-down'; deltaTxt=delta.toFixed(2)+' 亿'; arrow='↓'; }
+      return '<tr class="'+(isFinal?'final':'')+'"><td>'+timeStr+'</td>' +
+        '<td class="'+fCls+'">'+(t.net>=0?'+':'')+t.net.toFixed(2)+' 亿</td>' +
+        '<td class="'+deltaCls+'">'+arrow+' '+deltaTxt+'</td></tr>';
+    }).join('');
+  } else {
+    timelineHtml = '<tr><td colspan="3" style="text-align:center;padding:20px;color:var(--text-muted)">暂无分时数据</td></tr>';
+  }
+
+  // Leaders
+  var leaderHtml = '';
+  if (sector.leader) {
+    var leaders = [];
+    leaders.push({ n: sector.leader, pc: sector.leaderChange || 0 });
+    leaderHtml = '<div class="leader-board">' +
+      leaders.map(function(l,i){
+        var pcCls = l.pc >= 0 ? 'color:var(--color-up)' : 'color:var(--color-down)';
+        return '<div class="leader"><span class="nm">'+(i+1)+'. '+l.n+'</span><span class="pc" style="'+pcCls+'">'+(l.pc>=0?'+':'')+l.pc.toFixed(2)+'%</span></div>';
+      }).join('') + '</div>';
+  } else {
+    leaderHtml = '<div style="font-size:12px;color:var(--text-muted)">暂无龙头数据</div>';
+  }
+
+  var streak = '', streakCls = 's-none';
+  if (sector.consecutiveInDays > 0) { streak = '连入 ' + sector.consecutiveInDays + '天'; streakCls = 's-in'; }
+  else if (sector.consecutiveOutDays > 0) { streak = '连出 ' + sector.consecutiveOutDays + '天'; streakCls = 's-out'; }
+  else streak = '—';
+  var margin = sector.inflow >= 0 ? '主力净流入持续' : '主力净流出持续';
+
+  body.innerHTML =
+    '<div class="detail-grid">' +
+      '<div class="detail-cell"><div class="k">五因子评分</div><div class="v blue">'+(sector.score||0).toFixed(1)+'</div></div>' +
+      '<div class="detail-cell"><div class="k">主力净流入</div><div class="v '+flowCls+'">'+(sector.inflow>=0?'+':'')+sector.inflow.toFixed(2)+'<span style="font-size:12px;font-weight:500;color:var(--text-muted)"> 亿</span></div><div class="sub">'+margin+'</div></div>' +
+      '<div class="detail-cell"><div class="k">涨跌幅</div><div class="v '+chgCls+'">'+(sector.change>=0?'+':'')+sector.change.toFixed(2)+'%</div><div class="sub">涨 '+sector.riseCount+' 家 / 跌 '+sector.fallCount+' 家</div></div>' +
+      '<div class="detail-cell"><div class="k">连续天数</div><div class="v"><span class="streak '+streakCls+'">'+streak+'</span></div><div class="sub">'+margin+'</div></div>' +
+    '</div>' +
+    '<div class="detail-section"><div class="h">近 '+histData.length+' 日主力净流入</div>' +
+      '<div class="hist-stats">' +
+        '<div class="cell"><div class="k">'+histData.length+'日累计</div><div class="v '+(total20>=0?'up':'down')+'">'+(total20>=0?'+':'')+total20.toFixed(1)+' 亿</div></div>' +
+        '<div class="cell"><div class="k">近5日累计</div><div class="v '+(last5>=0?'up':'down')+'">'+(last5>=0?'+':'')+last5.toFixed(1)+' 亿</div></div>' +
+        '<div class="cell"><div class="k">单日峰值</div><div class="v '+(maxV>=0?'up':'down')+'">'+(maxV>=0?'+':'')+maxV.toFixed(1)+' 亿</div><div class="k" style="margin-top:1px">'+maxDay+'</div></div>' +
+        '<div class="cell"><div class="k">净流入天数</div><div class="v">'+cntUp+'<span style="font-size:12px;color:var(--text-muted)"> / '+histData.length+'</span></div></div>' +
+      '</div>' +
+      '<div class="hist-chart">'+historyBarChart(histData)+
+        '<div class="hist-legend"><span><i style="background:#e74c3c"></i>净流入</span><span><i style="background:#16a34a"></i>净流出</span><span style="margin-left:auto">悬停查看单日明细</span></div>' +
+      '</div>' +
+    '</div>' +
+    // 盘中反转信号
+    (sector.reversalSignal ? '<div class="detail-section"><div class="h">盘中资金动向</div>' +
+      '<div style="padding:8px 0;display:flex;align-items:center;gap:8px;">' +
+      '<span style="font-size:20px;">↩</span>' +
+      '<span style="font-size:15px;font-weight:600;color:' + (sector.reversalSignal === 'wash_recovery' ? '#e53935' : '#43a047') + ';">' +
+      (sector.reversalSignal === 'wash_recovery' ? '洗盘回流' : '出货撤退') + '</span>' +
+      '<span style="font-size:13px;color:var(--text-muted);">早盘 → 收盘回流 ' + (sector.reversalAmount||0).toFixed(1) + ' 亿</span>' +
+      '</div></div>' : '') +
+    '<div class="detail-section"><div class="h">板块龙头</div>'+leaderHtml+'</div>' +
+    '<div class="detail-section"><div class="h">当日分时数据 <span style="font-size:11px;color:var(--text-muted);font-weight:400;margin-left:8px">较上时段 = 相邻采集点之差</span></div>' +
+      '<table class="timeline-table"><thead><tr><th>采集时间</th><th>主力净流入</th><th>较上时段</th></tr></thead><tbody>'+timelineHtml+'</tbody></table></div>';
+
+  document.getElementById('detailMask').classList.add('show');
+  document.getElementById('detailModal').classList.add('show');
+}
+
+function closeDetailModal(){
+  document.getElementById('detailMask').classList.remove('show');
+  document.getElementById('detailModal').classList.remove('show');
+}
+
+function generateFallback(name) {
+  return {
+    name: name, code: '--', change: 0, inflow: 0, signal: null,
+    score: 0, riseCount: 0, fallCount: 0,
+    consecutiveInDays: 0, consecutiveOutDays: 0,
+    leader: '', leaderChange: 0,
+    history: [], intraday: []
+  };
+}
+
+/* ====================================================
+   事件绑定
+   ==================================================== */
+function bindEvents(){
+  document.getElementById('sideModalClose').addEventListener('click', closeSideModal);
+  document.getElementById('sideMask').addEventListener('click', function(){
+    closeSideModal(); closeDetailModal();
+  });
+  document.getElementById('detailClose').addEventListener('click', closeDetailModal);
+  document.getElementById('detailMask').addEventListener('click', closeDetailModal);
+
+  document.querySelectorAll('#chipGroup .chip').forEach(function(c){
+    c.addEventListener('click', function(){
+      document.querySelectorAll('#chipGroup .chip').forEach(function(x){ x.classList.remove('active'); });
+      c.classList.add('active');
+      var sectors = APP_DATA.sectorsByDate[CURRENT_DATE] || [];
+      renderRanking(sectors, c.dataset.filter, document.getElementById('rankSearch').value);
+    });
+  });
+  document.getElementById('rankSearch').addEventListener('input', function(e){
+    var active = document.querySelector('#chipGroup .chip.active');
+    var sectors = APP_DATA.sectorsByDate[CURRENT_DATE] || [];
+    renderRanking(sectors, active.dataset.filter, e.target.value);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key==='Escape') { closeSideModal(); closeDetailModal(); }
+  });
+}
+
+function updateTimestamp(date) {
+  var actualTime = (APP_DATA && APP_DATA.lastUpdateTime) ? APP_DATA.lastUpdateTime : (date + ' 15:30');
+  document.getElementById('updateTime').textContent = actualTime;
+}
+
+/* ====================================================
+   启动
+   ==================================================== */
+function init() {
+  bindEvents();
+  loadData().catch(function(err) {
+    console.error('数据加载失败:', err);
+    document.getElementById('capitalOverview').innerHTML = '<div style="padding:40px;text-align:center;color:var(--text-muted)">数据加载失败，请确保 data/fund_data_frontend.json 文件存在</div>';
+  });
+}
+
+init();
+</script>
+</body>
+</html>
