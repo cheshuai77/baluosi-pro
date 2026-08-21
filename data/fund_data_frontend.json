@@ -382159,11 +382159,11 @@
         "change": 5.9,
         "indexPrice": 0,
         "stockCount": 56,
-        "riseCount": 53,
-        "fallCount": 3,
+        "riseCount": 5,
+        "fallCount": 51,
         "leader": "博腾股份",
         "leaderChange": 20.0,
-        "risePct": 94.6,
+        "risePct": 8.9,
         "flowIn": 239.84,
         "flowOut": 206.16,
         "inflow": 33.68,
@@ -383163,11 +383163,11 @@
         "change": 3.33,
         "indexPrice": 0,
         "stockCount": 91,
-        "riseCount": 78,
-        "fallCount": 13,
+        "riseCount": 70,
+        "fallCount": 19,
         "leader": "万隆光电",
         "leaderChange": 20.01,
-        "risePct": 85.7,
+        "risePct": 78.7,
         "flowIn": 584.78,
         "flowOut": 563.86,
         "inflow": 20.92,
@@ -408177,12 +408177,12 @@
         "change": 0.36,
         "indexPrice": 0,
         "stockCount": 110,
-        "riseCount": 59,
-        "fallCount": 51,
+        "riseCount": 8,
+        "fallCount": 98,
         "leader": "金房能源",
         "leaderChange": 10.02,
         "_riseEstimated": true,
-        "risePct": 53.6,
+        "risePct": 7.5,
         "flowIn": 76.15,
         "flowOut": 86.44,
         "inflow": -10.3,
@@ -410515,12 +410515,12 @@
         "change": -0.46,
         "indexPrice": 0,
         "stockCount": 43,
-        "riseCount": 19,
-        "fallCount": 24,
+        "riseCount": 28,
+        "fallCount": 15,
         "leader": "莱尔科技",
         "leaderChange": 5.67,
         "_riseEstimated": true,
-        "risePct": 44.2,
+        "risePct": 65.1,
         "flowIn": 147.81,
         "flowOut": 165.34,
         "inflow": -17.53,
@@ -411856,11 +411856,11 @@
         "change": 0.47,
         "indexPrice": 0,
         "stockCount": 185,
-        "riseCount": 101,
-        "fallCount": 83,
+        "riseCount": 164,
+        "fallCount": 19,
         "leader": "思瑞浦",
         "leaderChange": 15.3,
-        "risePct": 54.9,
+        "risePct": 89.6,
         "flowIn": 1099.52,
         "flowOut": 1161.45,
         "inflow": -61.93,
@@ -412480,17 +412480,66 @@
     },
     "2026-08-20": {
       "totalStocks": 5633,
-      "totalRise": 3865,
-      "totalFall": 1639,
-      "risePct": 70.2,
+      "totalRise": 1583,
+      "totalFall": 3858,
+      "risePct": 29.1,
       "sectorUp": 81,
       "sectorDown": 9,
       "topSector": "生物制品",
       "topSectorChange": 9.12,
-      "totalFlowIn": 6935.19,
-      "totalFlowOut": 7067.02,
-      "netFlow": -131.87,
-      "avgChange": 1.26
+      "totalFlowIn": 226.4,
+      "totalFlowOut": 358.3,
+      "netFlow": -131.9,
+      "avgChange": 1.26,
+      "indices": [
+        {
+          "name": "上证指数",
+          "value": 3908.0214,
+          "change": 0.11,
+          "change_amount": 4.3,
+          "open": 3891.1751,
+          "high": 3911.0801,
+          "low": 3883.787
+        },
+        {
+          "name": "深证成指",
+          "value": 14085.755,
+          "change": 0.81,
+          "change_amount": 112.97,
+          "open": 13935.638,
+          "high": 14113.901,
+          "low": 13866.394
+        },
+        {
+          "name": "创业板指",
+          "value": 3547.433,
+          "change": 1.48,
+          "change_amount": 51.84,
+          "open": 3495.113,
+          "high": 3563.059,
+          "low": 3478.517
+        },
+        {
+          "name": "科创50",
+          "value": 1663.0452,
+          "change": 0.61,
+          "change_amount": 10.07,
+          "open": 1649.2832,
+          "high": 1675.8225,
+          "low": 1640.6231
+        },
+        {
+          "name": "北证50",
+          "value": 1081.524,
+          "change": -0.0,
+          "change_amount": -0.05,
+          "open": 1072.954,
+          "high": 1082.663,
+          "low": 1071.549
+        }
+      ],
+      "sectorFlat": 0,
+      "updateTime": "10:21"
     }
   },
   "signals": {
@@ -418861,359 +418910,139 @@
           "name": "医疗服务",
           "change": 5.9,
           "inflow": 33.68,
-          "risePct": 94.6,
           "stars": 5,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 33.68
-            }
-          ],
-          "score": 62.6,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
+          "leader": "博腾股份",
+          "leaderChange": 20.0,
+          "riseCount": 53,
+          "risePct": 94.6
         },
         {
           "name": "贵金属",
           "change": 4.9,
           "inflow": 29.68,
-          "risePct": 92.3,
           "stars": 5,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 29.68
-            }
-          ],
-          "score": 63.4,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
+          "leader": "山东黄金",
+          "leaderChange": 8.59,
+          "riseCount": 12,
+          "risePct": 92.3
         },
         {
-          "name": "医疗器械",
-          "change": 4.14,
-          "inflow": 17.35,
-          "risePct": 94.3,
-          "stars": 4,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 17.35
-            }
-          ],
-          "score": 58.8,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
-        },
-        {
-          "name": "化学制药",
-          "change": 3.82,
-          "inflow": 6.27,
-          "risePct": 89.7,
-          "stars": 3,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 6.27
-            }
-          ],
-          "score": 54.6,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
+          "name": "银行",
+          "change": 0.81,
+          "inflow": 23.29,
+          "stars": 1,
+          "leader": "宁波银行",
+          "leaderChange": 3.64,
+          "riseCount": 34,
+          "risePct": 82.9
         },
         {
           "name": "通信设备",
           "change": 3.33,
           "inflow": 20.92,
-          "risePct": 85.7,
-          "stars": 4,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 20.92
-            }
-          ],
-          "score": 57.6,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
+          "stars": 5,
+          "leader": "万隆光电",
+          "leaderChange": 20.01,
+          "riseCount": 78,
+          "risePct": 85.7
         },
         {
-          "name": "旅游及酒店",
-          "change": 3.12,
-          "inflow": 3.42,
-          "risePct": 100.0,
-          "stars": 2,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 3.42
-            }
-          ],
-          "score": 57.1,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
-        },
-        {
-          "name": "互联网电商",
-          "change": 3.03,
-          "inflow": 0.51,
-          "risePct": 95.0,
-          "stars": 2,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 0.51
-            }
-          ],
-          "score": 54.0,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
-        },
-        {
-          "name": "美容护理",
-          "change": 2.46,
-          "inflow": 3.96,
-          "risePct": 94.1,
-          "stars": 2,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 3.96
-            }
-          ],
-          "score": 56.2,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
-        },
-        {
-          "name": "中药",
-          "change": 2.42,
-          "inflow": 8.49,
-          "risePct": 94.1,
-          "stars": 2,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 8.49
-            }
-          ],
-          "score": 56.5,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
+          "name": "医疗器械",
+          "change": 4.14,
+          "inflow": 17.35,
+          "stars": 5,
+          "leader": "华大智造",
+          "leaderChange": 20.0,
+          "riseCount": 132,
+          "risePct": 94.3
         }
       ],
-      "latent": [
-        {
-          "name": "银行",
-          "change": 0.81,
-          "inflow": 23.29,
-          "tag": "温和蓄力",
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 23.29
-            }
-          ],
-          "score": 62.6,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
-        },
-        {
-          "name": "保险",
-          "change": 0.29,
-          "inflow": 2.89,
-          "tag": "微涨蓄力",
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 2.89
-            }
-          ],
-          "score": 54.9,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
-        },
-        {
-          "name": "软件开发",
-          "change": 0.9,
-          "inflow": 2.68,
-          "tag": "温和蓄力",
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 2.68
-            }
-          ],
-          "score": 51.2,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
-        },
-        {
-          "name": "种植业与林业",
-          "change": 0.88,
-          "inflow": 2.53,
-          "tag": "温和蓄力",
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 2.53
-            }
-          ],
-          "score": 50.8,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
-        },
-        {
-          "name": "工程机械",
-          "change": 0.56,
-          "inflow": 2.31,
-          "tag": "温和蓄力",
-          "intraday": [
-            {
-              "time": "1500",
-              "net": 2.31
-            }
-          ],
-          "score": 52.0,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
-        }
-      ],
+      "latent": [],
       "disaster": [
+        {
+          "name": "半导体",
+          "change": 0.47,
+          "inflow": -61.93,
+          "leader": "思瑞浦",
+          "leaderChange": 15.3,
+          "fallCount": 83,
+          "fallPct": 45.1
+        },
         {
           "name": "电池",
           "change": 0.08,
           "inflow": -24.83,
-          "fallPct": 49.1,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": -24.83
-            }
-          ],
-          "score": 38.3,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
+          "leader": "珠海冠宇",
+          "leaderChange": 6.9,
+          "fallCount": 52,
+          "fallPct": 49.1
         },
         {
           "name": "小金属",
           "change": -0.64,
           "inflow": -22.45,
-          "fallPct": 58.6,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": -22.45
-            }
-          ],
-          "score": 37.3,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
+          "leader": "宜安科技",
+          "leaderChange": 7.65,
+          "fallCount": 17,
+          "fallPct": 58.6
         },
         {
           "name": "军工装备",
           "change": -0.25,
           "inflow": -17.75,
-          "fallPct": 53.7,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": -17.75
-            }
-          ],
-          "score": 38.9,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
+          "leader": "航宇科技",
+          "leaderChange": 3.31,
+          "fallCount": 44,
+          "fallPct": 53.7
         },
         {
           "name": "电子化学品",
           "change": -0.46,
           "inflow": -17.53,
-          "fallPct": 55.8,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": -17.53
-            }
-          ],
-          "score": 39.3,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
+          "leader": "莱尔科技",
+          "leaderChange": 5.67,
+          "fallCount": 24,
+          "fallPct": 55.8
+        }
+      ],
+      "risk": [
+        {
+          "name": "半导体",
+          "change": 0.47,
+          "inflow": -61.93,
+          "leader": "思瑞浦",
+          "leaderChange": 15.3
+        },
+        {
+          "name": "电池",
+          "change": 0.08,
+          "inflow": -24.83,
+          "leader": "珠海冠宇",
+          "leaderChange": 6.9
+        },
+        {
+          "name": "元件",
+          "change": 1.23,
+          "inflow": -16.63,
+          "leader": "中英科技",
+          "leaderChange": 10.02
+        },
+        {
+          "name": "光学光电子",
+          "change": 1.2,
+          "inflow": -15.47,
+          "leader": "联得装备",
+          "leaderChange": 12.31
         },
         {
           "name": "工业金属",
           "change": 0.29,
           "inflow": -13.69,
-          "fallPct": 47.3,
-          "intraday": [
-            {
-              "time": "1500",
-              "net": -13.69
-            }
-          ],
-          "score": 41.6,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
-        }
-      ],
-      "risk": [
-        {
-          "name": "生物制品",
-          "change": 9.12,
-          "inflow": -2.83,
-          "tag": "拉高出货",
-          "intraday": [
-            {
-              "time": "1500",
-              "net": -2.83
-            }
-          ],
-          "score": 51.4,
-          "marginalTag": "",
-          "marginalLabel": "",
-          "watchTag": "",
-          "watchTagColor": "#999"
+          "leader": "电工合金",
+          "leaderChange": 8.13
         }
       ]
     }
   },
-  "lastUpdateTime": "2026-08-20 15:16"
+  "lastUpdateTime": "2026-08-21 10:20"
 }
