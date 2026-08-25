@@ -1,95 +1,84 @@
 {
   "marketResearch": {
     "judgment": {
-      "verdict": "⚠️谨慎",
+      "verdict": "低开震荡，防守为主",
       "confidence": "高",
       "indicators": {
         "emotion": {
-          "status": "升温",
-          "detail": "涨停41家，最高4板，情绪得分57"
+          "status": "warming",
+          "detail": "情绪57分，涨停46家，无跌停，局部活跃"
         },
-        "market": {
-          "status": "调整",
-          "detail": "创业板跌3.5%，算力硬件大跌"
+        "external": {
+          "status": "negative",
+          "detail": "纳指跌0.76%，科技股承压，A50微跌"
         },
-        "rotation": {
-          "status": "切换",
-          "detail": "高位科技退潮，低位农业/煤炭/固态电池承接"
+        "market_trend": {
+          "status": "down",
+          "detail": "上证3882，创业板大跌3.21%，短期承压"
         }
       },
-      "reasoning": "早盘算力硬件主线大面积调整拖累创业板大跌，但低位农业、煤炭、数字货币逆势走强，情绪并未冰点而是呈现高低切轮动，午后需防范高位股继续杀跌，关注低位承接力度。"
+      "reasoning": "昨日A股科技成长股大跌，创业板跌超3%，隔夜美股科技股继续下挫，英伟达连跌7日，对A股科技板块形成压制。但国内有6G、AI等政策利好，且央行释放流动性，市场有望在支撑位附近震荡企稳。整体防守为主，关注低位政策题材。"
     },
     "marketRef": {
       "indicators": [
         {
           "label": "上证指数",
-          "value": "-0.71%",
-          "trend": "↓",
-          "note": ""
+          "value": "3882.0079",
+          "trend": "down",
+          "note": "-0.59%"
         },
         {
-          "label": "深成指",
-          "value": "-2.44%",
-          "trend": "↓",
-          "note": ""
+          "label": "深证成指",
+          "value": "13794.289",
+          "trend": "down",
+          "note": "-2.13%"
         },
         {
           "label": "创业板指",
-          "value": "-3.50%",
-          "trend": "↓",
-          "note": ""
+          "value": "3431.885",
+          "trend": "down",
+          "note": "-3.21%"
         },
         {
-          "label": "半日成交",
-          "value": "1.37万亿",
-          "trend": "↑",
-          "note": "放量1177亿"
+          "label": "科创50",
+          "value": "1602.3369",
+          "trend": "down",
+          "note": "-3.10%"
         },
         {
-          "label": "日经225",
-          "value": "-0.17%",
-          "trend": "↓",
-          "note": ""
-        },
-        {
-          "label": "KOSPI",
-          "value": "-1.44%",
-          "trend": "↓",
-          "note": ""
+          "label": "北证50",
+          "value": "1053.623",
+          "trend": "down",
+          "note": "-2.02%"
         }
       ],
-      "note": "日韩股市集体低开，外围情绪偏弱"
+      "note": "昨日大盘普跌，成长风格重挫，短期面临外围科技股映射压力。"
     },
     "rotation": {
-      "summary": "高位算力退潮，低位防御及政策驱动板块逆势走强",
+      "summary": "科技成长退潮，政策驱动题材接力",
       "sectors": [
         {
-          "name": "农林牧渔",
-          "stage": "领涨",
-          "change": null
+          "name": "6G通信",
+          "stage": "启动期",
+          "change": 2.5
         },
         {
-          "name": "煤炭",
-          "stage": "领涨",
-          "change": null
+          "name": "半导体芯片",
+          "stage": "轮动期",
+          "change": 1.0
         },
         {
-          "name": "固态电池",
-          "stage": "领涨",
-          "change": null
+          "name": "存储/光通信",
+          "stage": "退潮期",
+          "change": -3.0
         },
         {
-          "name": "数字货币",
-          "stage": "领涨",
-          "change": null
-        },
-        {
-          "name": "算力硬件",
-          "stage": "领跌",
-          "change": null
+          "name": "医药防御",
+          "stage": "潜伏期",
+          "change": 0.5
         }
       ],
-      "analysis": "资金从高位算力硬件撤离，流向低位农林牧渔、煤炭等防御板块，以及固态电池、数字货币等题材。"
+      "analysis": "受美股科技股大跌影响，存储、光通信等板块面临补跌风险。国内政策端国资委推进6G，上海发布十五五规划利好半导体、AI，相关低位板块有望成为资金避风港和新突破口。"
     },
     "pool": {
       "pools": [
@@ -97,10 +86,16 @@
           "type": "现在能进",
           "items": [
             {
-              "name": "丽尚国潮",
-              "code": "600738",
-              "action": "触及支撑位买点区，4.00附近可进场，止损3.97",
-              "note": ""
+              "name": "海欣股份",
+              "code": "600851",
+              "action": "低吸",
+              "note": "总分90，盈亏比9.5:1，支撑8.32，压力9.43，止损8.32"
+            },
+            {
+              "name": "大明电子",
+              "code": "603376",
+              "action": "低吸",
+              "note": "总分90，盈亏比24.7:1，支撑26.12，压力28.58，止损26.12"
             }
           ]
         },
@@ -108,69 +103,51 @@
           "type": "等信号",
           "items": [
             {
-              "name": "苏垦农发",
-              "code": "601952",
-              "action": "区间震荡，等待突破9.38压力位",
-              "note": ""
+              "name": "南都物业",
+              "code": "603506",
+              "action": "观望",
+              "note": "总分87，等待放量确认，支撑10.38"
             },
             {
-              "name": "美邦股份",
-              "code": "605033",
-              "action": "区间震荡，等待突破21.68压力位",
-              "note": ""
+              "name": "国科天成",
+              "code": "301571",
+              "action": "观望",
+              "note": "总分76，等待回踩20日线企稳，支撑63.60"
+            }
+          ]
+        },
+        {
+          "type": "轻仓跟",
+          "items": [
+            {
+              "name": "中水渔业",
+              "code": "000798",
+              "action": "试错",
+              "note": "盈亏比1.9:1，做T区间8.57~8.88"
             },
             {
-              "name": "诺普信",
-              "code": "002215",
-              "action": "区间震荡，等待突破9.54压力位",
-              "note": ""
-            },
+              "name": "天富龙",
+              "code": "603406",
+              "action": "试错",
+              "note": "盈亏比1.7:1，做T区间28.73~29.81"
+            }
+          ]
+        },
+        {
+          "type": "有可能性",
+          "items": [
             {
-              "name": "中通国脉",
-              "code": "603559",
-              "action": "区间震荡，等待突破9.79压力位",
-              "note": ""
+              "name": "佳力图",
+              "code": "603912",
+              "action": "观察",
+              "note": "总分75，盈亏比3.4:1，观察能否企稳"
             }
           ]
         }
       ]
-    },
-    "holdings": {
-      "holdings": [
-        {
-          "code": "515050",
-          "name": "5GETF",
-          "shares": 4000,
-          "cost_price": 1.005,
-          "current_price": 0.997,
-          "change_pct": -5.05,
-          "cost_diff_pct": -0.8,
-          "market_value": 3988.0,
-          "profit_loss": -32.0,
-          "fund_flow": "份额净赎回（-0.75%）⚪份额稳定",
-          "trend": "下跌、份额净赎回",
-          "suggestion": "持有",
-          "note": "与成本价差-0.80%，观望为主"
-        }
-      ],
-      "overview": {
-        "total_value": 3988.0,
-        "total_cost": 4020.0,
-        "total_profit_loss": -32.0,
-        "total_profit_pct": -0.8,
-        "position_ratio": "5GETF 100.0%",
-        "risk_exposure": "共1只持仓（0只个股+1只ETF）；整体盈亏平衡附近，风险可控；持仓数量偏少，分散度不足",
-        "holding_count": 1,
-        "notes": [
-          "共1只持仓（0只个股+1只ETF）",
-          "整体盈亏平衡附近，风险可控",
-          "持仓数量偏少，分散度不足"
-        ]
-      },
-      "update_time": "2026-08-24 12:15"
     }
   },
-  "phase": "mid",
-  "date": "2026-08-24",
-  "updateTime": "2026-08-24 12:15"
+  "phase": "pre",
+  "date": "2026-08-25",
+  "updateTime": "2026-08-25 08:46"
 }
