@@ -483226,7 +483226,7 @@
         "change": 3.96,
         "indexPrice": 0,
         "stockCount": 186,
-        "riseCount": 181,
+        "riseCount": 182,
         "fallCount": 5,
         "leader": "赛微电子",
         "leaderChange": 20.01,
@@ -483603,12 +483603,12 @@
         "change": 3.02,
         "indexPrice": 0,
         "stockCount": 91,
-        "riseCount": 80,
-        "fallCount": 10,
+        "riseCount": 82,
+        "fallCount": 8,
         "leader": "长芯博创",
         "leaderChange": 12.97,
         "_riseEstimated": true,
-        "risePct": 88.9,
+        "risePct": 91.1,
         "flowIn": 507.51,
         "flowOut": 401.29,
         "inflow": 106.22,
@@ -487559,8 +487559,8 @@
           },
           {
             "date": "2026-08-27",
-            "flowIn": 54.71,
-            "flowOut": 39.22,
+            "flowIn": 0,
+            "flowOut": 0,
             "inflow": 15.48,
             "change": 0.24
           }
@@ -488695,8 +488695,8 @@
           },
           {
             "date": "2026-08-27",
-            "flowIn": 69.46,
-            "flowOut": 60.28,
+            "flowIn": 0,
+            "flowOut": 0,
             "inflow": 9.18,
             "change": 0.8
           }
@@ -491711,8 +491711,8 @@
           },
           {
             "date": "2026-08-27",
-            "flowIn": 28.7,
-            "flowOut": 24.74,
+            "flowIn": 0,
+            "flowOut": 0,
             "inflow": 3.96,
             "change": 0.77
           }
@@ -492093,8 +492093,8 @@
           },
           {
             "date": "2026-08-27",
-            "flowIn": 68.63,
-            "flowOut": 65.17,
+            "flowIn": 0,
+            "flowOut": 0,
             "inflow": 3.46,
             "change": 0.61
           }
@@ -493988,8 +493988,8 @@
           },
           {
             "date": "2026-08-27",
-            "flowIn": 12.03,
-            "flowOut": 10.26,
+            "flowIn": 0,
+            "flowOut": 0,
             "inflow": 1.77,
             "change": 0.81
           }
@@ -513468,12 +513468,12 @@
         "change": -0.64,
         "indexPrice": 0,
         "stockCount": 56,
-        "riseCount": 14,
-        "fallCount": 42,
+        "riseCount": 16,
+        "fallCount": 39,
         "leader": "百花医药",
         "leaderChange": 7.19,
         "_riseEstimated": true,
-        "risePct": 25.0,
+        "risePct": 29.1,
         "flowIn": 49.0,
         "flowOut": 58.89,
         "inflow": -9.89,
@@ -514762,8 +514762,8 @@
             "date": "2026-08-27",
             "flowIn": 0,
             "flowOut": 0,
-            "inflow": -10.14,
-            "change": -1.85
+            "inflow": -13.45,
+            "change": -1.83
           }
         ],
         "aiQuickReview": "主力净流出13.4亿。板块下跌1.83%。当前处于砸盘重灾区，资金持续出逃，建议规避。",
@@ -515509,8 +515509,8 @@
           },
           {
             "date": "2026-08-27",
-            "flowIn": 72.74,
-            "flowOut": 87.07,
+            "flowIn": 0,
+            "flowOut": 0,
             "inflow": -14.33,
             "change": -0.33
           }
@@ -516280,8 +516280,8 @@
             "date": "2026-08-27",
             "flowIn": 0,
             "flowOut": 0,
-            "inflow": -20.31,
-            "change": -1.63
+            "inflow": -21.37,
+            "change": -0.89
           }
         ],
         "aiQuickReview": "主力大幅净流出21.4亿。板块微幅震荡。当前处于砸盘重灾区，资金持续出逃，建议规避。",
@@ -516509,12 +516509,12 @@
         "change": -0.42,
         "indexPrice": 0,
         "stockCount": 110,
-        "riseCount": 13,
-        "fallCount": 95,
+        "riseCount": 20,
+        "fallCount": 82,
         "leader": "郴电国际",
         "leaderChange": 10.0,
         "_riseEstimated": true,
-        "risePct": 12.0,
+        "risePct": 19.6,
         "flowIn": 51.55,
         "flowOut": 76.38,
         "inflow": -24.83,
@@ -516667,8 +516667,8 @@
             "date": "2026-08-27",
             "flowIn": 0,
             "flowOut": 0,
-            "inflow": -19.54,
-            "change": -0.78
+            "inflow": -24.83,
+            "change": -0.42
           }
         ],
         "aiQuickReview": "主力大幅净流出24.8亿。板块微幅震荡。当前处于砸盘重灾区，资金持续出逃，建议规避。",
@@ -517048,8 +517048,8 @@
             "date": "2026-08-27",
             "flowIn": 0,
             "flowOut": 0,
-            "inflow": -27.89,
-            "change": -1.24
+            "inflow": -44.66,
+            "change": -1.49
           }
         ],
         "aiQuickReview": "主力大幅净流出44.7亿。板块下跌1.49%。当前处于砸盘重灾区，资金持续出逃，建议规避。",
@@ -517606,9 +517606,9 @@
     },
     "2026-08-27": {
       "totalStocks": 5635,
-      "totalRise": 3055,
-      "totalFall": 2273,
-      "risePct": 57.3,
+      "totalRise": 3067,
+      "totalFall": 2295,
+      "risePct": 57.2,
       "sectorUp": 53,
       "sectorDown": 37,
       "topSector": "元件",
@@ -517620,52 +517620,52 @@
       "indices": [
         {
           "name": "上证指数",
-          "value": 3935.1485,
-          "change": 0.58,
-          "change_amount": 22.62,
+          "value": 3935.9851,
+          "change": 0.6,
+          "change_amount": 23.46,
           "open": 3911.8908,
-          "high": 3935.1485,
+          "high": 3938.9735,
           "low": 3909.3122
         },
         {
           "name": "深证成指",
-          "value": 13975.78,
-          "change": 0.97,
-          "change_amount": 134.45,
+          "value": 14005.927,
+          "change": 1.19,
+          "change_amount": 164.6,
           "open": 13876.795,
-          "high": 13993.77,
+          "high": 14020.784,
           "low": 13808.615
         },
         {
           "name": "创业板指",
-          "value": 3454.672,
-          "change": 1.17,
-          "change_amount": 39.79,
+          "value": 3466.4,
+          "change": 1.51,
+          "change_amount": 51.52,
           "open": 3437.901,
-          "high": 3464.466,
+          "high": 3471.382,
           "low": 3408.801
         },
         {
           "name": "科创50",
-          "value": 1682.0852,
-          "change": 3.07,
-          "change_amount": 50.07,
+          "value": 1688.3794,
+          "change": 3.45,
+          "change_amount": 56.36,
           "open": 1646.8414,
-          "high": 1682.4002,
+          "high": 1690.8627,
           "low": 1637.3322
         },
         {
           "name": "北证50",
-          "value": 1071.408,
-          "change": 0.32,
-          "change_amount": 3.44,
+          "value": 1075.244,
+          "change": 0.68,
+          "change_amount": 7.27,
           "open": 1069.295,
-          "high": 1071.479,
+          "high": 1075.247,
           "low": 1059.204
         }
       ],
       "sectorFlat": 0,
-      "updateTime": "11:14"
+      "updateTime": "12:13"
     }
   },
   "signals": {
@@ -525528,5 +525528,5 @@
       "1113"
     ]
   },
-  "lastUpdateTime": "2026-08-27 11:14"
+  "lastUpdateTime": "2026-08-27 12:13"
 }
