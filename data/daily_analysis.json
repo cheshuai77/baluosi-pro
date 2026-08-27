@@ -1,79 +1,78 @@
 {
   "marketResearch": {
     "judgment": {
-      "verdict": "高开震荡，科技成长主导",
+      "verdict": "✅正常",
       "confidence": "高",
       "indicators": {
-        "emotion_cycle": {
-          "status": "heating",
-          "detail": "情绪评分62分，涨停52家，炸板率27.8%"
+        "emotion": {
+          "status": "🌡️亢奋",
+          "detail": "涨停65家，炸板14家，最高6板，情绪升温"
         },
-        "external_env": {
-          "status": "positive",
-          "detail": "英伟达盘后涨超4%，亚太股市高开"
+        "trend": {
+          "status": "震荡拉升",
+          "detail": "科创50领涨超3%，算力硬件全线爆发"
         },
-        "market_trend": {
-          "status": "up",
-          "detail": "三大指数齐涨，科创50领涨1.71%"
+        "volume": {
+          "status": "放量",
+          "detail": "半日成交1.35万亿，较上日放量1208亿"
         }
       },
-      "reasoning": "英伟达财报超预期催化AI算力产业链，叠加亚太股市走强，A股有望高开。但两市缩量至1.81万亿且炸板率近30%，需防范冲高回落，整体定性为高开震荡，偏向科技成长。"
+      "reasoning": "英伟达财报超预期引爆算力硬件主线，叠加农业、黄金避险属性，市场赚钱效应极佳，情绪进入亢奋阶段。"
     },
     "marketRef": {
       "indicators": [
         {
           "label": "上证指数",
-          "value": "3912.5235",
-          "trend": "up",
-          "note": "+0.59%"
+          "value": "3935.99",
+          "trend": "↑",
+          "note": "+0.60%"
         },
         {
-          "label": "深证成指",
-          "value": "13841.327",
-          "trend": "up",
-          "note": "+0.69%"
+          "label": "深成指",
+          "value": "14005.93",
+          "trend": "↑",
+          "note": "+1.19%"
         },
         {
           "label": "创业板指",
-          "value": "3414.883",
-          "trend": "up",
-          "note": "+0.51%"
+          "value": "3466.40",
+          "trend": "↑",
+          "note": "+1.51%"
         },
         {
           "label": "科创50",
-          "value": "1632.02",
-          "trend": "up",
-          "note": "+1.71%"
-        },
-        {
-          "label": "北证50",
-          "value": "1067.972",
-          "trend": "up",
-          "note": "+0.45%"
+          "value": "N/A",
+          "trend": "↑",
+          "note": "+3.45%"
         }
       ],
-      "note": "A股全线收涨，科创50领涨，市场情绪回暖。"
+      "note": "三大指数全线上涨，科创50领涨全场，半日成交1.35万亿。"
     },
     "rotation": {
-      "summary": "科技成长领涨，金融与周期轮动",
+      "summary": "算力硬件全线爆发，农业与黄金同步走强，防御板块回调。",
       "sectors": [
         {
-          "name": "AI算力/半导体",
-          "stage": "主升",
+          "name": "算力硬件",
+          "stage": "主升浪",
+          "change": 5.6
+        },
+        {
+          "name": "农业种植",
+          "stage": "加速",
+          "change": 3.2
+        },
+        {
+          "name": "黄金概念",
+          "stage": "趋势",
           "change": 2.5
         },
         {
-          "name": "证券/多元金融",
-          "stage": "轮动",
-          "change": 1.2
-        },
-        {
-          "name": "有色金属/贵金属",
-          "stage": "趋势",
-          "change": 0.8
+          "name": "银行白酒",
+          "stage": "回调",
+          "change": -1.5
         }
       ],
-      "analysis": "受英伟达财报超预期影响，AI算力及半导体板块有望成为今日主线；金融板块受券商股活跃带动维持轮动；贵金属受金价新高刺激表现活跃。"
+      "analysis": "英伟达财报超预期驱动算力产业链（PCB/CPO/光纤）爆发，厄尔尼诺预期及避险情绪推动农业与黄金走强。资金从防御性板块流出。"
     },
     "pool": {
       "pools": [
@@ -83,8 +82,85 @@
             {
               "name": "五矿资本",
               "code": "600390",
-              "action": "低吸",
-              "note": "半年报净利大增104%重大利好，从等信号升级"
+              "action": "区间震荡，等待方向选择",
+              "note": "维持观望，未触止损"
+            },
+            {
+              "name": "天富龙",
+              "code": "603406",
+              "action": "回踩5日线策略",
+              "note": "正常运行，未触止损"
+            },
+            {
+              "name": "君正集团",
+              "code": "601216",
+              "action": "混庄震荡",
+              "note": "正常运行，未触止损"
+            },
+            {
+              "name": "洛阳钼业",
+              "code": "603993",
+              "action": "有色+混庄",
+              "note": "正常运行，未触止损"
+            }
+          ]
+        },
+        {
+          "type": "等回踩",
+          "items": [
+            {
+              "name": "哈投股份",
+              "code": "600864",
+              "action": "等回踩5.46-5.51",
+              "note": "券商游资票"
+            },
+            {
+              "name": "海信视像",
+              "code": "600060",
+              "action": "等回踩26.08-26.32",
+              "note": "消费电子慢牛"
+            },
+            {
+              "name": "南都物业",
+              "code": "603506",
+              "action": "等回踩10.38-10.50",
+              "note": "回踩20日线"
+            },
+            {
+              "name": "中水渔业",
+              "code": "000798",
+              "action": "等回踩8.27-8.57",
+              "note": "回踩5日线"
+            },
+            {
+              "name": "上海能源",
+              "code": "600508",
+              "action": "等回踩8.98-10.02",
+              "note": "煤炭慢牛"
+            },
+            {
+              "name": "高能环境",
+              "code": "603588",
+              "action": "等回踩13.69-13.90",
+              "note": "环保慢牛"
+            },
+            {
+              "name": "中泰证券",
+              "code": "600918",
+              "action": "等回踩5.61-5.66",
+              "note": "券商机构票"
+            },
+            {
+              "name": "华创云信",
+              "code": "600155",
+              "action": "触及压力位，等回踩5.92",
+              "note": "不追高，退回等回踩"
+            },
+            {
+              "name": "博威合金",
+              "code": "601137",
+              "action": "触及压力位，等回踩20.18",
+              "note": "不追高，退回等回踩"
             }
           ]
         },
@@ -92,70 +168,113 @@
           "type": "等信号",
           "items": [
             {
-              "name": "哈投股份",
-              "code": "600864",
-              "action": "观望",
-              "note": "T+0新候选，需确认走势"
+              "name": "东方明珠",
+              "code": "600637",
+              "action": "等放量确认方向",
+              "note": "传媒混庄"
             },
-            {
-              "name": "海信视像",
-              "code": "600060",
-              "action": "观望",
-              "note": "半年报业绩向好，等开盘确认"
-            },
-            {
-              "name": "上海能源",
-              "code": "600508",
-              "action": "观望",
-              "note": "昨日振幅大机构卖出，需观察承接"
-            },
-            {
-              "name": "君正集团",
-              "code": "601216",
-              "action": "观望",
-              "note": "业绩下滑，需等缩量企稳"
-            },
-            {
-              "name": "华创云信",
-              "code": "600155",
-              "action": "观望",
-              "note": "无消息，等板块共振"
-            }
-          ]
-        },
-        {
-          "type": "有可能性",
-          "items": [
             {
               "name": "珀莱雅",
               "code": "603605",
-              "action": "观察",
-              "note": "半年报并表收益致净利大增，主品牌调整中"
+              "action": "等品牌数据或趋势确认",
+              "note": "化妆品"
             },
             {
-              "name": "高能环境",
-              "code": "603588",
-              "action": "观察",
-              "note": "T+0新候选，评分中等"
+              "name": "中谷物流",
+              "code": "603565",
+              "action": "等趋势确认",
+              "note": "航运物流"
             },
             {
-              "name": "中泰证券",
-              "code": "600918",
-              "action": "观察",
-              "note": "T+0新候选，评分中等"
-            },
-            {
-              "name": "洛阳钼业",
-              "code": "603993",
-              "action": "观察",
-              "note": "T+0新候选，评分中等"
+              "name": "北大荒",
+              "code": "600598",
+              "action": "等缩量企稳或板块共振",
+              "note": "农业种植"
             }
           ]
         }
       ]
+    },
+    "holdings": {
+      "holdings": [
+        {
+          "code": "515050",
+          "name": "5GETF",
+          "shares": 4000,
+          "cost_price": 1.005,
+          "current_price": 1.056,
+          "change_pct": 4.55,
+          "cost_diff_pct": 5.07,
+          "market_value": 4224.0,
+          "profit_loss": 204.0,
+          "fund_flow": "份额净赎回（-0.25%）🟡申购赎回交替",
+          "trend": "上涨、份额净赎回",
+          "suggestion": "持有",
+          "note": "浮盈5.07%，趋势健康可持有，设好止盈"
+        },
+        {
+          "code": "603233",
+          "name": "大参林",
+          "shares": 800,
+          "cost_price": 18.07,
+          "current_price": 17.78,
+          "change_pct": -2.58,
+          "cost_diff_pct": -1.6,
+          "market_value": 14224.0,
+          "profit_loss": -232.0,
+          "fund_flow": "主力净流出0.06亿，占比0.20%",
+          "trend": "下跌、主力流出",
+          "suggestion": "持有",
+          "note": "与成本价差-1.60%，观望为主"
+        },
+        {
+          "code": "600851",
+          "name": "海欣股份",
+          "shares": 400,
+          "cost_price": 8.59,
+          "current_price": 8.7,
+          "change_pct": 1.28,
+          "cost_diff_pct": 1.28,
+          "market_value": 3480.0,
+          "profit_loss": 44.0,
+          "fund_flow": "主力净流出0.04亿，占比0.15%",
+          "trend": "上涨、主力流出",
+          "suggestion": "持有",
+          "note": "与成本价差+1.28%，观望为主"
+        },
+        {
+          "code": "603093",
+          "name": "南华期货",
+          "shares": 400,
+          "cost_price": 12.29,
+          "current_price": 12.96,
+          "change_pct": 5.45,
+          "cost_diff_pct": 5.45,
+          "market_value": 5184.0,
+          "profit_loss": 268.0,
+          "fund_flow": "主力净流入1.33亿，占比0.49%",
+          "trend": "上涨、主力流入",
+          "suggestion": "持有",
+          "note": "浮盈5.45%，趋势健康可持有，设好止盈"
+        }
+      ],
+      "overview": {
+        "total_value": 27112.0,
+        "total_cost": 26828.0,
+        "total_profit_loss": 284.0,
+        "total_profit_pct": 1.06,
+        "position_ratio": "5GETF 15.6%；大参林 52.5%；海欣股份 12.8%；南华期货 19.1%",
+        "risk_exposure": "共4只持仓（3只个股+1只ETF）；整体盈亏平衡附近，风险可控",
+        "holding_count": 4,
+        "notes": [
+          "共4只持仓（3只个股+1只ETF）",
+          "整体盈亏平衡附近，风险可控"
+        ]
+      },
+      "update_time": "2026-08-27 12:25"
     }
   },
-  "phase": "pre",
+  "phase": "mid",
   "date": "2026-08-27",
-  "updateTime": "2026-08-27 08:47"
+  "updateTime": "2026-08-27 12:25"
 }
