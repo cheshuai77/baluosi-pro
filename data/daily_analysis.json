@@ -1,84 +1,83 @@
 {
   "marketResearch": {
     "judgment": {
-      "verdict": "震荡走高",
+      "verdict": "情绪亢奋，指数分化，短线重于指数",
       "confidence": "高",
       "indicators": {
         "emotion": {
-          "status": "🌡️亢奋",
-          "detail": "涨停77家，跌停0家，情绪评分72分"
+          "status": "亢奋",
+          "detail": "涨停63家，跌停0家，情绪评分77"
         },
-        "external": {
-          "status": "neutral",
-          "detail": "美股科技大涨，A50微跌，汇率平稳"
+        "index": {
+          "status": "分化",
+          "detail": "沪指涨0.08%，双创冲高回落翻绿"
         },
-        "market_trend": {
-          "status": "up",
-          "detail": "放量三连阳，成长赛道主攻，两市成交2.13万亿"
+        "volume": {
+          "status": "放量",
+          "detail": "半日1.42万亿，较上日放量716亿"
         }
       },
-      "reasoning": "A股自身放量三连阳动能充沛，叠加美股英伟达财报超预期带动芯片股走强，国内集成电路利润暴增提供基本面支撑，预计今日科技成长主线将继续活跃，大盘震荡走高。"
+      "reasoning": "上午市场呈现明显的指数分化与个股活跃特征。虽然双创指数冲高回落，但涨停家数达63家，情绪维持亢奋，量能显著放大。主线围绕农业、网络安全、PTFE等展开，医药等老赛道回调。午后需关注高位股承接及指数能否企稳。"
     },
     "marketRef": {
       "indicators": [
         {
           "label": "上证指数",
-          "value": "3956.571",
-          "trend": "up",
-          "note": "+1.13%"
+          "value": "涨0.08%",
+          "trend": "微涨",
+          "note": "权重护盘"
         },
         {
           "label": "深证成指",
-          "value": "14048.876",
-          "trend": "up",
-          "note": "+1.50%"
+          "value": "跌0.14%",
+          "trend": "微跌",
+          "note": "14005.30点"
         },
         {
           "label": "创业板指",
-          "value": "3473.355",
-          "trend": "up",
-          "note": "+1.71%"
+          "value": "跌0.32%",
+          "trend": "下跌",
+          "note": "冲高回落"
         },
         {
-          "label": "科创50",
-          "value": "1693.4796",
-          "trend": "up",
-          "note": "+3.77%"
-        },
-        {
-          "label": "北证50",
-          "value": "1074.961",
-          "trend": "up",
-          "note": "+0.65%"
+          "label": "半日成交",
+          "value": "1.42万亿",
+          "trend": "放量",
+          "note": "较上日放量716亿"
         }
       ],
-      "note": "A股全线走高，科创50领涨，两市成交显著放大至2.13万亿"
+      "note": "指数分化，量能放大，个股赚钱效应尚可，题材活跃度高。"
     },
     "rotation": {
-      "summary": "科技成长全面爆发，半导体、通信设备领涨，传统消费与防御板块边缘化",
+      "summary": "农业、网络安全、PTFE领涨，医药、半导体领跌",
       "sectors": [
         {
-          "name": "半导体/芯片",
-          "stage": "主升浪",
-          "change": 3.77
-        },
-        {
-          "name": "通信设备/光通信",
-          "stage": "加速",
+          "name": "农业",
+          "stage": "高潮/反复活跃",
           "change": 2.5
         },
         {
-          "name": "汽车零部件",
-          "stage": "轮动修复",
-          "change": 1.1
+          "name": "网络安全",
+          "stage": "启动/拉升",
+          "change": 1.8
         },
         {
-          "name": "房地产",
-          "stage": "退潮",
-          "change": -0.8
+          "name": "PTFE概念",
+          "stage": "延续强势",
+          "change": 1.5
+        },
+        {
+          "name": "医药生物",
+          "stage": "退潮/调整",
+          "change": -1.5
+        },
+        {
+          "name": "半导体",
+          "stage": "回调",
+          "change": -1.2
         }
       ],
-      "analysis": "资金高度聚焦科技成长，半导体受海外映射及国内业绩暴增双重驱动，通信设备受行业景气度反转资金持续流入，传统防御板块被抽血。"
+      "analysis": "资金从医药、半导体等机构赛道流出，转向农业（万向德农空间效应）、网络安全（信创催化）及PTFE（涨价预期）等题材方向。"
     },
     "pool": {
       "pools": [
@@ -86,22 +85,16 @@
           "type": "现在能进",
           "items": [
             {
-              "name": "赛微电子",
-              "code": "300456",
+              "name": "天融信",
+              "code": "002212",
               "action": "关注",
-              "note": "半导体20cm弹性"
+              "note": "网络安全，首板涨停"
             },
             {
-              "name": "长飞光纤",
-              "code": "601869",
+              "name": "新赛股份",
+              "code": "600540",
               "action": "关注",
-              "note": "光通信趋势中军"
-            },
-            {
-              "name": "中国重汽",
-              "code": "000951",
-              "action": "关注",
-              "note": "汽车整车趋势"
+              "note": "农业，2连板"
             }
           ]
         },
@@ -109,16 +102,16 @@
           "type": "等回踩",
           "items": [
             {
-              "name": "大普微-UW",
-              "code": "301666",
-              "action": "等待",
-              "note": "存储芯片20cm高位"
+              "name": "昊华科技",
+              "code": "600378",
+              "action": "观望",
+              "note": "PTFE，2连板，等分歧回踩"
             },
             {
-              "name": "晶丰明源",
-              "code": "688368",
-              "action": "等待",
-              "note": "芯片设计20cm"
+              "name": "沃特股份",
+              "code": "002886",
+              "action": "观望",
+              "note": "PTFE，2连板，等分歧回踩"
             }
           ]
         },
@@ -126,17 +119,86 @@
           "type": "等信号",
           "items": [
             {
-              "name": "深中华A",
-              "code": "000017",
-              "action": "观察",
-              "note": "6板最高标情绪风向标"
+              "name": "鼎捷数智",
+              "code": "300378",
+              "action": "观望",
+              "note": "AI应用，20cm涨停，等开板承接"
+            },
+            {
+              "name": "万向德农",
+              "code": "600371",
+              "action": "观望",
+              "note": "农业龙头，9天6板，等断板信号"
             }
           ]
         }
       ]
+    },
+    "holdings": {
+      "holdings": [
+        {
+          "code": "515050",
+          "name": "5GETF",
+          "shares": 1000,
+          "cost_price": 1.005,
+          "current_price": 1.05,
+          "change_pct": 0.0,
+          "cost_diff_pct": 4.48,
+          "market_value": 1050.0,
+          "profit_loss": 45.0,
+          "fund_flow": "",
+          "trend": "震荡",
+          "suggestion": "持有",
+          "note": "浮盈4.48%，趋势尚可，设好止盈继续持有"
+        },
+        {
+          "code": "603233",
+          "name": "大参林",
+          "shares": 500,
+          "cost_price": 18.03,
+          "current_price": 18.0,
+          "change_pct": 1.58,
+          "cost_diff_pct": -0.17,
+          "market_value": 9000.0,
+          "profit_loss": -15.0,
+          "fund_flow": "",
+          "trend": "上涨",
+          "suggestion": "待观察",
+          "note": "与成本价差-0.17%，多空信号交织，观望为主"
+        },
+        {
+          "code": "601991",
+          "name": "大唐发电",
+          "shares": 2000,
+          "cost_price": 5.918,
+          "current_price": 5.9,
+          "change_pct": -0.84,
+          "cost_diff_pct": -0.3,
+          "market_value": 11800.0,
+          "profit_loss": -36.0,
+          "fund_flow": "",
+          "trend": "震荡",
+          "suggestion": "待观察",
+          "note": "与成本价差-0.30%，多空信号交织，观望为主"
+        }
+      ],
+      "overview": {
+        "total_value": 21850.0,
+        "total_cost": 21856.0,
+        "total_profit_loss": -6.0,
+        "total_profit_pct": -0.03,
+        "position_ratio": "5GETF 4.8%；大参林 41.2%；大唐发电 54.0%",
+        "risk_exposure": "共3只持仓（2只个股+1只ETF）；整体盈亏平衡附近，风险可控",
+        "holding_count": 3,
+        "notes": [
+          "共3只持仓（2只个股+1只ETF）",
+          "整体盈亏平衡附近，风险可控"
+        ]
+      },
+      "update_time": "2026-08-28 12:12"
     }
   },
-  "phase": "pre",
+  "phase": "mid",
   "date": "2026-08-28",
-  "updateTime": "2026-08-28 08:47"
+  "updateTime": "2026-08-28 12:12"
 }
